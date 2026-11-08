@@ -21,3 +21,14 @@
 - Corrected the archive count: 00—612 is a 613-position cumulative numbering range, not evidence that all 613 original files are present.
 - Source gap 00—463 (464 numbered positions) is not present in the current repository branch tree. No placeholder or reconstructed source files were fabricated.
 - Archive status: Partial; requires original source files or verifiable historical Git objects for 00—463 before it can be called a complete 613-document archive.
+
+
+## Stage00—32 historical metadata recovery supplement
+
+- Recovered metadata coverage for the 00—463 numbering range from the V2.27 architecture index: 464/464 positions covered.
+- The index contains 420 individually titled/summarized records and seven grouped ranges covering 43 positions; the group members' individual filenames are not exposed by the index.
+- The current cumulative 00 and 22 files are present; the initial static 00 snapshot has not been separately verified.
+- Standalone original bodies for 01—21 and 23—463 (462 positions) were not found in the current GitHub design branch.
+- Added `HISTORICAL_STAGE00_32_DOCUMENT_REGISTER.md`; updated README, archive gap statement, cumulative design note, index, and Stage39 Manifest.
+- Metadata recovery is not source-body recovery. Stage00—32 remains Metadata Recovered / Source Bodies Not Located; Stage33—39 retains 149 verified original numbered documents.
+- No placeholder or reconstructed historical source documents were fabricated.
