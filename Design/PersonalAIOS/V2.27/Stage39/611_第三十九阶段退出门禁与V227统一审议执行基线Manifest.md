@@ -5,7 +5,7 @@
 **父基线：** V2.26-Draft / 历史编号区间00—589（590个编号位置；并非当前仓库中可见文件数）  
 **父Commit：** 311842a8ee2b345345d75b3802ec384a26d6552f  
 **目标基线：** V2.27-Draft / 当前可核验编号文档464—612（149份）；累计编号区间00—612  
-**状态：** Stage33—39 Consolidated Archive Available (149 numbered docs)；Source Gap 00—463 (464 files not located)；Actual Feedback 0；No New Approval；S1 Freeze Not Ready
+**状态：** Stage33—39原始编号文件149份已集中归档；Stage00—32元数据覆盖464/464；01—21、23—463原始正文待找回；Actual Feedback 0；No New Approval；S1 Freeze Not Ready
 
 ## 1. 基线身份
 
@@ -28,7 +28,10 @@
 - early_stage_group_member_filenames=Not_Provided_By_Index
 - historical_register_path=Design/PersonalAIOS/V2.27/HISTORICAL_STAGE00_32_DOCUMENT_REGISTER.md
 - stage33_38_historical_numbered_docs_copied=126
-- stage33_38_delta_files_copied=6
+- stage33_38_delta_files_preserved=6
+- stage33_38_unnumbered_delta_files_copied=4
+- stage33_38_numbered_delta_files_included=2
+- stage33_38_stage_files_copied=130
 - stage34_sha256_manifest_copied=1
 - archive_completeness=Partial_EarlyStageOriginalBodies_NotLocated
 - stage39_new_documents=23
@@ -113,23 +116,14 @@
 
 Stage39只完成真实Owner审议的执行准备、角色路由和证据门禁。没有真实反馈，不创建正式Atomic Issue；没有E3，不批准字段；没有E4，不进入冻结候选；没有正式工程授权，不开展代码、数据库、API、真实数据、Provider外发、测试执行或部署。
 
-## 7. 历史归档完整性补充（V2.27集中归档）
 
-Stage33—Stage38的原始阶段文件已从V2.21—V2.26对应目录按Blob原样复制至V2.27/Stage33—Stage38；共126份编号文档、6份阶段Delta及1份Stage34 SHA256清单。Stage39的590—612号23份编号文档保留在V2.27/Stage39。
+## 7. Stage33—39集中归档与完整性说明
 
-当前V2.27目录实际具备的编号设计文档为464—612，共149份。00—463共464个早期编号位置未在当前GitHub仓库分支可见树中找到原始文件。此前“00—612共613份”的表述是累计编号区间，不能作为当前仓库已有613份原文档的证明。归档状态因此标记为Partial；不创建占位文档，不虚构历史原文。完整性细节见V2.27/ARCHIVE_COMPLETENESS_AND_GAP.md。
+Stage33—Stage38共复制130个阶段文件：126份编号文件（其中566和589分别为Stage37/38 Delta）及4份未编号Stage33—36 Delta；另归档1份Stage34原SHA256清单。六个Stage Delta全部保留。Stage39的590—612号23份编号文件保留在V2.27/Stage39，其中612号为Stage39 Delta。
 
-本次只做历史文档原样归档和状态纠正，不改变既有Owner决策、OD状态、测试状态、S1冻结状态或工程授权。
+当前V2.27目录实际具备的编号文件为464—612，共149份。Stage37/38/39的Delta文件分别编号为566、589、612，已经包含在149份编号文件中。00—463的早期编号元数据覆盖已恢复为464/464，但01—21、23—463共462个编号位置的独立原始正文尚未找到；00号初始静态版本未单独核验。详细边界见`ARCHIVE_COMPLETENESS_AND_GAP.md`和`HISTORICAL_STAGE00_32_DOCUMENT_REGISTER.md`。
 
-
-## 7. 历史归档完整性补充（V2.27集中归档）
-
-Stage33—Stage38的原始阶段文件已从V2.21—V2.26对应目录按Blob原样复制至V2.27/Stage33—Stage38；共126份编号文档、6份阶段Delta及1份Stage34 SHA256清单。Stage39的590—612号23份编号文档保留在V2.27/Stage39。
-
-当前V2.27目录实际具备的编号设计文档为464—612，共149份。00—463共464个早期编号位置未在当前GitHub仓库分支可见树中找到原始文件。此前“00—612共613份”的表述是累计编号区间，不能作为当前仓库已有613份原文档的证明。归档状态因此标记为Partial；不创建占位文档，不虚构历史原文。归档细节见V2.27/ARCHIVE_COMPLETENESS_AND_GAP.md。
-
-本次只做历史文档原样归档和状态纠正，不改变既有Owner决策、OD状态、测试状态、S1冻结状态或工程授权。
-
+本次只做历史文件原样归档、编号元数据登记和状态纠正，不改变既有Owner决策、OD状态、测试状态、S1冻结状态或工程授权。
 
 ## 8. Stage00—32历史元数据恢复与正文缺口
 
