@@ -55,9 +55,9 @@ M06 TDA/SA与M08 IA为既有候选审议角色。其他模块只在字段涉及�
 | OT-RAW-ASSET | RAW-002 | raw_asset_kind | — | — | M06 TDA/SA候选；M08 IA候选 | Medium | raw_asset_kind受控类型如何覆盖文件、媒体、附件、流和复合封装。 | Pending |
 | OT-RAW-ASSET | RAW-003 | source_snapshot_refs | — | — | M06 TDA/SA候选；M08 IA候选 | Medium | source_snapshot_refs支持一对多/多对多时如何表达主来源及完整性。 | Pending |
 | OT-RAW-ASSET | RAW-004 | physical_handle_ref | D-05 | — | M06 TDA/SA候选；M08 IA候选；M02（物理字节/Handle条件审议） | High | physical_handle_ref是否为Opaque Handle；避免暴露Bucket、路径、凭据或可绕过授权的URL。 | Pending |
-| OT-RAW-ASSET | RAW-005 | byte_size | — | D-05 | M06 TDA/SA候选；M08 IA候选 | Medium | byte_size按原始字节还是封装后字节计算；分段/流式资产如何定义。 | Pending |
-| OT-RAW-ASSET | RAW-006 | media_type_declared | — | D-05 | M06 TDA/SA候选；M08 IA候选 | Medium | media_type_declared来源、可信度和缺失值如何记录；不能当作实际格式证明。 | Pending |
-| OT-RAW-ASSET | RAW-007 | media_type_detected | — | D-05 | M06 TDA/SA候选；M08 IA候选 | Medium | media_type_detected由何种检测器产生、版本和置信依据；与声明不一致如何处理。 | Pending |
+| OT-RAW-ASSET | RAW-005 | byte_size | — | D-05 | M06 TDA/SA候选；M08 IA候选；M02（物理大小/媒体检测事实条件会审） | Medium | byte_size按原始字节还是封装后字节计算；分段/流式资产如何定义。 | Pending |
+| OT-RAW-ASSET | RAW-006 | media_type_declared | — | D-05 | M06 TDA/SA候选；M08 IA候选；M02（物理大小/媒体检测事实条件会审） | Medium | media_type_declared来源、可信度和缺失值如何记录；不能当作实际格式证明。 | Pending |
+| OT-RAW-ASSET | RAW-007 | media_type_detected | — | D-05 | M06 TDA/SA候选；M08 IA候选；M02（物理大小/媒体检测事实条件会审） | Medium | media_type_detected由何种检测器产生、版本和置信依据；与声明不一致如何处理。 | Pending |
 | OT-RAW-ASSET | RAW-008 | byte_digest | D-06 | — | M06 TDA/SA候选；M08 IA候选；M02（物理字节/Handle条件审议） | High | byte_digest的算法、字节范围和规范化规则是否明确；是否支持多摘要。 | Pending |
 | OT-RAW-ASSET | RAW-009 | digest_algorithm | D-06 | — | M06 TDA/SA候选；M08 IA候选；M02（物理字节/Handle条件审议） | High | digest_algorithm是否允许算法迁移和多算法并存；弱算法何时退役。 | Pending |
 | OT-RAW-ASSET | RAW-010 | digest_scope | D-06 | — | M06 TDA/SA候选；M08 IA候选；M02（物理字节/Handle条件审议） | Medium | digest_scope能否准确区分原始字节、封装字节、分块和逻辑内容。 | Pending |
