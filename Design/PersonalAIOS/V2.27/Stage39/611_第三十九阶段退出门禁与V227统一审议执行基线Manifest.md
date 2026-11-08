@@ -11,10 +11,18 @@
 
 - baseline_id=PAILOS-AB-2.27-S1-OWNER-REVIEW-EXECUTION-READINESS
 - release_label=V2.27-Draft / S1 Owner Review Execution Readiness & Atomic Disposition Intake
-- parent_baseline=V2.26-Draft / 00—589 / 590 documents
+- parent_baseline=V2.26-Draft / historical numbering range 00—589 (590 positions; not the count of files visible in current repository)
 - parent_commit=311842a8ee2b345345d75b3802ec384a26d6552f
-- numbered_document_range=00—612
-- numbered_document_count=613
+- numbered_document_range=464—612
+- numbered_document_count=149
+- cumulative_numbering_range=00—612
+- cumulative_numbering_positions=613
+- missing_source_range=00—463
+- missing_source_positions=464
+- stage33_38_historical_numbered_docs_copied=126
+- stage33_38_delta_files_copied=6
+- stage34_sha256_manifest_copied=1
+- archive_completeness=Partial_SourceGap_00_463
 - stage39_new_documents=23
 - S1_OT_count=6
 - S1_OT_status=All Candidate
@@ -102,5 +110,14 @@ Stage39只完成真实Owner审议的执行准备、角色路由和证据门禁�
 Stage33—Stage38的原始阶段文件已从V2.21—V2.26对应目录按Blob原样复制至V2.27/Stage33—Stage38；共126份编号文档、6份阶段Delta及1份Stage34 SHA256清单。Stage39的590—612号23份编号文档保留在V2.27/Stage39。
 
 当前V2.27目录实际具备的编号设计文档为464—612，共149份。00—463共464个早期编号位置未在当前GitHub仓库分支可见树中找到原始文件。此前“00—612共613份”的表述是累计编号区间，不能作为当前仓库已有613份原文档的证明。归档状态因此标记为Partial；不创建占位文档，不虚构历史原文。完整性细节见V2.27/ARCHIVE_COMPLETENESS_AND_GAP.md。
+
+本次只做历史文档原样归档和状态纠正，不改变既有Owner决策、OD状态、测试状态、S1冻结状态或工程授权。
+
+
+## 7. 历史归档完整性补充（V2.27集中归档）
+
+Stage33—Stage38的原始阶段文件已从V2.21—V2.26对应目录按Blob原样复制至V2.27/Stage33—Stage38；共126份编号文档、6份阶段Delta及1份Stage34 SHA256清单。Stage39的590—612号23份编号文档保留在V2.27/Stage39。
+
+当前V2.27目录实际具备的编号设计文档为464—612，共149份。00—463共464个早期编号位置未在当前GitHub仓库分支可见树中找到原始文件。此前“00—612共613份”的表述是累计编号区间，不能作为当前仓库已有613份原文档的证明。归档状态因此标记为Partial；不创建占位文档，不虚构历史原文。归档细节见V2.27/ARCHIVE_COMPLETENESS_AND_GAP.md。
 
 本次只做历史文档原样归档和状态纠正，不改变既有Owner决策、OD状态、测试状态、S1冻结状态或工程授权。
