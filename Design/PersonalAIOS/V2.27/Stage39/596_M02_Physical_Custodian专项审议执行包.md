@@ -9,7 +9,7 @@
 
 ## 2. 关联字段与审议范围
 
-本包中的字段是需要该权威角色参与的审议范围，不表示该角色对所有字段拥有单独批准权。字段的语义仍由M06 TDA/SA候选审议，实例写入和生命周期事实由M08 IA候选审议；最终权限以真实授权证据为准。
+本包中的字段是需要该权威角色参与的审议范围。RAW-004是D-05核心字段；RAW-005/006/007仅作为物理大小和媒体格式事实的横切会审输入，不扩大D-05正式批准范围。此处不表示M02对所有列出字段拥有单独批准权。字段的语义仍由M06 TDA/SA候选审议，实例写入和生命周期事实由M08 IA候选审议；最终权限以真实授权证据为准。
 
 | Field ID | 字段 | 需要回答的问题 | 原始核心决策 | 风险 |
 |---|---|---|---|---|
@@ -18,6 +18,9 @@
 | SNP-012 | digest_scope | digest_scope是否版本化、可枚举；压缩、封装、分段和多文件场景如何定义。 | D-03 | Medium |
 | SNP-022 | snapshot_manifest_digest | snapshot_manifest_digest覆盖哪些Snapshot组成项；清单本身如何防篡改和验证。 | D-03 | Medium |
 | RAW-004 | physical_handle_ref | physical_handle_ref是否为Opaque Handle；避免暴露Bucket、路径、凭据或可绕过授权的URL。 | D-05 | High |
+| RAW-005 | byte_size | byte_size按原始字节还是封装后字节计算；分段/流式资产如何定义。 | 横切关联D-05 | Medium |
+| RAW-006 | media_type_declared | media_type_declared来源、可信度和缺失值如何记录；不能当作实际格式证明。 | 横切关联D-05 | Medium |
+| RAW-007 | media_type_detected | media_type_detected由何种检测器产生、版本和置信依据；与声明不一致如何处理。 | 横切关联D-05 | Medium |
 | RAW-008 | byte_digest | byte_digest的算法、字节范围和规范化规则是否明确；是否支持多摘要。 | D-06 | High |
 | RAW-009 | digest_algorithm | digest_algorithm是否允许算法迁移和多算法并存；弱算法何时退役。 | D-06 | High |
 | RAW-010 | digest_scope | digest_scope能否准确区分原始字节、封装字节、分块和逻辑内容。 | D-06 | Medium |
