@@ -15,7 +15,7 @@
 | Stage39 | 590—612 | 23 | V2.27新增 |
 | **合计** | **464—612** | **149** | **正文可核验** |
 
-Stage33—Stage38从V2.21—V2.26对应目录按原Git Blob复制，未改写历史正文；同步复制6份Stage Delta及Stage34原SHA256清单。Stage39的23份文档保留在V2.27/Stage39。
+Stage33—Stage38共复制130个阶段文件：126份编号文件（其中566和589分别为Stage37/38 Delta）及4份未编号Stage33—36 Delta；另复制Stage34原SHA256清单。六个Stage Delta全部保留，历史正文按原Git Blob复制，未改写。Stage39的23份文档保留在V2.27/Stage39。
 
 ## 2. 早期Stage00—32历史登记
 
