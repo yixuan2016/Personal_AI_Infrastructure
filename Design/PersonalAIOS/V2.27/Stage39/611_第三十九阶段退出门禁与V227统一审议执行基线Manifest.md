@@ -17,12 +17,20 @@
 - numbered_document_count=149
 - cumulative_numbering_range=00—612
 - cumulative_numbering_positions=613
-- missing_source_range=00—463
-- missing_source_positions=464
+- early_stage_metadata_coverage=464/464
+- early_stage_individually_titled_records=420
+- early_stage_grouped_index_ranges=7
+- early_stage_grouped_index_positions=43
+- early_stage_cumulative_files_present=00,22
+- early_stage_original_standalone_body_gap=01—21;23—463
+- early_stage_original_standalone_body_gap_positions=462
+- early_stage_initial_00_snapshot=Not_Separately_Verified
+- early_stage_group_member_filenames=Not_Provided_By_Index
+- historical_register_path=Design/PersonalAIOS/V2.27/HISTORICAL_STAGE00_32_DOCUMENT_REGISTER.md
 - stage33_38_historical_numbered_docs_copied=126
 - stage33_38_delta_files_copied=6
 - stage34_sha256_manifest_copied=1
-- archive_completeness=Partial_SourceGap_00_463
+- archive_completeness=Partial_EarlyStageOriginalBodies_NotLocated
 - stage39_new_documents=23
 - S1_OT_count=6
 - S1_OT_status=All Candidate
@@ -121,3 +129,14 @@ Stage33—Stage38的原始阶段文件已从V2.21—V2.26对应目录按Blob原�
 当前V2.27目录实际具备的编号设计文档为464—612，共149份。00—463共464个早期编号位置未在当前GitHub仓库分支可见树中找到原始文件。此前“00—612共613份”的表述是累计编号区间，不能作为当前仓库已有613份原文档的证明。归档状态因此标记为Partial；不创建占位文档，不虚构历史原文。归档细节见V2.27/ARCHIVE_COMPLETENESS_AND_GAP.md。
 
 本次只做历史文档原样归档和状态纠正，不改变既有Owner决策、OD状态、测试状态、S1冻结状态或工程授权。
+
+
+## 8. Stage00—32历史元数据恢复与正文缺口
+
+已从V2.27全体系索引恢复Stage00—32编号元数据，00—463共464个编号位置覆盖464/464。索引中有420项逐项标题/摘要记录、7个分组范围记录（覆盖43个编号），22号为索引文件本身。登记册位于`Design/PersonalAIOS/V2.27/HISTORICAL_STAGE00_32_DOCUMENT_REGISTER.md`。
+
+00号累计说明和22号累计索引当前存在；00号最初静态版本未单独核验。01—21、23—463共462个编号位置的独立原始正文尚未在当前GitHub设计分支中找到。7个分组范围仅恢复组级标题和摘要，组内独立文件名与正文仍待找回。
+
+项目文件库中找到的V0.1.x工程资料、V1.0总体架构、Ontology和RSI资料作为相关早期参考资产保留，但尚未证明与00—463编号文件一一对应，不计入原文档数量。
+
+因此，Stage00—32当前状态为MetadataRecovered / SourceBodiesNotLocated；Stage33—39为149份原始阶段文档已集中归档。不得将元数据覆盖464/464误报为早期原文完整归档。
