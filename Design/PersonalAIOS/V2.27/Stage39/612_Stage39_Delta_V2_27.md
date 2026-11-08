@@ -16,7 +16,7 @@
 ## V2.27历史阶段集中归档补充
 
 - Copied Stage33—Stage38 historical source files from V2.21—V2.26 into the corresponding V2.27 stage folders, preserving original filenames and blob contents.
-- Archived 126 numbered documents (464—589), six stage delta files, and the Stage34 SHA256 manifest.
+- Archived 130 Stage33—38 source files: 126 numbered files (including numbered Stage37/38 deltas 566 and 589) and four unnumbered Stage33—36 deltas; also archived the Stage34 SHA256 manifest. All six stage deltas are preserved.
 - Stage39 documents 590—612 remain in V2.27/Stage39; V2.27 now contains 149 verifiable numbered design documents (464—612).
 - Corrected the archive count: 00—612 is a 613-position cumulative numbering range, not evidence that all 613 original files are present.
 - Source gap 00—463 (464 numbered positions) is not present in the current repository branch tree. No placeholder or reconstructed source files were fabricated.
