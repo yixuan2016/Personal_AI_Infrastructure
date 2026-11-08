@@ -2,10 +2,10 @@
 
 **项目：** Personal AI Life OS / 个人数智底座  
 **版本：** V2.27-Draft / S1 Owner Review Execution Readiness & Atomic Disposition Intake  
-**父基线：** V2.26-Draft / 00—589 / 590份编号文档  
+**父基线：** V2.26-Draft / 历史编号区间00—589（590个编号位置；并非当前仓库中可见文件数）  
 **父Commit：** 311842a8ee2b345345d75b3802ec384a26d6552f  
-**目标基线：** V2.27-Draft / 00—612 / 613份编号文档  
-**状态：** Review Execution Package Prepared；Actual Feedback 0；No New Approval；S1 Freeze Not Ready
+**目标基线：** V2.27-Draft / 当前可核验编号文档464—612（149份）；累计编号区间00—612  
+**状态：** Stage33—39 Consolidated Archive Available (149 numbered docs)；Source Gap 00—463 (464 files not located)；Actual Feedback 0；No New Approval；S1 Freeze Not Ready
 
 ## 1. 基线身份
 
@@ -96,3 +96,11 @@
 **S1 Freeze Not Ready。Design Freeze Not Ready。Engineering Not Authorized。Implementation Not Started。**
 
 Stage39只完成真实Owner审议的执行准备、角色路由和证据门禁。没有真实反馈，不创建正式Atomic Issue；没有E3，不批准字段；没有E4，不进入冻结候选；没有正式工程授权，不开展代码、数据库、API、真实数据、Provider外发、测试执行或部署。
+
+## 7. 历史归档完整性补充（V2.27集中归档）
+
+Stage33—Stage38的原始阶段文件已从V2.21—V2.26对应目录按Blob原样复制至V2.27/Stage33—Stage38；共126份编号文档、6份阶段Delta及1份Stage34 SHA256清单。Stage39的590—612号23份编号文档保留在V2.27/Stage39。
+
+当前V2.27目录实际具备的编号设计文档为464—612，共149份。00—463共464个早期编号位置未在当前GitHub仓库分支可见树中找到原始文件。此前“00—612共613份”的表述是累计编号区间，不能作为当前仓库已有613份原文档的证明。归档状态因此标记为Partial；不创建占位文档，不虚构历史原文。完整性细节见V2.27/ARCHIVE_COMPLETENESS_AND_GAP.md。
+
+本次只做历史文档原样归档和状态纠正，不改变既有Owner决策、OD状态、测试状态、S1冻结状态或工程授权。
