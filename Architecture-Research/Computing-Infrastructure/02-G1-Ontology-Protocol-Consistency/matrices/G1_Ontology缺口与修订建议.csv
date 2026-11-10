@@ -1,0 +1,15 @@
+﻿缺口编号,概念,V3.0现状,建议归属层,建议处理,权威Owner,建议结论,关联验收
+GAP-01,ParticipantBinding,Participant；ParticipantBinding关系未列为显式实体,联邦治理 Profile / Binding Record,引用现有Participant；新增可验证绑定记录语义，不建第二参与方名册,Federation Governance Owner + Identity Owner,建议补齐,AEE-002；DM04-006
+GAP-02,TrustAgreement,TrustDomain / TrustAnchor,Governance Profile / 签署协议引用,TrustAgreement是双边签署对象，不能简单等同TrustDomain；以不可变协议引用和签署证据表达,双方Federation Governance Owner,建议补齐,DM04-005；DM04-043
+GAP-03,DataSpaceContract,DataProduct / DatasetVersion / DataUseGrant,Data Space Domain Profile,补充合同引用、版本、用途、地域、接收方与终止语义；数据Owner仍为权威,Data Owner,建议补齐,AEE-008；AEE-009；DM04-018
+GAP-04,DelegationGrant,Credential / Claim / PolicyDecision；缺显式委托对象,Trust/Security Domain Profile,显式建模委托链、ActorChain、Audience、Scope、Expiry、Redelegation；不把委托压扁成普通Credential,Grant Issuer / IAM Owner,建议补齐,AEE-015；DM04-006
+GAP-05,HumanApproval,Ontology V3.0核心清单未列；旧RC7曾有HumanApproval,Governance/Safety Profile,恢复人工审批对象，绑定Approver、Task/ContractDigest、Scope、Expiry、Decision、Evidence,Human Governance Owner,建议补齐,高风险动作审批测试
+GAP-06,OutputArtifact,V3.0关系中提到OutputArtifact，但核心实体清单缺失,Evidence/Result Domain Profile,定义最小ArtifactRef实体语义，内容与版本仍由既有Artifact Owner管理，不新建全局Registry,Artifact/Evidence Owner,建议补齐,AEE-013；AEE-014
+GAP-07,Result,DM04有Result生命周期操作；Ontology V3.0核心实体未列Result,Evidence/Result Domain Profile,定义Result与Evidence、Artifact、Acceptance的关系；Result Review/Release由Result Owner负责,Result Owner / Data Owner,建议补齐,DM04-036至040
+GAP-08,EventSubscription,非Ontology Core实体；AEE/FWSX Runtime对象,Runtime Schema / FWSX Registry,保留为投递运行对象；授权依据由源Owner、DataUseGrant和PDP提供,FWSX Service Owner + Event Source Owner,仅运行时对象，不进Core,AEE-008；AEE-009
+GAP-09,TaskClaim,TaskStage存在；TaskClaim不应成为全局Lease实体,TaskStage局部Profile子记录,在TaskStage上扩展本地认领字段；不建第二Lease Authority,Site Task Owner,仅本地Profile子记录,AEE-010至012
+GAP-10,EnvironmentSpaceDescriptor,V3.0无此核心实体,AEE/ASCP Descriptor DTO,保留非权威组合描述符，聚合引用，不复制成员/信任/数据权威,ADS Profile Publisher,仅Profile投影,AEE-001；AEE-002
+GAP-11,ArtifactBinding,V3.0无此核心实体；Evidence/Result关系可表达,Evidence/Result Association,保留关联视图，不建Artifact Registry，不复制正文,Evidence/Result Owner,仅关联对象,AEE-013；AEE-014
+GAP-12,GovernanceContextRef,V3.0已有Policy/PolicyDecision/DataUseGrant等,Request Context Profile,请求级上下文引用，不能成为凭证、Grant或全局PDP,目标站点PDP/PEP,仅请求投影,AEE-015
+GAP-13,TraceRecord / epistemic_status,V3.0事件语义有统一event字段，但事实/推断类别未形成显式属性,CloudEvents ASCP Extension,明确fact/inference/proposal/decision；未知/冲突标签隔离或未验证,Event Source Owner + Schema Owner,事件Profile扩展,AEE-004至007
+GAP-14,Owner引用统一模式,Organization / Participant / Operator并存，Owner引用类型未统一,Core identity pattern,每个OwnerRef带主体类型、稳定URI、authority_scope与source_ref；不以显示名作主键,Ontology Owner + Domain Owners,需统一模式,跨域签署与引用验证

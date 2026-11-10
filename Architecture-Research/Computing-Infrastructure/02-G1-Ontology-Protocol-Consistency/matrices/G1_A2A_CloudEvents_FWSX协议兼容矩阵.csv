@@ -1,0 +1,26 @@
+﻿来源概念,协议/组件,标准字段或机制,AEE_ASCP映射,语义,权威主体,互操作约束
+AEE TraceRecord,CloudEvents 1.0.2,id,trace_id,同一唯一ID，不双写,事件源Owner,一致；复用
+AEE TraceRecord,CloudEvents 1.0.2,source,source/issuer,事件发布来源,事实Owner,一致；FWSX不得改写
+AEE TraceRecord,CloudEvents 1.0.2,type,trace_type,受控事件类型命名空间,Event Schema Owner,需受控枚举/URI注册
+AEE TraceRecord,CloudEvents 1.0.2,subject,subject_ref,指向Ontology实体,对象Owner,解析时重新鉴权
+AEE TraceRecord,CloudEvents 1.0.2,time,occurred_at,事实发生时间,事件源Owner,不用于全局排序
+AEE TraceRecord,CloudEvents 1.0.2,dataschema,payload_schema_ref,事件载荷Schema引用,Schema Owner,不支持版本拒绝业务效果
+AEE TraceRecord,CloudEvents 1.0.2,data,payload,领域事实载荷,事实Owner,事实/推断/提案/决策需区分
+DM04事件扩展,DM04 + CloudEvents,siteid/aggregateid/aggregateversion,site_id/aggregate_id/aggregate_version,站点及聚合版本,Site/aggregate Owner,单聚合版本单调
+DM04事件扩展,DM04 + CloudEvents,sequence/correlationid/causationid,sequence_no/correlation_id/causation_id,顺序与因果关系,事件源Owner,不承诺全局总序
+DM04事件扩展,DM04 + CloudEvents,signature_ref,signature_ref,签名与完整性证据,签发方/Verifier,验签失败隔离
+FWSX,FWSX Delivery Adapter,subscription cursor,subscription.cursor,投递进度,FWSX/Inbox Owner,游标不改变事件事实；可补拉
+FWSX,FWSX Delivery Adapter,retry/replay,至少一次投递与重放,处理重复和暂时故障,FWSX Service Owner,业务Inbox幂等；不承诺恰好一次
+FWSX,Source Owner + PDP/PEP,subscription grant,EventSubscription授权,事件源授权，目标本地再鉴权,Event Source Owner / Site PDP,订阅不等于所有字段可读
+FWSX,Target PEP,artifact URI resolution,Artifact read authorization,Artifact引用解析独立授权,Artifact Owner / Target PEP,不可继承事件订阅权限
+A2A AgentCard,A2A 1.0,capabilities.extensions[],uri/description/required/params,声明支持扩展,Agent Owner,声明不代表已激活或获得权限
+A2A Request,A2A 1.0,A2A-Extensions header,请求级激活扩展URI,每次请求协商激活,A2A Client/Server,未激活必需扩展，副作用前拒绝
+A2A Message,A2A 1.0,extensions[] + metadata,AEE扩展URI为键的metadata,携带Agent消息上下文,发送方/接收方,只放引用/元数据；目标侧重验权
+A2A Artifact,A2A 1.0,extensions[] + metadata,ArtifactBinding metadata,交接Artifact引用,Artifact Owner + Agent Owner,A2A Artifact ID需映射DM04全局引用
+A2A Task,A2A 1.0,metadata only,AEE Task/Context refs,任务关联上下文,A2A parties,不增加核心协议未定义的Task.extensions[]
+A2A Task ID,A2A 1.0 vs SCO,A2A task.id,SCO TaskRun/DM04 task_ref,建立映射关系，不强行合并ID,A2A parties + SCO Owner,各自生命周期独立
+A2A Task State,A2A 1.0 vs DM04,A2A task state,DM04 Prepare/Commit/UNKNOWN/Acceptance/Settlement,协议任务状态与业务状态分层,A2A parties + SCO/Owner,A2A状态不得覆盖DM04权威状态
+Unknown Event Type,CloudEvents + ASCP,type,未知ASCP trace_type,存档告警,Event Schema Owner,不得触发副作用
+Duplicate Event,FWSX + Inbox,id + source,Trace/Event identity,去重,Inbox Owner,业务副作用最多一次逻辑效果
+Sequence Gap,FWSX + DM04,aggregateversion/sequence,aggregate_version/sequence_no,补拉与对账,聚合Owner + FWSX,不通过全局时钟猜序
+Revocation,Source Owner + FWSX,subscription revoke,停止后续投递,撤销权威在源Owner,Source Owner,撤销传播延迟时高风险动作暂停
