@@ -1,0 +1,11 @@
+﻿decision_id,候选决策,理由,状态,需确认角色,验证/证据
+F0-ADR-01,不设全局联邦根权力；每个生态保留本地根治理,避免超级ADS与跨域单点权力,Proposed,双方RG,签署治理边界
+F0-ADR-02,成员加入采用双边尽调和双边签署,目录注册不等于信任建立,Proposed,RG/SEC/DO,成员准入清单
+F0-ADR-03,跨域授权采用安全交集；DENY优先、ABSTAIN进入HOLD,防止策略平均和默认放行,Proposed,RG/DO/DATA/SEC,策略组合测试
+F0-ADR-04,整体风险取各方评估最高值，不做平均,不同Owner风险不可相互抵消,Proposed,RG/DO/DATA/RES,风险分级演练
+F0-ADR-05,Agent不得修改根策略、根身份、权限上限和审计规则,保持人类外环最终控制权,Proposed,双方RG,不可委托清单签署
+F0-ADR-06,FCP不持有成员域生产凭证，不直接执行副作用,限制联邦协调平面失陷影响,Proposed,SEC/FOP/RG,权限盘点与失陷演练
+F0-ADR-07,私有记忆、原始轨迹、模型梯度默认不跨域交换,数据最小化和防止隐私/投毒风险,Proposed,DATA/SEC,数据分类和导出策略
+F0-ADR-08,来源域批准不能替代接收域本地Shadow、审批和Canary,确保本地责任和适配性,Proposed,DO/IE/HG,采用回执与本地验证
+F0-ADR-09,成员撤销状态不可达时，高风险操作HOLD,防止凭证状态陈旧导致越权,Proposed,SEC/DO,撤销失联演练
+F0-ADR-10,每个生态保留本地Kill Switch；FCP仅可停止协调入口,避免联邦设施成为本地自治总开关,Proposed,RG/SEC/FOP,桌面演练

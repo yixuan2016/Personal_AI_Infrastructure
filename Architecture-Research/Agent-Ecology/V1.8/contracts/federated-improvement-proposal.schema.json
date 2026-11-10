@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/agent-ecology/v1.8/federated-improvement-proposal.schema.json",
+  "title": "FederatedImprovementProposal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proposal_id",
+    "origin_domain",
+    "origin_rsi_version",
+    "target_scope",
+    "problem_statement",
+    "change_manifest",
+    "risk_class",
+    "evaluation_plan",
+    "content_digest",
+    "created_at",
+    "expires_at",
+    "signature"
+  ],
+  "properties": {
+    "proposal_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "origin_domain": {
+      "type": "string",
+      "minLength": 3
+    },
+    "origin_rsi_version": {
+      "type": "string"
+    },
+    "target_scope": {
+      "type": "object",
+      "required": [
+        "allowed_targets",
+        "prohibited_targets"
+      ],
+      "properties": {
+        "allowed_targets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prohibited_targets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "problem_statement": {
+      "type": "string",
+      "minLength": 10
+    },
+    "hypothesis": {
+      "type": "string"
+    },
+    "change_manifest": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "artifact_id",
+          "artifact_type",
+          "digest"
+        ],
+        "properties": {
+          "artifact_id": {
+            "type": "string"
+          },
+          "artifact_type": {
+            "enum": [
+              "prompt",
+              "workflow",
+              "tool",
+              "agent",
+              "ontology_mapping",
+              "policy_pattern",
+              "model_adapter",
+              "other"
+            ]
+          },
+          "digest": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "risk_class": {
+      "enum": [
+        "R0",
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ]
+    },
+    "evaluation_plan": {
+      "type": "object",
+      "required": [
+        "baseline",
+        "metrics",
+        "stop_conditions"
+      ],
+      "properties": {
+        "baseline": {
+          "type": "string"
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stop_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence_bundle_ref": {
+      "type": "string"
+    },
+    "content_digest": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "license": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "object",
+      "required": [
+        "key_id",
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "key_id": {
+          "type": "string"
+        },
+        "algorithm": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

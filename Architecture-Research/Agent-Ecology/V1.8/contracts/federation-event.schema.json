@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/agent-ecology/v1.8/federation-event.schema.json",
+  "title": "FederationEvent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event_type",
+    "producer_domain",
+    "subject",
+    "schema_version",
+    "sequence_no",
+    "event_time",
+    "recorded_at",
+    "visibility",
+    "payload_digest",
+    "signature"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "producer_domain": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "sequence_no": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "event_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "visibility": {
+      "enum": [
+        "PUBLIC",
+        "FEDERATION_MEMBERS",
+        "NAMED_DOMAINS",
+        "PRIVATE_REFERENCE_ONLY"
+      ]
+    },
+    "causation_id": {
+      "type": "string"
+    },
+    "correlation_id": {
+      "type": "string"
+    },
+    "payload_digest": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "evidence_ref": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "object",
+      "required": [
+        "key_id",
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "key_id": {
+          "type": "string"
+        },
+        "algorithm": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

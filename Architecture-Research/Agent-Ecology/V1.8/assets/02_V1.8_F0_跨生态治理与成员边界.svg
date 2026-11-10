@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset="1" stop-color="#132b45"/></linearGradient>
+<style>.t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#eaf5ff}.h{font-size:38px;font-weight:700}.s{font-size:25px}.m{font-size:19px}.r{fill:#2b2430;stroke:#fb7185;stroke-width:2;rx:18}.d{fill:#10304b;stroke:#38bdf8;stroke-width:2;rx:18}.l{fill:#123b3c;stroke:#34d399;stroke-width:2;rx:18}.f{fill:#3b301b;stroke:#fbbf24;stroke-width:2;rx:18}.a{stroke:#67e8f9;stroke-width:4;fill:none;marker-end:url(#arr)}</style>
+<marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#67e8f9"/></marker></defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<text x="960" y="72" text-anchor="middle" class="t h">V1.8 F0｜跨生态治理与成员边界</text>
+<text x="960" y="118" text-anchor="middle" class="t s">无全局超级 ADS · 本地根治理 · 任务级最小授权 · 双边成员责任</text>
+<rect x="100" y="170" width="1720" height="170" class="r"/>
+<text x="960" y="220" text-anchor="middle" class="t h">各生态独立根治理（不可委托给 Agent / RSI / FCP）</text>
+<text x="960" y="270" text-anchor="middle" class="t s">根身份与密钥｜根策略｜权限上限｜数据出域规则｜关键审批｜审计与问责</text>
+<text x="960" y="310" text-anchor="middle" class="t m">联邦章程只约定最低互操作义务，不转移任何成员域的最终授权权</text>
+<path d="M960 340 V400" class="a"/>
+<rect x="100" y="405" width="1720" height="185" class="d"/>
+<text x="960" y="455" text-anchor="middle" class="t h">域治理层（每个生态分别管理）</text>
+<rect x="160" y="485" width="350" height="70" class="l"/><text x="335" y="530" text-anchor="middle" class="t s">业务 Owner / 能力 Owner</text>
+<rect x="565" y="485" width="350" height="70" class="l"/><text x="740" y="530" text-anchor="middle" class="t s">数据 Owner / 用途授权</text>
+<rect x="970" y="485" width="350" height="70" class="l"/><text x="1145" y="530" text-anchor="middle" class="t s">资源 Owner / 预算租约</text>
+<rect x="1375" y="485" width="350" height="70" class="l"/><text x="1550" y="530" text-anchor="middle" class="t s">安全 Owner / 身份密钥</text>
+<path d="M960 590 V650" class="a"/>
+<rect x="100" y="655" width="1720" height="180" class="d"/>
+<text x="960" y="705" text-anchor="middle" class="t h">任务授权层（短时、限范围、可撤销）</text>
+<rect x="155" y="745" width="290" height="65" class="f"/><text x="300" y="785" text-anchor="middle" class="t s">主体 / 受众</text>
+<rect x="485" y="745" width="290" height="65" class="f"/><text x="630" y="785" text-anchor="middle" class="t s">目的 / 动作 / 资源</text>
+<rect x="815" y="745" width="290" height="65" class="f"/><text x="960" y="785" text-anchor="middle" class="t s">数据类别 / 期限</text>
+<rect x="1145" y="745" width="290" height="65" class="f"/><text x="1290" y="785" text-anchor="middle" class="t s">策略版本 / 审批</text>
+<rect x="1475" y="745" width="290" height="65" class="f"/><text x="1620" y="785" text-anchor="middle" class="t s">撤销 / 审计</text>
+<text x="960" y="900" text-anchor="middle" class="t s">跨域组合规则：任一 DENY → DENY ｜ 关键 ABSTAIN / 过期 / 撤销不可达 → HOLD</text>
+<text x="960" y="955" text-anchor="middle" class="t m">整体风险取所有参与方评估的最高等级；R4 根级动作禁止 Agent 执行</text>
+<text x="960" y="1015" text-anchor="middle" class="t m">每个生态保留本地 Kill Switch；FCP 只能停止联邦协调入口，不能控制本地生产执行</text>
+</svg>

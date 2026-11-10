@@ -1,0 +1,167 @@
+[
+  {
+    "path": "00_V1.8_总体架构与设计目标.md",
+    "bytes": 4130,
+    "sha256": "74c3866f48ae386a02928fea43fc92137d7e47c9e1fde3eae5ad58e2fee49b02"
+  },
+  {
+    "path": "01_跨生态联邦拓扑与职责边界.md",
+    "bytes": 3283,
+    "sha256": "28469ce5c959d0edfc3f23aa01c4a7fa521c7e2008251ce63253da5cd8fb8a75"
+  },
+  {
+    "path": "02_身份信任与能力信誉.md",
+    "bytes": 2665,
+    "sha256": "25d2b4499d9de1cba1caa912b5ca6e39f41065e96406f4a835d842ce837f914d"
+  },
+  {
+    "path": "03_跨生态改进提案与证据契约.md",
+    "bytes": 2576,
+    "sha256": "81d66e337922ee3d2b0adf4013d70a68c5820b03fc12503027a1f5bfa703da96"
+  },
+  {
+    "path": "04_跨域策略兼容与冲突仲裁.md",
+    "bytes": 2217,
+    "sha256": "b6ba5b7fd1a32afbe65d974e5bdc56721b765d2ce91f18ef3e2019eafd25ca0d"
+  },
+  {
+    "path": "05_隐私保护知识交换与共同进化.md",
+    "bytes": 2582,
+    "sha256": "6434360537998cac4a99bf154dcf5539b9e3286adacae863655b64a4f459d48e"
+  },
+  {
+    "path": "06_安全威胁模型与失陷隔离.md",
+    "bytes": 2653,
+    "sha256": "546ec4a40bc61f4c5af579b0dd5dca33ab3a95f0bc6113e5d1e52dc055577c9b"
+  },
+  {
+    "path": "07_实施路线与验收矩阵.md",
+    "bytes": 2069,
+    "sha256": "9c2ea2533585793336a89bc03ff809abdee4993abc017df55ed7801e891143d0"
+  },
+  {
+    "path": "08_接口事件与错误码.md",
+    "bytes": 2738,
+    "sha256": "293dc218d5b1ab3d8902d43b3a8b275cac09e5ea4042b973ea97a249fa2ed6a3"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "bytes": 953,
+    "sha256": "175fabeab10d34cc256ce4ca86d879d74861dffd839f914784a2154dd24b22ea"
+  },
+  {
+    "path": "F0_CROSS_DOMAIN_AUTHORIZATION_MATRIX.csv",
+    "bytes": 1098,
+    "sha256": "0d592aa4cefa645f46a397955ff376800bf09eeb1a8ef17fe0fa936cb32410c9"
+  },
+  {
+    "path": "F0_DECISION_REGISTER.csv",
+    "bytes": 1571,
+    "sha256": "f1490cf48d68421c0c404bc9d3d2f60df57ed9a65818b16444b236965a46186d"
+  },
+  {
+    "path": "F0_GATE_CHECKLIST.csv",
+    "bytes": 1417,
+    "sha256": "845e458eb1a778e602e603d5d09bf85cd6dc076a839128f59fe9a72a7d8ee95f"
+  },
+  {
+    "path": "F0_RACI.csv",
+    "bytes": 721,
+    "sha256": "c4c419d1bae61089ea8a3fc2871c52d06a2a8cce4335fb69d313d2141979cd6a"
+  },
+  {
+    "path": "F0_跨生态治理章程与成员边界冻结.md",
+    "bytes": 12167,
+    "sha256": "bc9d76916153f588e010b387d144caacbf94a1ea15abc10fac90d355a140a0ae"
+  },
+  {
+    "path": "README.md",
+    "bytes": 3594,
+    "sha256": "d8e168976b8befddeea0ff9d867a50616b1568e19ff86e6b40938c5846433f82"
+  },
+  {
+    "path": "SOURCES.md",
+    "bytes": 2385,
+    "sha256": "41a21cb98b3ee0c5da624e942d245e22356507c359b66cda92913b6b9a0a9956"
+  },
+  {
+    "path": "STATUS.md",
+    "bytes": 706,
+    "sha256": "1bd0b44de514a1e13ebbce6234ff33504e0b9f8d88a2d54bc2aff1faf0a0971c"
+  },
+  {
+    "path": "assets/00_V1.8_跨生态联邦总体架构.svg",
+    "bytes": 5685,
+    "sha256": "f8133e0203b3c0f801672010d2053b23df3d04f8bdeb6ea7721e9821f2267821"
+  },
+  {
+    "path": "assets/00_V1.8_跨生态联邦总体架构_8k.png",
+    "bytes": 971264,
+    "sha256": "ba7f6370ce4f591f8d4a400921c1484326766e7e7244b8d171c8093fa7eaa976"
+  },
+  {
+    "path": "assets/01_V1.8_跨生态改进提案生命周期.svg",
+    "bytes": 3706,
+    "sha256": "021fe3d2e48543decf3c9c08a8e330c314e79ff862005df64eac4babf1b55833"
+  },
+  {
+    "path": "assets/01_V1.8_跨生态改进提案生命周期_8k.png",
+    "bytes": 1002488,
+    "sha256": "e477fbf9e0d13122a71b96623a737d44064723e9039f8c3c38ff79ebcbf5a719"
+  },
+  {
+    "path": "assets/02_V1.8_F0_跨生态治理与成员边界.svg",
+    "bytes": 3814,
+    "sha256": "49c64e89bf9fa0fe6c79ea68c05bf0dcd2e8996ffd24b5a89f4aefa14c99bd6a"
+  },
+  {
+    "path": "assets/02_V1.8_F0_跨生态治理与成员边界_8k.png",
+    "bytes": 1193446,
+    "sha256": "bd266dd3cd2bc4d26c2d17cf8a2170485b22a6f0e2715cc6d5ec0507f1735674"
+  },
+  {
+    "path": "contracts/capability-attestation.schema.json",
+    "bytes": 1699,
+    "sha256": "c4753535e7e8db47a81d2d66d84fcaaa1bb0014aafb1cc4ec085605120c0f0ec"
+  },
+  {
+    "path": "contracts/data-use-grant.schema.json",
+    "bytes": 2698,
+    "sha256": "187aaccce71ab635f9fd6a038d5c5d18c3025433b347e5891a962165b0593fb6"
+  },
+  {
+    "path": "contracts/evidence-bundle.schema.json",
+    "bytes": 2433,
+    "sha256": "cbd1757e082347f768fe13056837e92eee43471ee5c7914b17b5e7828d60a15b"
+  },
+  {
+    "path": "contracts/federated-improvement-proposal.schema.json",
+    "bytes": 3351,
+    "sha256": "7f816a294a1fb3d3cb06f32c667d89ca8a2ca32b43ed232d556168d52c83a8b8"
+  },
+  {
+    "path": "contracts/federation-event.schema.json",
+    "bytes": 1758,
+    "sha256": "3d539c2f881cc0654fa94697b8782d44dfa1093609e7e92f26ab3de234d4dd28"
+  },
+  {
+    "path": "contracts/federation-member-claim.schema.json",
+    "bytes": 3122,
+    "sha256": "fa0bc702088c455c0116fa2e184c4452867ec69ee594fa01d56632ce9daf98cd"
+  },
+  {
+    "path": "contracts/local-adoption-receipt.schema.json",
+    "bytes": 1458,
+    "sha256": "64afc6993359ab031111d5e96222b4954ee221438594b4e855c2d03092e8a04b"
+  },
+  {
+    "path": "validation/threat-matrix.csv",
+    "bytes": 2703,
+    "sha256": "be53e5eed565e7086a01059be9b019d323f16eaba070445bf59b1b5830faf648"
+  },
+  {
+    "path": "validation/validation-matrix.csv",
+    "bytes": 3203,
+    "sha256": "92af7596f74a160c2a33d8c2c65433a25d4d265493198244b34edcca85ce406d"
+  }
+]

@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:schema:v1.8:federation-member-claim",
+  "title": "FederationMemberClaim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "domain_id",
+    "operator",
+    "governance_contacts",
+    "identity_assurance",
+    "policy_profile",
+    "capability_scopes",
+    "lifecycle_state",
+    "valid_from",
+    "valid_until",
+    "signature"
+  ],
+  "properties": {
+    "domain_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "operator": {
+      "type": "object",
+      "required": [
+        "legal_or_org_name",
+        "jurisdiction",
+        "operator_identifier"
+      ],
+      "properties": {
+        "legal_or_org_name": {
+          "type": "string"
+        },
+        "jurisdiction": {
+          "type": "string"
+        },
+        "operator_identifier": {
+          "type": "string"
+        }
+      }
+    },
+    "governance_contacts": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "contact_ref"
+        ],
+        "properties": {
+          "role": {
+            "enum": [
+              "root_governance",
+              "security_identity",
+              "business_owner",
+              "incident_contact"
+            ]
+          },
+          "contact_ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "identity_assurance": {
+      "enum": [
+        "I0_UNVERIFIED",
+        "I1_DOMAIN_CONTROL",
+        "I2_ORGANIZATION_VERIFIED",
+        "I3_INDEPENDENTLY_ATTESTED"
+      ]
+    },
+    "policy_profile": {
+      "type": "object",
+      "required": [
+        "policy_version",
+        "non_delegable_controls_digest",
+        "risk_profile_digest"
+      ],
+      "properties": {
+        "policy_version": {
+          "type": "string"
+        },
+        "non_delegable_controls_digest": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "risk_profile_digest": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        }
+      }
+    },
+    "capability_scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lifecycle_state": {
+      "enum": [
+        "PROPOSED",
+        "DUE_DILIGENCE",
+        "IDENTITY_BOUND",
+        "POLICY_CONTRACTED",
+        "CAPABILITY_SCOPED",
+        "PILOT_LIMITED",
+        "ACTIVE",
+        "HOLD",
+        "SUSPENDED",
+        "REVOKED",
+        "EXITING",
+        "EXITED"
+      ]
+    },
+    "valid_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revocation_uri": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "object",
+      "required": [
+        "key_id",
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "key_id": {
+          "type": "string"
+        },
+        "algorithm": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
