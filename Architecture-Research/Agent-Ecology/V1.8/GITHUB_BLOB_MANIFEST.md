@@ -1,12 +1,13 @@
 # V1.8 GitHub Blob Manifest
 
-说明：以下为 Git Blob SHA（Git 对象标识），不是 SHA-256 文件摘要。完整资料包中的 `MANIFEST_SHA256.json` 提供本地资料文件 SHA-256。本清单仅列出 V1.8 及其入口文件，不包含自身。
+说明：以下为 Git Blob SHA（Git 对象标识），不是 SHA-256 文件摘要。完整资料包中的 `MANIFEST_SHA256.json` 提供本地资料文件 SHA-256。本清单覆盖 V1.8 文件及其入口文件，不包含自身。
 
 | Path | Git Blob SHA |
 |---|---|
-| `CHANGELOG.md` | `d327bb74d7c959a72e4c143d744e328fc30135a7` |
-| `README.md` | `ba9e1058ea60205552d72308800f0defb2d6878b` |
-| `UPLOAD_STATUS.md` | `4ccb39b3e714e4e74fefc471dc085b183ae94a24` |
+| `ARCHIVE_AUDIT.md` | `e6d32277b0c756ca0f559ad1a40d5d8f92e666eb` |
+| `CHANGELOG.md` | `19a477de09b563fe44ed3bd90e867e582e2ba345` |
+| `README.md` | `16bf62fda8638639ca604cdf037409d86e2cae43` |
+| `UPLOAD_STATUS.md` | `b9c2fdc9222bfe5b0d0288a4232ec4bc5a7229c5` |
 | `V1.8/00_V1.8_总体架构与设计目标.md` | `bf0698d98b6bfa8e70e2fa9cb906e0226fa37e83` |
 | `V1.8/01_跨生态联邦拓扑与职责边界.md` | `09691461121629f8ea749fbaba14df19b759569f` |
 | `V1.8/02_身份信任与能力信誉.md` | `bb65f062a3a651128d94e58a321ee26be7da6647` |
@@ -19,6 +20,7 @@
 | `V1.8/assets/00_V1.8_跨生态联邦总体架构.svg` | `2b1a5e40740808d58d5e8c01476c6d7399963cd6` |
 | `V1.8/assets/01_V1.8_跨生态改进提案生命周期.svg` | `53695368f3d6838117998d7167578e94a111d24e` |
 | `V1.8/assets/02_V1.8_F0_跨生态治理与成员边界.svg` | `9a48454278b8d0b6641afe46359425664aeea2b9` |
+| `V1.8/BINARY_ASSET_STATUS.md` | `22edcda2924ff3ddedadfc91291f6c06bfbc4294` |
 | `V1.8/CHANGELOG.md` | `353419f4185e7d9508f206a4c9c3c374c8884fb3` |
 | `V1.8/contracts/capability-attestation.schema.json` | `042d0778ab8b3929afc023a8363b47b8d0301dad` |
 | `V1.8/contracts/data-use-grant.schema.json` | `4404d88f5ed2346c5e00f70879715dd2020456da` |
