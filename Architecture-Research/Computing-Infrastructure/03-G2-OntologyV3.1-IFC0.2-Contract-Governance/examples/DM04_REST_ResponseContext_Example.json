@@ -1,0 +1,18 @@
+{
+  "request_id": "urn:request:site-a:2026-11-10:000001",
+  "responder_site_id": "urn:site:site-b",
+  "object_ref": "urn:task-run:2048:site-b",
+  "object_version": "7",
+  "command_status": "Accepted",
+  "authoritative_state": {
+    "authority_ref": "urn:site:site-b:task-owner",
+    "state_value": "Prepared",
+    "state_version": "7",
+    "as_of": "2026-11-10T09:00:02Z",
+    "freshness": "current"
+  },
+  "event_cursor": "site-b:task-run:2048:seq:19",
+  "evidence_refs": [
+    "urn:evidence:request-accepted:2048"
+  ]
+}

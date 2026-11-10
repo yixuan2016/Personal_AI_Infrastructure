@@ -1,0 +1,18 @@
+﻿DM04逻辑字段,当前REST绑定,承载层,当前约束,G2建议,关键规则
+request_id,GenericCommand.request_id,Body,必需,保留,回显/全链路关联
+correlation_id,GenericCommand.correlation_id,Body,必需,保留,不得作为身份或授权
+issued_at,GenericCommand.issued_at,Body,必需,保留,UTC RFC3339
+api_version,GenericCommand.api_version,Body,必需,保留,不是protocol_profile
+schema_version,GenericCommand.schema_version,Body,必需,保留,不是Ontology版本
+payload,GenericCommand.payload,Body,当前可选,RC1需明确每操作Schema,不能把任意additionalProperties当作完整业务契约
+caller_principal,OAuth2主体/受信任身份映射,Auth Context,逻辑必需,不加入IFC0.2 JSON body,禁止信任自报principal
+workload_identity,已验证Workload + OAuth2 client + 按需mTLS,Auth Context,逻辑必需,安全Profile绑定,caller_workload_id仅声明
+audience,已验证token aud / API resource registration,Auth Context,逻辑必需,安全Profile绑定,禁止从URL猜测
+purpose,操作目的/TaskContract/DataSpaceContract/DataUseGrant,Operation Context,逻辑必需,缺失则敏感操作拒绝,reason不等于purpose
+protocol_profile,双方协商Profile Registry,Federation Session,逻辑必需,单独登记/协商,不从api_version/schema_version推断
+expires_at,GenericCommand.expires_at,Body,当前可选,联邦请求条件必需,到期不得默认续期
+idempotency_key,Idempotency-Key / GenericCommand.idempotency_key,Header/Body,副作用操作必需,两者同时出现须相等,冲突返回IDEMPOTENCY_CONFLICT
+expected_state_version,If-Match / ETag,HTTP Conditional,更新操作必需,REST Binding RC1明确,防止盲覆盖
+payload_digest,GenericCommand.payload_digest,Body,高风险操作必需,扩展加入总请求摘要,签名覆盖扩展
+signature_ref,验证后的签名/证明引用,Security Evidence,高风险操作必需,绑定安全Profile,不放入AEE data
+profile_extensions,GenericCommand / Logical Envelope additive property,Body,IFC0.2可选,仅双端协商后使用,只承载Profile data引用

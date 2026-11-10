@@ -1,0 +1,13 @@
+﻿缺口编号,组件,当前事实,问题,建议处理,风险
+API-GAP-01,ADS/SCO RequestEnvelope组件,两份OpenAPI均定义；Path引用0次,孤立组件/未绑定,保留为逻辑参考或在REST Binding RC1统一引用,中
+API-GAP-02,ADS GenericCommand,24个Path引用；required 5；payload可选,与RequestEnvelope不一致,RC1明确Command body与逻辑Envelope映射,高
+API-GAP-03,SCO GenericCommand,22个Path引用；required 5；payload可选,与RequestEnvelope不一致,RC1明确Command body与逻辑Envelope映射,高
+API-GAP-04,身份主体映射,caller_workload_id/participant_id/tenant_id可选,未定义为权威身份来源,从已验证OAuth2/mTLS上下文映射,高
+API-GAP-05,Audience,没有显式Body字段,Auth token aud到API资源标识映射缺规范,由目标服务校验audience,高
+API-GAP-06,Purpose,GenericCommand无purpose；有reason,reason与purpose语义混淆风险,从显式操作目的/合同/Grant解析,高
+API-GAP-07,Protocol Profile,无字段,api_version/schema_version容易被误用,单独协商并登记Profile,高
+API-GAP-08,expires_at,有字段但非必需,联邦请求有效期不完整,联邦请求条件必需,高
+API-GAP-09,expected_state_version,无显式字段,更新请求可能缺乐观并发约束,If-Match/ETag映射,高
+API-GAP-10,ResponseEnvelope,未定义统一Schema,Operation仅表达操作处理状态,REST Binding RC1增加ResponseContext,高
+API-GAP-11,Operation.status,有Accepted/Running/WaitingForApproval/Succeeded/Failed/Cancelled/Expired/Unknown/ReconciliationRequired,不等于对象权威状态,command_status与authoritative_state分离,高
+API-GAP-12,OpenAPI版本,ADS/SCO 3.2.1；DM04参考REST 3.1.1,工具链共同版本未确认,Parser/Validator/Generator/双实现验证后冻结,中
