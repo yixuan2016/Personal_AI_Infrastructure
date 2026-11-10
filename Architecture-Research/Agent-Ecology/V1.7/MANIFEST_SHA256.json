@@ -1,0 +1,127 @@
+[
+  {
+    "path": "Agent_Ecology_V1.7_生态级RSI与递归进化治理架构.docx",
+    "bytes": 11556176,
+    "sha256": "5e50bfaecf8e62611b7aeadf6e61d059f41ad6280e56bcf9d42bd6766075ac8a"
+  },
+  {
+    "path": "Agent_Ecology_V1.7_生态级RSI与递归进化治理架构.md",
+    "bytes": 35191,
+    "sha256": "a31e3681990711caf7214c8e18418714faaedab47228e8b47ca7f8b0071948e9"
+  },
+  {
+    "path": "Agent_Ecology_V1.7_生态级RSI与递归进化治理架构.pdf",
+    "bytes": 24136170,
+    "sha256": "9fe22d0b103cb23f72e5063f9fe0b797473e52869687a657a4465779a492934b"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "bytes": 503,
+    "sha256": "938b23d7b44a00e80f8cb438ec579bc492f099c105e48dc8ec49eef50d36d290"
+  },
+  {
+    "path": "README.md",
+    "bytes": 702,
+    "sha256": "3c966651dd4ad3c19f7f3520240bd676be715fd69b258108bbb31198566c2be8"
+  },
+  {
+    "path": "V1.7_生态级RSI与递归进化治理架构.md",
+    "bytes": 35191,
+    "sha256": "a31e3681990711caf7214c8e18418714faaedab47228e8b47ca7f8b0071948e9"
+  },
+  {
+    "path": "assets/00_V1.7_生态级RSI全景架构_8k.png",
+    "bytes": 2386855,
+    "sha256": "7577eb072460ccf2d0e2c2ffe5e0b6c8f364a83426b93096bdcb587e6ad195db"
+  },
+  {
+    "path": "assets/00_V1.7_生态级RSI全景架构_8k.svg",
+    "bytes": 6698,
+    "sha256": "a5948ab96c0bfe49c6bc0bbe713824cdb3cf11ad4bf608dc8272cb49e229cb62"
+  },
+  {
+    "path": "assets/26_V1.7_RSI进化层级与修改对象_8k.png",
+    "bytes": 1991151,
+    "sha256": "5642e0c2a595c642434ceab7fb4d2402ec09cb1578c770577ab53a0ef82313de"
+  },
+  {
+    "path": "assets/26_V1.7_RSI进化层级与修改对象_8k.svg",
+    "bytes": 4895,
+    "sha256": "62762439bde04ecf2e6d6b5364d4b5360edb92ee4af91f895f9d60a8170ae643"
+  },
+  {
+    "path": "assets/27_V1.7_递归进化双闭环架构_8k.png",
+    "bytes": 2047884,
+    "sha256": "bdc63f0ac32747467b764db6cbe5071a2a38095185085f679657f3cf06f2256a"
+  },
+  {
+    "path": "assets/27_V1.7_递归进化双闭环架构_8k.svg",
+    "bytes": 5526,
+    "sha256": "47c148149b08ca79b7b86b67657377dd4f6aec68aec5dcf9f92ccf80fc7ff7a7"
+  },
+  {
+    "path": "assets/28_V1.7_独立评估与反自我欺骗机制_8k.png",
+    "bytes": 2128266,
+    "sha256": "b11a2172d09df85301e5cd5c3af6da3f1711fa462f90b5e4054f3cd3b2aea3d1"
+  },
+  {
+    "path": "assets/28_V1.7_独立评估与反自我欺骗机制_8k.svg",
+    "bytes": 5472,
+    "sha256": "bc1a98e268883058a3a3ae6eb8af0f903ec3e2c93e98ad1c25b66df5cda1b64f"
+  },
+  {
+    "path": "assets/29_V1.7_进化发布治理与回滚流程_8k.png",
+    "bytes": 1704935,
+    "sha256": "0a9ad13d4eade332bab9e41a41604d52ee69d12be423ab18cb9b87974e9ef04b"
+  },
+  {
+    "path": "assets/29_V1.7_进化发布治理与回滚流程_8k.svg",
+    "bytes": 5688,
+    "sha256": "4478389a4e32e5dee7340d72dab9d9a4ebd8b72381665af20003412ea46d8c76"
+  },
+  {
+    "path": "assets/30_V1.7_ADS递归进化实例_8k.png",
+    "bytes": 1966300,
+    "sha256": "d7425d8f4ee4ff780eea8ce8133cf0943734b70b1b4eeb422dbacd58cfb05ddc"
+  },
+  {
+    "path": "assets/30_V1.7_ADS递归进化实例_8k.svg",
+    "bytes": 5297,
+    "sha256": "70e93d290f7f225b3cdf4af034f4330216a7528321d5e04fa9e769560267d5e1"
+  },
+  {
+    "path": "contracts/V1.7_进化状态机与事件目录.csv",
+    "bytes": 1041,
+    "sha256": "0e5655cb7e51adcb99678169597777b7fdc656f0d53334c91fb8f29b293633ee"
+  },
+  {
+    "path": "contracts/V1.7_递归进化核心数据契约.csv",
+    "bytes": 1537,
+    "sha256": "6be824c1365a4c2fe74f0fe64a47d9cd9d7ff0751c33f9c6c03ce0312e414735"
+  },
+  {
+    "path": "governance/V1.7_人类治理与不可自改边界.md",
+    "bytes": 952,
+    "sha256": "88a63bfc03ce05b5044bd86d06e98e3e6897512acc23c1f64330bdebc3df52eb"
+  },
+  {
+    "path": "reference_architecture/V1.7_参考部署与演进边界.md",
+    "bytes": 1026,
+    "sha256": "dd616850398cfa8c1de9cbdbd7d3f9bdfbd29064dc6c6bd6bbd1d1ca07c37733"
+  },
+  {
+    "path": "research/V1.7_RSI研究证据与原始链接.csv",
+    "bytes": 2447,
+    "sha256": "597ae5834f5c5698b22ce5cea049b0b9aeccad85602fbf0462fe708387120e6f"
+  },
+  {
+    "path": "validation/V1.7_RSI验证与治理验收矩阵.csv",
+    "bytes": 1600,
+    "sha256": "9a0d0fec8d2629071e9601d98a40e21340d2f01bedfcca7ba5302ee7914066b4"
+  },
+  {
+    "path": "validation/V1.7_威胁与反操纵矩阵.csv",
+    "bytes": 959,
+    "sha256": "2c9278d5e78b7ca8c95092375cd643b3db6ffa75452328b1366d7328e79dd2c5"
+  }
+]

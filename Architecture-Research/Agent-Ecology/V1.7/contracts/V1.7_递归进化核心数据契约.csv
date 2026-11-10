@@ -1,0 +1,11 @@
+﻿对象,字段,说明,权威责任,约束
+ImprovementProblem,"problem_id,signals,hypotheses,evidence_refs,scope",改进问题,Diagnosis Registry,假设必须有证据和反证
+EvolutionProposal,"proposal_id,baseline_ref,change_set,risk_tier,budget,rollback_ref,owner",改进候选,Evolution Registry,必须绑定基线、预算和回滚
+CandidateArtifact,"artifact_id,proposal_id,version,hash,signature,dependencies",候选工件,Artifact Registry,签名和来源追溯必需
+ExperimentPlan,"experiment_id,baseline,treatment,metrics,holdout_ref,stop_conditions",实验计划,Experiment Registry,隐藏集不可被生成器读取
+EvaluationEvidence,"evidence_id,evaluator_id,dataset_ref,metrics,limitations,signature",独立评估证据,Independent Evaluator,评估器与生成器权限隔离
+GovernanceDecision,"decision_id,proposal_id,authority,decision,conditions,expiry",治理决策,Governance Registry,授权须绑定范围和有效期
+ShadowObservation,"shadow_id,candidate_version,traffic_scope,outcome_refs,drift",Shadow观测,Shadow Monitor,不影响生产动作
+ReleaseRecord,"release_id,candidate_version,approval_ref,canary_scope,rollback_ref",发布记录,Release Manager,无审批和回滚不得Canary
+RollbackRecord,"rollback_id,release_id,trigger,restored_version,side_effect_check",回滚记录,Runtime/Governance,需核对外部副作用
+ImprovementPattern,"pattern_id,source_domain,evidence_level,scope,limitations,adoption_status",可复用改进模式,ADS Knowledge Registry,领域端自主验证采用

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-ecology.example/schemas/decision-record-1.2.schema.json",
+  "title": "Governance Decision Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id",
+    "decision_type",
+    "decision_maker",
+    "scope",
+    "outcome",
+    "rationale",
+    "evidence_refs",
+    "created_at",
+    "valid_until"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "decision_type": {
+      "enum": [
+        "approval",
+        "denial",
+        "exception",
+        "policy-change",
+        "ontology-adoption",
+        "release-approval",
+        "rollback"
+      ]
+    },
+    "decision_maker": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object"
+    },
+    "outcome": {
+      "enum": [
+        "approved",
+        "denied",
+        "conditional",
+        "revoked",
+        "expired"
+      ]
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "review_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

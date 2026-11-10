@@ -1,0 +1,11 @@
+威胁,攻击方式,控制,证据
+Winner-take-all,高信誉Agent垄断资源,集中度指标、探索预算、公平约束,任务/资源份额分布
+Sybil,多个虚假主体刷信誉,可验证身份、委托链、速率限制,主体关联和异常速率
+Collusion,Agent互相打分,独立验证、来源簇、抽样审计,验证者关联图
+Bid manipulation,虚报成本/ETA/质量,预测校准、实际计量、超支上限,估计-实际偏差
+Goodhart,优化指标而非真实目标,多目标、反指标操纵、人工抽查,分层KPI和异常检测
+Capability poisoning,虚报能力或污染工具,版本签名、基准测试、负责人,能力验证记录
+Knowledge poisoning,错误知识群体扩散,证据独立性、反证、Shadow、回滚,知识发布审计
+Authority creep,子委托扩大权限,Mandate单调衰减、PEP执行,父子委托权限差异
+Repair loop,自动修复反复触发,熔断、修复预算、最大重试,Repair Ledger
+RSI policy drift,自我改进绕过审批,策略与推理分离、签名发布、人类审批,策略diff和审批记录

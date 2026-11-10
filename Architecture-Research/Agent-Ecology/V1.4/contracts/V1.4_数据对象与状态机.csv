@@ -1,0 +1,10 @@
+对象,关键字段,权威来源,更新规则,关键约束
+Task,"task_id,domain_id,workspace_id,task_contract,state,state_version,claim_epoch,risk_tier,budget",State Coordinator事务库,条件更新+状态机命令,state_version单调递增；仅允许合法状态转换
+Claim,"claim_id,task_id,agent_principal,claim_epoch,lease_id,lease_expires_at,fencing_token",State Coordinator/资源所有者,原子认领、续租、释放,旧fencing_token不得写入受保护资源
+DomainEvent,"event_id,source,type,aggregate_id,aggregate_version,causation_id,correlation_id,schema_version",Transactional Outbox/事件日志,事务追加,source+id可去重；聚合内顺序
+Trace,"trace_id,trace_type,subject,target_ref,source_refs,verification_status,valid_until,content_hash",Trace Ledger,只追加,反证和更正追加新记录，不覆盖历史
+Artifact,"artifact_id,version,content_hash,media_type,classification,storage_ref,signature_ref",Artifact Registry+对象存储,新版本追加,不可原位替换已发布内容
+Subscription,"subscription_id,principal,domain_scope,event_types,filter,capability_filter,rate_limit,expires_at",Subscription Registry,版本化更新,订阅不等于读取授权或执行权
+PolicyDecision,"decision_id,principal,action,resource,purpose,field_scope,policy_version,obligations,expires_at",ADS PDP/领域PDP,追加决策记录,由资源域PEP最终执行
+Capability,"capability_id,version,owner,inputs,outputs,scope,evidence,status",Capability Registry,提案/验证/发布,声明不等于已验证可用
+OntologyVersion,"ontology_id,version,terms,mappings,compatibility,migration_ref",Semantic Registry,版本化发布,旧版本显式兼容或迁移

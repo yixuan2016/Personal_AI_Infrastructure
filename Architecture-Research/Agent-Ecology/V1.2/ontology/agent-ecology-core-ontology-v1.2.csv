@@ -1,0 +1,16 @@
+概念,英文标识,定义,关键属性,核心关系,权威所有者
+行动主体,Agent,具备身份、能力、状态和责任边界的执行主体,"agent_id,domain_id,status,trust_profile",belongs_to Domain; exposes Capability; produces Trace,所属领域
+责任域,Domain,承载专业规则、数据和验收责任的边界,"domain_id,owner,policy_namespace","owns Space, Task, Artifact, Policy",领域所有者
+协作空间,Space,按主体、目的和数据分类隔离的访问边界,"space_id,space_type,classification",contains projection of State/Event/Artifact/Semantic/Governance,空间所有者
+能力,Capability,可被发现、验证和调用的版本化能力契约,"capability_id,version,scopes,risk_level,status",provided_by Agent; governed_by Policy,能力提供方
+任务,Task,带目标、约束、责任、依赖和验收标准的工作聚合,"task_id,state,version,priority,deadline",assigned_to Agent; depends_on Task; produces Artifact,委托/创建领域
+痕迹,Trace,不可变的事实、意图、任务或治理事件记录,"trace_id,type,occurred_at,recorded_at,causation_id",causes Trace; refers_to Task/Artifact/Decision,产生主体/平台托管
+成果,Artifact,具有版本、哈希、来源和访问策略的交付物,"artifact_ref,version,hash,classification",produced_by Agent; evidenced_by Evidence,成果生产方
+证据,Evidence,支撑事实、判断、验证或审批的可追溯材料,"evidence_id,source,method,confidence,integrity",supports Claim/Decision/Verification,证据产生方
+策略,Policy,限制主体对资源执行动作的规则,"policy_id,version,scope,effect",governs Agent/Task/Artifact/Action,授权治理主体
+决策,Decision,由有权主体作出的审批、拒绝或治理决定,"decision_id,outcome,scope,valid_until",authorizes/denies Action; references Evidence,授权决策主体
+租约,Lease,限定任务执行权的短期、可撤销凭证,"lease_id,holder,expires_at,fencing_token",grants temporary execution ownership of Task,任务协调服务
+订阅,Subscription,Agent 对痕迹类型和过滤条件的注册,"subscription_id,filter,purpose,expires_at",owned_by Agent; observes Trace,订阅主体
+委托,Delegation,主体在明确范围内授予另一主体代表执行的授权,"delegation_id,grantor,grantee,scope,expiry",delegates Action under Policy,授权主体
+评估,Evaluation,对成果、能力或进化候选进行独立验证的记录,"evaluation_id,baseline,result,evaluator",evaluates Artifact/Capability/Candidate,独立评估主体
+进化候选,EvolutionCandidate,尚未发布的策略、模板、语义或能力改进提案,"candidate_id,version,scope,risk,rollback_ref",derived_from Evidence; evaluated_by Evaluation,候选提出方；发布需治理审批

@@ -1,0 +1,11 @@
+威胁,攻击路径,控制措施,检测证据,升级条件
+Prompt/Trace Injection,恶意文本伪装可信指令,内容与策略隔离、来源标记、沙箱、人工确认,来源链、策略命中、隔离事件,影响高风险动作
+Sybil/伪造Agent,创建多个虚假主体刷热度,身份绑定、速率限制、来源簇、信誉独立验证,主体关联、异常速率,跨域协同操纵
+Replay,重放旧事件/授权/命令,事件ID去重、有效期、nonce、policy epoch,重复ID、过期token,产生副作用
+Confused Deputy,借Runtime权限访问未授权资源,请求绑定主体/动作/资源/目的；本地PEP,PDP决策、PEP审计,敏感数据越权
+跨域泄漏,事件或Artifact投影过宽,字段最小化、受控引用、域本地PEP,投影审计、DLP事件,任意敏感字段外泄
+Stale Authorization,撤权后缓存继续使用,短时令牌、策略epoch、PEP本地校验,撤权传播延迟,超出风险阈值
+Capability Poisoning,虚报能力/恶意工具注册,能力验证、版本签名、负责人和验收证据,能力验证记录,触发生产任务
+Resource Exhaustion,事件风暴/无限订阅/任务竞争,速率限制、配额、背压、aging,队列积压、配额告警,控制面失稳
+Fencing Bypass,下游不校验旧token,资源端强制校验、负向测试,token拒绝/成功日志,任何旧token成功
+RSI Policy Drift,候选修改根策略/权限,独立评估、签名发布、人类审批、回滚,策略diff、审批链,越过治理边界

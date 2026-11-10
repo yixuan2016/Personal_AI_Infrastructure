@@ -1,0 +1,5 @@
+对象,字段,说明,权威来源,关键约束
+KnowledgeCandidate,"candidate_id,type,claims,source_refs,counterevidence,domain_scope,status",知识候选,Knowledge Registry,不允许直接写入公共生产知识
+KnowledgeRelease,"release_id,candidate_id,version,validation_ref,shadow_ref,approval_ref,rollback_ref",知识发布,Domain/ADS Knowledge Registry,策略知识必须人类审批
+RepairPlan,"repair_id,trigger_event,affected_tasks,actions,risk,approval_ref,rollback_ref",自修复计划,Runtime/Repair Registry,不确定外部副作用需人工升级
+RepairExecution,"repair_id,actor,lease_ref,fencing_ref,policy_ref,result,evidence_ref",修复执行记录,Trace Ledger,不可删除原始故障证据

@@ -1,0 +1,131 @@
+{
+  "spec_version": "1.2.0-draft",
+  "profiles": [
+    {
+      "id": "EC-BASE",
+      "name": "环境基础",
+      "requires": [
+        "身份上下文",
+        "空间隔离",
+        "数据分类",
+        "审计入口"
+      ]
+    },
+    {
+      "id": "EC-TRACE",
+      "name": "痕迹发布与消费",
+      "requires": [
+        "Trace Schema 校验",
+        "不可变追加",
+        "幂等消费",
+        "因果关联"
+      ]
+    },
+    {
+      "id": "EC-TASK",
+      "name": "任务协作运行时",
+      "requires": [
+        "CAS 认领",
+        "租约",
+        "fencing token",
+        "状态迁移校验",
+        "死信处理"
+      ]
+    },
+    {
+      "id": "EC-GOV",
+      "name": "治理与动态授权",
+      "requires": [
+        "PDP/PEP",
+        "目的绑定",
+        "撤权",
+        "审批决策记录",
+        "fail-closed"
+      ]
+    },
+    {
+      "id": "EC-FED",
+      "name": "跨域联邦",
+      "requires": [
+        "双向节点身份",
+        "最小数据投影",
+        "契约版本协商",
+        "撤权传播",
+        "对账"
+      ]
+    },
+    {
+      "id": "EC-RSI",
+      "name": "受控进化",
+      "requires": [
+        "独立评估",
+        "Shadow",
+        "Canary",
+        "审批",
+        "回滚演练"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "id": "CV-001",
+      "name": "重复事件投递",
+      "input": "同一 trace_id 和 idempotency_key 重放 10 次",
+      "expected": "一个业务效果；返回稳定结果"
+    },
+    {
+      "id": "CV-002",
+      "name": "并发认领",
+      "input": "两个 Agent 同时 claim 同一 ready task",
+      "expected": "恰好一个有效租约"
+    },
+    {
+      "id": "CV-003",
+      "name": "过期租约写入",
+      "input": "旧 holder 使用旧 fencing_token 提交",
+      "expected": "拒绝提交并记录 stale token"
+    },
+    {
+      "id": "CV-004",
+      "name": "撤权后访问",
+      "input": "撤权生效后读取同一 Artifact URI",
+      "expected": "拒绝或按新策略脱敏；记录审计"
+    },
+    {
+      "id": "CV-005",
+      "name": "策略引擎故障",
+      "input": "PDP 不可用时请求 L3 外部动作",
+      "expected": "DEFER/DENY，不默认放行"
+    },
+    {
+      "id": "CV-006",
+      "name": "跨域字段投影",
+      "input": "请求包含未授权字段",
+      "expected": "字段被剔除或整体拒绝，绝不静默扩大"
+    },
+    {
+      "id": "CV-007",
+      "name": "未知 Schema 主版本",
+      "input": "消费者接收不支持的 major version",
+      "expected": "隔离并返回版本不兼容"
+    },
+    {
+      "id": "CV-008",
+      "name": "事件循环",
+      "input": "因果深度或预算达到上限",
+      "expected": "停止扩散并进入冷却/死信"
+    },
+    {
+      "id": "CV-009",
+      "name": "RSI 未审批发布",
+      "input": "E4 候选试图跳过审批发布",
+      "expected": "发布门禁拒绝并审计"
+    },
+    {
+      "id": "CV-010",
+      "name": "联邦节点断连恢复",
+      "input": "节点离线后恢复并重放投影事件",
+      "expected": "按版本对账；无重复副作用"
+    }
+  ]
+}

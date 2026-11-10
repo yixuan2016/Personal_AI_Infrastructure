@@ -1,0 +1,127 @@
+[
+  {
+    "path": "Agent_Ecology_V1.6_生态世界模型与群体智能数字孪生架构.docx",
+    "bytes": 28534555,
+    "sha256": "61ee144bf807f9322f3462c00ac1e929c6b708b0a6fc83e653a7bd7489b93651"
+  },
+  {
+    "path": "Agent_Ecology_V1.6_生态世界模型与群体智能数字孪生架构.md",
+    "bytes": 40580,
+    "sha256": "45c4db9d74632c1404a69c6898ced650ef4eb9e86f86f5733dfb1393d4d74b21"
+  },
+  {
+    "path": "Agent_Ecology_V1.6_生态世界模型与群体智能数字孪生架构.pdf",
+    "bytes": 70583753,
+    "sha256": "3e78f80d96afc6d38d8c6e0bedbd45c5467447302f132569aa96ed36fa88458e"
+  },
+  {
+    "path": "README_资料包说明.md",
+    "bytes": 255,
+    "sha256": "ae1cf716f483897448747c6e21b91fe1e9e64e4256d4c1afb2331725ee98c1e5"
+  },
+  {
+    "path": "assets/00_V1.6_生态世界模型全景图_8k.png",
+    "bytes": 21516582,
+    "sha256": "802065522dfd01919682fec5ef01833c58c3382c3b3a8daa5e5171015c590b10"
+  },
+  {
+    "path": "assets/26_V1.6_生态世界模型分层架构_8k.png",
+    "bytes": 1674198,
+    "sha256": "d7347fab6857a1af8060adaa2ac86c3f9ad09bd99eacb26fe0297ed890a17673"
+  },
+  {
+    "path": "assets/26_V1.6_生态世界模型分层架构_8k.svg",
+    "bytes": 6055,
+    "sha256": "4831c51fa063992af6f733664bb9ae5578adcfe8e548ac9f0ece9a3de5d68c0f"
+  },
+  {
+    "path": "assets/27_V1.6_数字孪生同步与仿真闭环_8k.png",
+    "bytes": 1623973,
+    "sha256": "cd0ff7c1fcde89e4a8061ac75ee2e75532d94249a43f9e42612593c61414f2f8"
+  },
+  {
+    "path": "assets/27_V1.6_数字孪生同步与仿真闭环_8k.svg",
+    "bytes": 6170,
+    "sha256": "08afb7795701b6ebeec7adaa9311be9eb02ec147dc867bf4d2055a72927ac9b6"
+  },
+  {
+    "path": "assets/28_V1.6_反事实推演与方案比较_8k.png",
+    "bytes": 1666620,
+    "sha256": "5525bbee2c60573ff7107e4eb252502427509413f4bbd1060baf378e285defad"
+  },
+  {
+    "path": "assets/28_V1.6_反事实推演与方案比较_8k.svg",
+    "bytes": 6193,
+    "sha256": "f8bed75cc6ddf5a7ea6cb3eb3d21e63580fd7b6eac979f0b44459966cdd3f594"
+  },
+  {
+    "path": "assets/29_V1.6_ADS预测驱动决策与治理_8k.png",
+    "bytes": 1510198,
+    "sha256": "d8611d0c388ff914afa74fa626a63ebb74caa25d984d73b2cfae80b4e9818b96"
+  },
+  {
+    "path": "assets/29_V1.6_ADS预测驱动决策与治理_8k.svg",
+    "bytes": 6065,
+    "sha256": "a24da65c2fd9bd1f9bdb3b135ea2e6db685684b11bdad747b8b917883cb8583a"
+  },
+  {
+    "path": "assets/30_V1.6_模型可信度与验证生命周期_8k.png",
+    "bytes": 1407320,
+    "sha256": "c4a146272998ac3d1b3bd70497bd04219eedff1984da8f1f0c538fcf9f701a8a"
+  },
+  {
+    "path": "assets/30_V1.6_模型可信度与验证生命周期_8k.svg",
+    "bytes": 7002,
+    "sha256": "1d233298b70413a2021461ca915f4e4297df4a8ac1f99a69107ce49da218a845"
+  },
+  {
+    "path": "assets/31_V1.6_资源短缺反事实决策示例_8k.png",
+    "bytes": 1930772,
+    "sha256": "590400c62c943e493dda9753a30134992ed63f1c3859ca92709e4f38a2ba587c"
+  },
+  {
+    "path": "assets/31_V1.6_资源短缺反事实决策示例_8k.svg",
+    "bytes": 6189,
+    "sha256": "3a83dbf5c283127549d77270bd193b096fcda2b780d93beecf67d4fac26d96c6"
+  },
+  {
+    "path": "contracts/V1.6_世界模型与实验契约.csv",
+    "bytes": 1237,
+    "sha256": "21e7a4a4344ffade1262846baf88942917dd29e84be64be64f03a9e4c5a81a17"
+  },
+  {
+    "path": "contracts/V1.6_事件目录.csv",
+    "bytes": 1523,
+    "sha256": "b06ae16ba86348bd09df6664c07bf2c43e53788be714e2327b53dce100eb1f3e"
+  },
+  {
+    "path": "contracts/V1.6_决策治理与模型发布契约.csv",
+    "bytes": 854,
+    "sha256": "fac24cd2dae61b7c9f9be50d2a69d4d3012ed30ebb6408aa1d9dcdeb9908cb7b"
+  },
+  {
+    "path": "contracts/V1.6_生态状态快照契约.csv",
+    "bytes": 1029,
+    "sha256": "ff3d909f0d2246f8df074188507bbd08fb6222830c44246fbdc0e30b92779295"
+  },
+  {
+    "path": "reference_architecture/V1.6_参考部署与模型治理边界.md",
+    "bytes": 2127,
+    "sha256": "6368a31f30085f3abfb2461d0294dee54da0af877e3a1479d327f88213475d70"
+  },
+  {
+    "path": "research/V1.6_研究证据与原始资料.csv",
+    "bytes": 2817,
+    "sha256": "181c6c27d0bbba2e5e02a14edfa1bc49401654cb9fd6ac93a0fc6dee2427c52c"
+  },
+  {
+    "path": "validation/V1.6_威胁与模型风险矩阵.csv",
+    "bytes": 1191,
+    "sha256": "39eab4117d11a5f911d26411308d72c42c1153ecedc7fbfe23509042608c2157"
+  },
+  {
+    "path": "validation/V1.6_模型验证与孪生验收矩阵.csv",
+    "bytes": 1440,
+    "sha256": "e3e3ddf7b669b7978d9d2135cbca7659f57aeb4b7694af711be5cabf702b1d48"
+  }
+]
