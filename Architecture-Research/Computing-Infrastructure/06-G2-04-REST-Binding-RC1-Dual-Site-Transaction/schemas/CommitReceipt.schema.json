@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.invalid/aee-ascp/g2-04/commitreceipt.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "CommitReceipt",
+  "required": [
+    "transaction_id",
+    "site_id",
+    "reservation_ref",
+    "lease_ref",
+    "fencing_epoch",
+    "lease_expires_at",
+    "contract_digest",
+    "state_version",
+    "signature_ref"
+  ],
+  "properties": {
+    "transaction_id": {
+      "type": "string"
+    },
+    "site_id": {
+      "type": "string"
+    },
+    "reservation_ref": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "lease_ref": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "fencing_epoch": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "lease_expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "contract_digest": {
+      "type": "string"
+    },
+    "state_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "signature_ref": {
+      "type": "string",
+      "format": "uri-reference"
+    }
+  }
+}

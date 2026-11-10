@@ -1,0 +1,18 @@
+{
+  "type": "urn:example:problem:precondition-failed",
+  "title": "ETag version mismatch",
+  "status": 412,
+  "detail": "The object changed after the client read its prior version. Fetch the latest authorized view before retrying.",
+  "instance": "urn:example:request:req-001",
+  "code": "PRECONDITION_FAILED",
+  "correlation_id": "corr-001",
+  "retryable": false,
+  "authority_ref": "urn:example:owner:task-contract-001",
+  "violations": [
+    {
+      "path": "headers.If-Match",
+      "reason": "ETag does not match current object version",
+      "code": "ETAG_MISMATCH"
+    }
+  ]
+}

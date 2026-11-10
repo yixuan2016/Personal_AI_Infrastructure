@@ -1,0 +1,18 @@
+﻿对象,当前状态,触发事件/命令,前置条件,下一状态,权威签发者,必须证据,超时/未知处理
+FederatedTaskTransaction,Draft,SubmitContract,合同草案完整、调用身份有效,Validating,SCO Transaction Coordinator,TransactionRef + ContractDigest,校验超时保持Validating/Unknown并查询Operation
+FederatedTaskTransaction,Validating,ValidationPassed,Ontology兼容、策略引用可解析、验收标准齐备,AwaitingApproval,Contract Validator + SCO,ValidationReport,缺证据拒绝或补充
+FederatedTaskTransaction,AwaitingApproval,ApprovalGranted,合同签署方与风险审批人批准,Preparing,Contract Parties / Human Approver,SignatureSet / ApprovalRecord,审批超时Expired或Escalated
+FederatedTaskTransaction,Preparing,AllPrepareReceiptsValid,所有必需站点Prepared且TTL有效,Prepared,Site Reservation Authorities,PrepareReceipt[],任一Unknown先对账；失败触发释放已准备项
+FederatedTaskTransaction,Prepared,CommitRequested,Prepare TTL剩余时间足够、撤销水位新鲜,Committing,SCO Saga Coordinator,CommitCommand[],部分提交进入Compensating
+FederatedTaskTransaction,Committing,AllCommitReceiptsValid,每站点Lease/Fencing签名有效,Committed,Site Lease Authorities,CommitReceipt[],状态不明进入RecoveryRequired
+FederatedTaskTransaction,Committed,BarrierChecksPassed,Policy/Grant/Trust/Attestation/TaskClaim全部有效,Activated,SCO协调；Site LCP各自签Ready,ActivationBarrierRecord,任一必需条件失败不得激活
+FederatedTaskTransaction,Activated,AllSiteActivationAck,本地再次检查通过且token未过期,Executing,Site Task Coordinators,ActivationAck[] / TaskRunRef[],缺站点回执则暂停全局推进并对账
+FederatedTaskTransaction,Executing,AllRequiredRunsTerminal,各Site TaskRun到达约定终态,ResultPending,Site Task Owners,TaskStageEvent[],Unknown不得推断终态
+FederatedTaskTransaction,ResultPending,ResultsSubmitted,Result/Artifact digest、来源和版本可验证,AcceptancePending,Result/Artifact Owners,ResultSubmissionReceipt[],缺少结果项按合同处理
+FederatedTaskTransaction,AcceptancePending,AcceptanceAccepted,独立验收方签名、criteria版本匹配,SettlementPending,Independent Acceptance Owner,AcceptanceRecord,Rejected/Disputed不得推进结算
+FederatedTaskTransaction,SettlementPending,SettlementConfirmed,计量记录签名、金额/币种/争议窗有效,Settled,Settlement Owner,SettlementRecord,争议进入Disputed
+FederatedTaskTransaction,任意可取消状态,CancelRequested,调用主体有权、补偿计划可执行,Compensating,SCO Saga Coordinator + Site Owners,CancelOperation + SagaRecord,不可确认本地停止时RecoveryRequired
+FederatedTaskTransaction,Compensating,AllCompensationsConfirmed,站点Stop/Release回执均有效,Aborted,各Site Owner + SCO投影,StopReceipt[] / ReleaseReceipt[],任何步骤Unknown保持RecoveryRequired
+FederatedTaskTransaction,任意状态,AuthorityStateUnknown,网络分区/超时/事件gap,RecoveryRequired,原对象权威Owner,ReconciliationReport,先对账，不盲重试
+FederatedTaskTransaction,任意未终态,PolicyOrGrantRevoked,撤销已生效或撤销水位超陈旧窗口,Suspending/Compensating,Policy/Data Owner + Site PEP,RevocationReceipt + PEP Receipt,Fail-closed，按合同补偿
+FederatedTaskTransaction,任意状态,SettlementDisputed,参与方提出有证据争议,Disputed,Settlement Owner / Dispute Authority,DisputeCase,冻结争议金额，不覆盖原始计量
