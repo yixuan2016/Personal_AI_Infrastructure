@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.invalid/aee-ascp/g2-04/operationresponsecontext.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "OperationResponseContext",
+  "required": [
+    "operation_ref",
+    "command_status",
+    "reconciliation_required"
+  ],
+  "properties": {
+    "operation_ref": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "object_ref": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "object_type": {
+      "type": "string"
+    },
+    "command_status": {
+      "type": "string"
+    },
+    "authoritative_state": {
+      "type": "object",
+      "required": [
+        "authority_ref",
+        "state",
+        "state_version",
+        "as_of"
+      ],
+      "properties": {
+        "authority_ref": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "state": {
+          "type": "string"
+        },
+        "state_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "freshness_seconds": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "result_ref": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "event_cursor": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "reconciliation_required": {
+      "type": "boolean"
+    }
+  }
+}

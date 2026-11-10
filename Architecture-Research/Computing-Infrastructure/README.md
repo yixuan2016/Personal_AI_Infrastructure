@@ -1,35 +1,69 @@
-# 算力底座架构研究资料总目录
+# Personal AI Infrastructure｜算力底座架构研究归档
 
-本目录集中沉淀“算力底座”项目的架构研究、协议契约、治理矩阵、双站点联邦验证与版本发布资料。研究范围为架构设计和技术决策，不包含未经批准的工程实现代码。
+**归档日期：** 2026-11-10  
+**仓库路径：** `Architecture-Research/Computing-Infrastructure/`  
+**性质：** 架构研究与机器可读契约候选资料；不包含生产实现代码，不代表 Owner 已签署或真实双站点测试通过。
 
-## 目录原则
+## 1. 归档范围
 
-- `00-Source-Baselines/`：源基线、术语、范围与设计输入。
-- `01-G0-Architecture-Governance/`：架构治理、责任边界、决策与签署机制。
-- `02-G1-Ontology-Protocol-Consistency/`：Ontology V3.1、DM04/IFC0.2、语义与协议一致性。
-- `03-G2-OntologyV3.1-IFC0.2-Contract-Governance/`：ADS/SCO API、75个操作映射、六域权威矩阵与契约缺口。
-- `06-G2-04-REST-Binding-RC1-Dual-Site-Transaction/`：REST Binding RC1、双站点交易状态机、Prepare/Commit、回执、故障注入与互操作验收。
-- `archives/`：各阶段完整归档包。
-- `manifests/`：文件清单与SHA-256校验记录。
+本目录独立保存算力底座与双站点联邦互操作相关资料，不修改仓库根目录、PAI 核心文件、既有 Packs、Releases 或安全配置。
 
-## 当前已确认的架构原则
+| 目录 | 内容 | 当前状态 |
+|---|---|---|
+| `00-Source-Baselines/` | DM04 跨域交易接口与数据契约冻结候选基线 | RC0 候选 |
+| `01-G0-Architecture-Governance/` | 六域权威责任、签署边界、URI 治理 | 待双方 Owner 签署 |
+| `02-G1-Ontology-Protocol-Consistency/` | Ontology、DM04、A2A、CloudEvents、FWSX 分层一致性 | 候选，66 项验收待执行 |
+| `03-G2-OntologyV3.1-IFC0.2-Contract-Governance/` | Ontology V3.1、IFC0.2、ADS/SCO API、75 操作映射 | RC0 候选；待评审 |
+| `04-AEE-ASCP-V1.0-RC0/` | AEE/ASCP V1.0 初始契约评审 | RC0 候选 |
+| `05-AEE-ASCP-V1.1-RC0-Dual-Site-Interop/` | 六域映射、双站点联邦互操作、18 项增量验收 | RC0 候选，待执行 |
+| `06-G2-04-REST-Binding-RC1-Dual-Site-Transaction/` | REST Binding RC1、交易状态机、Activation Barrier、Saga、40 项故障注入 | RC1 候选，待评审 |
+| `archives/` | G0/G1/G2/AEE-ASCP 原始完整 ZIP 包 | 历史附件；非唯一交付 |
+| `manifests/` | 文件清单、SHA-256、来源与版本状态 | 本次归档生成 |
 
-1. 本地与云端混合运行、混合式数据架构、渐进式微服务拆分是既定方向；部署位置、数据架构和服务拆分是三个独立决策维度。
-2. ADS承担跨域治理、共同语义、能力发现与协同，不取代领域Owner的最终授权和专业责任。
-3. SCO负责跨站点任务/资源协调，不取代站点本地Task Owner、PDP/PEP和Lease Authority。
-4. Operation只表达命令/编排状态；业务对象状态必须由其权威Owner提供。
-5. Prepare不等于Commit；Plan选择不等于资源预留；SCO不签发本地Lease/FencingToken。
-6. 结果提交、独立验收、计量和结算必须保持责任主体分离。
-7. UNKNOWN状态必须触发权威对账，不得推定成功或失败；撤销水位过期时高风险操作Fail-closed。
+## 2. 研究演进关系
 
-## G2-03 盘点摘要
+- **G0：** 固定六域权威与签署边界，明确 SCO/ADS/站点本地 Owner 的责任分离。
+- **G1：** 校正 Ontology 与协议映射，分清 A2A、CloudEvents、FWSX、DM04 的协议层次。
+- **G2：** 推进 Ontology V3.1、DM04 IFC0.2 增量提案和 ADS/SCO REST Binding；完成 75 个 operation 逐项映射及 16 项契约缺口识别。
+- **G2-04：** 将契约治理落实到 REST Header、幂等、ETag、强类型响应、跨站点 Prepare/Commit、Activation Barrier、Saga 恢复和独立验收。
 
-- ADS：40 operations / 38 paths。
-- SCO：35 operations / 35 paths。
-- 合计：75 operations。
-- 已形成六域Owner/Coordinator/Authority映射、16项契约缺口、关键对象状态机与REST Header/Envelope绑定矩阵。
-- 关键待整改项：RequestEnvelope未被Path引用、GenericCommand过宽、强类型响应不足、EvaluatePolicy结果类型、Operation与业务状态分离、Idempotency/Request-ID/Correlation-ID/If-Match Header声明、ListRunOperations文档与OpenAPI差异。
+## 3. 全局架构不变量
 
-## 发布状态说明
+1. ADS 是横向协同治理与共同语义层，不是单纯网关或调度器；但不能替代资源/数据 Owner 的最终授权。
+2. SCO 管理跨站点合同、计划、Saga 与全局交易投影；不签发本地 ResourceLease/FencingToken，不绕过 Site LCP / PDP / PEP。
+3. TaskClaim 与 ResourceLease 分离；两者都不能替代 PolicyDecision。
+4. 目录登记 ≠ 能力验证 ≠ 发布 ≠ 领域采用 ≠ 运行可用。
+5. 数据可发现 ≠ 可读取 ≠ 可训练；DataUseGrant 由 Data Owner 签发，目标站点 PEP 每次访问复核。
+6. Operation Accepted ≠ 业务对象成功；Unknown ≠ Failed，必须先向原权威 Owner 对账。
+7. 结果提交 ≠ 独立验收；验收 ≠ 最终结算。
+8. 多 Agent 协作以共享环境中的持久状态、事件、claim、回执和证据为主；A2A 消息是协商/唤醒通道，不是唯一事实源。
+9. 高风险动作保留人类外环治理、审批、否决、接管和最终问责权。
 
-当前研究归档分支：`docs/compute-base-g2-20261110`。本目录内容以阶段性提交方式进入仓库；必须以分支HEAD、文件清单和SHA-256核验结果判断完整性。未完成的批次不得标记为“全部推送完成”，未经评审不得合并到main或标记正式冻结。
+## 4. 本次 G2-04 重点
+
+- `Idempotency-Key`：非幂等副作用 POST 必需；同 key 不同 digest 返回 409。
+- `If-Match / ETag`：更新已有对象必需；缺失 428，版本冲突 412。
+- `X-Request-ID` / `X-Correlation-ID`：与逻辑 Envelope 字段一致。
+- `ResponseContext`：分离 Operation 命令状态与业务对象权威状态。
+- `Activation Barrier`：所有必需站点 CommitReceipt、Policy、Grant、Trust、Attestation、撤销水位和本地 Ready 回执通过才允许激活。
+- `Saga`：部分 Commit 不启动；Unknown 先对账；补偿以 Stop/Release/Reconcile 回执追加事实。
+- `40 项故障注入矩阵`：覆盖重复请求、部分成功、网络分区、撤销缺口、旧 FencingToken、验收和结算争议等。
+
+## 5. 版本与验证声明
+
+所有阶段文件均保留其原始状态标签。RC0/RC1、Proposed、Candidate、待签署、待验证等状态不因归档或推送而自动升级。Schema 结构检查、静态矩阵和图表生成不等于 OpenAPI 工具链互操作、Owner 签署、真实部署或双站点验收通过。
+
+## 6. 后续放行顺序
+
+1. ADS/SCO API Owner 与六域 Owner 审核 G2-03 75 操作映射。
+2. REST Binding RC1 转为机器可读 OpenAPI，统一工具链验证。
+3. Site A/B 签署本地 Reservation/Lease/TaskRun 权威边界与 Barrier 条件。
+4. 执行 G1 66 项与 G2-04 40 项测试，增加两套独立实现互操作证据。
+5. 故障注入通过、证据链齐全、回滚/补偿有效后，才考虑正式冻结。
+
+## 7. 目录使用约定
+
+- 本目录只放算力底座架构研究、契约、图表、验收矩阵和版本证据。
+- 不放个人 MEMORY、私密聊天记录、凭据、密钥、真实访问令牌、客户数据或本地私有目录。
+- 不覆盖仓库既有 README、安全配置、PAI 受保护文件或其他 Pack。
+- 原始 ZIP 仅用于完整包下载；可审查源文件以目录内的 Markdown、CSV、JSON Schema、SVG、Word、Excel 为准。
