@@ -1,0 +1,17 @@
+﻿缺口编号,主题,源文件事实,风险说明,风险等级,G2整改建议
+G2-API-01,ADS/SCO RequestEnvelope未绑定,两份OpenAPI都定义RequestEnvelope，但Path引用0次；GenericCommand分别被24/22个Path引用,逻辑契约与REST body映射断裂,高,RC1建立显式REST Binding；保留逻辑DM04 RequestEnvelope；不在IFC0.2偷偷加顶层身份字段
+G2-API-02,GenericCommand过宽且payload可选,5个必需元数据字段；payload可选；additionalProperties=true,接口无法按操作验证业务载荷；未知字段可能被默默接受,极高,共享CommandMetadata + 每操作typed payload；副作用操作payload必需；未知关键字段拒绝
+G2-API-03,ResourceReference作为大量业务响应,ADS/SCO多个GET与同步POST返回ResourceReference,对象真实字段、签名、Owner、版本、列表分页语义不完整,高,定义Typed View与Page<T>；ResourceReference仅作引用/导航
+G2-API-04,EvaluatePolicy异步结果类型不明确,ADS EvaluatePolicy返回202 Operation；PolicyDecision规范字段未在响应Schema表达,调用方可能把受理当Permit或无法取得签名Decision,极高,同步返回PolicyDecision，或Operation.result_ref必须指向强类型PolicyDecision；Indeterminate fail-closed
+G2-API-05,Operation与业务对象状态混淆,Operation.status为Accepted/Running/…；没有authoritative_state,异步受理被误读为合同/运行/租约/验收状态,极高,Operation只表达命令处理；响应增加ResponseContext与权威对象状态引用
+G2-API-06,SCO规范文档与OpenAPI目录不一致,SCO DOCX列出GET /runs/{run_id}/operations / ListRunOperations；机器可读OpenAPI缺少该操作,人工规范与可执行契约漂移,中,新增接口或修订DOCX目录；以一致版本的OpenAPI和差异测试为准
+G2-API-07,幂等/关联/并发Header未声明,两份OpenAPI 0个Header参数；SCO DOCX要求Idempotency-Key、X-Request-ID、X-Correlation-ID、If-Match/ETag,文档有要求但机器契约未表达；可能出现重复执行和盲覆盖,极高,定义Header参数组件；Header/Body重复值必须一致；更新操作要求If-Match
+G2-API-08,Lease API权威边界不够显式,SCO有RenewLease/ReleaseLease/ReconcileLease,可能误认为SCO持有本地租约写权,极高,接口明确为Request/Forward/Reconcile；Lease Authority在Site LCP；Owner签名Lease/Receipt
+G2-API-09,TaskRun本地执行责任映射,Start/Suspend/Resume/Cancel/Retry通过SCO触发,SCO可能越过本地PEP/LCP直接执行,极高,命令只请求；Site Task Coordinator与PDP/PEP、Lease Authority作最终判定并回执
+G2-API-10,Result/Acceptance独立性,SubmitResult与RequestAcceptance分开，但响应均异步Operation,执行者提交结果可能被误当成验收；Acceptance Owner身份不明确,极高,Result与OutputArtifact独立；AcceptanceRecord由合同指定独立验收方签发
+G2-API-11,Settlement草案与最终结算,CalculateSettlement只称生成草案；未见独立Confirm/Settle接口,草案状态、签署权、争议窗口、最终结算责任需明确,高,明确Settlement Owner签发和确认动作；若需要确认端点，新增独立operation
+G2-API-12,列表响应缺少强类型分页契约,多处page_token/page_size但成功响应为ResourceReference,分页游标、items、next_page_token、来源新鲜度缺Schema,高,定义Page<T>与按域强类型列表响应
+G2-API-13,OpenAPI版本与工具链验证,ADS/SCO声明3.2.1；DM04参考绑定另有3.1.1候选；RC0尚未验证,跨工具生成/校验/代码生成兼容性未知,中,固定共同Parser/Validator/Generator并进行两实现一致性测试
+G2-API-14,占位域名与URI未注册,servers使用example.invalid；Profile URI使用controlled-domain模板,无法作为跨站点生产发现/签名/Schema解析地址,高,指定受控域名Owner、TLS、URI台账、稳定Schema/Digest和弃用规则
+G2-API-15,策略与数据授权状态不够分层,Policy/Grant Publish/Issue/Revoke与本地Adopt/Enforce/Access动作容易混淆,中心目录状态可能覆盖资源Owner权威,极高,状态分层：Registered/Verified/Published/Adopted/Authorized/Enforced/Available独立记录
+G2-API-16,撤销增量缺少分区水位和缺口处理,GetRevocationDelta只抽象为delta查询,漏事件、旧缓存回滚、分区顺序无法验证,极高,按issuer/authority partition维护sequence/checkpoint；检测gap；高风险操作超陈旧窗口Fail-closed
