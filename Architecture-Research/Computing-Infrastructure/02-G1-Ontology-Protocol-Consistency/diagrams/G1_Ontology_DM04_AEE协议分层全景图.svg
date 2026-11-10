@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1350" viewBox="0 0 2400 1350">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#1c2e42"/></linearGradient>
+<linearGradient id="head" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#234f67"/><stop offset="1" stop-color="#346c80"/></linearGradient>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#edf4f8}
+.t{font-size:46px;font-weight:700}.sub{font-size:22px;fill:#b9cbd7}.h{font-size:29px;font-weight:700}.n{font-size:23px;font-weight:700}.b{font-size:18px;fill:#d0dee7}.s{font-size:15px;fill:#b8c9d5}
+.a{fill:#1d394c;stroke:#7da6ba;stroke-width:2}.p{fill:#2a4e62;stroke:#93b9cb;stroke-width:2}.g{fill:#293750;stroke:#91a4be;stroke-width:2}
+.line{stroke:#85adc0;stroke-width:3;fill:none}
+</style>
+<marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12z" fill="#85adc0"/></marker>
+</defs>
+<rect width="2400" height="1350" fill="url(#bg)"/>
+<text x="1200" y="68" text-anchor="middle" class="t">G1｜Ontology × DM04 × AEE/ASCP × 协议分层</text>
+<text x="1200" y="108" text-anchor="middle" class="sub">一套共同语义 · 一套交易契约 · 多协议分工 · 本地权威不转移</text>
+
+<rect x="90" y="145" width="2220" height="150" rx="22" fill="url(#head)" stroke="#8ab5c9" stroke-width="2"/>
+<text x="1200" y="190" text-anchor="middle" class="h">Ontology V3.0｜共同语义层</text>
+<text x="1200" y="232" text-anchor="middle" class="b">Participant · Site · Resource · Capability · TaskContract / TaskRun / TaskStage</text>
+<text x="1200" y="266" text-anchor="middle" class="b">Trust / Policy / DataUseGrant / ResourceLease / EvidenceRecord / AcceptanceRecord / Metering / Settlement</text>
+
+<rect x="90" y="340" width="2220" height="170" rx="22" class="a"/>
+<text x="1200" y="385" text-anchor="middle" class="h">DM04｜跨域业务契约与权威状态</text>
+<g class="b" text-anchor="middle">
+<text x="315" y="435">联邦治理</text><text x="675" y="435">身份与授权</text><text x="1035" y="435">数据空间</text><text x="1395" y="435">算力星</text><text x="1755" y="435">联邦任务</text><text x="2115" y="435">证据与验收</text>
+</g>
+<g class="s" text-anchor="middle">
+<text x="315" y="475">Trust / Profile</text><text x="675" y="475">IAM / PDP / PEP</text><text x="1035" y="475">Data Contract / Grant</text><text x="1395" y="475">Offer / Quote / Lease</text><text x="1755" y="475">ContractGraph / Saga</text><text x="2115" y="475">Evidence / Acceptance</text>
+</g>
+
+<rect x="90" y="555" width="2220" height="165" rx="22" class="p"/>
+<text x="1200" y="598" text-anchor="middle" class="h">AEE / ASCP｜横切 Profile（不新增第七域）</text>
+<g text-anchor="middle">
+<rect x="125" y="625" width="330" height="65" rx="12" class="g"/><text x="290" y="665" class="n">Environment Descriptor</text>
+<rect x="495" y="625" width="330" height="65" rx="12" class="g"/><text x="660" y="665" class="n">Trace / CloudEvents</text>
+<rect x="865" y="625" width="330" height="65" rx="12" class="g"/><text x="1030" y="665" class="n">Event Subscription</text>
+<rect x="1235" y="625" width="260" height="65" rx="12" class="g"/><text x="1365" y="665" class="n">TaskClaim</text>
+<rect x="1535" y="625" width="330" height="65" rx="12" class="g"/><text x="1700" y="665" class="n">ArtifactBinding</text>
+<rect x="1905" y="625" width="360" height="65" rx="12" class="g"/><text x="2085" y="665" class="n">GovernanceContextRef</text>
+</g>
+
+<rect x="90" y="765" width="690" height="205" rx="20" class="a"/>
+<text x="435" y="810" text-anchor="middle" class="h">CloudEvents + FWSX</text>
+<text x="435" y="855" text-anchor="middle" class="b">CloudEvents：事件信封与来源</text>
+<text x="435" y="890" text-anchor="middle" class="b">FWSX：投递 / Cursor / Retry / Replay</text>
+<text x="435" y="930" text-anchor="middle" class="s">不拥有事实 · 不授予数据或Artifact权限</text>
+
+<rect x="855" y="765" width="690" height="205" rx="20" class="a"/>
+<text x="1200" y="810" text-anchor="middle" class="h">A2A 1.0</text>
+<text x="1200" y="855" text-anchor="middle" class="b">AgentCard声明 · A2A-Extensions请求激活</text>
+<text x="1200" y="890" text-anchor="middle" class="b">Message / Artifact metadata · Task metadata</text>
+<text x="1200" y="930" text-anchor="middle" class="s">不替代DM04状态机 · 不授予跨站点资源权限</text>
+
+<rect x="1620" y="765" width="690" height="205" rx="20" class="a"/>
+<text x="1965" y="810" text-anchor="middle" class="h">IFC0.2 请求/响应对齐</text>
+<text x="1965" y="855" text-anchor="middle" class="b">Principal · Workload · Audience · Purpose</text>
+<text x="1965" y="890" text-anchor="middle" class="b">Profile · Expiry · StateVersion · Digest/Signature</text>
+<text x="1965" y="930" text-anchor="middle" class="s">command_status ≠ authoritative_state</text>
+
+<path d="M1200 295 L1200 335" class="line" marker-end="url(#arr)"/>
+<path d="M1200 510 L1200 550" class="line" marker-end="url(#arr)"/>
+<path d="M435 720 L435 760" class="line" marker-end="url(#arr)"/>
+<path d="M1200 720 L1200 760" class="line" marker-end="url(#arr)"/>
+<path d="M1965 720 L1965 760" class="line" marker-end="url(#arr)"/>
+
+<rect x="90" y="1020" width="1080" height="230" rx="22" fill="#1a394a" stroke="#76a5ba" stroke-width="2"/>
+<text x="630" y="1065" text-anchor="middle" class="h">Site A｜本地权威</text>
+<text x="630" y="1110" text-anchor="middle" class="b">IAM / PDP / PEP · Data Owner / Grant · Local Task Coordinator</text>
+<text x="630" y="1150" text-anchor="middle" class="b">Resource Lease Authority / FencingToken · Evidence / Acceptance</text>
+<text x="630" y="1200" text-anchor="middle" class="s">TaskClaim由本地协调器签发；资源Lease由资源Owner签发</text>
+
+<rect x="1230" y="1020" width="1080" height="230" rx="22" fill="#2a3850" stroke="#93a3bd" stroke-width="2"/>
+<text x="1770" y="1065" text-anchor="middle" class="h">Site B｜本地权威</text>
+<text x="1770" y="1110" text-anchor="middle" class="b">IAM / PDP / PEP · Data Owner / Grant · Local Task Coordinator</text>
+<text x="1770" y="1150" text-anchor="middle" class="b">Resource Lease Authority / FencingToken · Evidence / Acceptance</text>
+<text x="1770" y="1200" text-anchor="middle" class="s">远端Permit不覆盖本地Deny；每次敏感操作本地重验</text>
+<path d="M1170 1135 L1230 1135" class="line" marker-end="url(#arr)"/>
+<text x="1200" y="1305" text-anchor="middle" class="b">G1候选图｜Ontology映射与协议分层｜所有互操作测试待执行，非生产部署图</text>
+</svg>
