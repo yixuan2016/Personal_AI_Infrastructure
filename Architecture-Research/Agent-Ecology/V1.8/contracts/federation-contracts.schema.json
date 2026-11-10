@@ -1,0 +1,503 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/agent-ecology/v1.8/federation-contracts.schema.json",
+  "title": "Agent Ecology V1.8 Federation Contract Definitions",
+  "$defs": {
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key_id",
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "key_id": {
+          "type": "string"
+        },
+        "algorithm": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "FederatedImprovementProposal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proposal_id",
+        "origin_domain",
+        "origin_rsi_version",
+        "target_scope",
+        "problem_statement",
+        "change_manifest",
+        "risk_class",
+        "evaluation_plan",
+        "content_digest",
+        "created_at",
+        "expires_at",
+        "signature"
+      ],
+      "properties": {
+        "proposal_id": {
+          "type": "string",
+          "minLength": 8
+        },
+        "origin_domain": {
+          "type": "string",
+          "minLength": 3
+        },
+        "origin_rsi_version": {
+          "type": "string"
+        },
+        "target_scope": {
+          "type": "object",
+          "required": [
+            "allowed_targets",
+            "prohibited_targets"
+          ],
+          "properties": {
+            "allowed_targets": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "prohibited_targets": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "problem_statement": {
+          "type": "string",
+          "minLength": 10
+        },
+        "hypothesis": {
+          "type": "string"
+        },
+        "change_manifest": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "artifact_id",
+              "artifact_type",
+              "digest"
+            ],
+            "properties": {
+              "artifact_id": {
+                "type": "string"
+              },
+              "artifact_type": {
+                "enum": [
+                  "prompt",
+                  "workflow",
+                  "tool",
+                  "agent",
+                  "ontology_mapping",
+                  "policy_pattern",
+                  "model_adapter",
+                  "other"
+                ]
+              },
+              "digest": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "risk_class": {
+          "enum": [
+            "R0",
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ]
+        },
+        "evaluation_plan": {
+          "type": "object",
+          "required": [
+            "baseline",
+            "metrics",
+            "stop_conditions"
+          ],
+          "properties": {
+            "baseline": {
+              "type": "string"
+            },
+            "metrics": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "stop_conditions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "evidence_bundle_ref": {
+          "type": "string"
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "license": {
+          "type": "string"
+        },
+        "signature": {
+          "$ref": "#/$defs/signature"
+        }
+      }
+    },
+    "EvidenceBundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_id",
+        "proposal_id",
+        "evidence_level",
+        "artifacts",
+        "evaluation_context",
+        "limitations",
+        "issuer",
+        "signature"
+      ],
+      "properties": {
+        "evidence_id": {
+          "type": "string"
+        },
+        "proposal_id": {
+          "type": "string"
+        },
+        "evidence_level": {
+          "enum": [
+            "E0",
+            "E1",
+            "E2",
+            "E3",
+            "E4"
+          ]
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "uri",
+              "digest",
+              "kind"
+            ],
+            "properties": {
+              "uri": {
+                "type": "string"
+              },
+              "digest": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string"
+              },
+              "media_type": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "evaluation_context": {
+          "type": "object",
+          "required": [
+            "environment",
+            "model_versions",
+            "dataset_versions",
+            "baseline"
+          ],
+          "properties": {
+            "environment": {
+              "type": "string"
+            },
+            "model_versions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "dataset_versions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "baseline": {
+              "type": "string"
+            },
+            "seed": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          }
+        },
+        "results": {
+          "type": "object"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "issuer": {
+          "type": "string"
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "signature": {
+          "$ref": "#/$defs/signature"
+        }
+      }
+    },
+    "CapabilityAttestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_id",
+        "version",
+        "owner_domain",
+        "operator_identity",
+        "input_schema",
+        "output_schema",
+        "allowed_actions",
+        "evidence_refs",
+        "valid_from",
+        "valid_until",
+        "signature"
+      ],
+      "properties": {
+        "capability_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "owner_domain": {
+          "type": "string"
+        },
+        "operator_identity": {
+          "type": "string"
+        },
+        "input_schema": {
+          "type": "string"
+        },
+        "output_schema": {
+          "type": "string"
+        },
+        "allowed_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "risk_class": {
+          "enum": [
+            "R0",
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ]
+        },
+        "valid_from": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_until": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "revocation_uri": {
+          "type": "string"
+        },
+        "signature": {
+          "$ref": "#/$defs/signature"
+        }
+      }
+    },
+    "LocalAdoptionReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "proposal_id",
+        "adopting_domain",
+        "local_version",
+        "adoption_state",
+        "local_approval_ref",
+        "local_evaluation_ref",
+        "effective_at",
+        "signature"
+      ],
+      "properties": {
+        "receipt_id": {
+          "type": "string"
+        },
+        "proposal_id": {
+          "type": "string"
+        },
+        "adopting_domain": {
+          "type": "string"
+        },
+        "local_version": {
+          "type": "string"
+        },
+        "adoption_state": {
+          "enum": [
+            "SHADOW",
+            "CANARY",
+            "ADOPTED",
+            "REJECTED",
+            "HOLD",
+            "REVOKED",
+            "ROLLED_BACK"
+          ]
+        },
+        "local_approval_ref": {
+          "type": "string"
+        },
+        "local_evaluation_ref": {
+          "type": "string"
+        },
+        "effective_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "rollback_ref": {
+          "type": "string"
+        },
+        "signature": {
+          "$ref": "#/$defs/signature"
+        }
+      }
+    },
+    "FederationEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id",
+        "event_type",
+        "producer_domain",
+        "subject",
+        "schema_version",
+        "sequence_no",
+        "event_time",
+        "recorded_at",
+        "visibility",
+        "payload_digest",
+        "signature"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string"
+        },
+        "event_type": {
+          "type": "string"
+        },
+        "producer_domain": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "task_id": {
+          "type": "string"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "sequence_no": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "event_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "visibility": {
+          "enum": [
+            "PUBLIC",
+            "FEDERATION_MEMBERS",
+            "NAMED_DOMAINS",
+            "PRIVATE_REFERENCE_ONLY"
+          ]
+        },
+        "causation_id": {
+          "type": "string"
+        },
+        "correlation_id": {
+          "type": "string"
+        },
+        "payload_digest": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "evidence_ref": {
+          "type": "string"
+        },
+        "signature": {
+          "$ref": "#/$defs/signature"
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/FederatedImprovementProposal"
+    },
+    {
+      "$ref": "#/$defs/EvidenceBundle"
+    },
+    {
+      "$ref": "#/$defs/CapabilityAttestation"
+    },
+    {
+      "$ref": "#/$defs/LocalAdoptionReceipt"
+    },
+    {
+      "$ref": "#/$defs/FederationEvent"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+id,threat,scenario,controls,verification,status,owner
+TH-01,Sybil/身份冒充,伪造多个域或Agent冒充独立参与者,身份绑定运营者证明配额撤销,跨域身份红队测试,NotRun,Security Owner
+TH-02,能力广告投毒,发布虚假能力或恶意端点,签名声明挑战验证目录非信任根,恶意广告注入测试,NotRun,Federation Owner
+TH-03,信誉串谋,关联主体互相背书抬高信誉,来源图谱独立证据背书集中度告警,串谋模拟与检测率评估,NotRun,Trust Owner
+TH-04,跨域提示注入,外部工件诱导本地Agent越权,输入隔离来源标记工具最小权限,注入语料与副作用阻断测试,NotRun,Security Owner
+TH-05,改进供应链攻击,恶意候选包或依赖进入生态,内容摘要签名依赖清单沙箱,篡改与依赖投毒测试,NotRun,Release Owner
+TH-06,策略降级,旧策略或未知关键字段绕过限制,版本下限签名执行前动态校验,降级与未知字段负向测试,NotRun,Policy Owner
+TH-07,事件重放/乱序,重复事件触发重复副作用,Nonce序列号水位幂等键,重放乱序缺口测试,NotRun,Runtime Owner
+TH-08,协调者失陷,错误路由伪造目录诱导授权,无生产凭证本地再校验多源发现,协调节点失陷演练,NotRun,Federation Owner
+TH-09,跨域数据泄露,导出未授权数据或私有记忆,Export Policy DataUseGrant DLP,数据外传与越权读取测试,NotRun,Data Owner
+TH-10,模型更新投毒,恶意梯度或适配器污染多个生态,默认禁用参数聚合隔离评估回滚,投毒后门反演测试,NotRun,ML Security Owner
+TH-11,撤销不可达,无法确认凭证或提案是否撤销,短时凭证缓存上限失联HOLD,撤销服务中断测试,NotRun,Trust Owner
+TH-12,生态横向扩散,单域失陷传播到其他成员域,域隔离短时授权断路器,单域失陷桌面推演,NotRun,Governance Owner
