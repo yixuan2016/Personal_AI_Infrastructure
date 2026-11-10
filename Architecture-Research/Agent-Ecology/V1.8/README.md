@@ -58,3 +58,5 @@ V1.2—V1.7 已建立单一生态内部的环境状态、痕迹协作、运行�
 - `F0_RACI.csv`、`F0_CROSS_DOMAIN_AUTHORIZATION_MATRIX.csv`、`F0_DECISION_REGISTER.csv`、`F0_GATE_CHECKLIST.csv`。
 - `contracts/federation-member-claim.schema.json` 与 `contracts/data-use-grant.schema.json`。
 - F0 Gate 12 项均为 NotRun；未签署、未演练，不得视为通过。
+
+- `BINARY_ASSET_STATUS.md`：记录 V1.8 Word/PDF/8K PNG 原件的远端上传状态与限制。

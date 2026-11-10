@@ -1,13 +1,14 @@
 # V1.8 GitHub Blob Manifest
 
-说明：以下为 Git Blob SHA（Git 对象标识），不是 SHA-256 文件摘要。完整资料包中的 `MANIFEST_SHA256.json` 提供本地资料文件 SHA-256。本清单覆盖 V1.8 文件及其入口文件，不包含自身。
+说明：以下为 Git Blob SHA（Git 对象标识），不是 SHA-256 文件摘要。完整资料包中的 `MANIFEST_SHA256.json` 提供本地资料文件 SHA-256。本清单覆盖 V1.8 文件及其入口/资产状态文件，不包含自身。
 
 | Path | Git Blob SHA |
 |---|---|
 | `ARCHIVE_AUDIT.md` | `e6d32277b0c756ca0f559ad1a40d5d8f92e666eb` |
-| `CHANGELOG.md` | `19a477de09b563fe44ed3bd90e867e582e2ba345` |
-| `README.md` | `16bf62fda8638639ca604cdf037409d86e2cae43` |
-| `UPLOAD_STATUS.md` | `b9c2fdc9222bfe5b0d0288a4232ec4bc5a7229c5` |
+| `BINARY_ASSET_STATUS_V1.2-V1.7.md` | `ffb6ca623081f142e5e9426293127eab2b7cba44` |
+| `CHANGELOG.md` | `35cb78cdd12a4638ccf0a9e7ee165836292b0754` |
+| `README.md` | `7eae153ee38fdc4f2dc76c4cf6457a65c29f5f61` |
+| `UPLOAD_STATUS.md` | `1c66c237bb9acc4b50fa53985ce2a54fbfd014d5` |
 | `V1.8/00_V1.8_总体架构与设计目标.md` | `bf0698d98b6bfa8e70e2fa9cb906e0226fa37e83` |
 | `V1.8/01_跨生态联邦拓扑与职责边界.md` | `09691461121629f8ea749fbaba14df19b759569f` |
 | `V1.8/02_身份信任与能力信誉.md` | `bb65f062a3a651128d94e58a321ee26be7da6647` |
@@ -21,7 +22,7 @@
 | `V1.8/assets/01_V1.8_跨生态改进提案生命周期.svg` | `53695368f3d6838117998d7167578e94a111d24e` |
 | `V1.8/assets/02_V1.8_F0_跨生态治理与成员边界.svg` | `9a48454278b8d0b6641afe46359425664aeea2b9` |
 | `V1.8/BINARY_ASSET_STATUS.md` | `22edcda2924ff3ddedadfc91291f6c06bfbc4294` |
-| `V1.8/CHANGELOG.md` | `353419f4185e7d9508f206a4c9c3c374c8884fb3` |
+| `V1.8/CHANGELOG.md` | `8ed9e6964c3b9a30ad6287a6b81b34bea94e7775` |
 | `V1.8/contracts/capability-attestation.schema.json` | `042d0778ab8b3929afc023a8363b47b8d0301dad` |
 | `V1.8/contracts/data-use-grant.schema.json` | `4404d88f5ed2346c5e00f70879715dd2020456da` |
 | `V1.8/contracts/evidence-bundle.schema.json` | `e1c8c8791fcc85f7c4c447db14f5f2abb13c7f29` |
@@ -35,7 +36,7 @@
 | `V1.8/F0_RACI.csv` | `37c885eb202d5851030fc83680720a43d5cbc5a5` |
 | `V1.8/F0_跨生态治理章程与成员边界冻结.md` | `eed7d1fa3cb4d0c53180fde9343898aa6c9766f7` |
 | `V1.8/MANIFEST_SHA256.json` | `835cbaa64e1585893fa446a71d8a483e4b76ae02` |
-| `V1.8/README.md` | `8e7143db4c3e92e501740e7de58e41c0548bd359` |
+| `V1.8/README.md` | `fa513fd1702c12873b1351a78ad447623a40666f` |
 | `V1.8/SOURCES.md` | `a34f504530b81ac15767cbc1023df0feaed542b0` |
 | `V1.8/STATUS.md` | `08be3171952de8a8fe47907cc4860fbffa411984` |
 | `V1.8/validation/threat-matrix.csv` | `a83a6d47635524217a6ccfccb1b5179f60c0b2aa` |

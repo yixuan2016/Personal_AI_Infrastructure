@@ -14,3 +14,5 @@
 - 新增 RACI、决策登记册、F0 Gate 清单和成员/数据授权 Schema。
 - 新增 F0 治理边界 SVG 架构图与 8K PNG。
 - F0 验收项全部保持 NotRun；未签署、未演练，不代表治理冻结或生产授权。
+
+- 新增 `BINARY_ASSET_STATUS.md`，明确 DOCX/PDF/PNG 尚未进入 GitHub；不把 SVG 源图冒充 PNG 原件。
