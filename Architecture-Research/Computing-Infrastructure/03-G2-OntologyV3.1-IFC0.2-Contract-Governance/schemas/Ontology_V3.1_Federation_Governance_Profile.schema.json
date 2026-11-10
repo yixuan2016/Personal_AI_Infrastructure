@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:compute-base:ontology:v3.1:federation-governance-profile:rc0",
+  "title": "Ontology V3.1 Federation Governance Profile RC0",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/ParticipantBinding"
+    },
+    {
+      "$ref": "#/$defs/TrustAgreement"
+    }
+  ],
+  "$defs": {
+    "Ref": {
+      "type": "string",
+      "format": "uri",
+      "minLength": 8
+    },
+    "Time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ParticipantBinding": {
+      "type": "object",
+      "required": [
+        "binding_ref",
+        "binding_version",
+        "participant_ref",
+        "trust_domain_ref",
+        "federation_ref",
+        "status",
+        "valid_from",
+        "valid_until",
+        "approved_by_refs",
+        "signature_ref"
+      ],
+      "properties": {
+        "binding_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "binding_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "participant_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "trust_domain_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "federation_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "subject_mapping_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "status": {
+          "enum": [
+            "Pending",
+            "Active",
+            "Suspended",
+            "Revoked",
+            "Expired"
+          ]
+        },
+        "valid_from": {
+          "$ref": "#/$defs/Time"
+        },
+        "valid_until": {
+          "$ref": "#/$defs/Time"
+        },
+        "approved_by_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "uniqueItems": true
+        },
+        "signature_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "revocation_ref": {
+          "$ref": "#/$defs/Ref"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TrustAgreement": {
+      "type": "object",
+      "required": [
+        "agreement_ref",
+        "agreement_version",
+        "party_refs",
+        "trust_domain_refs",
+        "protocol_profile_refs",
+        "ontology_profile_refs",
+        "permitted_actions",
+        "obligations",
+        "valid_from",
+        "valid_until",
+        "signature_refs",
+        "status"
+      ],
+      "properties": {
+        "agreement_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "agreement_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "party_refs": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "uniqueItems": true
+        },
+        "trust_domain_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "uniqueItems": true
+        },
+        "protocol_profile_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "uniqueItems": true
+        },
+        "ontology_profile_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "uniqueItems": true
+        },
+        "permitted_actions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "data_classification_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "uniqueItems": true
+        },
+        "obligations": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "valid_from": {
+          "$ref": "#/$defs/Time"
+        },
+        "valid_until": {
+          "$ref": "#/$defs/Time"
+        },
+        "signature_refs": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/Ref"
+          },
+          "uniqueItems": true
+        },
+        "revocation_ref": {
+          "$ref": "#/$defs/Ref"
+        },
+        "status": {
+          "enum": [
+            "Draft",
+            "InReview",
+            "Active",
+            "Suspended",
+            "Terminated",
+            "Expired"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

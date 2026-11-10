@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dm04:rest-binding:response-context:rc0",
+  "title": "DM04 REST ResponseContext RC0 (separate from IFC0.2 request extension)",
+  "type": "object",
+  "required": [
+    "request_id",
+    "responder_site_id",
+    "object_ref",
+    "object_version",
+    "command_status",
+    "authoritative_state",
+    "event_cursor",
+    "evidence_refs"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "responder_site_id": {
+      "type": "string",
+      "format": "uri"
+    },
+    "object_ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "object_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "command_status": {
+      "enum": [
+        "Accepted",
+        "Running",
+        "WaitingForApproval",
+        "Succeeded",
+        "Failed",
+        "Cancelled",
+        "Expired",
+        "Unknown",
+        "ReconciliationRequired"
+      ]
+    },
+    "authoritative_state": {
+      "type": "object",
+      "required": [
+        "authority_ref",
+        "state_value",
+        "state_version",
+        "as_of",
+        "freshness"
+      ],
+      "properties": {
+        "authority_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "state_value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "freshness": {
+          "enum": [
+            "current",
+            "as_of",
+            "stale",
+            "unknown"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "event_cursor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true
+    },
+    "signature_ref": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "additionalProperties": false
+}
