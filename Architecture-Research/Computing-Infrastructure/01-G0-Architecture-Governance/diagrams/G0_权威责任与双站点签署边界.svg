@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1350" viewBox="0 0 2400 1350">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#1b2c3f"/></linearGradient>
+<linearGradient id="top" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#234e67"/><stop offset="1" stop-color="#2d6179"/></linearGradient>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#eef4f8}
+.title{font-size:48px;font-weight:700}.subtitle{font-size:23px;fill:#b9cbd7}
+.head{font-size:29px;font-weight:700}.node{font-size:22px;font-weight:700}.body{font-size:18px;fill:#d1dee7}.small{font-size:16px;fill:#b9cbd7}
+.box{fill:#1c3548;stroke:#7199ae;stroke-width:2}.boxb{fill:#28374f;stroke:#8496b4;stroke-width:2}.coord{fill:#294e61;stroke:#8ab5c9;stroke-width:2}
+.arrow{stroke:#80abc0;stroke-width:3;fill:none;marker-end:url(#a)}.dash{stroke:#8aa5b7;stroke-width:2.5;stroke-dasharray:9 8;fill:none;marker-end:url(#a)}
+</style>
+<marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12z" fill="#80abc0"/></marker>
+</defs>
+<rect width="2400" height="1350" fill="url(#bg)"/>
+<text x="1200" y="75" text-anchor="middle" class="title">G0｜六域权威责任与双站点签署边界</text>
+<text x="1200" y="118" text-anchor="middle" class="subtitle">Owner 分权 · RACI · 签署权威 · ADS/SCO 协调但不接管本地事实</text>
+<rect x="100" y="155" width="2200" height="112" rx="22" fill="url(#top)" stroke="#83b5cc" stroke-width="2.5"/>
+<text x="1200" y="198" text-anchor="middle" class="head">双边治理委员会 / Federation Governance Owners</text>
+<text x="1200" y="235" text-anchor="middle" class="body">TrustAgreement · 成员准入 · Profile / Namespace 批准 · 重大风险接受 · 正式版本签署</text>
+
+<rect x="100" y="315" width="500" height="180" rx="18" class="coord"/>
+<text x="350" y="360" text-anchor="middle" class="node">ADS</text>
+<text x="350" y="398" text-anchor="middle" class="body">联邦治理协调 / 环境与能力目录</text>
+<text x="350" y="432" text-anchor="middle" class="body">Profile 注册投影 / 语义协调</text>
+<text x="350" y="466" text-anchor="middle" class="small">不授予远端本地权限，不代签Owner义务</text>
+
+<rect x="650" y="315" width="500" height="180" rx="18" class="coord"/>
+<text x="900" y="360" text-anchor="middle" class="node">SCO</text>
+<text x="900" y="398" text-anchor="middle" class="body">TaskContract / ContractGraph</text>
+<text x="900" y="432" text-anchor="middle" class="body">Plan / Saga / ActivationBarrier汇总</text>
+<text x="900" y="466" text-anchor="middle" class="small">不签本地TaskClaim或物理资源Lease</text>
+
+<rect x="1200" y="315" width="500" height="180" rx="18" class="coord"/>
+<text x="1450" y="360" text-anchor="middle" class="node">FWSX</text>
+<text x="1450" y="398" text-anchor="middle" class="body">事件投递 / Cursor / 重试 / Replay</text>
+<text x="1450" y="432" text-anchor="middle" class="body">跨站点传输与交付审计</text>
+<text x="1450" y="466" text-anchor="middle" class="small">不拥有事件事实，不批准数据用途</text>
+
+<rect x="1750" y="315" width="550" height="180" rx="18" class="coord"/>
+<text x="2025" y="360" text-anchor="middle" class="node">A2A</text>
+<text x="2025" y="398" text-anchor="middle" class="body">Agent Card / Message / Task / Artifact</text>
+<text x="2025" y="432" text-anchor="middle" class="body">扩展声明与请求级激活</text>
+<text x="2025" y="466" text-anchor="middle" class="small">协议交互不等于取得数据/资源授权</text>
+
+<text x="1200" y="555" text-anchor="middle" class="head">六域 Owner：按对象事实与权利分别签署</text>
+<g>
+<rect x="100" y="595" width="345" height="160" rx="16" class="box"/>
+<text x="272" y="638" text-anchor="middle" class="node">联邦治理</text><text x="272" y="678" text-anchor="middle" class="body">双方治理 Owner</text><text x="272" y="714" text-anchor="middle" class="small">双边准入 / 信任 / Profile</text>
+<rect x="475" y="595" width="345" height="160" rx="16" class="box"/>
+<text x="647" y="638" text-anchor="middle" class="node">身份与授权</text><text x="647" y="678" text-anchor="middle" class="body">各站点 IAM / PDP / PEP</text><text x="647" y="714" text-anchor="middle" class="small">本地身份 / Grant / 撤销</text>
+<rect x="850" y="595" width="345" height="160" rx="16" class="box"/>
+<text x="1022" y="638" text-anchor="middle" class="node">数据空间</text><text x="1022" y="678" text-anchor="middle" class="body">Data Owner / Connector</text><text x="1022" y="714" text-anchor="middle" class="small">数据合同 / 用途 / 披露</text>
+<rect x="1225" y="595" width="345" height="160" rx="16" class="box"/>
+<text x="1397" y="638" text-anchor="middle" class="node">算力星</text><text x="1397" y="678" text-anchor="middle" class="body">Compute Resource Owner</text><text x="1397" y="714" text-anchor="middle" class="small">Offer / Quote / Lease / Token</text>
+<rect x="1600" y="595" width="345" height="160" rx="16" class="box"/>
+<text x="1772" y="638" text-anchor="middle" class="node">联邦任务</text><text x="1772" y="678" text-anchor="middle" class="body">SCO + Site Task Owner</text><text x="1772" y="714" text-anchor="middle" class="small">全局Saga / 本地TaskClaim</text>
+<rect x="1975" y="595" width="325" height="160" rx="16" class="box"/>
+<text x="2137" y="638" text-anchor="middle" class="node">证据与验收</text><text x="2137" y="678" text-anchor="middle" class="body">Evidence / Independent QA</text><text x="2137" y="714" text-anchor="middle" class="small">独立验收 / 计量 / 结算</text>
+</g>
+
+<rect x="100" y="815" width="1070" height="380" rx="22" fill="#1a3546" stroke="#6d9bb0" stroke-width="2.5"/>
+<text x="635" y="860" text-anchor="middle" class="head">Site A｜本地签署与执行权威</text>
+<rect x="140" y="900" width="300" height="105" rx="12" class="box"/>
+<text x="290" y="940" text-anchor="middle" class="node">IAM / PDP / PEP</text><text x="290" y="975" text-anchor="middle" class="small">本地授权与撤销</text>
+<rect x="480" y="900" width="300" height="105" rx="12" class="box"/>
+<text x="630" y="940" text-anchor="middle" class="node">Data Owner</text><text x="630" y="975" text-anchor="middle" class="small">Grant / Contract / Release</text>
+<rect x="820" y="900" width="300" height="105" rx="12" class="box"/>
+<text x="970" y="940" text-anchor="middle" class="node">Lease Authority</text><text x="970" y="975" text-anchor="middle" class="small">ResourceLease / FencingToken</text>
+<rect x="140" y="1035" width="470" height="105" rx="12" class="box"/>
+<text x="375" y="1075" text-anchor="middle" class="node">Local Task Coordinator</text><text x="375" y="1110" text-anchor="middle" class="small">本地 TaskStage / TaskClaim / claim_epoch</text>
+<rect x="650" y="1035" width="470" height="105" rx="12" class="box"/>
+<text x="885" y="1075" text-anchor="middle" class="node">Evidence / Independent Acceptance</text><text x="885" y="1110" text-anchor="middle" class="small">证据生产与独立验收分离</text>
+
+<rect x="1230" y="815" width="1070" height="380" rx="22" fill="#29364e" stroke="#8795b7" stroke-width="2.5"/>
+<text x="1765" y="860" text-anchor="middle" class="head">Site B｜本地签署与执行权威</text>
+<rect x="1270" y="900" width="300" height="105" rx="12" class="boxb"/>
+<text x="1420" y="940" text-anchor="middle" class="node">IAM / PDP / PEP</text><text x="1420" y="975" text-anchor="middle" class="small">本地授权与撤销</text>
+<rect x="1610" y="900" width="300" height="105" rx="12" class="boxb"/>
+<text x="1760" y="940" text-anchor="middle" class="node">Data Owner</text><text x="1760" y="975" text-anchor="middle" class="small">Grant / Contract / Release</text>
+<rect x="1950" y="900" width="300" height="105" rx="12" class="boxb"/>
+<text x="2100" y="940" text-anchor="middle" class="node">Lease Authority</text><text x="2100" y="975" text-anchor="middle" class="small">ResourceLease / FencingToken</text>
+<rect x="1270" y="1035" width="470" height="105" rx="12" class="boxb"/>
+<text x="1505" y="1075" text-anchor="middle" class="node">Local Task Coordinator</text><text x="1505" y="1110" text-anchor="middle" class="small">本地 TaskStage / TaskClaim / claim_epoch</text>
+<rect x="1780" y="1035" width="470" height="105" rx="12" class="boxb"/>
+<text x="2015" y="1075" text-anchor="middle" class="node">Evidence / Independent Acceptance</text><text x="2015" y="1110" text-anchor="middle" class="small">证据生产与独立验收分离</text>
+
+<path class="dash" d="M1200 267 L1200 290"/>
+<path class="dash" d="M350 495 L350 575"/>
+<path class="dash" d="M900 495 L900 575"/>
+<path class="dash" d="M1450 495 L1450 575"/>
+<path class="dash" d="M2025 495 L2025 575"/>
+<path class="dash" d="M1170 1000 L1230 1000"/>
+<path class="dash" d="M1170 1085 L1230 1085"/>
+<text x="1200" y="1260" text-anchor="middle" class="body">本地 Deny 优先 · TaskClaim ≠ ResourceLease · FWSX ≠ 事实Owner · Acceptance ≠ 执行方自验收</text>
+<text x="1200" y="1300" text-anchor="middle" class="small">G0 架构评审候选图｜待双方 Owner 签署｜不代表生产部署</text>
+</svg>

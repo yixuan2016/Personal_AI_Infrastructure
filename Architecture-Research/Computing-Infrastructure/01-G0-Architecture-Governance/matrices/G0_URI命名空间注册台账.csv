@@ -1,0 +1,8 @@
+﻿命名空间对象,候选URI模板,Owner角色,状态,解析内容,激活前置条件
+AEE/ASCP Profile,https://{controlled-domain}/aee-ascp/profiles/1.1,Project Namespace Owner,候选/待注册,AEE/ASCP 1.1 Profile定义与兼容说明,正式域名、双方签署
+AEE Context Schema,https://{controlled-domain}/aee-ascp/schemas/context/1.1,Schema Owner,候选/待注册,AEEContext扩展数据结构,Schema摘要、机器校验、Owner签署
+TaskClaim Schema,https://{controlled-domain}/aee-ascp/schemas/task-claim/1.1,SCO + Site Task Owner,候选/待注册,站点本地TaskClaim结构,TaskClaim权威分层ADR签署
+ASCP Event Type,https://{controlled-domain}/aee-ascp/events/{event-name}/1,事件源Domain Owner,候选/待注册,事件语义、事实/推断分类、载荷Schema,事件源Owner签署
+Ontology Profile,https://{controlled-domain}/aee-ascp/ontology/{profile-name}/3.0,Ontology Owner,候选/待注册,Ontology Profile版本与映射,Ontology Owner签署
+A2A Extension,https://{controlled-domain}/aee-ascp/a2a/extensions/1.1,Agent Protocol/Profile Owner,候选/待注册,Agent Card扩展声明、请求激活、metadata映射,双方A2A互操作评审
+Decision/ADR Record,https://{controlled-domain}/aee-ascp/decisions/{decision-id},Architecture Governance Owner,候选/待注册,ADR状态、签署者、版本、证据引用,架构委员会签署

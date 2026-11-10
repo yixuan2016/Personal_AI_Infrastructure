@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dm04:ifc0.2:profile-extensions:proposal",
+  "title": "DM04 IFC0.2 profile_extensions additive fragment (proposal)",
+  "description": "Optional additive property proposed for DM04 IFC0.2. This fragment does not replace the DM04 IFC0.1 RequestEnvelope base schema and must not be sent until both endpoints advertise and approve IFC0.2.",
+  "type": "object",
+  "properties": {
+    "profile_extensions": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 16,
+      "propertyNames": {
+        "pattern": "^https://"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "profile_version",
+          "schema_ref",
+          "criticality",
+          "payload_digest",
+          "data"
+        ],
+        "properties": {
+          "profile_version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "schema_ref": {
+            "type": "string",
+            "format": "uri"
+          },
+          "criticality": {
+            "enum": [
+              "required",
+              "optional"
+            ]
+          },
+          "payload_digest": {
+            "type": "string",
+            "pattern": "^sha256:[a-fA-F0-9]{64}$"
+          },
+          "data": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "AEEContextData": {
+      "type": "object",
+      "properties": {
+        "environment_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "ontology_profile_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "trace_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        },
+        "subscription_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "task_claim_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifact_binding_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "governance_context_ref": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "environment_ref",
+        "ontology_profile_ref"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

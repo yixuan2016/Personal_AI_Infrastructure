@@ -1,0 +1,21 @@
+﻿编号,对象/动作,签署权威,签署内容,签署要求,不可越权事项
+SIG-01,双边成员准入 / Join,双方Federation Governance Owner,各自成员范围、参与方绑定、准入决定,双方治理方签署,ADS记录批准结果；不能代替批准
+SIG-02,TrustAgreement / 信任根变更,双方Federation Governance Owner；各方对本方信任根负责,协议版本、双方主体、用途、有效期、撤销与争议条款,双方签名；各自安全Owner证明本方执行,任何一方不能单方修改对方信任根
+SIG-03,AEE/ASCP Profile发布,双方Profile Governance Owner,Profile URI、版本、Schema摘要、兼容矩阵、弃用策略,双方治理Owner签署；Schema维护者签内容摘要,ADS Registry只发布签署后的目录项
+SIG-04,扩展URI注册,域名/命名空间控制主体,域名控制证明、URI解析、规范文档、Schema、版本与联系信息,命名空间Owner签署注册记录,未确认域名所有权不得用example.invalid代替生产URI
+SIG-05,工作负载身份与委托,签发方及目标站点IAM Owner,主体、Audience、Purpose、Scope、TTL、撤销引用,本地IAM/安全机制签发,治理上下文引用不是凭证
+SIG-06,Data Contract / DataUseGrant,相应Data Owner,数据对象、用途、接收方、地域、期限、字段投影、再披露/删除义务,Data Owner签署；本地PEP执行,ADS/SCO不得代签数据授权
+SIG-07,FederatedOffer / Quote / Reservation / Lease,资源所在地Compute Resource Owner,资源范围、数量、窗口、价格/SLO、Lease期限、Epoch/FencingToken,资源Owner或其本地Lease Authority签署,Offer不等于容量承诺；ADS不得代签Lease
+SIG-08,TaskContract / ContractNode,每个ContractNode对应的Owner/合同签署方,目的、范围、依赖、交付物、预算、地域、SLO、验收条款,各节点Owner分别签署,SCO维护ContractGraph，不代签节点义务
+SIG-09,ContractGraph版本/关联,SCO/Task Owner,Graph版本、节点引用、依赖边、图摘要、校验结果,SCO签Graph版本摘要；节点Owner各自签节点,SCO签图不代表承诺节点内容
+SIG-10,本地TaskClaim,目标站点Local Task Coordinator,site_id、site_task_ref、stage_ref、holder、claim_epoch、有效期、policy_decision_ref,本地任务协调器签发,SCO只下发/协调/观察，不签本地TaskClaim
+SIG-11,LocalResourceLease,资源所在地Lease Authority,resource_ref、task_ref、Lease Epoch、FencingToken、范围、有效期,资源Owner授权的本地Lease Authority签发,TaskClaim/claim_epoch不能替代资源FencingToken
+SIG-12,ActivationBarrier汇总,SCO/Task Owner,检查项、各Owner决策引用、版本、水位、汇总结果、时间,SCO签汇总结果；本地Owner仍分别签本地门禁,Barrier通过不等于启动许可
+SIG-13,Trace/Event事实发布,原始事实Owner / 事件源Owner,CloudEvents信封、payload摘要、schema、source、分类、事实/推断标签,事件源Owner签事件或其可信发布代理,FWSX只签投递/接收回执，不为内容背书
+SIG-14,Artifact/Evidence发布,Artifact/Evidence Producer Owner,artifact_ref、version、digest、producer、task、证据链,Producer签摘要；Evidence服务保全,引用解析仍需目标PEP授权
+SIG-15,Result Release,Result Owner / 数据Owner,接收方、用途、地域、字段、有效期、脱敏、再披露限制,Owner签披露决定；目标PEP执行,Acceptance不自动授予披露权
+SIG-16,AcceptanceRecord,独立Acceptance Authority,标准版本、结果摘要、证据引用、判定、例外、补救期限,独立验收方签署,执行方不能自我独立验收
+SIG-17,MeteringRecord / Correction,资源Owner,原始测量、单位、窗口、来源、估算标记、更正原因与关联,资源Owner签署；更正追加记录,不可覆盖原始记录
+SIG-18,SettlementStatement / Dispute,合同指定结算/争议权威及合同各方,结算行、计量、Acceptance、价格条款、争议证据,按合同要求由结算权威及相关方签署,SCO只做对账，不代替合同裁决
+SIG-19,A2A Agent Card与扩展声明,Agent Owner,Agent身份、能力、版本、扩展URI、required参数,Agent Owner控制的发布/签名机制,A2A声明能力不等于取得数据/资源授权
+SIG-20,RSI策略晋级 / 回滚,人类治理委员会 / 明确授权审批人,评估报告、Shadow结果、风险评估、回滚版本、影响范围,审批人明确批准并留审计记录,RSI不能自我审批、自我扩大权限
