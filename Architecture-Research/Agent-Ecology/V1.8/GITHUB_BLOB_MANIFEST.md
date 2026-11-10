@@ -1,6 +1,6 @@
 # V1.8 GitHub Blob Manifest
 
-说明：以下为 Git Blob SHA（Git 对象标识），不是 SHA-256 文件摘要。完整交付包中的 `MANIFEST_SHA256.json` 提供本地资料文件 SHA-256。本清单不包含自身。
+说明：以下为 Git Blob SHA（Git 对象标识），不是 SHA-256 文件摘要。完整资料包中的 `MANIFEST_SHA256.json` 提供本地资料文件 SHA-256。本清单不包含自身。
 
 | Path | Git Blob SHA |
 |---|---|
@@ -103,31 +103,22 @@
 | `V1.7/validation/V1.7_RSI验证与治理验收矩阵.csv` | `8ea9883bc38d9a48e35f48ffb4a5d81a95987cec` |
 | `V1.7/validation/V1.7_威胁与反操纵矩阵.csv` | `362dc7f3183b24101e9625fc7f7dd8f9a049e96f` |
 | `V1.8/00_V1.8_总体架构与设计目标.md` | `bf0698d98b6bfa8e70e2fa9cb906e0226fa37e83` |
-| `V1.8/00_总体架构与决策.md` | `fbdd640db0f4c2d0e13c66a9042e44542a6a931b` |
-| `V1.8/01_联邦拓扑与职责边界.md` | `c6da55a88a26b87c02ed54578682b50f90e8891c` |
 | `V1.8/01_跨生态联邦拓扑与职责边界.md` | `09691461121629f8ea749fbaba14df19b759569f` |
-| `V1.8/02_信任契约与改进生命周期.md` | `73a2bace9f8de63682b94e965bb3efef7b2f50ad` |
 | `V1.8/02_身份信任与能力信誉.md` | `bb65f062a3a651128d94e58a321ee26be7da6647` |
-| `V1.8/03_策略兼容与知识交换.md` | `45f2c02d9197f79747670e703b1635029592fedc` |
 | `V1.8/03_跨生态改进提案与证据契约.md` | `771a7ec31e79c03bdf006b3da1e4039619d895ea` |
-| `V1.8/04_安全威胁与实施验收.md` | `4f333ee55bd7d244876e223c706bdaf348ed278c` |
 | `V1.8/04_跨域策略兼容与冲突仲裁.md` | `0e0010769faf9747335d3f8c23e97c24b5333ed8` |
-| `V1.8/05_API事件与错误码.md` | `cc16627e6a6c98c8c1e88d1dde7d3d31027ba128` |
 | `V1.8/05_隐私保护知识交换与共同进化.md` | `e6a1a698d7726addbf9f1c343515e9cc6595faac` |
 | `V1.8/06_安全威胁模型与失陷隔离.md` | `f7bc2b0f1a41abaf1d7415b773453783101d90e4` |
 | `V1.8/07_实施路线与验收矩阵.md` | `ea18b0137bf9a36475ce29b1007a2dbe874944b5` |
 | `V1.8/08_接口事件与错误码.md` | `63df56cdc2f8ac84c498e7c883d3501047ccd676` |
 | `V1.8/assets/00_V1.8_跨生态联邦总体架构.svg` | `2b1a5e40740808d58d5e8c01476c6d7399963cd6` |
-| `V1.8/assets/00_跨生态联邦总体架构.svg` | `f63108166c8e405344459edb12d8a3a33dd5dedf` |
 | `V1.8/assets/01_V1.8_跨生态改进提案生命周期.svg` | `53695368f3d6838117998d7167578e94a111d24e` |
-| `V1.8/assets/01_改进提案生命周期.svg` | `1dec9f632d1df66f175822382b4a338c2f294032` |
 | `V1.8/assets/02_V1.8_F0_跨生态治理与成员边界.svg` | `9a48454278b8d0b6641afe46359425664aeea2b9` |
 | `V1.8/CHANGELOG.md` | `353419f4185e7d9508f206a4c9c3c374c8884fb3` |
 | `V1.8/contracts/capability-attestation.schema.json` | `042d0778ab8b3929afc023a8363b47b8d0301dad` |
 | `V1.8/contracts/data-use-grant.schema.json` | `4404d88f5ed2346c5e00f70879715dd2020456da` |
 | `V1.8/contracts/evidence-bundle.schema.json` | `e1c8c8791fcc85f7c4c447db14f5f2abb13c7f29` |
 | `V1.8/contracts/federated-improvement-proposal.schema.json` | `cb468b4c518cdda4471e8628c4830f87cd85f0bb` |
-| `V1.8/contracts/federation-contracts.schema.json` | `e787e78b611e2c32bc4d13ac47752e1cbd73b56b` |
 | `V1.8/contracts/federation-event.schema.json` | `56ef5b4d080afc454f23dc21a3cea0ce2391a58a` |
 | `V1.8/contracts/federation-member-claim.schema.json` | `73083603ea9d4244532f57e6ff03a2a12badc9da` |
 | `V1.8/contracts/local-adoption-receipt.schema.json` | `fd929fd8dbba185278c1d399341693b3584c6bf1` |
