@@ -33,3 +33,9 @@
 - 此次未执行工程运行时、生产或双站点测试；
 - GitHub Actions workflow runs 与 commit status 当前均无记录；
 - 所有设计验证项保持待验证/NotRun，不因资料入库而标记通过。
+
+## 归档审查补充
+- V1.3–V1.7 六份主报告的 41 个图片引用已逐一核对，均指向远端存在的 SVG 文件；PNG 引用已修复。
+- V1.7 规范入口由 `V1.7/README.md` 指向；另一个历史副本保留并同步修复图片引用。
+- 本轮仅修复文档引用并增加审查记录，没有上传 Word/PDF/8K PNG/ZIP 二进制文件。
+- PR #11 仍 Draft/Open；无正式 Review 记录，无 Actions workflow runs/commit status；未合并 main。
