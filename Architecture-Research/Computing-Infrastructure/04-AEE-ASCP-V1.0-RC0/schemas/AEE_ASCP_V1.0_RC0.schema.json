@@ -1,0 +1,910 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ads:aee:schemas:1.0.0-rc0",
+  "title": "ADS Environment Extension and Stigmergic Collaboration Profile",
+  "description": "AEE/ASCP RC0 candidate schemas. Architecture contract only; not a production implementation.",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "digest": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "algorithm": {
+          "enum": [
+            "sha-256"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "classification": {
+      "enum": [
+        "Public",
+        "Internal",
+        "Confidential",
+        "Restricted",
+        "Regulated"
+      ]
+    },
+    "commonFields": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "object_type": {
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "1.0.0-rc0"
+        },
+        "ontology_profile_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "issuer_id": {
+          "$ref": "#/$defs/id"
+        },
+        "owner_id": {
+          "$ref": "#/$defs/id"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "valid_from": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "valid_until": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "source_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "content_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "signature_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "classification": {
+          "$ref": "#/$defs/classification"
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "object_type",
+        "schema_version",
+        "ontology_profile_version",
+        "issuer_id",
+        "created_at",
+        "updated_at",
+        "status",
+        "source_ref",
+        "content_digest"
+      ]
+    },
+    "environmentSpace": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/commonFields"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "object_type": {
+              "const": "EnvironmentSpace"
+            },
+            "environment_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "space_type": {
+              "enum": [
+                "agent_private",
+                "domain_collaboration",
+                "cross_domain",
+                "governance_audit"
+              ]
+            },
+            "scope": {
+              "type": "object",
+              "properties": {
+                "tenant_ref": {
+                  "$ref": "#/$defs/uri"
+                },
+                "domain_ref": {
+                  "$ref": "#/$defs/uri"
+                },
+                "participant_refs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/uri"
+                  },
+                  "uniqueItems": true
+                },
+                "site_refs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/uri"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "additionalProperties": false,
+              "anyOf": [
+                {
+                  "required": [
+                    "tenant_ref"
+                  ]
+                },
+                {
+                  "required": [
+                    "domain_ref"
+                  ]
+                },
+                {
+                  "required": [
+                    "participant_refs"
+                  ],
+                  "properties": {
+                    "participant_refs": {
+                      "minItems": 1
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "site_refs"
+                  ],
+                  "properties": {
+                    "site_refs": {
+                      "minItems": 1
+                    }
+                  }
+                }
+              ]
+            },
+            "trust_domain_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "ontology_profile_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "access_policy_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "data_plane_allowlist": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "state",
+                  "event",
+                  "artifact",
+                  "semantic",
+                  "governance"
+                ]
+              }
+            },
+            "parent_space_ref": {
+              "$ref": "#/$defs/uri"
+            }
+          },
+          "required": [
+            "object_type",
+            "owner_id",
+            "environment_ref",
+            "space_type",
+            "scope",
+            "trust_domain_ref",
+            "ontology_profile_ref",
+            "access_policy_ref",
+            "data_plane_allowlist"
+          ]
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "traceRecord": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/commonFields"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "object_type": {
+              "const": "TraceRecord"
+            },
+            "trace_id": {
+              "$ref": "#/$defs/id"
+            },
+            "trace_type": {
+              "enum": [
+                "Observation",
+                "Intent",
+                "Task",
+                "Artifact",
+                "Dependency",
+                "Risk",
+                "Decision"
+              ]
+            },
+            "trace_state": {
+              "enum": [
+                "published",
+                "observed",
+                "consumed",
+                "superseded",
+                "expired",
+                "quarantined",
+                "archived"
+              ]
+            },
+            "source": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "actor_id": {
+              "$ref": "#/$defs/id"
+            },
+            "domain_id": {
+              "$ref": "#/$defs/id"
+            },
+            "environment_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "recorded_at": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "subject_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "payload_schema_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "payload": {
+              "type": "object"
+            },
+            "visibility": {
+              "enum": [
+                "private",
+                "domain",
+                "cross-domain",
+                "governance"
+              ]
+            },
+            "policy_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "purpose": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "ontology_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "ontology_profile_version": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "causation_id": {
+              "$ref": "#/$defs/id"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/id"
+            },
+            "parent_trace_ids": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true
+            },
+            "sequence_no": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "idempotency_key": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/uri"
+              },
+              "uniqueItems": true
+            },
+            "expires_at": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "verification_status": {
+              "enum": [
+                "pending",
+                "verified",
+                "rejected",
+                "disputed",
+                "not_applicable"
+              ]
+            }
+          },
+          "required": [
+            "object_type",
+            "owner_id",
+            "trace_id",
+            "trace_type",
+            "source",
+            "actor_id",
+            "domain_id",
+            "environment_ref",
+            "occurred_at",
+            "recorded_at",
+            "subject_ref",
+            "payload_schema_ref",
+            "payload",
+            "classification",
+            "visibility",
+            "policy_ref",
+            "purpose"
+          ]
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "environmentSubscription": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/commonFields"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "object_type": {
+              "const": "EnvironmentSubscription"
+            },
+            "subscription_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "subscriber_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "environment_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "purpose": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "filters": {
+              "type": "object",
+              "properties": {
+                "trace_types": {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "Observation",
+                      "Intent",
+                      "Task",
+                      "Artifact",
+                      "Dependency",
+                      "Risk",
+                      "Decision"
+                    ]
+                  },
+                  "uniqueItems": true
+                },
+                "domain_refs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/uri"
+                  },
+                  "uniqueItems": true
+                },
+                "ontology_profile_refs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/uri"
+                  },
+                  "uniqueItems": true
+                },
+                "subject_types": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                },
+                "classification_max": {
+                  "$ref": "#/$defs/classification"
+                },
+                "minimum_priority": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                }
+              },
+              "additionalProperties": false
+            },
+            "delivery_mode": {
+              "enum": [
+                "pull",
+                "push",
+                "stream"
+              ]
+            },
+            "delivery_target_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "policy_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "cursor": {
+              "type": "string",
+              "maxLength": 2048
+            },
+            "status": {
+              "enum": [
+                "active",
+                "paused",
+                "revoked",
+                "expired"
+              ]
+            },
+            "expires_at": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "max_events_per_window": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100000
+            }
+          },
+          "required": [
+            "object_type",
+            "owner_id",
+            "subscription_ref",
+            "subscriber_ref",
+            "environment_ref",
+            "purpose",
+            "filters",
+            "delivery_mode",
+            "policy_ref",
+            "status",
+            "expires_at"
+          ]
+        },
+        {
+          "if": {
+            "properties": {
+              "delivery_mode": {
+                "enum": [
+                  "push",
+                  "stream"
+                ]
+              }
+            },
+            "required": [
+              "delivery_mode"
+            ]
+          },
+          "then": {
+            "required": [
+              "delivery_target_ref"
+            ]
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "taskClaimLease": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/commonFields"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "object_type": {
+              "const": "TaskClaimLease"
+            },
+            "claim_lease_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "task_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "stage_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "holder_agent_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "issued_by_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "claim_epoch": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "fencing_token": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "issued_at": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "expires_at": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "heartbeat_at": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "max_expires_at": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "state": {
+              "enum": [
+                "active",
+                "expired",
+                "released",
+                "revoked",
+                "unknown"
+              ]
+            },
+            "policy_decision_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "scope": {
+              "type": "object",
+              "properties": {
+                "task_actions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                },
+                "max_attempts": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "budget_ref": {
+                  "$ref": "#/$defs/uri"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "object_type",
+            "owner_id",
+            "claim_lease_ref",
+            "task_ref",
+            "holder_agent_ref",
+            "issued_by_ref",
+            "claim_epoch",
+            "fencing_token",
+            "issued_at",
+            "expires_at",
+            "max_expires_at",
+            "state",
+            "policy_decision_ref",
+            "idempotency_key"
+          ]
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "artifactBinding": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/commonFields"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "object_type": {
+              "const": "ArtifactBinding"
+            },
+            "binding_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "environment_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "artifact_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "artifact_version": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "content_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "producer_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "task_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "access_policy_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/uri"
+              },
+              "uniqueItems": true
+            },
+            "verification_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "acceptance_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "parent_artifact_refs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/uri"
+              },
+              "uniqueItems": true
+            },
+            "lineage_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "binding_state": {
+              "enum": [
+                "published",
+                "pending_verification",
+                "verified",
+                "accepted",
+                "superseded",
+                "revoked"
+              ]
+            }
+          },
+          "required": [
+            "object_type",
+            "owner_id",
+            "binding_ref",
+            "environment_ref",
+            "artifact_ref",
+            "artifact_version",
+            "content_digest",
+            "producer_ref",
+            "task_ref",
+            "access_policy_ref",
+            "binding_state"
+          ]
+        },
+        {
+          "if": {
+            "properties": {
+              "binding_state": {
+                "enum": [
+                  "verified",
+                  "accepted"
+                ]
+              }
+            },
+            "required": [
+              "binding_state"
+            ]
+          },
+          "then": {
+            "required": [
+              "verification_ref"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "binding_state": {
+                "const": "accepted"
+              }
+            },
+            "required": [
+              "binding_state"
+            ]
+          },
+          "then": {
+            "required": [
+              "acceptance_ref"
+            ]
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "governanceContext": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/commonFields"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "object_type": {
+              "const": "GovernanceContext"
+            },
+            "context_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "subject_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "environment_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "purpose": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "requested_actions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "policy_refs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/uri"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "policy_decision_refs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/uri"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "grant_refs": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/uri"
+              },
+              "uniqueItems": true
+            },
+            "obligations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "delegation_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "risk_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "evaluated_at": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "valid_until": {
+              "$ref": "#/$defs/timestamp"
+            },
+            "revocation_ref": {
+              "$ref": "#/$defs/uri"
+            },
+            "correlation_id": {
+              "$ref": "#/$defs/id"
+            },
+            "decision": {
+              "enum": [
+                "Permit",
+                "Deny",
+                "NotApplicable",
+                "Indeterminate",
+                "RequireApproval",
+                "StepUp",
+                "Redact",
+                "Defer"
+              ]
+            },
+            "revalidation_required": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "object_type",
+            "owner_id",
+            "context_ref",
+            "subject_ref",
+            "environment_ref",
+            "purpose",
+            "requested_actions",
+            "policy_refs",
+            "policy_decision_refs",
+            "evaluated_at",
+            "valid_until",
+            "decision",
+            "revalidation_required"
+          ]
+        }
+      ],
+      "unevaluatedProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/environmentSpace"
+    },
+    {
+      "$ref": "#/$defs/traceRecord"
+    },
+    {
+      "$ref": "#/$defs/environmentSubscription"
+    },
+    {
+      "$ref": "#/$defs/taskClaimLease"
+    },
+    {
+      "$ref": "#/$defs/artifactBinding"
+    },
+    {
+      "$ref": "#/$defs/governanceContext"
+    }
+  ]
+}
