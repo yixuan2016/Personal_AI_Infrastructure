@@ -39,3 +39,9 @@
 - V1.7 规范入口由 `V1.7/README.md` 指向；另一个历史副本保留并同步修复图片引用。
 - 本轮仅修复文档引用并增加审查记录，没有上传 Word/PDF/8K PNG/ZIP 二进制文件。
 - PR #11 仍 Draft/Open；无正式 Review 记录，无 Actions workflow runs/commit status；未合并 main。
+
+## 二进制资产登记（2026-11-10）
+- 详细文件名、字节数、100 MB 限制与待上传状态见 [BINARY_ASSET_STATUS_V1.2-V1.7.md](BINARY_ASSET_STATUS_V1.2-V1.7.md)。
+- V1.2–V1.7 的 Markdown/CSV/JSON/YAML/Schema/SVG 源文件已在本分支；DOCX/PDF/PNG 原件未上传。
+- V1.4 PDF、V1.5 PDF 超过 GitHub 单文件 100 MB 限制；V1.6 完整 ZIP 也超过该限制。
+- 不上传 ZIP 作为唯一交付；SVG 是当前已推送的可编辑图形源。
