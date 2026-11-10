@@ -18,3 +18,8 @@
 - F0 Gate 未通过；尚无真实成员登记、Owner 签署、密钥演练或双生态互操作测试。
 - CI、运行时、红队和生产验收未执行。
 - PR #11 与 PR #12 保持 Draft/Open；未修改 main。
+
+## 二进制资产登记（2026-11-10）
+- 详见 [V1.8/BINARY_ASSET_STATUS.md](V1.8/BINARY_ASSET_STATUS.md)。
+- V1.8 的 Markdown/JSON/CSV/SVG 源文件已推送；原始 DOCX/PDF 尚未上传。
+- 完整 ZIP 与图集 ZIP 不作为唯一交付，不上传 ZIP。
