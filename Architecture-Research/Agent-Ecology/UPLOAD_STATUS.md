@@ -1,35 +1,24 @@
 # GitHub 同步状态
 
-## 远端位置
+## Agent Ecology 版本归档
 - 仓库：`yixuan2016/Personal_AI_Infrastructure`
-- 目录：`Architecture-Research/Agent-Ecology/`
-- 工作分支：`docs/agent-ecology-v1.2-v1.7-20261110`
-- 目标分支：`main`
-- PR：[#11](https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/11)（Draft / Open，未合并）
-- 初始归档提交：`9a2614cf6e2cf394566e2554908353f2bf8daca7`
+- 独立目录：`Architecture-Research/Agent-Ecology/`
+- V1.2—V1.7：PR #11，Draft/Open，独立归档分支。
+- V1.8：PR #12，Draft/Open，独立增量分支，基于 PR #11 分支（stacked review）。
 
-## 已同步内容
-- V1.2—V1.7 的 Markdown 研究文档；
-- V1.2 Schema、OpenAPI、Ontology、示例与一致性测试向量；
-- V1.3—V1.7 SVG 架构图源文件；
-- 数据契约、事件目录、研究证据、威胁矩阵、验收矩阵；
-- 参考部署、治理边界、版本说明与 SHA-256 清单；
-- 初始归档共 98 个新增路径。
-
-## 远端核验
-- 工作分支基于当前 `main`，未落后于 `main`；
-- GitHub PR 文件清单：98 个新增路径；
-- 已回读 README、V1.7 报告和同步状态文件，Blob SHA 与远端内容一致；
-- 未发现与既有主分支文件冲突；本次未修改 `main`。
-- 分支 ahead 数量以 PR #11 的实时 compare 结果为准。
+## V1.8 本轮云端内容
+- 16 个变更文件，1 个 V1.8 架构提交。
+- 6 份 Markdown 设计文档及 README/来源/状态记录。
+- 1 份组合 JSON Schema（包含提案、证据、能力声明、采用回执、联邦事件五类定义）。
+- 15 项验证矩阵、12 项威胁矩阵，全部 NotRun。
+- 2 张 SVG 架构源图。
+- Git Blob SHA 清单：`V1.8/GITHUB_BLOB_MANIFEST.md`。
 
 ## 二进制交付边界
-- Word、PDF、8K PNG 与 ZIP 保留为独立交付附件，本次 GitHub 文本/Blob 同步流程未上传这些二进制文件；
-- SVG 是可缩放的矢量源图，已纳入 GitHub，可无损渲染为 8K PNG；
-- 不将未上传的二进制文件标记为远端已同步。
+Word、PDF、8K PNG 和 ZIP 资料包作为独立交付附件提供，当前 GitHub PR 只同步 Markdown、JSON、CSV 和 SVG 源文件；不能将这些二进制附件表述为已进入 GitHub。
 
-## 测试与合并状态
-- 当前 PR 为 Draft / Open，未合并；
-- 此次未执行工程运行时、生产或双站点测试；
-- GitHub Actions workflow runs 与 commit status 当前均无记录；
-- 所有设计验证项保持待验证/NotRun，不因资料入库而标记通过。
+## 验收状态
+- 远端目录、README、V1.8 JSON Schema 已回读核验。
+- PR #12 相对 V1.2—V1.7 基线：Ahead 1 / Behind 0，16 个文件。
+- CI、运行时、真实双生态互操作、红队和生产验收均未执行。
+- PR #11 与 PR #12 均保持 Draft/Open；未修改 main。
