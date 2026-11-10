@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-ecology.example/schemas/trace-envelope-1.2.schema.json",
+  "title": "Agent Ecology Trace Envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "specversion",
+    "id",
+    "source",
+    "type",
+    "time",
+    "datacontenttype",
+    "trace",
+    "data"
+  ],
+  "properties": {
+    "specversion": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 512
+    },
+    "type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9_-]*){1,4}$"
+    },
+    "subject": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "datacontenttype": {
+      "const": "application/json"
+    },
+    "dataschema": {
+      "type": "string",
+      "maxLength": 512
+    },
+    "trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trace_type",
+        "schema_version",
+        "actor_id",
+        "domain_id",
+        "classification",
+        "visibility",
+        "purpose"
+      ],
+      "properties": {
+        "trace_type": {
+          "enum": [
+            "Observation",
+            "Intent",
+            "Task",
+            "Artifact",
+            "Dependency",
+            "Risk",
+            "Decision"
+          ]
+        },
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"
+        },
+        "actor_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "domain_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "ontology_ref": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "ontology_version": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "causation_id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "correlation_id": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "parent_trace_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 128,
+          "uniqueItems": true
+        },
+        "idempotency_key": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "classification": {
+          "enum": [
+            "public",
+            "internal",
+            "confidential",
+            "restricted",
+            "personal-private"
+          ]
+        },
+        "visibility": {
+          "enum": [
+            "private",
+            "domain",
+            "authorized-domain",
+            "federated-projection",
+            "governance-only"
+          ]
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "policy_ref": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "maxItems": 256
+        },
+        "artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "maxItems": 256
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^sha256:[a-fA-F0-9]{64}$"
+        },
+        "signature_ref": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "verification_status": {
+          "enum": [
+            "not-required",
+            "pending",
+            "verified",
+            "rejected",
+            "disputed",
+            "quarantined"
+          ]
+        }
+      }
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "trace": {
+            "properties": {
+              "trace_type": {
+                "const": "Task"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "trace": {
+            "required": [
+              "idempotency_key"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

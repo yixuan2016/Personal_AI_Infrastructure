@@ -1,0 +1,6 @@
+对象,字段,说明,权威来源,约束
+DecisionBrief,"brief_id,decision_question,snapshot_ref,options,evidence_refs,uncertainty,approval_requirements",决策简报,ADS Decision Support,预测不能自动成为生产命令
+ModelRelease,"release_id,model_id,version,evaluation_ref,shadow_ref,approval_ref,rollback_ref",模型发布,Model Governance,先评估、Shadow、审批、灰度
+DriftAlert,"alert_id,model_id,signal,severity,window,recommended_action",模型漂移告警,Model Monitor,高风险用途可自动隔离，不可自动扩权
+TwinSyncStatus,"twin_id,status,lag,missing_events,reconciliation_error,watermarks",孪生同步状态,Twin Registry,STALE/PARTIAL必须降级
+GovernanceReview,"review_id,model_id,purpose,risk_tier,reviewer,decision,conditions",治理评审,ADS/Human Governance,审批人与模型开发者职责分离

@@ -1,0 +1,14 @@
+API家族,逻辑操作,关键输入,关键输出,安全约束
+Discovery,SearchCapabilities,"domain_scope,capability,classification",authorized_candidate_projection,仅返回允许发现的元数据
+Subscription,CreateSubscription,"principal,event_types,filter,rate_limit,ttl","subscription_id,version",订阅不赋予数据访问权
+Task,GetTask,"task_id,principal","authorized_task_projection,state_version",回源权威状态并执行字段投影
+Task,TransitionTask,"task_id,expected_state_version,command,idempotency_key","new_state,new_version,event_ref",CAS+合法状态机+授权
+Claim,ClaimTask,"task_id,expected_state_version,agent,policy_ref","claim_id,lease_id,fencing_token",原子认领
+Claim,RenewLease,"claim_id,lease_id,expected_fencing_token","lease_expires_at,new_version",必须是当前持有者
+Claim,ReleaseClaim,"claim_id,reason,idempotency_key",release_status,不能释放他人执行权
+Event,PublishEvent,"CloudEvent envelope,aggregate_version","event_id,commit_status",事务Outbox/Schema校验
+Trace,AppendTrace,"trace_contract,source_refs,causation_ref","trace_id,content_hash",追加式，不接受静默覆盖
+Artifact,PublishArtifact,"content_hash,metadata,classification","artifact_ref,version",内容完整性和授权校验
+Policy,Evaluate,"principal,action,resource,purpose,context","decision,obligations,expiry",最小权限；PEP最终执行
+Policy,Revoke,"policy_or_grant_ref,reason,effective_at","revocation_event,pep_ack",高风险操作优先阻断
+Runtime,Health,"runtime_id,version,capacity","health,lag,limits",不泄露敏感信息

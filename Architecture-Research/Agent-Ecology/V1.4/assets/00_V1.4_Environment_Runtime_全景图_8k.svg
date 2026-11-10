@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs><linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#04101F" stop-opacity=".88"/><stop offset=".28" stop-color="#04101F" stop-opacity=".08"/><stop offset=".78" stop-color="#04101F" stop-opacity=".08"/><stop offset="1" stop-color="#04101F" stop-opacity=".9"/></linearGradient>
+<style>.t{font-family:'Noto Sans CJK SC',sans-serif;font-size:52px;font-weight:700;fill:#F3F8FF}.st{font-family:'Noto Sans CJK SC',sans-serif;font-size:22px;fill:#D8EAF8}.b{font-family:'Noto Sans CJK SC',sans-serif;font-size:20px;font-weight:600;fill:#F3F8FF}</style></defs>
+<image href="/mnt/data/agent_ecology_v1_4/assets/V1.4_Environment_Runtime_全景主视觉.png" width="1920" height="1080" preserveAspectRatio="xMidYMid slice"/>
+<rect width="1920" height="1080" fill="url(#shade)"/>
+<text x="960" y="80" text-anchor="middle" class="t">AGENT ECOLOGY V1.4</text>
+<text x="960" y="122" text-anchor="middle" class="st">ENVIRONMENT RUNTIME｜面向群体智能的环境驱动运行时架构</text>
+<rect x="90" y="905" width="1740" height="105" rx="22" fill="#061426" fill-opacity=".82" stroke="#24D8F2" stroke-width="2"/>
+<text x="960" y="948" text-anchor="middle" class="b">权威状态 × 事件可靠性 × 自主认领 × 数字信息素 × ADS 联邦治理</text>
+<text x="960" y="982" text-anchor="middle" class="st">研究设计版｜2026.11.10｜纯架构研究，不含工程实现</text></svg>

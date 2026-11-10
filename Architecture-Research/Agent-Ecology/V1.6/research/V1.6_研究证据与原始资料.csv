@@ -1,0 +1,12 @@
+编号,资料,来源,日期,支持内容,原始链接,适用边界
+R1,A survey of world models for physical AI with uncertainty representation and control,Discover Artificial Intelligence,2026-09-03,世界模型六维设计分类；不确定性、长时误差、规划器利用模型漏洞,https://link.springer.com/article/10.1007/s44163-026-02122-1,研究对象偏Physical AI；借鉴模型设计/验证方法
+R2,World Reasoning Arena,arXiv,2026-03-26,动作模拟保真度、长时预测、模拟推理与规划评测,https://arxiv.org/abs/2603.25887,基准不等于生态直接验证
+R3,AgentWorld: Benchmarking Long-Horizon Collaboration of Multi-agent LLMs,arXiv,2026-09-25,长程协作、3-20 Agent、25-55轮、CCE因果协作贡献指标,https://arxiv.org/abs/2609.31590,MMORPG沙箱；不可直接代表企业Agent工作流
+R4,Long-Horizon Textual World Modeling through Structured Reasoning,arXiv,2026-10-05,显式文本状态、稀疏状态变化、多步预测和反事实敏感性,https://arxiv.org/abs/2610.06637,交互环境实验；非开放式生产生态
+R5,FutureSim: Replaying World Events to Evaluate Adaptive Agents,arXiv,2026-05-14,真实事件时间顺序重放、长期预测与概率校准,https://arxiv.org/abs/2605.15188,开放世界预测基准；结果提醒长期预测能力有限
+R6,AgentSociety: Large-scale simulation of LLM-driven generative agents advances understanding of human behaviors and society,iFuture,2026-07-27,10k+ Agent与约5m交互的规模化社会仿真,https://doi.org/10.26599/IF.2026.9710004,Just Accepted页面；仍需独立复现
+R7,On Methods of Uncertainty Quantification in Computational Modeling and Simulation,NIST AMS 100-85,2026-10-05,风险相称VVUQ、不确定性传播和数字孪生可信度,https://doi.org/10.6028/NIST.AMS.100-85,CMS方法论；需按Agent任务定制
+R8,A Conceptual Framework for Digital Twins of Multi-Agent Systems,Procedia Computer Science,2025,数据驱动ABMS与数字孪生整合、What-if和实时校准,https://doi.org/10.1016/j.procs.2025.03.043,概念框架和说明性案例
+R9,Integrating Counterfactual Simulations with Language Models for Explaining Multi-Agent Behaviour,AAMAS 2026,2026-05-24,What-if/Remove反事实询问和多Agent行为解释,https://doi.org/10.65109/MCSD1905,自动驾驶场景实验
+R10,How to keep it adequate: A protocol for ensuring validity in agent-based simulation,Environmental Modelling & Software,2023-01,情境适配模型有效性与12步验证协议,https://doi.org/10.1016/j.envsoft.2022.105559,验证流程需按本项目目的定制
+R11,Generative Agents: Interactive Simulacra of Human Behavior,UIST 2023,2023-10-29,记忆、观察、规划和反思形成涌现行为,https://doi.org/10.1145/3586183.3606763,25 Agent演示，不证明生产级预测能力

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-ecology.example/schemas/artifact-manifest-1.2.schema.json",
+  "title": "Artifact Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_ref",
+    "version",
+    "owner_domain",
+    "producer_id",
+    "media_type",
+    "content_hash",
+    "classification",
+    "created_at"
+  ],
+  "properties": {
+    "artifact_ref": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "parent_version": {
+      "type": "string"
+    },
+    "owner_domain": {
+      "type": "string"
+    },
+    "producer_id": {
+      "type": "string"
+    },
+    "media_type": {
+      "type": "string"
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-fA-F0-9]{64}$"
+    },
+    "size_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "classification": {
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted",
+        "personal-private"
+      ]
+    },
+    "allowed_purposes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verification_status": {
+      "enum": [
+        "pending",
+        "verified",
+        "rejected",
+        "quarantined"
+      ]
+    }
+  }
+}

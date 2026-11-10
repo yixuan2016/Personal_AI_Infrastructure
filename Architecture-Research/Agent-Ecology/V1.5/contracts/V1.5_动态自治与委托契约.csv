@@ -1,0 +1,5 @@
+对象,字段,说明,权威来源,关键约束
+Mandate,"mandate_id,issuer,principal,task,actions,resource_scope,data_scope,purpose,budget,expiry,parent_ref,signature",任务委托声明,Policy/Mandate Registry,签名、任务绑定、短时有效
+AutonomyDecision,"decision_id,principal,task,mode,risk,evidence_ref,policy_version,obligations,expiry",自治模式判定,Policy Decision Ledger,自治等级与权限范围分离
+Delegation,"parent_mandate,child_mandate,attenuated_actions,attenuated_scope,expiry",子Agent委托,Policy/Mandate Registry,子委托不得扩大父权限
+Revocation,"revocation_id,mandate_id,reason,policy_epoch,effective_at,pep_ack",授权撤销,ADS PDP/领域 PEP,高风险动作必须确认授权新鲜度

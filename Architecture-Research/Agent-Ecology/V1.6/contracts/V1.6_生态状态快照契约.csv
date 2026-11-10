@@ -1,0 +1,7 @@
+对象,字段,说明,权威来源,约束
+EcosystemSnapshot,"snapshot_id,cutoff_time,domain_watermarks,ontology_version,policy_version,source_refs,consistency_status",生态状态快照,Snapshot Builder,必须记录水位线和部分一致性状态
+ObservedState,"entity_id,observed_at,source_ref,source_version,attributes",真实观测状态,Environment/Domain Source,不得与预测状态混存
+InferredState,"entity_id,inferred_at,model_ref,posterior,uncertainty",推断隐状态,State Estimator,标注推断来源和不确定性
+PredictedState,"entity_id,predicted_at,horizon,model_version,distribution_ref",模型预测状态,World Model,不是事实状态，不得写回权威状态
+CounterfactualState,"entity_id,scenario_id,intervention_ref,model_version,distribution_ref",干预条件下状态,Counterfactual Engine,只在隔离实验分支中存在
+TwinInstance,"twin_id,snapshot_ref,source_domains,sync_status,fidelity_profile,last_sync_at",数字孪生实例,Twin Registry,STALE/PARTIAL禁止高风险建议
