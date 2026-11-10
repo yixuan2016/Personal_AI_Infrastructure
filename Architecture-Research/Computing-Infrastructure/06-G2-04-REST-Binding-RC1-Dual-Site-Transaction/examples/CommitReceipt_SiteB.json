@@ -1,0 +1,11 @@
+{
+  "transaction_id": "txn-demo-20261110-001",
+  "site_id": "site-b",
+  "reservation_ref": "urn:example:reservation:site-b:001",
+  "lease_ref": "urn:example:lease:site-b:001",
+  "fencing_epoch": 27,
+  "lease_expires_at": "2026-11-10T19:00:00Z",
+  "contract_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "state_version": 7,
+  "signature_ref": "urn:example:signature:commit-site-b"
+}
