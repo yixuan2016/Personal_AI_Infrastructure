@@ -18,3 +18,5 @@ Markdown、CSV、JSON、YAML 和 SVG 源文件纳入 Git。8K PNG、Word、PDF �
 
 ## 归档审查
 - `ARCHIVE_AUDIT.md`：记录 V1.2–V1.7 图片引用修复、版本副本、二进制交付边界和审查状态。
+
+- `BINARY_ASSET_STATUS_V1.2-V1.7.md`：登记尚未上传的 Word/PDF/PNG 原件、大小和上传限制。
