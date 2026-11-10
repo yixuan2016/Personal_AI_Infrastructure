@@ -15,3 +15,6 @@ Environment 是真实状态权威源；World Model/Twin 只产生预测和仿真
 
 ## 资料形态
 Markdown、CSV、JSON、YAML 和 SVG 源文件纳入 Git。8K PNG、Word、PDF 和 ZIP 交付文件另行提供；SVG 可无损渲染为 8K PNG。所有尚未执行的测试保持 NotRun/待验证，不以资料入库代替工程验收。
+
+## 归档审查
+- `ARCHIVE_AUDIT.md`：记录 V1.2–V1.7 图片引用修复、版本副本、二进制交付边界和审查状态。
