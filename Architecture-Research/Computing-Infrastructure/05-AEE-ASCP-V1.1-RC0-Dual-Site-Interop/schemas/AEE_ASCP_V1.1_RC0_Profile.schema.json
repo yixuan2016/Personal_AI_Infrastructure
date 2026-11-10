@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ads:aee-ascp:schemas:1.1.0-rc0",
+  "title": "AEE/ASCP V1.1 RC0 additive schemas",
+  "description": "Two additive schemas; DM04 base contracts remain authoritative and are not duplicated.",
+  "$defs": {
+    "AEEProfileContext": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:ads:aee-ascp:profile:1.1.0-rc0",
+      "title": "AEE/ASCP 1.1 Profile Context",
+      "description": "Optional cross-cutting profile context composed with DM04 IFC0.1/IFC0.2 base contracts; not a standalone authorization or task schema.",
+      "type": "object",
+      "properties": {
+        "profile_uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "profile_version": {
+          "const": "1.1.0-rc0"
+        },
+        "environment_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "ontology_profile_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "trace_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        },
+        "subscription_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "task_claim_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "artifact_binding_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "governance_context_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "criticality": {
+          "enum": [
+            "required_for_operation",
+            "optional_context"
+          ]
+        },
+        "site_scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "profile_uri",
+        "profile_version",
+        "environment_ref",
+        "ontology_profile_ref",
+        "purpose",
+        "criticality"
+      ],
+      "additionalProperties": false
+    },
+    "TaskClaim": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:ads:aee-ascp:task-claim:1.1.0-rc0",
+      "title": "AEE/ASCP TaskClaim",
+      "description": "Site-local task-stage claim only. Not a compute ResourceLease and not a global lease authority.",
+      "type": "object",
+      "properties": {
+        "claim_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "global_task_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "site_task_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "stage_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "site_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "holder_agent_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "claim_epoch": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "max_expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "state": {
+          "enum": [
+            "active",
+            "expired",
+            "released",
+            "revoked",
+            "unknown"
+          ]
+        },
+        "policy_decision_ref": {
+          "type": "string",
+          "format": "uri"
+        },
+        "idempotency_key": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        }
+      },
+      "required": [
+        "claim_ref",
+        "global_task_ref",
+        "site_task_ref",
+        "stage_ref",
+        "site_id",
+        "holder_agent_ref",
+        "claim_epoch",
+        "issued_at",
+        "expires_at",
+        "max_expires_at",
+        "state",
+        "policy_decision_ref",
+        "idempotency_key"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
