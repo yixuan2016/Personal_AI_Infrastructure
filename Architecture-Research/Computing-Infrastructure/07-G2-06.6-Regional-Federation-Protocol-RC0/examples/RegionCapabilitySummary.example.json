@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.0-RC0",
+  "region_id": "region-west",
+  "region_epoch": 3,
+  "snapshot_id": "snap-region-west-00042",
+  "snapshot_version": 42,
+  "issuer_ref": "urn:example:rcp:region-west",
+  "observed_at": "2026-11-12T10:00:00Z",
+  "valid_until": "2026-11-12T10:05:00Z",
+  "ontology_version": "3.1.0-RC0",
+  "contract_profiles": [
+    "compute-federation/0.1.0-RC0"
+  ],
+  "trust_domain_refs": [
+    "urn:example:trust:partner-a"
+  ],
+  "sites": [
+    {
+      "site_id": "site-west-01",
+      "owner_ref": "urn:example:owner:site-west-01",
+      "owner_epoch": 7,
+      "sequence_no": 891,
+      "health_state": "healthy",
+      "observed_at": "2026-11-12T10:00:00Z",
+      "valid_until": "2026-11-12T10:03:00Z",
+      "capability_refs": [
+        "urn:example:capability:gpu-hpc"
+      ],
+      "resource_summary": {
+        "gpu_profiles": [
+          {
+            "model": "GPU-Model-X",
+            "memory_gib": 80,
+            "interconnect_profile": "fabric-profile-a",
+            "available_units": 8,
+            "observed_at": "2026-11-12T10:00:00Z",
+            "valid_until": "2026-11-12T10:03:00Z"
+          }
+        ],
+        "capacity_confidence": 0.92
+      },
+      "source_signature_ref": "urn:example:evidence:site-west-01-sig-891"
+    }
+  ],
+  "completeness": "partial",
+  "freshness": "fresh",
+  "revocation_watermark": {
+    "issuer_ref": "urn:example:revocation:authority",
+    "epoch": 2,
+    "sequence_no": 105,
+    "observed_at": "2026-11-12T09:59:50Z"
+  },
+  "signature_ref": "urn:example:evidence:region-west-snapshot-signature"
+}
