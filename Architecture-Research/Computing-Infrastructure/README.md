@@ -77,3 +77,6 @@
 - [G2-06.6 Saga 与恢复协议](07-G2-06.6-Regional-Federation-Protocol-RC0/G2-06.6_Saga与恢复协议.md)：跨区域 Prepare/Commit、Activation Barrier、补偿和恢复。
 
 以上均为 RC0 架构候选，待 Owner 评审和双实现互操作验证。
+
+
+- [G2-06.7 十星控制面容量与跨区域网络模型](07-G2-06.6-Regional-Federation-Protocol-RC0/G2-06.7_十星控制面容量与跨区域网络模型.md)：控制面容量、跨区域网络、数据位置、GPU Fabric、存储与设施约束。
