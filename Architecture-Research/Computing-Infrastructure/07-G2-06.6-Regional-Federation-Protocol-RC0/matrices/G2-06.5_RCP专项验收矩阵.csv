@@ -1,0 +1,21 @@
+编号,验收项目,核心通过条件,证据要求,级别
+RCP-001,区域目录分片,区域与信任域分区边界正确,分区映射与Owner清单,P0
+RCP-002,跨区域目录查询,只返回调用方获准查看的摘要,授权决策与过滤审计,P0
+RCP-003,目录过期,过期视图不能用于资源承诺,TTL与Owner重新确认记录,P0
+RCP-004,Owner资源变化,旧版本不再用于Prepare/Commit,Owner epoch与sequence证据,P0
+RCP-005,区域任务路由,满足全部硬约束后才排序,约束过滤与候选决策记录,P0
+RCP-006,区域Prepare,目标站点Reservation Authority独立确认,Site PrepareReceipt,P0
+RCP-007,区域Commit,目标站点Lease Authority签发Lease,Site CommitReceipt与Lease引用,P0
+RCP-008,RCP主节点失效,不产生双主或重复协调副作用,region_epoch与coordinator_fence,P0
+RCP-009,RCP整体失效,站点在本地授权范围内自治,站点本地运行记录,P0
+RCP-010,全局ADS失联,不扩大离线授权范围,本地Policy与撤销水位,P0
+RCP-011,策略版本传播,区域和站点版本可追溯,PolicyBundle与采用记录,P1
+RCP-012,紧急权限撤销,目标PEP按风险策略阻断,撤销回执与PEP审计,P0
+RCP-013,事件sequence缺口,能够快照对账并补传,GapReport与SnapshotReceipt,P0
+RCP-014,区域网络分区,不发生未确认跨域Commit,网络注入与Saga记录,P0
+RCP-015,区域重新加入,先恢复权威状态再开放新交易,ReconciliationReport,P0
+RCP-016,多运营商网络,路径与责任可追溯,网络路径与QoS证据,P1
+RCP-017,区域资源公平,资源分配偏置可解释可复核,公平性指标与争议记录,P1
+RCP-018,控制面过载,P0/P1不被P3遥测阻塞,队列延迟与背压报告,P0
+RCP-019,区域成员退出,Lease、数据与证据处置闭环,退出检查清单与Owner回执,P0
+RCP-020,十星综合故障,区域隔离与自治恢复有效,独立见证综合报告,P0
