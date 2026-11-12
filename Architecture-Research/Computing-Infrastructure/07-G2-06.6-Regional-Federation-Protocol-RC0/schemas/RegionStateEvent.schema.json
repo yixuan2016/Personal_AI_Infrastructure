@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.invalid/pal-base/g2-06.6/region-state-event.schema.json",
+  "title": "RegionStateEvent",
+  "description": "G2-06.6 RC0 candidate CloudEvents 1.0 envelope with Owner-scoped ordering extensions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "specversion",
+    "id",
+    "source",
+    "type",
+    "subject",
+    "time",
+    "datacontenttype",
+    "dataschema",
+    "region_id",
+    "owner_id",
+    "owner_epoch",
+    "sequence_no",
+    "entity_version",
+    "payload_digest",
+    "data"
+  ],
+  "properties": {
+    "specversion": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    },
+    "type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "datacontenttype": {
+      "type": "string",
+      "const": "application/json"
+    },
+    "dataschema": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    },
+    "region_id": {
+      "type": "string"
+    },
+    "owner_id": {
+      "type": "string"
+    },
+    "owner_epoch": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sequence_no": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "entity_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "correlation_id": {
+      "type": "string"
+    },
+    "causation_id": {
+      "type": "string"
+    },
+    "payload_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "revocation_watermark": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object"
+    },
+    "signature_ref": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    }
+  }
+}
