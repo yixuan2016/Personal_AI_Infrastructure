@@ -1,0 +1,39 @@
+flowchart TB
+    G["全球联邦层：ADS / GCP"]
+    SCOG["全局任务图与跨区域协调"]
+    RCP["区域协调平面 RCP"]
+    subgraph R["RCP 区域能力"]
+      DIR["区域资源目录"]
+      TASK["区域任务协调"]
+      FRI["区域资源智能"]
+      NET["网络与数据位置分析"]
+      POL["策略缓存与撤销分发"]
+      EVT["事件聚合与对账"]
+      OPS["配额、SLO、公平性与争议"]
+    end
+    subgraph S1["区域内站点自治"]
+      A["A星 LCP / ADS / SCO"]
+      B["B星 LCP / ADS / SCO"]
+      C["C星 LCP / ADS / SCO"]
+    end
+    subgraph O["专业资源权威"]
+      CPU["CPU / GPU Owner"]
+      DATA["Data Owner"]
+      NETO["Network Owner"]
+      FAC["能源与设施 Owner"]
+    end
+    G --> SCOG
+    SCOG --> RCP
+    RCP --> DIR
+    RCP --> TASK
+    RCP --> FRI
+    RCP --> NET
+    RCP --> POL
+    RCP --> EVT
+    RCP --> OPS
+    TASK --> A
+    TASK --> B
+    TASK --> C
+    A --> O
+    B --> O
+    C --> O
