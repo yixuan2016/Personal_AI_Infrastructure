@@ -67,3 +67,13 @@
 - 不放个人 MEMORY、私密聊天记录、凭据、密钥、真实访问令牌、客户数据或本地私有目录。
 - 不覆盖仓库既有 README、安全配置、PAI 受保护文件或其他 Pack。
 - 原始 ZIP 仅用于完整包下载；可审查源文件以目录内的 Markdown、CSV、JSON Schema、SVG、Word、Excel 为准。
+
+
+## G2-06.5 / G2-06.6 区域联邦研究
+
+- [G2-06.5 区域协调层详细设计](07-G2-06.6-Regional-Federation-Protocol-RC0/G2-06.5_区域协调层详细设计.md)：区域协调平面、目录分片、故障自治与验收。
+- [G2-06.6 跨区域协议与数据契约](07-G2-06.6-Regional-Federation-Protocol-RC0/G2-06.6_跨区域协议与数据契约规范.md)：API 操作、请求信封、身份、数据边界与错误模型。
+- [G2-06.6 事件与一致性契约](07-G2-06.6-Regional-Federation-Protocol-RC0/G2-06.6_跨区域事件与一致性契约.md)：CloudEvents 信封、Owner epoch/sequence、快照修复与撤销传播。
+- [G2-06.6 Saga 与恢复协议](07-G2-06.6-Regional-Federation-Protocol-RC0/G2-06.6_Saga与恢复协议.md)：跨区域 Prepare/Commit、Activation Barrier、补偿和恢复。
+
+以上均为 RC0 架构候选，待 Owner 评审和双实现互操作验证。
