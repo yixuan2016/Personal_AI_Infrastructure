@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.invalid/pal-base/g2-06.6/region-operation-receipt.schema.json",
+  "title": "RegionOperationReceipt",
+  "description": "G2-06.6 RC0 candidate. This receipt attests only to the regional coordination projection.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "operation_id",
+    "region_id",
+    "region_epoch",
+    "operation_type",
+    "state",
+    "request_digest",
+    "issuer_ref",
+    "issuer_role",
+    "authoritative_scope",
+    "issued_at",
+    "signature_ref",
+    "participant_receipts",
+    "reconciliation_required"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0-RC0"
+    },
+    "receipt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "region_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "region_epoch": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "operation_type": {
+      "type": "string",
+      "enum": [
+        "validate",
+        "prepare",
+        "commit",
+        "activate",
+        "cancel",
+        "reconcile",
+        "policy_distribution",
+        "revocation_distribution"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "in_progress",
+        "succeeded",
+        "partially_succeeded",
+        "rejected",
+        "failed",
+        "unknown",
+        "reconciliation_required"
+      ]
+    },
+    "request_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "issuer_ref": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    },
+    "issuer_role": {
+      "type": "string",
+      "const": "regional_coordinator"
+    },
+    "authoritative_scope": {
+      "type": "string",
+      "const": "region_projection"
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "participant_receipts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "site_id",
+          "owner_ref",
+          "owner_epoch",
+          "sequence_no",
+          "state"
+        ],
+        "properties": {
+          "site_id": {
+            "type": "string"
+          },
+          "owner_ref": {
+            "type": "string",
+            "format": "uri-reference",
+            "minLength": 1
+          },
+          "owner_epoch": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sequence_no": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "prepared",
+              "committed",
+              "rejected",
+              "unknown",
+              "released",
+              "stopped"
+            ]
+          },
+          "receipt_ref": {
+            "type": "string",
+            "format": "uri-reference",
+            "minLength": 1
+          },
+          "valid_until": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "reconciliation_required": {
+      "type": "boolean"
+    },
+    "source_event_cursor": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference",
+        "minLength": 1
+      }
+    },
+    "signature_ref": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    }
+  }
+}
