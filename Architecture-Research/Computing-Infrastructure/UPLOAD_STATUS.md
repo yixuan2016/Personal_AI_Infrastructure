@@ -36,3 +36,14 @@
 - 新增资料已写入本分支；阶段状态仍为 RC0 候选，未声称 Owner 签署、真实部署或验收通过。
 - 原始 133 项历史归档的完整性、二进制 ZIP 校验和 SHA-256 全量核对仍未完成；本次增量提交不改变该历史状态。
 - 本分支相对 main 曾核实为 ahead 18 / behind 2；本轮只向工作分支增量提交，未合并 main。
+
+
+## Draft PR 状态（2026-11-12）
+
+- Draft PR: https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/13
+- Title: docs(compute-base): G2-06.5/06.6 区域协调与跨区域联邦协议
+- Head: docs/compute-base-g2-20261110 @ 5a937185e10efc622a607849f22b0b8b387c67c5
+- Base: main @ 314418d001b195fc0ce106ca875c2c15a9fea239
+- GitHub 回读状态：open / draft=true / mergeable=true / mergeable_state=clean；41 commits，152 changed files。
+- 未执行 PR Merge，未改写 main。
+- 该 PR 汇总此前工作分支已有资料与本次 G2-06.5/G2-06.6 增量；审阅时应按目录和提交范围检查，不能将 PR 文件数等同于本轮新增文件数。
