@@ -90,3 +90,12 @@
 - [独立见证与十星验收门禁](08-G2-06.8-Fault-Injection-Recovery-RC0/G2-06.8_独立见证与十星验收门禁.md)：Gate 0—4、双实现互操作和证据链要求。
 
 G2-06.8 当前为 RC0 候选方案；文件归档不代表真实故障注入或十星现场验收已完成。
+
+
+## G2-06.9 十星硬件型号与异构节点参考配置
+
+- [G2-06.9 阶段目录](09-G2-06.9-Hardware-Reference-Architecture-RC0/README.md)：CPU/GPU/存储/网络设备候选型号和阶段边界。
+- [十星 CPU/GPU/存储/网络设备型号参考选型](09-G2-06.9-Hardware-Reference-Architecture-RC0/G2-06.9_十星CPU_GPU存储网络设备型号参考选型.md)：AMD EPYC 9006 SP7、Intel Xeon 6980P、NVIDIA GB300/HGX B300、AMD MI355X/MI350P、Micron 9650/9550、Seagate Mozaic 4+、Quantum-X800、Spectrum-6 等候选型号。
+- [十星异构节点与区域部署配置](09-G2-06.9-Hardware-Reference-Architecture-RC0/G2-06.9_十星异构节点与区域部署配置.md)：控制/通用、GPU、存储、网络和设施节点角色。
+
+G2-06.9 型号来自厂商官方资料核查；均为候选，不代表采购、OEM 兼容认证或现场验收通过。
