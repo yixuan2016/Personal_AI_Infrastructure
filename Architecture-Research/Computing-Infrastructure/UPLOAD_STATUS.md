@@ -3,7 +3,7 @@
 - **Repository:** `yixuan2016/Personal_AI_Infrastructure`
 - **Working branch:** `docs/compute-base-g2-20261110`
 - **Dedicated directory:** `Architecture-Research/Computing-Infrastructure/`
-- **Related PR:** [#13 — G2-06.5—06.9 区域联邦、十星网络、故障恢复与硬件型号研究](https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/13)
+- **Related PR:** [#13 — G2-06.5—06.10 区域联邦、十星网络、故障恢复、硬件型号与 OEM 配置研究](https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/13)
 - **Merge policy:** 仅向工作分支增量提交；本轮未合并 main，未修改工程代码。
 
 ## 已归档阶段
@@ -16,40 +16,61 @@
 | G2-06.7 | 十星控制面容量与跨区域网络模型 | RC0 候选，待现场测量 |
 | G2-06.8 | 双区域十星故障注入、自治恢复与独立验收 | RC0 候选，待批准和实测 |
 | G2-06.9 | 十星 CPU/GPU/存储/网络设备型号与异构节点配置 | RC0 候选，待 OEM/QVL/设施核验 |
+| G2-06.10 | 双区域十星 OEM 级整机配置、BOM、功率/液冷与采购验收 | RC0 候选，待完整 SKU/报价/现场测量 |
 
-## G2-06.8 本轮归档
+## G2-06.8 归档
 
-- 故障遏制与自治恢复架构、故障注入与恢复演练手册、独立见证与十星验收门禁：3 份主要设计文档。
-- ADR：1 份；Mermaid 图源：2 份。
-- 故障注入验收矩阵：32 项；恢复证据与 Owner 签署矩阵：12 项。
-- FailureEvidenceRecord JSON Schema：1 份；合成 JSON 示例：1 份。
-- 11 个 G2-06.8 文件已从远端回读；Schema 与示例通过 JSON 语法解析；CSV 行数和 Mermaid 图源首行检查通过。
-- 这些检查不等于完整 Schema 工具链验证、图表渲染、双实现互操作或真实故障注入。
+- 3 份主要架构/演练/验收文档；1 份 ADR；2 份 Mermaid 图源。
+- 故障注入验收矩阵 32 项；恢复证据与 Owner 签署矩阵 12 项。
+- FailureEvidenceRecord JSON Schema 1 份；合成 JSON 示例 1 份。
+- 11 个 G2-06.8 文件已从远端回读；JSON 语法、CSV 行数和 Mermaid 图源首行检查通过。
+- 真实故障注入、双实现互操作和 Owner 签署未完成。
 
-## G2-06.9 本轮归档
+## G2-06.9 归档
 
-- 十星 CPU/GPU/存储/网络设备型号参考选型：1 份。
-- 十星异构节点与区域部署配置：1 份。
-- ADR：1 份；硬件拓扑 Mermaid 图源：1 份。
-- 硬件型号与兼容性核验矩阵：21 项；设备候选与证据来源登记：16 项。
-- 共新增 7 个 G2-06.9 文件，并更新本索引与归档状态。
-- 7 个文件已从远端回读；两份 CSV 行数、图源首行和型号关键字已检查。
-- 型号信息来自厂商官方产品页/数据表；仍需采购 SKU、OEM QVL、BIOS/固件、驱动、供货区域、功率和液冷验证。
+- CPU/GPU/SSD/HDD/NIC/交换机候选型号和十星异构节点部署配置 2 份主文档。
+- ADR 1 份；Mermaid 图源 1 份；硬件兼容矩阵 21 项；官方证据来源登记 16 项。
+- 7 个 G2-06.9 文件已远端回读；型号关键字、CSV 行数和 Mermaid 图源首行检查通过。
+- 型号仍需采购 SKU、OEM QVL、BIOS/固件、驱动、供货区域、功率和液冷验证。
 
-## G2-06.9 已核实的候选型号
+## G2-06.10 本轮归档
 
-- CPU：AMD EPYC 9956/9996/9966/9756；Intel Xeon 6980P。
-- GPU：NVIDIA GB300 NVL72、HGX B300；AMD Instinct MI355X OAM、MI350P PCIe；NVIDIA Vera Rubin NVL72 作为前瞻观察项。
-- SSD/HDD：Micron 9650/9550、Solidigm D7-PS1010、KIOXIA CM7-V、Seagate Mozaic 4+ 44TB。
-- 网络：NVIDIA Quantum-X800 Q3400-RA/Q3401-RD、Spectrum-6 SN6600/SN6800、ConnectX-8；Broadcom Tomahawk 6 仅作为交换 ASIC 候选，未认定为交换机整机 SKU。
+- 双区域十星 OEM 级整机与配置参考架构：1 份。
+- 功率液冷与机房基础设施预算模型：1 份。
+- 单星配置卡与部署边界：1 份。
+- ADR-G2-06.10-01：1 份。
+- 双区域十星 OEM 部署与设施拓扑 Mermaid 图源：1 份。
+- 十星设备 BOM 与端口配置清单：1 份 CSV。
+- OEM 兼容性与采购验收矩阵：30 项。
+- G2-06.10 README：1 份。
+- 共新增 8 个 G2-06.10 文件，并更新本索引与归档状态。
 
-## 验证边界
+### G2-06.10 主参考配置
 
-1. 尚未执行完整 JSON Schema Draft 2020-12 工具链验证和 Mermaid 渲染构建。
-2. 尚未执行两套独立实现互操作、真实网络故障注入或现场十星验收。
-3. 尚未获得站点、区域、资源、数据、网络、设施、安全与 OEM Owner 的正式签署。
-4. 所有 RTO/RPO、撤销最大陈旧窗口、功率、液冷、吞吐和网络 SLO 仍需现场测量。
-5. 设备型号明确不等于采购完成、OEM 兼容认证或部署完成；当前不冻结十星采购 BOM。
+每区域候选：
+- A1/B1：1 套 HPE GB300 NVL72（Dell XE9712 / Lenovo 7DJV 为 OEM 替代）。
+- A2/B2：1 套 Lenovo SC755 V5 + N1380，8 trays，2N2S 形成 16 个双路节点；EPYC 9976-S7/9756-S7 按地区供货和 OEM QVL 确认。
+- A3/B3：2 台 Dell PowerEdge R7725xd + 40× KIOXIA LC9 E3.L 245.76TB/台。
+- A4/B4：3 台 Dell PowerEdge R9815 通用/控制节点。
+- A5/B5：2 台 Dell PowerEdge R9815 网络/边缘服务节点 + 2 台 800G Fabric 交换机（Quantum-X800 IB 或 Spectrum-6 Ethernet 二选一）。
+
+### G2-06.10 已核实的关键功率口径
+
+- HPE GB300 NVL72：132kW 名义 TDP、约 155kW EDPp、HPE 建议母线按 192kW 规划；8×33kW Power Shelf 合计 264kW 是输出容量，不是实际功耗。
+- HPE QuickSpecs：Vertiv XDU1350 额定冷量 1.3MW，厂商说明最多支持 8 个该类机柜；CDU 冗余与现场水路仍待验证。
+- Lenovo N1380：4×15kW PCS；N+1 DC chassis capacity 54kW；8 tray + 4 PCS 在 45°C 示例水流量 42.8L/min。
+- Dell R7725xd + 40× KIOXIA LC9：Dell 公开技术简报估算服务器 + SSD 约 1.647kW/台，非现场实测。
+- Quantum-X800 Q3400-RA：约 2.9kW 典型（passive cable），主动线缆最大约 7kW。
+- Spectrum-6 SN6600：FRO 约 3.94kW、TRO 约 3.2kW 典型功耗。
+- 以上指标边界不同，不能混合相加为区域总功率。
+
+### G2-06.10 验证状态
+
+- 8 个新增文件已提交至工作分支；本轮需继续远端回读校验。
+- 设备候选、SKU 和公开规格有官方来源；完整采购 BOM、OEM QVL、地区报价、供货承诺、机柜/液冷/电力现场设计仍未完成。
+- 72 GPU NVL72 方案与 8 GPU HGX/MI355X 节点方案为替代架构，不得混算。
+- LC9 QLC 0.3 DWPD 只作为容量/读密集层候选，高写入事务数据需独立存储层。
+- R9815、WAN 边界、OOB 管理交换机、CDU 冗余、UPS/PDU/变压器和辅助设备功耗仍待完整 OEM 配置和设施设计。
 
 ## 历史 133 项归档核验
 
