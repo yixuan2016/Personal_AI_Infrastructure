@@ -1,0 +1,26 @@
+区域,星位,设备域,OEM/平台候选,型号或SKU,参考配置,数量,关键端口/接口,电力/冷却口径,状态,待确认项
+A,A1,GPU机柜,HPE,HPE GB300 NVL72 S7K95A,72x B300;36x Grace;18 compute trays;9 NVLink switch trays,1套,每tray 4x800G OSFP（按Lenovo平台公开参考核对具体HPE SKU）,132kW名义TDP;155kW EDPp;192kW母线规划;液冷,RC0候选,完整订货SKU/机柜布线/CDU冗余
+A,A1,GPU机柜替代,Dell,PowerEdge XE9712 / IR9048,GB300 NVL72;18x 1RU sled;72x B300,1套,按Dell XE9712完整系统配置,33kW Power Shelf;DLC选项,替代候选,整机输入/冷却配置/区域SKU
+A,A1,GPU机柜替代,Lenovo,GB300 NVL72 Type 7DJV,18 compute trays;9 NVLink switch trays;72x B300,1套,每tray 4x800G OSFP,6或8 Power Shelves;双液冷回路,替代候选,完整电气/冷却/服务配置
+A,A2,CPU/HPC,Lenovo,SC755 V5 7DN6CTO1WW + N1380 7DDHCTOLWW,8 trays;2N2S;16 dual-socket nodes;EPYC 9976-S7候选,1套enclosure,最多32x25GbE onboard（16节点x2）,4x15kW PCS;N+1 DC capacity 54kW;45C水温示例42.8L/min,RC0候选,CPU地区供货/内存QVL/PCS冗余
+A,A3,容量存储,Dell,Dell PowerEdge R7725xd,2x EPYC 9005;40x E3.L Gen5 NVMe;40x KIOXIA LC9 245.76TB,2台,存储前端/后端NIC SKU待定,约1.647kW/台公开估算;风冷配置待OEM确认,RC0候选,LC9 QVL/SED或FIPS/数据保护策略
+A,A4,控制/通用,Dell,PowerEdge R9815,1x EPYC 9006 SP7;16 DIMM;4TB RDIMM max,3台,1Gb BMC + OCP 3.0 + PCIe Gen6 NIC按需,电源与整机功耗待Dell配置器,RC0候选,CPU SKU/DIMM/NIC/SSD QVL
+A,A5,网络边缘,Dell,PowerEdge R9815,网络服务/安全代理/遥测/边缘任务,2台,按安全/WAN/遥测工作负载配置NIC,电源与整机功耗待Dell配置器,RC0候选,路由/防火墙/NIC选型
+A,A5,GPU Fabric IB,NVIDIA,Quantum-X800 Q3400-RA,144x800Gb/s OSFP;115.2Tb/s,2台,每台初始约36条GPU rack链路（双平面均分假设）,2.9kW典型passive cable;7kW active cable max,替代候选,端口rail/光缆/上联/实际功耗
+A,A5,GPU Fabric Ethernet,NVIDIA,Spectrum-6 SN6600,128x800Gb/s OSFP;102.4Tb/s,2台,每台初始约36条GPU rack链路（双平面均分假设）,3.94kW FRO或3.2kW TRO典型,替代候选,RoCE参数/光模块/拥塞控制
+A,A5,OOB管理,待定,独立管理交换机,双交换机/独立管理平面,2台,服务器BMC/Redfish/设施管理,待定,待选型,端口数/PoE/带外隔离
+A,A5,WAN边界,待定,路由器/防火墙/运营商CPE,双运营商双路径,至少2套,100/400G按业务合同设计,待定,待选型,运营商/ASN/线路SLA/安全策略
+B,B1,GPU机柜,HPE,HPE GB300 NVL72 S7K95A,72x B300;36x Grace;18 compute trays;9 NVLink switch trays,1套,每tray 4x800G OSFP（按Lenovo平台公开参考核对具体HPE SKU）,132kW名义TDP;155kW EDPp;192kW母线规划;液冷,RC0候选,完整订货SKU/机柜布线/CDU冗余
+B,B1,GPU机柜替代,Dell,PowerEdge XE9712 / IR9048,GB300 NVL72;18x 1RU sled;72x B300,1套,按Dell XE9712完整系统配置,33kW Power Shelf;DLC选项,替代候选,整机输入/冷却配置/区域SKU
+B,B1,GPU机柜替代,Lenovo,GB300 NVL72 Type 7DJV,18 compute trays;9 NVLink switch trays;72x B300,1套,每tray 4x800G OSFP,6或8 Power Shelves;双液冷回路,替代候选,完整电气/冷却/服务配置
+B,B2,CPU/HPC,Lenovo,SC755 V5 7DN6CTO1WW + N1380 7DDHCTOLWW,8 trays;2N2S;16 dual-socket nodes;EPYC 9976-S7候选,1套enclosure,最多32x25GbE onboard（16节点x2）,4x15kW PCS;N+1 DC capacity 54kW;45C水温示例42.8L/min,RC0候选,CPU地区供货/内存QVL/PCS冗余
+B,B3,容量存储,Dell,Dell PowerEdge R7725xd,2x EPYC 9005;40x E3.L Gen5 NVMe;40x KIOXIA LC9 245.76TB,2台,存储前端/后端NIC SKU待定,约1.647kW/台公开估算;风冷配置待OEM确认,RC0候选,LC9 QVL/SED或FIPS/数据保护策略
+B,B4,控制/通用,Dell,PowerEdge R9815,1x EPYC 9006 SP7;16 DIMM;4TB RDIMM max,3台,1Gb BMC + OCP 3.0 + PCIe Gen6 NIC按需,电源与整机功耗待Dell配置器,RC0候选,CPU SKU/DIMM/NIC/SSD QVL
+B,B5,网络边缘,Dell,PowerEdge R9815,网络服务/安全代理/遥测/边缘任务,2台,按安全/WAN/遥测工作负载配置NIC,电源与整机功耗待Dell配置器,RC0候选,路由/防火墙/NIC选型
+B,B5,GPU Fabric IB,NVIDIA,Quantum-X800 Q3400-RA,144x800Gb/s OSFP;115.2Tb/s,2台,每台初始约36条GPU rack链路（双平面均分假设）,2.9kW典型passive cable;7kW active cable max,替代候选,端口rail/光缆/上联/实际功耗
+B,B5,GPU Fabric Ethernet,NVIDIA,Spectrum-6 SN6600,128x800Gb/s OSFP;102.4Tb/s,2台,每台初始约36条GPU rack链路（双平面均分假设）,3.94kW FRO或3.2kW TRO典型,替代候选,RoCE参数/光模块/拥塞控制
+B,B5,OOB管理,待定,独立管理交换机,双交换机/独立管理平面,2台,服务器BMC/Redfish/设施管理,待定,待选型,端口数/PoE/带外隔离
+B,B5,WAN边界,待定,路由器/防火墙/运营商CPE,双运营商双路径,至少2套,100/400G按业务合同设计,待定,待选型,运营商/ASN/线路SLA/安全策略
+SHARED,设施,液冷,HPE/Vertiv,Vertiv XDU1350 HPE SKU S5R40A等,1.3MW额定冷量;HPE说明最多支持8个GB300 NVL72 rack,每区域至少1套能力基线,一次/二次侧供回水,冷量不是IT功率;N+1待设计,候选,泵冗余/旁路/流量/压降/水质
+SHARED,设施,电力,待选,UPS/PDU/母线/变压器/发电机,按每区域负载与冗余策略设计,按工程设计,双路供电与计量,按IT load/EDPp/母线容量分层,待设计,短路/选择性保护/功率因数
+SHARED,软件,平台,待选,CUDA或ROCm/OS/驱动/固件/交换机NOS,按GPU路线形成锁定版本矩阵,按节点,以OEM支持矩阵为准,软件生命周期与维护窗口,待验证,兼容性/回滚/安全更新
