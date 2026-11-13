@@ -1,0 +1,17 @@
+设备域,型号,厂商,官方资料标题,官方链接,核查日期,来源类型,结论边界
+CPU,EPYC 9956/9996/9006 SP7,AMD,EPYC 9006 SP7 Server CPUs,https://www.amd.com/en/products/processors/server/epyc/9006-series/9006-sp7.html,2026-11-13,产品规格页,官方列出型号与平台规格；实际OEM QVL待核验
+CPU,EPYC 9956,AMD,AMD EPYC 9956,https://www.amd.com/en/products/processors/server/epyc/9006-series/amd-epyc-9956.html,2026-11-13,产品规格页,产品页列出2026-11-10发布日期
+CPU,Xeon 6980P,Intel,Intel Xeon 6980P Processor Specifications,https://www.intel.com/content/www/us/en/products/sku/240777/intel-xeon-6980p-processor-504m-cache-2-00-ghz/specifications.html,2026-11-13,产品规格页,服务器CPU对照项
+GPU,GB300 NVL72,NVIDIA,NVIDIA GB300 NVL72,https://www.nvidia.com/en-us/data-center/gb300-nvl72/,2026-11-13,产品页,机柜级72 GPU/36 Grace平台
+GPU,HGX B300,NVIDIA,NVIDIA Blackwell Ultra Datasheet,https://resources.nvidia.com/en-us-gpu-resources/blackwell-ultra-datasheet,2026-11-13,数据表,8-GPU平台规格与单GPU规格
+GPU,MI355X/MI350P,AMD,AMD Instinct MI350 Series,https://www.amd.com/en/products/accelerators/instinct/mi350.html,2026-11-13,产品页,288GB OAM与144GB PCIe形态需区分
+GPU,Vera Rubin NVL72,NVIDIA,DGX Vera Rubin NVL72 Datasheet,https://resources.nvidia.com/en-us-dgx-software/dgx-vera-rubin-nvl72-datasheet,2026-11-13,数据表,前瞻产品规格；供货和OEM验证待确认
+SSD,Micron 9650,Micron,Micron 9650 SSD Product Brief,https://www.micron.com/content/dam/micron/global/public/products/storage/ssds/data-center/9650/9650-nvme-ssd-product-brief.pdf,2026-11-13,产品简报,PCIe Gen6与峰值规格；具体SKU待核验
+SSD,Micron 9550,Micron,Micron 9550 SSD Technical Product Specification,https://www.micron.com/content/dam/micron/global/public/products/data-sheet/ssd/9550-nvme-ssd-tech-prod-spec.pdf,2026-11-13,技术规格书,区分PRO与MAX容量和耐久
+SSD,D7-PS1010,Solidigm,Solidigm D7-PS1010,https://www.solidigm.com/content/solidigm/us/en/products/data-center/d7/ps1010.html,2026-11-13,产品页,具体容量/耐久SKU待补
+SSD,CM7-V,KIOXIA,KIOXIA CM7-V Product Brief,https://www.kioxia.com/content/dam/kioxia/shared/business/ssd/enterprise-ssd/asset/productbrief/eSSD-CM7-V-product-brief.pdf,2026-11-13,产品简报,双端口PCIe Gen5企业SSD
+HDD,Mozaic 4+ 44TB,Seagate,Seagate Mozaic 4+ Press Release,https://investors.seagate.com/news/news-details/2026/Seagate-Delivers-Industrys-Highest-Capacity-Hard-Drives-with-Next-Generation-Mozaic-4/default.aspx,2026-11-13,新闻稿,部分超大规模客户部署；普遍供货待确认
+NIC,ConnectX-8,NVIDIA,ConnectX-8 SuperNIC Datasheet,https://resources.nvidia.com/en-us-accelerated-networking-resource-library/connectx-datasheet-c,2026-11-13,数据表,IB与Ethernet速率应按SKU区分
+Switch,Quantum-X800 Q3400/Q3401,NVIDIA,Quantum-X800 XDR Switch Hardware Manual,https://networking-docs.nvidia.com/xdrswitcheshw/introduction,2026-11-13,硬件手册,144端口800Gb/s型号
+Switch,Spectrum-6 SN6600/SN6800,NVIDIA,Spectrum-6 SN6000 Switch Specifications,https://networking-docs.nvidia.com/sn6000hw/specifications,2026-11-13,硬件规格,型号端口数/交换容量须按具体变体核验
+Switch,Tomahawk 6,Broadcom,Broadcom Ships Tomahawk 6,https://www.broadcom.com/company/news/product-releases/63146,2026-11-13,新闻稿,102.4Tb/s ASIC，不代表完整交换机SKU
