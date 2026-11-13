@@ -99,3 +99,15 @@ G2-06.8 当前为 RC0 候选方案；文件归档不代表真实故障注入或�
 - [十星异构节点与区域部署配置](09-G2-06.9-Hardware-Reference-Architecture-RC0/G2-06.9_十星异构节点与区域部署配置.md)：控制/通用、GPU、存储、网络和设施节点角色。
 
 G2-06.9 型号来自厂商官方资料核查；均为候选，不代表采购、OEM 兼容认证或现场验收通过。
+
+
+## G2-06.10 双区域十星 OEM 级设备配置与基础设施预算
+
+- [G2-06.10 阶段目录](10-G2-06.10-OEM-BOM-Power-Cooling-RC0/README.md)：OEM 整机、十星角色、功率/液冷预算和采购验收边界。
+- [双区域十星 OEM 级整机与配置参考架构](10-G2-06.10-OEM-BOM-Power-Cooling-RC0/G2-06.10_双区域十星OEM级整机与配置参考架构.md)：HPE GB300 NVL72、Dell XE9712、Lenovo 7DJV、SC755 V5/N1380、R7725xd、R9815、XE9780L/XE9785L 等平台。
+- [功率液冷与机房基础设施预算模型](10-G2-06.10-OEM-BOM-Power-Cooling-RC0/G2-06.10_功率液冷与机房基础设施预算模型.md)：区分设备实际功耗、PSU/Power Shelf 容量、EDPp、母线规划和 CDU 冷量。
+- [十星设备 BOM 与端口配置清单](10-G2-06.10-OEM-BOM-Power-Cooling-RC0/matrices/G2-06.10_十星设备BOM与端口配置清单.csv)：按区域、星位和设备域列出候选数量、端口和待确认项。
+- [OEM 兼容性与采购验收矩阵](10-G2-06.10-OEM-BOM-Power-Cooling-RC0/matrices/G2-06.10_OEM兼容性与采购验收矩阵.csv)：30 项 QVL、功率、液冷、网络、采购与验收检查。
+- [单星配置卡与部署边界](10-G2-06.10-OEM-BOM-Power-Cooling-RC0/G2-06.10_单星配置卡与部署边界.md)：A1—A5、B1—B5 角色与 Owner 边界。
+
+G2-06.10 当前为 RC0 候选配置；完整订货 SKU、QVL、区域报价、现场功率/液冷测量和设施验收尚未完成。
