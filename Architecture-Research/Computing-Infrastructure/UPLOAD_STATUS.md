@@ -1,57 +1,61 @@
-# GitHub归档续传状态
+# GitHub 归档续传状态
 
-- Repository: `yixuan2016/Personal_AI_Infrastructure`
-- Working branch: `docs/compute-base-g2-20261110`
-- Dedicated directory: `Architecture-Research/Computing-Infrastructure/`
-- Latest verified branch HEAD: `f4d9acd063afdb9306aceb2b534bf82fe6d9cedb`
-- Latest commit: `docs(compute-base): add G2-04 dual-site transaction architecture summary`
+- **Repository:** `yixuan2016/Personal_AI_Infrastructure`
+- **Working branch:** `docs/compute-base-g2-20261110`
+- **Dedicated directory:** `Architecture-Research/Computing-Infrastructure/`
+- **Related PR:** [#13 — G2-06.5—06.8 区域联邦、十星容量网络与故障恢复研究](https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/13)
+- **Merge policy:** 本阶段只向工作分支增量提交；未合并 main，未修改工程代码。
 
-## 已在本轮核实的仓库文件
+## 已归档阶段
 
-- `README.md`：专项资料目录索引。
-- `UPLOAD_STATUS.md`：本续传状态。
-- `06-G2-04-REST-Binding-RC1-Dual-Site-Transaction/G2-04_双站点交易状态机与故障补偿协议_架构摘要.md)：双站点交易与故障补偿架构摘要。
-- `03-G2-OntologyV3.1-IFC0.2-Contract-Governance/G2-03/G2-03_ADS_SCO全量API契约映射与六域权威治理报告.md)：已存在的G2-03报告。
+| 阶段 | 内容 | 状态 |
+|---|---|---|
+| G0/G1/G2-03 | 六域权威、Ontology/协议一致性、ADS/SCO API 映射 | 历史候选资料，按原状态保留 |
+| G2-04 | REST Binding、双站点交易状态机、Activation Barrier、Saga | RC1 候选，待 Owner 评审与互操作 |
+| G2-05/06 | RCP 区域协调层、跨区域协议、事件一致性与恢复 | RC0 候选，待 Owner 评审 |
+| G2-06.7 | 十星控制面容量与跨区域网络模型 | RC0 候选，待现场测量 |
+| G2-06.8 | 双区域十星故障注入、自治恢复与独立验收 | RC0 候选，待批准和实测 |
 
-## 尚未完成的批量归档
+## G2-06.8 本轮新增
 
-此前本地准备的归档清单为133个文件条目（包含Markdown、CSV、JSON Schema、示例、清单和ZIP归档）。本次检查到的既有批量上传分支提交为 `batch 05/14`；本轮追加了目录索引、上传状态和G2-04架构摘要，但**尚未证明其余批次已全部进入GitHub**。
+- 故障遏制与自治恢复架构、故障注入与恢复演练手册、独立见证与十星验收门禁：3 份主要设计文档。
+- ADR：1 份。
+- Mermaid 图源：2 份。
+- 故障注入验收矩阵：32 项。
+- 恢复证据与 Owner 签署矩阵：12 项。
+- FailureEvidenceRecord JSON Schema：1 份。
+- 合成 JSON 示例：1 份。
+- 本轮共新增 11 个 G2-06.8 文件，并更新本索引与归档状态。
 
-因此当前状态为：**目录已创建；部分资料已推送并抽样回读；全量133项上传、二进制归档完整性和SHA-256逐项核验仍未完成。**
+## 本轮远端回读检查
 
-## 完成条件
+- 11 个 G2-06.8 文件均可从工作分支回读。
+- 1 份 Schema 与 1 份合成示例通过 JSON 语法解析。
+- 两份 CSV 分别回读 32 项和 12 项数据行。
+- 两份 Mermaid 图源已检查首行图类型。
+- Markdown 文档均可回读。
+- 上述检查不等于完整 JSON Schema 规范校验、Mermaid 渲染、双实现互操作或真实故障注入。
 
-1. 续传剩余批次并逐一检查提交结果。
-2. 对照本地 `SOURCE_FILE_INVENTORY.csv` 核实全部133个路径。
-3. 逐项重算SHA-256并与 `SHA256SUMS.txt` 比对。
-4. 检查所有ZIP完整性和关键文档可读取性。
-5. 在完成上述检查后，更新本文件为“全量归档完成”；未经评审不合并main。
+## 尚未完成的验证
 
+1. JSON Schema 需进入统一工具链做 Draft 2020-12 完整验证。
+2. Mermaid 图需在仓库文档渲染链路实际构建检查。
+3. G2-06.8 需在批准的隔离环境执行单故障与组合故障演练。
+4. 需要站点、区域、资源、数据、网络、设施和安全 Owner 签署。
+5. 需要第二套独立实现和独立见证报告。
+6. RTO/RPO、撤销最大陈旧窗口、容量和网络 SLO 需要真实环境测量。
 
-## G2-06.5 / G2-06.6 增量归档（2026-11-12）
+## 历史 133 项归档核验
 
-- 已新增 G2-06.5 区域协调层详细设计、ADR、架构图源和 20 项专项验收矩阵。
-- 已新增 G2-06.6 跨区域协议与数据契约、事件一致性契约、Saga 恢复协议、4 份 JSON Schema、2 份合成示例、13 项 Region API 操作目录、25 项协议验收矩阵和时序图源。
-- 已对新增 JSON 文件执行 JSON 语法解析回读；CSV 行数和 Mermaid 源文件首行已检查。该检查不等于完整 JSON Schema 规范校验或双实现互操作。
-- 新增资料已写入本分支；阶段状态仍为 RC0 候选，未声称 Owner 签署、真实部署或验收通过。
-- 原始 133 项历史归档的完整性、二进制 ZIP 校验和 SHA-256 全量核对仍未完成；本次增量提交不改变该历史状态。
-- 本分支相对 main 曾核实为 ahead 18 / behind 2；本轮只向工作分支增量提交，未合并 main。
+此前准备的历史归档清单包含 133 个文件条目（Markdown、CSV、JSON Schema、示例、清单和 ZIP）。历史记录显示既有批量上传曾到 batch 05/14；目前仍未证明其余批次全部进入 GitHub。
 
+因此必须继续保留以下未完成状态：
 
-## Draft PR 状态（2026-11-12）
+- 尚未对照本地 `SOURCE_FILE_INVENTORY.csv` 完成 133 个路径的全量核验。
+- 尚未逐项重算 SHA-256 并与 `SHA256SUMS.txt` 比对。
+- 尚未完成所有 ZIP 的完整性测试和关键文档读取检查。
+- 不得将本轮增量归档描述为历史 133 项全量归档已完成。
 
-- Draft PR: https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/13
-- Title: docs(compute-base): G2-06.5/06.6 区域协调与跨区域联邦协议
-- Head branch: docs/compute-base-g2-20261110（PR #13 自动跟随该分支最新提交；当前 SHA 以 PR 页面为准）。
-- Base branch: main。
-- GitHub 回读状态：open / draft=true / mergeable=true / mergeable_state=clean；41 commits，152 changed files。
-- 未执行 PR Merge，未改写 main。
-- 该 PR 汇总此前工作分支已有资料与本次 G2-06.5/G2-06.6 增量；审阅时应按目录和提交范围检查，不能将 PR 文件数等同于本轮新增文件数。
+## 当前 PR 与分支原则
 
-
-## G2-06.7 增量归档（2026-11-12）
-
-- 已新增十星控制面容量与跨区域网络模型、容量/网络验证矩阵（25项）、十星网络流量平面图源和 ADR。
-- 本阶段明确控制面、数据面、GPU Fabric、存储面和管理/设施面的隔离边界；所有 RTT、吞吐、容量、SLO 和冗余目标均待目标环境测量，不预设未经验证的固定数值。
-- G2-06.7 文件已写入工作分支；PR #13 会自动跟随分支最新提交，未合并 main。
-- 原始 133 项历史归档的全量完整性、ZIP 校验和 SHA-256 逐项核验仍未完成。
+PR #13 持续跟踪本工作分支。PR 维持 Draft，供后续审阅；不因文件已推送或 GitHub 显示 mergeable 就自动合并 main。若 main 有新提交，先检查差异和冲突，再决定是否同步。
