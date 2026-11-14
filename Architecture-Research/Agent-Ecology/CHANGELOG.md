@@ -19,3 +19,11 @@
 - 新增 V1.9 主报告、7 项研究证据登记、22 项合成实验与验收设计、8 项候选 ADR、12 项威胁与治理边界。
 - 补充共享状态通信通道、有界发现、来源感知排序、持久工件谱系、局部反应、选择性 A2A 和单 Agent 基线要求。
 - 所有 22 项实验保持 NOT_RUN；8 项 ADR 均为 Candidate；未执行工程代码、真实数据、Runtime 或生产验收。
+
+## 2026-11-14｜V1.9-B 跨生态能力发现与联邦目录（Candidate）
+- 新增本地权威能力目录与联邦摘要目录双层架构，明确发现视图可最终一致、执行前授权必须由目标生态本地 PDP/PEP 决定。
+- 新增能力广告与能力解析候选 JSON Schema、F1 20 项验收矩阵及跨生态能力发现架构备忘录。
+- 新增 Observation Runtime 设计：事件订阅、状态唤醒、游标续读、周期对账、命名空间隔离和审计。
+- 补充 A2A、MCP、CloudEvents、Ontology、SPIFFE 的职责边界，以及 MACP Internet-Draft 的证据等级与本地自治适配原则。
+- 新增 8K SVG 架构源图和独立证据登记；威胁矩阵扩展至 18 项，ADR 扩展至 10 项。
+- 合成实验与验收共 42 项全部 NOT_RUN；10 项 ADR 全部 Candidate；F0 12 项 Gate 仍未通过；productionAllowed=false。
