@@ -267,3 +267,12 @@ PR #13 持续跟踪本工作分支并保持 Draft。GitHub 显示可合并不代
 - 重点规则：未知值不按0计算；证据E0-E4与资源状态C0-C6分开；A/B故障接管先扣幸存区本地需求和预留；L0设施硬联锁本地执行；跨区不合并NVLink域。
 - 阶段状态RC0/Proposed。未获得真实业务画像、Owner签署、OEM QVL、项目级Utility firm MW、合法水务许可、Carrier物理路径、专业工程计算和现场FAT/SAT，不冻结工程参数、不批准采购/施工/投运。
 - SHA-256覆盖17个内容文件，不覆盖SHA256SUMS和校验记录自身；历史阶段与整个仓库ZIP不在本轮校验范围。
+
+
+### G2-06.20 远端回读与校验复核（2026-11-14）
+- 17个内容文件逐项从GitHub远端回读；SHA256SUMS的17条记录全部匹配（17/17）。
+- 12份CSV逐行复核，字段列数全部一致；数据行数分别为：40、25、14、14、16、15、14、12、18、19、20、18。
+- 阶段目录共19个文件：17个内容文件+SHA256SUMS+文件清单/校验记录。
+- 根README和本状态文件均已包含G2-06.20阶段入口/归档记录。
+- PR #13保持Open/Draft；GitHub报告mergeable=true、mergeable_state=clean；分支相对main ahead 274 / behind 2。尚未合并main；仍需处理分支落后和Draft评审状态。
+- 哈希/结构检查不代表业务Owner签署、OEM QVL、Utility firm MW、水务许可、专业工程批准或现场FAT/SAT。
