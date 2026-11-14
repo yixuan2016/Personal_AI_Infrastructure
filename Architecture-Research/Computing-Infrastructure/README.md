@@ -144,3 +144,21 @@ G2-06.11 为 RC0 架构参考；端口速率/Breakout、光模块料号、完整
 - [采购工程门禁流程](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/diagrams/G2-06.12_采购工程门禁流程.mmd)、[双区域十星场地逻辑布局](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/diagrams/G2-06.12_双区域十星场地逻辑布局.mmd)。
 
 G2-06.12 为 RC0/RFQ 草案，不是已冻结采购订单、合同技术附件或施工图。站点国家/城市、OEM正式SKU/BOM/QVL、功率/热工曲线、SC tray兼容性、法规与许可仍待确认。
+
+
+## G2-06.13 双区域十星站点选址、能源资源可行性与五年投资模型
+
+- [G2-06.13 阶段目录](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/README.md)：选址框架、评分模型、现场尽调、供电/水/网络、双区域独立性、五年TCO与门禁。
+- [双区域站点选址决策框架](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_双区域站点选址决策框架.md)：单站点100分评分、硬性否决门槛、A/B组合独立性评分和S0—S8阶段门。
+- [站点评分权重与打分规则](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_站点评分权重与打分规则.csv)：电力25、水资源/冷却15、网络15、灾害12、法规10、经济10、建设8、服务5。
+- [站点尽调数据采集模板](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_站点尽调数据采集模板.csv)：地块、供电、水务、运营商、气候、灾害、法规、工程和商务数据。
+- [供电容量与并网可行性评估](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_供电容量与并网可行性评估.md)：firm MW、送电日期、输电扩建、费率、冗余、负荷和计量边界。
+- [水资源冷却与气候适配评估](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_水资源冷却与气候适配评估.md)：水权/供水、旱情、WUE、8760小时热工仿真、CDU与设备水路边界。
+- [网络运营商与物理路由多样性验证](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_网络运营商与物理路由多样性验证.md)：双运营商物理路由、管道/入楼/PoP多样性和跨区SLO。
+- [双区域独立性与共同故障域评估](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_双区域独立性与共同故障域评估.md)：电网、流域、光纤、灾害、供应链和身份/密钥共同依赖。
+- [设备负载能源与容量测算输入表](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_设备负载能源与容量测算输入表.csv)、[五年TCO与单位有效算力成本模型](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_五年TCO与单位有效算力成本模型.csv)：不填虚构功率/报价，按OEM和站点证据回填。
+- [站点风险登记册](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_站点风险登记册.csv)、[站点尽调与选址门禁矩阵](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_站点尽调与选址门禁矩阵.csv)。
+- [ADR-01双区域站点选择原则](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_ADR-01双区域站点选择原则.md)、[官方资料与证据登记册](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/G2-06.13_官方资料与证据登记册.md)。
+- [站点筛选与投资决策流程](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/diagrams/G2-06.13_站点筛选与投资决策流程.mmd)、[双区域资源与故障域逻辑图](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/diagrams/G2-06.13_双区域资源与故障域逻辑图.mmd)。
+
+G2-06.13 当前为RC0筛选框架。候选国家/城市/园区/地块尚未指定；未取得项目级firm MW、取水/排水许可、运营商物理路由证明、现场工程报告和正式报价，不形成站点选定或投资批准结论。
