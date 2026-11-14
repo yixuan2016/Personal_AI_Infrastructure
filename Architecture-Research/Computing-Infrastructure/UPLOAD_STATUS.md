@@ -219,3 +219,14 @@ PR #13 持续跟踪本工作分支并保持 Draft。GitHub 显示可合并不代
 - 工作分支相对main：ahead 212 / behind 2。
 - main侧落后差异为Personal AI Life OS V2.21 Stage 33文档合并（Design/PersonalAIOS/V2.21/Stage33/、Design/PersonalAIOS/V2.21/README.md、Governance/V2.21_Stage33_Fix_Record_2026-11-10.md）和GitHub集成审计（Governance/GitHub_Integration_Audit_2026-11-10.md）；经逐提交文件列表复核，未触及Architecture-Research/Computing-Infrastructure/路径。
 - 当前GitHub显示PR可合并且无冲突，但由于工作分支仍落后2个main提交、PR为Draft，保留人工审查/后续同步策略，不把mergeable解释为已经合并。
+
+
+## G2-06.18 本轮新增归档（2026-11-14）
+
+- 新增13个文件：阶段README、业主需求基线与冻结规则、容量/能耗/有效算力测算口径、ADR-05、5份CSV矩阵、2份简体中文Mermaid图源、文件清单与SHA-256记录、SHA256SUMS。
+- 需求矩阵覆盖14类工作负载、每区五个逻辑星位及12类附属资源域、10类服务等级/场景、22项业主待确认输入、25项需求验收追踪。
+- 资源配置沿用G2-06.10候选：每区域GB300 NVL72、N1380、2台R7725xd、3台R9815控制节点、2台R9815边缘/安全节点及2台GPU Fabric交换机；设备SKU/数量仍为Candidate，附属Storage Fabric/WAN/OOB/电力/水务/冷却待业主/供应商/工程师确认。
+- 关键口径校正：NVL72 132kW TDP、约155kW EDPp、192kW母线规划不是同一指标；N1380 54kW N+1 DC capacity不是AC输入；XDU1350 1.3MW是额定冷量；每区19.6608PB是QLC候选原始容量，不是可用容量。
+- 明确L1需求结构冻结与L2工程参数冻结分离；当前只建立候选结构基线。未获得业务负载、法域、数据驻留、SLO、RPO/RTO、区域MW、PUE/WUE、网络性能和预算的Owner签署。
+- 11个正文/CSV/图源逐项远端回读；5份CSV列数和行结构检查通过；2张Mermaid图源包含flowchart结构和简体中文；SHA256SUMS覆盖11个正文/CSV/图源文件，哈希实现通过ASCII与中文测试向量。
+- 本阶段不选定园区/供应商，不批准A/B/C建设路线，不代表采购、施工或投运放行。
