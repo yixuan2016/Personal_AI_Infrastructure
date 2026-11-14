@@ -1,0 +1,27 @@
+threat_id,threat,attack_or_failure_path,required_control,owner_boundary,severity,status
+TH-01,隐式共享通道,私有缓存或Scratchpad被其他Agent读取,默认私有隔离；显式共享命名空间；跨主体读取审计,空间Owner和平台安全治理,P0,CANDIDATE
+TH-02,痕迹投毒,Agent发布错误结论或伪造工件,来源验证；Schema校验；隔离区；独立证据复核,来源Owner与接收方Policy Authority,P0,CANDIDATE
+TH-03,热度操纵,Sybil或串谋主体互相引用提升排名,引用数不作为可信度；主体信誉与证据质量分离；独立验证,生态治理Owner,P0,CANDIDATE
+TH-04,过期痕迹,旧策略/状态/工件在新任务中被误用,TTL和版本水位；过期过滤；高风险动作Fail Closed,领域Owner和PDP/PEP,P0,CANDIDATE
+TH-05,跨域推断,搜索索引或引用图泄露敏感关系,租户/领域过滤；最小披露；查询审计；敏感元数据保护,数据Owner与隐私治理Owner,P0,CANDIDATE
+TH-06,身份冒用,伪造工件作者/来源/审批引用,签名身份引用；可信运行上下文；端侧验证,身份Owner和Sink PEP,P0,CANDIDATE
+TH-07,反馈放大,局部策略重复强化错误痕迹,反例/负反馈；衰减；独立抽检；可逆承诺,Runtime与独立评估者,P1,CANDIDATE
+TH-08,重放攻击,旧命令/事件/凭证被再次使用,operation_id去重；epoch/fencing；撤权水位,领域Owner和执行边界,P0,CANDIDATE
+TH-09,A2A语义混淆,协商消息被误认为业务批准或事实提交,消息/命令/事件/审批对象分离；目标Owner独立授权,ADS与领域Policy Authority,P0,CANDIDATE
+TH-10,工件执行风险,共享代码/脚本/控制器未经审查运行,隔离沙箱；签名来源；依赖审查；效果网关,工具Owner和安全治理Owner,P0,CANDIDATE
+TH-11,Agent退出与凭证残留,接续Agent继承前任权限或会话密钥,成果可继承但凭证不可继承；重新认证和最小授权,身份Owner与领域Owner,P0,CANDIDATE
+TH-12,群体错误共识,多数Agent引用同一错误来源,保留来源独立性；反证检验；Owner裁决；不可用票数替代证据,独立评估者与领域Owner,P0,CANDIDATE
+TH-13,能力广告投毒,攻击者伪造或篡改能力声明进入联邦目录,Owner签名与来源校验；异常广告隔离；本地权威目录复核,能力Owner与FCP安全Owner,P0,CANDIDATE
+TH-14,撤销水位滞后,旧能力广告在撤销事件后到达并覆盖新状态,单调撤销Epoch；来源水位校验；撤销状态未知时高风险HOLD,来源域Identity Owner与本地PEP,P0,CANDIDATE
+TH-15,能力语义漂移,Ontology或Schema版本不兼容导致错误能力匹配,版本锁定；映射证据；未知关键概念HOLD,Ontology Owner与能力Owner,P1,CANDIDATE
+TH-16,授权状态混淆,A2A AUTH_REQUIRED或任务状态被误读为本地Permit,任务状态与授权对象分离；目标域PDP/PEP执行前复核,执行域Policy Owner,P0,CANDIDATE
+TH-17,观察订阅越权,Agent订阅或读取无权访问的跨域状态痕迹,订阅级授权；域/任务/Purpose命名空间；字段级过滤和审计,Environment Owner与数据Owner,P0,CANDIDATE
+TH-18,FCP控制面失陷,联邦目录或路由节点被攻击者控制并诱导调用恶意能力,FCP不持有生产凭证；候选需回源核验；本地授权不可绕过,联邦运营Owner与成员域Security Owner,P0,CANDIDATE
+TH-19,Trust Domain混淆,验证器将外部Bundle或公钥错误绑定到另一Trust Domain,严格维护Domain与Bundle绑定；拒绝全局无域区分密钥池,Identity Owner与本地Verifier,P0,CANDIDATE
+TH-20,传递信任扩张,A信任B且B信任C被错误解释为A自动信任C,默认transitiveTrust=false；每条Peer Binding双边接受；显式路径按本地策略批准,双方Root Governance,P0,CANDIDATE
+TH-21,Owner签名密钥滥用,非Owner主体使用泄露或越权密钥签发能力声明,Owner/Publisher Grant校验；用途隔离；Key Epoch；紧急撤销与重签,Capability Owner与SEC,P0,CANDIDATE
+TH-22,算法混淆或降级,攻击者利用不受支持算法、alg=none或密钥跨用途复用绕过验证,本地算法Allowlist；每把密钥绑定单一算法与用途；禁止自动降级,Identity/Security Owner,P0,CANDIDATE
+TH-23,委托权限放大,子Grant扩大Action/Resource/Purpose/Audience/TTL/Budget或深度,逐层父子集合与约束比较；默认禁止再委托；循环与最大深度检测,授权Owner与目标域PDP,P0,CANDIDATE
+TH-24,代理主体混淆,Subject/Actor/Issuer混淆导致Agent被视为权利所有者,令牌显式保留subject/actor/issuer/audience；目标域本地验证；审计完整代理链,目标域Authorization Owner,P0,CANDIDATE
+TH-25,撤销回滚与旧状态复活,旧Bundle/撤销事件/旧Epoch覆盖新撤销状态,每来源域独立单调水位；旧Epoch拒绝；高风险状态未知时HOLD,来源域SEC与本地PEP,P0,CANDIDATE
+TH-26,持有者令牌重放,窃取的访问令牌或DPoP证明被重复使用,短期受众绑定令牌；DPoP/mTLS；jti去重与nonce；密钥隔离,Authorization Server与Resource Server,P0,CANDIDATE

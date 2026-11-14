@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="7680" height="4320" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Agent Ecology V1.9 跨生态能力发现与目录联邦架构</title>
+  <desc id="desc">展示两个自治生态通过非权威联邦目录进行能力发现和协商，并由目标生态本地策略点授权和执行的架构。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071426"/>
+      <stop offset="0.55" stop-color="#101b32"/>
+      <stop offset="1" stop-color="#17233b"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d3554" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#12243d" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="fcp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#174a68"/>
+      <stop offset="1" stop-color="#26365e"/>
+    </linearGradient>
+    <linearGradient id="governance" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34466c"/>
+      <stop offset="0.5" stop-color="#315b70"/>
+      <stop offset="1" stop-color="#34466c"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dy="8"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.32"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowBlue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#77c7ff"/>
+    </marker>
+    <marker id="arrowMint" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#7ce2c1"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#f1c878"/>
+    </marker>
+    <style>
+      text { font-family: "Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif; fill: #eaf3ff; }
+      .title { font-size: 42px; font-weight: 700; letter-spacing: 1px; }
+      .subtitle { font-size: 22px; fill: #a9c1dc; }
+      .section { font-size: 29px; font-weight: 700; }
+      .head { font-size: 24px; font-weight: 700; }
+      .body { font-size: 20px; fill: #c6d7eb; }
+      .small { font-size: 17px; fill: #a9bfd8; }
+      .chip { font-size: 17px; font-weight: 600; }
+      .line { fill: none; stroke: #77c7ff; stroke-width: 4; marker-end: url(#arrowBlue); }
+      .lineMint { fill: none; stroke: #7ce2c1; stroke-width: 4; marker-end: url(#arrowMint); }
+      .lineGold { fill: none; stroke: #f1c878; stroke-width: 4; marker-end: url(#arrowGold); }
+      .dashed { stroke-dasharray: 12 10; }
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <circle cx="150" cy="140" r="250" fill="#1e6a8a" opacity="0.08"/>
+  <circle cx="1770" cy="920" r="320" fill="#45b89a" opacity="0.06"/>
+  <path d="M0 170 H1920 M0 730 H1920" stroke="#8fb7d9" stroke-opacity="0.13" stroke-width="2"/>
+
+  <text x="72" y="74" class="title">Agent Ecology V1.9｜跨生态能力发现与目录联邦</text>
+  <text x="74" y="112" class="subtitle">发现可以最终一致 · 授权必须本地权威 · 协作由共享环境状态驱动</text>
+
+  <rect x="72" y="145" width="1776" height="112" rx="22" fill="url(#governance)" stroke="#7eabd0" stroke-opacity="0.55" stroke-width="2" filter="url(#shadow)"/>
+  <text x="108" y="187" class="section">人类治理外环</text>
+  <text x="108" y="222" class="body">根策略与根身份</text>
+  <text x="420" y="222" class="body">关键审批与风险分级</text>
+  <text x="790" y="222" class="body">独立验证与证据复核</text>
+  <text x="1150" y="222" class="body">否决 / 接管 / 紧急停止</text>
+  <text x="1530" y="222" class="body">最终问责</text>
+
+  <rect x="62" y="294" width="480" height="392" rx="24" fill="url(#panel)" stroke="#5d94bf" stroke-width="2" filter="url(#shadow)"/>
+  <text x="94" y="340" class="section">发起生态｜本地自治域 A</text>
+  <rect x="94" y="368" width="416" height="66" rx="14" fill="#25496b" stroke="#78bce9" stroke-opacity="0.65"/>
+  <text x="116" y="409" class="head">Local ADS / 发起 Agent</text>
+  <rect x="94" y="450" width="196" height="78" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="112" y="480" class="body">Ontology</text>
+  <text x="112" y="507" class="small">任务语义规范化</text>
+  <rect x="306" y="450" width="204" height="78" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="324" y="480" class="body">Task Contract</text>
+  <text x="324" y="507" class="small">目的 / 范围 / 验收</text>
+  <rect x="94" y="544" width="196" height="108" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="112" y="577" class="body">本地权威目录</text>
+  <text x="112" y="606" class="small">Owner / 版本 / 证据</text>
+  <text x="112" y="630" class="small">本地事实权威</text>
+  <rect x="306" y="544" width="204" height="108" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="324" y="577" class="body">本地 PDP / PEP</text>
+  <text x="324" y="606" class="small">策略判定 / 强制执行</text>
+  <text x="324" y="630" class="small">不委托根权限</text>
+
+  <rect x="718" y="294" width="484" height="392" rx="24" fill="url(#fcp)" stroke="#71c5d9" stroke-width="2" filter="url(#shadow)"/>
+  <text x="750" y="340" class="section">联邦协调平面 FCP</text>
+  <text x="750" y="372" class="small">多节点目录 · 摘要同步 · 候选解析 · 事件路由</text>
+  <rect x="750" y="398" width="420" height="66" rx="13" fill="#24536a" stroke="#7ce2c1" stroke-opacity="0.75"/>
+  <text x="772" y="439" class="head">联邦摘要目录｜最终一致</text>
+  <rect x="750" y="480" width="198" height="78" rx="13" fill="#1a405b" stroke="#77c7ff"/>
+  <text x="768" y="510" class="body">签名 / 撤销核验</text>
+  <text x="768" y="536" class="small">来源 / 水位 / TTL</text>
+  <rect x="962" y="480" width="208" height="78" rx="13" fill="#1a405b" stroke="#77c7ff"/>
+  <text x="980" y="510" class="body">硬约束过滤</text>
+  <text x="980" y="536" class="small">再做软排序</text>
+  <rect x="750" y="574" width="420" height="78" rx="13" fill="#17354f" stroke="#f1c878" stroke-opacity="0.8"/>
+  <text x="772" y="605" class="body">不持有成员域生产凭证</text>
+  <text x="772" y="632" class="small">不授予本地权限 · 不执行成员域副作用</text>
+
+  <rect x="1378" y="294" width="480" height="392" rx="24" fill="url(#panel)" stroke="#5d94bf" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1410" y="340" class="section">执行生态｜本地自治域 B</text>
+  <rect x="1410" y="368" width="416" height="66" rx="14" fill="#25496b" stroke="#78bce9" stroke-opacity="0.65"/>
+  <text x="1432" y="409" class="head">Local ADS / 执行 Agent</text>
+  <rect x="1410" y="450" width="196" height="78" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="1428" y="480" class="body">能力 Owner</text>
+  <text x="1428" y="507" class="small">能力定义 / 签名发布</text>
+  <rect x="1622" y="450" width="204" height="78" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="1640" y="480" class="body">本地权威目录</text>
+  <text x="1640" y="507" class="small">完整能力 / 撤销事实</text>
+  <rect x="1410" y="544" width="196" height="108" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="1428" y="577" class="body">目标 PDP / PEP</text>
+  <text x="1428" y="606" class="small">本地授权</text>
+  <text x="1428" y="630" class="small">执行前复核</text>
+  <rect x="1622" y="544" width="204" height="108" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="1640" y="577" class="body">Environment</text>
+  <text x="1640" y="606" class="small">状态 / 事件 / 痕迹</text>
+  <text x="1640" y="630" class="small">执行回执 / 证据</text>
+
+  <path d="M542 426 H708" class="line"/>
+  <text x="570" y="408" class="small">能力查询</text>
+  <path d="M718 520 H552" class="lineMint"/>
+  <text x="570" y="550" class="small">候选清单</text>
+  <path d="M1202 430 H1368" class="line"/>
+  <text x="1210" y="408" class="small">来源域实时核验</text>
+  <path d="M1378 520 H1212" class="lineMint"/>
+  <text x="1220" y="550" class="small">签名能力摘要</text>
+  <path d="M542 638 C650 720 1260 720 1378 638" class="lineGold dashed"/>
+  <text x="785" y="716" class="small">A2A 任务协商｜本地授权通过后才可执行</text>
+
+  <rect x="62" y="772" width="1796" height="244" rx="22" fill="#10243b" stroke="#52799b" stroke-width="2"/>
+  <text x="94" y="817" class="section">协议职责与运行时保障</text>
+  <rect x="94" y="844" width="330" height="116" rx="14" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="116" y="882" class="head">A2A</text>
+  <text x="116" y="915" class="body">Agent 发现 / 任务协商</text>
+  <text x="116" y="942" class="small">AUTH_REQUIRED 不等于 Permit</text>
+  <rect x="444" y="844" width="330" height="116" rx="14" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="466" y="882" class="head">MCP</text>
+  <text x="466" y="915" class="body">工具 / 资源服务交互</text>
+  <text x="466" y="942" class="small">凭证按发行者与受众绑定</text>
+  <rect x="794" y="844" width="330" height="116" rx="14" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="816" y="882" class="head">CloudEvents</text>
+  <text x="816" y="915" class="body">状态事件 / 来源 / 去重</text>
+  <text x="816" y="942" class="small">事件事实不等于业务授权</text>
+  <rect x="1144" y="844" width="330" height="116" rx="14" fill="#1b3b5a" stroke="#5d94bf"/>
+  <text x="1166" y="882" class="head">Ontology</text>
+  <text x="1166" y="915" class="body">共同语义 / 版本映射</text>
+  <text x="1166" y="942" class="small">语义兼容不等于权限兼容</text>
+  <rect x="1494" y="844" width="330" height="116" rx="14" fill="#1b3b5a" stroke="#7ce2c1"/>
+  <text x="1516" y="882" class="head">Observation Runtime</text>
+  <text x="1516" y="915" class="body">订阅 / 唤醒 / 游标 / 对账</text>
+  <text x="1516" y="942" class="small">不依赖 Agent 自发重读</text>
+
+  <text x="94" y="988" class="small">安全不变量：目录只发现候选｜授权由目标域本地决定｜共享环境按域/任务/Purpose 隔离｜FCP 不持有生产凭证</text>
+</svg>

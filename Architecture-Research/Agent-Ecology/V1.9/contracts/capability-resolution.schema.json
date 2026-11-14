@@ -1,0 +1,651 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:capability-resolution-candidate",
+  "title": "CapabilityResolutionCandidate",
+  "description": "Discovery request and response. A resolution response is a candidate list and never grants authorization.",
+  "$defs": {
+    "requiredCapability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capabilityId"
+      ],
+      "properties": {
+        "capabilityId": {
+          "type": "string"
+        },
+        "versionRange": {
+          "type": "string"
+        },
+        "inputSchemaRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "outputSchemaRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "ontologyConceptRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maxRiskClass": {
+          "enum": [
+            "R0",
+            "R1",
+            "R2",
+            "R3"
+          ]
+        },
+        "allowedDataClasses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "allowedSideEffectClasses": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "NONE",
+              "READ_ONLY",
+              "REVERSIBLE_WRITE",
+              "COMPENSATABLE_WRITE",
+              "IRREVERSIBLE_OR_EXTERNAL_COMMIT"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "allowedRegions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "requiredEvidenceLevels": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "E0",
+              "E1",
+              "E2",
+              "E3",
+              "E4"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "maxLatencyMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maxCost": {
+          "type": "number",
+          "minimum": 0
+        },
+        "costUnit": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "maxCost": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "maxCost"
+            ]
+          },
+          "then": {
+            "required": [
+              "costUnit"
+            ]
+          }
+        }
+      ]
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "advertisementRef",
+        "domainId",
+        "capabilityId",
+        "version",
+        "eligibility",
+        "reasonCodes",
+        "attestationStatus",
+        "revocationStatus",
+        "ontologyCompatibility",
+        "schemaCompatibility",
+        "nextAction",
+        "sourceWatermark",
+        "revocationEpoch",
+        "observedAt",
+        "expiresAt"
+      ],
+      "properties": {
+        "advertisementRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "domainId": {
+          "type": "string"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "eligibility": {
+          "enum": [
+            "ELIGIBLE_CANDIDATE",
+            "HOLD",
+            "INELIGIBLE"
+          ]
+        },
+        "reasonCodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "attestationStatus": {
+          "enum": [
+            "VALID",
+            "INVALID",
+            "UNKNOWN",
+            "EXPIRED"
+          ]
+        },
+        "revocationStatus": {
+          "enum": [
+            "NOT_REVOKED",
+            "REVOKED",
+            "UNKNOWN",
+            "STALE"
+          ]
+        },
+        "ontologyCompatibility": {
+          "enum": [
+            "COMPATIBLE",
+            "MAPPED_WITH_EVIDENCE",
+            "INCOMPATIBLE",
+            "UNKNOWN"
+          ]
+        },
+        "schemaCompatibility": {
+          "enum": [
+            "COMPATIBLE",
+            "TRANSFORM_REQUIRED",
+            "INCOMPATIBLE",
+            "UNKNOWN"
+          ]
+        },
+        "availabilityHint": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "observedAt",
+            "expiresAt",
+            "notAuthorization"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "AVAILABLE",
+                "DEGRADED",
+                "UNAVAILABLE",
+                "UNKNOWN"
+              ]
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "expiresAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "notAuthorization": {
+              "const": true
+            }
+          }
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "uniqueItems": true
+        },
+        "nextAction": {
+          "enum": [
+            "FETCH_OWNER_PROOF",
+            "NEGOTIATE_A2A",
+            "HOLD",
+            "EXCLUDE"
+          ]
+        },
+        "sourceWatermark": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "revocationEpoch": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "transformContractRef": {
+          "type": "string",
+          "format": "uri-reference"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "anyOf": [
+              {
+                "properties": {
+                  "attestationStatus": {
+                    "enum": [
+                      "INVALID",
+                      "EXPIRED"
+                    ]
+                  }
+                },
+                "required": [
+                  "attestationStatus"
+                ]
+              },
+              {
+                "properties": {
+                  "revocationStatus": {
+                    "const": "REVOKED"
+                  }
+                },
+                "required": [
+                  "revocationStatus"
+                ]
+              },
+              {
+                "properties": {
+                  "ontologyCompatibility": {
+                    "const": "INCOMPATIBLE"
+                  }
+                },
+                "required": [
+                  "ontologyCompatibility"
+                ]
+              },
+              {
+                "properties": {
+                  "schemaCompatibility": {
+                    "const": "INCOMPATIBLE"
+                  }
+                },
+                "required": [
+                  "schemaCompatibility"
+                ]
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "eligibility": {
+                "const": "INELIGIBLE"
+              }
+            },
+            "required": [
+              "eligibility"
+            ]
+          }
+        },
+        {
+          "if": {
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "properties": {
+                        "attestationStatus": {
+                          "enum": [
+                            "INVALID",
+                            "EXPIRED"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "attestationStatus"
+                      ]
+                    },
+                    {
+                      "properties": {
+                        "revocationStatus": {
+                          "const": "REVOKED"
+                        }
+                      },
+                      "required": [
+                        "revocationStatus"
+                      ]
+                    },
+                    {
+                      "properties": {
+                        "ontologyCompatibility": {
+                          "const": "INCOMPATIBLE"
+                        }
+                      },
+                      "required": [
+                        "ontologyCompatibility"
+                      ]
+                    },
+                    {
+                      "properties": {
+                        "schemaCompatibility": {
+                          "const": "INCOMPATIBLE"
+                        }
+                      },
+                      "required": [
+                        "schemaCompatibility"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "anyOf": [
+                  {
+                    "properties": {
+                      "attestationStatus": {
+                        "const": "UNKNOWN"
+                      }
+                    },
+                    "required": [
+                      "attestationStatus"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "revocationStatus": {
+                        "enum": [
+                          "UNKNOWN",
+                          "STALE"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "revocationStatus"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "ontologyCompatibility": {
+                        "const": "UNKNOWN"
+                      }
+                    },
+                    "required": [
+                      "ontologyCompatibility"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "schemaCompatibility": {
+                        "enum": [
+                          "UNKNOWN",
+                          "TRANSFORM_REQUIRED"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "schemaCompatibility"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "then": {
+            "properties": {
+              "eligibility": {
+                "const": "HOLD"
+              }
+            },
+            "required": [
+              "eligibility"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "eligibility": {
+                "const": "ELIGIBLE_CANDIDATE"
+              }
+            },
+            "required": [
+              "eligibility"
+            ]
+          },
+          "then": {
+            "properties": {
+              "attestationStatus": {
+                "const": "VALID"
+              },
+              "revocationStatus": {
+                "const": "NOT_REVOKED"
+              },
+              "ontologyCompatibility": {
+                "enum": [
+                  "COMPATIBLE",
+                  "MAPPED_WITH_EVIDENCE"
+                ]
+              },
+              "schemaCompatibility": {
+                "const": "COMPATIBLE"
+              }
+            },
+            "required": [
+              "attestationStatus",
+              "revocationStatus",
+              "ontologyCompatibility",
+              "schemaCompatibility"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "title": "CapabilityResolutionRequest",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requestId",
+        "requesterDomain",
+        "requesterPrincipal",
+        "purposeRef",
+        "requiredCapabilities",
+        "queryOntologyVersion",
+        "constraints",
+        "freshnessBudgetSeconds",
+        "requestedAt",
+        "expiresAt"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "requesterDomain": {
+          "type": "string"
+        },
+        "requesterPrincipal": {
+          "type": "string"
+        },
+        "taskContractRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "purposeRef": {
+          "type": "string"
+        },
+        "requiredCapabilities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/requiredCapability"
+          }
+        },
+        "queryOntologyVersion": {
+          "type": "string"
+        },
+        "constraints": {
+          "$ref": "#/$defs/constraints"
+        },
+        "freshnessBudgetSeconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "requestedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "correlationId": {
+          "type": "string"
+        },
+        "pageToken": {
+          "type": "string"
+        },
+        "pageSize": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "maxCandidates": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        }
+      }
+    },
+    {
+      "title": "CapabilityResolutionResponse",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requestId",
+        "resolutionId",
+        "resolvedAt",
+        "directoryWatermark",
+        "freshnessStatus",
+        "candidates",
+        "authorizationGranted"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "string"
+        },
+        "resolutionId": {
+          "type": "string"
+        },
+        "resolvedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "directoryWatermark": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "freshnessStatus": {
+          "enum": [
+            "FRESH",
+            "STALE",
+            "PARTIAL",
+            "UNKNOWN"
+          ]
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        },
+        "authorizationGranted": {
+          "const": false
+        },
+        "nextPageToken": {
+          "type": "string"
+        },
+        "decisionNote": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "freshnessStatus": {
+                "enum": [
+                  "STALE",
+                  "UNKNOWN"
+                ]
+              }
+            },
+            "required": [
+              "freshnessStatus"
+            ]
+          },
+          "then": {
+            "properties": {
+              "candidates": {
+                "items": {
+                  "properties": {
+                    "eligibility": {
+                      "enum": [
+                        "HOLD",
+                        "INELIGIBLE"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "eligibility"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
