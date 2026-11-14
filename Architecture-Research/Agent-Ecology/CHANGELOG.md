@@ -27,3 +27,11 @@
 - 新增 7680×4320 SVG 架构源图和独立证据登记；威胁矩阵扩展至 18 项，ADR 扩展至 10 项。
 - 新增能力发现候选契约静态审查，登记 10 项 Schema/语义/授权缺口；两份 JSON 文件仅完成语法解析检查，未完成完整 Schema、密码学或互操作验证。
 - 合成实验与验收共 42 项全部 NOT_RUN；10 项 ADR 全部 Candidate；F0 12 项 Gate 仍未通过；productionAllowed=false。
+
+## 2026-11-14｜V1.9 能力发现契约静态审查与候选修复
+- 对 CapabilityAdvertisement、CapabilityResolution 和生命周期事件 Schema 完成 JSON 语法静态回读。
+- 新增机器可读 notAuthorization=true、VERIFIED 验证上下文、NAMED_DOMAINS 可见域约束、成本单位和证据等级约束。
+- 增加候选资格与 attestation/revocation/freshness 状态组合约束；增加每个候选的来源水位、撤销 Epoch 和观察有效期。
+- 增加分页请求字段和能力生命周期 CloudEvents 候选 Schema。
+- 静态审查 10 项缺口：7 项已形成候选修复、1 项部分修复、2 项仍开放；签名密码学、时间单调性、完整 Draft 2020-12 Validator 与互操作测试仍未执行。
+- F1 验收扩展至 30 项，V1.9 合成实验与验收共 52 项全部 NOT_RUN；productionAllowed=false。
