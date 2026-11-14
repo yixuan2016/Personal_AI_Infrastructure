@@ -84,3 +84,16 @@
 ## PR 与分支原则
 
 PR #13 持续跟踪本工作分支并保持 Draft。GitHub 显示可合并不代表应自动合并；工作分支与 main 的差异需在合并前单独审查，尤其是 main 新增提交、受保护路径和历史归档清单。
+
+
+## G2-06.11 本轮新增归档
+
+- 新增 11 个文件：阶段 README、网络分层设计、端口/光模块/线缆 BOM CSV、供电单线设计、液冷 P&ID 设计、五年 TCO CSV、ADR、38 项网络/电力/液冷联调验收矩阵和 3 份 Mermaid 图源。
+- 网络主参考：每区域 Spectrum-6 SN6600 双平面 Ethernet/RoCE；Quantum-X800 Q3400-RA 双平面 InfiniBand 保留为条件性替代。两种路线不混成同一个 GPU Fabric。
+- 网络隔离：GPU E-W、CPU North-South、Storage、Customer/WAN、Control/Support、OOB/Facility 分层。
+- 电力：HPE GB300 的 8 个 Power Shelf 各由一条 Power Whip 供电；400V/60A 国际配置与 480V/60A 北美配置分开管理。A/B 支路映射须以 OEM 单线图为准。
+- 液冷：设施一次侧经 CDU 换热，二次侧连接机柜 Manifold/冷板；XDU1350 内部泵 N+1 不等于 CDU 整机 N+1。
+- TCO：仅建立变量和公式口径，等待正式 OEM 报价、PDU 实测、PUE/WUE、电价、水价、维保和折现率。
+- 对 G2-06.10 的 HPE 端口描述作了纠偏：HPE QuickSpecs 为每 tray 2 个 ConnectX-8 IO modules、每模块 2 个 OSFP 物理接口，即每 tray 4 个物理 OSFP 接口；不再把它直接写成 4×800Gb/s 有效带宽。速率、模式和 rail map 仍须 OEM 确认。
+- 3 个 Mermaid 图源已按单向/双向连线语法复核；供电图明确为每个 Power Shelf 一条 Whip，A/B 分组不提前假设。
+- G2-06.11 所有文件仍为 RC0 候选，不代表采购冻结、施工图审查或现场验收完成。
