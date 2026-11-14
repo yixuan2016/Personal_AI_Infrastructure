@@ -50,3 +50,15 @@
 - V1.9 合成实验与验收共 80 项全部 NOT_RUN；F0 未通过；productionAllowed=false；Runner 未启用。
 
 - Peer Trust Binding 进一步要求 Trust Anchor 与 Trust Domain 显式绑定、双方对同一 agreementDigest 签署接受收据；R4 不进入 Agent 委托；WP-020 验收增至 27 项，V1.9 总验收增至 80 项，全部 NOT_RUN。
+
+
+## 2026-11-15｜V1.9-D WP-021 跨生态目录一致性与撤销传播（Candidate）
+- 新增 WP-021 架构备忘录、研究证据登记和静态审查/未决事项。
+- 新增 Federation Revocation Event 与 Federation Sync Checkpoint 两份候选 JSON Schema。
+- 新增 34 项目录一致性、事件幂等、撤销墓碑、事件缺口、快照恢复、Merkle 对账和网络分区验收设计，全部 NOT_RUN。
+- 新增 7680×4320 SVG 目录一致性与撤销传播架构源图。
+- 新增 ADR-117—ADR-122；威胁矩阵扩展至 34 项；总候选 ADR 为 22 项。
+- 采用 Peer Binding 专属连续 Feed、(source,id) 持久去重、有效撤销立即落墓碑、Gap 高风险 HOLD、完整签名快照恢复和 FCP 非权威中继边界。
+- CloudEvents、Kubernetes Watch、etcd、Dynamo、RFC 9162 和 CRDT 作为技术证据；不把规范原语误写为项目已实现。
+- 修正 WP-020 测试数量索引：27 项；V1.9 总验收 114 项全部 NOT_RUN。
+- 八份候选 Schema 仅完成 JSON 语法检查；完整 Validator、密码学、语义和互操作测试未执行；F0 未通过；productionAllowed=false；Runner 未启用。
