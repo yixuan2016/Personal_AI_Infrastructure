@@ -111,3 +111,18 @@ G2-06.9 型号来自厂商官方资料核查；均为候选，不代表采购、
 - [单星配置卡与部署边界](10-G2-06.10-OEM-BOM-Power-Cooling-RC0/G2-06.10_单星配置卡与部署边界.md)：A1—A5、B1—B5 角色与 Owner 边界。
 
 G2-06.10 当前为 RC0 候选配置；完整订货 SKU、QVL、区域报价、现场功率/液冷测量和设施验收尚未完成。
+
+
+## G2-06.11 双区域十星网络互连、供电单线、液冷 P&ID 与五年 TCO
+
+- [G2-06.11 阶段目录](10-G2-06.11-Network-Power-Cooling-TCO-RC0/README.md)：网络、端口/光模块、供电、液冷、TCO 与验收门禁。
+- [双区域网络分层与拓扑设计](10-G2-06.11-Network-Power-Cooling-TCO-RC0/G2-06.11_双区域网络分层与拓扑设计.md)：Spectrum-6 RoCE 双平面主参考、Quantum-X800 InfiniBand 替代、CPU North-South、Storage、WAN 和 OOB 隔离。
+- [端口映射、光模块与线缆 BOM](10-G2-06.11-Network-Power-Cooling-TCO-RC0/G2-06.11_端口映射光模块与线缆BOM.csv)：按区域和网络平面列出物理接口、线缆与光模块计数口径。
+- [双路供电单线与支路容量设计](10-G2-06.11-Network-Power-Cooling-TCO-RC0/G2-06.11_双路供电单线与支路容量设计.md)：HPE 8×Power Shelf/Whip、UPS/PDU A/B、N1380 PCS、发电机、计量和安全边界。
+- [液冷 P&ID 与监测联锁设计](10-G2-06.11-Network-Power-Cooling-TCO-RC0/G2-06.11_液冷P&ID与监测联锁设计.md)：设施一次侧、CDU、设备二次侧、Manifold、冷板、泵冗余和漏液硬联锁。
+- [五年 TCO 参数化预算模型](10-G2-06.11-Network-Power-Cooling-TCO-RC0/G2-06.11_五年TCO参数化预算模型.csv)：设备/网络/供配电/液冷/软件/运维报价与能耗水耗输入模板，不填虚构价格。
+- [ADR-G2-06.11-01 GPU 双平面 Fabric 与隔离策略](10-G2-06.11-Network-Power-Cooling-TCO-RC0/decisions/ADR-G2-06.11-01_GPU双平面Fabric与隔离策略.md)：主参考 Ethernet/RoCE，IB 条件性替代。
+- [网络、电力、液冷联调验收矩阵](10-G2-06.11-Network-Power-Cooling-TCO-RC0/matrices/G2-06.11_网络电力液冷联调验收矩阵.csv)：38 项验收与证据要求。
+- [双区域网络拓扑图源](10-G2-06.11-Network-Power-Cooling-TCO-RC0/diagrams/G2-06.11_双区域网络拓扑.mmd)、[供电单线图源](10-G2-06.11-Network-Power-Cooling-TCO-RC0/diagrams/G2-06.11_供电单线图.mmd)、[液冷 P&ID 图源](10-G2-06.11-Network-Power-Cooling-TCO-RC0/diagrams/G2-06.11_液冷P&ID图.mmd)。
+
+G2-06.11 为 RC0 架构参考；端口速率/Breakout、光模块料号、完整支路 A/B 映射、正式施工 P&ID、设备 QVL、现场实测和 OEM/设施签署仍待完成。
