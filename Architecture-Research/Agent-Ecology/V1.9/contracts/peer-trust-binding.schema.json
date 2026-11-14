@@ -19,7 +19,8 @@
     "validFrom",
     "validUntil",
     "revocationEndpoint",
-    "notAuthorization"
+    "notAuthorization",
+    "agreementDigest"
   ],
   "properties": {
     "schemaVersion": {
@@ -82,8 +83,7 @@
         "R0",
         "R1",
         "R2",
-        "R3",
-        "R4"
+        "R3"
       ]
     },
     "transitiveTrust": {
@@ -98,7 +98,8 @@
         "required": [
           "anchorId",
           "keySetRef",
-          "keyEpoch"
+          "keyEpoch",
+          "trustDomainId"
         ],
         "properties": {
           "anchorId": {
@@ -111,6 +112,10 @@
           "keyEpoch": {
             "type": "integer",
             "minimum": 0
+          },
+          "trustDomainId": {
+            "type": "string",
+            "minLength": 3
           }
         }
       }
@@ -166,7 +171,10 @@
         "acceptedBy",
         "acceptedAt",
         "policyVersion",
-        "receiptDigest"
+        "receiptDigest",
+        "signatureRef",
+        "signerKeyId",
+        "signerKeyEpoch"
       ],
       "properties": {
         "acceptedBy": {
@@ -182,6 +190,17 @@
         "receiptDigest": {
           "type": "string",
           "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "signatureRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "signerKeyId": {
+          "type": "string"
+        },
+        "signerKeyEpoch": {
+          "type": "integer",
+          "minimum": 0
         }
       }
     },
@@ -192,7 +211,10 @@
         "acceptedBy",
         "acceptedAt",
         "policyVersion",
-        "receiptDigest"
+        "receiptDigest",
+        "signatureRef",
+        "signerKeyId",
+        "signerKeyEpoch"
       ],
       "properties": {
         "acceptedBy": {
@@ -208,6 +230,17 @@
         "receiptDigest": {
           "type": "string",
           "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "signatureRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "signerKeyId": {
+          "type": "string"
+        },
+        "signerKeyEpoch": {
+          "type": "integer",
+          "minimum": 0
         }
       }
     },
@@ -229,6 +262,10 @@
     },
     "notAuthorization": {
       "const": true
+    },
+    "agreementDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
     }
   },
   "allOf": [
