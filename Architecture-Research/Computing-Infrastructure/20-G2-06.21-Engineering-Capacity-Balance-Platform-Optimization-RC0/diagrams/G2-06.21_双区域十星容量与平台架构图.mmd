@@ -1,0 +1,33 @@
+flowchart TB
+  subgraph A["区域 A｜五个逻辑星位"]
+    A1["A1 GPU 星位<br/>Vera Rubin NVL72 主参考<br/>Helios MI455X 替代"]
+    A2["A2 CPU/HPC/Agent<br/>SC755 V5 + N1380<br/>2N2S / 4N1S"]
+    A3["A3 存储星位<br/>Micron 9650 热层<br/>KIOXIA LC9 容量层"]
+    A4["A4 控制/通用<br/>R9815 候选"]
+    A5["A5 网络/安全/观测<br/>GPU Fabric / WAN / OOB"]
+  end
+  subgraph B["区域 B｜五个逻辑星位"]
+    B1["B1 GPU 星位<br/>Vera Rubin NVL72 主参考<br/>Helios MI455X 替代"]
+    B2["B2 CPU/HPC/Agent<br/>SC755 V5 + N1380<br/>2N2S / 4N1S"]
+    B3["B3 存储星位<br/>Micron 9650 热层<br/>KIOXIA LC9 容量层"]
+    B4["B4 控制/通用<br/>R9815 候选"]
+    B5["B5 网络/安全/观测<br/>GPU Fabric / WAN / OOB"]
+  end
+  A1 --> A5
+  A2 --> A5
+  A3 --> A5
+  A4 --> A5
+  B1 --> B5
+  B2 --> B5
+  B3 --> B5
+  B4 --> B5
+  A5 <-->|"双物理路径 WAN<br/>数据/Checkpoint/事件/控制协调"| B5
+  A3 <-->|"按数据驻留与RPO异步复制"| B3
+  A4 <-->|"授权共享状态与审计投影"| B4
+  F["区域独立设施<br/>POI / UPS / PDU / CDU / 水务 / 结构"] --> A1
+  F --> A2
+  G["区域独立设施<br/>POI / UPS / PDU / CDU / 水务 / 结构"] --> B1
+  G --> B2
+  N["治理原则<br/>跨区GPU不组成一个NVLink/UALink域<br/>每区先满足本地负载与预留<br/>再计算对侧关键负载接管余量"]
+  A5 --> N
+  B5 --> N
