@@ -23,7 +23,7 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - contracts/：能力广告、能力解析、能力生命周期事件、Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation、Federation Revocation Event、Federation Sync Checkpoint 候选 JSON Schema（8 份）。
 - validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv：31 项 F1 能力发现、资格一致性与事件契约验收矩阵。
 - validation/WP020_TRUST_PROTOCOL_VALIDATION_MATRIX.csv：27 项跨生态信任、委托、令牌与撤销验收设计。
-- validation/WP021_CATALOG_CONSISTENCY_REVOCATION_MATRIX.csv：34 项目录一致性、事件幂等、撤销传播、快照恢复和分区安全验收设计。
+- validation/WP021_CATALOG_CONSISTENCY_REVOCATION_MATRIX.csv：36 项目录一致性、事件幂等、撤销传播、快照恢复和分区安全验收设计。
 - assets/00_V1.9_跨生态能力发现与观察Runtime.svg：7680×4320 SVG 架构源图。
 - assets/01_WP-020_跨生态信任协议与授权链.svg：7680×4320 SVG 信任与授权链架构源图。
 - assets/02_WP-021_目录一致性与撤销传播架构.svg：7680×4320 SVG 目录同步与撤销传播架构源图。
@@ -45,7 +45,7 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 
 ## 证据边界
 
-本版引用的研究包括预印本、已发表论文、协议草案、正式规范和受控仿真实验。论文报告的实验结果不等于本项目已复现、已部署或已通过验收。Stigmergy 合成实验 22 项、F1 能力发现与契约验收 31 项、WP-020 信任协议验收 27 项、WP-021 目录一致性与撤销传播验收 34 项，共 114 项全部 NOT_RUN；22 项 ADR 全部 Candidate；34 项威胁全部 Candidate。V1.8 F0 12 项 Gate 仍全部 NotRun；没有真实领域数据授权、Runtime 执行或生产写入。
+本版引用的研究包括预印本、已发表论文、协议草案、正式规范和受控仿真实验。论文报告的实验结果不等于本项目已复现、已部署或已通过验收。Stigmergy 合成实验 22 项、F1 能力发现与契约验收 31 项、WP-020 信任协议验收 27 项、WP-021 目录一致性与撤销传播验收 36 项，共 116 项全部 NOT_RUN；22 项 ADR 全部 Candidate；34 项威胁全部 Candidate。V1.8 F0 12 项 Gate 仍全部 NotRun；没有真实领域数据授权、Runtime 执行或生产写入。
 
 八份候选 JSON Schema 已确认 JSON 语法有效，但尚未完成完整 Draft 2020-12 Validator、密码学签名验证、跨字段语义验证和协议互操作测试。静态审查的 10 项缺口中，7 项已形成候选契约修复，1 项部分修复，2 项仍开放。productionAllowed=false。
 
@@ -69,4 +69,4 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 历史压缩后要求来源域签名的完整可查询撤销快照、Snapshot Digest、Merkle Root 和连续性证据；不能仅凭 Root 或消息 ACK 认为撤销状态完整。
 - Merkle 反熵差异定位与 RFC 9162 追加历史一致性证明分开使用；RFC 9162 为 Experimental RFC，Gossip / split-view 仍需独立验证。
 - Freshness Budget 由目标域 Policy Owner 配置；FCP 离线时本地 PEP / Kill Switch 仍可 DENY。
-- WP-021 验收设计 34 项全部 NOT_RUN；10 项未决事项开放；未部署消息总线或真实撤销 Feed。
+- WP-021 验收设计 36 项全部 NOT_RUN；10 项未决事项开放；未部署消息总线或真实撤销 Feed。
