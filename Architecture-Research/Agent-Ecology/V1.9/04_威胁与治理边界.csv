@@ -11,3 +11,9 @@ TH-09,A2A语义混淆,协商消息被误认为业务批准或事实提交,消息
 TH-10,工件执行风险,共享代码/脚本/控制器未经审查运行,隔离沙箱；签名来源；依赖审查；效果网关,工具Owner和安全治理Owner,P0,CANDIDATE
 TH-11,Agent退出与凭证残留,接续Agent继承前任权限或会话密钥,成果可继承但凭证不可继承；重新认证和最小授权,身份Owner与领域Owner,P0,CANDIDATE
 TH-12,群体错误共识,多数Agent引用同一错误来源,保留来源独立性；反证检验；Owner裁决；不可用票数替代证据,独立评估者与领域Owner,P0,CANDIDATE
+TH-13,能力广告投毒,攻击者伪造或篡改能力声明进入联邦目录,Owner签名与来源校验；异常广告隔离；本地权威目录复核,能力Owner与FCP安全Owner,P0,CANDIDATE
+TH-14,撤销水位滞后,旧能力广告在撤销事件后到达并覆盖新状态,单调撤销Epoch；来源水位校验；撤销状态未知时高风险HOLD,来源域Identity Owner与本地PEP,P0,CANDIDATE
+TH-15,能力语义漂移,Ontology或Schema版本不兼容导致错误能力匹配,版本锁定；映射证据；未知关键概念HOLD,Ontology Owner与能力Owner,P1,CANDIDATE
+TH-16,授权状态混淆,A2A AUTH_REQUIRED或任务状态被误读为本地Permit,任务状态与授权对象分离；目标域PDP/PEP执行前复核,执行域Policy Owner,P0,CANDIDATE
+TH-17,观察订阅越权,Agent订阅或读取无权访问的跨域状态痕迹,订阅级授权；域/任务/Purpose命名空间；字段级过滤和审计,Environment Owner与数据Owner,P0,CANDIDATE
+TH-18,FCP控制面失陷,联邦目录或路由节点被攻击者控制并诱导调用恶意能力,FCP不持有生产凭证；候选需回源核验；本地授权不可绕过,联邦运营Owner与成员域Security Owner,P0,CANDIDATE
