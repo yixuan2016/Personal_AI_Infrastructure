@@ -1,0 +1,16 @@
+flowchart TD
+  START["项目需求与唯一Site/POI/Suite ID"] --> RFI["向权威资源主体发出标准RFI"]
+  RFI --> RESP{"逐项答复完整？"}
+  RESP -->|"否/未知/第三方依赖"| HOLD["Hold：补证据或调整候选"]
+  RESP -->|"是"| EVID{"证据等级与签署主体合格？"}
+  EVID -->|"E0/E1或无授权"| HOLD
+  EVID -->|"E2项目级书面答复"| TECH["技术/法务/财务交叉审查"]
+  TECH --> GATE{"D/E/W/F/S硬门禁"}
+  GATE -->|"任一未通过"| HOLD
+  GATE -->|"通过且E3合同/许可/工程文件齐备"| TCO["同口径TCO与路线评分"]
+  TCO --> FAT["OEM FAT / 现场SAT / 独立见证"]
+  FAT --> PASS{"E4实测与故障验收通过？"}
+  PASS -->|"否"| HOLD
+  PASS -->|"是"| OWNER["业主/法务/财务/工程Owner批准"]
+  OWNER --> PROD["可进入建设/投运决策"]
+  SAFE["消防/漏液/电气硬联锁由本地专业系统优先执行"] -.-> HOLD
