@@ -1,0 +1,53 @@
+flowchart TB
+  subgraph GLOBAL["跨区域治理与业务层"]
+    ADS["ADS / GCP<br/>共同语义、跨域治理与审计"]
+    WAN["双运营商 WAN<br/>加密 / 路由 / 受控复制"]
+    ADS <--> WAN
+  end
+
+  subgraph REGION_A["Region A｜本地自治故障域"]
+    A1["A1 GPU<br/>GB300 NVL72"]
+    A2["A2 CPU/HPC<br/>N1380 + SC tray"]
+    A3["A3 Storage<br/>R7725xd ×2"]
+    A4["A4 Control/Support<br/>R9815 ×3"]
+    A5["A5 Edge/Security<br/>R9815 ×2"]
+    AN["独立网络域<br/>GPU A/B、CPU、Storage、OOB、WAN"]
+    AP["独立供电 A/B<br/>UPS / PDU / Busway"]
+    AC["独立冷却域<br/>CDU / 一次侧 / 二次侧"]
+    A1 --> AN
+    A2 --> AN
+    A3 --> AN
+    A4 --> AN
+    A5 --> AN
+    AP --> A1
+    AP --> A2
+    AC --> A1
+    AC --> A2
+    AN <--> WAN
+  end
+
+  subgraph REGION_B["Region B｜本地自治故障域"]
+    B1["B1 GPU<br/>GB300 NVL72"]
+    B2["B2 CPU/HPC<br/>N1380 + SC tray"]
+    B3["B3 Storage<br/>R7725xd ×2"]
+    B4["B4 Control/Support<br/>R9815 ×3"]
+    B5["B5 Edge/Security<br/>R9815 ×2"]
+    BN["独立网络域<br/>GPU A/B、CPU、Storage、OOB、WAN"]
+    BP["独立供电 A/B<br/>UPS / PDU / Busway"]
+    BC["独立冷却域<br/>CDU / 一次侧 / 二次侧"]
+    B1 --> BN
+    B2 --> BN
+    B3 --> BN
+    B4 --> BN
+    B5 --> BN
+    BP --> B1
+    BP --> B2
+    BC --> B1
+    BC --> B2
+    BN <--> WAN
+  end
+
+  ADS --> A4
+  ADS --> B4
+  A3 <-.->|"受控数据复制"| WAN
+  WAN -.->|"受控数据复制"| B3
