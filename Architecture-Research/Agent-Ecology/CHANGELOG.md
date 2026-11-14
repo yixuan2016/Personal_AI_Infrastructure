@@ -35,3 +35,5 @@
 - 增加分页请求字段和能力生命周期 CloudEvents 候选 Schema。
 - 静态审查 10 项缺口：7 项已形成候选修复、1 项部分修复、2 项仍开放；签名密码学、时间单调性、完整 Draft 2020-12 Validator 与互操作测试仍未执行。
 - F1 验收扩展至 30 项，V1.9 合成实验与验收共 52 项全部 NOT_RUN；productionAllowed=false。
+
+- F1 能力发现/契约矩阵增加冲突状态优先级测试；INELIGIBLE 优先于 HOLD，F1 测试增至 31 项，V1.9 验收总数增至 53 项，全部 NOT_RUN。
