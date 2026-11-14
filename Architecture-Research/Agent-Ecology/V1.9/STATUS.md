@@ -55,14 +55,14 @@
 ## 工作流 D｜WP-021 跨生态目录一致性与撤销传播
 - 新增 WP-021 架构备忘录、研究证据登记、静态审查与 10 项未决事项。
 - 新增 Federation Revocation Event 与 Federation Sync Checkpoint 两份候选 JSON Schema（V1.9 总计八份）。
-- 新增 WP-021 验收矩阵 34 项，全部 NOT_RUN。
+- 新增 WP-021 验收矩阵 36 项，全部 NOT_RUN。
 - 新增 7680×4320 SVG 目录一致性与撤销传播架构源图。
 - 新增 6 项候选 ADR（ADR-117—ADR-122）；威胁矩阵扩展至 34 项。
 - 候选约束：Peer Binding 专属连续 Feed、(source,id) 持久幂等去重、撤销墓碑只增不减、Gap 高风险 HOLD、完整签名快照恢复、FCP 仅中继与反熵。
 - 未部署事件总线、未运行撤销传播实验、未开展 Merkle Proof 或跨接收方 Gossip 互操作。
 
 ## 总体边界（WP-021 更新）
-- 合成实验与验收：114 项，全部 NOT_RUN。
+- 合成实验与验收：116 项，全部 NOT_RUN。
 - 架构决策：22 项，全部 Candidate，未获正式批准。
 - 威胁与治理边界：34 项，全部 Candidate。
 - 候选 JSON Schema：8 份，仅完成 JSON 语法检查；完整 Draft 2020-12 Validator、语义和密码学验证未执行。
