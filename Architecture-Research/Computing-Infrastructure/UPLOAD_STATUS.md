@@ -241,3 +241,9 @@ PR #13 持续跟踪本工作分支并保持 Draft。GitHub 显示可合并不代
 - 根README和本状态文件均已索引G2-06.18。
 - PR #13：Open / Draft / mergeable=true / mergeable_state=clean；当前工作分支相对main ahead 228 / behind 2；不代表已经合并。
 - 不自动合并main，不将静态文档检查视为Owner批准、OEM QVL、utility资源分配或现场验收。
+
+
+### G2-06.19 归档复核补充
+- CPU模型字段复核：供电口径提示已移至边界说明，不再占用每节点物理核数字段。
+- 存储模型字段复核：双区域汇总按4台服务器、每台40盘、每台9,830.4TB计算，双区域原始39.3216PB；列名改为“范围原始PB/PiB”。
+- 根README已增加G2-06.19阶段入口；本轮不合并main。
