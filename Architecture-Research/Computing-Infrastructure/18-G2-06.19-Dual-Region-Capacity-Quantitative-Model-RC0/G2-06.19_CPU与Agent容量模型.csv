@@ -3,4 +3,4 @@ A,A2,2N2S候选,8 trays,16,双路,TBD,TBD,TBD,16×每节点物理核×可调度�
 A,A2,4N1S候选,8 trays,32,单路,TBD,TBD,TBD,32×每节点物理核×可调度系数,32×每节点内存×可用系数,同上，按任务画像测算,与2N2S互斥；OEM准确SKU待定,Candidate
 B,B2,2N2S候选,8 trays,16,双路,TBD,TBD,TBD,16×每节点物理核×可调度系数,16×每节点内存×可用系数,按区域B画像计算,与4N1S互斥,Candidate
 B,B2,4N1S候选,8 trays,32,单路,TBD,TBD,TBD,32×每节点物理核×可调度系数,32×每节点内存×可用系数,按区域B画像计算,与2N2S互斥,Candidate
-A/B,A2+B2,N1380供电口径,每区1套,—,—,54kW DC chassis capacity,—,—,不可由此推导AC kW,—,AC输入需OEM曲线/电表,54kW不是AC输入功率,TBD-Vendor
+A/B,A2+B2,供电边界提示,每区1套,—,—,TBD,TBD,TBD,—,—,—,54kW DC chassis capacity不是AC输入功率；详见功率/液冷/水务模型表,Candidate
