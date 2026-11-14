@@ -13,3 +13,11 @@
 - 新增成员声明与 DataUseGrant Schema；验证矩阵 23 项、威胁矩阵 16 项，全部 NotRun。
 - 新增 3 张 SVG 架构源图和 V1.8 二进制资产状态清单。
 - V1.8 为架构研究和候选契约，不代表工程实现或双生态互操作验收。
+
+## 2026-11-14｜V1.9 跨生态能力发现与目录联邦
+- 新增本地权威目录与联邦摘要目录双层架构，明确发现最终一致、执行前本地授权。
+- 新增能力广告与能力解析候选 Schema、F1 20 项验收矩阵。
+- 新增 Observation Runtime 设计，覆盖事件订阅、状态唤醒、游标续读、周期对账和共享环境安全边界。
+- 新增 MACP、A2A、MCP、CloudEvents、SPIFFE 与近期 Stigmergy 实证研究的证据登记。
+- 新增 8K SVG 矢量架构图。
+- V1.9 为 Research Candidate；F0 12 项 Gate、F1 20 项测试全部 NotRun；不启用 Runner，不接入真实业务数据，productionAllowed=false。
