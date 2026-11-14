@@ -1,6 +1,6 @@
 # Agent Ecology｜群体智能生态架构研究
 
-本目录独立管理 Agent Ecology V1.2—V1.8 研究资料，不与 Personal AI Life OS 主体设计、算力底座其他专题混放。
+本目录独立管理 Agent Ecology V1.2—V1.9 研究资料，不与 Personal AI Life OS 主体设计、算力底座其他专题混放。
 
 ## 版本导航
 - V1.2：协议契约与机器可读协作规格
@@ -10,6 +10,7 @@
 - V1.6：生态世界模型与数字孪生
 - V1.7：生态级 RSI 与递归进化治理
 - V1.8：跨生态联邦进化、多生态协同治理与 F0 成员边界
+- V1.9：跨生态能力发现、联邦摘要目录、观察 Runtime 与 F1 验收设计
 
 ## 统一架构原则
 1. Environment 是本生态真实状态权威；World Model/Twin 只产生预测和仿真状态。
@@ -25,6 +26,13 @@
 - 跨域授权采用安全交集：任一 DENY 即 DENY；关键 ABSTAIN、过期或撤销状态不可达则 HOLD。
 - Agent/RSI 不得修改根策略、根身份、权限上限、审批规则或审计记录。
 - F0 治理章程和 Gate 均为候选设计；12 项 Gate 未签署、未演练，全部 NotRun。
+
+## V1.9 能力发现与目录联邦
+- 本地权威目录与联邦摘要目录分离；目录发现可最终一致，执行授权必须由目标生态本地 PDP/PEP 决定。
+- 新增 CapabilityAdvertisement 与 CapabilityResolution 候选 Schema、F1 20 项验收矩阵。
+- 新增共享环境 Observation Runtime 设计：事件订阅、状态唤醒、游标续读、周期对账、命名空间隔离与审计。
+- 新增 8K SVG 架构源图和研究证据登记。
+- V1.9 仅为研究候选；F0 12 项 Gate 与 F1 20 项测试均 NotRun，productionAllowed=false。
 
 ## 归档审查与二进制交付
 - `ARCHIVE_AUDIT.md` 记录 V1.2—V1.7 图片引用修复、历史副本和审查边界。
