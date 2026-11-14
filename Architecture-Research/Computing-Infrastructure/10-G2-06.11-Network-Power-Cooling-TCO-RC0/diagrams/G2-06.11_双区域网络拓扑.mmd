@@ -51,5 +51,5 @@ flowchart TB
 
   CORE --> A_CTL
   CORE --> B_CTL
-  A_STR <-.->|"受控复制 / Checkpoint"| WAN
-  B_STR <-.->|"受控复制 / Checkpoint"| WAN
+  A_STR -.->|"受控复制 / Checkpoint"| WAN
+  WAN -.->|"受控复制 / Checkpoint"| B_STR
