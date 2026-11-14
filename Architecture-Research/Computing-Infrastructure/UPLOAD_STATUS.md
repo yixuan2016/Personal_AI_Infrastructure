@@ -97,3 +97,16 @@ PR #13 持续跟踪本工作分支并保持 Draft。GitHub 显示可合并不代
 - 对 G2-06.10 的 HPE 端口描述作了纠偏：HPE QuickSpecs 为每 tray 2 个 ConnectX-8 IO modules、每模块 2 个 OSFP 物理接口，即每 tray 4 个物理 OSFP 接口；不再把它直接写成 4×800Gb/s 有效带宽。速率、模式和 rail map 仍须 OEM 确认。
 - 3 个 Mermaid 图源已按单向/双向连线语法复核；供电图明确为每个 Power Shelf 一条 Whip，A/B 分组不提前假设。
 - G2-06.11 所有文件仍为 RC0 候选，不代表采购冻结、施工图审查或现场验收完成。
+
+
+## G2-06.12 本轮新增归档（2026-11-14）
+
+- 新增 13 个文件：RFQ技术需求书、OEM响应/偏差矩阵、机房工程输入基线、区域法规矩阵、设备负载/设施容量表、液冷OEM回填表、网络端口/光链路回填模板、35项FAT/SAT门禁矩阵、14项风险登记册、决策与开放问题、官方资料登记册、2份Mermaid图源和阶段README（含图源计入共13个文件）。
+- 覆盖双区域五个逻辑星位：GPU、CPU/HPC、Storage、Control/Support、Edge/Security。
+- 建立全球通用技术基线及中国大陆/北美地区法规分支；由于具体国家/城市/园区未确定，不冻结地区供电、电气SKU、消防、环境、水务和许可条件。
+- 纠正HPE GB300 Power Whip地区SKU口径：400V/60A NA S6X18A/S6X19A、400V/60A INTL S6X20A/S6X21A、480V/60A NA S6X22A/S6X23A，Top/Bottom Feed分别订货；不得简化成“北美=480V、国际=400V”。
+- 记录GB300功率口径待澄清：HPE QuickSpecs 132kW nominal TDP、约155kW EDPp、192kW busway planning；NVIDIA Enterprise RA组件页另列up to 142kW。192kW只用于初步母线容量敏感性分析，不代表平均功耗或最终保护定值。
+- 记录Lenovo N1380公开DS0187当前列出SC750 V4/SC777 V4；此前讨论的SC755 V5+N1380须由Lenovo书面确认准确MTM/固件/水路兼容，不能标记已验证。
+- 对比HPE GB300与Dell XE9712/IR9048机柜外形/重量，要求分别做结构、点载荷、运输和通道设计。
+- 证据来源包括HPE QuickSpecs、NVIDIA Enterprise RA、Dell XE9712 Spec Sheet、Lenovo DS0187、GB 50174-2017发布公告、NFPA 70 2026、TIA-942-C、ASHRAE TC 9.9。
+- G2-06.12状态：RC0/RFQ草案；未发正式合同约束性RFP、未取得正式报价、未完成FAT/SAT或现场审图。
