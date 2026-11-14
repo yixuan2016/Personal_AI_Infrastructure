@@ -42,9 +42,11 @@
 ## 2026-11-14｜V1.9-C WP-020 跨生态信任协议与能力授权链（Candidate）
 - 新增 WP-020 架构决策备忘录、研究证据登记、静态审查与 10 项未决事项。
 - 新增 Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation 三份候选 JSON Schema。
-- 新增 24 项跨生态信任、Owner 签名、委托衰减、Token Exchange、DPoP、撤销与审计验收设计，全部 NOT_RUN。
+- 新增 27 项跨生态信任、Owner 签名、委托衰减、Token Exchange、DPoP、撤销与审计验收设计，全部 NOT_RUN。
 - 新增 7680×4320 SVG 信任与授权链架构源图。
 - 新增 ADR-111—ADR-116；威胁矩阵扩展至 26 项；总候选 ADR 为 16 项。
 - 默认双边显式信任、关闭传递信任；SPIFFE/OIDF 为可选适配；目标域本地 Authorization Server/PDP 保留最终授权权威。
 - 六份候选 Schema 仅完成 JSON 语法解析检查；未完成完整 Draft 2020-12 Validator、密码学、父子委托语义和协议互操作测试。
-- V1.9 合成实验与验收共 77 项全部 NOT_RUN；F0 未通过；productionAllowed=false；Runner 未启用。
+- V1.9 合成实验与验收共 80 项全部 NOT_RUN；F0 未通过；productionAllowed=false；Runner 未启用。
+
+- Peer Trust Binding 进一步要求 Trust Anchor 与 Trust Domain 显式绑定、双方对同一 agreementDigest 签署接受收据；R4 不进入 Agent 委托；WP-020 验收增至 27 项，V1.9 总验收增至 80 项，全部 NOT_RUN。
