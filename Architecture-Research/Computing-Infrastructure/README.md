@@ -213,3 +213,19 @@ G2-06.14当前为RC0区域长名单和桌面初筛；未取得园区/地块级fi
 G2-06.16 = RC0 / Proposed。暂建议优先验证C、以A为长期对照、B为高密可交付的快速备选；尚无任何项目级firm MW/液冷容量/地块租约/正式报价/FAT/SAT，不能宣称已完成最终方案选定或成本最优。
 
 - [G2-06.16 文件交付清单及SHA-256](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_交付清单与SHA256校验记录.md)、[逐文件SHA256SUMS](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/SHA256SUMS.txt)：本轮16个正文/CSV/图源文件的远端UTF-8内容哈希。阶段共18个文件（16研究文件+2校验文件）；不替代完整仓库ZIP验包。
+
+
+## G2-06.17｜双区域资源真实性核验与供应商响应工作包
+
+- [G2-06.17 阶段目录](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/README.md)：统一G2-06.12 OEM RFQ、G2-06.15园区RFI、G2-06.16合同/TCO与项目级证据链。
+- [供应商响应与证据成熟度标准](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_供应商响应与证据成熟度标准.md)：E0—E4证据等级、C0—C6资源容量状态、供应商答复状态和权威证据出具主体。
+- [项目级供电容量与并网证据链](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_项目级供电容量与并网证据链.md)：区分公开规划、申请、研究、项目分配、设施建成、获准送电和现场实测；纳入ERCOT PGRR144与中国多用户绿电直连适用条件。
+- [46项供应商RFI响应与证据矩阵](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_供应商RFI响应与证据矩阵.csv)：土地、firm MW、并网、冷却/水务、网络、OEM、合同、安全、双区域和验收。
+- [站点负荷与计量边界回填模板](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_站点负荷与计量边界回填模板.csv)：沿用十星BOM，分开设备功率、设施功率、计量点和故障工况，不预填虚构总负荷。
+- [液冷水务与热工回填模板](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_液冷水务与热工回填模板.csv)、[网络物理路径与服务回填模板](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_网络物理路径与服务回填模板.csv)。
+- [供应商偏差与证据冲突登记册](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_供应商偏差与证据冲突登记册.csv)：记录原始答复、冲突数值、责任方、补证据和复核结论。
+- [供应商澄清会与现场尽调工作包](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_供应商澄清会与现场尽调工作包.md)、[ADR-04项目级资源证据优先决策](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_ADR-04项目级资源证据优先决策.md)。
+- [2026官方政策与电网接入证据登记册](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_2026官方政策与电网接入证据登记册.md)。
+- [资源承诺证据链](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/diagrams/G2-06.17_资源承诺证据链.mmd)、[RFI到工程放行门禁](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/diagrams/G2-06.17_RFI到工程放行门禁.mmd)。
+
+G2-06.17 = RC0 / Proposed。当前没有真实供应商回函、项目级utility容量函、正式租约/报价、有效水权/排水许可、物理光路签署、OEM QVL或现场验收；所有回填模板保持空白，不能据此宣布任何候选站点可用或完成路线选择。
