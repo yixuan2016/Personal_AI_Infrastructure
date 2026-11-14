@@ -269,16 +269,50 @@
       "allOf": [
         {
           "if": {
-            "properties": {
-              "attestationStatus": {
-                "enum": [
-                  "INVALID",
-                  "EXPIRED"
+            "anyOf": [
+              {
+                "properties": {
+                  "attestationStatus": {
+                    "enum": [
+                      "INVALID",
+                      "EXPIRED"
+                    ]
+                  }
+                },
+                "required": [
+                  "attestationStatus"
+                ]
+              },
+              {
+                "properties": {
+                  "revocationStatus": {
+                    "const": "REVOKED"
+                  }
+                },
+                "required": [
+                  "revocationStatus"
+                ]
+              },
+              {
+                "properties": {
+                  "ontologyCompatibility": {
+                    "const": "INCOMPATIBLE"
+                  }
+                },
+                "required": [
+                  "ontologyCompatibility"
+                ]
+              },
+              {
+                "properties": {
+                  "schemaCompatibility": {
+                    "const": "INCOMPATIBLE"
+                  }
+                },
+                "required": [
+                  "schemaCompatibility"
                 ]
               }
-            },
-            "required": [
-              "attestationStatus"
             ]
           },
           "then": {
@@ -294,139 +328,112 @@
         },
         {
           "if": {
-            "properties": {
-              "attestationStatus": {
-                "const": "UNKNOWN"
+            "allOf": [
+              {
+                "not": {
+                  "anyOf": [
+                    {
+                      "properties": {
+                        "attestationStatus": {
+                          "enum": [
+                            "INVALID",
+                            "EXPIRED"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "attestationStatus"
+                      ]
+                    },
+                    {
+                      "properties": {
+                        "revocationStatus": {
+                          "const": "REVOKED"
+                        }
+                      },
+                      "required": [
+                        "revocationStatus"
+                      ]
+                    },
+                    {
+                      "properties": {
+                        "ontologyCompatibility": {
+                          "const": "INCOMPATIBLE"
+                        }
+                      },
+                      "required": [
+                        "ontologyCompatibility"
+                      ]
+                    },
+                    {
+                      "properties": {
+                        "schemaCompatibility": {
+                          "const": "INCOMPATIBLE"
+                        }
+                      },
+                      "required": [
+                        "schemaCompatibility"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "anyOf": [
+                  {
+                    "properties": {
+                      "attestationStatus": {
+                        "const": "UNKNOWN"
+                      }
+                    },
+                    "required": [
+                      "attestationStatus"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "revocationStatus": {
+                        "enum": [
+                          "UNKNOWN",
+                          "STALE"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "revocationStatus"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "ontologyCompatibility": {
+                        "const": "UNKNOWN"
+                      }
+                    },
+                    "required": [
+                      "ontologyCompatibility"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "schemaCompatibility": {
+                        "enum": [
+                          "UNKNOWN",
+                          "TRANSFORM_REQUIRED"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "schemaCompatibility"
+                    ]
+                  }
+                ]
               }
-            },
-            "required": [
-              "attestationStatus"
             ]
           },
           "then": {
             "properties": {
               "eligibility": {
                 "const": "HOLD"
-              }
-            },
-            "required": [
-              "eligibility"
-            ]
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "revocationStatus": {
-                "const": "REVOKED"
-              }
-            },
-            "required": [
-              "revocationStatus"
-            ]
-          },
-          "then": {
-            "properties": {
-              "eligibility": {
-                "const": "INELIGIBLE"
-              }
-            },
-            "required": [
-              "eligibility"
-            ]
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "revocationStatus": {
-                "enum": [
-                  "UNKNOWN",
-                  "STALE"
-                ]
-              }
-            },
-            "required": [
-              "revocationStatus"
-            ]
-          },
-          "then": {
-            "properties": {
-              "eligibility": {
-                "const": "HOLD"
-              }
-            },
-            "required": [
-              "eligibility"
-            ]
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "ontologyCompatibility": {
-                "const": "INCOMPATIBLE"
-              }
-            },
-            "required": [
-              "ontologyCompatibility"
-            ]
-          },
-          "then": {
-            "properties": {
-              "eligibility": {
-                "const": "INELIGIBLE"
-              }
-            },
-            "required": [
-              "eligibility"
-            ]
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "ontologyCompatibility": {
-                "const": "UNKNOWN"
-              }
-            },
-            "required": [
-              "ontologyCompatibility"
-            ]
-          },
-          "then": {
-            "properties": {
-              "eligibility": {
-                "const": "HOLD"
-              }
-            },
-            "required": [
-              "eligibility"
-            ]
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "schemaCompatibility": {
-                "enum": [
-                  "INCOMPATIBLE",
-                  "UNKNOWN",
-                  "TRANSFORM_REQUIRED"
-                ]
-              }
-            },
-            "required": [
-              "schemaCompatibility"
-            ]
-          },
-          "then": {
-            "properties": {
-              "eligibility": {
-                "enum": [
-                  "HOLD",
-                  "INELIGIBLE"
-                ]
               }
             },
             "required": [
