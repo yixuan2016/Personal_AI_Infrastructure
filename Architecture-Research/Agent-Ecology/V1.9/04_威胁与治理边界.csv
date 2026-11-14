@@ -17,3 +17,11 @@ TH-15,能力语义漂移,Ontology或Schema版本不兼容导致错误能力匹�
 TH-16,授权状态混淆,A2A AUTH_REQUIRED或任务状态被误读为本地Permit,任务状态与授权对象分离；目标域PDP/PEP执行前复核,执行域Policy Owner,P0,CANDIDATE
 TH-17,观察订阅越权,Agent订阅或读取无权访问的跨域状态痕迹,订阅级授权；域/任务/Purpose命名空间；字段级过滤和审计,Environment Owner与数据Owner,P0,CANDIDATE
 TH-18,FCP控制面失陷,联邦目录或路由节点被攻击者控制并诱导调用恶意能力,FCP不持有生产凭证；候选需回源核验；本地授权不可绕过,联邦运营Owner与成员域Security Owner,P0,CANDIDATE
+TH-19,Trust Domain混淆,验证器将外部Bundle或公钥错误绑定到另一Trust Domain,严格维护Domain与Bundle绑定；拒绝全局无域区分密钥池,Identity Owner与本地Verifier,P0,CANDIDATE
+TH-20,传递信任扩张,A信任B且B信任C被错误解释为A自动信任C,默认transitiveTrust=false；每条Peer Binding双边接受；显式路径按本地策略批准,双方Root Governance,P0,CANDIDATE
+TH-21,Owner签名密钥滥用,非Owner主体使用泄露或越权密钥签发能力声明,Owner/Publisher Grant校验；用途隔离；Key Epoch；紧急撤销与重签,Capability Owner与SEC,P0,CANDIDATE
+TH-22,算法混淆或降级,攻击者利用不受支持算法、alg=none或密钥跨用途复用绕过验证,本地算法Allowlist；每把密钥绑定单一算法与用途；禁止自动降级,Identity/Security Owner,P0,CANDIDATE
+TH-23,委托权限放大,子Grant扩大Action/Resource/Purpose/Audience/TTL/Budget或深度,逐层父子集合与约束比较；默认禁止再委托；循环与最大深度检测,授权Owner与目标域PDP,P0,CANDIDATE
+TH-24,代理主体混淆,Subject/Actor/Issuer混淆导致Agent被视为权利所有者,令牌显式保留subject/actor/issuer/audience；目标域本地验证；审计完整代理链,目标域Authorization Owner,P0,CANDIDATE
+TH-25,撤销回滚与旧状态复活,旧Bundle/撤销事件/旧Epoch覆盖新撤销状态,每来源域独立单调水位；旧Epoch拒绝；高风险状态未知时HOLD,来源域SEC与本地PEP,P0,CANDIDATE
+TH-26,持有者令牌重放,窃取的访问令牌或DPoP证明被重复使用,短期受众绑定令牌；DPoP/mTLS；jti去重与nonce；密钥隔离,Authorization Server与Resource Server,P0,CANDIDATE
