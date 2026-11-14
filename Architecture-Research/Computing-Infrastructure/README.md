@@ -229,3 +229,5 @@ G2-06.16 = RC0 / Proposed。暂建议优先验证C、以A为长期对照、B为�
 - [资源承诺证据链](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/diagrams/G2-06.17_资源承诺证据链.mmd)、[RFI到工程放行门禁](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/diagrams/G2-06.17_RFI到工程放行门禁.mmd)。
 
 G2-06.17 = RC0 / Proposed。当前没有真实供应商回函、项目级utility容量函、正式租约/报价、有效水权/排水许可、物理光路签署、OEM QVL或现场验收；所有回填模板保持空白，不能据此宣布任何候选站点可用或完成路线选择。
+
+- [G2-06.17 文件清单与SHA-256校验记录](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_文件清单与SHA256校验记录.md)、[逐文件SHA256SUMS](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/SHA256SUMS.txt)：覆盖本阶段13个正文/CSV/图源文件；不替代完整仓库ZIP验包。
