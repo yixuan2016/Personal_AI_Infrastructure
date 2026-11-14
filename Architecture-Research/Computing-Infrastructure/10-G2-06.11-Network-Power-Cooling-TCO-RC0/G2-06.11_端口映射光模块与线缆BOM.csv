@@ -1,0 +1,26 @@
+区域,网络平面,设备端,对端,接口/端口数量,速率/模式,线缆介质候选,光模块数量口径,长度/连接器,状态,待确认
+A,GPU Fabric Plane-A,HPE NVL72 18 compute trays, SN6600 Plane-A,36个tray-side OSFP物理接口（均分假设）,由HPE端口表确认；不得假设每口800G,OSFP DAC/AOC或OSFP光模块+OS2/OM4按距离选择,全光链路72只（两端各一）作为理论上限口径,按机柜/行间距离和OEM QVL,RC0候选,每tray NIC mode/rail map/port breakout
+A,GPU Fabric Plane-B,HPE NVL72 18 compute trays,SN6600 Plane-B,36个tray-side OSFP物理接口（均分假设）,由HPE端口表确认；不得假设每口800G,OSFP DAC/AOC或OSFP光模块+OS2/OM4按距离选择,全光链路72只（两端各一）作为理论上限口径,按机柜/行间距离和OEM QVL,RC0候选,每tray NIC mode/rail map/port breakout
+A,GPU Fabric Plane-A替代,HPE NVL72 18 compute trays,Quantum-X800 Q3400-RA Plane-A,36个tray-side OSFP物理接口（均分假设）,IB/Ethernet mode以NIC SKU和固件支持为准,OSFP DAC/AOC或光模块+光纤,按最终链路形态计算,按距离与QVL,替代路线,IB端口模式与模块兼容
+A,GPU Fabric Plane-B替代,HPE NVL72 18 compute trays,Quantum-X800 Q3400-RA Plane-B,36个tray-side OSFP物理接口（均分假设）,IB/Ethernet mode以NIC SKU和固件支持为准,OSFP DAC/AOC或光模块+光纤,按最终链路形态计算,按距离与QVL,替代路线,IB端口模式与模块兼容
+A,CPU North-South,GPU rack BlueField-3 DPU,CPU/Converged Switch-A/B,每tray DPU接口数按HPE端口图确认,候选双上联；具体速率待端口表,DAC/AOC/光模块+光纤,待端口模式确认,机柜到网络柜距离,待确认,BlueField-3型号与QSFP端口速率
+A,CPU North-South,CPU/HPC节点,Converged Switch-A/B,每节点至少双路径（端口速率按工作负载）,25GbE管理/业务已知候选；高性能接口待选,双路DAC/AOC/光模块,待NIC SKU,按机柜布线,待确认,Lenovo QVL/CPU网络需求
+A,Storage Fabric,R7725xd-01,Storage Switch-A/B,每台服务器双归属；端口数量/速率待NIC QVL,100/200/400GbE按存储性能目标,DAC/AOC/光模块+OS2,每链路两端光模块,按机柜布局,待确认,存储协议/前端后端分流
+A,Storage Fabric,R7725xd-02,Storage Switch-A/B,每台服务器双归属；端口数量/速率待NIC QVL,100/200/400GbE按存储性能目标,DAC/AOC/光模块+OS2,每链路两端光模块,按机柜布局,待确认,存储协议/前端后端分流
+A,Control/Support,R9815控制与通用节点,Control Switch-A/B,每节点双归属或独立管理口,10/25/100GbE按服务吞吐,Cat6A/DAC/光模块,按接口类型,按机柜布局,待确认,网卡SKU与控制服务SLO
+A,OOB/BMC,所有BMC/PDU/CDU/交换机管理口,OOB Switch-A/B,每设备至少一个BMC/管理端口，关键设备双管理路径按支持情况,1GbE为默认管理口候选,Cat6A铜缆,0只光模块（默认）,按机柜/行内距离,RC0候选,管理口数量/是否双管理口
+A,WAN,边界路由器/防火墙/运营商CPE,双运营商边界,双物理路径；端口速率由线路合同决定,100/400GbE候选，不冻结,运营商指定光模块/光纤,按线路与设备两端核算,按运营商交付,待确认,运营商/ASN/路由/光接口
+B,GPU Fabric Plane-A,HPE NVL72 18 compute trays,SN6600 Plane-A,36个tray-side OSFP物理接口（均分假设）,由HPE端口表确认；不得假设每口800G,OSFP DAC/AOC或OSFP光模块+OS2/OM4按距离选择,全光链路72只（两端各一）作为理论上限口径,按机柜/行间距离和OEM QVL,RC0候选,每tray NIC mode/rail map/port breakout
+B,GPU Fabric Plane-B,HPE NVL72 18 compute trays,SN6600 Plane-B,36个tray-side OSFP物理接口（均分假设）,由HPE端口表确认；不得假设每口800G,OSFP DAC/AOC或OSFP光模块+OS2/OM4按距离选择,全光链路72只（两端各一）作为理论上限口径,按机柜/行间距离和OEM QVL,RC0候选,每tray NIC mode/rail map/port breakout
+B,GPU Fabric Plane-A替代,HPE NVL72 18 compute trays,Quantum-X800 Q3400-RA Plane-A,36个tray-side OSFP物理接口（均分假设）,IB/Ethernet mode以NIC SKU和固件支持为准,OSFP DAC/AOC或光模块+光纤,按最终链路形态计算,按距离与QVL,替代路线,IB端口模式与模块兼容
+B,GPU Fabric Plane-B替代,HPE NVL72 18 compute trays,Quantum-X800 Q3400-RA Plane-B,36个tray-side OSFP物理接口（均分假设）,IB/Ethernet mode以NIC SKU和固件支持为准,OSFP DAC/AOC或光模块+光纤,按最终链路形态计算,按距离与QVL,替代路线,IB端口模式与模块兼容
+B,CPU North-South,GPU rack BlueField-3 DPU,CPU/Converged Switch-A/B,每tray DPU接口数按HPE端口图确认,候选双上联；具体速率待端口表,DAC/AOC/光模块+光纤,待端口模式确认,机柜到网络柜距离,待确认,BlueField-3型号与QSFP端口速率
+B,CPU North-South,CPU/HPC节点,Converged Switch-A/B,每节点至少双路径（端口速率按工作负载）,25GbE管理/业务已知候选；高性能接口待选,双路DAC/AOC/光模块,待NIC SKU,按机柜布线,待确认,Lenovo QVL/CPU网络需求
+B,Storage Fabric,R7725xd-01,Storage Switch-A/B,每台服务器双归属；端口数量/速率待NIC QVL,100/200/400GbE按存储性能目标,DAC/AOC/光模块+OS2,每链路两端光模块,按机柜布局,待确认,存储协议/前端后端分流
+B,Storage Fabric,R7725xd-02,Storage Switch-A/B,每台服务器双归属；端口数量/速率待NIC QVL,100/200/400GbE按存储性能目标,DAC/AOC/光模块+OS2,每链路两端光模块,按机柜布局,待确认,存储协议/前端后端分流
+B,Control/Support,R9815控制与通用节点,Control Switch-A/B,每节点双归属或独立管理口,10/25/100GbE按服务吞吐,Cat6A/DAC/光模块,按接口类型,按机柜布局,待确认,网卡SKU与控制服务SLO
+B,OOB/BMC,所有BMC/PDU/CDU/交换机管理口,OOB Switch-A/B,每设备至少一个BMC/管理端口，关键设备双管理路径按支持情况,1GbE为默认管理口候选,Cat6A铜缆,0只光模块（默认）,按机柜/行内距离,RC0候选,管理口数量/是否双管理口
+B,WAN,边界路由器/防火墙/运营商CPE,双运营商边界,双物理路径；端口速率由线路合同决定,100/400GbE候选，不冻结,运营商指定光模块/光纤,按线路与设备两端核算,按运营商交付,待确认,运营商/ASN/路由/光接口
+SHARED,光模块,所有OSFP链路,两端设备端口,按链路表逐条计算,800G/2x400G/400G按NIC与交换机兼容模式,OSFP SR8/DR8/FR4或OEM认证模块，型号待定,每条光链路两端各1只；AOC/DAC不按此规则,按实际距离/纤芯/连接器,待定,波长/FEC/功耗/温度/vendor code
+SHARED,线缆,所有链路,两端设备端口,每条链路一根线缆组件,速率与lane mapping一致,OSFP DAC/AOC/光纤跳线,按链路数+经批准的备件比例,按实测路径长度+维护余量,待定,标签/极性/端面清洁/弯曲半径
+SHARED,备件,光模块/线缆,本区域备件库,建议按关键链路风险与到货周期设定,与生产件同料号同固件,同一QVL料号,按故障率/交付周期计算,仓储与ESD规范,待定,不先设虚构固定百分比
