@@ -1,7 +1,7 @@
 # V1.9 状态记录
 
 - 版本：Agent Ecology V1.9｜痕迹协作实证、能力发现与联邦目录
-- 日期：2026-11-14
+- 日期：2026-11-15
 - 状态：Candidate / Draft
 - 工作分支：research/agent-ecology-v1.9-stigmergy-20261114
 - 基线：PR #12 的 V1.8 分支 HEAD 4e337089470076b25058a7c47edaacab77bcaa58
@@ -14,7 +14,7 @@
 - 能力发现与目录联邦架构决策备忘录及独立研究证据边界已入库。
 - 能力广告、能力解析和能力生命周期 CloudEvents JSON Schema：3 份 Candidate；JSON 语法已通过解析检查，但未完成 Draft 2020-12 完整验证。
 - F1 能力发现与契约验收矩阵：31 项，全部 NOT_RUN。
-- WP-020 信任协议验证矩阵：24 项，全部 NOT_RUN。
+- WP-020 信任协议验证矩阵：27 项，全部 NOT_RUN。
 - 新增 Observation Runtime、联邦目录新鲜度、撤销水位、A2A/MCP/CloudEvents/SPIFFE 协议边界设计。
 - 新增 7680×4320 SVG 架构源图。
 - 新增 2 项候选 ADR：ADR-109、ADR-110。
@@ -50,3 +50,21 @@
 - Git Blob Manifest 只记录 Git 对象标识，不代替 SHA-256 校验。
 - 所有未执行项必须保持 NOT_RUN；不得将候选 ADR 解释为已批准决策。
 - WP-020 10 项静态未决事项均未关闭；JSON 语法检查不等于完整 Schema 或密码学验证。
+
+
+## 工作流 D｜WP-021 跨生态目录一致性与撤销传播
+- 新增 WP-021 架构备忘录、研究证据登记、静态审查与 10 项未决事项。
+- 新增 Federation Revocation Event 与 Federation Sync Checkpoint 两份候选 JSON Schema（V1.9 总计八份）。
+- 新增 WP-021 验收矩阵 34 项，全部 NOT_RUN。
+- 新增 7680×4320 SVG 目录一致性与撤销传播架构源图。
+- 新增 6 项候选 ADR（ADR-117—ADR-122）；威胁矩阵扩展至 34 项。
+- 候选约束：Peer Binding 专属连续 Feed、(source,id) 持久幂等去重、撤销墓碑只增不减、Gap 高风险 HOLD、完整签名快照恢复、FCP 仅中继与反熵。
+- 未部署事件总线、未运行撤销传播实验、未开展 Merkle Proof 或跨接收方 Gossip 互操作。
+
+## 总体边界（WP-021 更新）
+- 合成实验与验收：114 项，全部 NOT_RUN。
+- 架构决策：22 项，全部 Candidate，未获正式批准。
+- 威胁与治理边界：34 项，全部 Candidate。
+- 候选 JSON Schema：8 份，仅完成 JSON 语法检查；完整 Draft 2020-12 Validator、语义和密码学验证未执行。
+- 架构源图：3 张 7680×4320 SVG。
+- WP-021 10 项静态未决事项均未关闭。
