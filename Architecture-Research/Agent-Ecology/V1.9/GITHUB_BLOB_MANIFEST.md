@@ -4,12 +4,19 @@
 
 | Path | Git Blob SHA |
 |---|---|
-| `README.md` | `7e4c33709372cc9c2458b0a3baf243d0baa7f4db` |
+| `README.md` | `8bf962f27c5a0785b5a44e64e947d5d294b84302` |
+| `STATUS.md` | `46e709a811f2396672f17d7211263758533199cb` |
 | `00_V1.9_痕迹协作实证进展与架构增量研究.md` | `36d0b67b21f2684ba2e187f8d5f7c9fbccacaecc` |
 | `01_研究证据登记.csv` | `a34bbb6c91d7e860e50e7276f19e3b07a49ee082` |
 | `02_合成实验与验收矩阵.csv` | `e1864a611774338302f7b1ba673211b7014cd5a8` |
-| `03_架构决策记录.md` | `7a101a9f7aebd773d5f3775b599e221f748090f4` |
-| `04_威胁与治理边界.csv` | `7b1e12836420dea7cf427090cbd9ef8df5fa3e12` |
+| `03_架构决策记录.md` | `9592b34b63de24d7ba395fcface26922cb494dcd` |
+| `04_威胁与治理边界.csv` | `e355f561eb6b0b9f094d167fce8975b68757c722` |
+| `05_跨生态能力发现与目录联邦架构决策备忘录.md` | `6eaeaaf9a463dda45a1c5f0c8f2a71d093e3fa38` |
+| `06_研究证据与引用边界.md` | `c23658cccd33969a55ffbb171a5f80542ae6e214` |
+| `contracts/capability-advertisement.schema.json` | `0bea03c6bf839ca6f27b0455af009724c79a467a` |
+| `contracts/capability-resolution.schema.json` | `ef9dae7965cb4db061ecaa5389c36b22578112c2` |
+| `validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv` | `938700c4cce0a46757eb1ab5327a5b3dbb2f876f` |
+| `assets/00_V1.9_跨生态能力发现与观察Runtime.svg` | `a6818ac80ed726f0bfaeb224cb9eaafab391915e` |
 
 ## 解释
 - Git Blob SHA 用于定位 Git 中的文件对象。
