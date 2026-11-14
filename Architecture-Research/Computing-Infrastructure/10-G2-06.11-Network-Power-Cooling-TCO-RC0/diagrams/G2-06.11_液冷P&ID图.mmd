@@ -1,0 +1,39 @@
+flowchart LR
+  subgraph PRIMARY["设施一次侧｜Facility Water"]
+    PSUP["设施供水总管"] --> ISO1["隔离阀"]
+    ISO1 --> FILT1["过滤器 + 差压计"]
+    FILT1 --> FM1["流量计 / 温压测点"]
+    FM1 --> HX["CDU 液-液换热器一次侧"]
+    HX --> PRET["一次侧回水测点"]
+    PRET --> ISO2["隔离阀"]
+    ISO2 --> PRTN["设施回水总管"]
+  end
+
+  subgraph CDU["CDU｜泵组与控制"]
+    PUMP["二次侧泵组<br/>N+1泵模式"]
+    FILT2["二次侧过滤器<br/>差压监测"]
+    CTRL["CDU控制器<br/>温度/压力/流量/阀位"]
+    LEAK["漏液检测<br/>本地硬接线联锁"]
+  end
+
+  subgraph SECONDARY["设备二次侧｜IT Coolant"]
+    SUP["二次侧供液温度/压力/流量"]
+    MAN["NVL72 Rack Manifold"]
+    COLD["GPU/CPU Cold Plates"]
+    RET["回液Manifold<br/>温度/压力/差压"]
+  end
+
+  HX --> PUMP
+  PUMP --> FILT2
+  FILT2 --> SUP
+  SUP --> MAN
+  MAN --> COLD
+  COLD --> RET
+  RET --> HX
+  CTRL --> PUMP
+  CTRL --> FILT2
+  CTRL --> SUP
+  LEAK -.->|"本地隔离动作"| MAN
+  LEAK -.->|"告警/关闭支路阀"| SUP
+  RET --> CTRL
+  FM1 --> CTRL
