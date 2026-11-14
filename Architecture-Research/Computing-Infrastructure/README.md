@@ -285,3 +285,17 @@ G2-06.19为RC0候选模型。已建立计算结构与可直接复核的BOM算术
 - [业主输入到工程放行追踪图](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/diagrams/G2-06.20_业主输入到工程放行追踪图.mmd)；[双区域故障承载与容量门禁图](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/diagrams/G2-06.20_双区域故障承载与容量门禁图.mmd)。
 
 G2-06.20为RC0/Proposed。40项输入和14类负载均为待回填模板；无真实Owner签署、OEM QVL、Utility容量函、水务许可、物理路由和工程验收时，不冻结工程参数、不批准建设路线。
+
+
+## G2-06.21｜双区域十星工程容量平衡与候选设备配置优化
+
+- [G2-06.21阶段目录](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/README.md)：Vera Rubin、AMD Helios、GB300三路线比较，SC755 V5 CPU拓扑、存储分层、Fabric、功率液冷和N-1容量。
+- [工程容量平衡与候选设备配置优化报告](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_双区域十星工程容量平衡与候选设备配置优化报告.md)：设备代际、资源容量、设施边界和G0-G5验收门禁。
+- [ADR-08 GPU主平台代际升级与异构双路线治理](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_ADR-08_GPU主平台代际升级与异构双路线治理.md)：Vera Rubin主参考、Helios异构替代、GB300过渡对照。
+- [GPU机柜候选平台矩阵](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_GPU机柜候选平台对比矩阵.csv)、[CPU拓扑与SKU矩阵](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_CPU节点拓扑与SKU配置矩阵.csv)。
+- [存储分层与容量敏感性](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_存储分层与可用容量敏感性矩阵.csv)、[网络Fabric端口预算](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_网络Fabric与端口预算矩阵.csv)、[功率液冷容量平衡](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_机柜功率液冷容量平衡矩阵.csv)。
+- [十星候选BOM增量](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_十星设备候选BOM增量矩阵.csv)、[工作负载平台映射](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_工作负载到平台映射矩阵.csv)、[容量计算与N-1接管模型](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_容量计算与N-1接管模型.csv)。
+- [九种建设路线决策](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_九种双区域建设路线决策矩阵.csv)、[厂商证据登记册](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_厂商证据与型号核验登记册.csv)、[验证门禁](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_验证门禁与验收清单.csv)、[风险登记](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/G2-06.21_风险与待决问题登记册.csv)。
+- [双区域十星平台架构图](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/diagrams/G2-06.21_双区域十星容量与平台架构图.mmd)；[功率冷却与N-1门禁图](20-G2-06.21-Engineering-Capacity-Balance-Platform-Optimization-RC0/diagrams/G2-06.21_设备功率冷却与N-1容量门禁图.mmd)。
+
+G2-06.21为RC0/Proposed。公开规格和算术复核不等于正式SKU/QVL、业主签署、Utility firm MW、水务许可、现场工程批准或采购冻结。Vera Rubin的MaxP/MaxQ TDP与Power Shelf输出能力分开；Helios整柜功耗/热工仍为TBD；NVIDIA与AMD性能须同工作负载实测。
