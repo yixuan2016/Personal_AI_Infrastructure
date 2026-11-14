@@ -20,6 +20,7 @@
 - PR #11 有 100 个变更路径；Draft/Open，目标 main。
 - PR #12 有 36 个变更路径；Draft/Open，目标 V1.2—V1.7 分支。
 - PR #14 有 11 个变更路径；Draft/Open，目标 V1.8 分支。GitHub 当前返回 mergeable=false；独立 Compare 显示 V1.8 基线是 V1.9 分支祖先且 behind_by=0。仍保持 Draft，不自动合并，须完成正式审查并复核可合并状态。
+- V1.9 三份 CSV 已完成静态列数复核：研究证据 7 行/11 列、实验矩阵 22 行/6 列、威胁矩阵 12 行/7 列，均无列数不一致。
 - V1.9 的 22 项实验全部 NOT_RUN；8 项 ADR 均 Candidate；未取得 Owner 签署。
 - F0 Gate 未通过；无真实成员登记、密钥演练或双生态互操作测试。
 - 未执行 Runtime、红队、生产或现场验收。
@@ -27,4 +28,4 @@
 
 ## 校验说明
 - V1.9 Git Blob Manifest 记录 Git Blob SHA，不等于 SHA-256 文件摘要。
-- 远端文件回读和 PR 变更统计不等于本地资料包 SHA-256、ZIP 完整性或实验验收。
+- 远端文件回读和 CSV 静态结构复核不等于本地资料包 SHA-256、ZIP 完整性或实验验收。
