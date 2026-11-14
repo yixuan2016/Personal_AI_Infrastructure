@@ -33,3 +33,5 @@ WP021-31,Clock,事件 time 与序列顺序不一致或本地时钟偏差,顺序�
 WP021-32,Conflict,同一 Owner 对同一对象版本签发不同 payloadDigest,不采用 Last-Write-Wins；隔离并请求 Owner 处理,双签名声明与对象版本对照,Critical,NOT_RUN
 WP021-33,Retention,历史压缩或墓碑归档后有新 Peer 加入,可从完整可查询快照恢复全部适用撤销状态,归档清单、快照查询与墓碑核验,Critical,NOT_RUN
 WP021-34,FeedScope,字段过滤导致接收方 Feed 出现未解释的序列跳号,使用独立 Peer Feed 或可验证占位记录；不得静默跳过,Feed 订阅范围与序列连续性报告,Critical,NOT_RUN
+WP021-35,FeedScope,撤销事件缺少peerbindingid扩展字段,Schema拒绝该事件且不得进入撤销索引,Schema负向向量与拒绝日志,Critical,NOT_RUN
+WP021-36,FeedScope,事件peerbindingid与当前订阅Peer Binding不匹配,拒绝跨Feed注入并隔离来源,Peer Binding配置与事件字段对照,Critical,NOT_RUN
