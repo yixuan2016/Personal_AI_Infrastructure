@@ -126,3 +126,21 @@ G2-06.10 当前为 RC0 候选配置；完整订货 SKU、QVL、区域报价、�
 - [双区域网络拓扑图源](10-G2-06.11-Network-Power-Cooling-TCO-RC0/diagrams/G2-06.11_双区域网络拓扑.mmd)、[供电单线图源](10-G2-06.11-Network-Power-Cooling-TCO-RC0/diagrams/G2-06.11_供电单线图.mmd)、[液冷 P&ID 图源](10-G2-06.11-Network-Power-Cooling-TCO-RC0/diagrams/G2-06.11_液冷P&ID图.mmd)。
 
 G2-06.11 为 RC0 架构参考；端口速率/Breakout、光模块料号、完整支路 A/B 映射、正式施工 P&ID、设备 QVL、现场实测和 OEM/设施签署仍待完成。
+
+
+## G2-06.12 双区域十星 OEM 采购规格与机房工程输入条件
+
+- [G2-06.12 阶段目录](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/README.md)：RFQ技术需求、OEM响应、机房工程输入、地区法规、设备负载、液冷/网络回填、FAT/SAT和风险登记。
+- [十星工程采购技术需求书](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_十星工程采购技术需求书_RFQ.md)：GPU/CPU/HPC/存储/控制/网络/供配电/液冷/安全/服务与五年TCO的OEM询价要求。
+- [OEM设备响应与偏差矩阵](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_OEM设备响应与偏差矩阵.csv)：28项供应商响应、核验和Owner分工。
+- [机房工程输入条件基线](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_机房工程输入条件基线.md)：机柜空间/结构、电力、冷却、水资源、网络、消防和站点数据清单。
+- [区域法规与标准适用性矩阵](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_区域法规与标准适用性矩阵.csv)：全球参考、中国大陆与北美适用性分支；待具体站点和AHJ确认。
+- [设备负载与设施容量输入表](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_设备负载与设施容量输入表.csv)：分开记录IT负载、设施负载、额定容量与待测功耗。
+- [液冷OEM数据回填表](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_液冷OEM数据回填表.csv)：热负载、温度、流量、压降、水质、泵与CDU冗余。
+- [网络端口与光链路回填模板](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_网络端口与光链路回填模板.csv)：逐端口、模块、线缆、FEC、QoS、QVL和链路证据。
+- [采购验收与FAT/SAT门禁矩阵](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_采购验收与FAT_SAT门禁矩阵.csv)：35项采购、站点、工厂、现场和双区域验收门禁。
+- [采购与工程风险登记册](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_采购与工程风险登记册.csv)：14项关键风险及预防/回退。
+- [决策记录与开放问题](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_决策记录与开放问题.md)、[官方资料与证据登记册](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/G2-06.12_官方资料与证据登记册.md)。
+- [采购工程门禁流程](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/diagrams/G2-06.12_采购工程门禁流程.mmd)、[双区域十星场地逻辑布局](11-G2-06.12-OEM-RFQ-Site-Engineering-RC0/diagrams/G2-06.12_双区域十星场地逻辑布局.mmd)。
+
+G2-06.12 为 RC0/RFQ 草案，不是已冻结采购订单、合同技术附件或施工图。站点国家/城市、OEM正式SKU/BOM/QVL、功率/热工曲线、SC tray兼容性、法规与许可仍待确认。
