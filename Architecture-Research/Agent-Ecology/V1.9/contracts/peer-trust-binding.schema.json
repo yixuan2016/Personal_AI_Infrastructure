@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:peer-trust-binding-candidate",
+  "title": "PeerTrustBindingCandidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "relationshipId",
+    "localDomainId",
+    "peerDomainId",
+    "trustMode",
+    "relationshipState",
+    "acceptedPurposes",
+    "allowedIdentityProfiles",
+    "maxRiskLevel",
+    "transitiveTrust",
+    "localAcceptance",
+    "peerAcceptance",
+    "sequence",
+    "validFrom",
+    "validUntil",
+    "revocationEndpoint",
+    "notAuthorization"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "relationshipId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "localDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "peerDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "trustMode": {
+      "enum": [
+        "BILATERAL_PINNED",
+        "SPIFFE_BUNDLE_FEDERATION",
+        "OPENID_FEDERATION_CHAIN"
+      ]
+    },
+    "relationshipState": {
+      "enum": [
+        "PROPOSED",
+        "PENDING",
+        "ACTIVE",
+        "HOLD",
+        "SUSPENDED",
+        "REVOKED",
+        "EXPIRED"
+      ]
+    },
+    "acceptedPurposes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "allowedIdentityProfiles": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "SPIFFE_X509_SVID",
+          "SPIFFE_JWT_SVID",
+          "OIDC_FEDERATION_ENTITY",
+          "LOCAL_PKI_CLIENT_CERT"
+        ]
+      }
+    },
+    "maxRiskLevel": {
+      "enum": [
+        "R0",
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ]
+    },
+    "transitiveTrust": {
+      "const": false
+    },
+    "trustAnchors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "anchorId",
+          "keySetRef",
+          "keyEpoch"
+        ],
+        "properties": {
+          "anchorId": {
+            "type": "string"
+          },
+          "keySetRef": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "keyEpoch": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "spiffeBundleBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trustDomain",
+        "bundleRef",
+        "sequence"
+      ],
+      "properties": {
+        "trustDomain": {
+          "type": "string"
+        },
+        "bundleRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "openidFederation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entityId",
+        "trustedAnchorIds"
+      ],
+      "properties": {
+        "entityId": {
+          "type": "string",
+          "format": "uri"
+        },
+        "trustedAnchorIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "localAcceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "acceptedBy",
+        "acceptedAt",
+        "policyVersion",
+        "receiptDigest"
+      ],
+      "properties": {
+        "acceptedBy": {
+          "type": "string"
+        },
+        "acceptedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "policyVersion": {
+          "type": "string"
+        },
+        "receiptDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      }
+    },
+    "peerAcceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "acceptedBy",
+        "acceptedAt",
+        "policyVersion",
+        "receiptDigest"
+      ],
+      "properties": {
+        "acceptedBy": {
+          "type": "string"
+        },
+        "acceptedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "policyVersion": {
+          "type": "string"
+        },
+        "receiptDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      }
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "validFrom": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "validUntil": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revocationEndpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "notAuthorization": {
+      "const": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "relationshipState": {
+            "const": "ACTIVE"
+          }
+        },
+        "required": [
+          "relationshipState"
+        ]
+      },
+      "then": {
+        "required": [
+          "trustAnchors",
+          "localAcceptance",
+          "peerAcceptance"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "trustMode": {
+            "const": "SPIFFE_BUNDLE_FEDERATION"
+          }
+        },
+        "required": [
+          "trustMode"
+        ]
+      },
+      "then": {
+        "required": [
+          "spiffeBundleBinding"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "trustMode": {
+            "const": "OPENID_FEDERATION_CHAIN"
+          }
+        },
+        "required": [
+          "trustMode"
+        ]
+      },
+      "then": {
+        "required": [
+          "openidFederation"
+        ]
+      }
+    }
+  ]
+}
