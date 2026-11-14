@@ -1,0 +1,15 @@
+flowchart TD
+  START["定义业务目标与需求范围"] --> R0["R0：需求字段/ID/Owner/验收方法完整"]
+  R0 --> R1{"业主输入是否签署？"}
+  R1 -->|"否"| HOLD1["TBD-Owner：保持候选，不冻结数值"]
+  R1 -->|"是"| OEM["R2：OEM准确SKU/QVL/功率/热工/端口核验"]
+  OEM --> SITE["R3：地块/firm MW/水务/许可/物理光路证据"]
+  SITE --> ENG["R4：容量/TCO/故障域/FAT-SAT专业审查"]
+  ENG --> PASS{"P0硬门禁与Owner签署全部通过？"}
+  PASS -->|"否"| HOLD2["Hold：补证据、改需求或更换候选"]
+  PASS -->|"是"| APPROVE["R5：业主批准工程/采购基线"]
+  APPROVE --> FREEZE["Approved-Baseline<br/>按批准范围冻结"]
+  HOLD1 --> CHANGE["需求/证据更新与版本变更"]
+  HOLD2 --> CHANGE
+  CHANGE --> R0
+  SAFE["L0消防/电气/漏液硬联锁<br/>始终由本地专业系统执行"] -.-> HOLD2
