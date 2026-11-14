@@ -18,22 +18,26 @@ flowchart LR
 
   subgraph SECONDARY["设备二次侧｜IT Coolant"]
     SUP["二次侧供液温度/压力/流量"]
+    SISO["供液支路隔离阀"]
     MAN["NVL72 Rack Manifold"]
     COLD["GPU/CPU Cold Plates"]
+    RISO["回液支路隔离阀"]
     RET["回液Manifold<br/>温度/压力/差压"]
   end
 
   HX --> PUMP
   PUMP --> FILT2
   FILT2 --> SUP
-  SUP --> MAN
+  SUP --> SISO
+  SISO --> MAN
   MAN --> COLD
-  COLD --> RET
+  COLD --> RISO
+  RISO --> RET
   RET --> HX
   CTRL --> PUMP
   CTRL --> FILT2
   CTRL --> SUP
-  LEAK -.->|"本地隔离动作"| MAN
-  LEAK -.->|"告警/关闭支路阀"| SUP
+  LEAK -.->|"本地隔离动作"| SISO
+  LEAK -.->|"本地隔离动作"| RISO
   RET --> CTRL
   FM1 --> CTRL
