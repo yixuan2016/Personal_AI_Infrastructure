@@ -14,8 +14,8 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 05_跨生态能力发现与目录联邦架构决策备忘录.md：B 线本地权威目录、联邦摘要目录、能力广告、候选解析和本地授权边界。
 - 06_研究证据与引用边界.md：跨生态能力发现、协议和身份研究证据。
 - 08_能力发现契约静态审查与缺口清单.md：两份候选 Schema 的 JSON 语法检查结果及 10 项静态审查缺口。
-- contracts/：能力广告与能力解析候选 JSON Schema。
-- validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv：20 项 F1 能力发现与联邦目录验收矩阵。
+- contracts/：能力广告、能力解析和能力生命周期 CloudEvents 候选 JSON Schema（3 份）。
+- validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv：30 项 F1 能力发现、资格一致性与事件契约验收矩阵。
 - assets/00_V1.9_跨生态能力发现与观察Runtime.svg：7680×4320 SVG 架构源图。
 - STATUS.md：本版本状态和禁止越过的门禁。
 - GITHUB_BLOB_MANIFEST.md：Git Blob 标识清单；Git Blob SHA 不等同于文件 SHA-256。
@@ -35,6 +35,6 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 
 ## 证据边界
 
-本版引用的研究包括预印本、已发表论文、协议草案、正式规范和受控仿真实验。论文报告的实验结果不等于本项目已复现、已部署或已通过验收。Stigmergy 合成实验 22 项、F1 能力发现验收 20 项，共 42 项全部 NOT_RUN；10 项 ADR 全部 Candidate；18 项威胁全部 Candidate。V1.8 F0 12 项 Gate 仍全部 NotRun；没有真实领域数据授权、Runtime 执行或生产写入。
+本版引用的研究包括预印本、已发表论文、协议草案、正式规范和受控仿真实验。论文报告的实验结果不等于本项目已复现、已部署或已通过验收。Stigmergy 合成实验 22 项、F1 能力发现与契约验收 30 项，共 52 项全部 NOT_RUN；10 项 ADR 全部 Candidate；18 项威胁全部 Candidate。V1.8 F0 12 项 Gate 仍全部 NotRun；没有真实领域数据授权、Runtime 执行或生产写入。
 
-两份候选 JSON Schema 已确认 JSON 语法有效，但尚未完成完整 Draft 2020-12 Validator、密码学签名验证、跨字段语义验证和协议互操作测试。productionAllowed=false。
+三份候选 JSON Schema 已确认 JSON 语法有效，但尚未完成完整 Draft 2020-12 Validator、密码学签名验证、跨字段语义验证和协议互操作测试。静态审查的 10 项缺口中，7 项已形成候选契约修复，1 项部分修复，2 项仍开放。productionAllowed=false。
