@@ -11,9 +11,9 @@
 | `02_合成实验与验收矩阵.csv` | `e1864a611774338302f7b1ba673211b7014cd5a8` |
 | `03_架构决策记录.md` | `9592b34b63de24d7ba395fcface26922cb494dcd` |
 | `04_威胁与治理边界.csv` | `e355f561eb6b0b9f094d167fce8975b68757c722` |
-| `05_跨生态能力发现与目录联邦架构决策备忘录.md` | `6eaeaaf9a463dda45a1c5f0c8f2a71d093e3fa38` |
-| `06_研究证据与引用边界.md` | `c23658cccd33969a55ffbb171a5f80542ae6e214` |
-| `contracts/capability-advertisement.schema.json` | `0bea03c6bf839ca6f27b0455af009724c79a467a` |
+| `05_跨生态能力发现与目录联邦架构决策备忘录.md` | `fd915f0135e2f0daebb05d7fecfe30bb8b0d3b29` |
+| `06_研究证据与引用边界.md` | `1ba5951238d6501fa0b9e85cf3ca3edaab8b2c3f` |
+| `contracts/capability-advertisement.schema.json` | `4d1ede7b1c7bd514fce14583cba52b549ab57577` |
 | `contracts/capability-resolution.schema.json` | `ef9dae7965cb4db061ecaa5389c36b22578112c2` |
 | `validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv` | `938700c4cce0a46757eb1ab5327a5b3dbb2f876f` |
 | `assets/00_V1.9_跨生态能力发现与观察Runtime.svg` | `a6818ac80ed726f0bfaeb224cb9eaafab391915e` |
