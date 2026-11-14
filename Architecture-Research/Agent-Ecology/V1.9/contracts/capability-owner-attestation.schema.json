@@ -22,10 +22,11 @@
     "keyEpoch",
     "algorithm",
     "jti",
-    "ownerDelegationGrantDigest",
     "signatureType",
     "compactJws",
-    "notAuthorization"
+    "notAuthorization",
+    "issuerAuthority",
+    "typ"
   ],
   "properties": {
     "attestationId": {
@@ -109,6 +110,34 @@
     },
     "notAuthorization": {
       "const": true
+    },
+    "issuerAuthority": {
+      "enum": [
+        "OWNER_DIRECT",
+        "PUBLISHER_DELEGATED"
+      ]
+    },
+    "typ": {
+      "const": "application/agent-ecology-capability-attestation+jwt"
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "issuerAuthority": {
+            "const": "PUBLISHER_DELEGATED"
+          }
+        },
+        "required": [
+          "issuerAuthority"
+        ]
+      },
+      "then": {
+        "required": [
+          "ownerDelegationGrantDigest"
+        ]
+      }
+    }
+  ]
 }
