@@ -1,0 +1,19 @@
+test_id,workstream,scenario,expected_result,severity,execution_status
+F1-01,discovery,Valid capability advertisement is discoverable,Directory returns a candidate with source and version reference; authorization remains false,P0,NOT_RUN
+F1-02,identity,Invalid advertisement signature,Invalid signature is rejected or quarantined and never ranked as eligible,P0,NOT_RUN
+F1-03,freshness,Expired capability advertisement,Expired advertisement is excluded or returned as HOLD and cannot support high-risk execution,P0,NOT_RUN
+F1-04,revocation,Revocation epoch advances,Older capability state cannot overwrite or resurrect a newer revoked state,P0,NOT_RUN
+F1-05,revocation,Revocation authority unavailable,Unknown revocation state forces HOLD for high-risk actions,P0,NOT_RUN
+F1-06,privacy,Export policy named domains,Only explicitly named receiving domains can discover the restricted summary,P0,NOT_RUN
+F1-07,identity,Requester principal mismatch,Authenticated requester identity must match request principal and allowed domain,P0,NOT_RUN
+F1-08,ontology,Unknown ontology version or mapping,Unknown critical concept mapping returns HOLD rather than guessed compatibility,P0,NOT_RUN
+F1-09,contract,Schema transform required,Only pre-approved versioned transformations can produce an eligible candidate,P1,NOT_RUN
+F1-10,policy,Hard DENY with high semantic score,Hard policy DENY overrides every soft ranking or reputation score,P0,NOT_RUN
+F1-11,authorization,Capability resolution response,Every discovery response explicitly states authorizationGranted=false,P0,NOT_RUN
+F1-12,a2a,A2A AUTH_REQUIRED state,AUTH_REQUIRED pauses task for authorization and never counts as approval or permission,P0,NOT_RUN
+F1-13,mcp,MCP issuer and audience binding,Credential cannot be reused across an unapproved issuer or audience boundary,P0,NOT_RUN
+F1-14,events,Duplicate and out-of-order capability events,Source plus event ID deduplication and owner sequence prevent stale state rollback,P0,NOT_RUN
+F1-15,observation,Event gap and cursor recovery,Runtime detects event gap and reconciles with local authoritative directory,P1,NOT_RUN
+F1-16,federation,FCP compromise simulation,Compromised federation directory cannot directly execute member-domain production actions,P0,NOT_RUN
+F1-17,authority,Local directory versus federated summary,Local Owner remains authoritative and federated summary is never treated as current execution truth,P0,NOT_RUN
+F1-18,privacy,Cross-domain inference and enumeration,Requester cannot infer hidden capability details or enumerate unauthorized domains,P0,NOT_RUN
