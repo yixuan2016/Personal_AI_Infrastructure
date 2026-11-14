@@ -1,0 +1,13 @@
+threat_id,threat,attack_or_failure_path,required_control,owner_boundary,severity,status
+TH-01,隐式共享通道,私有缓存或Scratchpad被其他Agent读取,默认私有隔离；显式共享命名空间；跨主体读取审计,空间Owner和平台安全治理,P0,CANDIDATE
+TH-02,痕迹投毒,Agent发布错误结论或伪造工件,来源验证；Schema校验；隔离区；独立证据复核,来源Owner与接收方Policy Authority,P0,CANDIDATE
+TH-03,热度操纵,Sybil或串谋主体互相引用提升排名,引用数不作为可信度；主体信誉与证据质量分离；独立验证,生态治理Owner,P0,CANDIDATE
+TH-04,过期痕迹,旧策略/状态/工件在新任务中被误用,TTL和版本水位；过期过滤；高风险动作Fail Closed,领域Owner和PDP/PEP,P0,CANDIDATE
+TH-05,跨域推断,搜索索引或引用图泄露敏感关系,租户/领域过滤；最小披露；查询审计；敏感元数据保护,数据Owner与隐私治理Owner,P0,CANDIDATE
+TH-06,身份冒用,伪造工件作者/来源/审批引用,签名身份引用；可信运行上下文；端侧验证,身份Owner和Sink PEP,P0,CANDIDATE
+TH-07,反馈放大,局部策略重复强化错误痕迹,反例/负反馈；衰减；独立抽检；可逆承诺,Runtime与独立评估者,P1,CANDIDATE
+TH-08,重放攻击,旧命令/事件/凭证被再次使用,operation_id去重；epoch/fencing；撤权水位,领域Owner和执行边界,P0,CANDIDATE
+TH-09,A2A语义混淆,协商消息被误认为业务批准或事实提交,消息/命令/事件/审批对象分离；目标Owner独立授权,ADS与领域Policy Authority,P0,CANDIDATE
+TH-10,工件执行风险,共享代码/脚本/控制器未经审查运行,隔离沙箱；签名来源；依赖审查；效果网关,工具Owner和安全治理Owner,P0,CANDIDATE
+TH-11,Agent退出与凭证残留,接续Agent继承前任权限或会话密钥,成果可继承但凭证不可继承；重新认证和最小授权,身份Owner与领域Owner,P0,CANDIDATE
+TH-12,群体错误共识,多数Agent引用同一错误来源,保留来源独立性；反证检验；Owner裁决；不可用票数替代证据,独立评估者与领域Owner,P0,CANDIDATE
