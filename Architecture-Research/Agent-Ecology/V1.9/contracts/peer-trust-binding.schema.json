@@ -15,8 +15,6 @@
     "allowedIdentityProfiles",
     "maxRiskLevel",
     "transitiveTrust",
-    "localAcceptance",
-    "peerAcceptance",
     "sequence",
     "validFrom",
     "validUntil",
