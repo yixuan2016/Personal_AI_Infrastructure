@@ -1,0 +1,25 @@
+区域,星位/资源域,角色,候选数量,参考平台/设备,已知规格/边界,基线状态,责任Owner,冻结前验证要求
+A,A1,GPU计算星,1套,HPE GB300 NVL72（候选）,72 GPU机柜域；132kW TDP/约155kW EDPp/192kW busway planning为不同口径,Candidate,GPU Owner/OEM,准确MTM、AC输入曲线、Whip A/B映射、QVL、GPU Fabric端口、FAT/SAT
+A,A2,CPU/HPC计算星,1套,Lenovo N1380 Neptune + 8 trays（候选）,2N2S=16双路节点或4N1S=32单路节点；54kW N+1 DC capacity非AC输入,Candidate,CPU/HPC Owner/OEM,准确MTM/CPU SKU、内存、节点拓扑、PCS输入、液路/水流量、软件兼容
+A,A3,存储数据星,2台,Dell PowerEdge R7725xd + 每台40×KIOXIA LC9 E3.L 245.76TB（候选）,约9.8304PB/台、19.6608PB/区域原始十进制容量；QLC 0.3 DWPD候选,Candidate,Storage Owner/OEM,准确SKU/QVL、可用容量保护方案、耐久度、吞吐/延迟、重建、备份
+A,A4,控制服务星,3台,Dell PowerEdge R9815（候选）,承载区域控制/通用服务；HA/仲裁拓扑未冻结,Candidate,Control Plane Owner/OEM,CPU/内存/NIC/SSD准确SKU、HA/仲裁、双PSU和功耗
+A,A5,边缘与安全星,2台,Dell PowerEdge R9815（候选）,边缘、安全代理、可观测和网络服务；角色拆分待工作负载确认,Candidate,Security/Network Owner,安全加速卡、NIC、管理面、功耗、HA与审计
+A,GPU-FABRIC,GPU Fabric双平面,2台,NVIDIA Spectrum-6 SN6600（主参考）或Quantum-X800 Q3400-RA（替代）,Ethernet/RoCE与InfiniBand为两条独立方案；不能混算端口、功耗或运维栈,Candidate,Network Owner/OEM,冻结单一路线；QVL、端口图、光模块、拥塞控制、基准测试
+A,STORAGE-FABRIC,Storage Fabric,待工作负载与协议确定,交换机/NIC/协议待选,与GPU Collective网络隔离；容量层与高写入事务层分层,TBD-Owner,Storage/Network Owner,协议、端口、吞吐、冗余、性能测试和成本
+A,WAN,Customer/WAN边界,至少双路径设计目标，数量/带宽待确认,运营商线路、路由器、防火墙、交叉连接待选,端到端物理路径多样性未验证；区域间时延/带宽未知,TBD-Vendor,Network Owner/Carrier,双物理路径、共享段、PoP、RTT、丢包、抖动、SLA
+A,OOB,OOB/Facility管理网络,独立管理网络；设备数量待定,OOB交换机、BMC/Redfish、PDU/CDU/BMS接口,不得与租户数据面直接互通；远程维护需短时授权和审计,TBD-Engineer,Security/Facility Owner,端口表、访问矩阵、隔离测试、紧急本地访问
+A,COOLING,液冷与设施冷源,XDU1350候选1套；整机1+1另评估,Vertiv XDU1350（候选）+一次侧冷源/二次侧TCS,1.3MW额定冷量不是电功率；泵N+1不等于整机N+1,Candidate,Facility Owner/OEM,设备热负载、温压流量、水质、CDU冗余、泵/冷源功耗、P&ID
+A,POWER,供电与计量,按负荷计算；不预填区域MW,Utility/变电站/UPS/PDU/母线/发电机/ATS,POI firm MW/MVA未取得；Whip/支路映射须OEM签署,TBD-Vendor,Electrical Owner/Utility,单线图、负荷曲线、N-1、保护、计量、firm容量与送电日期
+A,WATER,水务与排水,按冷却策略与许可确定,市政水/再生水/干冷/混合方案待选,合法供水/取水/排水额度未取得；WUE未确定,TBD-Vendor,Facility/Environmental Owner,水权/供水协议、排水许可、8760热工、水耗和极端气候
+B,B1,GPU计算星,1套,HPE GB300 NVL72（候选）,72 GPU机柜域；132kW TDP/约155kW EDPp/192kW busway planning为不同口径,Candidate,GPU Owner/OEM,准确MTM、AC输入曲线、Whip A/B映射、QVL、GPU Fabric端口、FAT/SAT
+B,B2,CPU/HPC计算星,1套,Lenovo N1380 Neptune + 8 trays（候选）,2N2S=16双路节点或4N1S=32单路节点；54kW N+1 DC capacity非AC输入,Candidate,CPU/HPC Owner/OEM,准确MTM/CPU SKU、内存、节点拓扑、PCS输入、液路/水流量、软件兼容
+B,B3,存储数据星,2台,Dell PowerEdge R7725xd + 每台40×KIOXIA LC9 E3.L 245.76TB（候选）,约9.8304PB/台、19.6608PB/区域原始十进制容量；QLC 0.3 DWPD候选,Candidate,Storage Owner/OEM,准确SKU/QVL、可用容量保护方案、耐久度、吞吐/延迟、重建、备份
+B,B4,控制服务星,3台,Dell PowerEdge R9815（候选）,承载区域控制/通用服务；HA/仲裁拓扑未冻结,Candidate,Control Plane Owner/OEM,CPU/内存/NIC/SSD准确SKU、HA/仲裁、双PSU和功耗
+B,B5,边缘与安全星,2台,Dell PowerEdge R9815（候选）,边缘、安全代理、可观测和网络服务；角色拆分待工作负载确认,Candidate,Security/Network Owner,安全加速卡、NIC、管理面、功耗、HA与审计
+B,GPU-FABRIC,GPU Fabric双平面,2台,NVIDIA Spectrum-6 SN6600（主参考）或Quantum-X800 Q3400-RA（替代）,Ethernet/RoCE与InfiniBand为两条独立方案；不能混算端口、功耗或运维栈,Candidate,Network Owner/OEM,冻结单一路线；QVL、端口图、光模块、拥塞控制、基准测试
+B,STORAGE-FABRIC,Storage Fabric,待工作负载与协议确定,交换机/NIC/协议待选,与GPU Collective网络隔离；容量层与高写入事务层分层,TBD-Owner,Storage/Network Owner,协议、端口、吞吐、冗余、性能测试和成本
+B,WAN,Customer/WAN边界,至少双路径设计目标，数量/带宽待确认,运营商线路、路由器、防火墙、交叉连接待选,端到端物理路径多样性未验证；区域间时延/带宽未知,TBD-Vendor,Network Owner/Carrier,双物理路径、共享段、PoP、RTT、丢包、抖动、SLA
+B,OOB,OOB/Facility管理网络,独立管理网络；设备数量待定,OOB交换机、BMC/Redfish、PDU/CDU/BMS接口,不得与租户数据面直接互通；远程维护需短时授权和审计,TBD-Engineer,Security/Facility Owner,端口表、访问矩阵、隔离测试、紧急本地访问
+B,COOLING,液冷与设施冷源,XDU1350候选1套；整机1+1另评估,Vertiv XDU1350（候选）+一次侧冷源/二次侧TCS,1.3MW额定冷量不是电功率；泵N+1不等于整机N+1,Candidate,Facility Owner/OEM,设备热负载、温压流量、水质、CDU冗余、泵/冷源功耗、P&ID
+B,POWER,供电与计量,按负荷计算；不预填区域MW,Utility/变电站/UPS/PDU/母线/发电机/ATS,POI firm MW/MVA未取得；Whip/支路映射须OEM签署,TBD-Vendor,Electrical Owner/Utility,单线图、负荷曲线、N-1、保护、计量、firm容量与送电日期
+B,WATER,水务与排水,按冷却策略与许可确定,市政水/再生水/干冷/混合方案待选,合法供水/取水/排水额度未取得；WUE未确定,TBD-Vendor,Facility/Environmental Owner,水权/供水协议、排水许可、8760热工、水耗和极端气候
