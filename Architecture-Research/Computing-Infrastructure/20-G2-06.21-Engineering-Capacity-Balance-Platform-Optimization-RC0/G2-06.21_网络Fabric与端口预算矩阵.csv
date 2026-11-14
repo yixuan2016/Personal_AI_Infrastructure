@@ -1,6 +1,6 @@
 "路线ID","网络域","设备/协议","公开规格","部署范围","端口/带宽预算口径","故障域","必须验证","约束"
 "NET-01","Scale-up","NVIDIA NVLink 6","Vera Rubin NVL72内72 GPU单一NVLink域；216TB/s公开带宽","单个NVL72机柜内部","以OEM rack topology为准","单柜/单NVLink switch tray","NVLink tray故障、GPU隔离、带宽/延迟、恢复","不跨机柜、不跨区域延伸NVLink域"
-"NET-02","GPU Scale-out","NVIDIA ConnectX-9 VPI","NVIDIA资料列示144×800Gb/s ConnectX-9端点","Vera Rubin机柜至外部Fabric","144是端点数量，不等于有效应用带宽","NIC/线缆/交换机/平面","端口映射、rail、OSFP、FEC、光功率、链路降级","需以OEM端口图/QVL核验"
+"NET-02","GPU Scale-out","NVIDIA ConnectX-9 VPI","Lenovo每Compute Tray集成4个ConnectX-9适配器；每Tray 1个BlueField-4；NVIDIA平台网络带宽32.4TB/s双向","Vera Rubin机柜至外部Fabric","适配器数不等于外部交换机端口数；端口/rail映射、上联与可用带宽需OEM最终图纸确认","NIC/线缆/交换机/平面","端口映射、rail、OSFP、FEC、光功率、链路降级","需以OEM端口图/QVL核验"
 "NET-03","DPU/网络卸载","NVIDIA BlueField-4 VPI","18×双端口400Gb/s端点，NVIDIA资料","Vera Rubin机柜","按端口方向和流量类型单独计量","DPU/管理/安全域","DPU卸载、隔离、存储、安全策略和故障行为","不与ConnectX端口数混成一项"
 "NET-04","Ethernet Scale-out","NVIDIA Spectrum-6 SN6600","128×800Gb/s端口；102.4Tb/s交换容量","机柜外Leaf/Spine候选","每平面下行+上联+管理+预留≤可用端口","Plane A/B独立","RoCE ECN/PFC、拥塞、队列、MTU、故障切换","与InfiniBand为替代路线"
 "NET-05","Ethernet Spine/Scale-out","NVIDIA Spectrum-6 SN6800-LD","512×800Gb/s CPO端口；409.6Tb/s交换容量；5U","大规模Leaf/Spine/骨干候选","按机房规模和上联比例计算","交换芯片/光源/机框","CPO维修、备件、布线、光纤密度和散热","不应仅按总交换容量推导有效带宽"
