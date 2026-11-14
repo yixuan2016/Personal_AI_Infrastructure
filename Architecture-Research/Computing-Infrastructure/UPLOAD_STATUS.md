@@ -210,3 +210,12 @@ PR #13 持续跟踪本工作分支并保持 Draft。GitHub 显示可合并不代
 - 官方政策证据明确区分：ERCOT 177.4GW为RFI请求互联容量而非可分配电力；PGRR144动态模型要求须在适用ERCOT大型计算负荷时纳入；发改能源〔2026〕688号仅在采用多用户绿电直连模式时适用。
 - 远端结构检查不代表真实供应商回函、合同、utility容量分配、土地/水务许可、现场工程或FAT/SAT验收。
 - PR #13保持Open/Draft；本轮不合并main。工作分支相对main存在2个main侧提交差异，合并前仍须复核其路径与依赖。
+
+
+### G2-06.17 归档后PR与分支核验（2026-11-14）
+
+- G2-06.17阶段共15个文件，13个正文/CSV/图源逐项远端回读；SHA256SUMS共13条，重新计算后13/13匹配。
+- PR #13：Open / Draft / mergeable=true / mergeable_state=clean；本轮不自动合并main。
+- 工作分支相对main：ahead 212 / behind 2。
+- main侧落后差异为Personal AI Life OS V2.21 Stage 33文档合并（Design/PersonalAIOS/V2.21/Stage33/、Design/PersonalAIOS/V2.21/README.md、Governance/V2.21_Stage33_Fix_Record_2026-11-10.md）和GitHub集成审计（Governance/GitHub_Integration_Audit_2026-11-10.md）；经逐提交文件列表复核，未触及Architecture-Research/Computing-Infrastructure/路径。
+- 当前GitHub显示PR可合并且无冲突，但由于工作分支仍落后2个main提交、PR为Draft，保留人工审查/后续同步策略，不把mergeable解释为已经合并。
