@@ -248,3 +248,23 @@ G2-06.17 = RC0 / Proposed。当前没有真实供应商回函、项目级utility
 - [文件清单与SHA-256校验记录](17-G2-06.18-Owner-Requirements-Baseline-RC0/G2-06.18_文件清单与SHA256校验记录.md)、[SHA256SUMS](17-G2-06.18-Owner-Requirements-Baseline-RC0/SHA256SUMS.txt)。
 
 G2-06.18为RC0候选基线。已冻结需求结构、逻辑角色和计算/验收口径；未冻结地理法域、实际业务规模、SLO、RPO/RTO、区域MW、PUE/WUE、带宽、预算和准确OEM SKU。不得把本阶段归档表述为业主批准或工程参数正式冻结。
+
+
+## G2-06.19｜双区域十星容量定量建模与工程资源平衡
+
+- [G2-06.19阶段目录](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/README.md)：业务到工程容量的统一模型。
+- [容量定量建模与资源平衡报告](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_双区域十星容量定量建模与资源平衡报告.md)：GPU/CPU/存储/WAN/供电/液冷/水务/TCO计算口径。
+- [模型参数与业主输入数据字典](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_模型参数与业主输入数据字典.csv)：40项模型输入变量、单位、Owner、证据和优先级。
+- [GPU算力容量模型](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_GPU算力容量模型.csv)：区分日历、可用、已分配、验收有效GPU小时与Busy Utilization。
+- [CPU与Agent容量模型](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_CPU与Agent容量模型.csv)：N1380的2N2S/4N1S互斥拓扑、CPU核/内存/并发计算。
+- [存储容量与数据增长模型](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_存储容量与数据增长模型.csv)：原始PB/PiB、保护后可用容量和五年增长。
+- [跨区域WAN带宽与复制窗口模型](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_跨区域WAN带宽与复制窗口模型.csv)：按数据量、复制窗口、协议效率和链路利用率计算。
+- [IT功率、设施功率、液冷与水务模型](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_IT功率设施功率与液冷水务模型.csv)：区分AC输入、TDP/EDPp、母线、DC容量、冷量、PUE/WUE。
+- [五年TCO与九种双区域路线组合](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_五年TCO与九种双区域路线组合模型.csv)：A/B区域分别选自建、托管、Powered Shell。
+- [容量敏感性与压力情景矩阵](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_容量敏感性与压力情景矩阵.csv)：14类容量、能源、网络、供水和区域故障情景。
+- [资源供需平衡与验收追踪矩阵](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_资源供需平衡与验收追踪矩阵.csv)：14个资源域的需求、供给、判定与验收。
+- [容量模型风险与数据缺口登记册](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_容量模型风险与数据缺口登记册.csv)：15项关键风险与控制措施。
+- [ADR-06容量模型与工程参数冻结治理](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/G2-06.19_ADR-06容量模型与工程参数冻结治理.md)：M0—M5模型、业务、设备、站点、验收和商业冻结等级。
+- [业务到工程容量追踪图](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/diagrams/G2-06.19_业务到工程容量追踪图.mmd)；[容量计算与工程放行门禁图](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/diagrams/G2-06.19_容量计算与工程放行门禁图.mmd)。
+
+G2-06.19为RC0候选模型。已建立计算结构与可直接复核的BOM算术，不冻结业务利用率、CPU准确SKU、可用PB、区域MW、PUE/WUE、WAN带宽、冷却冗余、报价或五年TCO排名。
