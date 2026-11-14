@@ -15,7 +15,8 @@
     "exportPolicy",
     "evidenceRefs",
     "freshness",
-    "attestation"
+    "attestation",
+    "notAuthorization"
   ],
   "properties": {
     "schemaVersion": {
@@ -228,7 +229,26 @@
               },
               "uniqueItems": true
             }
-          }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "maxCost": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "maxCost"
+                ]
+              },
+              "then": {
+                "required": [
+                  "costUnit"
+                ]
+              }
+            }
+          ]
         },
         "a2aAgentCardRef": {
           "type": "string",
@@ -376,6 +396,101 @@
           "format": "uri-reference"
         }
       }
+    },
+    "notAuthorization": {
+      "const": true,
+      "description": "An advertisement is discovery metadata, never an invocation grant."
+    },
+    "verificationContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verifierRef",
+        "verificationContextRef",
+        "verifiedAt",
+        "verificationMethod",
+        "evidenceLevel"
+      ],
+      "properties": {
+        "verifierRef": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verificationContextRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "verifiedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "verificationMethod": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidenceLevel": {
+          "enum": [
+            "E2",
+            "E3",
+            "E4"
+          ]
+        },
+        "modelVersion": {
+          "type": "string"
+        },
+        "toolVersion": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycleState": {
+            "const": "VERIFIED"
+          }
+        },
+        "required": [
+          "lifecycleState"
+        ]
+      },
+      "then": {
+        "required": [
+          "verificationContext"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "exportPolicy": {
+            "const": "NAMED_DOMAINS"
+          }
+        },
+        "required": [
+          "exportPolicy"
+        ]
+      },
+      "then": {
+        "required": [
+          "visibleToDomains"
+        ],
+        "properties": {
+          "visibleToDomains": {
+            "type": "array",
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
 }
