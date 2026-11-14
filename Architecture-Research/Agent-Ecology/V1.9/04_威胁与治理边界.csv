@@ -25,3 +25,11 @@ TH-23,委托权限放大,子Grant扩大Action/Resource/Purpose/Audience/TTL/Budg
 TH-24,代理主体混淆,Subject/Actor/Issuer混淆导致Agent被视为权利所有者,令牌显式保留subject/actor/issuer/audience；目标域本地验证；审计完整代理链,目标域Authorization Owner,P0,CANDIDATE
 TH-25,撤销回滚与旧状态复活,旧Bundle/撤销事件/旧Epoch覆盖新撤销状态,每来源域独立单调水位；旧Epoch拒绝；高风险状态未知时HOLD,来源域SEC与本地PEP,P0,CANDIDATE
 TH-26,持有者令牌重放,窃取的访问令牌或DPoP证明被重复使用,短期受众绑定令牌；DPoP/mTLS；jti去重与nonce；密钥隔离,Authorization Server与Resource Server,P0,CANDIDATE
+TH-27,撤销事件重复与身份冲突,重复投递或同一source和id映射到不同事件摘要,持久幂等去重；摘要不一致隔离来源并告警,接收域Sync Agent与来源域Security Owner,P0,CANDIDATE
+TH-28,事件序列缺口,事件丢失或乱序导致撤销历史不完整,连续水位不越过Gap；请求补洞；高风险授权HOLD,来源域Revocation Authority与接收域PEP,P0,CANDIDATE
+TH-29,来源事件分叉,同一Feed序列出现不同摘要或来源向不同接收方展示不同Checkpoint,签名摘要链；跨接收方Checkpoint对账；隔离分叉来源,来源域Security Owner与独立见证,P0,CANDIDATE
+TH-30,不完整快照恢复,压缩后只提供Merkle Root或遗漏墓碑却推进接收方游标,要求完整可查询墓碑快照；校验Snapshot Digest和Root；本地墓碑并集,来源域Owner与接收域Security Owner,P0,CANDIDATE
+TH-31,旧广告复活已撤销对象,迟到的ACTIVE广告或旧快照覆盖撤销对象版本,撤销墓碑单调；对象版本不可变；恢复必须新签发版本,Capability Owner与接收域PEP,P0,CANDIDATE
+TH-32,分区期间使用过期授权状态,FCP或来源域不可达时仍使用未知或陈旧撤销状态执行高风险动作,风险分级Freshness Budget；高风险HOLD；本地Kill Switch独立,目标域Policy Owner与PEP,P0,CANDIDATE
+TH-33,墓碑被过早清理,事件压缩或存储清理删除仍可能被迟到成员引用的撤销记录,墓碑长期归档；快照完整性证明；新成员完整状态引导,来源域数据Owner与审计Owner,P0,CANDIDATE
+TH-34,撤销事件洪泛与资源耗尽,攻击者或故障源制造高频事件挤压撤销处理队列,签名先验校验；速率限制；撤销优先级；背压和隔离,联邦运营Owner与接收域Security Owner,P1,CANDIDATE
