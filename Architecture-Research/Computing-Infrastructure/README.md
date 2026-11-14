@@ -193,3 +193,21 @@ G2-06.14当前为RC0区域长名单和桌面初筛；未取得园区/地块级fi
 - [园区级D/E/W/F/S硬门禁流程图](14-G2-06.15-Park-Level-Due-Diligence-RC0/diagrams/G2-06.15_园区尽调与否决门禁.mmd)。
 
 状态：RC0/公开资料桌面尽调；尚无本项目可交易地块、firm MW、水权、双运营商物理路由或地块专业工程验收；不签发选址/采购/施工放行。
+
+
+## G2-06.16｜双区域十星自建/高密托管/租赁设施自建IT路线比较
+
+- [G2-06.16 阶段目录](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/README.md)：三路线工程架构、设施所有权与控制权、同口径五年TCO、工程准入、SLA、独立故障域和验收。
+- [三路线决策报告](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_三路线工程架构与决策报告.md)：A完全自建、B高密托管入驻、C租赁Powered Shell + 自建IT；另以公有云GPU作为外部成本对照，不等同NVLink物理机柜。
+- [设施与控制权RACI矩阵](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_设施与控制权RACI矩阵.csv)：20项建筑/供配电/CDU/硬联锁/网络/数据/授权/审计等职责。
+- [高密GPU入驻技术准入清单](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_高密GPU入驻技术准入清单.md)：GB300 Whip、真实供电、CDU一次/二次侧、水质、满液点载荷、OOB/双Fabric、退租与FAT/SAT。
+- [托管合同与服务SLA关键条款](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_托管合同与服务SLA关键条款.md)：合同技术输入，非正式法律意见。
+- [五年TCO计算与边界规则](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_五年TCO计算与边界规则.md)、[24项TCO变量回填模板](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_TCO变量回填模板.csv)：M1—M5计费模式避免租赁/电费/PUE/水耗重复计入。
+- [三路线100分评价权重](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_路线评分与硬门槛.csv)：9项维度、硬性否决优先；无项目证据不实际打分。
+- [32项FAT/SAT与故障注入验收矩阵](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_FAT_SAT与故障注入验收矩阵.csv)。
+- [跨区域自治与运营故障域](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_跨区域自治与运营故障域.md)：设施硬联锁在本地优先，Site LCP/Owner保持IT资源权威，ADS/RCP不越权控制供电冷却。
+- [18项风险与回退](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_风险与回退登记册.csv)、[22项供应商RFI问题](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_供应商RFI回应模板.csv)。
+- [ADR-03自建托管混合路线](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_ADR-03自建托管混合路线.md)、[官方资料与证据](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_官方资料与证据登记册.md)。
+- [三路线设施归属架构图](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/diagrams/G2-06.16_三路线设施归属拓扑.mmd)、[工程与合同决策门禁图](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/diagrams/G2-06.16_工程与合同决策门禁.mmd)。
+
+G2-06.16 = RC0 / Proposed。暂建议优先验证C、以A为长期对照、B为高密可交付的快速备选；尚无任何项目级firm MW/液冷容量/地块租约/正式报价/FAT/SAT，不能宣称已完成最终方案选定或成本最优。
