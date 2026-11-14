@@ -1,6 +1,6 @@
-# Agent Ecology V1.9｜痕迹协作实证、能力发现与联邦目录
+# Agent Ecology V1.9｜痕迹协作实证、能力发现、信任与撤销传播
 
-**版本状态：候选研究版 0.1｜日期：2026-11-14**
+**版本状态：候选研究版 0.2｜日期：2026-11-15**
 
 V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environment Runtime、V1.5 生态自治、V1.6 世界模型、V1.7 RSI 和 V1.8 跨生态联邦治理。本版本由三个互补工作流组成：A 线研究 Stigmergy 实证、共享环境、持久工件和局部反应；B 线研究跨生态能力发现、联邦摘要目录与 Observation Runtime；C 线研究双边信任、Owner 签名、委托衰减和目标域本地授权。三条线共同回答：如何让 Agent 通过可信环境状态协作，同时保持本地数据权威、授权边界和人类治理。
 
@@ -17,11 +17,16 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 09_WP-020_跨生态信任协议与能力授权链设计.md：双边信任、Owner 签名、委托衰减、令牌交换、密钥轮换和撤销协议。
 - 10_WP-020_研究证据登记.md：SPIFFE、OpenID Federation、OAuth、DPoP、JWS/JWT、JCS 规范证据。
 - 11_WP-020_信任协议静态审查与未决事项.md：WP-020 的 10 项未决事项和静态检查边界。
-- contracts/：能力广告、能力解析、能力生命周期事件、Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation 候选 JSON Schema（6 份）。
+- 12_WP-021_跨生态能力目录一致性与撤销传播协议.md：目录同步、事件序列、撤销墓碑、快照恢复、反熵和网络分区安全。
+- 13_WP-021_研究证据登记.md：CloudEvents、Kubernetes Watch、etcd、Dynamo、RFC 9162 与 CRDT 证据。
+- 14_WP-021_静态审查与未决事项.md：34 项验收设计的静态审查边界和 10 项开放问题。
+- contracts/：能力广告、能力解析、能力生命周期事件、Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation、Federation Revocation Event、Federation Sync Checkpoint 候选 JSON Schema（8 份）。
 - validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv：31 项 F1 能力发现、资格一致性与事件契约验收矩阵。
-- validation/WP020_TRUST_PROTOCOL_VALIDATION_MATRIX.csv：24 项跨生态信任、委托、令牌与撤销验收设计。
+- validation/WP020_TRUST_PROTOCOL_VALIDATION_MATRIX.csv：27 项跨生态信任、委托、令牌与撤销验收设计。
+- validation/WP021_CATALOG_CONSISTENCY_REVOCATION_MATRIX.csv：34 项目录一致性、事件幂等、撤销传播、快照恢复和分区安全验收设计。
 - assets/00_V1.9_跨生态能力发现与观察Runtime.svg：7680×4320 SVG 架构源图。
 - assets/01_WP-020_跨生态信任协议与授权链.svg：7680×4320 SVG 信任与授权链架构源图。
+- assets/02_WP-021_目录一致性与撤销传播架构.svg：7680×4320 SVG 目录同步与撤销传播架构源图。
 - STATUS.md：本版本状态和禁止越过的门禁。
 - GITHUB_BLOB_MANIFEST.md：Git Blob 标识清单；Git Blob SHA 不等同于文件 SHA-256。
 
@@ -40,9 +45,9 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 
 ## 证据边界
 
-本版引用的研究包括预印本、已发表论文、协议草案、正式规范和受控仿真实验。论文报告的实验结果不等于本项目已复现、已部署或已通过验收。Stigmergy 合成实验 22 项、F1 能力发现与契约验收 31 项、WP-020 信任协议验收 27 项，共 80 项全部 NOT_RUN；16 项 ADR 全部 Candidate；26 项威胁全部 Candidate。V1.8 F0 12 项 Gate 仍全部 NotRun；没有真实领域数据授权、Runtime 执行或生产写入。
+本版引用的研究包括预印本、已发表论文、协议草案、正式规范和受控仿真实验。论文报告的实验结果不等于本项目已复现、已部署或已通过验收。Stigmergy 合成实验 22 项、F1 能力发现与契约验收 31 项、WP-020 信任协议验收 27 项、WP-021 目录一致性与撤销传播验收 34 项，共 114 项全部 NOT_RUN；22 项 ADR 全部 Candidate；34 项威胁全部 Candidate。V1.8 F0 12 项 Gate 仍全部 NotRun；没有真实领域数据授权、Runtime 执行或生产写入。
 
-六份候选 JSON Schema 已确认 JSON 语法有效，但尚未完成完整 Draft 2020-12 Validator、密码学签名验证、跨字段语义验证和协议互操作测试。静态审查的 10 项缺口中，7 项已形成候选契约修复，1 项部分修复，2 项仍开放。productionAllowed=false。
+八份候选 JSON Schema 已确认 JSON 语法有效，但尚未完成完整 Draft 2020-12 Validator、密码学签名验证、跨字段语义验证和协议互操作测试。静态审查的 10 项缺口中，7 项已形成候选契约修复，1 项部分修复，2 项仍开放。productionAllowed=false。
 
 
 ## WP-020｜跨生态信任协议
@@ -54,3 +59,14 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 目标域本地 Authorization Server/PDP 决定是否签发短期、受众绑定凭证；Token Exchange 仅表达 Subject/Actor 委托上下文。
 - DPoP/mTLS 可用于发送方约束；撤销状态按来源域独立维护 Epoch。
 - WP-020 验收设计 27 项全部 NOT_RUN；10 项静态未决事项开放；无真实密钥、生产令牌或跨域授权启用。
+
+
+## WP-021｜跨生态能力目录一致性与撤销传播
+
+- 目录发现允许最终一致；安全撤销采用来源域签名事件、单调墓碑和接收域本地执行门禁。
+- 每条 Peer Binding 安全控制 Feed 使用独立连续序列；(source,id) 持久去重；跨 Domain/Stream 不比较序列。
+- 已验证撤销立即写入墓碑；事件 Gap 不推进连续水位并阻断高风险跨域动作。
+- 历史压缩后要求来源域签名的完整可查询撤销快照、Snapshot Digest、Merkle Root 和连续性证据；不能仅凭 Root 或消息 ACK 认为撤销状态完整。
+- Merkle 反熵差异定位与 RFC 9162 追加历史一致性证明分开使用；RFC 9162 为 Experimental RFC，Gossip / split-view 仍需独立验证。
+- Freshness Budget 由目标域 Policy Owner 配置；FCP 离线时本地 PEP / Kill Switch 仍可 DENY。
+- WP-021 验收设计 34 项全部 NOT_RUN；10 项未决事项开放；未部署消息总线或真实撤销 Feed。
