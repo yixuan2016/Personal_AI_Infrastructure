@@ -1,0 +1,17 @@
+区域,设备/回路,一次/二次侧,参数,单位,设计值,最小/最大允许,额定工况,测点/仪表,校准精度,水质/介质,故障工况,OEM/设施Owner,证据文件,状态
+A,GB300/HPE XDU1350,TCS二次侧,机柜持续热负载,kWth,,,,机柜供回液,,OEM介质规范,满载持续,HPE/Vertiv,,待回填
+A,GB300/HPE XDU1350,TCS二次侧,供液/回液温度,°C,,,,Manifold入口/出口,,OEM水质规范,极端热工/故障,HPE/Vertiv,,待回填
+A,GB300/HPE XDU1350,TCS二次侧,流量/压差,L/min/kPa,,,,CDU/Manifold/机柜,,过滤/颗粒限值,单泵故障,HPE/Vertiv,,待回填
+A,GB300/HPE XDU1350,设施一次侧,供回水温度/压力/流量,°C/kPa/L/min,,,,CDU一次侧,,设施水质规范,极端天气/冷源故障,设施Owner,,待回填
+A,GB300/HPE XDU1350,一次/二次侧,CDU泵N+1与整机1+1,配置/秒,,,,泵/阀/控制器,,冷却液兼容,单泵/整机故障/维护,Vertiv/设施Owner,,待回填
+B,GB300/HPE XDU1350,TCS二次侧,机柜持续热负载,kWth,,,,机柜供回液,,OEM介质规范,满载持续,HPE/Vertiv,,待回填
+B,GB300/HPE XDU1350,TCS二次侧,供液/回液温度,°C,,,,Manifold入口/出口,,OEM水质规范,极端热工/故障,HPE/Vertiv,,待回填
+B,GB300/HPE XDU1350,TCS二次侧,流量/压差,L/min/kPa,,,,CDU/Manifold/机柜,,过滤/颗粒限值,单泵故障,HPE/Vertiv,,待回填
+B,GB300/HPE XDU1350,设施一次侧,供回水温度/压力/流量,°C/kPa/L/min,,,,CDU一次侧,,设施水质规范,极端天气/冷源故障,设施Owner,,待回填
+B,GB300/HPE XDU1350,一次/二次侧,CDU泵N+1与整机1+1,配置/秒,,,,泵/阀/控制器,,冷却液兼容,单泵/整机故障/维护,Vertiv/设施Owner,,待回填
+A,N1380,TCS二次侧,Enclosure热负载/供回液,kWth/°C,,,,N1380 Manifold,,Lenovo介质规范,单PCS/单tray故障,Lenovo,,待回填
+B,N1380,TCS二次侧,Enclosure热负载/供回液,kWth/°C,,,,N1380 Manifold,,Lenovo介质规范,单PCS/单tray故障,Lenovo,,待回填
+A/B,WATER,水务,合法供水量/取水来源,m3/day,,,,供水总表,,水务许可,旱情/停水/限供,水务机构,,待许可
+A/B,WATER,水务,排水量/温度/药剂/排放限制,m3/day/°C,,,,排水总表,,排污许可,排水受限/超标,水务/环保,,待许可
+A/B,FACILITY,冷源,全年8760小时热工与气候边界,8760h,,,,室外气象/冷源/机房,,设计工况,热浪/寒潮/水源不足,机电工程师,,待仿真
+A/B,FACILITY,安全,漏液/低流/高温/高压联锁,动作矩阵,,,,传感器/阀位/控制器,,传感器校准,故障注入,设施Owner/OEM,,待验收
