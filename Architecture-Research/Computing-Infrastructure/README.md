@@ -177,3 +177,19 @@ G2-06.13 当前为RC0筛选框架。候选国家/城市/园区/地块尚未指�
 - [候选区域筛选与双区域决策流程](13-G2-06.14-Regional-Candidate-Comparison-RC0/diagrams/G2-06.14_候选区域筛选与双区域决策流程.mmd)。
 
 G2-06.14当前为RC0区域长名单和桌面初筛；未取得园区/地块级firm MW、送电日期、供水/排水许可、端到端光纤物理路由、地勘/许可和正式报价，不做正式100分区域排名、不冻结国家/城市组合、不形成投资批准。
+
+
+## G2-06.15 候选园区与基础设施资源尽调
+
+- [G2-06.15 研究目录](14-G2-06.15-Park-Level-Due-Diligence-RC0/README.md)：园区级分型、官方许可与公用事业资料、地块证据缺口、项目RFI与新增D门禁。
+- [园区尽调方法论](14-G2-06.15-Park-Level-Due-Diligence-RC0/G2-06.15_园区级尽调与方法论.md)：P1园区/P2运营项目/P3审批项目/P4可交易地块/P5限制样本；不把既有项目容量当本项目资源。
+- [中国大陆园区与项目样本台账](14-G2-06.15-Park-Level-Due-Diligence-RC0/G2-06.15_中国大陆园区与项目样本台账.csv)：和林格尔、乌兰察布、庆阳、中卫、贵安。
+- [美国园区与项目样本台账](14-G2-06.15-Park-Level-Due-Diligence-RC0/G2-06.15_美国园区与项目样本台账.csv)：Altoona、New Albany、Loudoun/Ashburn、Abilene、Quincy、Hillsboro。
+- [20项工程证据缺口](14-G2-06.15-Park-Level-Due-Diligence-RC0/G2-06.15_电力水资源网络工程证据缺口矩阵.csv)：电力、水务、光纤、土地、许可、结构、TCO与双区域独立性。
+- [园区/utility/水务/运营商/OEM RFI](14-G2-06.15-Park-Level-Due-Diligence-RC0/G2-06.15_公用事业园区运营商RFI问询清单.md)：用于向项目资源拥有方索取可审计的书面答复。
+- [高密GPU与液冷机房工程准入规范](14-G2-06.15-Park-Level-Due-Diligence-RC0/G2-06.15_高密GPU与液冷机房工程准入规范.md)。
+- [政策许可与风险特殊事项](14-G2-06.15-Park-Level-Due-Diligence-RC0/G2-06.15_政策许可与风险特殊事项.md)：中卫项目许可、美国New Albany/Loudoun/Hillsboro新建限制、Quincy/Grant PUD大型负荷排队。
+- [ADR-G2-06.15-01](14-G2-06.15-Park-Level-Due-Diligence-RC0/G2-06.15_站点决策与独立性ADR.md)、[官方证据登记册](14-G2-06.15-Park-Level-Due-Diligence-RC0/G2-06.15_官方证据来源登记册.md)。
+- [园区级D/E/W/F/S硬门禁流程图](14-G2-06.15-Park-Level-Due-Diligence-RC0/diagrams/G2-06.15_园区尽调与否决门禁.mmd)。
+
+状态：RC0/公开资料桌面尽调；尚无本项目可交易地块、firm MW、水权、双运营商物理路由或地块专业工程验收；不签发选址/采购/施工放行。
