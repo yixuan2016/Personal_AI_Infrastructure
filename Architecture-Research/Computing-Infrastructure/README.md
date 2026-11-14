@@ -231,3 +231,20 @@ G2-06.16 = RC0 / Proposed。暂建议优先验证C、以A为长期对照、B为�
 G2-06.17 = RC0 / Proposed。当前没有真实供应商回函、项目级utility容量函、正式租约/报价、有效水权/排水许可、物理光路签署、OEM QVL或现场验收；所有回填模板保持空白，不能据此宣布任何候选站点可用或完成路线选择。
 
 - [G2-06.17 文件清单与SHA-256校验记录](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/G2-06.17_文件清单与SHA256校验记录.md)、[逐文件SHA256SUMS](16-G2-06.17-Resource-Verification-Vendor-RFI-RC0/SHA256SUMS.txt)：覆盖本阶段13个正文/CSV/图源文件；不替代完整仓库ZIP验包。
+
+
+## G2-06.18｜双区域十星业主需求基线与资源配置冻结
+
+- [G2-06.18 阶段目录](17-G2-06.18-Owner-Requirements-Baseline-RC0/README.md)：定义需求字段、十星角色、L1结构冻结与L2工程参数冻结。
+- [业主需求基线与冻结规则](17-G2-06.18-Owner-Requirements-Baseline-RC0/G2-06.18_业主需求基线与冻结规则.md)：GPU训练/推理、CPU/HPC/Agent、存储、控制面、跨区域自治、安全和三路线共用要求。
+- [业务负载与工作负载画像矩阵](17-G2-06.18-Owner-Requirements-Baseline-RC0/G2-06.18_业务负载与工作负载画像矩阵.csv)：14类工作负载及业主输入、性能指标、资源约束和验收备注。
+- [双区域十星资源配置基线](17-G2-06.18-Owner-Requirements-Baseline-RC0/G2-06.18_双区域十星资源配置基线.csv)：每区域五个逻辑星位及GPU Fabric、Storage Fabric、WAN、OOB、冷却、供电和水务边界。
+- [服务等级与RPO/RTO需求矩阵](17-G2-06.18-Owner-Requirements-Baseline-RC0/G2-06.18_服务等级与RPO_RTO需求矩阵.csv)：S0—S3服务等级；具体数值由业务Owner/专业Owner定义。
+- [业主输入与责任矩阵](17-G2-06.18-Owner-Requirements-Baseline-RC0/G2-06.18_业主输入与责任矩阵.csv)：22项业主待确认输入、单位、责任Owner和冻结证据。
+- [容量能耗与有效算力测算口径](17-G2-06.18-Owner-Requirements-Baseline-RC0/G2-06.18_容量能耗与有效算力测算口径.md)：设备/设施负载、存储可用容量、有效GPU小时和五年TCO计算边界。
+- [需求验收追踪矩阵](17-G2-06.18-Owner-Requirements-Baseline-RC0/G2-06.18_需求验收追踪矩阵.csv)：25项需求到验证方法、证据和Owner追踪。
+- [ADR-05 需求基线与冻结治理](17-G2-06.18-Owner-Requirements-Baseline-RC0/G2-06.18_ADR-05需求基线与冻结治理.md)：采用“结构先行、数值后冻”方案，当前为Proposed。
+- [双区域十星总体逻辑架构图源](17-G2-06.18-Owner-Requirements-Baseline-RC0/diagrams/G2-06.18_双区域十星总体逻辑架构.mmd)、[需求冻结与资源放行门禁图源](17-G2-06.18-Owner-Requirements-Baseline-RC0/diagrams/G2-06.18_需求冻结与资源放行门禁.mmd)。
+- [文件清单与SHA-256校验记录](17-G2-06.18-Owner-Requirements-Baseline-RC0/G2-06.18_文件清单与SHA256校验记录.md)、[SHA256SUMS](17-G2-06.18-Owner-Requirements-Baseline-RC0/SHA256SUMS.txt)。
+
+G2-06.18为RC0候选基线。已冻结需求结构、逻辑角色和计算/验收口径；未冻结地理法域、实际业务规模、SLO、RPO/RTO、区域MW、PUE/WUE、带宽、预算和准确OEM SKU。不得把本阶段归档表述为业主批准或工程参数正式冻结。
