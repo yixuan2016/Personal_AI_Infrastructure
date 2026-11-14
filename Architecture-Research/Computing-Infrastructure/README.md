@@ -162,3 +162,18 @@ G2-06.12 为 RC0/RFQ 草案，不是已冻结采购订单、合同技术附件�
 - [站点筛选与投资决策流程](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/diagrams/G2-06.13_站点筛选与投资决策流程.mmd)、[双区域资源与故障域逻辑图](12-G2-06.13-Dual-Region-Site-Selection-Energy-TCO-RC0/diagrams/G2-06.13_双区域资源与故障域逻辑图.mmd)。
 
 G2-06.13 当前为RC0筛选框架。候选国家/城市/园区/地块尚未指定；未取得项目级firm MW、取水/排水许可、运营商物理路由证明、现场工程报告和正式报价，不形成站点选定或投资批准结论。
+
+
+## G2-06.14 双区域候选区域筛选与资源条件横向比较
+
+- [G2-06.14 阶段目录](13-G2-06.14-Regional-Candidate-Comparison-RC0/README.md)：中国大陆、美国与跨境双区域路线的区域长名单和桌面初筛。
+- [双区域候选区域筛选与横向比较报告](13-G2-06.14-Regional-Candidate-Comparison-RC0/G2-06.14_双区域候选区域筛选与横向比较报告.md)：候选池、政策/能源/水/网络初筛、工作负载分工和下一轮证据任务。
+- [中国大陆候选区域初筛矩阵](13-G2-06.14-Regional-Candidate-Comparison-RC0/G2-06.14_中国大陆候选区域初筛矩阵.csv)：呼和浩特—和林格尔—乌兰察布、庆阳、中卫、贵安及需求侧枢纽对照。
+- [美国候选区域初筛矩阵](13-G2-06.14-Regional-Candidate-Comparison-RC0/G2-06.14_美国候选区域初筛矩阵.csv)：MISO、PJM俄亥俄/北弗吉尼亚、ERCOT西部、华盛顿/俄勒冈。
+- [双区域组合路线与故障域分析](13-G2-06.14-Regional-Candidate-Comparison-RC0/G2-06.14_双区域组合路线与故障域分析.md)：中国同国、美国同国、中国+美国跨国三条路线并行评估。
+- [候选区域证据缺口与核验任务](13-G2-06.14-Regional-Candidate-Comparison-RC0/G2-06.14_候选区域证据缺口与核验任务.csv)：22项utility、水务、运营商、地块、合规和TCO核验任务。
+- [ADR-02候选区域筛选与双区域路线](13-G2-06.14-Regional-Candidate-Comparison-RC0/G2-06.14_ADR-02候选区域筛选与双区域路线.md)：建议决策及待业主确认事项。
+- [官方证据与政策登记册](13-G2-06.14-Regional-Candidate-Comparison-RC0/G2-06.14_官方证据与政策登记册.md)：国家发改委、国家能源局、内蒙古能源局、NERC、ERCOT、MISO、PJM、EIA、USGS和华盛顿州政府原始来源。
+- [候选区域筛选与双区域决策流程](13-G2-06.14-Regional-Candidate-Comparison-RC0/diagrams/G2-06.14_候选区域筛选与双区域决策流程.mmd)。
+
+G2-06.14当前为RC0区域长名单和桌面初筛；未取得园区/地块级firm MW、送电日期、供水/排水许可、端到端光纤物理路由、地勘/许可和正式报价，不做正式100分区域排名、不冻结国家/城市组合、不形成投资批准。
