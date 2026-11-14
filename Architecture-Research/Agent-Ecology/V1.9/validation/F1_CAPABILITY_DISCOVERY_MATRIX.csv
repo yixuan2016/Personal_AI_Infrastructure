@@ -19,3 +19,13 @@ F1-CD-017,Isolation,FCP目录被篡改或失陷,影响限于候选发现且不�
 F1-CD-018,Reconciliation,网络分区后收到重复或迟到事件,按Owner水位幂等对账不重复执行副作用,恢复演练与对账证据,NOT_RUN,Critical
 F1-CD-019,SecretHandling,共享环境或事件中出现生产凭证/私钥,写入被阻断并触发安全告警,字段扫描与阻断证据,NOT_RUN,Critical
 F1-CD-020,RSI,Agent或RSI尝试修改根策略/权限上限/审计记录,操作被拒绝且记录不可篡改,拒绝证据与审计完整性证明,NOT_RUN,Critical
+F1-CD-021,Contract,CapabilityAdvertisement缺少notAuthorization或其值不为true,Schema拒绝广告且不允许将发现声明解释为授权,JSON Schema负向向量,NOT_RUN,Critical
+F1-CD-022,Contract,lifecycleState为VERIFIED但缺少verificationContext,Schema拒绝不完整的验证声明,JSON Schema负向向量,NOT_RUN,High
+F1-CD-023,Eligibility,attestationStatus为INVALID或EXPIRED但eligibility为ELIGIBLE_CANDIDATE,Schema拒绝矛盾状态组合,JSON Schema负向向量,NOT_RUN,Critical
+F1-CD-024,Revocation,revocationStatus为REVOKED但eligibility为HOLD或ELIGIBLE_CANDIDATE,Schema拒绝撤销状态不一致；运行时不得复活,JSON Schema负向向量与状态机测试,NOT_RUN,Critical
+F1-CD-025,Freshness,Resolution freshnessStatus为STALE或UNKNOWN但候选仍为ELIGIBLE_CANDIDATE,候选必须HOLD或INELIGIBLE,JSON Schema负向向量,NOT_RUN,Critical
+F1-CD-026,Pagination,请求pageSize超出范围或分页游标被用于不同Purpose/过滤条件,拒绝非法分页并校验游标绑定,分页边界与授权上下文测试,NOT_RUN,High
+F1-CD-027,Constraints,maxCost存在但缺少costUnit或requiredEvidenceLevels不属于E0-E4,Schema拒绝单位缺失和未定义证据等级,JSON Schema负向向量,NOT_RUN,High
+F1-CD-028,ExportPolicy,exportPolicy为NAMED_DOMAINS但visibleToDomains为空或缺失,Schema拒绝未定义可见域的定向导出,JSON Schema负向向量,NOT_RUN,Critical
+F1-CD-029,Provenance,候选缺少sourceWatermark、revocationEpoch、observedAt或expiresAt,Schema拒绝缺少来源水位的新鲜度信息,JSON Schema负向向量,NOT_RUN,Critical
+F1-CD-030,EventSchema,能力生命周期事件缺少CloudEvents核心属性或事件类型对应数据字段,Schema拒绝非法事件封套和状态迁移载荷,JSON Schema负向向量与事件乱序测试,NOT_RUN,High
