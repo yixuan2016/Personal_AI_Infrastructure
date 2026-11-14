@@ -37,3 +37,14 @@
 - F1 验收扩展至 30 项，V1.9 合成实验与验收共 52 项全部 NOT_RUN；productionAllowed=false。
 
 - F1 能力发现/契约矩阵增加冲突状态优先级测试；INELIGIBLE 优先于 HOLD，F1 测试增至 31 项，V1.9 验收总数增至 53 项，全部 NOT_RUN。
+
+
+## 2026-11-14｜V1.9-C WP-020 跨生态信任协议与能力授权链（Candidate）
+- 新增 WP-020 架构决策备忘录、研究证据登记、静态审查与 10 项未决事项。
+- 新增 Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation 三份候选 JSON Schema。
+- 新增 24 项跨生态信任、Owner 签名、委托衰减、Token Exchange、DPoP、撤销与审计验收设计，全部 NOT_RUN。
+- 新增 7680×4320 SVG 信任与授权链架构源图。
+- 新增 ADR-111—ADR-116；威胁矩阵扩展至 26 项；总候选 ADR 为 16 项。
+- 默认双边显式信任、关闭传递信任；SPIFFE/OIDF 为可选适配；目标域本地 Authorization Server/PDP 保留最终授权权威。
+- 六份候选 Schema 仅完成 JSON 语法解析检查；未完成完整 Draft 2020-12 Validator、密码学、父子委托语义和协议互操作测试。
+- V1.9 合成实验与验收共 77 项全部 NOT_RUN；F0 未通过；productionAllowed=false；Runner 未启用。
