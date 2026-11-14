@@ -23,3 +23,6 @@ WP020-21,Revocation,Owner Signing Key疑似泄露,停止新签发、隔离密钥
 WP020-22,Authorization,身份和Owner签名均有效但目标域Purpose未授权,目标域DENY且不产生副作用,本地PDP/PEP决策与副作用检查,Critical,NOT_RUN
 WP020-23,Authorization,上游域ALLOW但目标域本地策略DENY,最终DENY不可被上游覆盖,双域策略决策对照,Critical,NOT_RUN
 WP020-24,Audit,多跳代理调用未记录完整subject、actor与issuer链,审计验收失败并阻断高风险动作,审计事件与Delegation Chain,Critical,NOT_RUN
+WP020-25,TrustBinding,Trust Anchor trustDomainId既不等于localDomainId也不等于peerDomainId,拒绝错误域锚绑定并隔离关系,Anchor与Domain映射语义验证,Critical,NOT_RUN
+WP020-26,TrustBinding,ACTIVE关系缺少任一方签名接受收据或双方agreementDigest不一致,不得进入ACTIVE且不得建立互认,双方签名收据与协议摘要对照,Critical,NOT_RUN
+WP020-27,RiskBoundary,Agent或委托Grant试图声明R4最高风险能力,拒绝签发或执行；R4只走人类根治理流程,R0-R4策略与Grant负向向量,Critical,NOT_RUN
