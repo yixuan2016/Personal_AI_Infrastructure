@@ -1,0 +1,16 @@
+flowchart TD
+  S["业务画像与Owner签署"] --> W["14类工作负载<br/>模型/精度/并发/SLO/RPO/RTO"]
+  W --> P["候选平台选择<br/>Vera Rubin / Helios / GB300"]
+  P --> Q["OEM完整SKU与QVL<br/>CPU/存储/网络/固件/端口"]
+  Q --> E["设备容量模型<br/>GPU-h / CPU核与内存 / PB / Gbps"]
+  Q --> H["设备电力与热工<br/>AC曲线 / TDP / EDPp / 冷量 / 水流"]
+  E --> R["区域A/B正常工况供需平衡"]
+  H --> R
+  R --> N["单设备/单链路/单泵/单路电源故障"]
+  N --> F["单区域失效<br/>幸存区先扣本地负载与预留"]
+  F --> D{"关键业务SLO/RPO/RTO满足？"}
+  D -->|否| X["Hold / 降级 / 暂停 / 扩容<br/>业务Owner签署"]
+  D -->|是| G["G0-G5门禁<br/>Utility / 水务 / WAN / 结构 / TCO"]
+  G --> Z{"证据与独立验收齐全？"}
+  Z -->|否| X
+  Z -->|是| A["Approved-Baseline候选<br/>采购/施工仍需正式授权"]
