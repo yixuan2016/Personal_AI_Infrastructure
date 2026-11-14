@@ -295,5 +295,5 @@ PR #13 持续跟踪本工作分支并保持 Draft。GitHub 显示可合并不代
 - 12/12份CSV逐行列数一致；数据行/列分别为：3×12、9×16、9×9、12×9、17×9、18×9、14×8、14×8、10×7、15×9、21×8、13×8。
 - 阶段目录共19个文件：根目录17个文件（3份Markdown+12份CSV+2个校验文件）及diagrams目录下2张Mermaid图源。
 - 根README与UPLOAD_STATUS均已增加G2-06.21索引/归档记录。
-- PR #13保持Open/Draft；GitHub报告mergeable=true、mergeable_state=clean；工作分支相对main ahead 303 / behind 2，尚未合并main。仍需处理落后提交、Draft评审状态和最终审批。
+- PR #13保持Open/Draft；GitHub报告mergeable=true、mergeable_state=clean；工作分支相对main behind 2 commits，尚未合并main；ahead数量随本分支后续归档提交变化。仍需处理落后提交、Draft评审状态和最终审批。
 - 本轮结构/哈希验证不代表业主签署、OEM QVL、Utility firm MW、水务许可、专业工程批准或现场FAT/SAT。
