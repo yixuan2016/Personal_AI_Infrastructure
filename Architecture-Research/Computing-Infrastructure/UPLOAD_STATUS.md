@@ -288,3 +288,12 @@ PR #13 持续跟踪本工作分支并保持 Draft。GitHub 显示可合并不代
 - 存储分层：Micron 9650 Gen6高性能层；KIOXIA LC9 245.76TB QLC容量/读密集层。每区2台40盘LC9原始容量19.6608PB；保护后容量需扣预留、元数据、快照和水位。
 - 12份CSV结构检查通过；SHA-256校验覆盖17个内容文件，SHA256SUMS与校验记录自身不纳入哈希。
 - 所有工程参数仍需Owner签署、OEM QVL、Utility firm MW、水务许可、WAN物理路径、现场FAT/SAT和正式报价。阶段状态RC0/Proposed。
+
+
+### G2-06.21 远端回读与结构校验（2026-11-14）
+- 17/17个阶段内容文件从GitHub工作分支远端回读，SHA-256与SHA256SUMS逐项匹配。
+- 12/12份CSV逐行列数一致；数据行/列分别为：3×12、9×16、9×9、12×9、17×9、18×9、14×8、14×8、10×7、15×9、21×8、13×8。
+- 阶段目录共19个文件：根目录17个文件（3份Markdown+12份CSV+2个校验文件）及diagrams目录下2张Mermaid图源。
+- 根README与UPLOAD_STATUS均已增加G2-06.21索引/归档记录。
+- PR #13保持Open/Draft；GitHub报告mergeable=true、mergeable_state=clean；工作分支相对main ahead 303 / behind 2，尚未合并main。仍需处理落后提交、Draft评审状态和最终审批。
+- 本轮结构/哈希验证不代表业主签署、OEM QVL、Utility firm MW、水务许可、专业工程批准或现场FAT/SAT。
