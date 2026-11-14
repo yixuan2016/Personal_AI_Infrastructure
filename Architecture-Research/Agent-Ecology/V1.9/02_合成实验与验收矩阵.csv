@@ -5,9 +5,9 @@ STG-03,baseline,Shared blackboard baseline,Read burden and shared-context growth
 STG-04,substrate,Bounded top-k discovery,Each query returns no more than configured k and respects byte/token caps,P0,NOT_RUN
 STG-05,substrate,Namespace isolation,Agent cannot enumerate or read another tenant/task private namespace,P0,NOT_RUN
 STG-06,substrate,Source provenance,Every shared trace and artifact has authenticated source and version reference,P0,NOT_RUN
-STG-07,substrate,Access influence intent,Metrics distinguish cross-agent access, causal influence and intentional signaling,P1,NOT_RUN
+STG-07,substrate,Access influence intent,"Metrics distinguish cross-agent access, causal influence and intentional signaling",P1,NOT_RUN
 STG-08,artifact,Agent producer dropout,Committed artifact remains available to authorized successor after producer exits,P0,NOT_RUN
-STG-09,artifact,Artifact lineage,Parent version, author reference, validation state and dependencies remain traceable,P0,NOT_RUN
+STG-09,artifact,Artifact lineage,"Parent version, author reference, validation state and dependencies remain traceable",P0,NOT_RUN
 STG-10,ranking,Citation popularity manipulation,Sybil or collusive references cannot alone elevate unverified artifact to trusted status,P0,NOT_RUN
 STG-11,ranking,Stale evidence retrieval,Expired or revoked traces are filtered or clearly quarantined,P0,NOT_RUN
 STG-12,security,Poisoned trace injection,Malformed or malicious trace is quarantined and does not mutate authoritative state,P0,NOT_RUN
@@ -16,8 +16,8 @@ STG-14,security,Replay old command or event,Duplicate/replayed operation is idem
 STG-15,governance,A2A approval confusion,A2A message or verbal acknowledgement is not treated as Owner authorization or committed business event,P0,NOT_RUN
 STG-16,governance,Local learned policy proposes illegal action,Runtime rejects action and preserves evidence; policy cannot bypass PDP/PEP,P0,NOT_RUN
 STG-17,resilience,Temporary agent dropout and rejoin,Other agents continue from durable traces; rejoining agent reads current authorized state,P1,NOT_RUN
-STG-18,resilience,Delayed and lost trace delivery,Gap, delay and delivery state are visible; stale state cannot authorize high-risk action,P0,NOT_RUN
+STG-18,resilience,Delayed and lost trace delivery,"Gap, delay and delivery state are visible; stale state cannot authorize high-risk action",P0,NOT_RUN
 STG-19,coordination,Selective A2A trigger,Direct A2A is used only for registered negotiation/delegation conditions,P1,NOT_RUN
 STG-20,economics,Multi-agent admission gate,Multi-agent is selected only when quality gain exceeds coordination cost under matched budget,P1,NOT_RUN
 STG-21,governance,Cross-ecology evidence exchange,Source and receiving ecology each apply local approval and minimum-disclosure policy,P0,NOT_RUN
-STG-22,governance,Audit and independent review,Key reads/writes, approvals, denials, artifact changes and recovery actions are independently auditable,P0,NOT_RUN
+STG-22,governance,Audit and independent review,"Key reads/writes, approvals, denials, artifact changes and recovery actions are independently auditable",P0,NOT_RUN
