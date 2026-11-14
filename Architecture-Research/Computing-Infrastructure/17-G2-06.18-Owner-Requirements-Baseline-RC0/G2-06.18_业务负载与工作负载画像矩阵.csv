@@ -1,0 +1,15 @@
+需求ID,工作负载类别,典型场景,业主必须提供的输入,关键性能与服务指标,资源/架构约束,责任Owner,状态,验收备注
+W-01,GPU训练,预训练/持续训练/微调/强化学习/多模态,模型参数规模、精度、并行策略、数据集规模、GPU数、作业时长、目标完成时间、checkpoint大小/频率,吞吐、MFU、作业完成率、有效GPU小时、恢复时间、能耗,NVL72本地NVLink域；GPU Fabric A/B；Storage Fabric承载数据与checkpoint,模型Owner/AI平台Owner,TBD-Owner,固定模型/数据集/精度/软件版本基准
+W-02,GPU在线推理,在线生成、多模态推理、Embedding/Rerank,模型版本、量化、上下文长度、输入/输出token分布、并发、平均/峰值QPS、缓存命中,TTFT、TPOT、p50/p95/p99延迟、tokens/s、错误率、SLO达成率,按模型/租户隔离；跨区不视为单一NVLink域,业务Owner/AI平台Owner,TBD-Owner,固定模型/精度/上下文/并发/质量门槛
+W-03,CPU Agent执行,Agent规划、工具执行、沙箱、工作流编排,并发Agent/任务、每任务vCPU/内存、任务时长、沙箱类型、临时盘、工具调用量,任务吞吐、队列等待、执行成功率、隔离测试、资源利用率、审计完整性,CPU/HPC星；租户/NUMA/容器或VM隔离；工具权限独立治理,Agent平台Owner/安全Owner,TBD-Owner,高风险工具审批、沙箱隔离和审计测试
+W-04,CPU/HPC批处理,数据预处理、仿真、传统HPC、ETL,核心数、内存带宽、NUMA、MPI/通信模式、任务并行度、作业时长、输入输出数据量,任务完成时间、吞吐、节点效率、失败重试、内存/网络瓶颈,N1380拓扑须在2N2S与4N1S中经负载验证后选择,HPC Owner/CPU Owner,TBD-Owner,准确CPU SKU、内存、节点拓扑和软件许可待确认
+W-05,容量存储,数据集、模型权重、归档、读密集数据,初始TB/PB、年增长率、读写比、IOPS、吞吐、块大小、保留期、DWPD,可用PB、读写吞吐、p95/p99延迟、重建时间、耐久度、数据恢复,R7725xd+QLC为容量层候选；热元数据和高写入事务层分离,Storage Owner/Data Owner,TBD-Owner,明确可用容量口径和保护/热备策略
+W-06,Checkpoint与跨区复制,训练checkpoint、模型权重、数据副本,单次checkpoint TB、频率、变化率、复制窗口、带宽、可接受复制滞后、校验策略,复制完成时间、复制滞后、完整性校验、恢复点和恢复时间,默认异步跨区；强同步仅在实测网络与一致性要求通过后单独批准,Storage Owner/业务Owner,TBD-Owner,按数据类型定义RPO/RTO，不以标称带宽推算
+W-07,权威控制与交易,SCO/RCP/LCP、Reservation/Lease、Policy、Saga,API请求率、并发事务、事件速率、状态对象数、写入峰值、审计保留,幂等性、状态一致性、对账时长、故障恢复、审计可追溯,本地Owner权威；TaskClaim、ResourceLease、PolicyDecision分离,Control Plane Owner/资源Owner,Confirmed-Structure,沿用G2-04与G2-06.8状态机/故障门禁
+W-08,可观测与安全审计,日志、指标、追踪、身份、策略、告警,事件/秒、日志GB/日、保留期、检索并发、审计法域、密钥轮换,采集完整率、检索时延、丢失率、审计追溯、密钥恢复,Control/Support与OOB/Facility隔离；关键审计本地缓冲,Security Owner/Operations Owner,TBD-Owner,定义时间源、保留、脱敏和跨区访问
+W-09,跨区域业务服务,跨区API、调度、模型分发、数据同步,业务调用比例、对象大小、同步/异步、峰值并发、网络故障容忍,RTT、抖动、丢包、吞吐、复制滞后、RPO/RTO、切换成功率,A/B独立运行；WAN分区时本地自治，不自动扩大权限,Network Owner/业务Owner,TBD-Owner,以真实候选地块与物理路由测试
+W-10,设施监控与安全联锁,UPS、PDU、CDU、泵、漏液、温度、消防、门禁,测点数量、采样周期、报警阈值、联锁因果矩阵、值班响应,报警延迟、联锁动作、误报/漏报、事件记录、人工接管,L0本地硬联锁独立运行；平台只读监测或经授权调用受控接口,Facility Owner/安全负责人,Confirmed-Structure,阈值由OEM/专业工程师/当地法规签署
+W-11,备份与灾备,不可变备份、异地恢复、密钥恢复,全量/增量规模、频率、保留周期、恢复顺序、隔离策略,恢复成功率、RPO、RTO、数据完整性、恢复演练结果,备份与生产权限隔离；跨区复制遵循驻留与Owner授权,Data Owner/BCP Owner,TBD-Owner,定义恢复顺序、不可变策略和演练
+W-12,开发与模型生命周期,模型构建、镜像仓库、CI工件、数据流水线,并发构建、镜像/模型大小、依赖下载量、版本数量、制品保留,构建吞吐、缓存命中、供应链完整性、回滚时间,Control/Storage网络分离；制品签名与来源证明,Platform Owner/Security Owner,TBD-Owner,定义SBOM、签名、镜像扫描和制品保留
+W-13,远程运维与现场服务,OEM RMA、带外管理、跳板机、工单,会话数、响应时限、维护窗口、远程访问角色、现场到达目标,响应/修复时间、授权撤销、会话审计、维护后复测,OOB/Facility隔离；短时授权、审批、双人控制按风险分级,Operations Owner/Security Owner,TBD-Owner,供应商SLA不能替代业务连续性
+W-14,扩容与迁移,新增GPU、扩容存储、搬迁/退租,增长曲线、容量触发阈值、交付提前期、迁移数据量、停机窗口,扩容交付时间、迁移一致性、服务中断、回退成功,资源目录更新不等于资源可用；新SKU需重做QVL/功率/液冷/网络验收,Architecture Owner/Procurement,TBD-Owner,明确扩容优先权、资产归属和退出责任
