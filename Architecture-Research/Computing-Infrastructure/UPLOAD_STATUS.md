@@ -276,3 +276,15 @@ PR #13 持续跟踪本工作分支并保持 Draft。GitHub 显示可合并不代
 - 根README和本状态文件均已包含G2-06.20阶段入口/归档记录。
 - PR #13保持Open/Draft；GitHub报告mergeable=true、mergeable_state=clean；分支相对main behind 2 commits（ahead数量随工作分支提交变化）。尚未合并main；仍需处理分支落后和Draft评审状态。
 - 哈希/结构检查不代表业务Owner签署、OEM QVL、Utility firm MW、水务许可、专业工程批准或现场FAT/SAT。
+
+
+## G2-06.21 本轮归档（2026-11-14）
+
+- 新增17个内容文件：3份Markdown（README、主报告、ADR-08）、12份CSV、2张简体中文Mermaid图源；另有SHA256SUMS与文件清单/校验记录2份，共19个阶段文件。
+- GPU平台决策更新：Vera Rubin NVL72（Lenovo 7DJVCTO4WW）主参考候选；AMD Helios MI455X异构替代；GB300 NVL72过渡/兼容对照。未作采购批准。
+- Vera Rubin公开机柜口径：72 Rubin GPU/36 Vera CPU；MaxP约227kW、MaxQ约187kW机柜TDP；约96%液体/4%空气热捕获；4×110kW Power Shelf输出440kW，不能视为实际AC功耗。
+- Helios：72 MI455X/MI450X、约31TB HBM4、260TB/s Scale-up、43TB/s Scale-out；AMD Q3 2026准备稿称MI455X已批量出货且首批客户Helios机柜上线，但完整OEM整柜功耗/热工/订货SKU仍待确认。
+- SC755 V5/N1380：8 Tray、32 CPU Socket；2N2S为16双路节点，4N1S为32单路节点；两种模式总Socket数相同，节点内存/PCIe/管理粒度不同。
+- 存储分层：Micron 9650 Gen6高性能层；KIOXIA LC9 245.76TB QLC容量/读密集层。每区2台40盘LC9原始容量19.6608PB；保护后容量需扣预留、元数据、快照和水位。
+- 12份CSV结构检查通过；SHA-256校验覆盖17个内容文件，SHA256SUMS与校验记录自身不纳入哈希。
+- 所有工程参数仍需Owner签署、OEM QVL、Utility firm MW、水务许可、WAN物理路径、现场FAT/SAT和正式报价。阶段状态RC0/Proposed。
