@@ -13,10 +13,15 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 04_威胁与治理边界.csv：18 项共享环境与跨生态发现威胁。
 - 05_跨生态能力发现与目录联邦架构决策备忘录.md：B 线本地权威目录、联邦摘要目录、能力广告、候选解析和本地授权边界。
 - 06_研究证据与引用边界.md：跨生态能力发现、协议和身份研究证据。
-- 08_能力发现契约静态审查与缺口清单.md：能力发现契约的 10 项静态审查缺口与候选修复记录。\n- 09_WP-020_跨生态信任协议与能力授权链设计.md：双边信任、Owner 签名、委托衰减、令牌交换、密钥轮换和撤销协议。\n- 10_WP-020_研究证据登记.md：SPIFFE、OpenID Federation、OAuth、DPoP、JWS/JWT、JCS 规范证据。\n- 11_WP-020_信任协议静态审查与未决事项.md：WP-020 的 10 项未决事项和静态检查边界。
+- 08_能力发现契约静态审查与缺口清单.md：能力发现契约的 10 项静态审查缺口与候选修复记录。
+- 09_WP-020_跨生态信任协议与能力授权链设计.md：双边信任、Owner 签名、委托衰减、令牌交换、密钥轮换和撤销协议。
+- 10_WP-020_研究证据登记.md：SPIFFE、OpenID Federation、OAuth、DPoP、JWS/JWT、JCS 规范证据。
+- 11_WP-020_信任协议静态审查与未决事项.md：WP-020 的 10 项未决事项和静态检查边界。
 - contracts/：能力广告、能力解析、能力生命周期事件、Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation 候选 JSON Schema（6 份）。
-- validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv：31 项 F1 能力发现、资格一致性与事件契约验收矩阵。\n- validation/WP020_TRUST_PROTOCOL_VALIDATION_MATRIX.csv：24 项跨生态信任、委托、令牌与撤销验收设计。
-- assets/00_V1.9_跨生态能力发现与观察Runtime.svg：7680×4320 SVG 架构源图。\n- assets/01_WP-020_跨生态信任协议与授权链.svg：7680×4320 SVG 信任与授权链架构源图。
+- validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv：31 项 F1 能力发现、资格一致性与事件契约验收矩阵。
+- validation/WP020_TRUST_PROTOCOL_VALIDATION_MATRIX.csv：24 项跨生态信任、委托、令牌与撤销验收设计。
+- assets/00_V1.9_跨生态能力发现与观察Runtime.svg：7680×4320 SVG 架构源图。
+- assets/01_WP-020_跨生态信任协议与授权链.svg：7680×4320 SVG 信任与授权链架构源图。
 - STATUS.md：本版本状态和禁止越过的门禁。
 - GITHUB_BLOB_MANIFEST.md：Git Blob 标识清单；Git Blob SHA 不等同于文件 SHA-256。
 
