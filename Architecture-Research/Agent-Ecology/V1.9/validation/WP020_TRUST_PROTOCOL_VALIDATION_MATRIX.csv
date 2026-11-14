@@ -4,22 +4,22 @@ WP020-02,TrustBinding,A信任B且B信任C但A未配置C,不得推导A信任C,本
 WP020-03,TrustBinding,同一公钥被错误绑定到两个Trust Domain,验证失败或隔离并产生告警,Trust Domain与Bundle映射测试,Critical,NOT_RUN
 WP020-04,WorkloadIdentity,工作负载SVID过期或SPIFFE ID与Audience不匹配,拒绝运行时交互,身份验证拒绝记录,Critical,NOT_RUN
 WP020-05,WorkloadIdentity,外部Bundle Sequence回退,不得覆盖更高Sequence的已接受Bundle,Bundle更新序列与状态快照,Critical,NOT_RUN
-WP020-06,OwnerAttestation,能力广告被非Owner且无Publisher Grant的Agent签名,签名虽有效但Owner授权链失败并隔离,Owner Registry与Grant链,Critical,NOT_RUN
+WP020-06,OwnerAttestation,非Owner且无Publisher Grant的Agent签署能力广告,即使签名密码学有效也因授权链失败而隔离,Owner Registry与Grant链,Critical,NOT_RUN
 WP020-07,OwnerAttestation,JWT alg为none或不在本地allowlist,拒绝验证且不得降级,签名负向向量与策略日志,Critical,NOT_RUN
 WP020-08,OwnerAttestation,kid有效但密钥用途与Owner签名用途不匹配,拒绝验证,Key Usage与Key Epoch记录,Critical,NOT_RUN
 WP020-09,OwnerAttestation,JCS摘要与签名绑定的payload digest不一致,拒绝验证并隔离广告,规范化字节与摘要比对,Critical,NOT_RUN
-WP020-10,OwnerAttestation,签名过期/未来生效/受众错误/typ错误,拒绝作为当前有效声明,iat/nbf/exp/aud/typ负向向量,Critical,NOT_RUN
+WP020-10,OwnerAttestation,签名过期、未来生效、受众错误或typ错误,拒绝作为当前有效声明,iat/nbf/exp/aud/typ负向向量,Critical,NOT_RUN
 WP020-11,Delegation,子Grant新增父Grant未允许的Action,拒绝子委托,父子Grant集合比较结果,Critical,NOT_RUN
-WP020-12,Delegation,子Grant扩大Purpose/Audience/Resource/DataClass,拒绝子委托,父子Grant语义差异报告,Critical,NOT_RUN
-WP020-13,Delegation,子Grant有效期/预算/调用次数超过父Grant,拒绝子委托,父子约束边界测试,Critical,NOT_RUN
-WP020-14,Delegation,父Grant未允许mayDelegate但Agent继续转委托,拒绝并审计越权尝试,Critical,NOT_RUN
+WP020-12,Delegation,子Grant扩大Purpose、Audience、Resource或DataClass,拒绝子委托,父子Grant语义差异报告,Critical,NOT_RUN
+WP020-13,Delegation,子Grant有效期、预算或调用次数超过父Grant,拒绝子委托,父子约束边界测试,Critical,NOT_RUN
+WP020-14,Delegation,父Grant未允许mayDelegate但Agent继续转委托,拒绝并审计越权尝试,Grant验证与审计日志,Critical,NOT_RUN
 WP020-15,Delegation,委托链形成循环或超过最大深度,拒绝委托链,Cycle与depth检测记录,Critical,NOT_RUN
-WP020-16,TokenExchange,Token Exchange的subject_token有效但actor_token无效,目标AS拒绝签发令牌,Token验证和拒绝日志,Critical,NOT_RUN
-WP020-17,TokenExchange,令牌Audience不属于目标资源服务,目标PEP拒绝令牌,Critical,Audience绑定与PEP拒绝证据,Critical,NOT_RUN
-WP020-18,SenderConstraint,DPoP proof重复jti或htm/htu不匹配,拒绝重放或请求错配,DPoP负向向量与重放缓存,Critical,NOT_RUN
-WP020-19,Revocation,撤销事件丢失/乱序/重复或旧epoch迟到,状态不得回退；高风险在状态未知时HOLD,事件序列/epoch/对账日志,Critical,NOT_RUN
-WP020-20,Revocation,FCP离线但本地PEP收到本地DENY或Kill Switch,本地DENY立即生效且不得依赖FCP,Critical,本地停止演练记录,Critical,NOT_RUN
-WP020-21,Revocation,Owner Signing Key疑似泄露,停止新签发、隔离密钥、提升撤销Epoch并使旧声明重新核验,Critical,事件响应桌面演练,Critical,NOT_RUN
+WP020-16,TokenExchange,subject_token有效但actor_token无效,目标Authorization Server拒绝签发令牌,Token验证和拒绝日志,Critical,NOT_RUN
+WP020-17,TokenExchange,令牌Audience不属于目标资源服务,目标PEP拒绝令牌,Audience绑定与PEP拒绝证据,Critical,NOT_RUN
+WP020-18,SenderConstraint,DPoP proof重复jti或htm、htu不匹配,拒绝重放或请求错配,DPoP负向向量与重放缓存,Critical,NOT_RUN
+WP020-19,Revocation,撤销事件丢失、乱序、重复或旧epoch迟到,状态不得回退；高风险在状态未知时HOLD,事件序列、epoch与对账日志,Critical,NOT_RUN
+WP020-20,Revocation,FCP离线但本地PEP收到本地DENY或Kill Switch,本地DENY立即生效且不依赖FCP,本地停止演练记录,Critical,NOT_RUN
+WP020-21,Revocation,Owner Signing Key疑似泄露,停止新签发、隔离密钥、提升撤销Epoch并使旧声明重新核验,事件响应桌面演练,Critical,NOT_RUN
 WP020-22,Authorization,身份和Owner签名均有效但目标域Purpose未授权,目标域DENY且不产生副作用,本地PDP/PEP决策与副作用检查,Critical,NOT_RUN
 WP020-23,Authorization,上游域ALLOW但目标域本地策略DENY,最终DENY不可被上游覆盖,双域策略决策对照,Critical,NOT_RUN
-WP020-24,Audit,多跳代理调用未记录完整subject/actor/issuer链,审计验收失败并阻断高风险动作,审计事件与Delegation Chain,Critical,NOT_RUN
+WP020-24,Audit,多跳代理调用未记录完整subject、actor与issuer链,审计验收失败并阻断高风险动作,审计事件与Delegation Chain,Critical,NOT_RUN
