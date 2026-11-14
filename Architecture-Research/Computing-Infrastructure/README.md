@@ -268,3 +268,20 @@ G2-06.18为RC0候选基线。已冻结需求结构、逻辑角色和计算/验�
 - [业务到工程容量追踪图](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/diagrams/G2-06.19_业务到工程容量追踪图.mmd)；[容量计算与工程放行门禁图](18-G2-06.19-Dual-Region-Capacity-Quantitative-Model-RC0/diagrams/G2-06.19_容量计算与工程放行门禁图.mmd)。
 
 G2-06.19为RC0候选模型。已建立计算结构与可直接复核的BOM算术，不冻结业务利用率、CPU准确SKU、可用PB、区域MW、PUE/WUE、WAN带宽、冷却冗余、报价或五年TCO排名。
+
+
+## G2-06.20｜双区域十星业主输入回填与工程容量缺口分析
+
+- [G2-06.20阶段目录](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/README.md)：业主输入、十星BOM、容量缺口、故障承载与冻结门禁。
+- [业主输入回填与工程容量缺口分析报告](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_业主输入回填与工程容量缺口分析报告.md)：从40项输入到容量供需、双区域接管和G0-G5放行。
+- [40项业主输入回填总台账](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_40项业主输入回填总台账.csv)：沿用G2-06.19 I-001至I-040，增加Owner、证据、复核和批准字段。
+- [14类业务工作负载矩阵](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_14类业务工作负载回填矩阵.csv)：训练、推理、Agent/HPC、存储、控制面、Checkpoint和跨区域复制。
+- [双区域十星BOM核验矩阵](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_双区域十星BOM核验矩阵.csv)：从G2-06.10原始BOM映射候选设备、Owner和OEM验收要求。
+- [资源供需与容量缺口矩阵](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_资源供需与容量缺口分析矩阵.csv)：14个资源域。
+- [双区域故障承载与降级矩阵](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_双区域故障承载与降级矩阵.csv)：16个故障场景，区分接管、降级、暂停和本地安全停止。
+- [设备AC负荷与设施电力核对表](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_设备AC负荷与设施电力核对表.csv)、[液冷热工水务回填表](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_液冷热工水务回填表.csv)、[WAN物理路径与性能证据回填表](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_WAN物理路径与性能证据回填表.csv)。
+- [供应商答复与证据交叉映射](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_供应商答复与证据交叉映射表.csv)、[G0-G5参数冻结门禁](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_参数冻结门禁与签署清单.csv)、[四周闭环行动计划](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_四周闭环行动计划.csv)、[风险与阻塞登记册](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_风险与阻塞登记册.csv)。
+- [ADR-07业主输入证据门禁与双区域容量冻结治理](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/G2-06.20_ADR-07业主输入证据门禁与双区域容量冻结治理.md)。
+- [业主输入到工程放行追踪图](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/diagrams/G2-06.20_业主输入到工程放行追踪图.mmd)；[双区域故障承载与容量门禁图](19-G2-06.20-Owner-Input-Capacity-Gap-RC0/diagrams/G2-06.20_双区域故障承载与容量门禁图.mmd)。
+
+G2-06.20为RC0/Proposed。40项输入和14类负载均为待回填模板；无真实Owner签署、OEM QVL、Utility容量函、水务许可、物理路由和工程验收时，不冻结工程参数、不批准建设路线。
