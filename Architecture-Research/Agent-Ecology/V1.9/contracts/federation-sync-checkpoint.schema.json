@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:federation-sync-checkpoint-candidate",
+  "title": "FederationSyncCheckpointCandidate",
+  "description": "Candidate source-domain-signed checkpoint for one Peer Binding feed. The snapshot must contain complete queryable revocation tombstones; a Merkle root alone is not a complete state transfer.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "checkpointId",
+    "sourceDomainId",
+    "streamId",
+    "peerBindingId",
+    "contiguousSequence",
+    "lastEventDigest",
+    "revocationEpoch",
+    "issuedAt",
+    "completeRevocationSet",
+    "snapshot",
+    "signer",
+    "signature",
+    "notAuthorization"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "checkpointId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "streamId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "peerBindingId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contiguousSequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "lastEventDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "revocationEpoch": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "validUntil": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completeRevocationSet": {
+      "const": true
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshotId",
+        "snapshotSequence",
+        "snapshotRef",
+        "snapshotDigest",
+        "merkleRoot",
+        "hashAlgorithm",
+        "entryCount",
+        "includesAllTombstones"
+      ],
+      "properties": {
+        "snapshotId": {
+          "type": "string"
+        },
+        "snapshotSequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "snapshotRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "snapshotDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "merkleRoot": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "hashAlgorithm": {
+          "enum": [
+            "SHA-256"
+          ]
+        },
+        "entryCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "includesAllTombstones": {
+          "const": true
+        },
+        "consistencyProofRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "previousCheckpointDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      }
+    },
+    "signer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "principalId",
+        "keyId",
+        "keyEpoch",
+        "algorithm"
+      ],
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "keyId": {
+          "type": "string"
+        },
+        "keyEpoch": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "algorithm": {
+          "enum": [
+            "ES256",
+            "EdDSA",
+            "PS256"
+          ]
+        }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "signedPayloadDigest",
+        "compactJws"
+      ],
+      "properties": {
+        "format": {
+          "const": "JWS"
+        },
+        "signedPayloadDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "compactJws": {
+          "type": "string",
+          "minLength": 20
+        }
+      }
+    },
+    "notAuthorization": {
+      "const": true
+    }
+  }
+}
