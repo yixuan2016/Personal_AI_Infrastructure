@@ -29,3 +29,4 @@ F1-CD-027,Constraints,maxCost存在但缺少costUnit或requiredEvidenceLevels不
 F1-CD-028,ExportPolicy,exportPolicy为NAMED_DOMAINS但visibleToDomains为空或缺失,Schema拒绝未定义可见域的定向导出,JSON Schema负向向量,NOT_RUN,Critical
 F1-CD-029,Provenance,候选缺少sourceWatermark、revocationEpoch、observedAt或expiresAt,Schema拒绝缺少来源水位的新鲜度信息,JSON Schema负向向量,NOT_RUN,Critical
 F1-CD-030,EventSchema,能力生命周期事件缺少CloudEvents核心属性或事件类型对应数据字段,Schema拒绝非法事件封套和状态迁移载荷,JSON Schema负向向量与事件乱序测试,NOT_RUN,High
+F1-CD-031,EligibilityPriority,attestation无效且撤销状态未知等冲突同时出现,INELIGIBLE优先于HOLD且绝不进入可执行候选,JSON Schema组合负向向量与决策表,NOT_RUN,Critical
