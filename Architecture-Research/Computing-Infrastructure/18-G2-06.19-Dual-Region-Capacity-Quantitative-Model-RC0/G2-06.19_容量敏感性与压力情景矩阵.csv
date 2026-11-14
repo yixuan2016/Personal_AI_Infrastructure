@@ -1,0 +1,15 @@
+情景ID,情景名称,扰动变量,输入/区间,重新计算输出,边界/禁止假设,责任Owner
+S-01,基准负载,GPU/CPU/Storage/WAN按签署画像,Owner回填,容量/功率/冷量/水耗/TCO,P0未签则TBD,业务Owner
+S-02,低负载,利用率/分配率下降,低/基准/高值待确认,闲置成本/单位GPU-h/扩容点,不把日历GPU-h当产出,Business/Finance
+S-03,峰值突发,QPS/并发/复制峰值上升,峰值倍数待输入,队列/WAN/PDU峰值,同步负荷曲线实测,Business/Platform
+S-04,可用率下降,故障/维护/升级时间增加,MTBF/MTTR待OEM,有效GPU-h/备件/重试,冗余容量不得重复售卖,Operations/OEM
+S-05,数据增长,CAGR/checkpoint/保留增加,Data Owner输入,可用PB/扩容/重建窗口,主数据/备份/副本分开,Data/Storage
+S-06,WAN受限,有效吞吐下降/RTT丢包升高,物理路由实测,复制积压/RPO/RTO,不用标称线速替代,Network/Carrier
+S-07,电网延迟,firm MW送电日期延后,Utility书面日期,投产/机会成本/闲置资产,月份仅作敏感参数,Utility/Project
+S-08,能源涨价,电量/需量/容量费上升,Tariff情景,五年OPEX/路线排序,计费模式不重复计量,Finance/Utility
+S-09,冷却降额,CDU/冷源单故障/降额,OEM曲线/FMEA,可用负载/恢复时间,N+1与1+1分别验证,Facility/OEM
+S-10,水资源限供,旱情/许可/排水受限,许可/季节性数据,WUE/冷却模式/降额,无水权不假设可用,Environmental
+S-11,单区故障,电力/冷却/网络/灾害共同故障,故障域/演练条件,跨区承载/RPO/RTO,另一地区不自动超额接管,BCP/Architecture
+S-12,GPU代际更新,SKU/性能/功耗/液冷接口变化,OEM正式SKU,QVL/设施/TCO/残值,Roadmap不等于供货,Procurement/OEM
+S-13,退出迁移,租约结束/数据搬迁/复原,合同/数据量,退出成本/停机/残值,残值只抵扣一次,Legal/Asset
+S-14,规则变化,驻留/出口/隐私规则变化,官方法务解释,区域可用性/复制架构,未批准数据不跨境,Legal/Data
