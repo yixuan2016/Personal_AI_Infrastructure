@@ -1,5 +1,5 @@
 区域,星位,设备域,OEM/平台候选,型号或SKU,参考配置,数量,关键端口/接口,电力/冷却口径,状态,待确认项
-A,A1,GPU机柜,HPE,HPE GB300 NVL72 S7K95A,72x B300;36x Grace;18 compute trays;9 NVLink switch trays,1套,每tray 4x800G OSFP（按Lenovo平台公开参考核对具体HPE SKU）,132kW名义TDP;155kW EDPp;192kW母线规划;液冷,RC0候选,完整订货SKU/机柜布线/CDU冗余
+A,A1,GPU机柜,HPE,HPE GB300 NVL72 S7K95A,72x B300;36x Grace;18 compute trays;9 NVLink switch trays,1套,每tray 4个OSFP物理接口（2个ConnectX-8 IO modules×每模块2个OSFP；速率/模式待HPE端口表确认）,132kW名义TDP;155kW EDPp;192kW母线规划;液冷,RC0候选,完整订货SKU/机柜布线/CDU冗余
 A,A1,GPU机柜替代,Dell,PowerEdge XE9712 / IR9048,GB300 NVL72;18x 1RU sled;72x B300,1套,按Dell XE9712完整系统配置,33kW Power Shelf;DLC选项,替代候选,整机输入/冷却配置/区域SKU
 A,A1,GPU机柜替代,Lenovo,GB300 NVL72 Type 7DJV,18 compute trays;9 NVLink switch trays;72x B300,1套,每tray 4x800G OSFP,6或8 Power Shelves;双液冷回路,替代候选,完整电气/冷却/服务配置
 A,A2,CPU/HPC,Lenovo,SC755 V5 7DN6CTO1WW + N1380 7DDHCTOLWW,8 trays;2N2S;16 dual-socket nodes;EPYC 9976-S7候选,1套enclosure,最多32x25GbE onboard（16节点x2）,4x15kW PCS;N+1 DC capacity 54kW;45C水温示例42.8L/min,RC0候选,CPU地区供货/内存QVL/PCS冗余
@@ -10,7 +10,7 @@ A,A5,GPU Fabric IB,NVIDIA,Quantum-X800 Q3400-RA,144x800Gb/s OSFP;115.2Tb/s,2台,
 A,A5,GPU Fabric Ethernet,NVIDIA,Spectrum-6 SN6600,128x800Gb/s OSFP;102.4Tb/s,2台,每台初始约36条GPU rack链路（双平面均分假设）,3.94kW FRO或3.2kW TRO典型,替代候选,RoCE参数/光模块/拥塞控制
 A,A5,OOB管理,待定,独立管理交换机,双交换机/独立管理平面,2台,服务器BMC/Redfish/设施管理,待定,待选型,端口数/PoE/带外隔离
 A,A5,WAN边界,待定,路由器/防火墙/运营商CPE,双运营商双路径,至少2套,100/400G按业务合同设计,待定,待选型,运营商/ASN/线路SLA/安全策略
-B,B1,GPU机柜,HPE,HPE GB300 NVL72 S7K95A,72x B300;36x Grace;18 compute trays;9 NVLink switch trays,1套,每tray 4x800G OSFP（按Lenovo平台公开参考核对具体HPE SKU）,132kW名义TDP;155kW EDPp;192kW母线规划;液冷,RC0候选,完整订货SKU/机柜布线/CDU冗余
+B,B1,GPU机柜,HPE,HPE GB300 NVL72 S7K95A,72x B300;36x Grace;18 compute trays;9 NVLink switch trays,1套,每tray 4个OSFP物理接口（2个ConnectX-8 IO modules×每模块2个OSFP；速率/模式待HPE端口表确认）,132kW名义TDP;155kW EDPp;192kW母线规划;液冷,RC0候选,完整订货SKU/机柜布线/CDU冗余
 B,B1,GPU机柜替代,Dell,PowerEdge XE9712 / IR9048,GB300 NVL72;18x 1RU sled;72x B300,1套,按Dell XE9712完整系统配置,33kW Power Shelf;DLC选项,替代候选,整机输入/冷却配置/区域SKU
 B,B1,GPU机柜替代,Lenovo,GB300 NVL72 Type 7DJV,18 compute trays;9 NVLink switch trays;72x B300,1套,每tray 4x800G OSFP,6或8 Power Shelves;双液冷回路,替代候选,完整电气/冷却/服务配置
 B,B2,CPU/HPC,Lenovo,SC755 V5 7DN6CTO1WW + N1380 7DDHCTOLWW,8 trays;2N2S;16 dual-socket nodes;EPYC 9976-S7候选,1套enclosure,最多32x25GbE onboard（16节点x2）,4x15kW PCS;N+1 DC capacity 54kW;45C水温示例42.8L/min,RC0候选,CPU地区供货/内存QVL/PCS冗余
