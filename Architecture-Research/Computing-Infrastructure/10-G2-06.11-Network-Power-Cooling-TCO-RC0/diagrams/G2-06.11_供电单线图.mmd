@@ -7,9 +7,9 @@ flowchart TB
   UPSB --> PDUB["PDU / 母线 B"]
 
   subgraph GPU["GB300 NVL72｜具体映射以 HPE 单线图为准"]
-    PDUA -.->|"经批准的支路集合"| WHIPA["Power Whip 1..8<br/>A/B分配待OEM确认"]
-    PDUB -.->|"经批准的支路集合"| WHIPB["Power Whip 1..8<br/>A/B分配待OEM确认"]
-    WHIPA --> PS["8× Power Shelf<br/>每个33kW额定输出"]
+    PDUA -.->|"OEM批准的A路支路集合"| WHIPA["部分 Power Whip"]
+    PDUB -.->|"OEM批准的B路支路集合"| WHIPB["其余 Power Whip"]
+    WHIPA --> PS["8× Power Shelf<br/>每个Shelf一条Power Whip"]
     WHIPB --> PS
     PS --> BUS["50V DC Busbar"]
     BUS --> RACK["18 Compute Trays + 9 NVLink Trays"]
