@@ -23,7 +23,7 @@
 
 ## 工作流 C｜WP-020 跨生态信任协议
 - 新增跨生态信任协议与能力授权链设计备忘录、研究证据登记、静态审查与未决事项。
-- 新增 Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation 六份候选 JSON Schema。
+- 新增 新增 Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation 三份候选 JSON Schema（V1.9 总计六份）。
 - 新增 WP-020 验收矩阵 24 项，全部 NOT_RUN。
 - 新增 7680×4320 SVG 信任与授权链架构源图。
 - 新增 6 项候选 ADR（ADR-111—ADR-116），威胁矩阵扩展至 26 项。
