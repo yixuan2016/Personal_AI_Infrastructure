@@ -1,0 +1,7 @@
+业务流,方向,数据量TB,窗口小时,协议效率η,链路利用率u,最低Gbps估算,公式/示例,注意事项,状态
+Checkpoint复制,A→B,100,24,0.70,0.70,18.90,8000×100/(24×3600×0.7×0.7),仅示例，不代表真实站点带宽,Illustrative
+Checkpoint复制,B→A,TBD,TBD,TBD,TBD,TBD,8000×数据TB/(窗口小时×3600×η×u),由Data/BCP/Network Owner回填,TBD-Owner
+模型/数据集分发,A↔B,TBD,TBD,TBD,TBD,TBD,数据量/更新频率/允许窗口/并发流,压缩/加密/重传/突发需实测,TBD-Owner
+恢复积压,A↔B,TBD,TBD,TBD,TBD,TBD,净吞吐=有效链路吞吐-新产生数据变化率,恢复积压须在新写入之外消化,TBD-Engineer
+控制面流量,A↔B,TBD,TBD,TBD,TBD,TBD,API/事件率×平均消息大小×协议开销,与大数据复制区分QoS,TBD-Owner
+物理路径,A/B,—,—,—,—,TBD,核验PoP/管道/入楼/MMR/共享段,双运营商名称不代表物理独立,TBD-Vendor

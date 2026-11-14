@@ -1,0 +1,11 @@
+组合ID,区域A路线,区域B路线,设施/资产边界,成本构成/模型,当前结果,比较前置条件
+AA,A自建,A自建,两区土地/建筑/电网/冷源/IT/网络,CAPEX+能源+水务+运维+税费+退出,TBD,同负载/SKU/SLO/五年
+AB,A自建,B托管,A自建；B托管,A自建现金流+B租金/能源/服务费,TBD,逐区核算责任与计费
+AC,A自建,C Powered Shell,A自建；B专属套间+自建IT,A自建+B租赁/专属设施,TBD,明确CDU/配电/退出责任
+BA,B托管,A自建,A托管；B自建,A租金/服务费+B自建现金流,TBD,与AB对称，地区成本不同
+BB,B托管,B托管,两区高密度托管,租金/预留kW/能源/液冷/网络/IT,TBD,核验双区独立与容量锁定
+BC,B托管,C Powered Shell,A托管；B专属套间,A托管+B专属设施/IT现金流,TBD,明确B侧设施RACI
+CA,C Powered Shell,A自建,A专属套间；B自建,A租赁/下游设备+B自建,TBD,两区接口不同
+CB,C Powered Shell,B托管,A专属套间；B托管,A专属设施+B租金/服务费,TBD,核验控制域/运维边界
+CC,C Powered Shell,C Powered Shell,两区租赁设施+业主IT,租赁/专属下游配电/CDU/IT/退出,TBD,验证专属设施和整机冗余
+ALL,统一口径,统一口径,NPV=CF0+ΣCFt/(1+r)^t-Residual5/(1+r)^5,NPV/未折现现金流/单位有效GPU-h/百万Token,TBD,M1-M5计费去重；无正式报价不排名

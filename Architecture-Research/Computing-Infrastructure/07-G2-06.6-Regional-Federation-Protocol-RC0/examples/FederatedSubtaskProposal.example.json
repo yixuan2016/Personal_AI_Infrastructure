@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.0-RC0",
+  "proposal_id": "proposal-2026-00017",
+  "task_contract_ref": "urn:example:contract:task-2026-00017",
+  "contract_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "source_region": "region-east",
+  "target_regions": [
+    "region-west"
+  ],
+  "required_site_refs": [
+    "urn:example:site:site-west-01"
+  ],
+  "task_graph_ref": "urn:example:task-graph:graph-00017",
+  "ontology_version": "3.1.0-RC0",
+  "constraint_profile": {
+    "security_level": "restricted",
+    "data_residency": [
+      "region-east"
+    ],
+    "gpu_profile": "gpu-hpc-profile-x",
+    "network_profile": "cross-region-approved",
+    "deadline_at": "2026-11-12T13:00:00Z"
+  },
+  "data_use_requirements": [
+    {
+      "data_ref": "urn:example:data:dataset-77",
+      "purpose": "approved-model-training",
+      "processing_mode": "approved_derived_data_transfer",
+      "allowed_regions": [
+        "region-west"
+      ],
+      "output_disclosure_profile": "aggregate-metrics-only",
+      "grant_ref": "urn:example:grant:data-77-to-region-west",
+      "retention_until": "2026-11-13T00:00:00Z"
+    }
+  ],
+  "policy_context_refs": [
+    "urn:example:policy:ctx-00017"
+  ],
+  "trust_agreement_refs": [
+    "urn:example:trust:agreement-east-west"
+  ],
+  "created_at": "2026-11-12T23:01:00Z",
+  "expires_at": "2026-11-12T23:03:00Z",
+  "issuer_ref": "urn:example:principal:sco-global",
+  "audience": "urn:example:rcp:region-west",
+  "idempotency_key": "proposal-00017-v1",
+  "payload_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "correlation_id": "corr-task-2026-00017",
+  "signature_ref": "urn:example:evidence:proposal-signature"
+}

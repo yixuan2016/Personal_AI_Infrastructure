@@ -1,0 +1,54 @@
+flowchart LR
+  subgraph P["AEE / ASCP 横切 Profile"]
+    P1["环境描述符"]
+    P2["CloudEvents 痕迹语义"]
+    P3["订阅与投递上下文"]
+    P4["TaskClaim"]
+    P5["Evidence / Result 关联"]
+    P6["GovernanceContextRef"]
+  end
+  subgraph D["DM04 六域接口（既有权威）"]
+    D1["联邦治理"]
+    D2["身份与授权"]
+    D3["数据空间"]
+    D4["算力星"]
+    D5["联邦任务"]
+    D6["证据与验收"]
+  end
+  ADS["ADS / SCO：跨域协调与 Saga 视图"]
+  FWSX["FWSX：事件投递 / 游标 / 重放"]
+  A2A["A2A 1.0：Agent 消息与任务交互"]
+  subgraph A["站点 A：本地权威"]
+    A1["IAM / PDP / PEP"]
+    A2["Data Owner / Connector"]
+    A3["Local Lease Authority / Scheduler"]
+    A4["Local Task Coordinator / TaskClaim"]
+    A5["Evidence / Acceptance / Metering"]
+    A6["Outbox / Inbox / Audit"]
+  end
+  subgraph B["站点 B：本地权威"]
+    B1["IAM / PDP / PEP"]
+    B2["Data Owner / Connector"]
+    B3["Local Lease Authority / Scheduler"]
+    B4["Local Task Coordinator / TaskClaim"]
+    B5["Evidence / Acceptance / Metering"]
+    B6["Outbox / Inbox / Audit"]
+  end
+  P --> D
+  D --> ADS
+  ADS <--> A
+  ADS <--> B
+  A <--> FWSX
+  FWSX <--> B
+  A <--> A2A
+  A2A <--> B
+  D2 --> A1
+  D2 --> B1
+  D3 --> A2
+  D3 --> B2
+  D4 --> A3
+  D4 --> B3
+  D5 --> A4
+  D5 --> B4
+  D6 --> A5
+  D6 --> B5

@@ -1,0 +1,26 @@
+测试ID,域,测试场景,注入方式,期望结果,禁止行为,证据,优先级
+G266-001,目录,区域摘要过期,推进valid_until,候选查询标记stale并重新向Owner确认,不得将旧容量用于Commit,快照版本与Owner查询回执,P0
+G266-002,目录,区域摘要部分可见,隐藏部分Site记录,返回partial并披露过滤状态,不得声称区域完整容量,查询过滤审计,P1
+G266-003,目录,Owner epoch变化,替换Owner代次,旧代次事件不覆盖新状态,不得回滚Owner权威,epoch冲突报告,P0
+G266-004,契约,Ontology版本不兼容,提交未知Profile,返回ONTOLOGY_INCOMPATIBLE,不得静默降级安全字段,兼容矩阵与错误响应,P0
+G266-005,身份,Token audience错误,发往错误区域API,401或403拒绝,不得接受宽泛audience,身份决策日志,P0
+G266-006,身份,签名无效,修改payload后重放,拒绝请求且无副作用,不得信任传输通道代替消息签名,验证报告,P0
+G266-007,重放,过期命令重放,延迟提交过期请求,拒绝并保留审计,不得刷新issued_at继续执行,过期拒绝回执,P0
+G266-008,幂等,同key同digest重试,重复发送相同命令,返回同一Operation/Receipt,不得重复预留或扣费,幂等账本,P0
+G266-009,幂等,同key不同digest,更改请求载荷,409 IDEMPOTENCY_CONFLICT,不得执行第二次副作用,ProblemDetails,P0
+G266-010,Prepare,部分站点Prepare成功,另一站点拒绝,进入补偿且不激活,不得把区域成功等同全体成功,站点Prepare/Release回执,P0
+G266-011,Commit,部分站点Commit成功,丢弃一个站点响应,进入Unknown并向原Owner对账,不得换key新建Lease,Owner查询与Lease记录,P0
+G266-012,Barrier,缺少必需CommitReceipt,移除一站点回执,Barrier拒绝激活,不得单边启动,BarrierDecision,P0
+G266-013,Barrier,Policy Indeterminate,PDP返回Indeterminate,阻断高风险激活,不得把Indeterminate解释为Permit,PolicyDecision与PEP记录,P0
+G266-014,数据,DataUseGrant撤销,撤销后尝试访问,目标PEP拒绝访问,不得使用旧缓存Grant,Grant撤销与PEP审计,P0
+G266-015,事件,重复事件,重复投递同event_id,消费者幂等去重,不得重复副作用,dedup记录,P1
+G266-016,事件,Owner sequence缺口,跳过一个sequence_no,暂停投影并请求快照/补传,不得静默跳过,gap report与snapshot receipt,P0
+G266-017,事件,相同序号不同digest,伪造同sequence内容,隔离完整性冲突,不得last-write-wins,冲突审计,P0
+G266-018,事件,跨Owner乱序,打乱两个Owner事件,按Owner序列与因果引用处理,不得构造虚假全局总序,事件游标与因果图,P1
+G266-019,撤销,P0撤销通道过载,注入P3遥测洪峰,P0仍优先处理,不得被普通遥测阻塞,队列延迟与撤销回执,P0
+G266-020,恢复,RCP领导者切换,终止当前协调节点,region_epoch递增且无双主,不得改变Site Lease FencingToken,领导者切换与fencing证据,P0
+G266-021,恢复,区域网络分区,切断R1-R2链路,本地任务按授权自治新跨区Commit暂停,不得无限续租,站点本地日志,P0
+G266-022,恢复,重连后快照陈旧,提供低于撤销水位快照,拒绝快照并继续冻结高风险动作,不得回滚撤销水位,snapshot验证报告,P0
+G266-023,恢复,Unknown状态恢复,响应丢失后重启RCP,先查询原Owner再推进Saga,不得从缓存推断成功,ReconciliationReport,P0
+G266-024,数据面,控制面被用作数据代理,提交大负载数据,拒绝或要求独立授权数据路径,不得默认中转原始数据,网络路径审计,P1
+G266-025,结算,区域聚合计量不一致,修改汇总值,冻结争议并回查Metering Owner,不得覆盖原始计量,DisputeCase与原始记录,P0

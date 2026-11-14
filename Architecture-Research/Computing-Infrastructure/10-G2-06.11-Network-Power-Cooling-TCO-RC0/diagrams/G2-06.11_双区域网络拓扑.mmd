@@ -1,0 +1,55 @@
+flowchart TB
+  CORE["全局 ADS/GCP + SCO<br/>跨区域治理与业务协调"]
+  WAN["双运营商 WAN<br/>加密 / 路由策略 / 物理路径多样性"]
+  CORE <--> WAN
+
+  subgraph A["Region A｜五星网络域"]
+    A_GPU["A1 GPU Rack<br/>HPE GB300 NVL72"]
+    A_PA["GPU Fabric Plane-A<br/>Spectrum-6 SN6600"]
+    A_PB["GPU Fabric Plane-B<br/>Spectrum-6 SN6600"]
+    A_CPU["A2 CPU/HPC<br/>SC755 V5 + N1380"]
+    A_ST["A3 Storage<br/>2× R7725xd"]
+    A_CTL["A4 Control<br/>R9815 ×3"]
+    A_EDGE["A5 Edge / Security<br/>R9815 ×2"]
+    A_CONV["CPU North-South<br/>独立交换机对"]
+    A_STR["Storage Fabric<br/>独立交换机对"]
+    A_OOB["OOB / BMC / Facility<br/>独立管理交换机"]
+    A_GPU -->|"NIC rail map A"| A_PA
+    A_GPU -->|"NIC rail map B"| A_PB
+    A_CPU --> A_CONV
+    A_ST --> A_STR
+    A_PA --> A_CTL
+    A_PB --> A_CTL
+    A_CONV --> A_CTL
+    A_STR --> A_CTL
+    A_CTL --> A_OOB
+    A_EDGE --> WAN
+  end
+
+  subgraph B["Region B｜五星网络域"]
+    B_GPU["B1 GPU Rack<br/>HPE GB300 NVL72"]
+    B_PA["GPU Fabric Plane-A<br/>Spectrum-6 SN6600"]
+    B_PB["GPU Fabric Plane-B<br/>Spectrum-6 SN6600"]
+    B_CPU["B2 CPU/HPC<br/>SC755 V5 + N1380"]
+    B_ST["B3 Storage<br/>2× R7725xd"]
+    B_CTL["B4 Control<br/>R9815 ×3"]
+    B_EDGE["B5 Edge / Security<br/>R9815 ×2"]
+    B_CONV["CPU North-South<br/>独立交换机对"]
+    B_STR["Storage Fabric<br/>独立交换机对"]
+    B_OOB["OOB / BMC / Facility<br/>独立管理交换机"]
+    B_GPU -->|"NIC rail map A"| B_PA
+    B_GPU -->|"NIC rail map B"| B_PB
+    B_CPU --> B_CONV
+    B_ST --> B_STR
+    B_PA --> B_CTL
+    B_PB --> B_CTL
+    B_CONV --> B_CTL
+    B_STR --> B_CTL
+    B_CTL --> B_OOB
+    B_EDGE --> WAN
+  end
+
+  CORE --> A_CTL
+  CORE --> B_CTL
+  A_STR -.->|"受控复制 / Checkpoint"| WAN
+  WAN -.->|"受控复制 / Checkpoint"| B_STR

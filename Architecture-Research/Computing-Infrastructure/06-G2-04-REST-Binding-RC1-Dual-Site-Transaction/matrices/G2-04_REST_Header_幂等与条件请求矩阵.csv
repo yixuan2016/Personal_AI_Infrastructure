@@ -1,0 +1,11 @@
+﻿Header / 字段,适用操作,必需性,冲突/缺失响应,语义Owner,审计要求
+Authorization,所有受保护API,必需,401 UNAUTHENTICATED,Identity Provider / API Resource Server,仅记录issuer/subject引用与token jti摘要，不记录token
+X-Request-ID,所有请求,必需,400 REQUEST_ID_MISMATCH,请求发起方生成，服务校验,与body request_id一致
+X-Correlation-ID,跨服务/跨站点请求,必需,400 CORRELATION_ID_MISMATCH,请求发起方生成,贯穿Saga和事件链
+Idempotency-Key,非幂等副作用POST,必需,409 IDEMPOTENCY_KEY_REUSED,接收操作服务记录去重；领域Owner仍签发事实,同key不同digest不得执行
+If-Match,更新已有聚合根/状态迁移,必需,428缺失；412版本不符,对象权威Owner,ETag绑定对象版本与摘要
+If-None-Match,防重复创建/条件创建,按操作定义,412 PRECONDITION_FAILED,对象权威Owner,用于创建唯一资源
+traceparent,分布式追踪,可选,400仅在格式无效时,Tracing系统,不作为身份或授权
+Content-Type,JSON请求,必需,415 UNSUPPORTED_MEDIA_TYPE,API Owner,application/json
+Accept,响应协商,建议,406 NOT_ACCEPTABLE,API Owner,支持application/json及application/problem+json
+Prefer: respond-async,支持异步的操作,可选,400/422不支持该偏好,ADS/SCO Operation Owner,只影响响应偏好，不改变业务副作用

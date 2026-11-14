@@ -1,0 +1,85 @@
+{
+  "note": "example.invalid 是保留占位域名，正式发布前必须替换为 ADS 治理方持有的 HTTPS URI。",
+  "agentCardExtensionDeclaration": {
+    "capabilities": {
+      "extensions": [
+        {
+          "uri": "https://ads.example.invalid/a2a/extensions/aee/1.0",
+          "description": "ADS Environment Extension: environment references, stigmergic trace metadata, task claim and governance references.",
+          "required": false,
+          "params": {
+            "aeeProfile": "1.0.0-rc0",
+            "ascpProfile": "1.0.0-rc0",
+            "ontologyProfiles": [
+              "compute-base/3.0"
+            ],
+            "features": [
+              "environment_ref",
+              "trace_refs",
+              "task_claim_lease_ref",
+              "artifact_binding_ref",
+              "governance_context_ref"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "messageExample": {
+    "messageId": "msg-example-001",
+    "role": "ROLE_USER",
+    "parts": [
+      {
+        "text": "请基于授权的环境痕迹继续完成计算拓扑分析。"
+      }
+    ],
+    "extensions": [
+      "https://ads.example.invalid/a2a/extensions/aee/1.0"
+    ],
+    "metadata": {
+      "https://ads.example.invalid/a2a/extensions/aee/1.0": {
+        "environment_ref": "urn:ads:environment:compute-domain:001",
+        "trace_refs": [
+          "urn:ads:trace:001",
+          "urn:ads:trace:002"
+        ],
+        "purpose": "compute-topology-analysis",
+        "governance_context_ref": "urn:ads:governance-context:001"
+      }
+    }
+  },
+  "taskMetadataExample": {
+    "id": "a2a-task-id-local-to-a2a",
+    "metadata": {
+      "https://ads.example.invalid/a2a/extensions/aee/1.0": {
+        "global_task_ref": "urn:sco:global-task:001",
+        "sco_task_run_ref": "urn:sco:task-run:001",
+        "environment_ref": "urn:ads:environment:compute-domain:001",
+        "task_claim_lease_ref": "urn:sco:task-claim-lease:001"
+      }
+    }
+  },
+  "artifactExample": {
+    "artifactId": "a2a-artifact-id-local-to-task",
+    "name": "计算拓扑分析成果",
+    "parts": [
+      {
+        "text": "成果正文通过受控 Artifact Registry 引用读取。"
+      }
+    ],
+    "extensions": [
+      "https://ads.example.invalid/a2a/extensions/aee/1.0"
+    ],
+    "metadata": {
+      "https://ads.example.invalid/a2a/extensions/aee/1.0": {
+        "artifact_binding_ref": "urn:ads:artifact-binding:001",
+        "artifact_ref": "urn:artifact-registry:compute-topology:version-1",
+        "artifact_version": "1",
+        "content_digest": {
+          "algorithm": "sha-256",
+          "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    }
+  }
+}

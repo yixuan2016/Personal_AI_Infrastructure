@@ -1,0 +1,31 @@
+flowchart TB
+  UA["区域 A 上级电源路径 A"] --> SWA["变压器/开关柜 A"]
+  UB["区域 A 上级电源路径 B"] --> SWB["变压器/开关柜 B"]
+  SWA --> UPSA["UPS-A / 旁路 / 计量"]
+  SWB --> UPSB["UPS-B / 旁路 / 计量"]
+  UPSA --> PDUA["PDU / 母线 A"]
+  UPSB --> PDUB["PDU / 母线 B"]
+
+  subgraph GPU["GB300 NVL72｜具体映射以 HPE 单线图为准"]
+    PDUA -.->|"OEM批准的A路支路"| MAP["A/B支路分配矩阵<br/>具体Whip编号待HPE确认"]
+    PDUB -.->|"OEM批准的B路支路"| MAP
+    MAP --> WHIPS["8条独立Power Whip<br/>每个Power Shelf一条Whip"]
+    WHIPS --> PS["8× Power Shelf<br/>每个Shelf最高33kW输出"]
+    PS --> BUS["50V DC Busbar"]
+    BUS --> RACK["18 Compute Trays + 9 NVLink Trays"]
+  end
+
+  PDUA --> SERVA["R7725xd / R9815 / 网络设备 PSU-A"]
+  PDUB --> SERVB["R7725xd / R9815 / 网络设备 PSU-B"]
+
+  PDUA --> CDU_A["CDU / 泵组 / 设施控制供电 A"]
+  PDUB --> CDU_B["CDU / 泵组 / 设施控制供电 B"]
+
+  SWA --> GEN["备用发电 / ATS / 站点能源管理"]
+  SWB --> GEN
+  GEN --> SWA
+  GEN --> SWB
+
+  SAFETY["消防 / 漏液 / 急停 / 设施硬联锁<br/>本地独立控制"] -.-> CDU_A
+  SAFETY -.-> CDU_B
+  SAFETY -.-> RACK

@@ -1,0 +1,12 @@
+﻿回执/事件,签发方,必需字段,消费方,不可替代的事实
+PrepareReceipt,Site Reservation Authority,"transaction_id,site_id,reservation_id,contract_digest,resource_profile,prepared_until,state_version,issued_at,signature_ref",SCO Saga Coordinator,只证明准备成功，不证明长期租约或执行已开始
+PrepareRejectReceipt,Site Reservation Authority,"transaction_id,site_id,reason_code,failed_constraints,as_of,signature_ref",SCO Saga Coordinator,拒绝事实由站点Owner签发
+CommitReceipt,Site Lease Authority,"transaction_id,site_id,reservation_ref,lease_ref,fencing_epoch,lease_expires_at,contract_digest,state_version,signature_ref",SCO Barrier Coordinator,只证明本地Lease签发，不代表Barrier激活
+ReadyToActivateReceipt,Site Local Task Coordinator,"transaction_id,task_claim_ref,lease_ref,fencing_epoch,policy_decision_ref,grant_refs,health_digest,ready_until,signature_ref",SCO Barrier Coordinator,站点就绪回执，不可由中心代签
+ActivationBarrierRecord,SCO Transaction Coordinator,"transaction_id,barrier_epoch,required_sites,commit_receipt_digests,policy_refs,grant_refs,revocation_checkpoint,expires_at,signature_ref",Site LCP / Auditor,全局协调记录；本地仍需最后一道门禁
+ActivationAck,Site Local Task Coordinator,"transaction_id,barrier_epoch,taskrun_ref,attempt_id,lease_ref,fencing_epoch,started_at,signature_ref",SCO / ADS projection,证明本地执行已开始
+StopReceipt,Site Local Task Coordinator,"transaction_id,taskrun_ref,attempt_id,stopped_at,stop_reason,last_stage_version,signature_ref",SCO Saga Coordinator,证明本地工作负载停止
+ReleaseReceipt,Site Lease Authority,"transaction_id,lease_ref,fencing_epoch,release_state,released_at,resource_reclaimed,signature_ref",SCO Saga Coordinator,证明Lease失效与资源释放，不等于StopReceipt
+ReconciliationReport,原业务对象权威Owner,"object_ref,authority_ref,state,state_version,as_of,event_cursor,signature_ref",SCO / ADS / Operator,解决Unknown状态；不得由聚合缓存自证
+AcceptanceRecord,Independent Acceptance Owner,"contract_digest,criteria_digest,result_refs,decision,assessor_ref,issued_at,signature_ref",SCO Settlement Coordinator,独立验收事实
+SettlementRecord,Settlement Owner,"metering_refs,acceptance_ref,amount,currency,state,version,signature_ref",合同参与方/审计方,最终结算事实

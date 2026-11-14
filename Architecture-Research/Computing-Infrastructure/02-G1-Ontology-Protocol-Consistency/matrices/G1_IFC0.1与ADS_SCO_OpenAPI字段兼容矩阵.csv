@@ -1,0 +1,25 @@
+﻿字段,DM04_IFC0.1语义,ADS_SCO_OpenAPI_RC0现状,一致性判断,G1处理建议,规范要求,风险
+request_id,DM04 IFC0.1必需,ADS/SCO OpenAPI必需,一致,原样复用,保留必需；同一请求唯一ID,低
+correlation_id,DM04 IFC0.1必需,ADS/SCO OpenAPI必需,一致,原样复用,保留必需；贯穿跨域事务,低
+issued_at,DM04 IFC0.1必需,ADS/SCO OpenAPI必需,一致,原样复用,UTC RFC3339；不得与observed_at混用,低
+api_version,DM04契约需独立绑定,ADS/SCO OpenAPI必需,需明确绑定,保留顶层字段,API契约版本，不等同Profile或Ontology版本,中
+schema_version,DM04契约需独立绑定,ADS/SCO OpenAPI必需,需明确绑定,保留顶层字段,Runtime Schema版本，不等同OntologyProfile版本,中
+payload,DM04业务载荷,ADS/SCO OpenAPI必需,需明确绑定,保留顶层字段,业务操作载荷；扩展不能覆盖安全上下文,中
+caller_principal,DM04 IFC0.1必需,OpenAPI RequestEnvelope未显式定义,缺失,IFC0.2顶层补齐,不可仅由participant_id推断；需稳定主体引用,高
+workload_identity,DM04 IFC0.1必需,仅有caller_workload_id,部分映射,IFC0.2明确字段/语义,caller_workload_id不足以表达Issuer/Subject/Audience/Expiry等身份上下文,高
+audience,DM04 IFC0.1必需,未显式定义,缺失,IFC0.2顶层补齐,目标服务/站点受众；不得从URL猜测,高
+purpose,DM04 IFC0.1必需,未显式定义,缺失,IFC0.2顶层补齐,请求目的；参与PDP决策，不能放在任意扩展数据替代,高
+protocol_profile,DM04 IFC0.1必需,未显式定义；有api_version/schema_version,缺失,IFC0.2顶层补齐,Profile协商版本；不能等同api_version/schema_version,高
+expires_at,DM04 IFC0.1必需,OpenAPI定义但非必需,约束不一致,IFC0.2按联邦请求条件必需,联邦请求不得无有效截止时间,高
+idempotency_key,副作用操作必需,可选字段,条件约束需对齐,保留并按操作类型条件必需,副作用请求缺失即拒绝；同Key不同载荷冲突,高
+expected_state_version,状态变更必需,RequestEnvelope未显式定义,缺失,IFC0.2顶层补齐或规范化Command字段,必须明确绑定目标聚合版本；禁止盲目覆盖,高
+payload_digest,高风险操作必需,存在可选payload_digest,约束不一致,IFC0.2按风险级别条件必需,摘要覆盖扩展块与高风险载荷,高
+signature_ref,高风险操作必需,RequestEnvelope未显式定义,缺失,IFC0.2明确签名证据引用,签名验证失败隔离；具体算法沿用双方信任基线,高
+profile_extensions,IFC0.1不包含该批准字段,未定义,版本增量,仅IFC0.2可选新增,扩展URI、版本、Schema、criticality、digest、data,高
+responder_site_id,DM04 ResponseEnvelope必需,Operation未显式定义,缺失,IFC0.2 ResponseEnvelope补齐,必须指出权威响应站点,高
+object_ref,DM04 ResponseEnvelope必需,Operation.result_ref部分相似,部分映射,统一对象引用字段,result_ref不能覆盖所有object_ref语义,中
+object_version,DM04 ResponseEnvelope必需,Operation未显式定义,缺失,IFC0.2 ResponseEnvelope补齐,权威对象版本；不可用operation status替代,高
+command_status,DM04 ResponseEnvelope必需,Operation.status存在,需做枚举映射,建立状态交叉表,Accepted/Pending/Unknown与Succeeded等不可混淆,高
+authoritative_state,DM04 ResponseEnvelope必需,Operation.status非同义,缺失,IFC0.2 ResponseEnvelope补齐,命令执行状态与业务对象权威状态分离,高
+event_cursor,DM04 ResponseEnvelope必需,未显式定义,缺失,IFC0.2 ResponseEnvelope补齐,用于事件补拉与对账，不作为事实状态本身,中
+evidence_refs,DM04 ResponseEnvelope必需,Operation.result_ref/error_ref仅部分关联,部分映射,IFC0.2 ResponseEnvelope补齐,证据引用列表与业务结果引用分离,高

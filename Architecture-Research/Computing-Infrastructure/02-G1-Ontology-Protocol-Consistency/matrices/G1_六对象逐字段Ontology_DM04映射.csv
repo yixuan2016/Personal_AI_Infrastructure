@@ -1,0 +1,70 @@
+﻿AEE_ASCP对象,字段,Ontology_V3.0实体或关系,DM04_协议映射,语义说明,权威主体,映射类型,校验与约束,风险等级
+EnvironmentSpaceDescriptor,environment_ref,非Core；AEE/ASCP Profile Descriptor URI,联邦治理/Profile Registry引用,描述符自身标识；不是成员名册或信任根,ADS生成投影；引用对象Owner各自权威,Profile投影,必须可解析、具备descriptor_version和有效期；不得承载独立成员状态,中
+EnvironmentSpaceDescriptor,federation_profile_ref,OntologyProfile / Federation Profile引用,Join / TrustAgreement / Profile,引用双方已协商的联邦Profile,双方Federation Governance Owner,权威引用,Profile必须双方已批准；未协商不可推断兼容,高
+EnvironmentSpaceDescriptor,trust_agreement_ref,TrustDomain、TrustAnchor；TrustAgreement作为Governance Profile引用,TrustAgreement对象/签署记录,指向双方信任协议和签署证据，不将协议压缩为TrustDomain本身,双方治理Owner；各自Trust Owner,权威引用,验签、有效期、撤销状态必须可验证；不复制信任根,高
+EnvironmentSpaceDescriptor,participant_binding_refs,Participant + ParticipantBinding关系（Binding待补Governance Profile）,Participant.Bind/Review/Revoke,参与方身份与联邦成员绑定,双方治理Owner/各站点Identity Owner,关联引用,Binding撤销后描述符解析为失效；不可仅凭Participant存在推断已绑定,高
+EnvironmentSpaceDescriptor,site_refs,Site / DataCenter / AvailabilityZone,站点注册表 / Site引用,参与站点和故障域引用,Site Owner,权威引用,必须标明Site Owner、地域和状态；不复制站点目录,中
+EnvironmentSpaceDescriptor,data_space_contract_refs,DataProduct / DatasetVersion / DataUseGrant；DataSpaceContract待补Profile,Catalog.Query / Contract.Negotiate/Agree/Terminate,引用数据产品、版本、合同及用途授权,Data Owner / Connector Owner,权威引用,合同和Grant分别校验；目录可见不等于可读,高
+EnvironmentSpaceDescriptor,ontology_profile_ref,OntologyProfile,Ontology Profile Registry,声明解释字段和关系所使用的本体版本,Ontology Owner,权威引用,精确版本绑定；禁止无提示地用最新版本替换,高
+EnvironmentSpaceDescriptor,policy_profile_ref,PolicyProfile / Policy,Policy Registry / Policy.Evaluate,声明适用策略Profile,各站点Policy Owner,权威引用,只用于解释和评估输入；不替代目标站点PDP决策,高
+EnvironmentSpaceDescriptor,owner_refs,Organization / Participant + OWNS关系,Owner Registry / Resource/Data Owner引用,列出各权威对象Owner,各对象Owner,关联引用,每个引用需携带对象类型和owner authority，不用自由文本姓名,中
+EnvironmentSpaceDescriptor,valid_from,有效期元数据,Profile/Trust/Binding有效期,描述符有效起点,各来源Owner；ADS只汇总,派生元数据,取各组成引用可用期交集；不能延长来源对象有效期,高
+EnvironmentSpaceDescriptor,valid_until,有效期元数据,Profile/Trust/Binding有效期,描述符有效终点,各来源Owner；ADS只汇总,派生元数据,不得晚于任一关键引用的最早失效时间,高
+EnvironmentSpaceDescriptor,descriptor_version,Descriptor自身版本；不等同OntologyProfile版本,schema_version / descriptor_version,描述符投影版本,ADS Descriptor Publisher,投影版本,独立于Ontology、API、TrustAgreement版本管理,中
+TraceRecord / CloudEvents ASCP,trace_id,不建Trace实体；CloudEvents事件标识,CloudEvents id,同一事件唯一ID；不得另造平行ID,事件源Owner,协议字段复用,必须在事件源作用域唯一；Inbox以source+id等组合去重,高
+TraceRecord / CloudEvents ASCP,source / issuer,Organization / Participant / Operator / Principal,CloudEvents source；DM04 source/issuer扩展,事件来源和签发主体,业务事实Owner,权威引用,FWSX不得改写；source可解析回权威主体,高
+TraceRecord / CloudEvents ASCP,trace_type,受控Event Type/Profile；payload指向TaskRun/PolicyDecision/Incident等,CloudEvents type,Observation/Intent/Task/Artifact/Dependency/Risk/Decision语义分类,Event Schema Owner,语义映射,未知类型可存档告警但不得触发副作用,高
+TraceRecord / CloudEvents ASCP,subject_ref,对应Ontology实体URI（TaskRun/Resource/DataProduct等）,CloudEvents subject,事件描述对象,被引用对象Owner,权威引用,解析subject必须重新鉴权；不能凭引用读取正文,高
+TraceRecord / CloudEvents ASCP,occurred_at,事件事实时间,CloudEvents time,事实发生时间,事件源Owner,协议字段复用,UTC RFC3339；不用于跨站点全局排序,中
+TraceRecord / CloudEvents ASCP,observed_at,观测时间（Runtime/Event Profile扩展）,CloudEvents extension / telemetry observation,消费者或采集方观察时间，与occurred_at区分,Observer/Collector Owner,Profile扩展,不得覆盖事实发生时间；需标明observer/source,中
+TraceRecord / CloudEvents ASCP,payload_schema_ref,Runtime Schema + OntologyProfile映射,CloudEvents dataschema,领域载荷Schema引用,Schema Owner,协议字段复用,不支持的Schema版本拒绝业务效果并留存审计,高
+TraceRecord / CloudEvents ASCP,payload,对应领域实体/事件数据，不另建Trace库,CloudEvents data,事件领域载荷,原始业务事实Owner,权威事实投影,事实/推断/提案/决策必须区分；推断不可伪装为事实,高
+TraceRecord / CloudEvents ASCP,site_id,Site,DM04 siteid扩展,来源站点,Site Owner,权威引用,与source主体及签名一致；不可由FWSX改写,高
+TraceRecord / CloudEvents ASCP,aggregate_id,TaskRun/TaskContract/Resource等聚合根URI,DM04 aggregateid,事件所属权威聚合,聚合Owner,权威引用,序号只在该聚合内单调；禁止全局总序假设,高
+TraceRecord / CloudEvents ASCP,aggregate_version,对应聚合不可变版本,DM04 aggregateversion,事件发生时聚合版本,聚合Owner,版本引用,不得倒退；乱序需补拉和对账,高
+TraceRecord / CloudEvents ASCP,sequence_no,聚合内序号元数据,DM04 sequence,事件因果顺序,聚合Owner,协议字段复用,仅单聚合单调；sequence gap触发补拉,高
+TraceRecord / CloudEvents ASCP,correlation_id / causation_id,流程关联元数据；可指向TaskRun/TaskContract,DM04 correlationid/causationid,关联请求与因果事件,事件源Owner,协议字段复用,不得把关联ID当身份或授权ID,中
+TraceRecord / CloudEvents ASCP,signature_ref,EvidenceRecord / AttestationEvidence引用,DM04 signature_ref,事件完整性与签发证明,事件签发方/Verifier,权威引用,验签失败隔离；签名覆盖关键字段和payload摘要,高
+TraceRecord / CloudEvents ASCP,epistemic_status（建议补充）,Event Profile受控枚举：fact/inference/proposal/decision,CloudEvents extension / data schema,区分事实、推断、提案和决策,事件源Owner + Schema Owner,待补Profile字段,缺失或冲突时标记未验证/隔离；禁止推断升级为事实,高
+EnvironmentSubscription / EventSubscription,subscription_ref,FWSX Runtime EventSubscription（非Ontology Core实体）,FWSX Subscription API/Registry,订阅运行时对象引用,FWSX维护状态；事件源Owner授权,Runtime对象,订阅状态不能作为数据授权本身,中
+EnvironmentSubscription / EventSubscription,subscriber_principal,Principal / Participant / WorkloadIdentity,RequestEnvelope caller_principal/workload_identity,订阅主体,目标站点Identity Owner,权威引用,必须验证主体、工作负载和参与方绑定,高
+EnvironmentSubscription / EventSubscription,source_domain,TrustDomain / Event Source Owner,CloudEvents source + source registry,事件来源域,事件源Owner,权威引用,来源域与source签发主体一致,高
+EnvironmentSubscription / EventSubscription,environment_ref,EnvironmentSpaceDescriptor引用,AEE profile_extensions.environment_ref,订阅所处环境引用,ADS Descriptor Publisher,Profile引用,重新解析描述符并检查有效期,中
+EnvironmentSubscription / EventSubscription,event_type_filters,受控CloudEvents type集合,CloudEvents type filters,订阅允许的事件类型,事件源Owner,协议过滤条件,未知/未批准类型不得自动放宽过滤,高
+EnvironmentSubscription / EventSubscription,purpose,RequestEnvelope.purpose + DataUseGrant.purpose,DM04 RequestEnvelope / PolicyEvaluationRequest,订阅用途,订阅者声明；Data Owner/PDP审批,授权输入,用途必须具体且与Grant一致；FWSX不得自行批准,高
+EnvironmentSubscription / EventSubscription,classification_ceiling,PolicyProfile / Data classification taxonomy,PDP/PEP policy decision,允许披露的最高分类级别,Data Owner + 本地Policy Owner,策略输入,按源Owner和目标站点策略取更严格者,高
+EnvironmentSubscription / EventSubscription,projection_profile,Runtime Schema / DataProduct projection,CloudEvents dataschema + FWSX projection,字段最小化投影方案,事件源Owner/Schema Owner,Schema引用,不得超过Grant字段范围；变更重新审批,高
+EnvironmentSubscription / EventSubscription,delivery_mode,FWSX delivery semantics,FWSX delivery configuration,投递模式,FWSX Service Owner,传输配置,至少一次投递；业务效果依赖Inbox幂等，不承诺网络恰好一次,中
+EnvironmentSubscription / EventSubscription,cursor,FWSX subscription cursor,FWSX cursor,消费者已确认投递位置,FWSX/Inbox Owner,传输状态,游标不代表业务事实；恢复按cursor补拉,中
+EnvironmentSubscription / EventSubscription,expires_at,Grant/Subscription有效期元数据,RequestEnvelope expires_at + Grant expiry,订阅截止时间,事件源Owner授权 + 本地PEP,有效期投影,不得超过授权有效期；撤销后停止后续投递,高
+EnvironmentSubscription / EventSubscription,status,Subscription lifecycle state,FWSX subscription state,Pending/Active/Revoked/Expired等订阅状态,FWSX执行状态；Owner决定授权,运行时状态,状态与Grant状态分离；撤销以Owner权威为准,高
+TaskClaim,claim_ref,TaskStage上的本地Claim子记录；不新增全局Lease实体,Local Task Coordinator / TaskClaim schema,本地阶段认领记录,Site Task Owner / Local Task Coordinator,Runtime子记录,"作用域(site_id, site_task_ref, stage_ref)",高
+TaskClaim,global_task_ref,TaskContract / TaskRun（必须区分合同与运行）,SCO TaskContract/TaskRun refs,全局任务或运行引用,SCO Task Owner,权威引用,明确引用对象类型；不得混淆contract_id与task_run_id,高
+TaskClaim,site_task_ref,TaskRun本地投影 / Site TaskStage关联,SCO拆分的本地TaskStage,站点本地任务引用,Site Task Owner,本地权威引用,仅本站点解析；跨站点不能复用为对方本地ID,高
+TaskClaim,stage_ref,TaskStage,DM04 TaskStage / SCO TaskRun stage ref,任务阶段,Site Task Owner,直接映射,Stage状态由站点本地权威维护,高
+TaskClaim,site_id,Site,DM04 site_id,任务认领所属站点,Site Owner,直接映射,与签发者和本地执行环境一致,高
+TaskClaim,holder_agent_ref,Principal(type=Agent) + WorkloadIdentity,RequestEnvelope caller identity / A2A Agent identity,持有认领的Agent主体,Agent Owner + Site IAM,权威引用,Agent身份与WorkloadIdentity均需验证；不能只信AgentCard,高
+TaskClaim,claim_epoch,TaskStage局部版本/epoch扩展,TaskClaim schema,拒绝旧认领者的本地状态写入,Local Task Coordinator,本地版本字段,仅TaskStage范围单调；不得作为资源fencing_token,高
+TaskClaim,issued_at / expires_at / max_expires_at,TaskClaim有效期元数据,DM04 Request/Lease time semantics,本地认领有效窗口,Local Task Coordinator,生命周期字段,max_expires_at不得突破站点策略和TaskStage期限,高
+TaskClaim,state,TaskClaim生命周期状态；不覆盖TaskRun状态,Local Task Coordinator state,Claim的生命周期,Local Task Coordinator,运行时状态,Claim状态与TaskRun/ A2A Task状态分离,高
+TaskClaim,policy_decision_ref,PolicyDecision,DM04 Policy.Evaluate/DecisionStatus,本地认领时策略决策证据,Site PDP,权威引用,决策过期/撤销需重新评估,高
+TaskClaim,idempotency_key,DM04 RequestEnvelope.idempotency_key,DM04 RequestEnvelope,认领命令幂等键,调用方 + 本地协调器记录,协议字段复用,同Key同载荷同结果；不同载荷冲突,高
+ArtifactBinding,artifact_ref,OutputArtifactRef（Ontology V3实体清单缺口）；DM04 Artifact Owner记录,Evidence/Result/Artifact API reference,成果引用，不是新Registry,Artifact/Evidence Owner,权威引用,引用解析需PEP再授权；不能凭引用读取内容,高
+ArtifactBinding,artifact_version,Artifact不可变版本,Artifact Owner version,成果版本,Artifact Owner,版本引用,不可覆盖历史版本；版本与Schema版本分开,高
+ArtifactBinding,content_digest,EvidenceRecord.digest / Artifact digest,Evidence/Artifact content digest,内容完整性摘要,Producer Owner,权威字段复用,摘要必须与实际内容匹配；不泄露正文,高
+ArtifactBinding,producer_ref,Principal / Participant / WorkloadIdentity,DM04 producer/issuer,成果生产主体,Producer Owner,权威引用,签发身份与任务授权链绑定,高
+ArtifactBinding,task_ref,TaskRun,DM04 TaskRun/TaskContract ref,成果所属执行任务,SCO + Site Task Owner,权威引用,明确Run与Contract；成果必须可追溯至执行回执,高
+ArtifactBinding,evidence_ref,EvidenceRecord,Evidence.PublishReference/RetrieveAuthorized,证据记录引用,Evidence Owner,直接映射,Evidence Owner保留正文/摘要/签名权威,高
+ArtifactBinding,result_ref,Result（Ontology V3实体清单缺口）,Result.Stage/Review/DecideRelease/Release,业务结果与披露状态,Result Owner / Data Owner,权威引用,Result生命周期不等于Evidence生命周期,高
+ArtifactBinding,acceptance_ref,AcceptanceRecord,Acceptance API,独立验收记录引用,Independent Acceptance Authority,直接映射,执行Agent不得自签最终Acceptance,高
+ArtifactBinding,access_policy_ref,Policy / PolicyProfile / PolicyDecision,Result Review/DecideRelease + target PEP,成果访问与披露策略,Result Owner/Data Owner + target PEP,权威引用,Acceptance通过不自动授予披露权,高
+GovernanceContextRef,governance_context_ref,Request-scoped Profile reference；非Credential/Grant,DM04 RequestEnvelope.profile_extensions,本次请求治理上下文引用,Context publisher; decisions by local PDP,Profile引用,不得作为bearer token或长期权限对象,高
+GovernanceContextRef,subject_ref,Principal / Participant / WorkloadIdentity,RequestEnvelope caller_principal/workload_identity,被评估主体,Identity Owner,权威引用,主体必须由目标站点验证,高
+GovernanceContextRef,purpose,RequestEnvelope.purpose / DataUseGrant.purpose,DM04 RequestEnvelope + PolicyEvaluationRequest,请求用途,调用方声明；Policy/Data Owner决定,授权输入,扩展不得覆盖顶层purpose；不一致拒绝,高
+GovernanceContextRef,policy_decision_ref,PolicyDecision,PDP PolicyDecision / DecisionStatus,授权评估结果引用,目标站点PDP,直接映射,决策需含policy_version、verdict、obligations、expiry、evidence,高
+GovernanceContextRef,grant_refs,DataUseGrant / ResourceLease（按动作分开引用）,DM04 Grant/Lease refs,已签发授权引用,Data Owner / Compute Owner,权威引用,Data Grant与Resource Lease不可互换；每次动作本地重验,高
+GovernanceContextRef,delegation_ref,DelegationGrant（Ontology V3显式实体缺口）,DM04 Delegation / IAM,Agent委托链引用,Grant Issuer / IAM Owner,权威引用,不得推断再委托权；链、Audience、Scope、Expiry完整验证,高
+GovernanceContextRef,risk_ref,Incident / RiskSignal（风险Profile）,Risk/Incident refs,风险信号或事件引用,Risk/Incident Owner,权威引用,风险信号不自动等于拒绝；按本地策略评估,中
+GovernanceContextRef,evaluated_at,PolicyDecision.evaluated_at,PDP decision timestamp,策略评估时间,目标站点PDP,字段复用,UTC RFC3339；与请求issued_at区分,中
+GovernanceContextRef,valid_until,PolicyDecision / Grant / Delegation最早有效期,DM04 expiry/revocation,上下文最晚有效时间,PDP + Grant Issuer,派生有效期,取所有必要凭证/决策有效期最小值；不得延长,高
+GovernanceContextRef,revalidation_required,PolicyDecision / local re-evaluation rule,PDP/PEP runtime,是否需要重新授权,目标站点PDP/PEP,运行时控制,敏感操作前强制本地重验；远端Permit不覆盖本地Deny,高

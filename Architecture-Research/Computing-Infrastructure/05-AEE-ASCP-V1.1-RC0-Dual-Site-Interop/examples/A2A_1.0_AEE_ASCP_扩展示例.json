@@ -1,0 +1,106 @@
+{
+  "notice": "ads.example.invalid 是占位域名。正式发布前必须替换为项目控制的稳定域名或永久标识。",
+  "a2a_spec_profile": "A2A 1.0",
+  "request_headers": {
+    "A2A-Version": "1.0",
+    "A2A-Extensions": "https://ads.example.invalid/a2a/extensions/aee-ascp/v1"
+  },
+  "agent_card_excerpt": {
+    "name": "Compute Planning Agent",
+    "description": "跨站点算力拓扑规划 Agent",
+    "version": "1.0.0",
+    "capabilities": {
+      "streaming": true,
+      "extensions": [
+        {
+          "uri": "https://ads.example.invalid/a2a/extensions/aee-ascp/v1",
+          "description": "AEE/ASCP cross-cutting environment and governance profile",
+          "required": false,
+          "params": {
+            "profile_version": "1.1.0-rc0",
+            "dm04_profile": "V2.9-RC9.2-DM04-IFC0.1",
+            "required_for": [
+              "cross_site_task_claim",
+              "cross_site_data_access",
+              "cross_site_resource_execution"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "message_excerpt": {
+    "messageId": "msg-001",
+    "role": "ROLE_USER",
+    "parts": [
+      {
+        "text": "请基于已授权环境痕迹规划双站点任务。"
+      }
+    ],
+    "extensions": [
+      "https://ads.example.invalid/a2a/extensions/aee-ascp/v1"
+    ],
+    "metadata": {
+      "https://ads.example.invalid/a2a/extensions/aee-ascp/v1": {
+        "environment_ref": "urn:ads:environment:compute-federation:001",
+        "ontology_profile_ref": "urn:ontology:compute-base:3.0",
+        "trace_refs": [
+          "urn:ads:trace:site-a:001"
+        ],
+        "governance_context_ref": "urn:ads:governance-context:001",
+        "purpose": "federated-compute-planning"
+      }
+    }
+  },
+  "task_excerpt": {
+    "id": "a2a-task-unique-within-agent-server",
+    "contextId": "ctx-001",
+    "status": {
+      "state": "TASK_STATE_WORKING"
+    },
+    "metadata": {
+      "https://ads.example.invalid/a2a/extensions/aee-ascp/v1": {
+        "global_task_ref": "urn:sco:global-task:001",
+        "site_task_refs": [
+          "urn:sco:site-a:task:001",
+          "urn:sco:site-b:task:001"
+        ],
+        "task_contract_ref": "urn:sco:task-contract:001",
+        "claim_refs": [
+          "urn:sco:site-a:claim:001",
+          "urn:sco:site-b:claim:001"
+        ]
+      }
+    }
+  },
+  "artifact_excerpt": {
+    "artifactId": "artifact-id-unique-within-task",
+    "name": "双站点计算拓扑分析",
+    "parts": [
+      {
+        "text": "成果正文通过受控 Evidence/Artifact 引用读取。"
+      }
+    ],
+    "extensions": [
+      "https://ads.example.invalid/a2a/extensions/aee-ascp/v1"
+    ],
+    "metadata": {
+      "https://ads.example.invalid/a2a/extensions/aee-ascp/v1": {
+        "artifact_ref": "urn:evidence:artifact:compute-topology:001",
+        "artifact_binding_ref": "urn:ads:artifact-binding:001",
+        "artifact_version": "1",
+        "content_digest": "sha256:example"
+      }
+    }
+  },
+  "response_headers": {
+    "A2A-Extensions": "https://ads.example.invalid/a2a/extensions/aee-ascp/v1"
+  },
+  "mapping_rules": [
+    "Agent Card：capabilities.extensions[] 声明扩展支持。",
+    "客户端：通过 A2A-Extensions 请求头激活；扩展默认不激活。",
+    "Message/Artifact：extensions[] + 以扩展 URI 为键的 metadata。",
+    "Task：仅使用 metadata 承载 AEE 引用，不添加核心协议未定义的 extensions[]。",
+    "A2A Task State 不替代 DM04 Task Saga、UNKNOWN、Acceptance 或 Settlement 状态。"
+  ]
+}

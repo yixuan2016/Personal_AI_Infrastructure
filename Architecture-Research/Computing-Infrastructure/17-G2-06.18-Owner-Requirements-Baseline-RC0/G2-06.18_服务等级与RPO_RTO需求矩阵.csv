@@ -1,0 +1,11 @@
+服务等级,服务域,对象/场景,设计原则,业主待定义指标,目标来源/依据,责任Owner,状态,验收方法,限制/安全边界
+S0,设施与人身安全,消防、漏液、过温、断水、电气保护、急停,本地硬联锁；现场专业人员可接管；不依赖WAN/ADS/AI审批,动作阈值、响应时间、冗余、复位条件,当地法规、AHJ、OEM、专业工程师,Facility Owner/安全负责人,TBD-Engineer,本地故障注入、联锁因果矩阵、失电/断网测试,禁止平台越权控制断路器/消防/阀门
+S1,区域控制与授权,LCP、身份、策略、Lease、审计、核心目录,每区本地自治；跨区中断时限制高风险跨域动作,可用性、RTO、审计丢失容忍、撤销传播时限、离线自治时长,业主控制面Owner与安全Owner,Control Plane/Security Owner,TBD-Owner,节点失效、WAN分区、Owner不可达、撤销缺口和对账测试,TaskClaim/Lease/PolicyDecision分离；Unknown不视为成功
+S2,权威数据与事务事实,Saga Ledger、Lease事实、元数据、关键状态,权威事实由指定Owner写入；跨区复制策略按数据类型定义,RPO、RTO、写入延迟、事务吞吐、保留期,Data Owner/资源Owner,Data Owner,TBD-Owner,故障切换、幂等、重复/乱序、数据一致性与恢复演练,QLC容量层不得默认承载高写入权威事务
+S2,在线推理业务,模型服务、API、检索增强、多模态,按业务等级定义单区/双区服务方式,可用性、TTFT、TPOT、p95/p99、QPS、错误率、RPO/RTO,业务Owner与平台Owner,业务Owner/AI平台,TBD-Owner,固定模型/精度/上下文/并发基准和故障切换,跨区GPU不是一个NVLink域
+S3,训练与批处理,训练、微调、HPC、离线Agent,可排队、checkpoint、重试、资源排空和受控恢复,有效GPU小时、作业完成时间、checkpoint间隔、最大重跑损失,AI/HPC业务Owner,GPU/HPC Owner,TBD-Owner,作业中断、单平面失效、节点失效、区域隔离测试,SLO和RPO按作业等级定义
+S2,容量存储与数据集,数据集、模型权重、归档,按数据等级和驻留要求分层；容量层与高写入层分离,可用容量、耐久度、吞吐、延迟、保留、删除和恢复,Data Owner,Storage Owner,TBD-Owner,读写负载、重建、故障盘、备份恢复与数据完整性,原始PB不等于可用PB
+S1/S2,跨区域复制,Checkpoint、模型、数据副本、控制状态,默认异步；强同步必须单独论证并获批准,RPO、复制滞后、窗口、吞吐、恢复时间,Data Owner/业务Owner,Network/Storage Owner,TBD-Owner,物理链路实测、断链恢复、复制积压和一致性验证,按数据类别定义，不使用统一默认策略
+S2,安全审计与日志,身份、密钥、策略、日志、追踪,区域本地缓存/缓冲；跨区复制需遵循数据驻留和保留要求,采集完整率、检索延迟、保留期、密钥恢复、审计丢失容忍,Security/Compliance Owner,Security Owner,TBD-Owner,断网缓存、密钥恢复、权限撤销、审计链验证,敏感日志跨境需法务批准
+S3,开发与模型制品,镜像、模型工件、数据流水线,签名、版本、来源证明、回滚和区域缓存,构建时间、下载吞吐、缓存命中、恢复时间,Platform/Security Owner,Platform Owner,TBD-Owner,供应链验证、签名校验、制品回滚,不与Facility管理面混网
+S0/S1,运维与远程维护,OEM远程支持、现场工单、OOB,最小权限、短时授权、审批、审计和撤销,响应/到场/修复时限、撤销时限、会话审计,业主Operations/Security Owner,Operations Owner,TBD-Owner,远程会话审计、越权拒绝、撤销和紧急接管演练,供应商SLA不等于业务可用性

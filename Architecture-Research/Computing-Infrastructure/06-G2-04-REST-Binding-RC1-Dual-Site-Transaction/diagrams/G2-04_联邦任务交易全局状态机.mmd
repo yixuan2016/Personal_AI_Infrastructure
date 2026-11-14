@@ -1,0 +1,35 @@
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Validating
+    Validating --> AwaitingApproval: ValidationPassed
+    Validating --> Rejected: ValidationFailed
+    AwaitingApproval --> Preparing: ApprovalGranted
+    AwaitingApproval --> Expired: ApprovalDeadline
+    Preparing --> Prepared: AllPrepareReceiptsValid
+    Preparing --> Compensating: PrepareRejectedOrExpired
+    Prepared --> Committing: CommitRequested
+    Committing --> Committed: AllCommitReceiptsValid
+    Committing --> Compensating: PartialCommitFailure
+    Committing --> RecoveryRequired: CommitUnknown
+    Committed --> BarrierPending
+    BarrierPending --> Activated: AllBarrierConditionsPass
+    BarrierPending --> Compensating: BarrierRejected
+    BarrierPending --> RecoveryRequired: AuthorityUnknown
+    Activated --> Executing: AllSiteActivationAck
+    Executing --> ResultPending: RunsTerminal
+    Executing --> RecoveryRequired: SitePartitionOrLeaseUnknown
+    ResultPending --> AcceptancePending: ResultsSubmitted
+    AcceptancePending --> Accepted: IndependentAcceptance
+    AcceptancePending --> Disputed: AcceptanceDisputed
+    Accepted --> SettlementPending
+    SettlementPending --> Settled: SettlementConfirmed
+    SettlementPending --> Disputed: SettlementDisputed
+    Compensating --> Aborted: AllCompensationsConfirmed
+    Compensating --> RecoveryRequired: CompensationUnknownOrFailed
+    RecoveryRequired --> Committing: ReconcileAndResumeAllowed
+    RecoveryRequired --> Compensating: ReconcileAndAbortRequired
+    Disputed --> SettlementPending: DisputeResolved
+    Settled --> [*]
+    Aborted --> [*]
+    Rejected --> [*]
+    Expired --> [*]

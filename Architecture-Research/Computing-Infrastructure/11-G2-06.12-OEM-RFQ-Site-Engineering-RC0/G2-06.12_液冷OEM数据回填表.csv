@@ -1,0 +1,25 @@
+区域,设备/回路,参数组,参数,单位,供应商填写值,允许范围/依据,测试工况,测点位置,精度/校准,告警阈值,保护动作,证据文件,Owner,状态
+A,GB300/HPE XDU1350,热负载,机柜持续热负载,kW,,,,,OEM曲线/热工报告,,,,HPE/Vertiv,待回填
+A,GB300/HPE XDU1350,热负载,机柜峰值热负载,kW,,,,,峰值持续时间与冷却状态,,,,HPE/Vertiv,待回填
+A,GB300/HPE XDU1350,二次侧,供液温度,°C,,,,,温度传感器位置/精度,,,,HPE/Vertiv,待回填
+A,GB300/HPE XDU1350,二次侧,回液温度,°C,,,,,温度传感器位置/精度,,,,HPE/Vertiv,待回填
+A,GB300/HPE XDU1350,二次侧,额定流量,L/min,,,,,设计热负载与ΔT,,,,HPE/Vertiv,待回填
+A,GB300/HPE XDU1350,二次侧,最小流量,L/min,,,,,最低稳定运行工况,,,,HPE/Vertiv,待回填
+A,GB300/HPE XDU1350,二次侧,允许压降,kPa,,,,,CDU/Manifold/Cold Plate分段,,,,HPE/Vertiv,待回填
+A,GB300/HPE XDU1350,一次侧,供回水温度/流量/压力,°C/L/min/kPa,,,,,设施侧设计工况,,,,设施Owner,待回填
+A,GB300/HPE XDU1350,水质,介质成分/水质限值,按OEM规范,,,,,pH/电导率/颗粒/抑制剂/微生物,,,,HPE/Vertiv,待回填
+A,GB300/HPE XDU1350,冗余,泵组N+1切换,s/状态,,,,,单泵故障/最大负载,,,,HPE/Vertiv,待回填
+A,GB300/HPE XDU1350,冗余,CDU整机1+1切换,s/状态,,,,,整机失效/维护,,,,HPE/Vertiv,待决策
+A,GB300/HPE XDU1350,安全,漏液检测与隔离阀动作,s/状态,,,,,漏液绳/托盘/供回阀位反馈,,,,设施Owner,待回填
+B,GB300/HPE XDU1350,热负载,机柜持续/峰值热负载,kW,,,,,OEM曲线/热工报告,,,,HPE/Vertiv,待回填
+B,GB300/HPE XDU1350,二次侧,供回液温度/流量/压力,°C/L/min/kPa,,,,,测点位置/精度/测试工况,,,,HPE/Vertiv,待回填
+B,GB300/HPE XDU1350,水质,介质成分/水质限值,按OEM规范,,,,,pH/电导率/颗粒/抑制剂/微生物,,,,HPE/Vertiv,待回填
+B,GB300/HPE XDU1350,冗余,泵组与CDU整机冗余,配置/切换时间,,,,,单泵/整机失效/维护,,,,设施Owner,待回填
+A,N1380 Neptune,热负载,单enclosure热负载,kW,,,,,实际SC tray配置,,,,Lenovo,待回填
+A,N1380 Neptune,二次侧,供回液温度/流量/压力,°C/L/min/kPa,,,,,Lenovo水质规范/设备工况,,,,Lenovo,待回填
+A,N1380 Neptune,水质,处理水限值,按OEM规范,,,,,pH/电导率/颗粒/腐蚀/微生物,,,,Lenovo,待回填
+A,N1380 Neptune,连接,FD83/盲插快接型号,SKU,,,,,连接器与维护流程,,,,Lenovo,待回填
+B,N1380 Neptune,热负载,单enclosure热负载,kW,,,,,实际SC tray配置,,,,Lenovo,待回填
+B,N1380 Neptune,二次侧,供回液温度/流量/压力,°C/L/min/kPa,,,,,Lenovo水质规范/设备工况,,,,Lenovo,待回填
+B,N1380 Neptune,水质,处理水限值,按OEM规范,,,,,pH/电导率/颗粒/腐蚀/微生物,,,,Lenovo,待回填
+B,N1380 Neptune,连接,FD83/盲插快接型号,SKU,,,,,连接器与维护流程,,,,Lenovo,待回填

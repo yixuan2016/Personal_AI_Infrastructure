@@ -1,0 +1,26 @@
+验收ID,领域,需求/约束,通过准则,验证方法,必需证据,责任Owner,当前状态,验收产物,限制/注意事项
+AC-001,架构,十星逻辑角色,每区5个逻辑资源域且职责清晰,架构评审/Owner确认,A/B角色表与逻辑拓扑,架构Owner,Confirmed-Structure,架构签署记录,星位不等于固定物理服务器
+AC-002,GPU,本地NVLink域,NVLink域限制在单机柜/设备官方支持边界,OEM QVL/拓扑审查,HPE/NVIDIA拓扑和端口图,GPU Owner/OEM,Candidate,QVL与FAT记录,不把A/B组成一个NVLink域
+AC-003,GPU网络,双平面独立性,Plane-A/B物理设备、供电、线缆和配置故障域可验证,物理审查/故障注入,端口表/线缆表/供电图,Network Owner,Candidate,单平面故障测试,Spectrum-6与Quantum-X800不混合
+AC-004,CPU/HPC,N1380节点拓扑,2N2S或4N1S由业务负载和OEM配置决定,OEM配置器/性能测试,准确MTM/CPU/内存/PCS,CPU Owner/OEM,TBD-Vendor,OEM签署配置与基准,不得把两种拓扑同时算入容量
+AC-005,存储,容量保护与可用空间,原始容量转换可用容量公式和保护策略经Owner批准,容量计算/故障盘测试,RAID/EC/热备/元数据/快照,Storage Owner,TBD-Owner,签署容量模型,19.6608PB/区仅原始候选容量
+AC-006,存储,事务高写入隔离,Saga/Lease/Owner/元数据不依赖QLC容量盘作为唯一高写入层,架构审查/写入压测,存储分层和耐久度规格,Data/Storage Owner,Confirmed-Structure,存储设计审查,高耐久层SKU待选
+AC-007,供电,GPU Whip A/B映射,8条Power Whip和Power Shelf上游支路有OEM签署单线,OEM审查/电气计算,HPE单线图/保护定值,Electrical Owner/OEM,TBD-Vendor,签署单线与故障测试,禁止自行假设4+4分组
+AC-008,供电,区域POI容量,firm MW/MVA与N-1/扩建/送电日期有项目级权威证据,Utility研究/合同/计量,POI容量函/接入协议,Utility/Electrical Owner,TBD-Vendor,E3证据与后续E4实测,不以园区规划MW替代
+AC-009,冷却,CDU热工边界,一次侧/二次侧温压流量、水质和冷量匹配所有设备,OEM曲线/专业计算,P&ID/热工模型/QVL,Facility Owner/OEM,TBD-Engineer,签署P&ID和热工验收,1.3MW为热容量
+AC-010,冷却,整机冗余,泵N+1、CDU模块N+1、整机1+1分别分析,FMEA/故障注入,设备拓扑/控制逻辑,Facility Owner,TBD-Engineer,故障注入记录,不得以泵冗余宣称整机冗余
+AC-011,水务,供水/排水合法性,有适用于项目地块和负荷的供水/取水/排水许可或协议,主管部门/水务核验,许可/合同/计量方案,Environmental Owner,TBD-Vendor,E3文件和现场计量,地区和季节性须明确
+AC-012,网络,运营商物理路径,双线路逐段识别PoP/管道/入楼/MMR/共享段,运营商签署/现场勘验,端到端路由图,Network Owner/Carrier,TBD-Vendor,物理路径审计,两份合同不等于物理独立
+AC-013,网络,跨区域SLO,以真实候选地块测RTT/抖动/丢包/吞吐并验证业务窗口,端到端测试,测试报告/流量模型,Network/Business Owner,TBD-Owner,业务Owner签署SLO,未知地块不能先填时延
+AC-014,数据,数据驻留与跨境,数据类别、法域、控制者/处理者和跨境依据明确,法务审查/数据地图,批准的数据分类与驻留矩阵,Legal/Data Owner,TBD-Owner,法务签署,未批准的数据不复制
+AC-015,安全,身份与密钥自治,A/B身份、PKI、KMS、DNS、时间源故障域和恢复路径清楚,架构审查/恢复演练,IAM/KMS/PKI设计,Security Owner,TBD-Owner,密钥恢复与撤销演练,不依赖单一跨区在线控制面
+AC-016,安全,OOB/Facility隔离,BMC/Redfish/PDU/CDU/BMS不向租户网开放,配置审查/渗透测试,网络分区/ACL/访问矩阵,Security/Facility Owner,Confirmed-Structure,隔离测试,管理操作需审批与审计
+AC-017,安全,L0硬联锁,消防/漏液/断水/过温/电气保护本地执行,专业工程师审查/故障注入,因果矩阵/联锁测试,Facility Owner,Confirmed-Structure,E4现场见证,不等待AI审批
+AC-018,控制面,本地自治,WAN分区时本地资源Owner仍有权威并可安全降级,分区故障注入,LCP/Owner/Lease/Policy设计,Control Plane Owner,Confirmed-Structure,演练与审计证据,不得离线扩大权限
+AC-019,连续性,RPO/RTO,按数据/业务等级逐项定义并完成恢复演练,业务演练/数据校验,RPO/RTO矩阵,Business/BCP Owner,TBD-Owner,签署指标与演练记录,不得一个数值覆盖所有数据
+AC-020,运维,变更与维护,影响电/水/冷/网络/安全的变更需审批、回滚和复测,流程审查/演练,变更管理流程/SLA,Operations Owner,TBD-Owner,审计样例,紧急安全动作优先
+AC-021,财务,TCO同口径,A/B/C路线使用同一业务负载、有效GPU小时和计价边界,模型复核/报价审查,TCO变量表/正式报价,Finance Owner,TBD-Owner,财务签署TCO,未知项标风险区间不填0
+AC-022,合同,设施控制权RACI,每个动作只有明确执行Owner和安全责任Owner,合同/法务审查,设施RACI/SLA附件,Legal/Operations Owner,TBD-Owner,签署合同附件,CDU/阀门/停机责任不能悬空
+AC-023,采购,OEM QVL与保修,准确SKU/固件/驱动/光模块/水路和地区供货被OEM确认,OEM书面确认,QVL/配置单/保修文件,Procurement/OEM,TBD-Vendor,签署QVL,经销商口头答复不够
+AC-024,双区域,共同故障域,电网/流域/光路/灾害/身份/供应链独立性被证据验证,依赖图/现场尽调,共同故障域矩阵,Architecture Owner,TBD-Owner,独立性审查,两个园区名称不同不代表独立
+AC-025,验收,FAT/SAT与回退,每条P0/P1需求关联测试、见证人、通过标准和失败回退,测试审查/演练,FAT/SAT矩阵/回滚方案,Project/QA Owner,TBD-Engineer,批准的验收计划与报告,文档通过不等于现场通过

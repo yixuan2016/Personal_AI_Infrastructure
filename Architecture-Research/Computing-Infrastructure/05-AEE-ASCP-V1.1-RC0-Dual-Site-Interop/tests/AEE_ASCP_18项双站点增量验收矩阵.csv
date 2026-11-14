@@ -1,0 +1,19 @@
+﻿编号,测试场景,预期结果,优先级,环境,状态
+AEE-001,环境描述符由不同权威引用拼装,不产生第二套成员、信任或数据权威,P0,双站点,待执行
+AEE-002,环境描述符中的Participant Binding已撤销,解析结果标记失效，不允许继续跨域动作,P0,双站点,待执行
+AEE-003,AEE Profile版本未协商,按Profile兼容策略拒绝或安全降级,P0,双实现,待执行
+AEE-004,TraceRecord映射CloudEvents,id/source/type/subject/time/dataschema/data一致，无双重事件ID,P0,双站点,待执行
+AEE-005,未知ASCP Trace Type到达,安全存档、告警，不触发任务或副作用,P0,双站点,待执行
+AEE-006,同一Trace经FWSX重复投递,Inbox去重，业务副作用只发生一次,P0,双站点,待执行
+AEE-007,Trace事实/推断标签缺失或冲突,隔离或标记未验证，不升级为事实,P0,双站点,待执行
+AEE-008,订阅请求超出用途或分类上限,源Owner/PDP拒绝或脱敏投影，不扩大字段范围,P0,双站点,待执行
+AEE-009,订阅撤销后继续投递,停止后续投递，游标和撤销事件可审计,P0,双站点,待执行
+AEE-010,A/B两Agent同时认领同一站点TaskStage,仅一个TaskClaim有效,P0,单站点并发,待执行
+AEE-011,Site A TaskClaim被误用为Site B资源Lease,Site B Lease Authority拒绝,P0,双站点,待执行
+AEE-012,旧TaskClaim claim_epoch提交状态,本地任务协调器拒绝旧epoch,P0,单站点并发,待执行
+AEE-013,ArtifactBinding引用不存在或摘要不符,隔离引用，不接受成果,P0,双站点,待执行
+AEE-014,Artifact引用转发到无权站点,目标站点PEP拒绝读取,P0,双站点,待执行
+AEE-015,GovernanceContext过期或Grant已撤销,重新评估；本地Deny优先,P0,双站点,待执行
+AEE-016,A2A请求未激活必需AEE扩展,在副作用前拒绝或要求重新协商,P0,双实现,待执行
+AEE-017,A2A Task ID与SCO TaskRun ID不同,映射可追踪，不强行合并ID或状态机,P1,双实现,待执行
+AEE-018,A-B断网期间发生事件缺口与部分提交,状态UNKNOWN；恢复后按Owner权威对账，不盲重放,P0,双站点故障注入,待执行

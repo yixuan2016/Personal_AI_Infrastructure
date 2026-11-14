@@ -1,0 +1,16 @@
+﻿对象,建议状态集合,权威Owner,ADS/SCO边界,必须返回的证据/回执
+Participant,Registered / UnderReview / Active / Suspended / ReinstatementPending / Revoked,Federation Governance Owner,ADS只保存/发布治理状态；不直接停本地设备,SuspensionReceipt / ReinstateReceipt / Evidence
+TrustAgreement,Proposed / BilateralReview / Signed / Active / Suspended / Revoked / Expired,双方Federation Governance Owners,ADS编排；各方独立签署并维护TrustDomain,SignedAgreement / RevocationReceipt
+Credential,Issued / Active / Suspended / Revoked / Expired,Credential Issuer,ADS验证/查询；Issuer决定撤销,CredentialStatus / RevocationProof
+PolicyDecision,Permit / Deny / NotApplicable / Indeterminate / Expired / Revoked,目标Resource/Data Owner PDP,ADS协调；本地PEP最终执行；Indeterminate不得Permit,SignedPolicyDecision / PEPEnforcementReceipt
+Capability,Declared / Submitted / Reviewed / Tested / Verified / Published / Adopted / Monitored / Suspended / Revoked,Capability Owner + Independent Validator + Adopting Domain,ADS目录状态与每个Domain Adopted分离,ValidationReport / AdoptionRecord
+DataUseGrant,Draft / Issued / Active / Suspended / Revoked / Expired,Data Owner / Grant Issuer,ADS可协调；目标Site PEP每次访问复核,SignedGrant / RevocationReceipt / AccessAudit
+TaskContract,Draft / Validated / Submitted / Signed / Amended / Cancelled / Expired,合同签署方,SCO管理版本/流程；合同方签署,ContractVersion / SignatureSet
+TaskPlan,Proposed / Selected / Rejected / Superseded / Expired,SCO Plan Service + Task Owner decision,Plan selection不等于资源预留,PlanDigest / SelectionDecision
+TaskRun,Queued / Preparing / Committed / Running / Suspended / Succeeded / Failed / Cancelled / Unknown,Site Task Owner,SCO仅投影/协调；站点本地状态权威,TaskStageEvent / LocalRunReceipt
+ResourceReservation,Requested / Prepared / Committed / Released / Expired / Unknown,Site Reservation Authority,SCO协调多方；每个Site Owner决定本地状态,PrepareReceipt / CommitReceipt
+ResourceLease,Active / Renewing / Revoked / Expired / Released,Site Lease Authority,SCO不得签发/续租；LCP本地权威,OwnerSignedLease / FencingToken / ReleaseReceipt
+Operation,Accepted / Running / WaitingForApproval / Succeeded / Failed / Cancelled / Expired / Unknown / ReconciliationRequired,发起Operation的服务（ADS或SCO）,只表示命令/编排状态，不代表业务对象状态,OperationView + ResponseContext
+Result,Produced / UnderReview / Accepted / ConditionallyAccepted / Rejected / ReleasePending / Released / Withheld / Withdrawn / Disputed,Result Owner；Acceptance Owner独立签发Acceptance,Result状态与Acceptance状态分开,ResultVersion / EvidenceRefs / AcceptanceRef
+Acceptance,Pending / Accepted / Rejected / Disputed,Independent Acceptance Owner,SCO只发起/聚合；不能替代验收方决定,SignedAcceptanceRecord
+Settlement,Pending / Calculated / Confirmed / Disputed / Settled,Settlement Owner；Metering Owner签发计量事实,Calculate只产出草案；最终确认/结算需明确Owner,SettlementDraft / MeteringRecord / SignedSettlement

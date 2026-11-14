@@ -1,0 +1,15 @@
+区域/层级,标准或法规,发布机构,当前可核实信息,适用对象,属性,适用性判断,需本地确认,状态,官方来源
+全球参考,ANSI/TIA-942-C,Telecommunications Industry Association,2024-05-07发布；数据中心电信基础设施标准，覆盖电信/电力/冷却/建筑/消防/安防与韧性等级,数据中心基础设施设计/建设/认证,行业标准/自愿认证,可作为双区域统一设计参考；是否合同强制取决于项目要求,目标评级/认证范围/合同采纳,参考,https://tiaonline.org/resource/tia-942-c-data-center-infrastructure-standard/
+全球参考,ASHRAE TC 9.9 Thermal Guidelines / Datacom Encyclopedia,ASHRAE,TC 9.9资料体系于2024演进为Datacom Encyclopedia；液冷分类包括W17/W27/W32/W40/W45/W+等设施供液温度类,数据中心环境与液冷设施设计,工程指南/行业参考,用于热环境与液冷设计；OEM设备运行边界优先,目标设备环境类别/最新公告/具体版本,参考,https://tpc.ashrae.org/?cmtKey=fd4a4ee6-96a3-4f61-8b85-43418dfa988d
+全球参考,ASHRAE Liquid Cooling Guidelines / TCS Commissioning Bulletin,ASHRAE TC 9.9,当前TC 9.9已发布TCS Commissioning及Coolant Integrity相关技术公告,液冷二次侧/冷却液/调试,技术指南,用于液冷系统水质、冲洗、调试和完整性,购买/订阅文本及OEM水质边界,参考,https://tpc.ashrae.org/?cmtKey=fd4a4ee6-96a3-4f61-8b85-43418dfa988d
+全球参考,IEC 60364系列,IEC,低压电气装置标准系列；具体分册需按设备/场所适用范围判断,固定机房低压电气/特殊装置,国际标准,作为国家标准转化或合同参考，不可直接替代当地法规,所在地采用的IEC/国家转化版及版本,待核验,https://www.iec.ch/
+全球参考,ISO/IEC 22237系列,ISO/IEC,数据中心设施与基础设施相关系列标准,数据中心建筑/电力/环境/电信/安全,国际标准,可作为跨区域统一工程术语和设施治理参考,标准版本/购买文本/当地采纳,待核验,https://www.iso.org/
+中国大陆,GB 50174-2017《数据中心设计规范》,住房和城乡建设部/相关主管部门,住建部公告第1541号；2018-01-01实施；公告列明强制性条文,数据中心设计与建设,国家工程建设标准,作为中国大陆项目设计基线；执行前核验是否已有替代/局部修订/地方补充,项目所在地主管部门/审图机构/最新版目录,待项目地确认,https://ebook.chinabuilding.com.cn/c/2017-05-23/43310.shtml
+中国大陆,GB/T 34982-2017《云计算数据中心基本要求》,国家标准体系,生态环境主管部门标准清单列为现行,云计算数据中心基本要求,推荐性国家标准,按项目采购/运营范围评估适用,最新版状态/行业监管要求,待项目地确认,https://big5.mee.gov.cn/gate/big5/www.mee.gov.cn/ywgz/fgbz/bz/bzwb/other/xxbz/202401/W020240116501300586629.pdf
+中国大陆,GB/T 32910.3《数据中心 资源利用 第3部分：电能能效要求和测量方法》,国家标准体系,政府采购指南列为能效评估参考,电能利用效率与测量,推荐性国家标准,用于能耗基线与绩效测量的候选依据,现行版本/地方能耗约束/适用行业,待项目地确认,https://www.ccgp.gov.cn/specialtopic/zfcgxqbz/xgzn/202105/t20210508_16254470.htm
+中国大陆,电气/消防/建筑/防雷/抗震/节能/环境/水资源地方要求,所在地主管部门/审图/供电/消防/环保机构,具体条款随省市、园区、建筑类型和并网方式变化,供配电/消防/结构/冷却水/排水/施工,强制法规及地方标准,必须由本地设计院/专业工程师形成适用法规清单,省市/园区/建筑审批和电网接入要求,待项目地确认,不适用单一全球链接
+北美,NFPA 70 (NEC) 2026 Edition,NFPA,官方页面列出2026版为Current Edition；各州/城市采用版本与修订可能不同,低压电气装置与安装安全,行业规范/被辖区采纳后成为法定要求,按AHJ采纳版本执行；不能仅因2026为最新版本就默认当地已采用,州/城市/AHJ采用版本与当地修订,待项目地确认,https://www.nfpa.org/en/Codes-and-Standards/Document-information-pages/70
+北美,当地建筑/消防/机械/环境/能源/水务/结构规范,州/县/城市及AHJ,随州/城市/园区和许可范围变化,机房建设/供电/液冷/消防/排水/噪声/燃料,强制法规,由当地注册专业工程师和AHJ确认,具体州/城市/许可条件,待项目地确认,不适用单一全球链接
+北美,ANSI/TIA-942-C,ANSI/TIA/TIA,全球数据中心基础设施标准；C版2024-05-07发布,数据中心评级/认证/设计,行业标准/自愿认证,可用于合同指定评级与第三方认证,业主是否要求Rated-3/Rated-4及认证边界,参考,https://tiaonline.org/resource/tia-942-c-data-center-infrastructure-standard/
+北美,ASHRAE TC 9.9,ASHRAE,环境与液冷分类/数据中心设计指南,机房温湿度/液冷供液温度/设备热环境,工程指南,与OEM温度/水质/压力边界共同使用,AHJ、保险、OEM和业主设计基准,参考,https://tpc.ashrae.org/?cmtKey=fd4a4ee6-96a3-4f61-8b85-43418dfa988d
+北美,IEC 60364-7-717:2026,IEC,2026-01-29发布；范围为移动或可运输单元的低压电气装置,仅移动/可运输单元,国际标准,普通固定式数据中心不因其存在而自动适用；模块化集装箱场景需评估,单元是否属于mobile/transportable unit及本地采纳,条件性,https://webstore.iec.ch/en/publication/78773

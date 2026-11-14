@@ -1,0 +1,17 @@
+区域,对象,参数,候选值,单位,计量/计算口径,禁止误读,待取得证据,状态
+A,GPU Rack,TDP,132,kW,候选口径,不等于AC输入,OEM SKU/负荷曲线,Candidate
+A,GPU Rack,EDPp,约155,kW,候选口径,不等于整站IT/设施负荷,OEM定义/工况,Candidate
+A,GPU Rack,Busway planning,192,kW,母线规划,不等于平均功率/utility容量,OEM Whip映射,Candidate
+B,GPU Rack,TDP,132,kW,候选口径,不等于AC输入,OEM SKU/负荷曲线,Candidate
+B,GPU Rack,EDPp,约155,kW,候选口径,不等于整站IT/设施负荷,OEM定义/工况,Candidate
+B,GPU Rack,Busway planning,192,kW,母线规划,不等于平均功率/utility容量,OEM Whip映射,Candidate
+A/B,N1380,N+1 DC chassis capacity,54,kW DC,每区候选,不是AC输入功率,OEM AC曲线/PCS效率,Candidate
+A/B,XDU1350,额定冷量,1300,kWth,每区候选,冷量不是电功率；不自动N+1,OEM曲线/降额/冗余,Candidate
+A/B,IT全设备,逐时AC输入,TBD,kW,Σ设备AC输入(t),不得用TDP/EDPp替代,OEM曲线+校准电表,TBD-Vendor
+A/B,Facility,设施总电能,TBD,kWh,统一边界总表实测,与PUE估算二选一,计量点/校准证书,TBD-Engineer
+A/B,Facility,PUE,TBD,ratio,设施总能耗/IT能耗,不得重复叠加辅机能耗,逐时边界/负载工况,TBD-Engineer
+A/B,POI,firm容量,TBD,MW/MVA,Utility项目级容量/协议,规划/申请/可中断容量不可替代,E3协议/研究/送电日,TBD-Vendor
+A/B,Cooling,设计热负载,TBD,kWth,OEM热工曲线+IT实测,电功率近似仅供初估,P&ID/热工计算/满载测,TBD-Engineer
+A/B,Cooling,N+1冷量,TBD,kWth,N台降额可用冷量之和≥设计热负荷,泵N+1不等于整机N+1,FMEA/故障测试,TBD-Engineer
+A/B,Water,WUE,TBD,L/kWh,年水耗/IT年电能,定义取水/耗水/排水边界,水表/许可/季节模型,TBD-Engineer
+A/B,Water,供水/排水许可,TBD,m3/day,许可/供水/排水协议,园区宣传不等于水权,主管机关/水务协议,TBD-Vendor

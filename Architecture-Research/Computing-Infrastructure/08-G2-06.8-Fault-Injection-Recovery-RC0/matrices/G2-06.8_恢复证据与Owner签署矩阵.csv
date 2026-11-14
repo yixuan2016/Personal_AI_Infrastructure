@@ -1,0 +1,13 @@
+证据编号,证据类别,事实内容,事实Owner,独立复核方,必要字段,签署/确认条件
+EV-001,拓扑基线,区域/站点/网络/供电/冷却故障域,Architecture与各专业Owner,独立见证,拓扑版本/站点ID/路径/故障域/有效期,所有实际参与Owner确认
+EV-002,版本基线,软件/固件/驱动/Ontology/Schema/策略版本,各组件Owner,配置审计,版本/摘要/部署范围/生效时间,版本清单可复算
+EV-003,授权基线,Policy/Trust/Grant/撤销水位,对应治理Owner,安全审计,issuer/epoch/sequence/expiry/signature,授权范围与目标受众一致
+EV-004,Lease事实,Prepare/Commit/Lease/FencingToken,Site Reservation与Lease Authority,独立见证,operation/idempotency/owner_epoch/sequence/token_ref,原始Owner回执可验证
+EV-005,任务事实,TaskRun/Stop/Release/Checkpoint,Site LCP与Compute/GPU Owner,任务验收方,task_id/state/version/checkpoint_digest,任务状态与资源状态一致
+EV-006,存储事实,副本/对象/Checkpoint完整性,Storage/Data Owner,数据完整性审计,digest/version/replica_cursor/retention,摘要与授权均通过
+EV-007,网络事实,RTT/丢包/路由/运营商切换/QoS,Network Owner,独立网络测量方,path_id/asn/route/mtu/metric_window,物理路径和指标可复核
+EV-008,设施事实,供电/冷却/消防/联锁,Facility Owner,安全审计,alarm_id/measurement/interlock/action/time,设施安全恢复已签署
+EV-009,事件事实,Owner事件/快照/缺口补传,事件产生Owner,独立实现,owner_epoch/sequence/digest/cursor/signature,连续性或快照重建可证明
+EV-010,恢复事实,状态机迁移/恢复步骤/对账结果,SCO/RCP/Site Owner,独立见证,from_state/to_state/operation/evidence_refs,每次迁移有因果证据
+EV-011,性能事实,RTO/RPO/撤销收敛/容量与网络SLO,对应服务与专业Owner,独立测量方,起止口径/sample_count/percentiles/tool_version,统计口径和样本可复算
+EV-012,验收事实,Gate 0—4决议与风险接受,架构委员会与风险Owner,独立审计,gate/status/scope/conditions/expiry/signatories,失败项与风险接受均有责任人

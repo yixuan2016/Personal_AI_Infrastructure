@@ -1,0 +1,17 @@
+flowchart TB
+  GOV["业主治理与跨区协同<br/>ADS / RCP / 人类审批"] --> LCP["站点资源Owner与LCP<br/>Lease / 权限 / 审计"]
+  subgraph A["A 完全自建"]
+    A1["业主土地/建筑/供配电"] --> A2["业主一次水侧+CDU"] --> A3["业主GB300/Storage/Network"]
+  end
+  subgraph B["B 高密托管"]
+    B1["运营商建筑/电力/冷源"] --> B2["合同界面CDU/二次侧"] --> B3["业主GB300/Storage/Network"]
+  end
+  subgraph C["C Powered Shell+自建IT"]
+    C1["出租方建筑/上级接入"] --> C2["分段配电+专属CDU接口"] --> C3["业主GB300/Storage/Network"]
+  end
+  LCP -.-> A3
+  LCP -.-> B3
+  LCP -.-> C3
+  SAFE["现场硬联锁<br/>消防/漏液/电气安全<br/>不等待Agent"] -.-> A2
+  SAFE -.-> B2
+  SAFE -.-> C2

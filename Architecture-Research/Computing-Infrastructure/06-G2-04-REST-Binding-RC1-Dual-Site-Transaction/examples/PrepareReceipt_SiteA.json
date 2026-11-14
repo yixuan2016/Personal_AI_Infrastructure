@@ -1,0 +1,10 @@
+{
+  "transaction_id": "txn-demo-20261110-001",
+  "site_id": "site-a",
+  "reservation_id": "res-site-a-001",
+  "contract_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "prepared_until": "2026-11-10T18:00:00Z",
+  "state_version": 4,
+  "issued_at": "2026-11-10T17:30:00Z",
+  "signature_ref": "urn:example:signature:prepare-site-a"
+}

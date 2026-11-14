@@ -1,0 +1,14 @@
+operation_id,operation,method,path,request_contract,response_contract,authority_owner,side_effect,idempotency,precondition,notes
+REG-001,读取区域能力摘要,GET,/v1/regions/{region_id}/capability-summary,RegionCapabilityQuery,RegionCapabilitySummary,RCP,false,no,no,只读投影且必须标注新鲜度与来源Owner
+REG-002,创建跨区域子任务提案,POST,/v1/federated-subtasks/proposals,FederatedSubtaskProposal,ProposalReceipt,SCO,true,required,contract_digest,提案不构成资源承诺
+REG-003,校验子任务,POST,/v1/federated-subtasks/{proposal_id}/validate,ValidationRequest,ValidationReport,RCP,true,required,If-Match,硬约束和兼容Profile校验
+REG-004,发起区域Prepare,POST,/v1/federated-subtasks/{proposal_id}/prepare,RegionPrepareRequest,RegionOperationReceipt,RCP_to_SiteOwner,true,required,If-Match,区域委派站点Reservation Authority
+REG-005,查询Prepare状态,GET,/v1/federated-subtasks/{proposal_id}/prepare-status,none,PrepareProjection,RCP,false,no,no,返回站点原始回执引用
+REG-006,发起区域Commit,POST,/v1/federated-subtasks/{proposal_id}/commit,RegionCommitRequest,RegionOperationReceipt,RCP_to_SiteLeaseAuthority,true,required,If-Match,仅Site Lease Authority签发Lease与FencingToken
+REG-007,请求激活,POST,/v1/federated-subtasks/{proposal_id}/activate,ActivationBarrierRequest,ActivationProjection,SCO_to_SiteLCP,true,required,If-Match,Barrier通过后仍需本地复核
+REG-008,请求取消或补偿,POST,/v1/federated-subtasks/{proposal_id}/cancel,CompensationRequest,CompensationProjection,SiteOwner,true,required,If-Match,Stop与Release必须分别产生Owner回执
+REG-009,查询任务状态,GET,/v1/federated-subtasks/{proposal_id}/status,none,FederatedTaskProjection,RCP_or_SCO,false,no,no,返回source_epoch与sequence
+REG-010,发起状态对账,POST,/v1/federated-subtasks/{proposal_id}/reconcile,ReconciliationRequest,ReconciliationReport,OriginalOwner,true,required,If-Match,Unknown先对账后重试
+REG-011,发布区域策略包,POST,/v1/regions/{region_id}/policy-bundles,PolicyBundle,PolicyDistributionReceipt,ADS_Governance,true,required,policy_version,区域不能扩大授权
+REG-012,传播撤销水位,POST,/v1/regions/{region_id}/revocations,RevocationNotice,RevocationReceipt,RevocationIssuer,true,required,revocation_sequence,P0优先通道
+REG-013,确认事件游标,POST,/v1/regions/{region_id}/events/ack,EventCursorAck,EventAckReceipt,Consumer,true,required,cursor_version,只能在持久化或可恢复处理后确认

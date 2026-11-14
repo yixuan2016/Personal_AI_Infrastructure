@@ -1,0 +1,16 @@
+风险ID,风险主题,触发条件,等级,责任Owner,控制/缓解,所需证据,状态
+R-01,GPU产出高估,72×8760当可售GPU-h,高,GPU Owner,分开日历/可用/分配/验收GPU-h,作业账本,Open
+R-02,功率口径混算,192kW母线规划推导区域MW,极高,Electrical/OEM,AC曲线/瞬态/PF/Whip/计量,单线图/负荷计算,Open
+R-03,N1380 DC当AC,54kW直接作为设施输入,高,CPU/OEM,OEM AC曲线/PCS效率,配置单/电表,Open
+R-04,CDU冷量当电功率,1.3MW冷量或一台即N+1,极高,Facility/OEM,冷量/电功率分开；整机FMEA,P&ID/热工/故障测试,Open
+R-05,原始PB当可用PB,19.6608PB直接可售,高,Storage,保护/热备/元数据/快照/水位,容量模型,Open
+R-06,QLC承载高写入权威数据,Saga/Lease事实放入容量盘唯一副本,极高,Data/Storage,高耐久低延迟权威层,写入画像/QVL,Open
+R-07,WAN按标称线速,忽略RPO/物理路由/积压,高,Network,按变化率和恢复窗口实测,路径/基准报告,Open
+R-08,跨区GPU视为NVLink域,将两区GPU合成单一集体通信域,极高,GPU/Network,本地Fabric；跨区异步协调,拓扑/QVL,Open
+R-09,PUE重复计费,PUE后再加冷机泵电耗,高,Finance/Facility,实测总表与PUE二选一,计量/账单复核,Open
+R-10,水权无证据,园区宣传替代许可,极高,Environmental,项目级供排水协议,许可/协议,Open
+R-11,CPU拓扑重复,2N2S和4N1S同时算容量,中,CPU Owner,两种拓扑互斥,BOM/QVL,Open
+R-12,TCO不公平,路线负载/SLO/计费口径不同,高,Finance,统一业务与财务口径,财务审查,Open
+R-13,区域不独立,共享电网/光路/流域/灾害,极高,Architecture,共同故障域依赖图,Utility/Carrier/水务证据,Open
+R-14,未知值填0,缺失输入参与公式形成假精确,高,Model Owner,TBD传播；P0缺失阻断,模型审查,Open
+R-15,模型版本漂移,BOM/公式变更未更新验收/TCO,高,Architecture,输入版本/公式版本/变更单/SHA,变更记录,Open

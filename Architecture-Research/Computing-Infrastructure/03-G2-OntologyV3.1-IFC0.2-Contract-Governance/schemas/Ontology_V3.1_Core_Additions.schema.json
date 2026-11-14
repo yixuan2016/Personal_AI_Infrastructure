@@ -1,0 +1,406 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:compute-base:ontology:v3.1:core-additions:rc0",
+  "title": "算力底座 Ontology V3.1 Core Additions RC0",
+  "description": "Minor additive proposal. Existing V3.0 entities and required fields are unchanged.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/OutputArtifact"
+    },
+    {
+      "$ref": "#/$defs/Result"
+    },
+    {
+      "$ref": "#/$defs/DelegationGrant"
+    },
+    {
+      "$ref": "#/$defs/HumanApproval"
+    }
+  ],
+  "$defs": {
+    "StableRef": {
+      "type": "string",
+      "format": "uri",
+      "minLength": 8
+    },
+    "Digest": {
+      "type": "string",
+      "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+    },
+    "EntityVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "Time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "RefArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/StableRef"
+      },
+      "uniqueItems": true
+    },
+    "OutputArtifact": {
+      "type": "object",
+      "required": [
+        "artifact_ref",
+        "artifact_version",
+        "owner_ref",
+        "producer_ref",
+        "task_run_ref",
+        "artifact_type",
+        "content_digest",
+        "storage_ref",
+        "classification_ref",
+        "created_at",
+        "status"
+      ],
+      "properties": {
+        "artifact_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "artifact_version": {
+          "$ref": "#/$defs/EntityVersion"
+        },
+        "owner_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "producer_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "task_run_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "artifact_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_digest": {
+          "$ref": "#/$defs/Digest"
+        },
+        "content_length": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "storage_ref": {
+          "$ref": "#/$defs/StableRef",
+          "description": "Opaque authorized resolver reference; not a public direct-download URL."
+        },
+        "classification_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "provenance_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "access_policy_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "created_at": {
+          "$ref": "#/$defs/Time"
+        },
+        "retention_until": {
+          "$ref": "#/$defs/Time"
+        },
+        "signature_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "status": {
+          "enum": [
+            "Published",
+            "Quarantined",
+            "Withdrawn",
+            "Expired"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "Result": {
+      "type": "object",
+      "required": [
+        "result_ref",
+        "result_version",
+        "task_run_ref",
+        "producer_ref",
+        "result_type",
+        "status",
+        "artifact_refs",
+        "evidence_refs",
+        "created_at"
+      ],
+      "properties": {
+        "result_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "result_version": {
+          "$ref": "#/$defs/EntityVersion"
+        },
+        "task_run_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "producer_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "result_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outcome_summary": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "Produced",
+            "UnderReview",
+            "Accepted",
+            "ConditionallyAccepted",
+            "Rejected",
+            "ReleasePending",
+            "Released",
+            "Withheld",
+            "Withdrawn",
+            "Disputed"
+          ]
+        },
+        "artifact_refs": {
+          "$ref": "#/$defs/RefArray"
+        },
+        "evidence_refs": {
+          "$ref": "#/$defs/RefArray"
+        },
+        "acceptance_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "release_decision_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "disclosure_policy_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "content_digest": {
+          "$ref": "#/$defs/Digest"
+        },
+        "created_at": {
+          "$ref": "#/$defs/Time"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/Time"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "Released"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "release_decision_ref",
+              "acceptance_ref"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "Accepted"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "acceptance_ref"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "DelegationGrant": {
+      "type": "object",
+      "required": [
+        "grant_ref",
+        "grant_version",
+        "issuer_principal_ref",
+        "delegate_principal_ref",
+        "actor_chain",
+        "audience_refs",
+        "actions",
+        "resource_scope",
+        "purpose_ref",
+        "not_before",
+        "expires_at",
+        "redelegation_allowed",
+        "signature_ref",
+        "status"
+      ],
+      "properties": {
+        "grant_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "grant_version": {
+          "$ref": "#/$defs/EntityVersion"
+        },
+        "issuer_principal_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "delegate_principal_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "actor_chain": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/StableRef"
+          }
+        },
+        "audience_refs": {
+          "$ref": "#/$defs/RefArray"
+        },
+        "actions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "resource_scope": {
+          "type": "object",
+          "minProperties": 1
+        },
+        "purpose_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "not_before": {
+          "$ref": "#/$defs/Time"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/Time"
+        },
+        "redelegation_allowed": {
+          "type": "boolean"
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "policy_decision_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "signature_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "revocation_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "status": {
+          "enum": [
+            "Active",
+            "Suspended",
+            "Revoked",
+            "Expired"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "HumanApproval": {
+      "type": "object",
+      "required": [
+        "approval_ref",
+        "approver_principal_ref",
+        "subject_ref",
+        "subject_digest",
+        "scope",
+        "decision",
+        "issued_at",
+        "expires_at",
+        "signature_ref",
+        "status"
+      ],
+      "properties": {
+        "approval_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "approver_principal_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "subject_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "subject_digest": {
+          "$ref": "#/$defs/Digest"
+        },
+        "scope": {
+          "type": "object",
+          "minProperties": 1
+        },
+        "decision": {
+          "enum": [
+            "Approve",
+            "Reject",
+            "Abstain",
+            "RequestChanges",
+            "Revoke"
+          ]
+        },
+        "reason_code": {
+          "type": "string"
+        },
+        "reason_text": {
+          "type": "string"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "policy_version_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "issued_at": {
+          "$ref": "#/$defs/Time"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/Time"
+        },
+        "evidence_refs": {
+          "$ref": "#/$defs/RefArray"
+        },
+        "signature_ref": {
+          "$ref": "#/$defs/StableRef"
+        },
+        "status": {
+          "enum": [
+            "Valid",
+            "Expired",
+            "Revoked",
+            "Consumed"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

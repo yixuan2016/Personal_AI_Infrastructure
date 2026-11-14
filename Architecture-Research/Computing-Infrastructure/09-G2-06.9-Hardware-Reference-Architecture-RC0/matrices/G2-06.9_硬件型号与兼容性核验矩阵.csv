@@ -1,0 +1,22 @@
+设备域,候选型号,产品形态,已核实公开规格,关键兼容项,风险/限制,当前状态
+CPU,AMD EPYC 9956,SP7服务器CPU,256C/512T；400W默认功率；16通道DDR5 RDIMM/MRDIMM；PCIe 6.0 x96,SP7主板/BIOS/MRDIMM QVL/散热,2026-11-10新发布需验证OEM固件成熟度,候选
+CPU,AMD EPYC 9996,SP7服务器CPU,256C/512T；600W功率档；16通道DDR5 RDIMM/MRDIMM；PCIe 6.0 x96,SP7主板/供电/冷却/BIOS,高功率对机柜密度与散热要求高,候选
+CPU,AMD EPYC 9966,SP7服务器CPU,192C/384T；600W功率档；16通道DDR5 RDIMM/MRDIMM；PCIe 6.0 x96,SP7主板/NUMA/内存QVL,高功率与高频取舍需实测,候选
+CPU,AMD EPYC 9756,SP7服务器CPU,128C/256T；500W功率档；16通道DDR5 RDIMM/MRDIMM；PCIe 6.0 x96,SP7主板/内存QVL,需核对实际SKU和供货,候选
+CPU,Intel Xeon 6980P,Granite Rapids服务器CPU,128C/256T；500W；12通道内存；PCIe 5.0 x96,对应LGA7529主板/MRDIMM QVL/BIOS,与SP7平台不兼容不可混插,对照候选
+GPU,NVIDIA GB300 NVL72,72-GPU液冷整机柜,72 Blackwell Ultra GPU+36 Grace CPU；20TB GPU Memory；NVLink 130TB/s,整柜供电/CDU/冷板/网络/软件,机柜级产品不可等同8-GPU服务器,候选
+GPU,NVIDIA HGX B300,8-GPU服务器平台,8 GPU；总Fast Memory 2.1TB；总带宽约62TB/s,OEM服务器SKU/NVLink/NIC/电源/液冷,必须以OEM完整配置为准,候选
+GPU,AMD Instinct MI355X OAM,OAM加速模块,288GB HBM3E；8TB/s；最高1400W TBP,OAM基板/供电/液冷/Infinity Fabric/ROCm,不能直接插入通用PCIe服务器,候选
+GPU,AMD Instinct MI350P,PCIe加速卡,144GB HBM3E；4TB/s；600W最大可配置450W,PCIe槽位/电源/气流/ROCm,需确认服务器QVL和功率连接器,候选
+GPU,NVIDIA DGX Vera Rubin NVL72,前瞻机柜级系统,72 Rubin GPU+36 Vera CPU；20.7TB HBM4；NVLink 216TB/s,供货/OEM/软件/液冷/机柜认证,不作为已验证当前基线,观察
+SSD,Micron 9650,PCIe Gen6 NVMe SSD,最高28GB/s顺序读取；5.5M+ IOPS；E1.S/E3.S,主机PCIe Gen6/固件/散热/容量SKU,需验证主机瓶颈和持续写性能,候选
+SSD,Micron 9550 PRO/MAX,PCIe Gen5 NVMe SSD,PRO最高30.72TB/1DWPD；MAX最高25.6TB/3DWPD,盘位/固件/OCP/PLP/热插拔,不同SKU容量与耐久不同,候选
+SSD,Solidigm D7-PS1010,PCIe Gen5 NVMe SSD,面向企业/HPC/AI混合负载,容量SKU/固件/PLP/耐久,需补齐具体料号与QVL,候选
+SSD,KIOXIA CM7-V,双端口PCIe Gen5 NVMe SSD,最高12.8TB；3DWPD；双端口,双路径主机/控制器/固件,需验证多路径和具体SKU,候选
+HDD,Seagate Mozaic 4+ 44TB,HAMR企业级大容量HDD,44TB；部分超大规模客户已量产部署,机箱背板/振动/功耗/采购渠道,大规模供货范围需供应商确认,候选
+NIC,NVIDIA ConnectX-8,InfiniBand/Ethernet SuperNIC,总带宽最高800Gb/s；PCIe Gen6；RDMA/GPUDirect,主板PCIe/交换机/光模块/固件,以具体IB/Ethernet SKU为准,候选
+Switch,NVIDIA Quantum-X800 Q3400-RA,4U InfiniBand交换机,144×800Gb/s端口；72 OSFP cages,光模块/线缆/拓扑/UFM/供电散热,需核验区域供货和端口许可,候选
+Switch,NVIDIA Quantum-X800 Q3401-RD,4U InfiniBand交换机,144×800Gb/s端口；DC供电机柜形态,DC供电/机柜/光模块/线缆,与AC形态不可直接互换,候选
+Switch,NVIDIA Spectrum-6 SN6600,800G Ethernet交换机,128×800Gb/s；102.4Tb/s,交换机NOS/光模块/ECN/QoS/拥塞控制,须做RoCE端到端测试,候选
+Switch,NVIDIA Spectrum-6 SN6800,高密度CPO Ethernet交换机,512×800Gb/s CPO端口；409.6Tb/s厂商标称交换容量,光纤/CPO/机柜/散热/运维,高密度CPO生态和可维护性需验证,候选
+ASIC,Broadcom Tomahawk 6,交换芯片,102.4Tb/s交换容量,OEM整机型号/NOS/端口配置/光学方案,芯片不等于交换机成品型号,观察

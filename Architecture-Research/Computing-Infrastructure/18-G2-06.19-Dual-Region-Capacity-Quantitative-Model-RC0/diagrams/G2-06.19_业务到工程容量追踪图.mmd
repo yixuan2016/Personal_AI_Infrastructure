@@ -1,0 +1,15 @@
+flowchart TB
+B["业务需求与服务等级<br/>模型｜并发｜数据｜SLO｜RPO/RTO"]
+W["工作负载画像<br/>训练｜推理｜Agent/HPC｜存储｜复制"]
+R["资源容量模型<br/>GPU-h｜CPU核/内存｜可用PB｜Gbps"]
+H["设备与BOM<br/>准确SKU｜数量｜QVL｜端口｜AC曲线"]
+F["设施容量<br/>UPS/PDU/POI｜CDU/冷源｜水务｜空间"]
+E["能源与成本<br/>IT/Facility kWh｜PUE/WUE｜TCO"]
+A["验收与证据<br/>FAT/SAT｜故障注入｜E0-E4｜Owner签署"]
+B --> W --> R --> H --> F --> E --> A
+O["业主/业务Owner"] -.-> B
+OEM["OEM/供应商"] -.-> H
+U["Utility/运营商/水务机构"] -.-> F
+P["专业工程师/法务/财务"] -.-> F
+P -.-> E
+A -->|"偏差/缺口/变更"| B

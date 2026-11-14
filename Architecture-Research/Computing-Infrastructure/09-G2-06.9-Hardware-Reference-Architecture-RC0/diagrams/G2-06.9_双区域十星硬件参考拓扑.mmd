@@ -1,0 +1,48 @@
+flowchart TB
+    G["全局 ADS / SCO：跨区域任务与治理"]
+    R1["Region A：区域协调 RCP"]
+    R2["Region B：区域协调 RCP"]
+    WAN["双运营商 / 跨区域 WAN"]
+    G --> R1
+    G --> R2
+    R1 <--> WAN
+    WAN <--> R2
+
+    subgraph A["Region A：五颗异构算力星"]
+      A1["A1 GPU 星<br/>GB300 NVL72 / HGX B300 或 MI355X"]
+      A2["A2 CPU/HPC 星<br/>EPYC 9956 / 9996"]
+      A3["A3 存储星<br/>Micron 9650/9550 + HDD 冷层"]
+      A4["A4 通用控制星<br/>CPU / LCP / 本地策略"]
+      A5["A5 网络边缘星<br/>ConnectX / 多运营商接入"]
+    end
+    subgraph B["Region B：五颗异构算力星"]
+      B1["B1 GPU 星<br/>GB300 / HGX B300 或 MI355X"]
+      B2["B2 CPU/HPC 星<br/>EPYC 9956 / 9996"]
+      B3["B3 存储星<br/>NVMe 热温层 + HDD 冷层"]
+      B4["B4 通用控制星<br/>CPU / LCP / 本地策略"]
+      B5["B5 网络边缘星<br/>多运营商接入 / 带外管理"]
+    end
+    R1 --> A1
+    R1 --> A2
+    R1 --> A3
+    R1 --> A4
+    R1 --> A5
+    R2 --> B1
+    R2 --> B2
+    R2 --> B3
+    R2 --> B4
+    R2 --> B5
+
+    A1 --> AF["GPU Scale-up<br/>NVLink / Infinity Fabric"]
+    B1 --> BF["GPU Scale-up<br/>NVLink / Infinity Fabric"]
+    A1 --> AN["GPU Scale-out<br/>Quantum-X800 IB 或 Spectrum-X"]
+    B1 --> BN["GPU Scale-out<br/>Quantum-X800 IB 或 Spectrum-X"]
+    A3 --> AS["Storage Fabric<br/>NVMe / 对象 / 并行文件"]
+    B3 --> BS["Storage Fabric<br/>NVMe / 对象 / 并行文件"]
+    A4 --> AM["独立控制与管理网络"]
+    B4 --> BM["独立控制与管理网络"]
+    F["设施域：PDU / UPS / CDU / 液冷 / 消防联锁"]
+    F -.-> A1
+    F -.-> A3
+    F -.-> B1
+    F -.-> B3

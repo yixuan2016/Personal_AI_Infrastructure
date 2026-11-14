@@ -1,0 +1,41 @@
+输入ID,变量,定义,单位,责任Owner,所需证据,当前值/状态,优先级
+I-001,区域A地理法域,国家/州/城市/园区/地块,文本/法域,业主/法务,批准项目范围,TBD-Owner,P0
+I-002,区域B地理法域,国家/州/城市/园区/地块,文本/法域,业主/法务,批准项目范围,TBD-Owner,P0
+I-003,GPU准确SKU,MTM/GPU数/固件/驱动,SKU/数量/版本,GPU Owner/OEM,签署BOM/QVL,Candidate,P0
+I-004,GPU可用率,维护/故障/升级不可用时间,%,GPU/运维,作业账本/历史监控,TBD-Owner,P1
+I-005,GPU调度分配率,可用时间中分配给作业的比例,%,调度Owner,调度账本,TBD-Owner,P1
+I-006,作业验收率,作业成功且满足质量/SLO比例,%,业务/AI,验收记录,TBD-Owner,P1
+I-007,GPU吞吐基准,固定模型/精度/上下文/并发下端到端吞吐,tokens/s,AI平台,基准报告,TBD-Owner,P0
+I-008,训练画像,模型规模/精度/并行/数据量/作业窗口,模型/TB/GPU/小时,AI业务,签署画像,TBD-Owner,P0
+I-009,推理画像,模型/并发/QPS/上下文/输入输出token,QPS/token,业务Owner,签署画像,TBD-Owner,P0
+I-010,CPU拓扑,2N2S或4N1S,节点/路数,CPU Owner/OEM,OEM配置器/BOM,Candidate,P0
+I-011,CPU核数,准确CPU SKU与物理核数,核/节点,CPU Owner/OEM,OEM配置单,TBD-Vendor,P0
+I-012,CPU内存,DIMM容量/频率/带宽,GB/节点,CPU Owner/OEM,OEM配置单,TBD-Vendor,P0
+I-013,Agent画像,并发/vCPU/RAM/时长/沙箱/临时盘,任务/vCPU/GB,Agent平台,压测/业务画像,TBD-Owner,P1
+I-014,存储准确SKU,盘型号/数量/固件/DWPD/保修,型号/盘数,Storage/OEM,签署QVL/保修,Candidate,P0
+I-015,存储保护,副本或EC k+m/热备/元数据,比例/盘数,Storage Owner,存储设计,TBD-Owner,P0
+I-016,存储运行水位,业务可使用的池容量上限,%,Storage Owner,容量治理策略,TBD-Owner,P1
+I-017,数据增长率,年度复合增长率,%/年,Data Owner,历史数据/预测,TBD-Owner,P1
+I-018,Checkpoint画像,单次大小/频率/压缩/保留,TB/小时,AI/Storage,训练作业统计,TBD-Owner,P1
+I-019,复制窗口,允许完成复制时间,小时,业务/BCP,批准RPO/RTO,TBD-Owner,P0
+I-020,协议效率,加密/协议/重传后的有效吞吐比例,%,Network,链路实测,TBD-Engineer,P1
+I-021,链路目标利用率,为突发和竞争预留后的使用上限,%,Network,容量规划,TBD-Owner,P1
+I-022,设备AC曲线,典型/连续/峰值/瞬态/PF,kW/kVA/PF,OEM/Electrical,OEM签署曲线,TBD-Vendor,P0
+I-023,PUE/设施总表,逐时PUE或统一边界设施总电量,PUE/kWh,Facility,计量/实测,TBD-Engineer,P0
+I-024,Utility firm容量,具体POI连续/峰值容量,MW/MVA,Utility/Electrical,项目级协议/研究,TBD-Vendor,P0
+I-025,功率因数,设计PF及范围,0-1,Electrical/Utility,电能质量研究,TBD-Engineer,P1
+I-026,设备热负载,GPU/CPU/存储热负载,kWth,OEM/Mechanical,OEM热工曲线,TBD-Vendor,P0
+I-027,CDU可用冷量,温度/流量/海拔/工况降额后冷量,kWth,CDU OEM/Facility,性能曲线/现场试验,TBD-Vendor,P0
+I-028,冷却冗余,N+1/整机1+1与单故障工况,拓扑/台数,Facility,FMEA/P&ID/测试,TBD-Engineer,P0
+I-029,WUE,明确边界的水使用效率,L/kWh,Facility/Environmental,水表/水量模型,TBD-Engineer,P1
+I-030,水务许可容量,合法供水/取水/排水量,m3/day/year,水务/业主,许可/合同,TBD-Vendor,P0
+I-031,RPO/RTO,按业务/数据类别定义,分钟/小时,Business/BCP,签署BCP,TBD-Owner,P0
+I-032,SLO,可用性/延迟/错误率/维护窗口,%/ms,业务Owner,签署SLO,TBD-Owner,P0
+I-033,A/B建设路线,自建/托管/Powered Shell,A/B/C,Sponsor/Legal,ADR/合同边界,TBD-Owner,P1
+I-034,CAPEX/报价,设备/工程/安装/税运正式报价,货币,Finance/Procurement,正式报价/合同,TBD-Vendor,P1
+I-035,能源tariff,电量/需量/容量/系统服务费,货币/kWh/kW月,Utility/Finance,tariff/报价,TBD-Vendor,P1
+I-036,折现率,项目财务折现率,%,Finance,财务批准,TBD-Owner,P1
+I-037,退出成本/残值,搬迁/复原/废液/运输/残值,货币,Finance/Legal/Asset,合同/回收报价,TBD-Vendor,P2
+I-038,物理网络路径,PoP/管道/入楼/MMR/共享段,路径图,Carrier/Network,签署路径/现场勘验,TBD-Vendor,P0
+I-039,有效Token产出,满足质量与SLO的有效token,token,业务/AI,服务账本,TBD-Owner,P2
+I-040,资产利用与扩容,增长/扩容提前期/更新周期,%/月/年,Architecture/Asset,批准分期计划,TBD-Owner,P2
