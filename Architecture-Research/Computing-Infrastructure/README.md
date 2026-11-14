@@ -211,3 +211,5 @@ G2-06.14当前为RC0区域长名单和桌面初筛；未取得园区/地块级fi
 - [三路线设施归属架构图](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/diagrams/G2-06.16_三路线设施归属拓扑.mmd)、[工程与合同决策门禁图](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/diagrams/G2-06.16_工程与合同决策门禁.mmd)。
 
 G2-06.16 = RC0 / Proposed。暂建议优先验证C、以A为长期对照、B为高密可交付的快速备选；尚无任何项目级firm MW/液冷容量/地块租约/正式报价/FAT/SAT，不能宣称已完成最终方案选定或成本最优。
+
+- [G2-06.16 文件交付清单及SHA-256](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/G2-06.16_交付清单与SHA256校验记录.md)、[逐文件SHA256SUMS](15-G2-06.16-Build-Colo-Hybrid-Decision-RC0/SHA256SUMS.txt)：本轮16个正文/CSV/图源文件的远端UTF-8内容哈希。阶段共18个文件（16研究文件+2校验文件）；不替代完整仓库ZIP验包。
