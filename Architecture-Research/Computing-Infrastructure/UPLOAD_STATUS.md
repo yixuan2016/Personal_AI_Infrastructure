@@ -274,5 +274,5 @@ PR #13 持续跟踪本工作分支并保持 Draft。GitHub 显示可合并不代
 - 12份CSV逐行复核，字段列数全部一致；数据行数分别为：40、25、14、14、16、15、14、12、18、19、20、18。
 - 阶段目录共19个文件：17个内容文件+SHA256SUMS+文件清单/校验记录。
 - 根README和本状态文件均已包含G2-06.20阶段入口/归档记录。
-- PR #13保持Open/Draft；GitHub报告mergeable=true、mergeable_state=clean；分支相对main ahead 274 / behind 2。尚未合并main；仍需处理分支落后和Draft评审状态。
+- PR #13保持Open/Draft；GitHub报告mergeable=true、mergeable_state=clean；分支相对main behind 2 commits（ahead数量随工作分支提交变化）。尚未合并main；仍需处理分支落后和Draft评审状态。
 - 哈希/结构检查不代表业务Owner签署、OEM QVL、Utility firm MW、水务许可、专业工程批准或现场FAT/SAT。
