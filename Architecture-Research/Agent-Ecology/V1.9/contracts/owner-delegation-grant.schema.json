@@ -174,7 +174,8 @@
         "algorithm",
         "keyId",
         "keyEpoch",
-        "compactJws"
+        "compactJws",
+        "typ"
       ],
       "properties": {
         "format": {
@@ -197,6 +198,9 @@
         "compactJws": {
           "type": "string",
           "minLength": 20
+        },
+        "typ": {
+          "const": "application/agent-ecology-owner-delegation+jwt"
         }
       }
     },
