@@ -1,0 +1,15 @@
+平衡ID,资源域,需求输入,供给计算,单位/指标,供需判定,责任Owner,状态,验收方法
+BAL-01,GPU,GPU-h/吞吐/延迟,GPU数×可用时间×分配率；吞吐实测,GPU-h/tokens/s/TTFT/TPOT,同窗口需求≤可用供给,GPU Owner,Candidate/TBD,固定模型/精度/上下文/并发基准
+BAL-02,CPU/HPC,并发任务/核/内存/NUMA,节点数×准确SKU核数/内存×系数,核/GB/任务/队列,2N2S与4N1S互斥；故障降级,CPU/HPC Owner,TBD,NUMA/带宽/沙箱压测
+BAL-03,存储容量,初始数据+增长+备份+副本,原始×保护/格式化/水位-预留,PB/PiB,可用容量覆盖峰值需求,Storage Owner,Candidate/TBD,容量/重建/恢复验证
+BAL-04,存储性能,IOPS/吞吐/延迟/耐久,按读写比/块大小/并发实测,IOPS/GB/s/ms/DWPD,性能与耐久分开过门槛,Storage Owner,TBD,业务压测/重建性能
+BAL-05,GPU Fabric,本地GPU集体通信,GPU/NIC/交换机/光模块QVL,Gbps/延迟/拥塞,A/B平面独立故障域,Network/OEM,Candidate,单平面失效/通信基准
+BAL-06,WAN复制,数据变化率/RPO/复制窗口,数据量/窗口/效率/链路利用率,Gbps/小时/RPO,新写入+积压恢复可持续,Network/Data,TBD,物理路由/断链恢复
+BAL-07,控制面,API/事件/Lease/审计速率,每类服务独立容量基准,req/s/events/s/事务/s,WAN分区本地Owner权威,Control Owner,Confirmed-Structure,乱序/重复/Owner不可达
+BAL-08,IT供电,逐设备AC曲线,Σ设备AC输入(t),kW/kVA/kWh,同故障工况核验UPS/PDU/Whip,Electrical/OEM,TBD,OEM曲线/校准电表
+BAL-09,POI电网,Facility峰值/冗余/扩容,Utility firm MW/MVA与工程负荷,MW/MVA/送电日,E3证据/N-1通过,Utility/Electrical,TBD,并网研究/协议/送电验收
+BAL-10,冷却,热负载/极端气候/单故障,OEM热工+CDU降额冷量+冗余,kWth/°C/L/min,单设备/单泵/整机故障仍满足,Facility/OEM,TBD,P&ID/热工/故障注入
+BAL-11,水务,年水耗/峰值日需水/排水,WUE×IT kWh及许可边界,m3/day/year,合法供排水覆盖设计工况,Environmental,TBD,许可/计量/季节模型
+BAL-12,空间结构,机柜/重量/点载荷/运输/净高,准确满液质量与布局,柜/吨/m²/kN/m²,结构/运输/维护空间签署,Structural/Facility,TBD,现场勘验/结构计算
+BAL-13,运维备件,MTTR/备件/现场到达,设备数/故障率/提前期,小时/天/数量,满足RTO与合同响应边界,Operations/OEM,TBD,RMA合同/故障演练
+BAL-14,五年TCO,CAPEX/OPEX/残值/产出,九种区域组合统一现金流,货币/NPV/单位成本,同口径并经财务签署,Finance,TBD,报价/合同/tariff审查
