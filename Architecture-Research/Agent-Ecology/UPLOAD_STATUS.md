@@ -19,7 +19,7 @@
 - V1.3—V1.7 六份主报告的 41 个图片引用均已核验为有效 SVG 路径。
 - PR #11 有 100 个变更路径；Draft/Open，目标 main。
 - PR #12 有 36 个变更路径；Draft/Open，目标 V1.2—V1.7 分支。
-- PR #14 有 11 个变更路径；Draft/Open，目标 V1.8 分支。最新核验 GitHub 返回 mergeable=true；Compare 显示 V1.8 基线是 V1.9 分支祖先且 behind_by=0。仍保持 Draft，不自动合并，须完成正式审查。
+- PR #14 有 11 个变更路径；Draft/Open，目标 V1.8 分支。GitHub 的 mergeable 字段在连续读取中出现 true/false 不一致；Compare 最近显示 V1.8 基线是 V1.9 分支祖先且 behind_by=0。未据此推断已可合并，继续保持 Draft，合并前需重新核验并完成正式审查。
 - V1.9 三份 CSV 已完成静态列数复核：研究证据 7 行/11 列、实验矩阵 22 行/6 列、威胁矩阵 12 行/7 列，均无列数不一致。
 - V1.9 的 22 项实验全部 NOT_RUN；8 项 ADR 均 Candidate；未取得 Owner 签署。
 - F0 Gate 未通过；无真实成员登记、密钥演练或双生态互操作测试。
