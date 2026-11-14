@@ -23,8 +23,9 @@
     "policyVersion",
     "revocationEpoch",
     "jti",
-    "notAuthorization",
-    "signature"
+    "signature",
+    "notTaskExecutionAuthorization",
+    "grantKind"
   ],
   "properties": {
     "grantId": {
@@ -165,9 +166,6 @@
       "type": "string",
       "minLength": 16
     },
-    "notAuthorization": {
-      "const": true
-    },
     "signature": {
       "type": "object",
       "additionalProperties": false,
@@ -201,23 +199,15 @@
           "minLength": 20
         }
       }
+    },
+    "grantKind": {
+      "const": "CAPABILITY_PUBLISHER_DELEGATION"
+    },
+    "notTaskExecutionAuthorization": {
+      "const": true
     }
   },
   "allOf": [
-    {
-      "if": {
-        "required": [
-          "parentGrantDigest"
-        ]
-      },
-      "then": {
-        "properties": {
-          "maxDelegationDepth": {
-            "minimum": 0
-          }
-        }
-      }
-    },
     {
       "if": {
         "properties": {
@@ -233,6 +223,25 @@
         "properties": {
           "maxDelegationDepth": {
             "const": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mayDelegate": {
+            "const": true
+          }
+        },
+        "required": [
+          "mayDelegate"
+        ]
+      },
+      "then": {
+        "properties": {
+          "maxDelegationDepth": {
+            "minimum": 1
           }
         }
       }
