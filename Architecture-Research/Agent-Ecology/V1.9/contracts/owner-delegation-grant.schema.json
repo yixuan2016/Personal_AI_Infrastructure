@@ -1,0 +1,264 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:owner-delegation-grant-candidate",
+  "title": "OwnerDelegationGrantCandidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "grantId",
+    "issuerDomainId",
+    "issuerPrincipalId",
+    "subjectPrincipalId",
+    "ownerId",
+    "resourceScope",
+    "actions",
+    "purposes",
+    "audiences",
+    "dataClasses",
+    "constraints",
+    "notBefore",
+    "expiresAt",
+    "mayDelegate",
+    "maxDelegationDepth",
+    "policyVersion",
+    "revocationEpoch",
+    "jti",
+    "notAuthorization",
+    "signature"
+  ],
+  "properties": {
+    "grantId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issuerDomainId": {
+      "type": "string"
+    },
+    "issuerPrincipalId": {
+      "type": "string"
+    },
+    "subjectPrincipalId": {
+      "type": "string"
+    },
+    "ownerId": {
+      "type": "string"
+    },
+    "capabilityIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "resourceScope": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "purposes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "audiences": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "dataClasses": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "maxRiskLevel"
+      ],
+      "properties": {
+        "maxRiskLevel": {
+          "enum": [
+            "R0",
+            "R1",
+            "R2",
+            "R3"
+          ]
+        },
+        "maxCalls": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maxCost": {
+          "type": "number",
+          "minimum": 0
+        },
+        "costUnit": {
+          "type": "string"
+        },
+        "maxDataVolume": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "leaseSeconds": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "notBefore": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "mayDelegate": {
+      "type": "boolean"
+    },
+    "maxDelegationDepth": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8
+    },
+    "parentGrantDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "policyVersion": {
+      "type": "string"
+    },
+    "approvalReceiptRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "revocationEpoch": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "jti": {
+      "type": "string",
+      "minLength": 16
+    },
+    "notAuthorization": {
+      "const": true
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "algorithm",
+        "keyId",
+        "keyEpoch",
+        "compactJws"
+      ],
+      "properties": {
+        "format": {
+          "const": "JWS"
+        },
+        "algorithm": {
+          "enum": [
+            "ES256",
+            "EdDSA",
+            "PS256"
+          ]
+        },
+        "keyId": {
+          "type": "string"
+        },
+        "keyEpoch": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "compactJws": {
+          "type": "string",
+          "minLength": 20
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "parentGrantDigest"
+        ]
+      },
+      "then": {
+        "properties": {
+          "maxDelegationDepth": {
+            "minimum": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mayDelegate": {
+            "const": false
+          }
+        },
+        "required": [
+          "mayDelegate"
+        ]
+      },
+      "then": {
+        "properties": {
+          "maxDelegationDepth": {
+            "const": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "constraints": {
+            "required": [
+              "maxCost"
+            ]
+          }
+        },
+        "required": [
+          "constraints"
+        ]
+      },
+      "then": {
+        "properties": {
+          "constraints": {
+            "required": [
+              "costUnit"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
