@@ -40,6 +40,7 @@
 - 本轮无工程实现、真实数据导入、Runtime 测试、生产授权或双生态验收。
 - WP-020 默认双边显式信任、无自动传递信任；SPIFFE/OIDF 为可选身份/信任适配；目标域本地授权不受 FCP 覆盖。
 - WP-021 采用来源域签名撤销 Feed、持久幂等去重、单调墓碑、连续水位、完整快照恢复和本地 Freshness Budget；目录最终一致不等于执行授权。
+- WP-025/026 采用联邦式动态联盟与版本化 Coalition Charter；Charter 非授权，Owner 本地 PDP/PEP 保留 Permit 权威；任务租约、Fencing Token 和幂等 operationId 防止旧持有者和重复副作用。
 - WP-022 采用生态自治透明证据日志、独立 Witness、K-of-N Quorum、Monitor Gossip 和 Fork Evidence；Quorum PASS 不等于业务授权。
 - WP-023 采用成员生命周期治理、密钥用途隔离、根密钥双阈值轮换、紧急带外恢复锚、外部 Checkpoint 对账和 Joint Quorum；无法证明连续性时保持隔离。
 - WP-024 将 Witness Quorum 与 BFT 共识语义分离；L0 已穷举 4 组参数、262,611 个 Quorum 集合对，L1 Python BFS 已找到危险恢复反例；TLA+ 源码和三份 TLC 配置已建立，TLC 尚未运行。
@@ -81,3 +82,10 @@
 - 明确任务 Owner、资源 Owner、执行 Owner、ADS、联邦协调服务和人类治理职责分离。
 - 纳入 7 项研究证据、17 项待验收场景、6 项候选 ADR 和 12 项候选威胁；全部未执行/未批准。
 - V1.9 当前候选总量：283 项验收 NOT_RUN、60 项 ADR Candidate、82 项威胁 Candidate；生产授权关闭。
+
+
+## V1.9 当前研究边界（2026-11-16）
+- 319 项验收设计全部 NOT_RUN；68 项 ADR 与 94 项威胁全部 Candidate。
+- 21 份候选 JSON Schema 仅完成 JSON 语法解析；完整 Validator、签名、语义与互操作测试未执行。
+- 7 张 7680×4320 SVG 架构源图；WP-025/026 已纳入动态联盟和联盟生命周期研究。
+- PR #14 仍为 Draft；未合并 main；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
