@@ -146,3 +146,6 @@
 - 研究依据包括 W3C ODRL 2.2、PROV-O、CloudEvents、etcd 事务/API Guarantees、ZooKeeper Recipes 与 RFC 8785 JCS。
 - V1.9 总验收扩展至 319 项，全部 NOT_RUN；ADR 共 68 项、威胁共 94 项、Schema 共 21 份、架构图共 7 张。
 - 完整 JSON Schema Validator、签名验证、TLA+、Runtime 和真实跨生态试验均未执行；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
+
+- 验收计数口径校准：总体验收主矩阵 02 含 STG-01—22 与 ECO-01—17 共 39 项；WP025 专项矩阵是 ECO 子集，不重复计数。V1.9 总计 319 项（39 + 31 + 27 + 36 + 40 + 50 + 60 + 36），全部 NOT_RUN。
+- ADR/威胁登记去重：ADR-155—ADR-160、TH-71—TH-82 保留唯一记录；当前唯一候选 ADR 68 项、威胁 94 项。
