@@ -118,3 +118,12 @@
 - 核对 NIST SP 800-57 Rev.6 仍为 Initial Public Draft；明确不将草案表述为最终规范。
 - 设计 Membership Epoch、Key Epoch、外部恢复锚、Joint Quorum 和 14 项 L2 最小验证场景。
 - TLC、确定性模拟、故障注入与独立复核均未执行；正式 266 项验收仍 NOT_RUN，productionAllowed=false，Runner 未启用。
+
+
+## 2026-11-16｜V1.9-I WP-025 多生态动态联盟形成与自治治理（Candidate）
+- 新增 WP-025 架构研究备忘录，研究联邦式动态联盟、任务契约、能力准入、资源公平、价值归因和自治权边界。
+- 纳入 2026 年自治 Agent 联盟结构综述、能力中心型联盟研究、Nature Machine Intelligence 多 Agent 对照评估、ACL MultiAgentBench、Stigmergy 多智能体实验、分布式资源分配综述和 Ostrom 嵌套治理原则。
+- 新增 ECO-01—ECO-17 共 17 项候选验收场景，全部 NOT_RUN。
+- 新增 ADR-155—ADR-160 共 6 项候选决策；威胁矩阵新增 TH-71—TH-82 共 12 项。
+- 推荐联邦式动态联盟：任务驱动、Owner 本地准入、Charter 限定协调权、Stigmergy 作为状态底座、A2A 作为必要协商通道、ADS 负责生态内协调。
+- 不新增生产 Schema 或 Runtime；未执行仿真、Shadow 或跨生态试点；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
