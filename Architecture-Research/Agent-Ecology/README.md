@@ -67,3 +67,9 @@
 - Python BFS 有限状态模型对两个危险恢复配置找到 14 步反例；状态保留或隔离恢复配置未发现有界反例。
 - 新增 TLA+ 模型源文件和三份 TLC 配置；TLC 尚未运行。
 - 本轮不修改 main、不启用 Runner；正式 60 项验收矩阵仍为 NOT_RUN。
+
+
+## WP-024-L2｜多 Checkpoint 原子性与成员迁移模型扩展
+- 新增候选研究稿，扩展多 Checkpoint 并发推进、Key/Membership Epoch、外部恢复锚与 Joint Quorum 模型。
+- 引入 C2SP Witness v1.1.0 原子比较并推进要求、TUF 1.0.37 双阈值逐版本 Root 更新，以及 NIST SP 800-57 Rev.6 草案状态核验。
+- 设计 14 项最小验证场景；TLC、确定性模拟与故障注入尚未运行，正式验收状态不变。
