@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="7680" height="4320" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+<title id="title">Agent Ecology WP-023 可信见证网络治理、密钥生命周期与灾难恢复</title>
+<desc id="desc">展示可信根、多方密钥持有人、Witness 生命周期治理、密钥轮换、备份恢复、联合 Quorum 迁移和本地治理门禁。</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset=".52" stop-color="#122039"/><stop offset="1" stop-color="#1b2941"/></linearGradient>
+ <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#244361"/><stop offset="1" stop-color="#142940"/></linearGradient>
+ <linearGradient id="trust" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38527b"/><stop offset=".5" stop-color="#24605f"/><stop offset="1" stop-color="#38527b"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur in="SourceAlpha" stdDeviation="7"/><feOffset dy="5"/><feComponentTransfer><feFuncA type="linear" slope=".26"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <marker id="blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#77c7ff"/></marker>
+ <marker id="mint" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#7ce2c1"/></marker>
+ <marker id="gold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#f0c878"/></marker>
+ <style>
+ text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;fill:#edf5ff}
+ .title{font-size:40px;font-weight:700}.sub{font-size:21px;fill:#a9c1dc}.section{font-size:26px;font-weight:700}.head{font-size:21px;font-weight:700}.body{font-size:17px;fill:#c8d8eb}.small{font-size:14px;fill:#a8bfd7}
+ .box{fill:url(#panel);stroke:#6196be;stroke-width:2}.blue{fill:none;stroke:#77c7ff;stroke-width:3;marker-end:url(#blue)}.mint{fill:none;stroke:#7ce2c1;stroke-width:3;marker-end:url(#mint)}.gold{fill:none;stroke:#f0c878;stroke-width:3;marker-end:url(#gold)}.dash{stroke-dasharray:9 8}
+ </style>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<circle cx="180" cy="170" r="300" fill="#2386a0" opacity=".06"/><circle cx="1760" cy="920" r="320" fill="#47b59b" opacity=".06"/>
+<text x="64" y="66" class="title">Agent Ecology｜WP-023 可信见证网络治理与灾难恢复</text>
+<text x="66" y="102" class="sub">成员生命周期 · 密钥轮换 · 信任根升级 · 状态连续性 · 灾难恢复 · Joint Quorum</text>
+
+<rect x="64" y="132" width="1792" height="100" rx="20" fill="url(#trust)" stroke="#8ab2d1" stroke-opacity=".65" stroke-width="2" filter="url(#shadow)"/>
+<text x="94" y="171" class="section">离线多方信任根</text>
+<text x="420" y="170" class="body">Root Keyholders · 门槛签名 · 旧根/新根连续验证 · Emergency Recovery Anchors</text>
+<text x="420" y="203" class="small">根密钥不参与日常 Witness 签名；根失陷后不得依赖已失陷根为新根背书</text>
+
+<rect x="64" y="270" width="420" height="448" rx="22" class="box" filter="url(#shadow)"/>
+<text x="90" y="310" class="section">成员治理</text>
+<rect x="90" y="332" width="368" height="76" rx="13" fill="#29496a" stroke="#77c7ff"/>
+<text x="110" y="365" class="head">提名 / 身份核验</text><text x="110" y="391" class="small">运营主体 · 管理域 · 密钥托管域</text>
+<rect x="90" y="424" width="368" height="76" rx="13" fill="#21445a" stroke="#7ce2c1"/>
+<text x="110" y="457" class="head">OBSERVE_ONLY</text><text x="110" y="483" class="small">观察与互操作，不计入 Quorum</text>
+<rect x="90" y="516" width="368" height="76" rx="13" fill="#245849" stroke="#7ce2c1"/>
+<text x="110" y="549" class="head">ACTIVE / Joint Quorum</text><text x="110" y="575" class="small">双边接受策略 · 独立域门槛</text>
+<rect x="90" y="608" width="368" height="82" rx="13" fill="#493c4a" stroke="#f0c878"/>
+<text x="110" y="641" class="head">SUSPENDED / QUARANTINED</text><text x="110" y="670" class="small">暂停签名 · 固定证据 · 不删除历史</text>
+
+<rect x="586" y="270" width="744" height="448" rx="22" fill="#182f49" stroke="#72c5d9" stroke-width="2" filter="url(#shadow)"/>
+<text x="614" y="310" class="section">密钥与信任策略生命周期</text>
+<rect x="614" y="332" width="216" height="112" rx="13" fill="#243e5c" stroke="#f0c878"/>
+<text x="632" y="365" class="head">Trust Root Keys</text><text x="632" y="393" class="small">离线 / 多方分持</text><text x="632" y="419" class="small">根策略与紧急恢复</text>
+<rect x="850" y="332" width="216" height="112" rx="13" fill="#21445a" stroke="#7ce2c1"/>
+<text x="868" y="365" class="head">Witness Keys</text><text x="868" y="393" class="small">HSM / KMS 保护</text><text x="868" y="419" class="small">Key Epoch / 用途隔离</text>
+<rect x="1086" y="332" width="216" height="112" rx="13" fill="#243e5c" stroke="#77c7ff"/>
+<text x="1104" y="365" class="head">Backup Keys</text><text x="1104" y="393" class="small">加密 / 独立保管</text><text x="1104" y="419" class="small">不签署 Checkpoint</text>
+<rect x="614" y="464" width="688" height="92" rx="13" fill="#1d4058" stroke="#77c7ff"/>
+<text x="638" y="499" class="head">版本化信任更新</text><text x="638" y="528" class="small">Root Version · Registry Version · Policy Version · Key Epoch 单调递增</text>
+<rect x="614" y="576" width="688" height="114" rx="13" fill="#1d4058" stroke="#f0c878"/>
+<text x="638" y="611" class="head">正常轮换 / 紧急恢复</text><text x="638" y="639" class="small">旧根阈值 + 新根阈值 ｜ 失陷后带外 Recovery Anchors</text><text x="638" y="667" class="small">历史签名：VALID / INDETERMINATE / REJECT</text>
+
+<rect x="1432" y="270" width="424" height="448" rx="22" class="box" filter="url(#shadow)"/>
+<text x="1458" y="310" class="section">状态连续性与恢复</text>
+<rect x="1458" y="332" width="372" height="78" rx="13" fill="#29496a" stroke="#77c7ff"/>
+<text x="1478" y="365" class="head">加密快照 + WAL</text><text x="1478" y="392" class="small">State Sequence · Generation · Digest</text>
+<rect x="1458" y="426" width="372" height="78" rx="13" fill="#21445a" stroke="#7ce2c1"/>
+<text x="1478" y="459" class="head">外部 Witness 对账</text><text x="1478" y="486" class="small">Checkpoint · Proof · Policy / Key Epoch</text>
+<rect x="1458" y="520" width="372" height="78" rx="13" fill="#245849" stroke="#7ce2c1"/>
+<text x="1478" y="553" class="head">连续性验证通过</text><text x="1478" y="580" class="small">OBSERVE_ONLY → 人工批准 → ACTIVE</text>
+<rect x="1458" y="614" width="372" height="76" rx="13" fill="#493c4a" stroke="#f0c878"/>
+<text x="1478" y="647" class="head">无法证明连续性</text><text x="1478" y="674" class="small">QUARANTINED / HOLD / 不签名</text>
+
+<path d="M484 370 H576" class="blue"/><text x="488" y="349" class="small">身份与运营域证据</text>
+<path d="M1330 370 H1422" class="blue"/><text x="1336" y="349" class="small">信任与策略版本</text>
+<path d="M1330 640 H1422" class="mint"/><text x="1336" y="664" class="small">恢复连续性证据</text>
+<path d="M1650 720 V770 H270 V728" class="gold dash"/>
+<text x="650" y="758" class="small">恢复和成员变更均须回到人类治理外环与双方 Peer Binding 接受流程</text>
+
+<rect x="64" y="808" width="1792" height="198" rx="20" fill="#10243b" stroke="#52799b" stroke-width="2"/>
+<text x="94" y="848" class="section">七项不可绕过的恢复门禁</text>
+<g>
+ <rect x="94" y="868" width="230" height="88" rx="12" fill="#1b3b5a" stroke="#5d94bf"/><text x="112" y="901" class="head">① 根密钥离线</text><text x="112" y="930" class="small">多方门槛控制</text>
+ <rect x="342" y="868" width="230" height="88" rx="12" fill="#1b3b5a" stroke="#7ce2c1"/><text x="360" y="901" class="head">② 用途隔离</text><text x="360" y="930" class="small">密钥不跨角色复用</text>
+ <rect x="590" y="868" width="230" height="88" rx="12" fill="#1b3b5a" stroke="#f0c878"/><text x="608" y="901" class="head">③ 版本单调</text><text x="608" y="930" class="small">防回滚 / 防冻结</text>
+ <rect x="838" y="868" width="230" height="88" rx="12" fill="#1b3b5a" stroke="#5d94bf"/><text x="856" y="901" class="head">④ 状态先持久</text><text x="856" y="930" class="small">持久化后才签名</text>
+ <rect x="1086" y="868" width="230" height="88" rx="12" fill="#1b3b5a" stroke="#7ce2c1"/><text x="1104" y="901" class="head">⑤ 外部对账</text><text x="1104" y="930" class="small">不能只信备份签名</text>
+ <rect x="1334" y="868" width="230" height="88" rx="12" fill="#1b3b5a" stroke="#f0c878"/><text x="1352" y="901" class="head">⑥ 联合迁移</text><text x="1352" y="930" class="small">旧新 Quorum 同证</text>
+ <rect x="1582" y="868" width="246" height="88" rx="12" fill="#245849" stroke="#7ce2c1"/><text x="1600" y="901" class="head">⑦ 人类批准</text><text x="1600" y="930" class="small">无法证明则 HOLD</text>
+</g>
+<text x="94" y="984" class="small">可信恢复不是“重新启动服务”，而是重新证明身份、密钥、策略和状态连续性后，才恢复有限签名能力</text>
+</svg>
