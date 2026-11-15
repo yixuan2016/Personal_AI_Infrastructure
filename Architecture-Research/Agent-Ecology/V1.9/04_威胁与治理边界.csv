@@ -33,3 +33,13 @@ TH-31,旧广告复活已撤销对象,迟到的ACTIVE广告或旧快照覆盖撤�
 TH-32,分区期间使用过期授权状态,FCP或来源域不可达时仍使用未知或陈旧撤销状态执行高风险动作,风险分级Freshness Budget；高风险HOLD；本地Kill Switch独立,目标域Policy Owner与PEP,P0,CANDIDATE
 TH-33,墓碑被过早清理,事件压缩或存储清理删除仍可能被迟到成员引用的撤销记录,墓碑长期归档；快照完整性证明；新成员完整状态引导,来源域数据Owner与审计Owner,P0,CANDIDATE
 TH-34,撤销事件洪泛与资源耗尽,攻击者或故障源制造高频事件挤压撤销处理队列,签名先验校验；速率限制；撤销优先级；背压和隔离,联邦运营Owner与接收域Security Owner,P1,CANDIDATE
+TH-35,Witness串谋,多个名义独立Witness由同一控制方协同签署冲突Checkpoint,运营域和故障域独立性审查；Quorum交集模型；独立Monitor,Peer Binding双方与Security Owner,P0,CANDIDATE
+TH-36,Witness Sybil,攻击者注册大量不同名称或公钥的虚假Witness以操纵Quorum,公钥指纹去重；运营主体认证；minDistinctOperators与minDistinctFailureDomains,Trust Governance Owner,P0,CANDIDATE
+TH-37,Witness状态回滚,恢复旧备份或并发竞态使Witness最新Checkpoint回退,检查/更新/签名原子化；持久状态；恢复连续性证明；回滚隔离,Witness Operator与独立审计者,P0,CANDIDATE
+TH-38,Log Split-view,Log向不同接收方展示不同但均有签名的Merkle历史,多Witness一致性见证；Quorum交集；跨接收方Monitor Gossip,来源域Security Owner与接收域Monitor,P0,CANDIDATE
+TH-39,Quorum配置降级,攻击者或管理员修改Witness集合或降低签名门槛,策略版本化；双方接受同一policyDigest；禁止静默回退,Peer Binding双方Root Governance,P0,CANDIDATE
+TH-40,Monitor隔离,Log或FCP阻断Monitor观察冲突Checkpoint,Monitor旁路直连多个Witness；多运营域观察；过期状态标记HOLD,接收域Monitor Owner,P0,CANDIDATE
+TH-41,Witness密钥失陷,攻击者窃取Witness密钥伪造Checkpoint Cosignature,Key Epoch；紧急暂停与轮换；撤销旧Key；Quorum重新评估,Identity Owner与Witness Operator,P0,CANDIDATE
+TH-42,透明日志隐私泄露,日志条目暴露业务元数据、个人信息或跨域关系,只登记内容摘要和最小元数据；字段分类；访问控制和保留策略,数据Owner与隐私治理Owner,P0,CANDIDATE
+TH-43,分叉证据伪造或重放,攻击者拼接旧签名、伪造Witness响应或重放历史冲突证据,证据包绑定Policy Version与Checkpoint Digest；原始对象留存；独立离线验证,独立审计Owner与Fork Evidence Registry,P0,CANDIDATE
+TH-44,共同故障域误计票,多个Witness共用云账号管理员密钥托管或发布流水线却被计为独立节点,故障域映射；maxWitnessesPerOperator；控制关系披露和定期审查,Quorum Policy Owner,P0,CANDIDATE
