@@ -56,14 +56,14 @@
 | `21_WP-024_跨生态可信见证网络形式化验证与韧性评估.md` | `35062d8316bbd4584cbd848f72985095360ccd0d` |
 | `22_WP-024_研究证据登记.md` | `fee0df0d9e45da1b6b54a1e441ce11563b2b7de2` |
 | `23_WP-024_TLA+模型变量与性质目录.md` | `0ed3e6f735ef3c9cc903aa55538cbd6f130a72c7` |
-| `24_WP-024_实验设计与静态审查.md` | `957cc2e2d01f678e2645dada2a4ec4d4f1103ff6` |
+| `24_WP-024_实验设计与静态审查.md` | `d85d6b34d3c92d7c8fb4a1e8766b39bdf2326bcc` |
 | `contracts/witness-fault-scenario.schema.json` | `9516e0a17a029ed6085098eb887d27cbe5df4ae3` |
 | `contracts/witness-experiment-run.schema.json` | `a3053eadd16956eaea81ec140ebf372487f660bf` |
 | `contracts/witness-experiment-evidence-bundle.schema.json` | `04dbd286edadffdac62543bceafffcbee2646433` |
 | `validation/WP024_WITNESS_RESILIENCE_MATRIX.csv` | `2f1e05163ae39f5210e3dd86465b50387fe600cc` |
 | `assets/05_WP-024_可信见证网络形式化验证与韧性评估.svg` | `3c50f56410fe59ac6eaa727902898355478fd95b` |
 
-| `25_WP-024-L0L1_组合穷举与恢复状态模型验证报告.md` | `b476f1d0d198ef811e0294f9db1c36a775aaf46a` |
+| `25_WP-024-L0L1_组合穷举与恢复状态模型验证报告.md` | `435ec0e91efe4ace7938c49f4be0ea58a86bb13f` |
 | `formal/WitnessRecovery.tla` | `9fcf993c521678d566af7633a52de82d80887e71` |
 | `formal/WitnessRecovery-Unsafe.cfg` | `db1b777748f769ecbafafda598cf2585eeb89551` |
 | `formal/WitnessRecovery-SafePreserve.cfg` | `61fb3ee441f0bcb6ae0d878b33bd4a3b1858971f` |
