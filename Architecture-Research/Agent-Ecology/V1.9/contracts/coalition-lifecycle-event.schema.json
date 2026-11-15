@@ -24,9 +24,7 @@
     "eventtype",
     "fromstate",
     "tostate",
-    "actor",
     "data",
-    "signature",
     "notauthorization"
   ],
   "properties": {
