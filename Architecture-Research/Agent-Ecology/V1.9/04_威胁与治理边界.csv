@@ -65,3 +65,7 @@ TH-63,共同故障域伪装独立,多个名义Witness共享管理员/KMS/备份/
 TH-64,超出故障预算仍宣称安全,f+1个或更多Witness身份失陷,超预算标记INDETERMINATE；停止安全保证；不输出PASS,Security Governance Owner,P0,CANDIDATE
 TH-65,Quorum语义误用,将透明证据签署门槛误称为BFT共识,协议语义分层；限制结论适用范围；独立架构审查,Architecture Owner,P1,CANDIDATE
 TH-66,抽样测试误报安全,有限测试通过被当作任意规模或生产安全证明,披露模型范围；反例和覆盖率；独立复核,Verification Owner,P0,CANDIDATE
+TH-67,持久化后状态回滚再激活,签名释放前已持久化但快照恢复抹掉该状态且原身份重新ACTIVE,外部单调高水位/防回滚锚；不能证明时隔离旧身份,Recovery and Witness Owner,P0,CANDIDATE
+TH-68,状态丢失后身份未隔离,恢复流程重置防双签状态并保留原身份/密钥签名能力,状态擦除恢复必须进入QUARANTINED；禁止静默重置后ACTIVE,Identity Governance Owner,P0,CANDIDATE
+TH-69,有限状态结果被过度泛化,Python BFS或TLC有限模型结果被表述为生产安全证明,披露模型范围、工具引擎、状态空间、抽象和未覆盖假设,Verification Owner,P1,CANDIDATE
+TH-70,模型与实现语义不一致,抽象状态机未反映WAL/持久化/签名释放真实事务顺序,独立实现映射审查；崩溃点注入；真实恢复证据,Storage and Witness Owner,P0,CANDIDATE
