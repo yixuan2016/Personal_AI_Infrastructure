@@ -31,11 +31,11 @@
 | `25_WP-024-L0L1_组合穷举与恢复状态模型验证报告.md` | `435ec0e91efe4ace7938c49f4be0ea58a86bb13f` |
 | `26_WP-024-L2_多检查点原子性与成员迁移模型扩展.md` | `3aeb8a48fd7be0f0b09504a58ca831fd98ac1f34` |
 | `27_WP-025_多生态动态联盟形成与自治治理架构.md` | `d57e22296bcea65974dfcc33fa291fa996a10cac` |
-| `28_WP-026_Coalition_Charter_联盟任务契约与生命周期状态机.md` | `6013e282d646a1e8eddb57da7edbecb076fdfc85` |
+| `28_WP-026_Coalition_Charter_联盟任务契约与生命周期状态机.md` | `c02670b09e5aa49770496e1cf715bba019e758bc` |
 | `29_WP-026_研究证据登记.md` | `54b9effb249618b146ec6e654febd68c8c034c36` |
-| `30_WP-026_静态审查与未决事项.md` | `4fbd05f79874657efc8fd7f1f69dc77c2497c260` |
-| `README.md` | `848a59f035c0334fb78b5e01f1dab247cf06359b` |
-| `STATUS.md` | `31943a9d91e9deba77aaae449f4d91bb37287fe7` |
+| `30_WP-026_静态审查与未决事项.md` | `8c2d03d9e75939186eb13a3a2cd5bafd59c3ac9c` |
+| `README.md` | `9f6c4b18bfa2c373e7b8b00c423489ba54667e38` |
+| `STATUS.md` | `581e579d3fc7a764a5ca33c4496649fa1aa225d9` |
 | `assets/00_V1.9_跨生态能力发现与观察Runtime.svg` | `a6818ac80ed726f0bfaeb224cb9eaafab391915e` |
 | `assets/01_WP-020_跨生态信任协议与授权链.svg` | `6524998de00d51fa02118ee6d2ab3e5c8aae154d` |
 | `assets/02_WP-021_目录一致性与撤销传播架构.svg` | `80a6390756d8439ede42722e82474e0081697e56` |
@@ -49,8 +49,8 @@
 | `contracts/capability-resolution.schema.json` | `45b63f09ab40ee0d2b7b47d707d3b1c9f30e10bc` |
 | `contracts/checkpoint-cosignature-bundle.schema.json` | `1c503e080af5bcf9b87675e396d023e4272d5f07` |
 | `contracts/coalition-charter.schema.json` | `e96bd26e4e47327f8d647b5400fdaa1892ab6dd3` |
-| `contracts/coalition-lifecycle-event.schema.json` | `79d7451f6ff7277ec797d9ab67be230c443aeb47` |
-| `contracts/federation-revocation-event.schema.json` | `2803e5437dce04b59d21702c666a7d0d992f5599` |
+| `contracts/coalition-lifecycle-event.schema.json` | `35a217c5311211bacca9eb953fc0c06f27bb4ee7` |
+| `contracts/federation-revocation-event.schema.json` | `cda2a2e611c08c124907c176a818e13dd6e0889d` |
 | `contracts/federation-sync-checkpoint.schema.json` | `ff87ff6127e3ca1cc7e9e8b946f0eb33fc48e9db` |
 | `contracts/fork-evidence-bundle.schema.json` | `2325e4ec4cfe4f8203b7e9ecee350b281ec7c305` |
 | `contracts/owner-delegation-grant.schema.json` | `a429703665ae5576d157eba54e9660fe611d11a8` |
@@ -79,7 +79,7 @@
 | `validation/WP024_L1_UNSAFE_COUNTEREXAMPLE.txt` | `926fc67e9b6f3ed26ab606bf78588e43d71479f4` |
 | `validation/WP024_WITNESS_RESILIENCE_MATRIX.csv` | `2f1e05163ae39f5210e3dd86465b50387fe600cc` |
 | `validation/WP025_DYNAMIC_COALITION_MATRIX.csv` | `d15fe8b344f756a998828edfbff4dfcaeee8a2a9` |
-| `validation/WP026_COALITION_CHARTER_LIFECYCLE_MATRIX.csv` | `8a9905366c9f6906fc591e6fc1ec4fd39d38fc88` |
+| `validation/WP026_COALITION_CHARTER_LIFECYCLE_MATRIX.csv` | `b66d0c6252d10efc6cbcc0eaffa2562fc96efcd7` |
 
 ## 解释
 - Git Blob SHA 用于定位 Git 中的文件对象。
