@@ -1,8 +1,8 @@
 # Agent Ecology V1.9｜痕迹协作实证、能力发现、信任、撤销传播与可信见证
 
-**版本状态：候选研究版 0.3｜日期：2026-11-15**
+**版本状态：候选研究版 0.4｜日期：2026-11-16**
 
-V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environment Runtime、V1.5 生态自治、V1.6 世界模型、V1.7 RSI 和 V1.8 跨生态联邦治理。本版本由七个互补工作流组成：A 线研究 Stigmergy 实证、共享环境、持久工件和局部反应；B 线研究跨生态能力发现、联邦摘要目录与 Observation Runtime；C 线研究 WP-020 双边信任和能力授权链；D 线研究 WP-021 目录一致性与撤销传播；E 线研究 WP-022 可信见证、多方 Quorum 和分叉证据；F 线研究 WP-023 成员治理、密钥生命周期、信任根升级和灾难恢复。六条线共同回答：如何让 Agent 通过可信环境状态协作，同时保持本地数据权威、授权边界和人类治理。
+V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environment Runtime、V1.5 生态自治、V1.6 世界模型、V1.7 RSI 和 V1.8 跨生态联邦治理。本版本由九个互补工作流组成：A 线研究 Stigmergy 实证、共享环境、持久工件和局部反应；B 线研究跨生态能力发现、联邦摘要目录与 Observation Runtime；C—G 线分别研究 WP-020 信任授权、WP-021 目录撤销、WP-022 多方见证、WP-023 成员治理与恢复、WP-024 形式化验证；H 线研究 WP-025 多生态动态联盟；I 线研究 WP-026 Coalition Charter 与联盟生命周期。九条线共同回答：如何让 Agent 通过可信环境状态协作，并在动态联盟中保持本地数据权威、授权边界、资源公平和人类治理。
 
 ## 文件导航
 
@@ -22,16 +22,36 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 14_WP-021_静态审查与未决事项.md：36 项验收设计的静态审查边界和 10 项开放问题。
 - 15_WP-022_跨生态事件可信见证与多方一致性验证.md：Witness、Quorum Policy、Monitor Gossip、Fork Evidence 和争议治理设计。
 - 16_WP-022_研究证据登记.md：RFC 9162、C2SP Witness/Cosignature/Policy、Sigsum、RFC 9943 和 Trillian 证据。
-- 17_WP-022_静态审查与未决事项.md：40 项验收设计边界和 12 项开放问题。\n- 18_WP-023_可信见证网络治理与灾难恢复.md：成员生命周期、密钥轮换、信任根升级、备份恢复、Joint Quorum 和灾难恢复 Runbook。\n- 19_WP-023_研究证据登记.md：TUF、Sigstore、NIST SP 800-57、C2SP Witness 的规范状态和适用边界。\n- 20_WP-023_静态审查与未决事项.md：50 项验收设计边界和 15 项开放问题。\n- 21_WP-024_跨生态可信见证网络形式化验证与韧性评估.md：Quorum 语义、恢复安全预算、形式化性质、模拟和故障注入方案。\n- 22_WP-024_研究证据登记.md：2026 年状态擦除恢复预印本、C2SP、PBFT、FoundationDB、Jepsen 和 TLA+ 证据。\n- 23_WP-024_TLA+模型变量与性质目录.md：有限状态模型变量、动作、不变量和反例模型目录。\n- 24_WP-024_实验设计与静态审查.md：60 项验证设计、静态检查边界和 12 项未决问题。
-- contracts/：能力广告、能力解析、能力生命周期事件、Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation、Federation Revocation Event、Federation Sync Checkpoint、Witness Registry、Witness Quorum Policy、Checkpoint Cosignature Bundle、Fork Evidence Bundle 候选 JSON Schema（16 份）。
+- 17_WP-022_静态审查与未决事项.md：40 项验收设计边界和 12 项开放问题。
+- 18_WP-023_可信见证网络治理与灾难恢复.md：成员生命周期、密钥轮换、信任根升级、备份恢复、Joint Quorum 和灾难恢复 Runbook。
+- 19_WP-023_研究证据登记.md：TUF、Sigstore、NIST SP 800-57、C2SP Witness 的规范状态和适用边界。
+- 20_WP-023_静态审查与未决事项.md：50 项验收设计边界和 15 项开放问题。
+- 21_WP-024_跨生态可信见证网络形式化验证与韧性评估.md：Quorum 语义、恢复安全预算、形式化性质、模拟和故障注入方案。
+- 22_WP-024_研究证据登记.md：2026 年状态擦除恢复预印本、C2SP、PBFT、FoundationDB、Jepsen 和 TLA+ 证据。
+- 23_WP-024_TLA+模型变量与性质目录.md：有限状态模型变量、动作、不变量和反例模型目录。
+- 24_WP-024_实验设计与静态审查.md：60 项验证设计、静态检查边界和 12 项未决问题。
+- 25_WP-024-L0L1_组合穷举与恢复状态模型验证报告.md：262,611 组 Quorum 集合对穷举及 Python BFS 有界状态验证结果。
+- 26_WP-024-L2_多检查点原子性与成员迁移模型扩展.md：多 Checkpoint 原子推进、Epoch 绑定、Joint Quorum 和外部恢复锚模型扩展。
+- 27_WP-025_多生态动态联盟形成与自治治理架构.md：动态联盟形成、准入硬门禁、资源公平、独立验收和自治边界。
+- 28_WP-026_Coalition_Charter_联盟任务契约与生命周期状态机.md：联盟公共契约、领域 Profile、多方接受、Lease/Fencing、变更与解散清算。
+- 29_WP-026_研究证据登记.md：ODRL、PROV-O、CloudEvents、etcd、ZooKeeper 和 JCS 证据边界。
+- 30_WP-026_静态审查与未决事项.md：36 项验收设计的静态边界和 12 项开放问题。
+- contracts/：能力广告、能力解析、能力生命周期事件、Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation、Federation Revocation Event、Federation Sync Checkpoint、Witness Registry、Witness Quorum Policy、Checkpoint Cosignature Bundle、Fork Evidence Bundle 候选 JSON Schema（21 份）。
 - validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv：31 项 F1 能力发现、资格一致性与事件契约验收矩阵。
 - validation/WP020_TRUST_PROTOCOL_VALIDATION_MATRIX.csv：27 项跨生态信任、委托、令牌与撤销验收设计。
 - validation/WP021_CATALOG_CONSISTENCY_REVOCATION_MATRIX.csv：36 项目录一致性、事件幂等、撤销传播、快照恢复和分区安全验收设计。
-- validation/WP022_MULTI_WITNESS_QUORUM_MATRIX.csv：40 项 Witness 单调性、Quorum 交集、独立性、Gossip、分叉证据和隐私验收设计。\n- validation/WP023_WITNESS_GOVERNANCE_RECOVERY_MATRIX.csv：50 项成员生命周期、密钥轮换、根升级、状态恢复、Joint Quorum 和事故治理验收设计。\n- validation/WP024_WITNESS_RESILIENCE_MATRIX.csv：60 项 Quorum、状态恢复、网络分区、恶意行为、共同故障域和策略迁移验收设计。
+- validation/WP022_MULTI_WITNESS_QUORUM_MATRIX.csv：40 项 Witness 单调性、Quorum 交集、独立性、Gossip、分叉证据和隐私验收设计。
+- validation/WP023_WITNESS_GOVERNANCE_RECOVERY_MATRIX.csv：50 项成员生命周期、密钥轮换、根升级、状态恢复、Joint Quorum 和事故治理验收设计。
+- validation/WP024_WITNESS_RESILIENCE_MATRIX.csv：60 项 Quorum、状态恢复、网络分区、恶意行为、共同故障域和策略迁移验收设计。
+- validation/WP025_DYNAMIC_COALITION_MATRIX.csv：17 项动态联盟形成、准入、资源公平、退出和价值归因验收设计。
+- validation/WP026_COALITION_CHARTER_LIFECYCLE_MATRIX.csv：36 项 Charter、Owner 接受、状态机、租约/Fencing、授权分离和解散清算验收设计。
 - assets/00_V1.9_跨生态能力发现与观察Runtime.svg：7680×4320 SVG 架构源图。
 - assets/01_WP-020_跨生态信任协议与授权链.svg：7680×4320 SVG 信任与授权链架构源图。
 - assets/02_WP-021_目录一致性与撤销传播架构.svg：7680×4320 SVG 目录同步与撤销传播架构源图。
-- assets/03_WP-022_跨生态事件可信见证与多方一致性验证.svg：7680×4320 SVG 多方见证与分叉检测架构源图。\n- assets/04_WP-023_可信见证网络治理与灾难恢复.svg：7680×4320 SVG 成员治理、密钥生命周期和恢复架构源图。\n- assets/05_WP-024_可信见证网络形式化验证与韧性评估.svg：7680×4320 SVG 数学模型、形式化检查、确定性模拟、故障注入和独立审查架构源图。
+- assets/03_WP-022_跨生态事件可信见证与多方一致性验证.svg：7680×4320 SVG 多方见证与分叉检测架构源图。
+- assets/04_WP-023_可信见证网络治理与灾难恢复.svg：7680×4320 SVG 成员治理、密钥生命周期和恢复架构源图。
+- assets/05_WP-024_可信见证网络形式化验证与韧性评估.svg：7680×4320 SVG 数学模型、形式化检查、确定性模拟、故障注入和独立审查架构源图。
+- assets/06_WP-026_Coalition_Charter_联盟任务契约与生命周期架构.svg：7680×4320 SVG 动态联盟契约、Owner 接受、状态机、Fencing 和独立验收架构源图。
 - STATUS.md：本版本状态和禁止越过的门禁。
 - GITHUB_BLOB_MANIFEST.md：Git Blob 标识清单；Git Blob SHA 不等同于文件 SHA-256。
 
@@ -50,9 +70,9 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 
 ## 证据边界
 
-本版引用的研究包括预印本、已发表论文、协议草案、正式规范和受控仿真实验。论文报告的实验结果不等于本项目已复现、已部署或已通过验收。Stigmergy 合成实验 22 项、F1 能力发现与契约验收 31 项、WP-020 信任协议验收 27 项、WP-021 目录一致性与撤销传播验收 36 项，WP-021 36 项和 WP-022 40 项全部 NOT_RUN，V1.9 总验收 266 项；50 项 ADR 全部 Candidate；66 项威胁全部 Candidate。V1.8 F0 12 项 Gate 仍全部 NotRun；没有真实领域数据授权、Runtime 执行或生产写入。
+本版引用的研究包括预印本、已发表论文、协议草案、正式规范和受控仿真实验。论文报告的实验结果不等于本项目已复现、已部署或已通过验收。Stigmergy 合成实验 22 项、F1 能力发现与契约验收 31 项、WP-020 信任协议验收 27 项、WP-021 目录一致性与撤销传播验收 36 项，WP-021 36 项和 WP-022 40 项全部 NOT_RUN，V1.9 总验收 319 项；68 项 ADR 全部 Candidate；94 项威胁全部 Candidate。V1.8 F0 12 项 Gate 仍全部 NotRun；没有真实领域数据授权、Runtime 执行或生产写入。
 
-十九份候选 JSON Schema 已确认 JSON 语法有效，但尚未完成完整 Draft 2020-12 Validator、密码学签名验证、跨字段语义验证和协议互操作测试。静态审查的 10 项缺口中，7 项已形成候选契约修复，1 项部分修复，2 项仍开放。productionAllowed=false。
+二十一份候选 JSON Schema 已确认 JSON 语法有效，但尚未完成完整 Draft 2020-12 Validator、密码学签名验证、跨字段语义验证和协议互操作测试。静态审查的 10 项缺口中，7 项已形成候选契约修复，1 项部分修复，2 项仍开放。productionAllowed=false。
 
 
 ## WP-020｜跨生态信任协议
@@ -117,3 +137,21 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 已新增 TLA+ 模型与三份 TLC 配置，但 TLC 尚未执行。
 - 详细执行结果见 25_WP-024-L0L1_组合穷举与恢复状态模型验证报告.md。
 - 60 项正式验收矩阵仍全部 NOT_RUN；有界参考模型结果不等于生产安全证明。
+
+
+## WP-025｜多生态动态联盟形成与自治治理
+- 联盟是临时协作结构，不是新的主权主体；不设全局永久大联盟或超级编排器。
+- 采用联邦式动态联盟：Task Owner 保留目标与验收权；各成员 Owner 保留本域能力、数据、资源和执行授权权。
+- 身份、Owner 证明、目标域本地授权、撤销新鲜度、数据用途和资源资格为不可交易硬门禁。
+- 多 Agent 方案必须与同工具、同预算的强单 Agent 基线比较；协作增益不足以覆盖成本时不形成联盟。
+- 执行、独立验证、价值归因和人类问责分离；贡献评分不自动提升权限。
+- WP-025 验收矩阵 17 项全部 NOT_RUN；6 项 ADR（ADR-155—ADR-160）Candidate；12 项威胁（TH-71—TH-82）Candidate。
+
+## WP-026｜Coalition Charter 联盟任务契约与生命周期
+- 采用最小公共核心 + 版本化领域 Profile；领域 Profile 不得改变公共核心安全语义。
+- Charter 记录任务范围、角色、责任和 Owner 接受，不是 Grant、Permit、Lease 或结算指令。
+- 多方接受必须绑定同一 Charter Digest / Version / Epoch；跨 Owner 部分接受不视为全局原子提交。
+- Charter 变更产生新版本；受影响 Owner 重新接受；旧签名不得跨版本复用。
+- Task/Resource Lease 与本地 Permit 分离；Fencing Token 必须在资源 Owner 端事务性校验；副作用携带幂等 operationId。
+- CLOSED 必须有凭证撤销、租约释放、资源回收、数据处置和审计归档证据。
+- WP-026 验收矩阵 36 项全部 NOT_RUN；2 份候选 Schema；8 项 ADR（ADR-161—ADR-168）Candidate；12 项威胁（TH-83—TH-94）Candidate；12 项语义缺口 OPEN。
