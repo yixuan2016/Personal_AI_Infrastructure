@@ -31,3 +31,12 @@
 - V1.9 Git Blob Manifest 记录 Git Blob SHA，不等于 SHA-256 文件摘要。
 - 远端文件回读、JSON 语法解析、CSV 静态列数复核和 Python 有界 BFS 均不等于完整协议验证或生产验收。
 - WP-024-L2 是候选模型扩展设计，尚未运行模型检查。
+
+
+## WP-025 同步增量（2026-11-16）
+- 新增 27_WP-025_多生态动态联盟形成与自治治理架构.md。
+- 新增 7 项研究证据 E-08—E-14；验收矩阵新增 ECO-01—ECO-17（17 项，全部 NOT_RUN）。
+- 架构决策记录新增 ADR-155—ADR-160（6 项 Candidate）；威胁矩阵新增 TH-71—TH-82（12 项 Candidate）。
+- README、STATUS、CHANGELOG、研究证据登记、验收矩阵、ADR、威胁矩阵和 Git Blob Manifest 已同步。
+- V1.9 当前总量：283 项验收 NOT_RUN；60 项 ADR Candidate；82 项威胁 Candidate；19 份候选 Schema；6 张 SVG。
+- WP-025 未执行模型检查、仿真、Shadow、真实数据试验或生产测试；F0 未通过；Runner 未启用；productionAllowed=false。
