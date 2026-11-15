@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="7680" height="4320" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+<title id="title">Agent Ecology WP-024 可信见证网络形式化验证与韧性评估</title>
+<desc id="desc">从Quorum数学、有限状态模型、确定性模拟、故障注入到独立审查的五层验证体系。</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset=".5" stop-color="#12243d"/><stop offset="1" stop-color="#1b2d43"/></linearGradient>
+ <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#244563"/><stop offset="1" stop-color="#142940"/></linearGradient>
+ <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#31547d"/><stop offset=".5" stop-color="#21665f"/><stop offset="1" stop-color="#31547d"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur in="SourceAlpha" stdDeviation="7"/><feOffset dy="5"/><feComponentTransfer><feFuncA type="linear" slope=".25"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#78c9ff"/></marker>
+ <marker id="mint" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#7ce2c1"/></marker>
+ <style>
+ text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;fill:#edf5ff}
+ .title{font-size:40px;font-weight:700}.sub{font-size:21px;fill:#a9c1dc}.section{font-size:25px;font-weight:700}.head{font-size:21px;font-weight:700}.body{font-size:17px;fill:#c8d8eb}.small{font-size:14px;fill:#a8bfd7}
+ .box{fill:url(#panel);stroke:#6196be;stroke-width:2}.line{fill:none;stroke:#78c9ff;stroke-width:3;marker-end:url(#arr)}.mline{fill:none;stroke:#7ce2c1;stroke-width:3;marker-end:url(#mint)}
+ </style>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<circle cx="180" cy="160" r="300" fill="#2386a0" opacity=".06"/><circle cx="1770" cy="930" r="330" fill="#47b59b" opacity=".06"/>
+<text x="64" y="66" class="title">Agent Ecology｜WP-024 可信见证网络形式化验证与韧性评估</text>
+<text x="66" y="102" class="sub">从数学边界到形式模型、确定性模拟、故障注入与独立复核</text>
+
+<rect x="64" y="132" width="1792" height="112" rx="20" fill="url(#accent)" stroke="#8ab2d1" stroke-width="2" filter="url(#shadow)"/>
+<text x="94" y="173" class="section">验证对象边界</text>
+<text x="350" y="171" class="head">Witness Quorum ≠ BFT 状态机共识</text>
+<text x="350" y="205" class="body">验证跨生态 Checkpoint 的多方观察、历史一致性、身份独立性与恢复安全；不替业务事实背书，不替代本地 PDP / PEP 授权</text>
+
+<rect x="64" y="280" width="320" height="408" rx="20" class="box" filter="url(#shadow)"/>
+<text x="88" y="321" class="section">① 数学与故障模型</text>
+<rect x="88" y="344" width="272" height="92" rx="12" fill="#1d4058" stroke="#78c9ff"/>
+<text x="108" y="378" class="head">n = 3f + 1</text><text x="108" y="408" class="body">q = 2f + 1</text>
+<rect x="88" y="450" width="272" height="92" rx="12" fill="#1d4058" stroke="#7ce2c1"/>
+<text x="108" y="484" class="head">最小交集 2q − n</text><text x="108" y="514" class="body">f + 1</text>
+<rect x="88" y="556" width="272" height="104" rx="12" fill="#493c4a" stroke="#f0c878"/>
+<text x="108" y="590" class="head">恢复状态预算</text><text x="108" y="620" class="small">b̄ + c̄ 必须低于交集界</text><text x="108" y="644" class="small">适用单阶段证书模型</text>
+
+<rect x="430" y="280" width="320" height="408" rx="20" class="box" filter="url(#shadow)"/>
+<text x="454" y="321" class="section">② 有限状态模型</text>
+<rect x="454" y="344" width="272" height="84" rx="12" fill="#1d4058" stroke="#78c9ff"/>
+<text x="474" y="379" class="head">Checkpoint 状态</text><text x="474" y="405" class="small">Size / Root / Origin</text>
+<rect x="454" y="442" width="272" height="84" rx="12" fill="#1d4058" stroke="#7ce2c1"/>
+<text x="474" y="477" class="head">持久化与恢复</text><text x="474" y="503" class="small">Durable State / Epoch</text>
+<rect x="454" y="540" width="272" height="120" rx="12" fill="#493c4a" stroke="#f0c878"/>
+<text x="474" y="574" class="head">反例模型</text><text x="474" y="602" class="small">状态擦除 · 回滚 · 克隆</text><text x="474" y="630" class="small">TLA+ / TLC（尚未运行）</text>
+
+<rect x="796" y="280" width="320" height="408" rx="20" class="box" filter="url(#shadow)"/>
+<text x="820" y="321" class="section">③ 确定性模拟</text>
+<rect x="820" y="344" width="272" height="84" rx="12" fill="#1d4058" stroke="#78c9ff"/>
+<text x="840" y="379" class="head">统一事件调度</text><text x="840" y="405" class="small">时钟 / 网络 / 磁盘 / 进程</text>
+<rect x="820" y="442" width="272" height="84" rx="12" fill="#1d4058" stroke="#7ce2c1"/>
+<text x="840" y="477" class="head">固定种子重放</text><text x="840" y="503" class="small">事件轨迹 / 最小反例</text>
+<rect x="820" y="540" width="272" height="120" rx="12" fill="#1d4058" stroke="#78c9ff"/>
+<text x="840" y="574" class="head">故障组合</text><text x="840" y="602" class="small">分区 · 延迟 · 崩溃 · 回滚</text><text x="840" y="630" class="small">确定性模拟（尚未运行）</text>
+
+<rect x="1162" y="280" width="320" height="408" rx="20" class="box" filter="url(#shadow)"/>
+<text x="1186" y="321" class="section">④ 分布式故障注入</text>
+<rect x="1186" y="344" width="272" height="84" rx="12" fill="#1d4058" stroke="#78c9ff"/>
+<text x="1206" y="379" class="head">Nemesis 故障扰动</text><text x="1206" y="405" class="small">Kill / Pause / Partition</text>
+<rect x="1186" y="442" width="272" height="84" rx="12" fill="#1d4058" stroke="#7ce2c1"/>
+<text x="1206" y="477" class="head">操作历史采集</text><text x="1206" y="503" class="small">请求 / 响应 / 状态变更</text>
+<rect x="1186" y="540" width="272" height="120" rx="12" fill="#1d4058" stroke="#78c9ff"/>
+<text x="1206" y="574" class="head">独立 Checker</text><text x="1206" y="602" class="small">Safety / Liveness / RPO / RTO</text><text x="1206" y="630" class="small">故障注入（尚未运行）</text>
+
+<rect x="1528" y="280" width="328" height="408" rx="20" fill="#183d3b" stroke="#7ce2c1" stroke-width="2" filter="url(#shadow)"/>
+<text x="1552" y="321" class="section">⑤ 独立审查与门禁</text>
+<rect x="1552" y="344" width="280" height="84" rx="12" fill="#214b48" stroke="#7ce2c1"/>
+<text x="1572" y="379" class="head">证据包完整性</text><text x="1572" y="405" class="small">模型 / 种子 / 日志 / 摘要</text>
+<rect x="1552" y="442" width="280" height="84" rx="12" fill="#214b48" stroke="#7ce2c1"/>
+<text x="1572" y="477" class="head">独立复核</text><text x="1572" y="503" class="small">复现反例 / 审查假设</text>
+<rect x="1552" y="540" width="280" height="120" rx="12" fill="#493c4a" stroke="#f0c878"/>
+<text x="1572" y="574" class="head">人类治理外环</text><text x="1572" y="602" class="small">批准 Shadow，不自动发布</text><text x="1572" y="630" class="small">生产门禁保持关闭</text>
+
+<path d="M384 486 H420" class="line"/><path d="M750 486 H786" class="line"/><path d="M1116 486 H1152" class="line"/><path d="M1482 486 H1518" class="mline"/>
+
+<rect x="64" y="742" width="1792" height="264" rx="20" fill="#10243b" stroke="#52799b" stroke-width="2"/>
+<text x="94" y="782" class="section">四组规模参数与七项不可绕过的安全门禁</text>
+<g>
+ <rect x="94" y="806" width="190" height="74" rx="11" fill="#1b3b5a" stroke="#78c9ff"/><text x="112" y="838" class="head">n=4</text><text x="112" y="862" class="small">f=1 · q=3</text>
+ <rect x="298" y="806" width="190" height="74" rx="11" fill="#1b3b5a" stroke="#78c9ff"/><text x="316" y="838" class="head">n=7</text><text x="316" y="862" class="small">f=2 · q=5</text>
+ <rect x="502" y="806" width="190" height="74" rx="11" fill="#1b3b5a" stroke="#78c9ff"/><text x="520" y="838" class="head">n=10</text><text x="520" y="862" class="small">f=3 · q=7</text>
+ <rect x="706" y="806" width="190" height="74" rx="11" fill="#1b3b5a" stroke="#78c9ff"/><text x="724" y="838" class="head">n=13</text><text x="724" y="862" class="small">f=4 · q=9</text>
+ <rect x="910" y="806" width="190" height="74" rx="11" fill="#1b3b5a" stroke="#7ce2c1"/><text x="928" y="838" class="head">持久化先于签名</text><text x="928" y="862" class="small">防止状态丢失后双签</text>
+ <rect x="1114" y="806" width="190" height="74" rx="11" fill="#1b3b5a" stroke="#7ce2c1"/><text x="1132" y="838" class="head">恢复防回滚</text><text x="1132" y="862" class="small">外部高水位核验</text>
+ <rect x="1318" y="806" width="190" height="74" rx="11" fill="#1b3b5a" stroke="#7ce2c1"/><text x="1336" y="838" class="head">身份唯一</text><text x="1336" y="862" class="small">防克隆 / 重复计数</text>
+ <rect x="1522" y="806" width="300" height="74" rx="11" fill="#245849" stroke="#7ce2c1"/><text x="1540" y="838" class="head">安全优先于可用性</text><text x="1540" y="862" class="small">不能形成 Quorum 就 HOLD</text>
+</g>
+<text x="94" y="934" class="body">验收目标：安全不变量违反次数 = 0；不能达到阈值时明确 HOLD；每个 PASS / FAIL 均可复现并由独立 Checker 复核</text>
+<text x="94" y="972" class="small">当前状态：60 项 NOT_RUN · TLA+ 未运行 · 模拟未运行 · 故障注入未运行 · productionAllowed=false · Runner 未启用</text>
+</svg>
