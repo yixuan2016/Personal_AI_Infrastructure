@@ -75,6 +75,8 @@
 
 | `26_WP-024-L2_多检查点原子性与成员迁移模型扩展.md` | `3aeb8a48fd7be0f0b09504a58ca831fd98ac1f34` |
 
+| `27_WP-025_多生态动态联盟形成与自治治理架构.md` | `d57e22296bcea65974dfcc33fa291fa996a10cac` |
+
 ## 解释
 - Git Blob SHA 用于定位 Git 中的文件对象。
 - Git Blob SHA 不是 SHA-256 文件摘要。
