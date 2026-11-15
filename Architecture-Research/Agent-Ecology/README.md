@@ -40,7 +40,9 @@
 - 本轮无工程实现、真实数据导入、Runtime 测试、生产授权或双生态验收。
 - WP-020 默认双边显式信任、无自动传递信任；SPIFFE/OIDF 为可选身份/信任适配；目标域本地授权不受 FCP 覆盖。
 - WP-021 采用来源域签名撤销 Feed、持久幂等去重、单调墓碑、连续水位、完整快照恢复和本地 Freshness Budget；目录最终一致不等于执行授权。
-- WP-022 采用生态自治透明证据日志、独立 Witness、K-of-N Quorum、Monitor Gossip 和 Fork Evidence；Quorum PASS 不等于业务授权。\n- WP-023 采用成员生命周期治理、密钥用途隔离、根密钥双阈值轮换、紧急带外恢复锚、外部 Checkpoint 对账和 Joint Quorum；无法证明连续性时保持隔离。\n- WP-024 将 Witness Quorum 与 BFT 共识语义分离；L0 已穷举 4 组参数、262,611 个 Quorum 集合对，L1 Python BFS 已找到危险恢复反例；TLA+ 源码和三份 TLC 配置已建立，TLC 尚未运行。
+- WP-022 采用生态自治透明证据日志、独立 Witness、K-of-N Quorum、Monitor Gossip 和 Fork Evidence；Quorum PASS 不等于业务授权。
+- WP-023 采用成员生命周期治理、密钥用途隔离、根密钥双阈值轮换、紧急带外恢复锚、外部 Checkpoint 对账和 Joint Quorum；无法证明连续性时保持隔离。
+- WP-024 将 Witness Quorum 与 BFT 共识语义分离；L0 已穷举 4 组参数、262,611 个 Quorum 集合对，L1 Python BFS 已找到危险恢复反例；TLA+ 源码和三份 TLC 配置已建立，TLC 尚未运行。
 - 学习型局部规则仅可进入隔离实验、独立评估和 Shadow；不得自动修改主线。
 
 ## 归档审查与二进制交付
