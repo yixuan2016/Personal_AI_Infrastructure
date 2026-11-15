@@ -69,3 +69,15 @@ TH-67,持久化后状态回滚再激活,签名释放前已持久化但快照恢�
 TH-68,状态丢失后身份未隔离,恢复流程重置防双签状态并保留原身份/密钥签名能力,状态擦除恢复必须进入QUARANTINED；禁止静默重置后ACTIVE,Identity Governance Owner,P0,CANDIDATE
 TH-69,有限状态结果被过度泛化,Python BFS或TLC有限模型结果被表述为生产安全证明,披露模型范围、工具引擎、状态空间、抽象和未覆盖假设,Verification Owner,P1,CANDIDATE
 TH-70,模型与实现语义不一致,抽象状态机未反映WAL/持久化/签名释放真实事务顺序,独立实现映射审查；崩溃点注入；真实恢复证据,Storage and Witness Owner,P0,CANDIDATE
+TH-71,联盟权限继承,Coordinator或联盟将成员权限合并并扩大到任务契约之外,任务范围委托；父子约束衰减；成员域本地PDP/PEP；拒绝根权限继承,Coalition Owner与各成员域Authorization Owner,P0,CANDIDATE
+TH-72,Sybil与能力虚报,攻击者使用别名/虚假主体或夸大能力声明进入联盟,唯一主体与Owner关系核验；能力Owner证明；证据抽检；别名去重,Identity Owner与Capability Owner,P0,CANDIDATE
+TH-73,联盟垄断与排斥,少数成员串谋长期控制任务机会或排斥合格成员,联盟多样性约束；公平轮换/准入规则；可解释审查与申诉,生态治理Owner与Resource Owner,P1,CANDIDATE
+TH-74,共享资源饥饿,高频或高声誉成员挤占算力/工具/任务槽位,Owner配额；加权公平队列；租约；反饥饿和速率限制,Resource Owner与ADS资源治理,P1,CANDIDATE
+TH-75,贡献归因操纵,成员伪造中间工件/事件或互相刷贡献影响收益分配,事件与工件证据；独立验收；贡献/声誉/授权分离；争议冻结,Task Owner与Independent Verifier,P1,CANDIDATE
+TH-76,Coordinator失陷与越权,联盟协调者被攻陷并利用成员凭证执行超范围动作,Coordinator不持有成员生产凭证；短期受众绑定委托；本地PEP复核,Coalition Owner与Member Authorization Owner,P0,CANDIDATE
+TH-77,成员退出后权限残留,成员被移除或租约到期后仍可执行原联盟动作,Membership Epoch；Lease/Fencing；撤销传播；本地Kill Switch,Identity Owner与目标域PEP,P0,CANDIDATE
+TH-78,跨域外部性与数据泄露,联盟工件/索引/输出暴露其他领域敏感数据或推断关系,字段级过滤；最小披露；用途绑定；输出检查；接收域本地审批,Data Owner与Privacy Governance Owner,P0,CANDIDATE
+TH-79,任务重复接管与双重执行,多个联盟并发接管同一任务并产生重复副作用,Owner-scoped Lease；幂等operationId；fencing token；任务状态权威,Task Owner与Execution Runtime Owner,P0,CANDIDATE
+TH-80,联盟串谋与奖励操纵,联盟成员互相背书/操纵评估或价值分配,独立来源；随机抽检；贡献证据；争议冻结和人类裁决,Economics Governance与Independent Audit Owner,P1,CANDIDATE
+TH-81,解散后资源与任务悬挂,联盟解散后临时资源、凭证或未完成任务未正确释放/交接,显式DISSOLVING/CLOSED状态；租约到期；凭证撤销；交接与审计,Coalition Owner与Resource Owner,P1,CANDIDATE
+TH-82,信誉自强化与路径依赖,热度/成功率/引用数被循环强化并变成准入或授权替代品,证据质量与声誉分离；时效衰减；独立验证；新成员观察期,Trust Governance Owner与Capability Owner,P1,CANDIDATE
