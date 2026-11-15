@@ -4,13 +4,13 @@
 
 | Path | Git Blob SHA |
 |---|---|
-| `README.md` | `10f30d09ffe10abebdef87a0f4759e629eb1c034` |
-| `STATUS.md` | `abe8c0ae79ef11e8a74d3d1305dbb7cd1b70b896` |
+| `README.md` | `3256232e6301e50201c8b54d1d4b06c734a9c0b3` |
+| `STATUS.md` | `14b1e1a3489d809808d6045b2ed08e705624655a` |
 | `00_V1.9_痕迹协作实证进展与架构增量研究.md` | `36d0b67b21f2684ba2e187f8d5f7c9fbccacaecc` |
 | `01_研究证据登记.csv` | `a34bbb6c91d7e860e50e7276f19e3b07a49ee082` |
 | `02_合成实验与验收矩阵.csv` | `e1864a611774338302f7b1ba673211b7014cd5a8` |
-| `03_架构决策记录.md` | `a26d4b5b9483955dc0a6f725e4216d823fdcfbb4` |
-| `04_威胁与治理边界.csv` | `be04a690c99bb09fb8d9793f1b8d5a22155ef309` |
+| `03_架构决策记录.md` | `33c094ff407d137c146a0d3a20ec1d0b41c4779d` |
+| `04_威胁与治理边界.csv` | `4409543d310a52c4f8771b2e1986a0710cd927ab` |
 | `05_跨生态能力发现与目录联邦架构决策备忘录.md` | `fd915f0135e2f0daebb05d7fecfe30bb8b0d3b29` |
 | `06_研究证据与引用边界.md` | `1ba5951238d6501fa0b9e85cf3ca3edaab8b2c3f` |
 | `08_能力发现契约静态审查与缺口清单.md` | `c006cf14291cba9a4809a6b48c4deeb7b41f2ac3` |
@@ -53,17 +53,17 @@
 | `assets/03_WP-022_跨生态事件可信见证与多方一致性验证.svg` | `158cdef5345a21dd9d3684ff5d950c55870c581d` |
 | `assets/04_WP-023_可信见证网络治理与灾难恢复.svg` | `6c65896c64d912555d476fccb0ae71770a7db3a2` |
 
-| `21_WP-024_跨生态可信见证网络形式化验证与韧性评估.md` | `6518838c99e92050493914e75df1d698161a4bfe` |
+| `21_WP-024_跨生态可信见证网络形式化验证与韧性评估.md` | `35062d8316bbd4584cbd848f72985095360ccd0d` |
 | `22_WP-024_研究证据登记.md` | `fee0df0d9e45da1b6b54a1e441ce11563b2b7de2` |
-| `23_WP-024_TLA+模型变量与性质目录.md` | `9705945045c3bd211935bf4d8751799c46102886` |
-| `24_WP-024_实验设计与静态审查.md` | `4bdfe06ddc4f87ca6c53c132e766b129d41d0a8d` |
+| `23_WP-024_TLA+模型变量与性质目录.md` | `0ed3e6f735ef3c9cc903aa55538cbd6f130a72c7` |
+| `24_WP-024_实验设计与静态审查.md` | `957cc2e2d01f678e2645dada2a4ec4d4f1103ff6` |
 | `contracts/witness-fault-scenario.schema.json` | `9516e0a17a029ed6085098eb887d27cbe5df4ae3` |
 | `contracts/witness-experiment-run.schema.json` | `a3053eadd16956eaea81ec140ebf372487f660bf` |
 | `contracts/witness-experiment-evidence-bundle.schema.json` | `04dbd286edadffdac62543bceafffcbee2646433` |
 | `validation/WP024_WITNESS_RESILIENCE_MATRIX.csv` | `2f1e05163ae39f5210e3dd86465b50387fe600cc` |
 | `assets/05_WP-024_可信见证网络形式化验证与韧性评估.svg` | `3c50f56410fe59ac6eaa727902898355478fd95b` |
 
-| `25_WP-024-L0L1_组合穷举与恢复状态模型验证报告.md` | `5a66f294c5127227764ea6c66f07b208fa70e3c3` |
+| `25_WP-024-L0L1_组合穷举与恢复状态模型验证报告.md` | `b476f1d0d198ef811e0294f9db1c36a775aaf46a` |
 | `formal/WitnessRecovery.tla` | `9fcf993c521678d566af7633a52de82d80887e71` |
 | `formal/WitnessRecovery-Unsafe.cfg` | `db1b777748f769ecbafafda598cf2585eeb89551` |
 | `formal/WitnessRecovery-SafePreserve.cfg` | `61fb3ee441f0bcb6ae0d878b33bd4a3b1858971f` |
