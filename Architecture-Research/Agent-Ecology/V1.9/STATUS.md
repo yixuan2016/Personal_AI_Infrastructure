@@ -1,7 +1,7 @@
 # V1.9 状态记录
 
 - 版本：Agent Ecology V1.9｜Stigmergy、能力发现、跨生态信任、撤销传播与可信见证
-- 日期：2026-11-15
+- 日期：2026-11-16
 - 状态：Candidate / Draft
 - 工作分支：research/agent-ecology-v1.9-stigmergy-20261114
 - 基线：PR #12 的 V1.8 分支 HEAD 4e337089470076b25058a7c47edaacab77bcaa58
@@ -162,4 +162,35 @@
 - WP-025 新增研究证据 7 项；所有新验收场景 NOT_RUN；新增 10 项未决问题，未关闭。
 - V1.8 F0 Gate：12 项全部 NotRun，F0 未通过。
 - 生产实现未开始；未接入生产密钥、真实数据、HSM/KMS 或 Runner。
+- productionAllowed=false；Runner 未启用。
+
+
+## 工作流 H｜WP-025 多生态动态联盟形成与自治治理
+- 新增 WP-025 架构研究，明确联邦式动态联盟、任务驱动准入、成员 Owner 本地治理、资源公平、独立验证和解散边界。
+- 新增 WP025 验收矩阵 17 项，全部 NOT_RUN。
+- 新增 ADR-155—ADR-160 六项候选决策；威胁矩阵扩展至 TH-82。
+- 关键原则：联盟是临时协作结构而非新主权主体；Coordinator 不继承成员根权限；多 Agent 必须与同预算强单 Agent 基线比较。
+- 未部署联盟 Runtime；未运行跨生态 Shadow 试验、资源调度仿真或真实任务副作用。
+
+## 工作流 I｜WP-026 Coalition Charter 联盟任务契约与生命周期
+- 新增 WP-026 架构备忘录、研究证据登记和静态审查/12 项未决事项。
+- 新增 Coalition Charter 与 Coalition Lifecycle Event 两份候选 JSON Schema（V1.9 总计 21 份）。
+- 新增 WP026 验收矩阵 36 项，全部 NOT_RUN。
+- 新增 7680×4320 SVG 联盟任务契约与生命周期架构源图。
+- 新增 ADR-161—ADR-168 八项候选决策；威胁矩阵扩展至 TH-94。
+- 候选约束：最小公共核心 + 版本化领域 Profile；多 Owner 同 Digest 接受；Charter 非授权；不可变版本；Task/Resource Lease；资源端 Fencing Token；幂等副作用；独立验收；解散清算。
+- 研究证据：W3C ODRL 2.2、PROV-O、CloudEvents、etcd 事务/API Guarantees、ZooKeeper Recipes、RFC 8785 JCS。
+- 36 项验收全部 NOT_RUN；12 项语义缺口 OPEN；未运行 JSON Schema Draft 2020-12 完整 Validator、签名验证、TLA+ 或 Runtime 测试。
+
+## V1.9 当前权威汇总（2026-11-16）
+- 合成实验与验收：319 项，全部 NOT_RUN（22 + 31 + 27 + 36 + 40 + 50 + 60 + 17 + 36）。
+- 架构决策：68 项（ADR-101—ADR-168），全部 Candidate，未获正式批准。
+- 威胁与治理边界：94 项（TH-01—TH-94），全部 Candidate。
+- 候选 JSON Schema：21 份；仅完成 JSON 语法解析，完整 Draft 2020-12 Validator、语义、密码学和互操作验证未执行。
+- 架构源图：7 张 7680×4320 SVG。
+- 静态未决事项：85 项（WP-020 10、WP-021 10、WP-022 12、WP-023 15、WP-024 16、WP-025 10、WP-026 12），全部 OPEN。
+- WP-024-L0/L1 有界验证已执行；WP-024-L2 模型扩展仅完成设计，TLC 未运行。
+- V1.8 F0 Gate：12 项全部 NotRun，F0 未通过。
+- 生产实现未开始；未接入真实跨生态密钥、业务数据、HSM/KMS 或 Runner。
+- PR #14 仍为 Draft，基于 V1.8 文档分支；V1.9 未合并 main。
 - productionAllowed=false；Runner 未启用。
