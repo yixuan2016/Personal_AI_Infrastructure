@@ -81,18 +81,6 @@ TH-79,任务重复接管与双重执行,多个联盟并发接管同一任务并�
 TH-80,联盟串谋与奖励操纵,联盟成员互相背书/操纵评估或价值分配,独立来源；随机抽检；贡献证据；争议冻结和人类裁决,Economics Governance与Independent Audit Owner,P1,CANDIDATE
 TH-81,解散后资源与任务悬挂,联盟解散后临时资源、凭证或未完成任务未正确释放/交接,显式DISSOLVING/CLOSED状态；租约到期；凭证撤销；交接与审计,Coalition Owner与Resource Owner,P1,CANDIDATE
 TH-82,信誉自强化与路径依赖,热度/成功率/引用数被循环强化并变成准入或授权替代品,证据质量与声誉分离；时效衰减；独立验证；新成员观察期,Trust Governance Owner与Capability Owner,P1,CANDIDATE
-TH-71,联盟权限继承,Coordinator或联盟把成员权限合并成超范围权限,任务范围委托；父子约束衰减；成员域本地PDP/PEP,任务Owner与成员域Policy Owner,P0,CANDIDATE
-TH-72,Sybil与能力虚报,伪造多个Agent主体或夸大能力证据以获得联盟席位,身份与Owner证明；唯一主体去重；能力证据抽检,Trust Governance Owner,P0,CANDIDATE
-TH-73,联盟垄断与排斥,少数成员长期控制任务入口或稀缺资源,多样性约束；透明轮换；公平队列；申诉与独立监测,资源治理Owner,P1,CANDIDATE
-TH-74,资源饥饿,高频或高声誉成员占满算力与工具配额,Owner配额；加权公平队列；反饥饿；资源预算上限,资源Owner,P1,CANDIDATE
-TH-75,贡献归因操纵,成员伪造中间步骤或相互刷贡献以影响分配,基于签名事件与持久工件；独立验收；贡献与授权/信任分离,独立评估Owner,P0,CANDIDATE
-TH-76,Coordinator失陷,协调者误用或窃取成员权限并发起越权副作用,协调者不持有成员生产凭证；短期任务委托；成员本地PEP,联盟治理Owner与成员域SEC,P0,CANDIDATE
-TH-77,成员退出后权限残留,退出成员仍可使用旧凭证或接续Agent继承前任权限,Membership Epoch；Lease/Fencing；撤销传播；凭证不可继承,成员Identity Owner,P0,CANDIDATE
-TH-78,跨域数据外部性,共享工件或索引泄露成员域敏感数据,字段级过滤；Purpose绑定；最小披露；接收域本地审批,Data Owner与Privacy Owner,P0,CANDIDATE
-TH-79,任务双重执行,多个联盟同时接管同一任务并产生重复副作用,Owner-scoped Lease；单调Fencing Token；幂等operationId,Task Owner与Resource Owner,P0,CANDIDATE
-TH-80,联盟串谋与奖励操纵,成员互相背书或操纵贡献/价值分配,独立来源；随机抽检；争议冻结；延迟结算,独立审计Owner,P0,CANDIDATE
-TH-81,解散后资源悬挂,联盟解散后资源租约、访问令牌或临时数据副本未释放,显式清算；撤销凭证；租约到期；数据处置证明,联盟Owner与资源Owner,P0,CANDIDATE
-TH-82,信誉自强化,历史成功率和热度形成路径依赖并排斥新成员,证据质量与声誉分离；时效衰减；独立验证；新成员观察期,Trust Governance Owner,P1,CANDIDATE
 TH-83,Charter旧版本重放,攻击者重放旧 Charter 或旧 Owner 接受收据以恢复已变更范围,不可变 Version/Epoch/Digest；旧签名不得跨版本复用,Task Owner与相关Owner,P0,CANDIDATE
 TH-84,Charter范围静默扩大,成员或Coordinator原地修改Purpose/Audience/资源范围,新版本摘要链；字段影响分析；受影响Owner重新接受,Charter Authority与Data/Resource Owner,P0,CANDIDATE
 TH-85,Owner接受冒名,非资产Owner主体或失效密钥签署成员/数据/资源接受,Owner Registry与角色绑定；Key Epoch；签名用途验证,Identity Owner与Asset Owner,P0,CANDIDATE
