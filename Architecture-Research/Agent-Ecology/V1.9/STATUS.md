@@ -175,7 +175,7 @@
 ## 工作流 I｜WP-026 Coalition Charter 联盟任务契约与生命周期
 - 新增 WP-026 架构备忘录、研究证据登记和静态审查/12 项未决事项。
 - 新增 Coalition Charter 与 Coalition Lifecycle Event 两份候选 JSON Schema（V1.9 总计 21 份）。
-- 新增 WP026 验收矩阵 36 项，全部 NOT_RUN。
+- 新增 WP026 验收矩阵 38 项，全部 NOT_RUN。
 - 新增 7680×4320 SVG 联盟任务契约与生命周期架构源图。
 - 新增 ADR-161—ADR-168 八项候选决策；威胁矩阵扩展至 TH-94。
 - 候选约束：最小公共核心 + 版本化领域 Profile；多 Owner 同 Digest 接受；Charter 非授权；不可变版本；Task/Resource Lease；资源端 Fencing Token；幂等副作用；独立验收；解散清算。
@@ -183,7 +183,7 @@
 - 36 项验收全部 NOT_RUN；12 项语义缺口 OPEN；未运行 JSON Schema Draft 2020-12 完整 Validator、签名验证、TLA+ 或 Runtime 测试。
 
 ## V1.9 当前权威汇总（2026-11-16）
-- 合成实验与验收：319 项，全部 NOT_RUN（39 + 31 + 27 + 36 + 40 + 50 + 60 + 36；总体验收主矩阵 39 项已包含 ECO-01—17，WP-025 专项矩阵为重复视图）。
+- 合成实验与验收：321 项，全部 NOT_RUN（39 + 31 + 27 + 36 + 40 + 50 + 60 + 38；总体验收主矩阵 39 项已包含 ECO-01—17，WP-025 专项矩阵为重复视图）。
 - 架构决策：68 项（ADR-101—ADR-168），全部 Candidate，未获正式批准。
 - 威胁与治理边界：94 项（TH-01—TH-94），全部 Candidate。
 - 候选 JSON Schema：21 份；仅完成 JSON 语法解析，完整 Draft 2020-12 Validator、语义、密码学和互操作验证未执行。
