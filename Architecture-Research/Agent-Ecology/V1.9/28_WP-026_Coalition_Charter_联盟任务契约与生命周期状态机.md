@@ -88,6 +88,8 @@ Charter 不能自行授予成员对其他生态数据、工具或资源的访问
 
 规范化编码候选采用 JCS（RFC 8785）作为 JSON 摘要输入；需补充跨语言测试向量、Unicode/数字边界和字段排除规则。JSON Schema 不能证明签名正确或摘要计算正确。
 
+生命周期事件采用 CloudEvents 1.0 封装：顶层扩展属性使用小写名称；actor 和签名对象放入 data 负载，避免把复杂对象伪装成 CloudEvents 扩展属性；source + id 用于事件幂等去重，coalitionSequence 在该联盟的 Task Owner 事件流内单调递增。
+
 ### 3.2 多方接受
 
 - Task Owner 发布 Charter 候选版本。
@@ -228,7 +230,7 @@ Charter 变更必须新建版本；受影响 Owner 重新接受。变更未完�
 | 贡献证据操纵 | PROV-O 风格来源链、签名事件、独立验收和争议冻结 |
 | 领域 Schema 漂移 | 公共核心稳定、领域 Profile 版本化、未知关键 Profile HOLD |
 
-## 10. 验收矩阵摘要（36 项，全部 NOT_RUN）
+## 10. 验收矩阵摘要（38 项，全部 NOT_RUN）
 
 覆盖 Charter 核心字段、Digest、版本链、签署角色、多方同摘要接受、授权分离、Coordinator 权限、Owner/Data/Resource/Target Policy、变更重签、旧签名重放、Epoch、状态机合法/非法转换、事件序列缺口、Task/Resource Lease、Fencing Token、幂等 Operation ID、双重执行、公平性、Purpose/Audience、领域 Profile、独立验收、贡献争议、成员退出、凭证撤销和解散清算。详细用例见 validation/WP026_COALITION_CHARTER_LIFECYCLE_MATRIX.csv。所有项目保持 NOT_RUN；本轮未运行 Runtime 或真实副作用。
 
@@ -281,7 +283,7 @@ WP-025 解决“生态如何形成动态联盟”；WP-026 解决“联盟如何
 
 该结构既支持 PDS、TWS、PDM、FBS 等不同业务领域的领域 Profile，也维持 ADS 生态内协调职责和各企业/数据/资源 Owner 的自治边界。
 
-WP-026 当前仅完成候选架构研究和契约草案；36 项验收全部 NOT_RUN；8 项 ADR Candidate；12 项未决事项开放；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
+WP-026 当前仅完成候选架构研究和契约草案；38 项验收全部 NOT_RUN；8 项 ADR Candidate；12 项未决事项开放；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
 
 ## 15. 原始资料
 
