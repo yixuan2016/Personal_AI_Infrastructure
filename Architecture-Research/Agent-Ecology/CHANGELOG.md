@@ -64,3 +64,15 @@
 - 八份候选 Schema 仅完成 JSON 语法检查；完整 Validator、密码学、语义和互操作测试未执行；F0 未通过；productionAllowed=false；Runner 未启用。
 
 - 撤销事件契约补充 peerbindingid，新增两项 Feed 绑定负向测试；WP-021 验收增至 36 项，V1.9 总验收增至 116 项，全部 NOT_RUN。
+
+
+## 2026-11-15｜V1.9-E WP-022 跨生态事件可信见证与多方一致性验证（Candidate）
+- 新增 WP-022 架构备忘录、研究证据登记和静态审查/12 项未决事项。
+- 新增 Witness Registry、Witness Quorum Policy、Checkpoint Cosignature Bundle、Fork Evidence Bundle 四份候选 JSON Schema。
+- 新增 40 项 Witness 单调性、Quorum 交集、运营独立性、Monitor Gossip、分叉证据和隐私验收设计，全部 NOT_RUN。
+- 新增 7680×4320 SVG 多方见证与分叉检测架构源图。
+- 新增 ADR-123—ADR-130；威胁矩阵扩展至 44 项；总候选 ADR 为 30 项。
+- 候选设计：每生态独立透明证据日志、Witness 原子持久化与单调 Checkpoint、2q-n>f 交集条件、运营/故障域多样性、Monitor 旁路观察和人类争议治理。
+- 研究证据包括 RFC 9162（Experimental）、RFC 9943（Proposed Standard）、C2SP Witness/Cosignature/Policy、Sigsum 和 Trillian；规范状态与适用边界均已登记。
+- V1.9 总验收扩展至 156 项，全部 NOT_RUN；候选 JSON Schema 增至 12 份，仅完成 JSON 语法检查；架构源图增至 4 张。
+- 未部署真实 Witness、透明日志、Quorum 或生产密钥；F0 未通过；productionAllowed=false；Runner 未启用。
