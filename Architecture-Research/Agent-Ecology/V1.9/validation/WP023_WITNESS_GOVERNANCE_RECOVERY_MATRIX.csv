@@ -1,0 +1,51 @@
+test_id,workstream,scenario,expected_result,evidence_required,severity,status
+WP023-01,Membership,新 Witness 仅提交名称和公钥，缺少运营主体与控制关系证据,保持 PROPOSED，不得进入 ACTIVE 或计入 Quorum,身份核验和独立性审查记录,Critical,NOT_RUN
+WP023-02,Membership,Witness 完成身份核验但未通过 OBSERVE_ONLY,拒绝直接激活,状态机转换日志,Critical,NOT_RUN
+WP023-03,Membership,OBSERVE_ONLY 节点请求计入 Quorum,拒绝计票,Quorum 计算输入与输出,Critical,NOT_RUN
+WP023-04,Membership,ACTIVE Witness 被暂停,新签名停止，历史签名保留,Lifecycle Event 与历史签名查询结果,Critical,NOT_RUN
+WP023-05,Membership,QUARANTINED Witness 尝试重新激活但无连续性证据,拒绝激活，维持隔离,恢复审查结果和状态机日志,Critical,NOT_RUN
+WP023-06,Membership,Witness 正常退出,从新策略成员集移除，历史记录保留,新旧 Registry 与 Policy Diff,High,NOT_RUN
+WP023-07,Membership,新 Witness 替换旧 Witness,新节点先观察，再通过 Joint Quorum 迁移,旧新 Quorum 对同一 Checkpoint 的证明,Critical,NOT_RUN
+WP023-08,Membership,旧节点退出后自动降低 q,拒绝静默降级，进入 HOLD,策略版本与拒绝记录,Critical,NOT_RUN
+WP023-09,Membership,退出 Witness 以同一身份重注册但重置历史,要求新 Membership Epoch，保留旧事件链,前后 Epoch 与历史 Digest,High,NOT_RUN
+WP023-10,Membership,运营主体、管理员或云账号发生变更,触发独立性重新评估，必要时暂停计票,控制关系变更与复核记录,High,NOT_RUN
+WP023-11,KeyLifecycle,同一私钥被登记为 ROOT 与 WITNESS_CHECKPOINT 两种用途,拒绝跨角色复用,Key Fingerprint 与角色映射,Critical,NOT_RUN
+WP023-12,KeyLifecycle,新 Key Epoch 未有签名过渡事件,拒绝激活新密钥,Key Lifecycle Event 链,Critical,NOT_RUN
+WP023-13,KeyLifecycle,正常轮换，新旧密钥均在批准窗口内,按过渡策略验证，之后停止旧密钥新签名,新旧 Epoch 签名和停用记录,Critical,NOT_RUN
+WP023-14,KeyLifecycle,已 REVOKED 密钥再次提交签名,拒绝新签名，不恢复激活状态,撤销事件与签名验证结果,Critical,NOT_RUN
+WP023-15,KeyLifecycle,检测时间晚于最早疑似泄露时间,按 suspectedCompromiseSince 设定保守历史边界,时间线与风险判定,Critical,NOT_RUN
+WP023-16,KeyLifecycle,历史签名有可信时间且早于疑似泄露边界,按签名时策略进行历史验证，不一概否定,可信时间证据与历史验证结果,High,NOT_RUN
+WP023-17,KeyLifecycle,历史签名落入疑似泄露区间,返回 INDETERMINATE/HOLD,泄露时间窗口和验证报告,Critical,NOT_RUN
+WP023-18,KeyLifecycle,历史签名晚于确认泄露边界,返回 REJECT/COMPROMISED,Key Lifecycle Event 与签名时间,Critical,NOT_RUN
+WP023-19,KeyLifecycle,缺少可信时间证据，无法判定签名先后,返回 INDETERMINATE，不猜测,验证器输出和证据缺口,High,NOT_RUN
+WP023-20,KeyLifecycle,Git 文件、日志或 Schema 中出现私钥/恢复口令,拒绝入库并触发秘密泄露处置,扫描报告和清理审计,Critical,NOT_RUN
+WP023-21,RootUpdate,正常根升级仅有旧根阈值签名，无新根阈值签名,拒绝更新,两组签名与验证结果,Critical,NOT_RUN
+WP023-22,RootUpdate,正常根升级仅有新根阈值签名，无旧根阈值签名,拒绝更新,两组签名与验证结果,Critical,NOT_RUN
+WP023-23,RootUpdate,Root Version 从 N 直接跳到 N+2,拒绝跳号，要求逐版本验证,版本链和错误码,Critical,NOT_RUN
+WP023-24,RootUpdate,Root Version 低于本地已接受版本,识别回滚并拒绝,本地版本与收到版本,Critical,NOT_RUN
+WP023-25,RootUpdate,同一 Key ID 重复签名尝试多次计票,同一 Key ID 最多计一次,签名集合与阈值计数,Critical,NOT_RUN
+WP023-26,RootUpdate,根元数据已过期或更新长期被阻断,标记 STALE/HOLD，不执行高风险动作,过期时间、可信时间和策略结果,Critical,NOT_RUN
+WP023-27,RootUpdate,新根元数据混合引用不同版本的 Registry/Policy,拒绝版本拼接,各元数据 Digest 与版本绑定,Critical,NOT_RUN
+WP023-28,RootUpdate,根密钥失陷达到旧根阈值,停止依赖旧根签名，进入紧急恢复流程,事件等级与 Root State,Critical,NOT_RUN
+WP023-29,RootUpdate,紧急恢复未使用预登记带外锚,拒绝信任新根，保持 SUSPENDED,Recovery Anchor Registry 和验证报告,Critical,NOT_RUN
+WP023-30,RootUpdate,网络发现未知新公钥并自动替换信任根,拒绝自动信任，要求带外指纹核验,根更新来源与验证记录,Critical,NOT_RUN
+WP023-31,RootUpdate,Root Keyholder 来自同一管理控制域,不满足独立性门槛，不得计入多方阈值,Custody Domain 证据,Critical,NOT_RUN
+WP023-32,Backup,快照签名有效但 stateSequence 低于外部已知状态,拒绝恢复签名服务，进入 QUARANTINED,快照序列与外部 Checkpoint 对照,Critical,NOT_RUN
+WP023-33,Backup,快照 generation 回退或 previousSnapshotDigest 断裂,拒绝恢复并固定证据,快照链和验证报告,Critical,NOT_RUN
+WP023-34,Backup,WAL 缺失已提交的 Cosignature 状态,不得恢复为 ACTIVE,WAL Watermark 与已签名 Checkpoint 对照,Critical,NOT_RUN
+WP023-35,Backup,备份副本共享同一云账号和 KMS 管理员,不计为独立故障域副本,故障域与控制关系图,High,NOT_RUN
+WP023-36,Backup,恢复后 Checkpoint 与独立 Witness 最新值一致且证明连续,允许进入 OBSERVE_ONLY，仍需恢复审批,Consistency Proof 与外部见证收据,Critical,NOT_RUN
+WP023-37,Backup,恢复无法获取外部 Witness 状态,保持 QUARANTINED/HOLD，不签署新 Checkpoint,恢复状态与拒绝签名记录,Critical,NOT_RUN
+WP023-38,Backup,恢复流程试图重置 stateSequence 清除回滚证据,拒绝并固定审计事件,恢复请求和不可变审计记录,Critical,NOT_RUN
+WP023-39,Backup,备份加密密钥丢失或不可用,启动独立密钥恢复，不绕过加密控制,KMS/HSM 恢复审批和结果,High,NOT_RUN
+WP023-40,Backup,恢复后直接跳过 OBSERVE_ONLY 激活,拒绝激活,恢复状态机与审批记录,Critical,NOT_RUN
+WP023-41,JointQuorum,旧 Quorum 与新 Quorum 对同一过渡 Checkpoint 均通过,按过渡策略完成成员集迁移,双 Quorum Bundle 与 Policy Digest,Critical,NOT_RUN
+WP023-42,JointQuorum,旧 Quorum 和新 Quorum 分别对不同 Root Hash 通过,拒绝迁移并触发 Fork Evidence,两个 Bundle 和冲突证据,Critical,NOT_RUN
+WP023-43,JointQuorum,新策略增加成员但未完成双方接受,新策略不得 ACTIVE,Peer Binding 双方接受收据,Critical,NOT_RUN
+WP023-44,JointQuorum,迁移期间独立运营域数不足,Joint Quorum 不得 PASS,运营域计数和策略阈值,Critical,NOT_RUN
+WP023-45,Governance,灾难恢复启动后 FCP 仍转发高风险跨域任务,目标域本地 PDP/PEP 仍执行 HOLD/DENY,事故冻结事件与 PEP 决策,Critical,NOT_RUN
+WP023-46,Governance,恢复后未完成人类审批即恢复生产签名,拒绝恢复生产状态,审批记录与状态变更日志,Critical,NOT_RUN
+WP023-47,Governance,事故通知未包含受影响 Key Epoch 和时间范围,事故关闭条件不满足,通知模板与收件人记录,High,NOT_RUN
+WP023-48,Governance,RPO/RTO 仅写设计目标，未做演练,不得标记为已验证或生产承诺,实测记录与状态标记,High,NOT_RUN
+WP023-49,Governance,历史 Checkpoint/Key Lifecycle Evidence 在节点退出后被删除,拒绝删除，保留历史验证材料,归档完整性和审计日志,Critical,NOT_RUN
+WP023-50,Governance,恢复完成后独立 Monitor 发现 Checkpoint 连续性不一致,重新隔离并启动 Fork Evidence 流程,Monitor 观察、Proof 和隔离记录,Critical,NOT_RUN
