@@ -61,7 +61,7 @@
 - 候选约束：Peer Binding 专属连续 Feed、(source,id) 持久幂等去重、撤销墓碑只增不减、Gap 高风险 HOLD、完整签名快照恢复、FCP 仅中继与反熵。
 - 未部署事件总线、未运行撤销传播实验、未开展 Merkle Proof 或跨接收方 Gossip 互操作。
 
-## 总体边界（WP-021 更新）
+## WP-021 阶段快照（历史记录）
 - 合成实验与验收：116 项，全部 NOT_RUN。
 - 架构决策：22 项，全部 Candidate，未获正式批准。
 - 威胁与治理边界：34 项，全部 Candidate。
@@ -80,10 +80,32 @@
 - 研究参考：RFC 9162（Experimental）、RFC 9943（Proposed Standard）、C2SP Witness/Cosignature/Policy 社区规范、Sigsum 和 Trillian。
 - 未部署 Witness 网络、透明日志或真实密钥；未运行 Quorum、分叉或 Gossip 故障注入。
 
-## 总体边界（WP-022 更新）
+## WP-022 阶段快照（历史记录）
 - 合成实验与验收：156 项，全部 NOT_RUN。
 - 架构决策：30 项，全部 Candidate，未获正式批准。
 - 威胁与治理边界：44 项，全部 Candidate。
 - 候选 JSON Schema：12 份，仅完成 JSON 语法检查；完整 Draft 2020-12 Validator、语义和密码学验证未执行。
 - 架构源图：4 张 7680×4320 SVG。
 - WP-021 10 项与 WP-022 12 项静态未决事项均未关闭。
+
+
+## 工作流 F｜WP-023 可信见证网络治理、密钥生命周期与灾难恢复
+- 新增 WP-023 架构备忘录、研究证据登记、静态审查与 15 项未决事项。
+- 新增 Witness Lifecycle Event、Witness Key Lifecycle Record、Witness Recovery Snapshot Manifest、Trust Root Update Envelope 四份候选 JSON Schema（V1.9 总计十六份）。
+- 新增 WP-023 验收矩阵 50 项，全部 NOT_RUN。
+- 新增 7680×4320 SVG 可信见证网络治理与灾难恢复架构源图。
+- 新增 10 项候选 ADR（ADR-131—ADR-140）；威胁矩阵扩展至 56 项。
+- 候选约束：Witness 身份核验与 OBSERVE_ONLY、密钥用途隔离、Key Epoch 单调、正常根升级双阈值、紧急带外恢复锚、外部 Checkpoint 对账、Joint Quorum 和恢复失败隔离。
+- 研究证据：TUF 1.0.37、Sigstore Security Model、NIST SP 800-57 Rev.6 IPD、C2SP Witness Protocol v1.1.0；规范状态与适用边界已登记。
+- 未部署真实根密钥、Witness 密钥、HSM/KMS、备份系统或灾难恢复流程；未执行恢复演练。
+
+## 总体边界（V1.9 当前权威汇总｜WP-023）
+- 合成实验与验收：206 项，全部 NOT_RUN（22 + 31 + 27 + 36 + 40 + 50）。
+- 架构决策：40 项（ADR-101—ADR-140），全部 Candidate，未获正式批准。
+- 威胁与治理边界：56 项（TH-01—TH-56），全部 Candidate。
+- 候选 JSON Schema：16 份；仅完成 JSON 语法解析，完整 Draft 2020-12 Validator、语义和密码学验证未执行。
+- 架构源图：5 张 7680×4320 SVG。
+- WP-021、WP-022、WP-023 静态未决事项合计 37 项，均未关闭。
+- V1.8 F0 Gate：12 项全部 NotRun，F0 未通过。
+- 生产实现未开始；未接入生产密钥、真实数据、HSM/KMS 或 Runner。
+- productionAllowed=false；Runner 未启用。
