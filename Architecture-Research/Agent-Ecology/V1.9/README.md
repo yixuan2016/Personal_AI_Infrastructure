@@ -19,14 +19,19 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 11_WP-020_信任协议静态审查与未决事项.md：WP-020 的 10 项未决事项和静态检查边界。
 - 12_WP-021_跨生态能力目录一致性与撤销传播协议.md：目录同步、事件序列、撤销墓碑、快照恢复、反熵和网络分区安全。
 - 13_WP-021_研究证据登记.md：CloudEvents、Kubernetes Watch、etcd、Dynamo、RFC 9162 与 CRDT 证据。
-- 14_WP-021_静态审查与未决事项.md：36 项验收设计的静态审查边界和 10 项开放问题。\n- 15_WP-022_跨生态事件可信见证与多方一致性验证.md：Witness、Quorum Policy、Monitor Gossip、Fork Evidence 和争议治理设计。\n- 16_WP-022_研究证据登记.md：RFC 9162、C2SP Witness/Cosignature/Policy、Sigsum、RFC 9943 和 Trillian 证据。\n- 17_WP-022_静态审查与未决事项.md：40 项验收设计边界和 12 项开放问题。
+- 14_WP-021_静态审查与未决事项.md：36 项验收设计的静态审查边界和 10 项开放问题。
+- 15_WP-022_跨生态事件可信见证与多方一致性验证.md：Witness、Quorum Policy、Monitor Gossip、Fork Evidence 和争议治理设计。
+- 16_WP-022_研究证据登记.md：RFC 9162、C2SP Witness/Cosignature/Policy、Sigsum、RFC 9943 和 Trillian 证据。
+- 17_WP-022_静态审查与未决事项.md：40 项验收设计边界和 12 项开放问题。
 - contracts/：能力广告、能力解析、能力生命周期事件、Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation、Federation Revocation Event、Federation Sync Checkpoint、Witness Registry、Witness Quorum Policy、Checkpoint Cosignature Bundle、Fork Evidence Bundle 候选 JSON Schema（12 份）。
 - validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv：31 项 F1 能力发现、资格一致性与事件契约验收矩阵。
 - validation/WP020_TRUST_PROTOCOL_VALIDATION_MATRIX.csv：27 项跨生态信任、委托、令牌与撤销验收设计。
-- validation/WP021_CATALOG_CONSISTENCY_REVOCATION_MATRIX.csv：36 项目录一致性、事件幂等、撤销传播、快照恢复和分区安全验收设计。\n- validation/WP022_MULTI_WITNESS_QUORUM_MATRIX.csv：40 项 Witness 单调性、Quorum 交集、独立性、Gossip、分叉证据和隐私验收设计。
+- validation/WP021_CATALOG_CONSISTENCY_REVOCATION_MATRIX.csv：36 项目录一致性、事件幂等、撤销传播、快照恢复和分区安全验收设计。
+- validation/WP022_MULTI_WITNESS_QUORUM_MATRIX.csv：40 项 Witness 单调性、Quorum 交集、独立性、Gossip、分叉证据和隐私验收设计。
 - assets/00_V1.9_跨生态能力发现与观察Runtime.svg：7680×4320 SVG 架构源图。
 - assets/01_WP-020_跨生态信任协议与授权链.svg：7680×4320 SVG 信任与授权链架构源图。
-- assets/02_WP-021_目录一致性与撤销传播架构.svg：7680×4320 SVG 目录同步与撤销传播架构源图。\n- assets/03_WP-022_跨生态事件可信见证与多方一致性验证.svg：7680×4320 SVG 多方见证与分叉检测架构源图。
+- assets/02_WP-021_目录一致性与撤销传播架构.svg：7680×4320 SVG 目录同步与撤销传播架构源图。
+- assets/03_WP-022_跨生态事件可信见证与多方一致性验证.svg：7680×4320 SVG 多方见证与分叉检测架构源图。
 - STATUS.md：本版本状态和禁止越过的门禁。
 - GITHUB_BLOB_MANIFEST.md：Git Blob 标识清单；Git Blob SHA 不等同于文件 SHA-256。
 
