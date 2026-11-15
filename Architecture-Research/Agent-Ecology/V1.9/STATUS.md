@@ -109,3 +109,26 @@
 - V1.8 F0 Gate：12 项全部 NotRun，F0 未通过。
 - 生产实现未开始；未接入生产密钥、真实数据、HSM/KMS 或 Runner。
 - productionAllowed=false；Runner 未启用。
+
+
+## 工作流 G｜WP-024 形式化验证与韧性评估
+- 新增 WP-024 架构备忘录、研究证据登记、TLA+ 模型变量与性质目录、实验设计和静态审查。
+- 新增 3 份候选 Schema：故障场景、实验运行记录、实验结果证据包（V1.9 总计十九份）。
+- 新增 WP-024 验收矩阵 60 项，全部 NOT_RUN。
+- 新增 7680×4320 SVG 形式化验证与韧性评估架构源图。
+- 新增 10 项候选 ADR（ADR-141—ADR-150）；威胁矩阵扩展至 66 项。
+- 核心新约束：Witness Quorum 不等同于 BFT 共识；状态擦除恢复、身份克隆、签名前持久化和恢复防回滚必须独立建模。
+- 参数网格：n=4/7/10/13；f=1/2/3/4；q=3/5/7/9；最小交集为 2/3/4/5。
+- 研究证据：arXiv:2610.07759（2026-10-06 预印本）、C2SP Witness Protocol、PBFT、Proactive Recovery、FoundationDB Simulation、Jepsen、TLA+ TLC。
+- 未运行 TLC、确定性模拟、分布式故障注入、密码学互操作或真实恢复演练。
+
+## 总体边界（V1.9 当前权威汇总｜WP-024）
+- 合成实验与验收：266 项，全部 NOT_RUN（22 + 31 + 27 + 36 + 40 + 50 + 60）。
+- 架构决策：50 项（ADR-101—ADR-150），全部 Candidate，未获正式批准。
+- 威胁与治理边界：66 项（TH-01—TH-66），全部 Candidate。
+- 候选 JSON Schema：19 份；仅完成 JSON 语法解析，完整 Draft 2020-12 Validator、语义和密码学验证未执行。
+- 架构源图：6 张 7680×4320 SVG。
+- WP-021、WP-022、WP-023、WP-024 静态未决事项合计 49 项，均未关闭。
+- V1.8 F0 Gate：12 项全部 NotRun，F0 未通过。
+- 生产实现未开始；未接入生产密钥、真实数据、HSM/KMS 或 Runner。
+- productionAllowed=false；Runner 未启用。
