@@ -21,8 +21,7 @@
     "revocationepoch",
     "previouseventdigest",
     "eventdigest",
-    "data",
-    "signature"
+    "data"
   ],
   "properties": {
     "specversion": {
@@ -86,7 +85,8 @@
         "reasonCode",
         "impactScope",
         "cascadeMode",
-        "notAuthorization"
+        "notAuthorization",
+        "signature"
       ],
       "properties": {
         "target": {
@@ -172,46 +172,46 @@
         },
         "notAuthorization": {
           "const": true
-        }
-      }
-    },
-    "signature": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "format",
-        "algorithm",
-        "keyId",
-        "keyEpoch",
-        "signedPayloadDigest",
-        "compactJws"
-      ],
-      "properties": {
-        "format": {
-          "const": "JWS"
         },
-        "algorithm": {
-          "enum": [
-            "ES256",
-            "EdDSA",
-            "PS256"
-          ]
-        },
-        "keyId": {
-          "type": "string",
-          "minLength": 1
-        },
-        "keyEpoch": {
-          "type": "integer",
-          "minimum": 0
-        },
-        "signedPayloadDigest": {
-          "type": "string",
-          "pattern": "^[A-Fa-f0-9]{64}$"
-        },
-        "compactJws": {
-          "type": "string",
-          "minLength": 20
+        "signature": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "format",
+            "algorithm",
+            "keyId",
+            "keyEpoch",
+            "signedPayloadDigest",
+            "compactJws"
+          ],
+          "properties": {
+            "format": {
+              "const": "JWS"
+            },
+            "algorithm": {
+              "enum": [
+                "ES256",
+                "EdDSA",
+                "PS256"
+              ]
+            },
+            "keyId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "keyEpoch": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "signedPayloadDigest": {
+              "type": "string",
+              "pattern": "^[A-Fa-f0-9]{64}$"
+            },
+            "compactJws": {
+              "type": "string",
+              "minLength": 20
+            }
+          }
         }
       }
     },
