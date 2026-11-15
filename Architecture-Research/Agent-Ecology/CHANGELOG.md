@@ -127,3 +127,22 @@
 - 新增 ADR-155—ADR-160 共 6 项候选决策；威胁矩阵新增 TH-71—TH-82 共 12 项。
 - 推荐联邦式动态联盟：任务驱动、Owner 本地准入、Charter 限定协调权、Stigmergy 作为状态底座、A2A 作为必要协商通道、ADS 负责生态内协调。
 - 不新增生产 Schema 或 Runtime；未执行仿真、Shadow 或跨生态试点；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
+
+
+## 2026-11-16｜V1.9-H WP-025 多生态动态联盟形成与自治治理（Candidate）
+- 新增多生态动态联盟架构研究：联邦式临时联盟、Owner 本地准入、Coordinator 权限边界、资源公平、独立验证和解散治理。
+- 新增 17 项动态联盟验收设计，全部 NOT_RUN。
+- 新增 ADR-155—ADR-160；威胁矩阵扩展至 TH-82。
+- 明确联盟不构成新主权主体；多 Agent 采用前必须与匹配预算的强单 Agent 基线比较。
+- 本轮仅完成架构研究，不部署 Runtime、不运行真实跨生态任务。
+
+## 2026-11-16｜V1.9-I WP-026 Coalition Charter 契约与生命周期（Candidate）
+- 新增 WP-026 架构备忘录、研究证据登记和静态审查/12 项未决事项。
+- 新增 Coalition Charter 与 Coalition Lifecycle Event 两份候选 JSON Schema；V1.9 总计 21 份。
+- 新增 36 项 Charter、Owner 接受、状态机、租约/Fencing、授权分离和解散清算验收设计，全部 NOT_RUN。
+- 新增 7680×4320 SVG 联盟任务契约与生命周期架构源图。
+- 新增 ADR-161—ADR-168；威胁矩阵扩展至 TH-94。
+- 采用最小公共核心 + 版本化领域 Profile、多 Owner 同 Digest 接受、Charter 非授权、不可变版本、资源端 Fencing、幂等副作用和独立验收。
+- 研究依据包括 W3C ODRL 2.2、PROV-O、CloudEvents、etcd 事务/API Guarantees、ZooKeeper Recipes 与 RFC 8785 JCS。
+- V1.9 总验收扩展至 319 项，全部 NOT_RUN；ADR 共 68 项、威胁共 94 项、Schema 共 21 份、架构图共 7 张。
+- 完整 JSON Schema Validator、签名验证、TLA+、Runtime 和真实跨生态试验均未执行；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
