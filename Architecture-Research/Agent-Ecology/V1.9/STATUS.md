@@ -1,6 +1,6 @@
 # V1.9 状态记录
 
-- 版本：Agent Ecology V1.9｜痕迹协作实证、能力发现与联邦目录
+- 版本：Agent Ecology V1.9｜Stigmergy、能力发现、跨生态信任、撤销传播与可信见证
 - 日期：2026-11-15
 - 状态：Candidate / Draft
 - 工作分支：research/agent-ecology-v1.9-stigmergy-20261114
@@ -68,3 +68,22 @@
 - 候选 JSON Schema：8 份，仅完成 JSON 语法检查；完整 Draft 2020-12 Validator、语义和密码学验证未执行。
 - 架构源图：3 张 7680×4320 SVG。
 - WP-021 10 项静态未决事项均未关闭。
+
+
+## 工作流 E｜WP-022 跨生态事件可信见证与多方一致性验证
+- 新增 WP-022 架构备忘录、研究证据登记、静态审查与 12 项未决事项。
+- 新增 Witness Registry、Witness Quorum Policy、Checkpoint Cosignature Bundle、Fork Evidence Bundle 四份候选 JSON Schema（V1.9 总计十二份）。
+- 新增 WP-022 验收矩阵 40 项，全部 NOT_RUN。
+- 新增 7680×4320 SVG 多方见证与分叉检测架构源图。
+- 新增 8 项候选 ADR（ADR-123—ADR-130）；威胁矩阵扩展至 44 项。
+- 候选约束：生态自治透明证据日志、Witness 单调 Checkpoint、原子持久化、2q-n>f Quorum 交集、运营/故障域独立性、Monitor 旁路 Gossip、Fork Evidence 固定与人类争议裁决。
+- 研究参考：RFC 9162（Experimental）、RFC 9943（Proposed Standard）、C2SP Witness/Cosignature/Policy 社区规范、Sigsum 和 Trillian。
+- 未部署 Witness 网络、透明日志或真实密钥；未运行 Quorum、分叉或 Gossip 故障注入。
+
+## 总体边界（WP-022 更新）
+- 合成实验与验收：156 项，全部 NOT_RUN。
+- 架构决策：30 项，全部 Candidate，未获正式批准。
+- 威胁与治理边界：44 项，全部 Candidate。
+- 候选 JSON Schema：12 份，仅完成 JSON 语法检查；完整 Draft 2020-12 Validator、语义和密码学验证未执行。
+- 架构源图：4 张 7680×4320 SVG。
+- WP-021 10 项与 WP-022 12 项静态未决事项均未关闭。
