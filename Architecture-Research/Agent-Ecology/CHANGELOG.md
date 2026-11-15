@@ -76,3 +76,15 @@
 - 研究证据包括 RFC 9162（Experimental）、RFC 9943（Proposed Standard）、C2SP Witness/Cosignature/Policy、Sigsum 和 Trillian；规范状态与适用边界均已登记。
 - V1.9 总验收扩展至 156 项，全部 NOT_RUN；候选 JSON Schema 增至 12 份，仅完成 JSON 语法检查；架构源图增至 4 张。
 - 未部署真实 Witness、透明日志、Quorum 或生产密钥；F0 未通过；productionAllowed=false；Runner 未启用。
+
+
+## 2026-11-15｜V1.9-F WP-023 可信见证网络治理、密钥生命周期与灾难恢复（Candidate）
+- 新增 WP-023 架构备忘录、研究证据登记和静态审查/15 项未决事项。
+- 新增 Witness Lifecycle Event、Witness Key Lifecycle Record、Witness Recovery Snapshot Manifest、Trust Root Update Envelope 四份候选 JSON Schema。
+- 新增 50 项成员生命周期、密钥轮换、根升级、状态恢复、Joint Quorum 和事故治理验收设计，全部 NOT_RUN。
+- 新增 7680×4320 SVG 可信见证网络治理与灾难恢复架构源图。
+- 新增 ADR-131—ADR-140；威胁矩阵扩展至 56 项；总候选 ADR 为 40 项。
+- 候选设计：OBSERVE_ONLY 成员准入、密钥用途隔离、Key Epoch 单调、旧根/新根双阈值升级、带外紧急恢复锚、外部 Checkpoint 对账、Joint Quorum 和失败隔离。
+- 研究证据包括 TUF 1.0.37、Sigstore 官方安全模型、NIST SP 800-57 Rev.6 Initial Public Draft、C2SP Witness Protocol v1.1.0；严格区分最终规范、草案与社区规范。
+- V1.9 总验收扩展至 206 项，全部 NOT_RUN；候选 JSON Schema 增至 16 份，仅完成 JSON 语法检查；架构源图增至 5 张。
+- 未部署真实根密钥、Witness 密钥、HSM/KMS、备份系统或灾难恢复流程；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
