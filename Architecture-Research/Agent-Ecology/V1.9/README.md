@@ -9,8 +9,8 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 00_V1.9_痕迹协作实证进展与架构增量研究.md：A 线主研究报告与架构建议。
 - 01_研究证据登记.csv：7 项论文/研究证据、实验、复现材料、成熟度和架构启发。
 - 02_合成实验与验收矩阵.csv：39 项总体验收主矩阵，其中 STG-01—22 为 Stigmergy 实验，ECO-01—17 为动态联盟场景；WP-025 专项矩阵是这 17 项的独立视图，不重复计数。
-- 03_架构决策记录.md：30 项候选 ADR（ADR-101—ADR-130）。
-- 04_威胁与治理边界.csv：44 项共享环境、跨生态发现、身份授权、撤销传播和可信见证威胁。
+- 03_架构决策记录.md：68 项候选 ADR（ADR-101—ADR-168）。
+- 04_威胁与治理边界.csv：94 项共享环境、跨生态发现、身份授权、撤销传播、可信见证和动态联盟威胁。
 - 05_跨生态能力发现与目录联邦架构决策备忘录.md：B 线本地权威目录、联邦摘要目录、能力广告、候选解析和本地授权边界。
 - 06_研究证据与引用边界.md：跨生态能力发现、协议和身份研究证据。
 - 08_能力发现契约静态审查与缺口清单.md：能力发现契约的 10 项静态审查缺口与候选修复记录。
@@ -35,7 +35,7 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 27_WP-025_多生态动态联盟形成与自治治理架构.md：动态联盟形成、准入硬门禁、资源公平、独立验收和自治边界。
 - 28_WP-026_Coalition_Charter_联盟任务契约与生命周期状态机.md：联盟公共契约、领域 Profile、多方接受、Lease/Fencing、变更与解散清算。
 - 29_WP-026_研究证据登记.md：ODRL、PROV-O、CloudEvents、etcd、ZooKeeper 和 JCS 证据边界。
-- 30_WP-026_静态审查与未决事项.md：36 项验收设计的静态边界和 12 项开放问题。
+- 30_WP-026_静态审查与未决事项.md：38 项验收设计的静态边界和 12 项开放问题。
 - contracts/：能力广告、能力解析、能力生命周期事件、Peer Trust Binding、Owner Delegation Grant、Capability Owner Attestation、Federation Revocation Event、Federation Sync Checkpoint、Witness Registry、Witness Quorum Policy、Checkpoint Cosignature Bundle、Fork Evidence Bundle 候选 JSON Schema（21 份）。
 - validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv：31 项 F1 能力发现、资格一致性与事件契约验收矩阵。
 - validation/WP020_TRUST_PROTOCOL_VALIDATION_MATRIX.csv：27 项跨生态信任、委托、令牌与撤销验收设计。
