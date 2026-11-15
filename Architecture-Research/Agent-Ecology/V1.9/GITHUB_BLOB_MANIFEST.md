@@ -53,6 +53,16 @@
 | `assets/03_WP-022_跨生态事件可信见证与多方一致性验证.svg` | `158cdef5345a21dd9d3684ff5d950c55870c581d` |
 | `assets/04_WP-023_可信见证网络治理与灾难恢复.svg` | `6c65896c64d912555d476fccb0ae71770a7db3a2` |
 
+| `21_WP-024_跨生态可信见证网络形式化验证与韧性评估.md` | `6518838c99e92050493914e75df1d698161a4bfe` |
+| `22_WP-024_研究证据登记.md` | `fee0df0d9e45da1b6b54a1e441ce11563b2b7de2` |
+| `23_WP-024_TLA+模型变量与性质目录.md` | `9705945045c3bd211935bf4d8751799c46102886` |
+| `24_WP-024_实验设计与静态审查.md` | `4bdfe06ddc4f87ca6c53c132e766b129d41d0a8d` |
+| `contracts/witness-fault-scenario.schema.json` | `9516e0a17a029ed6085098eb887d27cbe5df4ae3` |
+| `contracts/witness-experiment-run.schema.json` | `a3053eadd16956eaea81ec140ebf372487f660bf` |
+| `contracts/witness-experiment-evidence-bundle.schema.json` | `04dbd286edadffdac62543bceafffcbee2646433` |
+| `validation/WP024_WITNESS_RESILIENCE_MATRIX.csv` | `2f1e05163ae39f5210e3dd86465b50387fe600cc` |
+| `assets/05_WP-024_可信见证网络形式化验证与韧性评估.svg` | `3c50f56410fe59ac6eaa727902898355478fd95b` |
+
 ## 解释
 - Git Blob SHA 用于定位 Git 中的文件对象。
 - Git Blob SHA 不是 SHA-256 文件摘要。
