@@ -63,6 +63,16 @@
 | `validation/WP024_WITNESS_RESILIENCE_MATRIX.csv` | `2f1e05163ae39f5210e3dd86465b50387fe600cc` |
 | `assets/05_WP-024_可信见证网络形式化验证与韧性评估.svg` | `3c50f56410fe59ac6eaa727902898355478fd95b` |
 
+| `25_WP-024-L0L1_组合穷举与恢复状态模型验证报告.md` | `5a66f294c5127227764ea6c66f07b208fa70e3c3` |
+| `formal/WitnessRecovery.tla` | `9fcf993c521678d566af7633a52de82d80887e71` |
+| `formal/WitnessRecovery-Unsafe.cfg` | `db1b777748f769ecbafafda598cf2585eeb89551` |
+| `formal/WitnessRecovery-SafePreserve.cfg` | `61fb3ee441f0bcb6ae0d878b33bd4a3b1858971f` |
+| `formal/WitnessRecovery-SafeQuarantine.cfg` | `156e02beeca8d9ac462cfdc21e4738bcb8ca8ed6` |
+| `formal/wp024_l0_l1_reference_checker.py` | `b378631dc72c29170848afd14a653b38e3bc0505` |
+| `validation/WP024_L0_QUORUM_EXHAUSTIVE.csv` | `b278c385d14e53fff1e37d6bc420d6e5e1cca0ec` |
+| `validation/WP024_L1_RECOVERY_MODEL_RESULTS.json` | `db958100bc5dc82a5678a6ae0022ca48348b2ea9` |
+| `validation/WP024_L1_UNSAFE_COUNTEREXAMPLE.txt` | `926fc67e9b6f3ed26ab606bf78588e43d71479f4` |
+
 ## 解释
 - Git Blob SHA 用于定位 Git 中的文件对象。
 - Git Blob SHA 不是 SHA-256 文件摘要。
