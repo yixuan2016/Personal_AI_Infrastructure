@@ -85,7 +85,7 @@
 
 
 ## V1.9 当前研究边界（2026-11-16）
-- 319 项验收设计全部 NOT_RUN；68 项 ADR 与 94 项威胁全部 Candidate。
+- 321 项验收设计全部 NOT_RUN；68 项 ADR 与 94 项威胁全部 Candidate。
 - 21 份候选 JSON Schema 仅完成 JSON 语法解析；完整 Validator、签名、语义与互操作测试未执行。
 - 7 张 7680×4320 SVG 架构源图；WP-025/026 已纳入动态联盟和联盟生命周期研究。
 - PR #14 仍为 Draft；未合并 main；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
