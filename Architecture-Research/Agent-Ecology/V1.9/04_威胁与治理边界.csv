@@ -55,3 +55,13 @@ TH-53,备份密钥丢失或失陷,备份加密密钥不可用或被盗导致状�
 TH-54,联合迁移分叉,旧Quorum和新Quorum分别接受不同Checkpoint或Root Hash,Joint Quorum对同一Checkpoint Digest签名；Monitor交叉核验,Peer Binding双方与Monitor Owner,P0,CANDIDATE
 TH-55,紧急恢复锚滥用,攻击者或内部人员利用紧急流程替换信任根,恢复锚事前登记；门槛签名；带外核验；独立事故审查,Root Governance Council,P0,CANDIDATE
 TH-56,恢复后过早放行,未完成观察、独立审查或人类批准就恢复生产签名,OBSERVE_ONLY；分阶段恢复；本地PDP/PEP HOLD；人工审批,Human Governance Owner与本地PEP,P0,CANDIDATE
+TH-57,状态擦除恢复双签,恢复时丢失防双签记录但保留身份与签名密钥,持久化先于签名；恢复高水位核验；隔离旧身份,Identity and Recovery Owner,P0,CANDIDATE
+TH-58,签名释放前崩溃竞态,签名已对外释放但安全状态尚未持久化,签名响应必须后于安全状态提交；崩溃注入,Storage and Witness Owner,P0,CANDIDATE
+TH-59,快照回滚,从旧快照恢复使Checkpoint或Policy状态倒退,外部高水位对账；版本单调；恢复失败隔离,Recovery Owner,P0,CANDIDATE
+TH-60,同身份多实例克隆,同一Witness密钥在两个隔离实例中并发使用,单实例/共享单调状态约束；身份租约；克隆检测,Identity Owner,P0,CANDIDATE
+TH-61,非对称分区视图,不同Log/Peer从同一Witness获取不一致Checkpoint,持久化单调状态；Monitor旁路观察；Fork Evidence,Monitor Owner,P0,CANDIDATE
+TH-62,时钟偏移伪造新鲜度,时钟前跳/回退被用于掩盖状态顺序,状态序列与Merkle证明优先；可信时间仅作辅助,Time and Evidence Owner,P1,CANDIDATE
+TH-63,共同故障域伪装独立,多个名义Witness共享管理员/KMS/备份/部署域,故障域依赖图；独立审查；按域去重,Quorum Policy Owner,P0,CANDIDATE
+TH-64,超出故障预算仍宣称安全,f+1个或更多Witness身份失陷,超预算标记INDETERMINATE；停止安全保证；不输出PASS,Security Governance Owner,P0,CANDIDATE
+TH-65,Quorum语义误用,将透明证据签署门槛误称为BFT共识,协议语义分层；限制结论适用范围；独立架构审查,Architecture Owner,P1,CANDIDATE
+TH-66,抽样测试误报安全,有限测试通过被当作任意规模或生产安全证明,披露模型范围；反例和覆盖率；独立复核,Verification Owner,P0,CANDIDATE
