@@ -43,3 +43,15 @@ TH-41,Witness密钥失陷,攻击者窃取Witness密钥伪造Checkpoint Cosignatu
 TH-42,透明日志隐私泄露,日志条目暴露业务元数据、个人信息或跨域关系,只登记内容摘要和最小元数据；字段分类；访问控制和保留策略,数据Owner与隐私治理Owner,P0,CANDIDATE
 TH-43,分叉证据伪造或重放,攻击者拼接旧签名、伪造Witness响应或重放历史冲突证据,证据包绑定Policy Version与Checkpoint Digest；原始对象留存；独立离线验证,独立审计Owner与Fork Evidence Registry,P0,CANDIDATE
 TH-44,共同故障域误计票,多个Witness共用云账号管理员密钥托管或发布流水线却被计为独立节点,故障域映射；maxWitnessesPerOperator；控制关系披露和定期审查,Quorum Policy Owner,P0,CANDIDATE
+TH-45,Witness身份冒名,攻击者伪造组织身份或控制权证明加入见证网络,独立身份核验；多源证明；带外确认；观察期,Trust Governance Owner,P0,CANDIDATE
+TH-46,管理域共因失陷,多个Witness虽不同组织但共享管理员或云账号导致同时失陷,登记administrativeDomainId；依赖图审查；独立域门槛,Quorum Policy Owner,P0,CANDIDATE
+TH-47,密钥跨角色复用,同一私钥同时签署根策略和日常Witness Checkpoint,Key Purpose强绑定；指纹跨Registry去重；禁止跨角色复用,Identity Owner,P0,CANDIDATE
+TH-48,密钥轮换竞态,新旧Key Epoch并行时出现双重身份或回退,版本化Key Transition Statement；明确重叠窗口；策略双方接受,Identity Owner与Peer Binding双方,P0,CANDIDATE
+TH-49,历史签名误判,以检测时间替代最早疑似泄露时间导致错误信任历史签名,区分detectedAt/suspectedCompromiseSince/confirmedCompromiseAt/revokedAt；可信时间证据,独立审计Owner,P0,CANDIDATE
+TH-50,根密钥阈值失陷,攻击者控制足够Root Keyholder并签发恶意信任根,离线多方分持；不同运营域；Emergency Recovery Anchors；带外指纹确认,Root Governance Council,P0,CANDIDATE
+TH-51,根元数据回滚或冻结,攻击者提供旧根版本或阻断更新使客户端持续信任过期根,逐版本更新；单调版本；有效期；过期HOLD；外部时间锚,Trust Root Operator,P0,CANDIDATE
+TH-52,备份回滚,恢复已签名但落后的Witness快照造成历史状态倒退,快照generation与stateSequence；外部Checkpoint/WAL对账；隔离恢复,Backup Owner与Witness Operator,P0,CANDIDATE
+TH-53,备份密钥丢失或失陷,备份加密密钥不可用或被盗导致状态无法恢复/被泄露,备份密钥独立分权；加密副本；密钥恢复演练和审计,Backup Key Custodian,P0,CANDIDATE
+TH-54,联合迁移分叉,旧Quorum和新Quorum分别接受不同Checkpoint或Root Hash,Joint Quorum对同一Checkpoint Digest签名；Monitor交叉核验,Peer Binding双方与Monitor Owner,P0,CANDIDATE
+TH-55,紧急恢复锚滥用,攻击者或内部人员利用紧急流程替换信任根,恢复锚事前登记；门槛签名；带外核验；独立事故审查,Root Governance Council,P0,CANDIDATE
+TH-56,恢复后过早放行,未完成观察、独立审查或人类批准就恢复生产签名,OBSERVE_ONLY；分阶段恢复；本地PDP/PEP HOLD；人工审批,Human Governance Owner与本地PEP,P0,CANDIDATE
