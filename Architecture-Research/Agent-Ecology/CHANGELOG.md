@@ -88,3 +88,15 @@
 - 研究证据包括 TUF 1.0.37、Sigstore 官方安全模型、NIST SP 800-57 Rev.6 Initial Public Draft、C2SP Witness Protocol v1.1.0；严格区分最终规范、草案与社区规范。
 - V1.9 总验收扩展至 206 项，全部 NOT_RUN；候选 JSON Schema 增至 16 份，仅完成 JSON 语法检查；架构源图增至 5 张。
 - 未部署真实根密钥、Witness 密钥、HSM/KMS、备份系统或灾难恢复流程；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
+
+
+## 2026-11-15｜V1.9-G WP-024 形式化验证与韧性评估（Candidate）
+- 新增 WP-024 架构备忘录、研究证据登记、TLA+ 模型变量与性质目录、实验设计和静态审查。
+- 新增 60 项 Quorum、状态擦除恢复、存储回滚、网络分区、恶意行为、共同故障域和策略迁移验收设计，全部 NOT_RUN。
+- 新增 3 份候选 Schema：故障场景、实验运行记录和实验结果证据包。
+- 新增 7680×4320 SVG 形式化验证与韧性评估架构源图。
+- 新增 ADR-141—ADR-150；威胁矩阵扩展至 TH-66。
+- 纳入 arXiv:2610.07759（2026-10-06 预印本）关于状态擦除恢复与 Quorum 交集的研究；明确其单阶段证书模型边界，不泛化为 Witness 协议已被证明不安全。
+- 核心决策：Witness Quorum 不等同于 BFT 共识；签名前持久化；恢复防回滚；身份克隆隔离；故障/分区不得自动降低 q。
+- V1.9 总验收扩展至 266 项，全部 NOT_RUN；候选 Schema 增至 19 份；架构源图增至 6 张。
+- 未运行 TLC、确定性模拟、故障注入或真实恢复演练；V1.8 F0 未通过；productionAllowed=false；Runner 未启用。
