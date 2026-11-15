@@ -44,7 +44,7 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - validation/WP023_WITNESS_GOVERNANCE_RECOVERY_MATRIX.csv：50 项成员生命周期、密钥轮换、根升级、状态恢复、Joint Quorum 和事故治理验收设计。
 - validation/WP024_WITNESS_RESILIENCE_MATRIX.csv：60 项 Quorum、状态恢复、网络分区、恶意行为、共同故障域和策略迁移验收设计。
 - validation/WP025_DYNAMIC_COALITION_MATRIX.csv：17 项动态联盟形成、准入、资源公平、退出和价值归因验收设计。
-- validation/WP026_COALITION_CHARTER_LIFECYCLE_MATRIX.csv：36 项 Charter、Owner 接受、状态机、租约/Fencing、授权分离和解散清算验收设计。
+- validation/WP026_COALITION_CHARTER_LIFECYCLE_MATRIX.csv：38 项 Charter、Owner 接受、状态机、租约/Fencing、授权分离和解散清算验收设计。
 - assets/00_V1.9_跨生态能力发现与观察Runtime.svg：7680×4320 SVG 架构源图。
 - assets/01_WP-020_跨生态信任协议与授权链.svg：7680×4320 SVG 信任与授权链架构源图。
 - assets/02_WP-021_目录一致性与撤销传播架构.svg：7680×4320 SVG 目录同步与撤销传播架构源图。
@@ -70,7 +70,7 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 
 ## 证据边界
 
-本版引用的研究包括预印本、已发表论文、协议草案、正式规范和受控仿真实验。论文报告的实验结果不等于本项目已复现、已部署或已通过验收。总体验收主矩阵 39 项（Stigmergy 22 项 + 动态联盟 17 项）、F1 能力发现 31 项、WP-020 27 项、WP-021 36 项、WP-022 40 项、WP-023 50 项、WP-024 60 项、WP-026 36 项，V1.9 共 319 项全部 NOT_RUN；68 项 ADR 全部 Candidate；94 项威胁全部 Candidate。V1.8 F0 12 项 Gate 仍全部 NotRun；没有真实领域数据授权、Runtime 执行或生产写入。
+本版引用的研究包括预印本、已发表论文、协议草案、正式规范和受控仿真实验。论文报告的实验结果不等于本项目已复现、已部署或已通过验收。总体验收主矩阵 39 项（Stigmergy 22 项 + 动态联盟 17 项）、F1 能力发现 31 项、WP-020 27 项、WP-021 36 项、WP-022 40 项、WP-023 50 项、WP-024 60 项、WP-026 36 项，V1.9 共 321 项全部 NOT_RUN；68 项 ADR 全部 Candidate；94 项威胁全部 Candidate。V1.8 F0 12 项 Gate 仍全部 NotRun；没有真实领域数据授权、Runtime 执行或生产写入。
 
 二十一份候选 JSON Schema 已确认 JSON 语法有效，但尚未完成完整 Draft 2020-12 Validator、密码学签名验证、跨字段语义验证和协议互操作测试。静态审查的 10 项缺口中，7 项已形成候选契约修复，1 项部分修复，2 项仍开放。productionAllowed=false。
 
@@ -154,4 +154,4 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - Charter 变更产生新版本；受影响 Owner 重新接受；旧签名不得跨版本复用。
 - Task/Resource Lease 与本地 Permit 分离；Fencing Token 必须在资源 Owner 端事务性校验；副作用携带幂等 operationId。
 - CLOSED 必须有凭证撤销、租约释放、资源回收、数据处置和审计归档证据。
-- WP-026 验收矩阵 36 项全部 NOT_RUN；2 份候选 Schema；8 项 ADR（ADR-161—ADR-168）Candidate；12 项威胁（TH-83—TH-94）Candidate；12 项语义缺口 OPEN。
+- WP-026 验收矩阵 38 项全部 NOT_RUN；2 份候选 Schema；8 项 ADR（ADR-161—ADR-168）Candidate；12 项威胁（TH-83—TH-94）Candidate；12 项语义缺口 OPEN。
