@@ -110,3 +110,11 @@
 - 新增 L0/L1 验证报告、标准库 Python 参考检查器、穷举 CSV、模型结果 JSON 和反例轨迹。
 - 新增 ADR-151—ADR-154；威胁矩阵扩展至 TH-70；静态未决事项共 53 项。
 - 正式 60 项 WP-024 验收矩阵仍全部 NOT_RUN；生产授权关闭；Runner 未启用。
+
+
+## 2026-11-16｜V1.9-H WP-024-L2 多 Checkpoint 原子性与成员迁移模型扩展（Candidate）
+- 新增 WP-024-L2 研究备忘录，审查现有 WitnessRecovery TLA+ 最小模型的覆盖边界。
+- 基于 C2SP Witness v1.1.0 明确多 Checkpoint Compare-and-Advance 原子推进要求；基于 TUF 1.0.37 细化 Trust Root 逐版本双阈值迁移。
+- 核对 NIST SP 800-57 Rev.6 仍为 Initial Public Draft；明确不将草案表述为最终规范。
+- 设计 Membership Epoch、Key Epoch、外部恢复锚、Joint Quorum 和 14 项 L2 最小验证场景。
+- TLC、确定性模拟、故障注入与独立复核均未执行；正式 266 项验收仍 NOT_RUN，productionAllowed=false，Runner 未启用。
