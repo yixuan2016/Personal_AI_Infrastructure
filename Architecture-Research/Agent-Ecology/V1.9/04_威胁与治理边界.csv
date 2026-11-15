@@ -93,3 +93,15 @@ TH-79,任务双重执行,多个联盟同时接管同一任务并产生重复副�
 TH-80,联盟串谋与奖励操纵,成员互相背书或操纵贡献/价值分配,独立来源；随机抽检；争议冻结；延迟结算,独立审计Owner,P0,CANDIDATE
 TH-81,解散后资源悬挂,联盟解散后资源租约、访问令牌或临时数据副本未释放,显式清算；撤销凭证；租约到期；数据处置证明,联盟Owner与资源Owner,P0,CANDIDATE
 TH-82,信誉自强化,历史成功率和热度形成路径依赖并排斥新成员,证据质量与声誉分离；时效衰减；独立验证；新成员观察期,Trust Governance Owner,P1,CANDIDATE
+TH-83,Charter旧版本重放,攻击者重放旧 Charter 或旧 Owner 接受收据以恢复已变更范围,不可变 Version/Epoch/Digest；旧签名不得跨版本复用,Task Owner与相关Owner,P0,CANDIDATE
+TH-84,Charter范围静默扩大,成员或Coordinator原地修改Purpose/Audience/资源范围,新版本摘要链；字段影响分析；受影响Owner重新接受,Charter Authority与Data/Resource Owner,P0,CANDIDATE
+TH-85,Owner接受冒名,非资产Owner主体或失效密钥签署成员/数据/资源接受,Owner Registry与角色绑定；Key Epoch；签名用途验证,Identity Owner与Asset Owner,P0,CANDIDATE
+TH-86,Coordinator权限升级,协调者通过联盟投票或状态更新取得成员域Permit或根治理权限,COORDINATION_ONLY；目标域本地PDP/PEP；拒绝授权委派,Task Owner与成员域Policy Owner,P0,CANDIDATE
+TH-87,过期租约持有者写入,旧Agent在租约过期或网络分区后继续对资源产生副作用,Resource Owner事务性校验单调Fencing Token；拒绝旧Token,Resource Owner与Lease Authority,P0,CANDIDATE
+TH-88,多个联盟双重执行,多个联盟同时执行同一任务效果命名空间,Owner-scoped Task Lease；operationId幂等；效果键唯一,Task Owner与目标Resource Owner,P0,CANDIDATE
+TH-89,成员退出凭证继承,接续Agent继承退出成员的令牌/会话/私钥/Permit,Membership Epoch更新；凭证不可继承；重新认证和最小授权,Member Identity Owner,P0,CANDIDATE
+TH-90,独立验证串谋,验证方与执行联盟共享同一控制方或利益关系,独立主体和控制域审查；利益冲突声明；替代验证,Independent Assurance Owner,P0,CANDIDATE
+TH-91,数据Purpose漂移,联盟把一次授权的数据用于未声明的二次目的或接收方,Asset/Purpose/Audience/Retention绑定；Data Owner接受；本地PEP复核,Data Owner与目标域Privacy Owner,P0,CANDIDATE
+TH-92,资源公平性操纵,成员操纵声誉/请求频率以挤占算力和工具配额,Owner配额；加权公平队列；反饥饿指标；独立调度审查,Resource Governance Owner,P1,CANDIDATE
+TH-93,联盟解散后访问残留,联盟关闭后临时Grant/Permit/Lease或数据副本仍有效,清算门禁；撤销凭证；Fencing失效；数据处置证明,Task Owner与相关Asset Owner,P0,CANDIDATE
+TH-94,贡献证据与价值操纵,成员伪造活动来源或把相关性贡献评分当作价值/所有权事实,PROV-O风格来源链；独立验收；争议冻结；贡献与权限分离,Independent Audit Owner,P1,CANDIDATE
