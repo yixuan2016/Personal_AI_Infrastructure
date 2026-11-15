@@ -180,7 +180,7 @@
 - 新增 ADR-161—ADR-168 八项候选决策；威胁矩阵扩展至 TH-94。
 - 候选约束：最小公共核心 + 版本化领域 Profile；多 Owner 同 Digest 接受；Charter 非授权；不可变版本；Task/Resource Lease；资源端 Fencing Token；幂等副作用；独立验收；解散清算。
 - 研究证据：W3C ODRL 2.2、PROV-O、CloudEvents、etcd 事务/API Guarantees、ZooKeeper Recipes、RFC 8785 JCS。
-- 36 项验收全部 NOT_RUN；12 项语义缺口 OPEN；未运行 JSON Schema Draft 2020-12 完整 Validator、签名验证、TLA+ 或 Runtime 测试。
+- 38 项验收全部 NOT_RUN；12 项语义缺口 OPEN；未运行 JSON Schema Draft 2020-12 完整 Validator、签名验证、TLA+ 或 Runtime 测试。
 
 ## V1.9 当前权威汇总（2026-11-16）
 - 合成实验与验收：321 项，全部 NOT_RUN（39 + 31 + 27 + 36 + 40 + 50 + 60 + 38；总体验收主矩阵 39 项已包含 ECO-01—17，WP-025 专项矩阵为重复视图）。
