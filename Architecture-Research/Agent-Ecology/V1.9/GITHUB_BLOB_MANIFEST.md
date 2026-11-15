@@ -4,13 +4,13 @@
 
 | Path | Git Blob SHA |
 |---|---|
-| `README.md` | `6c83f6bf088e6f6b3ce83ab84c8e879bf5cb4706` |
-| `STATUS.md` | `4b0e825c9dd779184562bc2d71728cd1d4d41e03` |
+| `README.md` | `5a361a24ed5097d023835a65d89f3a7edb9a9aac` |
+| `STATUS.md` | `c9ae2a52843825d9048ed41ee4fd79416b9a31f4` |
 | `00_V1.9_痕迹协作实证进展与架构增量研究.md` | `36d0b67b21f2684ba2e187f8d5f7c9fbccacaecc` |
 | `01_研究证据登记.csv` | `a34bbb6c91d7e860e50e7276f19e3b07a49ee082` |
 | `02_合成实验与验收矩阵.csv` | `e1864a611774338302f7b1ba673211b7014cd5a8` |
-| `03_架构决策记录.md` | `9467ef21e9ca8bcb6bf0afd4bce23309f76b6036` |
-| `04_威胁与治理边界.csv` | `87c2e718996618a940b42ea1cc7286380c7e6163` |
+| `03_架构决策记录.md` | `8543362dbf8133e4f92bcaf5d4adfa47518d885d` |
+| `04_威胁与治理边界.csv` | `038cddd290d1995c9748383f06031530e372d75f` |
 | `05_跨生态能力发现与目录联邦架构决策备忘录.md` | `fd915f0135e2f0daebb05d7fecfe30bb8b0d3b29` |
 | `06_研究证据与引用边界.md` | `1ba5951238d6501fa0b9e85cf3ca3edaab8b2c3f` |
 | `08_能力发现契约静态审查与缺口清单.md` | `c006cf14291cba9a4809a6b48c4deeb7b41f2ac3` |
@@ -34,6 +34,16 @@
 | `assets/00_V1.9_跨生态能力发现与观察Runtime.svg` | `a6818ac80ed726f0bfaeb224cb9eaafab391915e` |
 | `assets/01_WP-020_跨生态信任协议与授权链.svg` | `6524998de00d51fa02118ee6d2ab3e5c8aae154d` |
 | `assets/02_WP-021_目录一致性与撤销传播架构.svg` | `80a6390756d8439ede42722e82474e0081697e56` |
+
+| `15_WP-022_跨生态事件可信见证与多方一致性验证.md` | `dc199f1643859c10445a847ad2542242cead2c7c` |
+| `16_WP-022_研究证据登记.md` | `c1558bc0c98e421fc90ed8b3e8d89b091bfc0bb9` |
+| `17_WP-022_静态审查与未决事项.md` | `3871ddc6d069ed1ff589e9df6c72c7ae01d17f94` |
+| `contracts/witness-registry.schema.json` | `f88c825ba8a185a0912a905e946555e0d9ccabba` |
+| `contracts/witness-quorum-policy.schema.json` | `170d48e76055c969eceffe185aa0314e1ddcd8e4` |
+| `contracts/checkpoint-cosignature-bundle.schema.json` | `1c503e080af5bcf9b87675e396d023e4272d5f07` |
+| `contracts/fork-evidence-bundle.schema.json` | `2325e4ec4cfe4f8203b7e9ecee350b281ec7c305` |
+| `validation/WP022_MULTI_WITNESS_QUORUM_MATRIX.csv` | `19148627d1823f581e53bb18dc2cf4f9fd9e66fd` |
+| `assets/03_WP-022_跨生态事件可信见证与多方一致性验证.svg` | `158cdef5345a21dd9d3684ff5d950c55870c581d` |
 
 ## 解释
 - Git Blob SHA 用于定位 Git 中的文件对象。
