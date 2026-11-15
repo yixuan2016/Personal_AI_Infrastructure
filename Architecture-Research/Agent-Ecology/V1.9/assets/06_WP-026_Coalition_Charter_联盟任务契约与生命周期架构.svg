@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="7680" height="4320" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+<title id="title">Agent Ecology WP-026 Coalition Charter 联盟任务契约与生命周期架构</title>
+<desc id="desc">任务 Owner 发布不可变 Charter，多方 Owner 接受同一摘要，联盟状态机控制形成、运行、重配置和解散。成员执行仍经本地 PDP/PEP，任务租约与 Fencing Token 在资源 Owner 端校验，独立验证和人类治理处于外环。</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset=".55" stop-color="#12233c"/><stop offset="1" stop-color="#172d43"/></linearGradient>
+ <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#244260"/><stop offset="1" stop-color="#152c44"/></linearGradient>
+ <linearGradient id="core" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20566a"/><stop offset="1" stop-color="#2d3f68"/></linearGradient>
+ <linearGradient id="gov" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#39456b"/><stop offset=".5" stop-color="#235e68"/><stop offset="1" stop-color="#39456b"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur in="SourceAlpha" stdDeviation="8"/><feOffset dy="6"/><feComponentTransfer><feFuncA type="linear" slope=".28"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <marker id="blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#77c7ff"/></marker>
+ <marker id="mint" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#7ce2c1"/></marker>
+ <marker id="gold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#f0c878"/></marker>
+ <style>
+ text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;fill:#edf5ff}
+ .title{font-size:39px;font-weight:700}.sub{font-size:20px;fill:#a9c1dc}
+ .section{font-size:26px;font-weight:700}.head{font-size:21px;font-weight:700}
+ .body{font-size:17px;fill:#c8d8eb}.small{font-size:14px;fill:#a8bfd7}
+ .box{fill:url(#panel);stroke:#6196be;stroke-width:2}
+ .line{fill:none;stroke:#77c7ff;stroke-width:3.5;marker-end:url(#blue)}
+ .mintline{fill:none;stroke:#7ce2c1;stroke-width:3.5;marker-end:url(#mint)}
+ .goldline{fill:none;stroke:#f0c878;stroke-width:3.5;marker-end:url(#gold)}
+ .dash{stroke-dasharray:10 8}
+ </style>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<circle cx="180" cy="190" r="280" fill="#1e7390" opacity=".07"/><circle cx="1740" cy="900" r="320" fill="#4ab89b" opacity=".06"/>
+<text x="60" y="62" class="title">Agent Ecology｜WP-026 Coalition Charter 联盟任务契约与生命周期</text>
+<text x="62" y="98" class="sub">公共核心 + 领域 Profile · 多 Owner 同摘要接受 · 本地授权不转移 · Fencing 阻止旧持有者 · 独立验收</text>
+<rect x="60" y="124" width="1800" height="78" rx="18" fill="url(#gov)" stroke="#8ab2d1" stroke-opacity=".55" stroke-width="2" filter="url(#shadow)"/>
+<text x="92" y="157" class="section">人类治理外环</text>
+<text x="365" y="155" class="body">根策略 / R4 审批 / 重大变更 / 争议裁决 / 否决与接管</text>
+<text x="365" y="182" class="small">联盟不是新的主权主体；成员 Owner 保留本域数据、能力、资源和本地授权权</text>
+
+<rect x="60" y="236" width="390" height="500" rx="20" class="box" filter="url(#shadow)"/>
+<text x="86" y="274" class="section">契约发起与多方接受</text>
+<rect x="84" y="294" width="342" height="74" rx="12" fill="#29496a" stroke="#77c7ff"/>
+<text x="104" y="326" class="head">Task Owner</text><text x="104" y="350" class="small">任务目标 / 验收 / Charter 发布</text>
+<rect x="84" y="386" width="342" height="60" rx="11" fill="#1c3c59" stroke="#7ce2c1"/>
+<text x="104" y="422" class="body">Member Owner 接受</text>
+<rect x="84" y="458" width="342" height="60" rx="11" fill="#1c3c59" stroke="#7ce2c1"/>
+<text x="104" y="494" class="body">Data Owner 接受</text>
+<rect x="84" y="530" width="342" height="60" rx="11" fill="#1c3c59" stroke="#7ce2c1"/>
+<text x="104" y="566" class="body">Resource Owner 接受</text>
+<rect x="84" y="602" width="342" height="60" rx="11" fill="#1c3c59" stroke="#7ce2c1"/>
+<text x="104" y="638" class="body">Target Policy Owner / Verifier</text>
+<text x="86" y="698" class="small">所有接受绑定同一 Charter Digest / Version / Epoch</text>
+
+<rect x="500" y="236" width="500" height="500" rx="20" fill="url(#core)" stroke="#72c5d9" stroke-width="2" filter="url(#shadow)"/>
+<text x="528" y="274" class="section">Coalition Charter｜公共契约核心</text>
+<rect x="526" y="294" width="448" height="82" rx="12" fill="#21445f" stroke="#77c7ff"/>
+<text x="548" y="328" class="head">不可变版本 / 摘要链</text><text x="548" y="354" class="small">Charter Digest · Version · Epoch · Previous Digest</text>
+<rect x="526" y="394" width="214" height="82" rx="12" fill="#1a405b" stroke="#7ce2c1"/>
+<text x="544" y="426" class="body">任务 / 角色 / 风险</text><text x="544" y="454" class="small">Owner · 成员 · 验收标准</text>
+<rect x="760" y="394" width="214" height="82" rx="12" fill="#1a405b" stroke="#7ce2c1"/>
+<text x="778" y="426" class="body">数据 / 能力 / 资源</text><text x="778" y="454" class="small">Purpose · Audience · Budget</text>
+<rect x="526" y="494" width="448" height="74" rx="12" fill="#203b59" stroke="#f0c878"/>
+<text x="548" y="527" class="body">Coordinator = COORDINATION_ONLY</text><text x="548" y="552" class="small">不得签发 Permit / 改变 Owner Policy / 自我验收</text>
+<rect x="526" y="586" width="448" height="112" rx="12" fill="#203b59" stroke="#7ce2c1"/>
+<text x="548" y="620" class="body">领域 Profile（PDS / TWS / PDM / FBS）</text>
+<text x="548" y="649" class="small">Ontology / Schema / 数据分类 / 领域验收 / 合规约束</text>
+<text x="548" y="676" class="small">Charter 本身：notAuthorization=true</text>
+
+<rect x="1050" y="236" width="390" height="500" rx="20" class="box" filter="url(#shadow)"/>
+<text x="1078" y="274" class="section">联盟生命周期状态机</text>
+<rect x="1080" y="296" width="330" height="48" rx="10" fill="#244b66" stroke="#77c7ff"/><text x="1100" y="327" class="body">PROPOSED → ADMISSION_PENDING</text>
+<rect x="1080" y="358" width="330" height="48" rx="10" fill="#245849" stroke="#7ce2c1"/><text x="1100" y="389" class="body">READY → ACTIVE</text>
+<rect x="1080" y="420" width="330" height="48" rx="10" fill="#5b4a30" stroke="#f0c878"/><text x="1100" y="451" class="body">PAUSED / DEGRADED</text>
+<rect x="1080" y="482" width="330" height="48" rx="10" fill="#39476a" stroke="#77c7ff"/><text x="1100" y="513" class="body">RECONFIGURING</text>
+<rect x="1080" y="544" width="330" height="48" rx="10" fill="#5b4a30" stroke="#f0c878"/><text x="1100" y="575" class="body">WINDING_DOWN</text>
+<rect x="1080" y="606" width="158" height="48" rx="10" fill="#245849" stroke="#7ce2c1"/><text x="1100" y="637" class="body">CLOSED</text>
+<rect x="1252" y="606" width="158" height="48" rx="10" fill="#5a343d" stroke="#e68c9b"/><text x="1266" y="637" class="body">QUARANTINED</text>
+<text x="1080" y="690" class="small">异常不得自动回到 ACTIVE；须重验与治理批准</text>
+
+<rect x="1490" y="236" width="370" height="500" rx="20" class="box" filter="url(#shadow)"/>
+<text x="1518" y="274" class="section">执行与资源安全门禁</text>
+<rect x="1518" y="296" width="314" height="76" rx="12" fill="#29496a" stroke="#77c7ff"/>
+<text x="1538" y="328" class="head">成员 Agent / ADS</text><text x="1538" y="352" class="small">Stigmergy 状态协作 / A2A 协商</text>
+<rect x="1518" y="390" width="314" height="76" rx="12" fill="#1c3c59" stroke="#7ce2c1"/>
+<text x="1538" y="422" class="body">本地 PDP / PEP</text><text x="1538" y="446" class="small">每次副作用前重新授权</text>
+<rect x="1518" y="484" width="314" height="86" rx="12" fill="#1c3c59" stroke="#f0c878"/>
+<text x="1538" y="516" class="body">Lease + Fencing Token</text><text x="1538" y="542" class="small">资源 Owner 事务性校验最高 Token</text><text x="1538" y="562" class="small">operationId 幂等防重</text>
+<rect x="1518" y="588" width="314" height="76" rx="12" fill="#245849" stroke="#7ce2c1"/>
+<text x="1538" y="620" class="body">独立验证 / 结果验收</text><text x="1538" y="644" class="small">执行方不得自我签发可信验收</text>
+<text x="1518" y="698" class="small">Charter ≠ Permit；Lease ≠ Permit</text>
+
+<path d="M450 430 H488" class="line"/>
+<path d="M1000 430 H1038" class="line"/>
+<path d="M1440 430 H1478" class="line"/>
+<path d="M450 626 C650 770 1250 770 1490 626" class="goldline dash"/>
+<text x="650" y="782" class="small">Owner 本地授权与资源端 fencing 独立执行；联盟协调层不持有成员生产凭证</text>
+
+<rect x="60" y="814" width="1800" height="190" rx="18" fill="#10243b" stroke="#52799b" stroke-width="2"/>
+<text x="90" y="852" class="section">六项不可破坏的治理不变量</text>
+<g>
+ <rect x="90" y="872" width="260" height="82" rx="11" fill="#1b3b5a" stroke="#5d94bf"/><text x="108" y="902" class="head">① Charter 非授权</text><text x="108" y="930" class="small">本地 PDP/PEP 独立 Permit</text>
+ <rect x="380" y="872" width="260" height="82" rx="11" fill="#1b3b5a" stroke="#7ce2c1"/><text x="398" y="902" class="head">② 多方同摘要</text><text x="398" y="930" class="small">不同版本接受不可拼接</text>
+ <rect x="670" y="872" width="260" height="82" rx="11" fill="#1b3b5a" stroke="#f0c878"/><text x="688" y="902" class="head">③ 版本不可变</text><text x="688" y="930" class="small">范围变更须重新接受</text>
+ <rect x="960" y="872" width="260" height="82" rx="11" fill="#1b3b5a" stroke="#7ce2c1"/><text x="978" y="902" class="head">④ Fencing 防旧写</text><text x="978" y="930" class="small">资源 Owner 比较 Token</text>
+ <rect x="1250" y="872" width="260" height="82" rx="11" fill="#1b3b5a" stroke="#5d94bf"/><text x="1268" y="902" class="head">⑤ 独立验收</text><text x="1268" y="930" class="small">执行联盟不自我认证</text>
+ <rect x="1540" y="872" width="290" height="82" rx="11" fill="#245849" stroke="#7ce2c1"/><text x="1558" y="902" class="head">⑥ 解散清算</text><text x="1558" y="930" class="small">凭证/租约/数据/证据闭环</text>
+</g>
+<text x="90" y="984" class="small">安全目标：无本地 Permit 不执行 · 无同摘要接受不激活 · 旧 Fencing Token 不写入 · 无清算证据不 CLOSED · R4 保留人类治理</text>
+</svg>
