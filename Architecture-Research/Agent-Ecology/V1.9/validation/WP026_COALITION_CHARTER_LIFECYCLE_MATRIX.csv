@@ -35,3 +35,5 @@ WP026-33,Dissolution,联盟进入 CLOSED 但仍存在有效 Lease 或临时 Perm
 WP026-34,Dissolution,数据副本未按 Data Owner 策略处置,不得完成清算，要求补充处置证据,数据副本清单和处置证明,Critical,NOT_RUN
 WP026-35,Dispute,贡献或价值归因存在未决争议,冻结相关结算建议，不冻结安全撤销,争议状态和结算状态记录,High,NOT_RUN
 WP026-36,Baseline,多 Agent 联盟在匹配预算下不优于单 Agent 基线,不自动组盟或终止扩张，保留单 Agent 方案,基线评估与协调成本对照,High,NOT_RUN
+WP026-37,CloudEventsEnvelope,生命周期事件顶层扩展属性使用大写或驼峰命名,Schema/契约审查拒绝不符合 CloudEvents 扩展属性命名的事件,事件字段清单与规范一致性报告,Critical,NOT_RUN
+WP026-38,CloudEventsEnvelope,生命周期事件把 actor 或 signature 对象直接放在顶层扩展属性,actor/signature 必须位于 data 负载；事件外层只保留合规的标量属性,Schema 结构与事件互操作向量,Critical,NOT_RUN
