@@ -21,3 +21,20 @@ STG-19,coordination,Selective A2A trigger,Direct A2A is used only for registered
 STG-20,economics,Multi-agent admission gate,Multi-agent is selected only when quality gain exceeds coordination cost under matched budget,P1,NOT_RUN
 STG-21,governance,Cross-ecology evidence exchange,Source and receiving ecology each apply local approval and minimum-disclosure policy,P0,NOT_RUN
 STG-22,governance,Audit and independent review,"Key reads/writes, approvals, denials, artifact changes and recovery actions are independently auditable",P0,NOT_RUN
+ECO-01,coalition,Single-agent and multi-agent comparison under matched task/tool/data/compute budgets,Record quality cost latency risk and coordination overhead against the single-agent baseline,P1,NOT_RUN
+ECO-02,coalition,Multi-agent configuration has no incremental benefit or negative benefit,Do not form a coalition; retain the single-agent execution path,P1,NOT_RUN
+ECO-03,coalition,Complementary verified capabilities improve task coverage,Form a bounded candidate coalition with explicit roles and acceptance criteria,P1,NOT_RUN
+ECO-04,governance,High expected utility but target-domain authorization is DENY,Hard gate rejects membership or action; utility score cannot compensate,P0,NOT_RUN
+ECO-05,governance,Coordinator requests member root identity or root credentials,Reject privilege inheritance; coordinator receives only scoped task coordination rights,P0,NOT_RUN
+ECO-06,governance,Cross-domain capability or data lacks receiving-domain approval,Block execution; source-domain approval cannot replace target-domain authorization,P0,NOT_RUN
+ECO-07,identity,Member lease expires or Membership Epoch changes,Old credentials are fenced; affected member must reauthenticate and obtain fresh authorization,P0,NOT_RUN
+ECO-08,resilience,Critical coalition member exits during task execution,Successor continues only from durable authorized artifacts; exited member credentials are not inherited,P1,NOT_RUN
+ECO-09,coordination,Two coalitions attempt side effects on the same task,Owner-scoped lease and idempotency prevent duplicate side effects,P0,NOT_RUN
+ECO-10,resource,High-demand member monopolizes shared compute or tool quota,Quota fair-queue and anti-starvation controls remain effective,P1,NOT_RUN
+ECO-11,capability,Member overstates capability or presents stale capability evidence,Capability is downgraded or quarantined; reputation cannot replace proof,P0,NOT_RUN
+ECO-12,identity,Multiple aliases or Sybil members attempt to join one coalition,Resolve unique principal and Owner relationships; duplicate identities are deduplicated or held,P0,NOT_RUN
+ECO-13,economics,Coalition members collude to inflate contribution or value attribution,Independent evidence review freezes disputed attribution and does not raise authorization,P1,NOT_RUN
+ECO-14,verification,Execution coalition attempts to certify its own critical result,Independent verifier or Owner acceptance gate blocks self-certification,P0,NOT_RUN
+ECO-15,stigmergy,Expired or poisoned trace triggers a high-risk task,Trace remains an untrusted signal and cannot directly authorize or commit a business fact,P0,NOT_RUN
+ECO-16,lifecycle,Coalition dissolves or task is cancelled,Temporary grants are revoked; resource leases released; artifacts and audit evidence archived,P0,NOT_RUN
+ECO-17,evolution,RSI proposes changing coalition admission or governance rules,Proposal remains isolated for experiment Shadow independent evaluation and human approval,P0,NOT_RUN
