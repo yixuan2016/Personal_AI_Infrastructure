@@ -194,3 +194,12 @@
 - 生产实现未开始；未接入真实跨生态密钥、业务数据、HSM/KMS 或 Runner。
 - PR #14 仍为 Draft，基于 V1.8 文档分支；V1.9 未合并 main。
 - productionAllowed=false；Runner 未启用。
+
+
+## 论文研究计划（2026-11-16）
+- 新增 31_Agent_Ecology_CCF-B论文研究计划与首篇论文设计.md。
+- 首篇论文候选题目：Governed Stigmergic Coordination for Agent Ecosystems: A Five-Plane Environment Model and Empirical Evaluation。
+- 首选目标：AAMAS 期刊常规原创研究论文（CCF B）；AAMAS 2027 主会主轨截止日期已过，不将其作为当前可投稿窗口。
+- 已形成理论模型、五平面环境定义、关键不变量、RQ1—RQ3、B0—B5 对照组、合成任务、指标、统计方案和阶段门禁。
+- 论文仍处于研究计划阶段；未执行首篇论文正式实验、未形成实验结果、未投稿。
+- V1.9 既有 321 项验收仍全部 NOT_RUN；本论文计划不改变既有验收状态、F0 Gate、productionAllowed=false 或 Runner 未启用边界。
