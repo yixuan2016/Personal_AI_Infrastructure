@@ -40,3 +40,17 @@
 - README、STATUS、CHANGELOG、研究证据登记、验收矩阵、ADR、威胁矩阵和 Git Blob Manifest 已同步。
 - V1.9 当前总量：283 项验收 NOT_RUN；60 项 ADR Candidate；82 项威胁 Candidate；19 份候选 Schema；6 张 SVG。
 - WP-025 未执行模型检查、仿真、Shadow、真实数据试验或生产测试；F0 未通过；Runner 未启用；productionAllowed=false。
+
+
+## V1.9 当前权威同步快照（2026-11-16）
+
+本节为当前权威快照，优先于本文较早的历史阶段快照：
+- V1.9 工作分支：research/agent-ecology-v1.9-stigmergy-20261114。
+- PR #14：Draft/Open，目标 docs/agent-ecology-v1.8-20261110；当前 80 个变更文件，尚未合并；不修改 main。
+- V1.9 当前覆盖 A—I 九条研究工作流，包含 Stigmergy、能力发现、WP-020—WP-026、动态联盟和 Coalition Charter。
+- 正式验收设计 321 项，全部 NOT_RUN；68 项 ADR 全部 Candidate；94 项威胁与治理边界全部 Candidate；21 份候选 JSON Schema；7 张 7680×4320 SVG 架构源图；静态未决事项 85 项，全部 OPEN。
+- WP-024-L0 已穷举 262,611 组 Quorum 集合对；WP-024-L1 Python BFS 已对危险恢复配置找到 14 步反例。TLC 尚未运行；正式 60 项 WP-024 验收仍全部 NOT_RUN。
+- 新增 31_Agent_Ecology_CCF-B论文研究计划与首篇论文设计.md，并更新 V1.9 README、STATUS、CHANGELOG、根 README 和 Git Blob Manifest。
+- 首篇论文首选 AAMAS 期刊常规原创研究论文（CCF B）；当前仅完成研究计划和理论/实验设计，尚未完成首篇正式实验、独立复核或投稿。
+- V1.8 F0 的 12 项 Gate 全部 NotRun，F0 未通过；无真实双生态生产验证、真实业务数据授权、生产密钥接入或生产写权限。
+- productionAllowed=false；Runner 未启用；不得将研究资料同步或静态检查解释为工程验收通过。
