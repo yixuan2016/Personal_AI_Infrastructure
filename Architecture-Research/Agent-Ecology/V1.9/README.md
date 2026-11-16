@@ -155,3 +155,9 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - Task/Resource Lease 与本地 Permit 分离；Fencing Token 必须在资源 Owner 端事务性校验；副作用携带幂等 operationId。
 - CLOSED 必须有凭证撤销、租约释放、资源回收、数据处置和审计归档证据。
 - WP-026 验收矩阵 38 项全部 NOT_RUN；2 份候选 Schema；8 项 ADR（ADR-161—ADR-168）Candidate；12 项威胁（TH-83—TH-94）Candidate；12 项语义缺口 OPEN。
+
+
+## 论文研究计划
+
+- 31_Agent_Ecology_CCF-B论文研究计划与首篇论文设计.md：Agent Ecology 全景研究计划、首篇 AAMAS 期刊论文定位、理论模型、研究问题、可证伪假设、对照实验、统计方法、论文系列规划与投稿门禁。
+- 当前仅为研究计划和实验设计；首篇论文实验尚未完成，不代表已投稿或发表。
