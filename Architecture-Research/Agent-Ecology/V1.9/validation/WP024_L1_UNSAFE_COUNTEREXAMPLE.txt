@@ -1,0 +1,41 @@
+WP-024 L1 bounded explicit-state counterexample traces
+Engine: Python BFS reference model; NOT a TLC result.
+Model: n=4, Byzantine={W1}, q=3; two conflicting checkpoint labels A and B.
+
+[1] DurableBeforeRelease=False RecoveryMode=RESET_ACTIVE => COUNTEREXAMPLE (130375 states)
+  Prepare(W1,A)
+  Release(W1,A)
+  Prepare(W1,B)
+  Release(W1,B)
+  Prepare(W2,A)
+  Release(W2,A)
+  Crash(W2)
+  Recover(RESET_ACTIVE,W2)
+  Prepare(W2,B)
+  Release(W2,B)
+  Prepare(W3,A)
+  Release(W3,A)
+  Prepare(W4,B)
+  Release(W4,B)
+
+[2] DurableBeforeRelease=True RecoveryMode=RESET_ACTIVE => COUNTEREXAMPLE (149546 states)
+  Prepare(W1,A)
+  Release(W1,A)
+  Prepare(W1,B)
+  Release(W1,B)
+  Prepare(W2,A)
+  Release(W2,A)
+  Crash(W2)
+  Recover(RESET_ACTIVE,W2)
+  Prepare(W2,B)
+  Release(W2,B)
+  Prepare(W3,A)
+  Release(W3,A)
+  Prepare(W4,B)
+  Release(W4,B)
+
+[3] DurableBeforeRelease=True RecoveryMode=RESET_QUARANTINE => NO_COUNTEREXAMPLE (67500 states)
+  No counterexample found in the bounded state space.
+
+[4] DurableBeforeRelease=True RecoveryMode=PRESERVE => NO_COUNTEREXAMPLE (43904 states)
+  No counterexample found in the bounded state space.

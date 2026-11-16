@@ -1,0 +1,138 @@
+{
+  "title": "Agent Ecology WP-024 L0/L1 bounded reference verification",
+  "date": "2026-11-15",
+  "engine": "Python explicit-state breadth-first reference checker; not TLC",
+  "scope": [
+    "L0 exhaustively enumerates all distinct unordered quorum pairs for n=4,7,10,13 and q=2f+1.",
+    "L1 explores a finite single-origin, two-conflicting-checkpoint Witness state model with n=4, Byzantine={W1}, q=3.",
+    "The model abstracts cryptographic validity, Merkle proofs, membership changes, correlated domains, network timing, and real storage semantics."
+  ],
+  "l0": [
+    {
+      "n": 4,
+      "f": 1,
+      "q": 3,
+      "quorum_sets": 4,
+      "distinct_unordered_quorum_pairs": 6,
+      "minimum_intersection_observed": 2,
+      "minimum_intersection_formula": 2,
+      "pairs_at_minimum_intersection": 6,
+      "intersection_distribution": "2:6",
+      "max_double_signers_without_conflict_under_assumptions": 1,
+      "state_erasure_recoveries_needed_after_f_byzantine": 1,
+      "example_quorum_A": "W1 W2 W3",
+      "example_quorum_B": "W1 W2 W4",
+      "shared_double_signer_set": "W1 W2",
+      "result": "PASS"
+    },
+    {
+      "n": 7,
+      "f": 2,
+      "q": 5,
+      "quorum_sets": 21,
+      "distinct_unordered_quorum_pairs": 210,
+      "minimum_intersection_observed": 3,
+      "minimum_intersection_formula": 3,
+      "pairs_at_minimum_intersection": 105,
+      "intersection_distribution": "3:105;4:105",
+      "max_double_signers_without_conflict_under_assumptions": 2,
+      "state_erasure_recoveries_needed_after_f_byzantine": 1,
+      "example_quorum_A": "W1 W2 W3 W4 W5",
+      "example_quorum_B": "W1 W2 W3 W6 W7",
+      "shared_double_signer_set": "W1 W2 W3",
+      "result": "PASS"
+    },
+    {
+      "n": 10,
+      "f": 3,
+      "q": 7,
+      "quorum_sets": 120,
+      "distinct_unordered_quorum_pairs": 7140,
+      "minimum_intersection_observed": 4,
+      "minimum_intersection_formula": 4,
+      "pairs_at_minimum_intersection": 2100,
+      "intersection_distribution": "4:2100;5:3780;6:1260",
+      "max_double_signers_without_conflict_under_assumptions": 3,
+      "state_erasure_recoveries_needed_after_f_byzantine": 1,
+      "example_quorum_A": "W1 W2 W3 W4 W5 W6 W7",
+      "example_quorum_B": "W1 W2 W3 W4 W8 W9 W10",
+      "shared_double_signer_set": "W1 W2 W3 W4",
+      "result": "PASS"
+    },
+    {
+      "n": 13,
+      "f": 4,
+      "q": 9,
+      "quorum_sets": 715,
+      "distinct_unordered_quorum_pairs": 255255,
+      "minimum_intersection_observed": 5,
+      "minimum_intersection_formula": 5,
+      "pairs_at_minimum_intersection": 45045,
+      "intersection_distribution": "5:45045;6:120120;7:77220;8:12870",
+      "max_double_signers_without_conflict_under_assumptions": 4,
+      "state_erasure_recoveries_needed_after_f_byzantine": 1,
+      "example_quorum_A": "W1 W2 W3 W4 W5 W6 W7 W8 W9",
+      "example_quorum_B": "W1 W2 W3 W4 W5 W10 W11 W12 W13",
+      "shared_double_signer_set": "W1 W2 W3 W4 W5",
+      "result": "PASS"
+    }
+  ],
+  "l1": [
+    {
+      "durable_before_release": false,
+      "recovery_mode": "RESET_ACTIVE",
+      "n": 4,
+      "byzantine_witnesses": [
+        "W1"
+      ],
+      "quorum": 3,
+      "result": "COUNTEREXAMPLE",
+      "states_explored": 130375,
+      "counterexample_length": 14
+    },
+    {
+      "durable_before_release": true,
+      "recovery_mode": "RESET_ACTIVE",
+      "n": 4,
+      "byzantine_witnesses": [
+        "W1"
+      ],
+      "quorum": 3,
+      "result": "COUNTEREXAMPLE",
+      "states_explored": 149546,
+      "counterexample_length": 14
+    },
+    {
+      "durable_before_release": true,
+      "recovery_mode": "RESET_QUARANTINE",
+      "n": 4,
+      "byzantine_witnesses": [
+        "W1"
+      ],
+      "quorum": 3,
+      "result": "NO_COUNTEREXAMPLE",
+      "states_explored": 67500,
+      "counterexample_length": 0
+    },
+    {
+      "durable_before_release": true,
+      "recovery_mode": "PRESERVE",
+      "n": 4,
+      "byzantine_witnesses": [
+        "W1"
+      ],
+      "quorum": 3,
+      "result": "NO_COUNTEREXAMPLE",
+      "states_explored": 43904,
+      "counterexample_length": 0
+    }
+  ],
+  "interpretation": [
+    "For the fixed-member quorum model, the observed minimum intersection equals 2q-n=f+1 for all four parameter sets.",
+    "With f Byzantine identities, one additional correct identity whose anti-double-sign state is erased while the original identity/key remains active can occupy the entire minimum intersection in a conflicting-certificate construction.",
+    "Persist-before-release alone is insufficient if recovery can erase the durable state and reactivate the same identity.",
+    "The bounded model found no conflicting quorum when state is preserved across recovery or an unproven state-erasing recovery is quarantined; this is not a proof for arbitrary protocols or implementations."
+  ],
+  "tlc_status": "NOT_RUN",
+  "production_status": "NOT_AUTHORIZED"
+}

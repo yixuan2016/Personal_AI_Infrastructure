@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:witness-experiment-run-candidate",
+  "title": "AgentEcologyWitnessExperimentRunCandidate",
+  "description": "Reproducible run record for synthetic model checking or fault simulation. PASS requires linked evidence and independent review.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "runId",
+    "scenarioId",
+    "modelCommit",
+    "seed",
+    "environment",
+    "toolchain",
+    "startedAt",
+    "result",
+    "invariantResults",
+    "artifactRefs",
+    "notProduction"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scenarioId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "modelCommit": {
+      "type": "string",
+      "minLength": 7
+    },
+    "implementationCommit": {
+      "type": "string"
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "executionMode",
+        "os",
+        "architecture"
+      ],
+      "properties": {
+        "executionMode": {
+          "enum": [
+            "FINITE_MODEL_CHECK",
+            "DETERMINISTIC_SIMULATION",
+            "FAULT_INJECTION",
+            "CRYPTO_INTEROP",
+            "DESKTOP_REVIEW"
+          ]
+        },
+        "os": {
+          "type": "string"
+        },
+        "architecture": {
+          "type": "string"
+        },
+        "runtimeVersion": {
+          "type": "string"
+        },
+        "resourceProfile": {
+          "type": "string"
+        }
+      }
+    },
+    "toolchain": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tool",
+          "version"
+        ],
+        "properties": {
+          "tool": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "configurationDigest": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "startedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "endedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "result": {
+      "enum": [
+        "NOT_RUN",
+        "PASS",
+        "FAIL",
+        "INCONCLUSIVE"
+      ]
+    },
+    "invariantResults": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "propertyId",
+          "result"
+        ],
+        "properties": {
+          "propertyId": {
+            "type": "string"
+          },
+          "result": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_CHECKED",
+              "INCONCLUSIVE"
+            ]
+          },
+          "counterexampleRef": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "artifactRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "replayInstructionsRef": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "reviewedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notProduction": {
+      "const": true
+    }
+  }
+}
