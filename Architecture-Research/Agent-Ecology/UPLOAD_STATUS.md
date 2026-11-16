@@ -46,7 +46,7 @@
 
 本节为当前权威快照，优先于本文较早的历史阶段快照：
 - V1.9 工作分支：research/agent-ecology-v1.9-stigmergy-20261114。
-- PR #14：Draft/Open，目标 docs/agent-ecology-v1.8-20261110；当前 80 个变更文件，尚未合并；不修改 main。
+- PR #14：Draft/Open，目标 docs/agent-ecology-v1.8-20261110；当前 81 个变更文件，尚未合并；不修改 main。
 - V1.9 当前覆盖 A—I 九条研究工作流，包含 Stigmergy、能力发现、WP-020—WP-026、动态联盟和 Coalition Charter。
 - 正式验收设计 321 项，全部 NOT_RUN；68 项 ADR 全部 Candidate；94 项威胁与治理边界全部 Candidate；21 份候选 JSON Schema；7 张 7680×4320 SVG 架构源图；静态未决事项 85 项，全部 OPEN。
 - WP-024-L0 已穷举 262,611 组 Quorum 集合对；WP-024-L1 Python BFS 已对危险恢复配置找到 14 步反例。TLC 尚未运行；正式 60 项 WP-024 验收仍全部 NOT_RUN。
