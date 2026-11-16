@@ -34,8 +34,9 @@
 | `28_WP-026_Coalition_Charter_联盟任务契约与生命周期状态机.md` | `c02670b09e5aa49770496e1cf715bba019e758bc` |
 | `29_WP-026_研究证据登记.md` | `4da9ae2eb6a89d26aa6dc182436de2cf8154608e` |
 | `30_WP-026_静态审查与未决事项.md` | `8c2d03d9e75939186eb13a3a2cd5bafd59c3ac9c` |
-| `README.md` | `2489aa223e4d5a8b4c7d7df2aff4f0d5da518494` |
-| `STATUS.md` | `f358cace0f69fdb0882a3e703197b5d658767a68` |
+| `31_Agent_Ecology_CCF-B论文研究计划与首篇论文设计.md` | `39fc4146e99fdbbc4e96e7beeb55d3d79e3eb9ea` |
+| `README.md` | `5ba1f1ac9408e0202fd54ea7788f81ab877899a6` |
+| `STATUS.md` | `4f6096e3766b858b94d61353ae0ae8558dfde02f` |
 | `assets/00_V1.9_跨生态能力发现与观察Runtime.svg` | `a6818ac80ed726f0bfaeb224cb9eaafab391915e` |
 | `assets/01_WP-020_跨生态信任协议与授权链.svg` | `6524998de00d51fa02118ee6d2ab3e5c8aae154d` |
 | `assets/02_WP-021_目录一致性与撤销传播架构.svg` | `80a6390756d8439ede42722e82474e0081697e56` |
