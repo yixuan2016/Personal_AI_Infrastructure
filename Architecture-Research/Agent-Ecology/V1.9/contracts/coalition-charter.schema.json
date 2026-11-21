@@ -1,0 +1,752 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:coalition-charter-candidate",
+  "title": "CoalitionCharterCandidate",
+  "description": "Versioned common-core coalition task charter. It records collaboration scope and owner acceptances; it is not an authorization grant, ownership transfer or settlement instruction.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "charterId",
+    "coalitionId",
+    "charterVersion",
+    "charterEpoch",
+    "charterDigest",
+    "issuer",
+    "task",
+    "scope",
+    "members",
+    "coordinator",
+    "governance",
+    "resourcePlan",
+    "policyBindings",
+    "lifecycle",
+    "acceptances",
+    "createdAt",
+    "expiresAt",
+    "notAuthorization",
+    "notOwnershipTransfer",
+    "notSettlement"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "charterId": {
+      "type": "string",
+      "format": "uri"
+    },
+    "coalitionId": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 128
+    },
+    "charterVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "charterEpoch": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "previousCharterDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "charterDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "issuer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domainId",
+        "principalId",
+        "role",
+        "authorityRef",
+        "keyId",
+        "keyEpoch",
+        "algorithm"
+      ],
+      "properties": {
+        "domainId": {
+          "type": "string",
+          "minLength": 3
+        },
+        "principalId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "const": "TASK_OWNER"
+        },
+        "authorityRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "keyId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "keyEpoch": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "algorithm": {
+          "enum": [
+            "ES256",
+            "EdDSA",
+            "PS256"
+          ]
+        }
+      }
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "taskId",
+        "taskRef",
+        "ownerDomainId",
+        "ownerPrincipalId",
+        "purpose",
+        "objective",
+        "successCriteria",
+        "riskClass"
+      ],
+      "properties": {
+        "taskId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "taskRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "ownerDomainId": {
+          "type": "string",
+          "minLength": 3
+        },
+        "ownerPrincipalId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objective": {
+          "type": "string",
+          "minLength": 1
+        },
+        "successCriteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "riskClass": {
+          "enum": [
+            "R0",
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ]
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "baselineEvidenceRef": {
+          "type": "string",
+          "format": "uri-reference"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowedActionIds",
+        "prohibitedActionIds",
+        "resourceRefs",
+        "dataAssetRefs",
+        "dataPurpose",
+        "audience",
+        "maxDataClassification"
+      ],
+      "properties": {
+        "allowedActionIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "prohibitedActionIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "resourceRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        },
+        "dataAssetRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        },
+        "dataPurpose": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "audience": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "maxDataClassification": {
+          "enum": [
+            "PUBLIC",
+            "INTERNAL",
+            "CONFIDENTIAL",
+            "RESTRICTED"
+          ]
+        },
+        "outputConstraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "retentionPolicyRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "ontologyProfiles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        },
+        "domainProfiles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "profileId",
+              "version",
+              "schemaRef",
+              "digest"
+            ],
+            "properties": {
+              "profileId": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "schemaRef": {
+                "type": "string",
+                "format": "uri-reference"
+              },
+              "digest": {
+                "type": "string",
+                "pattern": "^[A-Fa-f0-9]{64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "members": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "memberId",
+          "principalRef",
+          "domainId",
+          "ownerPrincipalId",
+          "roles",
+          "membershipEpoch",
+          "capabilityEvidenceRefs"
+        ],
+        "properties": {
+          "memberId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "principalRef": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "domainId": {
+            "type": "string",
+            "minLength": 3
+          },
+          "organizationId": {
+            "type": "string"
+          },
+          "ownerPrincipalId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "roles": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "EXECUTOR",
+                "COORDINATOR",
+                "OBSERVER",
+                "RESOURCE_PROVIDER",
+                "DATA_PROVIDER",
+                "INDEPENDENT_VERIFIER"
+              ]
+            }
+          },
+          "membershipEpoch": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "capabilityEvidenceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri-reference"
+            }
+          },
+          "leaseProfileRef": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "maxRiskClass": {
+            "enum": [
+              "R0",
+              "R1",
+              "R2",
+              "R3",
+              "R4"
+            ]
+          }
+        }
+      }
+    },
+    "coordinator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "principalRef",
+        "authority",
+        "mayGrantPermission",
+        "mayChangeOwnerPolicy",
+        "mayApproveIndependentResult"
+      ],
+      "properties": {
+        "principalRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "authority": {
+          "const": "COORDINATION_ONLY"
+        },
+        "mayGrantPermission": {
+          "const": false
+        },
+        "mayChangeOwnerPolicy": {
+          "const": false
+        },
+        "mayApproveIndependentResult": {
+          "const": false
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formationMode",
+        "humanApprovalRequired",
+        "independentVerifierRequired",
+        "requiredApprovalRoles",
+        "disputePolicyRef",
+        "activationMode"
+      ],
+      "properties": {
+        "formationMode": {
+          "enum": [
+            "MANUAL",
+            "POLICY_GATED",
+            "AUTO_LOW_RISK"
+          ]
+        },
+        "humanApprovalRequired": {
+          "type": "boolean"
+        },
+        "independentVerifierRequired": {
+          "type": "boolean"
+        },
+        "requiredApprovalRoles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "TASK_OWNER",
+              "MEMBER_OWNER",
+              "DATA_OWNER",
+              "RESOURCE_OWNER",
+              "TARGET_POLICY_OWNER",
+              "INDEPENDENT_VERIFIER",
+              "HUMAN_GOVERNANCE"
+            ]
+          }
+        },
+        "disputePolicyRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "activationMode": {
+          "enum": [
+            "OWNER_APPROVED",
+            "PREAUTHORIZED_LOW_RISK_POLICY"
+          ]
+        }
+      }
+    },
+    "resourcePlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "budgetCap",
+        "budgetUnit",
+        "commitments",
+        "ownerScopedLeaseRequired",
+        "fencingRequired",
+        "idempotencyNamespace"
+      ],
+      "properties": {
+        "budgetCap": {
+          "type": "number",
+          "minimum": 0
+        },
+        "budgetUnit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "commitments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "resourceOwnerDomainId",
+              "resourceRef",
+              "quantity",
+              "unit"
+            ],
+            "properties": {
+              "resourceOwnerDomainId": {
+                "type": "string"
+              },
+              "resourceRef": {
+                "type": "string",
+                "format": "uri-reference"
+              },
+              "quantity": {
+                "type": "number",
+                "minimum": 0
+              },
+              "unit": {
+                "type": "string"
+              },
+              "maxCost": {
+                "type": "number",
+                "minimum": 0
+              },
+              "costUnit": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ownerScopedLeaseRequired": {
+          "const": true
+        },
+        "fencingRequired": {
+          "const": true
+        },
+        "idempotencyNamespace": {
+          "type": "string",
+          "minLength": 1
+        },
+        "maxLeaseSeconds": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "policyBindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "localPolicyRefs",
+        "policyDigest",
+        "odrlProfileRefs"
+      ],
+      "properties": {
+        "localPolicyRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        },
+        "policyDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "odrlProfileRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eventStreamRef",
+        "initialState",
+        "closeoutChecklistRef"
+      ],
+      "properties": {
+        "eventStreamRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "initialState": {
+          "const": "PROPOSED"
+        },
+        "closeoutChecklistRef": {
+          "type": "string",
+          "format": "uri-reference"
+        }
+      }
+    },
+    "acceptances": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "principalId",
+          "domainId",
+          "role",
+          "charterDigest",
+          "charterVersion",
+          "charterEpoch",
+          "scopeDigest",
+          "policyDigest",
+          "keyId",
+          "keyEpoch",
+          "acceptedAt",
+          "signature"
+        ],
+        "properties": {
+          "principalId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "domainId": {
+            "type": "string",
+            "minLength": 3
+          },
+          "role": {
+            "enum": [
+              "TASK_OWNER",
+              "MEMBER_OWNER",
+              "DATA_OWNER",
+              "RESOURCE_OWNER",
+              "TARGET_POLICY_OWNER",
+              "INDEPENDENT_VERIFIER",
+              "HUMAN_GOVERNANCE"
+            ]
+          },
+          "charterDigest": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "charterVersion": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "charterEpoch": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "scopeDigest": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "policyDigest": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "keyId": {
+            "type": "string"
+          },
+          "keyEpoch": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "acceptedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "signature": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notAuthorization": {
+      "const": true
+    },
+    "notOwnershipTransfer": {
+      "const": true
+    },
+    "notSettlement": {
+      "const": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "task": {
+            "properties": {
+              "riskClass": {
+                "const": "R4"
+              }
+            },
+            "required": [
+              "riskClass"
+            ]
+          }
+        },
+        "required": [
+          "task"
+        ]
+      },
+      "then": {
+        "properties": {
+          "governance": {
+            "properties": {
+              "formationMode": {
+                "const": "MANUAL"
+              },
+              "humanApprovalRequired": {
+                "const": true
+              },
+              "independentVerifierRequired": {
+                "const": true
+              },
+              "activationMode": {
+                "const": "OWNER_APPROVED"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "governance": {
+            "properties": {
+              "formationMode": {
+                "const": "AUTO_LOW_RISK"
+              }
+            },
+            "required": [
+              "formationMode"
+            ]
+          }
+        },
+        "required": [
+          "governance"
+        ]
+      },
+      "then": {
+        "properties": {
+          "task": {
+            "properties": {
+              "riskClass": {
+                "enum": [
+                  "R0",
+                  "R1"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
