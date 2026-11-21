@@ -6,9 +6,10 @@
 |---|---|
 | `ARCHIVE_AUDIT.md` | `e6d32277b0c756ca0f559ad1a40d5d8f92e666eb` |
 | `BINARY_ASSET_STATUS_V1.2-V1.7.md` | `ffb6ca623081f142e5e9426293127eab2b7cba44` |
-| `CHANGELOG.md` | `35cb78cdd12a4638ccf0a9e7ee165836292b0754` |
-| `README.md` | `7eae153ee38fdc4f2dc76c4cf6457a65c29f5f61` |
-| `UPLOAD_STATUS.md` | `1c66c237bb9acc4b50fa53985ce2a54fbfd014d5` |
+| `CHANGELOG.md` | `20804f3f8be593bcb1bebaa20490bea5dc06b6f5` |
+| `README.md` | `331f53303c4bdd1b5bde12c2d0e9b597deff3972` |
+| `UPLOAD_STATUS.md` | `b240e93c5c2b4abee17343f45c1dd3b82a049581` |
+| `MERGE_REVIEW_20261121.md` | `0c99702f48a17007dff8634a9ab7253051e7ec16` |
 | `V1.8/00_V1.8_总体架构与设计目标.md` | `bf0698d98b6bfa8e70e2fa9cb906e0226fa37e83` |
 | `V1.8/01_跨生态联邦拓扑与职责边界.md` | `09691461121629f8ea749fbaba14df19b759569f` |
 | `V1.8/02_身份信任与能力信誉.md` | `bb65f062a3a651128d94e58a321ee26be7da6647` |
@@ -21,7 +22,7 @@
 | `V1.8/assets/00_V1.8_跨生态联邦总体架构.svg` | `2b1a5e40740808d58d5e8c01476c6d7399963cd6` |
 | `V1.8/assets/01_V1.8_跨生态改进提案生命周期.svg` | `53695368f3d6838117998d7167578e94a111d24e` |
 | `V1.8/assets/02_V1.8_F0_跨生态治理与成员边界.svg` | `9a48454278b8d0b6641afe46359425664aeea2b9` |
-| `V1.8/BINARY_ASSET_STATUS.md` | `22edcda2924ff3ddedadfc91291f6c06bfbc4294` |
+| `V1.8/BINARY_ASSET_STATUS.md` | `8413b674f629db8f96b1b24e586357a696db4467` |
 | `V1.8/CHANGELOG.md` | `8ed9e6964c3b9a30ad6287a6b81b34bea94e7775` |
 | `V1.8/contracts/capability-attestation.schema.json` | `042d0778ab8b3929afc023a8363b47b8d0301dad` |
 | `V1.8/contracts/data-use-grant.schema.json` | `4404d88f5ed2346c5e00f70879715dd2020456da` |
