@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset="1" stop-color="#132a45"/></linearGradient>
+ <style>.t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#e8f4ff}.h{font-size:36px;font-weight:700}.s{font-size:24px}.m{font-size:19px}.b{fill:#0d2b45;stroke:#38bdf8;stroke-width:2;rx:18}.g{fill:#103a3e;stroke:#34d399;stroke-width:2;rx:18}.y{fill:#3b2d18;stroke:#fbbf24;stroke-width:2;rx:18}.a{stroke:#67e8f9;stroke-width:4;fill:none;marker-end:url(#arr)}</style>
+ <marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#67e8f9"/></marker>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<text x="960" y="75" text-anchor="middle" class="t h">跨生态改进提案生命周期｜传播不等于采用</text>
+<text x="960" y="120" text-anchor="middle" class="t s">来源生态生成候选；接收生态独立验证、审批、发布与回滚</text>
+<rect x="90" y="220" width="330" height="150" class="b"/>
+<text x="255" y="270" text-anchor="middle" class="t s">来源生态 RSI</text><text x="255" y="315" text-anchor="middle" class="t m">问题 / 假设 / 差异包</text>
+<rect x="520" y="220" width="330" height="150" class="b"/>
+<text x="685" y="270" text-anchor="middle" class="t s">签名提案与证据包</text><text x="685" y="315" text-anchor="middle" class="t m">Digest / Provenance / License</text>
+<rect x="950" y="220" width="330" height="150" class="b"/>
+<text x="1115" y="270" text-anchor="middle" class="t s">联邦目录传播</text><text x="1115" y="315" text-anchor="middle" class="t m">仅发现与证据索引</text>
+<rect x="1380" y="220" width="420" height="150" class="y"/>
+<text x="1590" y="270" text-anchor="middle" class="t s">接收生态隔离区</text><text x="1590" y="315" text-anchor="middle" class="t m">验签 / 撤销 / 许可 / 静态审查</text>
+<path d="M420 295 H515" class="a"/><path d="M850 295 H945" class="a"/><path d="M1280 295 H1375" class="a"/>
+<rect x="1380" y="500" width="420" height="135" class="b"/>
+<text x="1590" y="550" text-anchor="middle" class="t s">本地沙箱 + 独立评估</text><text x="1590" y="590" text-anchor="middle" class="t m">基线 / 反事实 / 安全测试</text>
+<path d="M1590 370 V495" class="a"/>
+<rect x="950" y="500" width="330" height="135" class="g"/>
+<text x="1115" y="550" text-anchor="middle" class="t s">人类治理审批</text><text x="1115" y="590" text-anchor="middle" class="t m">Owner / 风险级别 / 授权</text>
+<path d="M1380 565 H1285" class="a"/>
+<rect x="520" y="500" width="330" height="135" class="g"/>
+<text x="685" y="550" text-anchor="middle" class="t s">Shadow / Canary</text><text x="685" y="590" text-anchor="middle" class="t m">本地观察 / 限流 / 停止条件</text>
+<path d="M950 565 H855" class="a"/>
+<rect x="90" y="500" width="330" height="135" class="g"/>
+<text x="255" y="550" text-anchor="middle" class="t s">本地采用 / 回滚</text><text x="255" y="590" text-anchor="middle" class="t m">签发 Adoption Receipt</text>
+<path d="M520 565 H425" class="a"/>
+<rect x="250" y="790" width="1420" height="145" class="y"/>
+<text x="960" y="840" text-anchor="middle" class="t s">全程治理不变量</text>
+<text x="960" y="885" text-anchor="middle" class="t m">来源域批准 ≠ 接收域批准　｜　ABSTAIN = HOLD　｜　候选内容变化 = 重新评估</text>
+<text x="960" y="915" text-anchor="middle" class="t m">任何生态可独立拒绝、暂停、撤销或回滚；人类根策略和生产权限不由 RSI 修改</text>
+</svg>
