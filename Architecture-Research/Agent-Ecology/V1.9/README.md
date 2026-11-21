@@ -170,3 +170,8 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - JSON 语法 21/21 解析成功；完整 Draft 2020-12 Validator、密码学、Policy Validator 和跨语言互操作仍 NOT_RUN。
 - 21 份 Schema 继续保持 Candidate；321 项验收仍 NOT_RUN；F0 未通过；productionAllowed=false。
 
+## P0 协议门禁与确定性验证器设计
+
+- [34_V1.9_P0协议门禁与确定性PolicyValidator设计.md](./34_V1.9_P0协议门禁与确定性PolicyValidator设计.md)：把四项 P0 缺口转化为 Trust Root、Witness Lifecycle、Key Lifecycle、Quorum 的候选验证规则和 36 条验收向量。
+- 仅完成架构/验证设计；未实现、未执行，不改变 Candidate、NOT_RUN、F0 和生产授权状态。
+
