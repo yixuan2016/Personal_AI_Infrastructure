@@ -1,0 +1,8 @@
+﻿DM04语义,ADS候选状态映射,约束
+DM04 Accepted,ADS Operation Accepted,仅受理；不表示执行成功
+DM04 Pending,ADS Operation Running / WaitingForApproval（按实际状态细分）,需明确具体子状态；Pending不可当成功
+DM04 Succeeded,ADS Operation Succeeded,还需读取authoritative_state确认对象事实
+DM04 Failed,ADS Operation Failed,保留错误码、权威站点和证据引用
+DM04 Unknown,ADS Operation Unknown,禁止盲目重放；先查询Owner权威状态
+DM04 ReconciliationRequired,ADS Operation ReconciliationRequired,进入SCO对账/恢复流程
+DM04 authoritative_state,不等于Operation.status,业务对象权威状态单独返回

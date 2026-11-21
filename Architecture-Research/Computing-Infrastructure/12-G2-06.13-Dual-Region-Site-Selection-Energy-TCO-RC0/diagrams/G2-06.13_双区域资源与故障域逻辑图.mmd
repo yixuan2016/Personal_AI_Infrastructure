@@ -1,0 +1,53 @@
+flowchart TB
+  subgraph GOV["业主与跨区域治理"]
+    OWNER["业主治理<br/>投资 / 风险接受 / 最终审批"]
+    ADS["ADS / 跨域治理<br/>共同语义 / 授权 / 审计"]
+    OWNER --> ADS
+  end
+  subgraph A["Region A｜本地自治"]
+    AG["A1 GPU"]
+    AC["A2 CPU/HPC"]
+    AS["A3 Storage"]
+    ACT["A4 Control/Support"]
+    AE["A5 Edge/Security"]
+    AP["独立电网接入<br/>变电站 / UPS / A-B馈电"]
+    AW["合法水源与冷却<br/>CDU / 冷源 / 排水"]
+    AN["独立网络入口<br/>运营商A/B / 物理路由"]
+    AG --> AN
+    AC --> AN
+    AS --> AN
+    ACT --> AN
+    AE --> AN
+    AP --> AG
+    AP --> AC
+    AW --> AG
+    AW --> AC
+  end
+  subgraph B["Region B｜本地自治"]
+    BG["B1 GPU"]
+    BC["B2 CPU/HPC"]
+    BS["B3 Storage"]
+    BCT["B4 Control/Support"]
+    BE["B5 Edge/Security"]
+    BP["独立电网接入<br/>变电站 / UPS / A-B馈电"]
+    BW["合法水源与冷却<br/>CDU / 冷源 / 排水"]
+    BN["独立网络入口<br/>运营商A/B / 物理路由"]
+    BG --> BN
+    BC --> BN
+    BS --> BN
+    BCT --> BN
+    BE --> BN
+    BP --> BG
+    BP --> BC
+    BW --> BG
+    BW --> BC
+  end
+  ADS --> ACT
+  ADS --> BCT
+  AN <-->|"WAN：复制 / 协调 / 审计"| BN
+  AS <-->|"按RPO/RTO与数据规则复制"| BS
+  AP -.->|"独立性审查：电网/上级变电站"| BP
+  AW -.->|"独立性审查：流域/水源"| BW
+  AN -.->|"独立性审查：管道/光缆/PoP"| BN
+  OWNER -.->|"最终站点与风险决策"| A
+  OWNER -.->|"最终站点与风险决策"| B

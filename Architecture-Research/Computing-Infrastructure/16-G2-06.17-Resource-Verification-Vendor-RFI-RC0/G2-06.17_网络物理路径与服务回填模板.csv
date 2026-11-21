@@ -1,0 +1,11 @@
+区域,路径ID,运营商,起点PoP/机房,路径节点序列,管道/桥架/井道,园区入口/楼宇入口,MMR/机柜端口,共享段/共同故障域,物理路由证据,供电依赖,SLA/带宽,RTT/抖动/丢包,测试时间/负载,故障切换,责任Owner,状态
+A,A-WAN-1,Carrier A,,,,,,,,,,,,,网络,待回填
+A,A-WAN-2,Carrier B,,,,,,,,,,,,,网络,待回填
+B,B-WAN-1,Carrier A,,,,,,,,,,,,,网络,待回填
+B,B-WAN-2,Carrier B,,,,,,,,,,,,,网络,待回填
+A-B,INTER-1,跨区域承载,,,,,,,,,,,,,网络,待回填
+A,A-GPU-A,GPU Fabric Plane-A,GPU Rack,NIC/OSFP→Switch Plane-A,,,,,,,,,,,网络,待QVL
+A,A-GPU-B,GPU Fabric Plane-B,GPU Rack,NIC/OSFP→Switch Plane-B,,,,,,,,,,,网络,待QVL
+B,B-GPU-A,GPU Fabric Plane-A,GPU Rack,NIC/OSFP→Switch Plane-A,,,,,,,,,,,网络,待QVL
+B,B-GPU-B,GPU Fabric Plane-B,GPU Rack,NIC/OSFP→Switch Plane-B,,,,,,,,,,,网络,待QVL
+A/B,OOB,独立OOB/Facility,BMC/BMS,,,,,,,,,,,,安全,待设计

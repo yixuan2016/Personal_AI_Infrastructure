@@ -1,0 +1,23 @@
+输入ID,领域,业主输入项,需要回答的问题,字段/单位,信息来源,责任Owner,状态,验收/冻结证据,边界说明
+I-001,地理与法域,区域A国家/州/省/城市/候选园区,明确法域、监管、数据驻留和电网运营主体,国家/城市/法域/候选地块,业主/法务,Project Sponsor/Legal,TBD-Owner,批准的区域范围说明,当前A/B仅逻辑代号
+I-002,地理与法域,区域B国家/州/省/城市/候选园区,明确法域、监管、数据驻留和电网运营主体,国家/城市/法域/候选地块,业主/法务,Project Sponsor/Legal,TBD-Owner,批准的区域范围说明,双区域独立性须实证
+I-003,业务需求,业务服务清单与优先级,定义训练、推理、Agent、HPC、存储、控制面等业务组合,业务清单/优先级/Owner,业务部门,Business Owner,TBD-Owner,签署的业务画像,不能只按硬件最大配置倒推需求
+I-004,GPU训练,模型/训练规模,确定模型、参数、精度、GPU数、并行策略和完成时间,模型/精度/GPU/训练数据/作业时长,AI业务,AI/GPU Owner,TBD-Owner,训练基准与性能目标签署,不得假设所有训练跨区同步
+I-005,GPU推理,模型服务SLO,定义模型、并发、上下文、QPS、延迟和质量,模型/并发/QPS/TTFT/TPOT/p95/p99,业务部门,AI/业务Owner,TBD-Owner,推理基准与SLO签署,分模型和服务等级
+I-006,CPU/HPC,Agent与批处理规模,定义并发任务、核数、内存、沙箱和任务时长,任务数/vCPU/内存/NUMA/沙箱,平台/业务,CPU/HPC Owner,TBD-Owner,任务压测和隔离测试,N1380 2N2S/4N1S待确认
+I-007,存储,容量与增长,定义初始容量、增长率、读写比、保留、耐久度,PB/TB增长率/IOPS/吞吐/DWPD/保留期,数据Owner,Storage/Data Owner,TBD-Owner,签署容量模型,原始容量不得当作可用容量
+I-008,数据治理,分类/驻留/跨境,定义数据分类、控制者/处理者、驻留、跨境和删除,数据等级/国家/保留/跨境依据,法务/合规/数据Owner,Legal/Data Owner,TBD-Owner,数据地图与法务意见,未批准的数据不跨境
+I-009,业务连续性,RPO/RTO,按业务与数据类别定义恢复点/恢复时间,RPO/RTO/恢复顺序/最大可接受损失,业务连续性,Business/BCP Owner,TBD-Owner,灾备演练和签署目标,不可用统一值覆盖所有数据
+I-010,服务等级,可用性和延迟SLO,定义SLI/SLO、错误预算、维护窗口和测量边界,可用性/延迟/错误率/窗口,业务Owner,Business Owner,TBD-Owner,SLO测量方案,设施SLA不等于业务SLO
+I-011,安全,身份/密钥/审计,定义IAM、KMS/HSM、PKI、撤销、日志保留和远程支持,密钥地域/角色/审计保留/撤销时限,安全/法务,Security Owner,TBD-Owner,安全架构审查,本地安全联锁不依赖AI
+I-012,供电,区域IT/设施负荷目标,提供设计负荷曲线和扩容目标，区分IT/Facility/POI,kW/MW/MVA/PF/峰值/持续/扩容年限,电气/业主,Electrical Owner,TBD-Owner,负荷计算书与utility容量函,不能从192kW母线建议推算区域MW
+I-013,供电,冗余与停电容忍,定义N、N+1、2N、可中断/不可中断和维护窗口,冗余等级/允许中断/恢复时间,业务/电气,Electrical/Business Owner,TBD-Owner,FMEA和故障测试,GB300 Whip A/B分配须OEM签署
+I-014,冷却,热工与液冷目标,定义IT热负载、温压流量、水质、极端工况和冗余,kWth/°C/kPa/Lmin/水质/故障工况,机电/OEM,Facility Owner,TBD-Owner,OEM曲线/P&ID/热工计算,1.3MW CDU是冷量不是用电
+I-015,水务,供水/取水/排水,明确水源、合法水量、季节性、排水许可和WUE,m3/day/m3/year/WUE/排放条件,水务/环保/法务,Environmental Owner,TBD-Owner,许可/协议和水量模型,不得用园区宣传替代水权
+I-016,网络,区域内网络性能,定义GPU Fabric、Storage Fabric、CPU、WAN、OOB吞吐与延迟,Gbps/RTT/抖动/丢包/oversubscription,业务/网络,Network Owner,TBD-Owner,端到端基准/QVL,RoCE与IB只能选一条主参考
+I-017,网络,跨区域复制和业务互联,根据数据量、窗口和RPO反推带宽,TB/窗口/RTT/丢包/加密开销,数据/业务/网络,Network/Data Owner,TBD-Owner,真实物理路由测试,标称带宽不能替代可用吞吐
+I-018,设施,机房空间与结构,定义机柜数量、重量、点载荷、运输路线、扩展空间,机柜/重量/面积/楼板承载/净高,设施/结构,Facility/Structural Owner,TBD-Owner,签署结构计算和现场勘验,满液质量和设备运输均需核验
+I-019,建设路线,A/B各自路线选择,分别决定自建、托管、Powered Shell及设施责任,路线/产权/设施接口/退出条件,业主/采购/法务,Project Sponsor,TBD-Owner,ADR批准和合同RACI,A/B可不同路线，但独立性需验证
+I-020,财务,CAPEX/OPEX/投资边界,确定币种、税费、折现率、五年期、残值和预算上限,预算区间/币种/折现率/融资成本,财务,Finance Owner,TBD-Owner,财务签署TCO模型,无正式报价不得输出真实总价
+I-021,运维,24×7组织与服务窗口,明确现场团队、备件、响应、到场、修复、升级和审计,值班/响应/到场/修复/备件,运营/供应商,Operations Owner,TBD-Owner,运维SLA与演练,运营商责任不取代IT Owner
+I-022,扩容,建设期和扩容路线图,明确一期、二期、GPU代际替换和设备寿命,时间表/增长率/扩容批次/退出,项目Sponsor/架构,Architecture Owner,TBD-Owner,批准的分期计划,新SKU需重新做QVL和容量验证

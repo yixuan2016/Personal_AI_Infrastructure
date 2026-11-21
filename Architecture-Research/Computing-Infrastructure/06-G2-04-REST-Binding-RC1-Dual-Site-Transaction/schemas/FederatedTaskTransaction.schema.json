@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.invalid/aee-ascp/g2-04/federated-task-transaction.schema.json",
+  "title": "FederatedTaskTransaction",
+  "description": "G2-04 RC1 candidate schema. URI is a placeholder and must be replaced by the governed namespace before publication.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "transaction_id",
+    "contract_ref",
+    "contract_digest",
+    "coordinator_ref",
+    "required_sites",
+    "state",
+    "state_version",
+    "created_at",
+    "expires_at"
+  ],
+  "properties": {
+    "transaction_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract_ref": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "coordinator_ref": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "required_sites": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "site_id",
+          "site_owner_ref",
+          "required"
+        ],
+        "properties": {
+          "site_id": {
+            "type": "string"
+          },
+          "site_owner_ref": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "compute",
+              "storage",
+              "data",
+              "gateway",
+              "validator"
+            ]
+          }
+        }
+      }
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Validating",
+        "AwaitingApproval",
+        "Preparing",
+        "Prepared",
+        "Committing",
+        "Committed",
+        "BarrierPending",
+        "Activated",
+        "Executing",
+        "ResultPending",
+        "AcceptancePending",
+        "Accepted",
+        "SettlementPending",
+        "Settled",
+        "Rejected",
+        "Aborted",
+        "Compensating",
+        "RecoveryRequired",
+        "Disputed",
+        "Expired",
+        "Unknown"
+      ]
+    },
+    "state_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "barrier_epoch": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "reservation_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "lease_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "task_claim_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "policy_decision_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "data_use_grant_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "operation_ref": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "event_cursor": {
+      "type": "string"
+    },
+    "reconciliation_required": {
+      "type": "boolean",
+      "default": false
+    },
+    "compensation_state": {
+      "type": "string",
+      "enum": [
+        "NotStarted",
+        "InProgress",
+        "Confirmed",
+        "Partial",
+        "Failed",
+        "Unknown"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    }
+  }
+}

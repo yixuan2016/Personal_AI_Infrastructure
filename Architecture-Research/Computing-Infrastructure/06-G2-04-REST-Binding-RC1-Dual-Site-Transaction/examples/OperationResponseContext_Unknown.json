@@ -1,0 +1,18 @@
+{
+  "operation_ref": "urn:example:operation:op-001",
+  "object_ref": "urn:example:transaction:txn-demo-20261110-001",
+  "object_type": "FederatedTaskTransaction",
+  "command_status": "Unknown",
+  "authoritative_state": {
+    "authority_ref": "urn:example:site-owner:site-b",
+    "state": "Unknown",
+    "state_version": 7,
+    "as_of": "2026-11-10T17:31:00Z",
+    "freshness_seconds": 90
+  },
+  "event_cursor": "site-b:seq:128",
+  "evidence_refs": [
+    "urn:example:evidence:timeout-001"
+  ],
+  "reconciliation_required": true
+}

@@ -1,0 +1,41 @@
+﻿测试ID,阶段,故障/攻击场景,注入方式,期望全局状态,本地期望事实,禁止行为,验收证据,级别
+T01,Prepare,Site B Prepare 超时,丢弃B响应,RecoveryRequired/Unknown,B需通过Owner查询真实Reservation,不得判定B失败后新key盲重试,GetReservation与原key重放记录,P0
+T02,Prepare,Site A Prepare成功、B拒绝,返回RejectReceipt,Compensating,A Reservation释放并签Receipt,不得进入Committed,ReleaseReceipt A + RejectReceipt B,P0
+T03,Commit,A Commit成功、B Commit失败,B返回资源不足,Compensating,A Lease撤销/释放且token失效,不得启动A单边任务,A ReleaseReceipt + B CommitFailure,P0
+T04,Commit,Commit成功响应丢失,丢弃响应,RecoveryRequired,Lease Authority查询到唯一Lease,不得创建第二个Lease,Lease查询、幂等去重记录,P0
+T05,Commit,同Idempotency-Key同Body重放,重复发送同请求,Committing/Committed不重复,返回同一Operation/Receipt,不得重复预留/扣费,相同operation_ref与digest,P0
+T06,Commit,同Idempotency-Key不同Body,改变payload digest,保持原状态/拒绝冲突,不产生新Reservation/Lease,不得接受第二个命令,409 ProblemDetails,P0
+T07,Barrier,一个站点缺少CommitReceipt,移除B回执,BarrierPending,A/B本地状态保持原样,不得激活任何站点,Barrier rejection evidence,P0
+T08,Barrier,Policy Indeterminate,PDP返回Indeterminate,AwaitingApproval/Blocked,PEP拒绝启动,不得把Indeterminate转Permit,Signed PolicyDecision + PEP denial,P0
+T09,Barrier,DataUseGrant过期,将Grant置Expired,Blocked/Compensating,目标Site PEP拒绝数据访问,不得使用缓存Grant,Grant status + PEP audit,P0
+T10,Barrier,TrustAgreement撤销,撤销并延迟一个站点delta,RecoveryRequired/Blocked,高风险站点拒绝激活,不得以旧信任包绕过撤销,Revocation sequence/gap report,P0
+T11,Barrier,Attestation nonce重放,重放旧证明,Blocked,Verifier拒绝过期nonce,不得复用旧Attestation,VerificationReport,P0
+T12,Barrier,合同摘要不一致,站点返回不同contract_digest,Rejected/Compensating,站点不启动,不得忽略digest差异,Digest mismatch report,P0
+T13,Activate,Activation token过期,延迟激活消息,RecoveryRequired,LCP拒绝过期token,不得自动延长token,Activation denial receipt,P0
+T14,Activate,重复ActivationNotice,重复事件投递,Executing不重复启动,本地TaskRun仅一个attempt,不得创建重复进程,TaskRun attempt ledger,P0
+T15,Execute,Site A网络分区,切断跨站点网络,Unknown/RecoveryRequired,A继续受本地策略与租约约束,SCO不得伪造A已停止,A恢复后authority reconciliation,P0
+T16,Execute,Lease到期但任务仍运行,推进lease expiry,Suspending/RecoveryRequired,旧token被fence；任务隔离/停止,不得继续用旧token写资源,Fencing rejection + StopReceipt,P0
+T17,Execute,旧FencingToken重放,发送低epoch写请求,Executing或Suspending,资源端拒绝旧token,不得接受旧epoch,Fencing audit record,P0
+T18,Execute,Resume时Policy已撤销,撤销后请求Resume,Blocked,本地PEP拒绝恢复,不得沿用Start时的旧Permit,new PolicyDecision + PEP receipt,P0
+T19,Execute,RetryRun复用旧attempt_id,重复attempt标识,Rejected,本地不覆盖旧attempt,不得覆盖历史运行记录,409 + attempt ledger,P1
+T20,Execute,RetryRun复用旧FencingToken,使用旧token,Rejected,Lease Authority要求新token,不得复用token,new lease/fencing epoch,P0
+T21,Cancel,重复CancelRun,同key重复命令,Cancelling/Cancelled不重复,返回原StopReceipt,不得重复执行危险补偿,Idempotency audit,P1
+T22,Cancel,StopReceipt丢失,丢弃停止响应,RecoveryRequired,查询本地TaskRun与StopReceipt,不得宣称已停止,reconciliation report,P0
+T23,Cancel,Lease释放失败,模拟资源Busy,RecoveryRequired,旧token先fence，释放待处理,不得标记Released,Release failure receipt + fencing proof,P0
+T24,Events,事件乱序,交换TaskStage事件顺序,保持权威版本最高值,按state_version拒绝回退,不得last-write-wins,event cursor / version conflict,P0
+T25,Events,事件重复,重复投递CloudEvent,状态不重复推进,event_id去重,不得重复执行副作用,dedup log,P1
+T26,Events,撤销序列号缺口,跳过sequence,Blocked/RecoveryRequired,本地高风险PEP fail-closed,不得按未撤销处理,gap detection evidence,P0
+T27,Events,旧缓存回滚,提供较旧checkpoint,Blocked/RecoveryRequired,拒绝回滚水位,不得接受低sequence,monotonic checkpoint proof,P0
+T28,Results,结果摘要不匹配,修改artifact digest,ResultRejected/Withheld,Artifact Owner拒绝引用,不得验收伪造结果,digest verification record,P0
+T29,Acceptance,执行者尝试自我验收,使用执行者身份提交Acceptance,Rejected,Independent Acceptance Owner校验失败,不得接受执行方自签,role separation evidence,P0
+T30,Acceptance,验收criteria版本变化,更换criteria digest,Disputed/Rejected,验收绑定合同版本criteria,不得用新标准追溯替代,criteria digest comparison,P1
+T31,Settlement,计量签名无效,篡改metering record,SettlementBlocked,Settlement Owner拒绝核算,不得用未签名计量结算,signature verification report,P0
+T32,Settlement,金额/币种不一致,构造不同币种/金额,Disputed,冻结争议项并保留原账,不得直接改写原始记录,DisputeCase + ledger refs,P1
+T33,Settlement,重复Confirm/Settle,重放相同确认请求,Settled不重复结算,按idempotency返回原Record,不得重复支付/扣费,settlement idempotency proof,P0
+T34,Security,OAuth audience错误,使用错误aud token,Blocked,API返回401/403,不得从URL放宽audience,auth decision log,P0
+T35,Security,Header/body request_id不一致,篡改header,Rejected,无业务副作用,不得任选一个值继续,400 ProblemDetails,P1
+T36,Concurrency,If-Match过期,并发修改后提交旧ETag,Rejected,Owner返回当前可披露ETag,不得last-write-wins,412 + ETag,P0
+T37,Availability,429限流,触发限流,原状态不变,遵守Retry-After,不得同步重试风暴,rate limit logs,P2
+T38,Availability,SCO服务重启,杀进程并恢复,从持久Saga状态恢复,本地Owner事实不丢失,不得只靠内存状态,replay/reconciliation evidence,P0
+T39,Human Governance,高风险补偿超过阈值,注入预算/数据风险,WaitingForApproval,本地动作按策略保持暂停,不得自动越过人工审批,approval record,P0
+T40,Audit,证据链缺少签名引用,删除signature_ref,Blocked/Rejected,验收/结算不通过,不得把未签证据标记Verified,evidence validation report,P0
