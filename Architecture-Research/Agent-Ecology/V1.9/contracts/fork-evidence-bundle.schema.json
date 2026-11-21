@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:fork-evidence-bundle-candidate",
+  "title": "AgentEcologyForkEvidenceBundleCandidate",
+  "description": "Candidate tamper-evident evidence package for independent review. Conflicting checkpoint semantics and custody integrity require dedicated validators.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "evidenceId",
+    "incidentId",
+    "evidenceType",
+    "logOrigin",
+    "peerBindingId",
+    "checkpoints",
+    "witnessResponses",
+    "policyRef",
+    "evidenceDigest",
+    "recordedAt",
+    "notAuthorization"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "evidenceId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "incidentId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidenceType": {
+      "enum": [
+        "SAME_SIZE_DIFFERENT_ROOT",
+        "INCONSISTENT_EXTENSION",
+        "WITNESS_EQUIVOCATION",
+        "QUORUM_POLICY_VIOLATION",
+        "STALE_OR_PARTITIONED_VIEW",
+        "KEY_EPOCH_ROLLBACK"
+      ]
+    },
+    "logOrigin": {
+      "type": "string",
+      "minLength": 3
+    },
+    "peerBindingId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checkpoints": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "checkpointDigest",
+          "treeSize",
+          "rootHash",
+          "logKeyId",
+          "logSignature",
+          "firstObservedAt",
+          "sourceRef"
+        ],
+        "properties": {
+          "checkpointDigest": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "treeSize": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rootHash": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "logKeyId": {
+            "type": "string"
+          },
+          "logSignature": {
+            "type": "string",
+            "minLength": 20
+          },
+          "firstObservedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sourceRef": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        }
+      }
+    },
+    "witnessResponses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "witnessId",
+          "responseStatus",
+          "capturedAt",
+          "responseDigest"
+        ],
+        "properties": {
+          "witnessId": {
+            "type": "string"
+          },
+          "responseStatus": {
+            "enum": [
+              "COSIGNED",
+              "REJECTED",
+              "STALE",
+              "UNAVAILABLE",
+              "CONFLICT"
+            ]
+          },
+          "cosignatureRef": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "consistencyProofRef": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "capturedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "responseDigest": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "policyRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policyId",
+        "policyVersion",
+        "policyDigest"
+      ],
+      "properties": {
+        "policyId": {
+          "type": "string"
+        },
+        "policyVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "policyDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      }
+    },
+    "consistencyProofRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "independentVerification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "verifierId",
+        "verifierVersion",
+        "verifiedAt"
+      ],
+      "properties": {
+        "result": {
+          "enum": [
+            "CONFIRMED_CONFLICT",
+            "NO_CONFLICT_FOUND",
+            "INCONCLUSIVE"
+          ]
+        },
+        "verifierId": {
+          "type": "string"
+        },
+        "verifierVersion": {
+          "type": "string"
+        },
+        "reportRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "verifiedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "evidenceDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "evidenceRef": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "recordedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notAuthorization": {
+      "const": true
+    }
+  }
+}
