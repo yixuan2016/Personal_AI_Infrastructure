@@ -1,0 +1,41 @@
+test_id,workstream,scenario,expected_result,evidence_required,severity,status
+WP022-01,WitnessIdentity,Witness 注册记录缺少 operatorDomainId 或 failureDomainId,拒绝注册为可计入 Quorum 的 ACTIVE Witness,注册记录与 Schema 验证结果,Critical,NOT_RUN
+WP022-02,WitnessIdentity,两个 Witness 使用同一底层公钥但不同名称,按同一密钥主体去重，不得计为两个独立签名,公钥指纹与 Witness Registry,Critical,NOT_RUN
+WP022-03,WitnessIdentity,两个 Witness 使用不同密钥但同一运营主体,按策略限制 maxWitnessesPerOperator 或独立运营域门槛,运营主体映射与 Quorum 计算,Critical,NOT_RUN
+WP022-04,WitnessIdentity,Witness 与 Log Operator 由同一管理控制域运营,按利益冲突规则排除或降低独立性计数,控制关系披露与策略判定,Critical,NOT_RUN
+WP022-05,WitnessIdentity,Witness Key Epoch 已撤销仍提交 Cosignature,拒绝签名并记录旧 Epoch 使用事件,密钥状态与签名验证日志,Critical,NOT_RUN
+WP022-06,Checkpoint,Log Checkpoint 签名无效,Witness 不签名且不推进状态,无效签名向量与 Witness 状态快照,Critical,NOT_RUN
+WP022-07,Checkpoint,新 Checkpoint treeSize 小于 Witness 已保存值,拒绝签名并报告单调性违规,前后 Checkpoint 与拒绝响应,Critical,NOT_RUN
+WP022-08,Checkpoint,新旧 Checkpoint treeSize 相同但 rootHash 不同,拒绝签名并生成冲突证据,两份 Checkpoint 原文与 Witness 响应,Critical,NOT_RUN
+WP022-09,Checkpoint,新 Checkpoint treeSize 更大且 Consistency Proof 有效,验证通过后原子更新状态并签名,Proof 验证结果和持久状态,Critical,NOT_RUN
+WP022-10,Checkpoint,新 Checkpoint treeSize 更大但 Consistency Proof 无效,拒绝签名且不推进状态,无效 Proof 与状态前后对照,Critical,NOT_RUN
+WP022-11,Checkpoint,并发请求分别提交 N+K 和 N 的 Checkpoint,原子检查/更新避免较旧请求覆盖新状态,并发时序、事务日志与最终状态,Critical,NOT_RUN
+WP022-12,Checkpoint,Witness 持久化失败后尝试返回 Cosignature,不得在状态持久化成功前返回有效 Cosignature,存储故障注入与响应记录,Critical,NOT_RUN
+WP022-13,Checkpoint,Witness 重启后读取持久化 Checkpoint,恢复后仍拒绝回退或不一致历史,重启前后状态与签名记录,Critical,NOT_RUN
+WP022-14,Checkpoint,Witness 备份恢复导致 latest checkpoint 回退,进入 QUARANTINED/HOLD，需证明连续性后恢复,备份快照、恢复审批和连续性证明,Critical,NOT_RUN
+WP022-15,QuorumMath,4 个 Witness、f=1、q=3,交集下界为 2，满足 2q-n>f,计算器输出和独立数学测试,Critical,NOT_RUN
+WP022-16,QuorumMath,7 个 Witness、f=2、q=5,交集下界为 3，满足 2q-n>f,计算器输出和独立数学测试,Critical,NOT_RUN
+WP022-17,QuorumMath,5 个 Witness、f=1、q=3,交集下界为 1，不满足严格 2q-n>f,策略拒绝或标记不具备该安全保证,Critical,NOT_RUN
+WP022-18,QuorumMath,Quorum 签名数量满足但独立运营域数量不足,Quorum 结果不得 PASS,运营域分布与策略验证结果,Critical,NOT_RUN
+WP022-19,QuorumMath,多个 Witness 共享同一公钥指纹,重复密钥只计一次且触发配置错误,去重结果和策略错误码,Critical,NOT_RUN
+WP022-20,QuorumMath,同一运营域贡献超过 maxWitnessesPerOperator,超出部分不得计入有效 Quorum,签名清单和运营域计数,Critical,NOT_RUN
+WP022-21,QuorumPolicy,Quorum Policy 缺少双方接受收据,策略不得进入 ACTIVE,Policy Digest 与双方签名记录,Critical,NOT_RUN
+WP022-22,QuorumPolicy,接收方收到旧 policyVersion 或旧 policyDigest,拒绝策略回滚并进入审查,当前策略与收到策略对照,Critical,NOT_RUN
+WP022-23,QuorumPolicy,策略更新降低 q 或降低独立运营域要求,必须双方重新接受；禁止静默生效,新旧策略 Diff 与接受收据,Critical,NOT_RUN
+WP022-24,QuorumPolicy,Witness Key Rotation 在旧策略未更新时发生,旧 Key 按状态和策略规则拒绝或限时过渡，不得自动替换,Key Epoch 与 Policy 版本时间线,Critical,NOT_RUN
+WP022-25,Cosignature,Cosignature 签署的 checkpointDigest 与目标 Checkpoint 不匹配,拒绝该签名且不计入 Quorum,签名负向向量与验证报告,Critical,NOT_RUN
+WP022-26,Cosignature,Cosignature 使用未知 Witness Key 或不允许算法,忽略或拒绝未知签名，不计入 Quorum,Trust Policy 与签名集合,Critical,NOT_RUN
+WP022-27,Cosignature,同一 Witness 对同一 Log 签署更小 treeSize,判定单调性违规并固定证据,Witness 历史签名与 Checkpoint 对照,Critical,NOT_RUN
+WP022-28,Cosignature,同一 Witness 对同一 Log、同一 treeSize 签署不同 rootHash,判定 Witness equivocation，隔离该 Witness,两份签名与验证报告,Critical,NOT_RUN
+WP022-29,MonitorGossip,Monitor 只通过 FCP 获取 Checkpoint,测试应失败，要求存在 Witness 旁路读取,请求路径审计记录,High,NOT_RUN
+WP022-30,MonitorGossip,Monitor 直接从多个 Witness 获取最新 Checkpoint,能够比较 treeSize、rootHash、policyDigest 和时间,多 Witness 响应与比较报告,Critical,NOT_RUN
+WP022-31,MonitorGossip,不同接收方交换到同一 Log 的冲突 Checkpoint,检测冲突并创建 Fork Evidence Bundle,Gossip 消息和证据包,Critical,NOT_RUN
+WP022-32,MonitorGossip,Monitor 被网络分区或收到过期 Checkpoint,标记 STALE/INDETERMINATE，不得宣称 Quorum Pass,观测时间、Checkpoint 时间与状态,Critical,NOT_RUN
+WP022-33,ForkEvidence,同 treeSize 不同 rootHash 的两份有效 Log 签名 Checkpoint,生成 SAME_SIZE_DIFFERENT_ROOT 证据,原始 Checkpoint 与独立签名验证,Critical,NOT_RUN
+WP022-34,ForkEvidence,较大 Checkpoint 无法延伸较小已知 Checkpoint,生成 INCONSISTENT_EXTENSION 证据,Consistency Proof 与验证结果,Critical,NOT_RUN
+WP022-35,ForkEvidence,证据包缺少原始签名对象或策略版本,证据包不能标记为可独立复核,证据字段完整性检查,High,NOT_RUN
+WP022-36,ForkEvidence,证据包被后续记录覆盖或删除,保留原始证据摘要与追加式审计历史,证据存储前后摘要,Critical,NOT_RUN
+WP022-37,Governance,检测到 E2 分叉但目标域本地 PDP/PEP 未收到事件,按本地风险策略冻结相关高风险跨域调用,分叉告警到 PEP 的端到端记录,Critical,NOT_RUN
+WP022-38,Governance,Quorum 不可达时尝试自动降低门槛,拒绝自动降级并返回 HOLD,策略版本与授权决策日志,Critical,NOT_RUN
+WP022-39,Privacy,尝试把原始业务正文、令牌或个人信息写入透明日志,默认拒绝，除非数据 Owner 明确批准且完成隐私审查,日志入库字段与数据分类报告,Critical,NOT_RUN
+WP022-40,Governance,Quorum PASS 被误用为跨域业务授权,本地 PDP/PEP 仍必须独立判断 Purpose、Action、Resource、Audience 和风险,授权决策链与 PEP 记录,Critical,NOT_RUN
