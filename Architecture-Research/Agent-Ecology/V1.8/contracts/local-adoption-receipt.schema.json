@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/agent-ecology/v1.8/adoption-receipt.schema.json",
+  "title": "LocalAdoptionReceipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receipt_id",
+    "proposal_id",
+    "adopting_domain",
+    "local_version",
+    "adoption_state",
+    "local_approval_ref",
+    "local_evaluation_ref",
+    "effective_at",
+    "signature"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "proposal_id": {
+      "type": "string"
+    },
+    "adopting_domain": {
+      "type": "string"
+    },
+    "local_version": {
+      "type": "string"
+    },
+    "adoption_state": {
+      "enum": [
+        "SHADOW",
+        "CANARY",
+        "ADOPTED",
+        "REJECTED",
+        "HOLD",
+        "REVOKED",
+        "ROLLED_BACK"
+      ]
+    },
+    "local_approval_ref": {
+      "type": "string"
+    },
+    "local_evaluation_ref": {
+      "type": "string"
+    },
+    "effective_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "rollback_ref": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "object",
+      "required": [
+        "key_id",
+        "algorithm",
+        "value"
+      ],
+      "properties": {
+        "key_id": {
+          "type": "string"
+        },
+        "algorithm": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
