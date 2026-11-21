@@ -1,0 +1,24 @@
+﻿id,area,test_design,acceptance_criteria,status,phase,owner
+VAL-001,成员身份与凭证生命周期,身份签发、轮换、撤销、过期,过期/撤销成员不得进入授权流程,NotRun,F0,Identity Owner
+VAL-002,目录不作为信任根,目录广告必须二次验签,污染目录不能伪造有效能力,NotRun,F1,Federation Owner
+VAL-003,能力声明版本兼容,Schema 与 Ontology 映射验证,未知关键字段返回 HOLD,NotRun,F1,Ontology Owner
+VAL-004,任务双域映射,同一 federation_task_id 对应两个本地记录,本地状态权威不被联邦投影覆盖,NotRun,F2,Runtime Owner
+VAL-005,事件幂等与顺序,重复、乱序、缺失、重放,不重复执行副作用；缺口进入对账,NotRun,F2,Runtime Owner
+VAL-006,三值策略组合,ALLOW/DENY/ABSTAIN 组合矩阵,DENY 优先；ABSTAIN/HOLD 不升级为 ALLOW,NotRun,F3,Policy Owner
+VAL-007,本地执行前校验,执行前重新检查授权、版本和撤销状态,授权失效后不能执行,NotRun,F3,PEP Owner
+VAL-008,改进提案完整性,内容摘要、签名、依赖和许可检查,提案变更后必须重新评估,NotRun,F4,Release Owner
+VAL-009,独立评估隔离,候选生成者与评估者分离,无独立证据不能进入 Canary,NotRun,F4,QA Owner
+VAL-010,本地 Shadow,接收生态本地数据与策略下影子评估,来源生态采用不改变接收生态状态,NotRun,F5,Local Owner
+VAL-011,局部回滚,单域回滚与撤销传播,一个域回滚不破坏其他域本地状态,NotRun,F5,Release Owner
+VAL-012,协调平面失陷,模拟目录/协调节点被完全控制,攻击者不能获得成员域生产执行权,NotRun,F6,Security Owner
+VAL-013,第三生态扩展,三域、不同协议实现互操作,无中央单点控制；成员可独立退出,NotRun,F6,Architecture Owner
+VAL-014,跨域数据最小化,DLP、用途和期限检查,未授权原始数据不得离域,NotRun,F6,Data Owner
+VAL-015,撤销状态失联,撤销服务超时/不可达,高风险操作 HOLD,NotRun,F6,Trust Owner
+VAL-F0-001,根治理边界,检查FCP/Agent/RSI不持有本地根策略修改权,非人类根治理主体不能修改根策略,NotRun,F0,Root Governance Owner
+VAL-F0-002,成员双边准入,模拟单方注册身份不明和Owner缺失,未完成双方尽调和签署不得ACTIVE,NotRun,F0,Identity Owner
+VAL-F0-003,不可委托权限,尝试Agent修改根身份权限上限或审计规则,请求被本地PEP拒绝并产生审计记录,NotRun,F0,Security Owner
+VAL-F0-004,任务授权链,缺少DataUseGrant/ResourceGrant/审批收据,必要授权缺失时DENY或HOLD,NotRun,F0,Policy Owner
+VAL-F0-005,成员撤销与退出,撤销成员并处理在途任务租约和数据留存,新任务停止且在途任务可对账,NotRun,F0,Federation Owner
+VAL-F0-006,密钥失陷演练,模拟域密钥泄露轮换和撤销,旧凭证失效且不影响其他域本地自治,NotRun,F0,Security Owner
+VAL-F0-007,本地紧急停止,FCP与本地Kill Switch分别失效或触发,本地执行权仍由本域控制且FCP不能越权,NotRun,F0,Security Owner
+VAL-F0-008,风险最高值规则,多域对同一任务给出不同风险等级,整体采用最高等级且争议进入HOLD,NotRun,F0,Governance Owner

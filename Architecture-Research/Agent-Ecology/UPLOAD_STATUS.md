@@ -5,7 +5,7 @@
 - 目录：`Architecture-Research/Agent-Ecology/`
 - 工作分支：`docs/agent-ecology-v1.2-v1.7-20261110`
 - 目标分支：`main`
-- PR：[#11](https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/11)（Draft / Open，未合并）
+- PR #11：已合并（dbcfb283f6f4ab54b1659668135a9359fe6d30e3）；归档合并不代表工程验收。
 - 初始归档提交：`9a2614cf6e2cf394566e2554908353f2bf8daca7`
 
 ## 已同步内容
@@ -29,7 +29,7 @@
 - 不将未上传的二进制文件标记为远端已同步。
 
 ## 测试与合并状态
-- 当前 PR 为 Draft / Open，未合并；
+- PR #11 已合并；V1.8 正在独立重基，候选 PR 尚未创建；
 - 此次未执行工程运行时、生产或双站点测试；
 - GitHub Actions workflow runs 与 commit status 当前均无记录；
 - 所有设计验证项保持待验证/NotRun，不因资料入库而标记通过。
@@ -38,10 +38,20 @@
 - V1.3–V1.7 六份主报告的 41 个图片引用已逐一核对，均指向远端存在的 SVG 文件；PNG 引用已修复。
 - V1.7 规范入口由 `V1.7/README.md` 指向；另一个历史副本保留并同步修复图片引用。
 - 本轮仅修复文档引用并增加审查记录，没有上传 Word/PDF/8K PNG/ZIP 二进制文件。
-- PR #11 仍 Draft/Open；无正式 Review 记录，无 Actions workflow runs/commit status；未合并 main。
+- PR #11 已合并；归档复核记录见 MERGE_REVIEW_20261121.md。
 
 ## 二进制资产登记（2026-11-10）
 - 详细文件名、字节数、100 MB 限制与待上传状态见 [BINARY_ASSET_STATUS_V1.2-V1.7.md](BINARY_ASSET_STATUS_V1.2-V1.7.md)。
 - V1.2–V1.7 的 Markdown/CSV/JSON/YAML/Schema/SVG 源文件已在本分支；DOCX/PDF/PNG 原件未上传。
 - V1.4 PDF、V1.5 PDF 超过 GitHub 单文件 100 MB 限制；V1.6 完整 ZIP 也超过该限制。
 - 不上传 ZIP 作为唯一交付；SVG 是当前已推送的可编辑图形源。
+
+
+## V1.8 资料同步（2026-11-21）
+- V1.8 版本目录 33 个文件已选择性复制到 integration/agent-ecology-v1.8-mainline-20261121，基线为当前 main。
+- 7 份候选 JSON Schema 已逐一完成 JSON 语法解析；Draft 2020-12 完整验证、语义验证和密码学验证仍 NOT_RUN。
+- 验证矩阵 15 项、威胁矩阵 12 项、F0 Gate 12 项全部 NotRun；无真实双生态部署、Owner 签署、密钥演练或生产授权。
+- 本地 MANIFEST_SHA256.json 记录 33 项完整资料包资产，其中 3 张 8K PNG 未进入 PR；BINARY_ASSET_STATUS 明确披露缺失。
+- Word/PDF/ZIP 原始二进制未上传；3 张 SVG 架构源图已纳入 Git。
+- 原 PR #12 曾以 V1.2—V1.7 工作分支为 base；因 PR #11 已 squash 合并，现已关闭为 Superseded。
+- 新 PR #17 以 main 为 base，包含 33 个 V1.8 版本目录文件和 3 个导航/状态文件；当前 Draft/Open，等待审阅。
