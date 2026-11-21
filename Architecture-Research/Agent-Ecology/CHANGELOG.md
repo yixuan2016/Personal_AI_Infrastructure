@@ -23,3 +23,4 @@
 - 将 V1.8 的 33 个版本目录文件从历史 stacked 分支选择性迁入以 main 为基线的新整合分支。
 - 保留 7 份候选 JSON Schema、3 张 SVG、F0 治理章程、验证/威胁矩阵和来源证据。
 - V1.8 的 3 张 8K PNG、Word/PDF/ZIP 原始二进制仍未上传；15 项验证、12 项威胁和 12 项 F0 Gate 继续 NotRun。
+- 新的 mainline PR 为 #17；旧 stacked PR #12 因重复历史文件已关闭，不丢弃 V1.8 研究内容。
