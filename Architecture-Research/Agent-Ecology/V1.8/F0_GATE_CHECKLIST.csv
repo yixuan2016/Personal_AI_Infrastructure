@@ -1,0 +1,13 @@
+﻿gate_id,验收条件,所需证据,责任角色,状态,阻断级别
+F0-G01,试点生态身份、运营主体、责任联系人明确,成员身份声明与联系人确认,RG/SEC,NotRun,Critical
+F0-G02,根/域/任务三层治理边界书面确认,双方签署治理章程,RG/DO,NotRun,Critical
+F0-G03,不可委托权限与R4禁止清单确认,双方根治理签署记录,RG/SEC,NotRun,Critical
+F0-G04,业务/数据/资源/安全Owner均指定,Owner目录和替补机制,DO/DATA/RES/SEC,NotRun,High
+F0-G05,成员加入、暂停、撤销、退出流程确认,生命周期流程与退出收据样例,RG/SEC/FOP,NotRun,High
+F0-G06,密钥签发、轮换、泄露、撤销和恢复桌面演练,演练记录、问题清单、整改项,SEC,NotRun,Critical
+F0-G07,跨域授权契约包含目的/范围/期限/撤销/审计,Schema Review与样例,SEC/DO/DATA,NotRun,Critical
+F0-G08,风险分级与审批矩阵确认,R0-R4策略和审批映射,RG/DO/HG,NotRun,Critical
+F0-G09,本地Kill Switch与FCP停止边界演练,桌面演练记录,SEC/FOP,NotRun,Critical
+F0-G10,数据用途、驻留、留存、删除和证据访问确认,Data Owner与合规审查记录,DATA/SEC,NotRun,Critical
+F0-G11,Critical/High风险有处置或正式接受记录,风险登记册与签署记录,RG/SEC,NotRun,High
+F0-G12,双生态试点范围、停止条件和回滚负责人明确,试点章程与回滚预案,DO/RES/SEC/IE,NotRun,High
