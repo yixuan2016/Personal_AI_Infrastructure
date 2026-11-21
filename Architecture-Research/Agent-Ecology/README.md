@@ -42,4 +42,5 @@ Markdown、CSV、JSON、YAML 和 SVG 源文件纳入 Git。8K PNG、Word、PDF �
 ## 2026-11-21 主线同步状态
 - V1.2—V1.7 已通过 PR #11 合入 main，合并提交：dbcfb283f6f4ab54b1659668135a9359fe6d30e3。
 - V1.8 已重新基于 main 建立独立整合分支，避免 PR #11 squash 合并后旧 stacked branch 重复显示历史文件。
+- 当前干净整合 PR 为 [#17](https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/17)；旧 stacked PR #12 已关闭，V1.8 内容由 PR #17 继续审查。
 - V1.8 仍为候选架构与契约；F0 12 项 Gate 全部 NotRun，未授予生产授权。
