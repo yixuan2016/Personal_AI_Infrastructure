@@ -1,0 +1,6 @@
+编号,资料,来源,日期,支持的架构事实,原始链接,适用边界
+S1,Survey of distributed algorithms for resource allocation over multi-agent systems,Annual Reviews in Control,2025,分布式资源分配、可行性、收敛性、网络可靠性,https://doi.org/10.1016/j.arcontrol.2024.100983,综述证据；不替代目标生态实测
+S2,Heterogeneous Graph Transformers for Simultaneous Mobile Multi-Robot Task Allocation and Scheduling under Temporal Constraints,NeurIPS 2025,2025,异构能力、任务依赖和时空约束的图建模与任务调度,https://proceedings.neurips.cc/paper_files/paper/2025/hash/82a227f51354b7ebafea51023d547d29-Abstract-Conference.html,机器人任务分配，不直接外推到开放式LLM Agent
+S3,A General Incentives-Based Framework for Fairness in Multi-agent Resource Allocation,AAMAS 2026,2026,效率与公平性之间的激励式调节,https://wyeoh.github.io/assets/pdf/aamas-KumarY26.pdf,论文采用中央仲裁设置
+S4,Stigmergy and Self-Organizing Systems in Swarm Robotics: A Systematic Review,Sensors,2026-07-03,338项研究的系统综述；自组织与研究基准局限,https://doi.org/10.3390/s26134227,文献综述，不是Agent Runtime生产验证
+S5,Design Tenets for Agent Identity Management Systems,NIST,2026-10-27,独立Agent身份、委托衰减、JIT撤权、人类触发、策略与推理分离,https://www.nist.gov/blogs/cybersecurity-insights/design-tenets-agent-identity-management-systems,设计原则/博客，不是强制标准

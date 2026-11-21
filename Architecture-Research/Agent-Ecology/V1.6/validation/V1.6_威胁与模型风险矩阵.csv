@@ -1,0 +1,12 @@
+风险,表现,控制,验证证据
+Future Leakage,回放使用未来事件,cutoff watermark、时间一致性测试,历史回放数据审计
+Compounding Error,多步状态误差持续放大,多horizon评估、稀疏状态变化、区间传播,Horizon-wise error
+Planner Exploitation,规划器利用模型缺陷,硬约束、独立规则、红队对抗,对抗测试记录
+Twin Drift,虚拟镜像偏离真实生态,同步监测、重建、STALE降级,Reconciliation error
+Causal Overclaim,模型内反事实被当作因果事实,强制登记识别假设和证据等级,Decision Brief审计
+Scenario Bias,只选择有利情景,情景库、预注册、独立评审,情景覆盖矩阵
+Model Poisoning,污染训练或校准数据,来源签名、数据血缘、隔离,数据质量审计
+Privacy Leakage,跨域敏感数据暴露,最小投影、脱敏、用途绑定,访问审计
+Automation Bias,人类过度信任模型推荐,显示区间、模型分歧和反例,审批复核记录
+Sim-to-Real Gap,仿真结果不能迁移到生产,历史回放、Shadow、有限试点,生产对照结果
+Unsafe Twin Write,Twin直接修改生产,网络/身份隔离、无生产凭证,权限穿透测试

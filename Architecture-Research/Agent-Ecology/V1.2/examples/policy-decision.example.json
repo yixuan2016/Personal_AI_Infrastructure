@@ -1,0 +1,26 @@
+{
+  "decision_id": "pdp_dec_00071",
+  "effect": "REQUIRE_APPROVAL",
+  "subject": {
+    "id": "agent:cross-domain-planner",
+    "type": "agent",
+    "domain_id": "ads"
+  },
+  "action": "artifact.read.projected",
+  "resource": {
+    "ref": "artifact://personal/profile/projection/v2",
+    "classification": "personal-private"
+  },
+  "purpose": "cross-domain-task-planning",
+  "constraints": [
+    "fields:summary,availability"
+  ],
+  "obligations": [
+    "approval-required",
+    "audit-on-read"
+  ],
+  "policy_version": "policy-3.2",
+  "evaluated_at": "2026-11-09T10:01:00Z",
+  "expires_at": "2026-11-09T10:06:00Z",
+  "reason_code": "PERSONAL_DATA_CROSS_DOMAIN"
+}

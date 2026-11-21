@@ -1,0 +1,13 @@
+﻿事件/状态,触发,聚合键,要求
+evolution.problem.detected.v1,发现可改进问题,problem_id,证据引用必需
+evolution.proposal.created.v1,候选建立,proposal_id,基线/变更/预算/回滚齐全
+evolution.candidate.generated.v1,候选工件生成,artifact_id,签名与哈希记录
+evolution.sandbox.started.v1,隔离实验开始,proposal_id,无生产凭证
+evolution.experiment.completed.v1,实验完成,experiment_id,保存种子和版本
+evolution.evaluation.completed.v1,独立评估完成,evidence_id,独立评估器签名
+evolution.governance.approved.v1,授权通过,decision_id,范围/期限/条件绑定
+evolution.shadow.started.v1,Shadow开始,shadow_id,只观察不执行
+evolution.release.canary_started.v1,Canary开始,release_id,限流和回滚路径就绪
+evolution.rollback.triggered.v1,触发回滚,release_id,保留触发证据
+evolution.rollback.completed.v1,回滚完成,rollback_id,核对状态与副作用
+evolution.recursion.stopped.v1,递归停止,run_id,记录预算/安全/停滞原因

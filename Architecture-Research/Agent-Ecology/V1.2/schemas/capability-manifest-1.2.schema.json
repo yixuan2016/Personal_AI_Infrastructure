@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-ecology.example/schemas/capability-manifest-1.2.schema.json",
+  "title": "Capability Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "capability_id",
+    "version",
+    "owner_domain",
+    "responsible_party",
+    "input_schema",
+    "output_schema",
+    "required_scopes",
+    "risk_level",
+    "side_effects",
+    "verification_status",
+    "lifecycle_status"
+  ],
+  "properties": {
+    "capability_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "owner_domain": {
+      "type": "string"
+    },
+    "responsible_party": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "input_schema": {
+      "type": "string"
+    },
+    "output_schema": {
+      "type": "string"
+    },
+    "ontology_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "data_classification": {
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted",
+        "personal-private"
+      ]
+    },
+    "allowed_purposes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_level": {
+      "enum": [
+        "L1",
+        "L2",
+        "L3",
+        "L4"
+      ]
+    },
+    "side_effects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reversibility": {
+      "enum": [
+        "reversible",
+        "compensatable",
+        "irreversible",
+        "unknown"
+      ]
+    },
+    "resource_profile": {
+      "type": "object"
+    },
+    "verification_status": {
+      "enum": [
+        "unverified",
+        "in-review",
+        "verified",
+        "degraded",
+        "rejected"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lifecycle_status": {
+      "enum": [
+        "proposed",
+        "reviewed",
+        "verified",
+        "active",
+        "degraded",
+        "revoked",
+        "retired"
+      ]
+    }
+  }
+}

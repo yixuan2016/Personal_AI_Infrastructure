@@ -1,0 +1,17 @@
+事件,触发,聚合键,投递语义,消费者要求
+ecosystem.snapshot.created.v1,一致快照生成,snapshot_id,至少一次,检查cutoff和版本
+ecosystem.snapshot.partial.v1,跨域快照不完整,snapshot_id,至少一次,禁止假定全局一致
+twin.sync.completed.v1,孪生同步完成,twin_id,至少一次,记录来源水位线
+twin.sync.degraded.v1,同步滞后或数据缺失,twin_id,高优先级,降级决策能力
+model.spec.registered.v1,模型规格登记,model_id,至少一次,校验用途和所有者
+model.evaluation.completed.v1,评估完成,evaluation_id,至少一次,关联数据集和指标
+model.shadow.started.v1,Shadow开始,model_id+version,至少一次,禁止生产写入
+model.shadow.completed.v1,Shadow结束,model_id+version,至少一次,对照真实结果
+model.drift.detected.v1,漂移检测,model_id,高优先级,触发隔离/复核
+scenario.created.v1,情景创建,scenario_id,至少一次,固定基线与干预
+simulation.run.started.v1,仿真开始,run_id,至少一次,隔离资源与数据
+simulation.run.completed.v1,仿真完成,run_id,至少一次,保存随机种子和版本
+counterfactual.result.generated.v1,反事实结果生成,result_id,至少一次,标记假设和不确定性
+decision.brief.created.v1,决策简报生成,brief_id,至少一次,证据引用和审批条件
+model.release.approved.v1,模型发布获批,release_id,至少一次,核验签名与范围
+model.release.rolled_back.v1,模型回滚,release_id,高优先级,停止使用并保留证据

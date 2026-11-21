@@ -1,0 +1,127 @@
+[
+  {
+    "path": "V1.4_Environment_Runtime运行时架构设计.md",
+    "bytes": 44358,
+    "sha256": "dd67384f75e15b3338fe7fe4975cbacc174cd411a1867c0eb4ec5742d49e2996"
+  },
+  {
+    "path": "assets/00_V1.4_Environment_Runtime_全景图_8k.png",
+    "bytes": 17755475,
+    "sha256": "3e98bc793f1ab0811741bca89bdf3fe5f63b8dbf6279b315d1cb74314b65df2f"
+  },
+  {
+    "path": "assets/00_V1.4_Environment_Runtime_全景图_8k.svg",
+    "bytes": 1501,
+    "sha256": "c400f9d8b064950cd0d713d0335450af217c33efa0b132c82f6b02f4cc0b2720"
+  },
+  {
+    "path": "assets/26_runtime_layers_8k.png",
+    "bytes": 989361,
+    "sha256": "53685f10d7cc68ae23f5cf68ecd806b4448de65846863528ce0e276ff62e2c05"
+  },
+  {
+    "path": "assets/26_runtime_layers_8k.svg",
+    "bytes": 4549,
+    "sha256": "bf1d15c4741b07b5ada5c75a3ff3e142234b88453ee3d4f109636371203acf55"
+  },
+  {
+    "path": "assets/27_data_authority_8k.png",
+    "bytes": 1055924,
+    "sha256": "6f8b6b6203b4daece661f8d1fa31c6ae798254ca64973cc618afb255d0ade8c7"
+  },
+  {
+    "path": "assets/27_data_authority_8k.svg",
+    "bytes": 4917,
+    "sha256": "5d7c85e980509c58db51cba7ad81c5fde6b62855b7370276cddf7567b2437a06"
+  },
+  {
+    "path": "assets/28_task_state_machine_8k.png",
+    "bytes": 967157,
+    "sha256": "428a1201124599f5f524cd8656ccaeb539bdd89dcdcee75f899881ea175f37f8"
+  },
+  {
+    "path": "assets/28_task_state_machine_8k.svg",
+    "bytes": 7513,
+    "sha256": "31095d287edd437ad22e3f28f39cc986f36108b1e64c3fb56f83e3c1082cf960"
+  },
+  {
+    "path": "assets/29_discovery_claim_8k.png",
+    "bytes": 1039916,
+    "sha256": "0c52cf800ded8f1d991929ea9d6cb08a1286937c1054a99f16cf5debf9d4a462"
+  },
+  {
+    "path": "assets/29_discovery_claim_8k.svg",
+    "bytes": 5308,
+    "sha256": "b17e9537a31f6b0f3f29e2ff9353853e95f39d9eaefa2b5a27a98c3c4889ed22"
+  },
+  {
+    "path": "assets/30_pheromone_engine_8k.png",
+    "bytes": 981397,
+    "sha256": "aae7a90dd147ba7ecfde5a883e473cb51d73f1b265e0c31d8769ffd749ea1052"
+  },
+  {
+    "path": "assets/30_pheromone_engine_8k.svg",
+    "bytes": 5990,
+    "sha256": "0cd4fda838830793f18d4cbb2e45afb967cdc88b2fe304da14f718b34f4c7f5a"
+  },
+  {
+    "path": "assets/31_federated_governance_8k.png",
+    "bytes": 1052225,
+    "sha256": "ec16108e49e6654ec2eaec1d0e6e69c4a1351c154fc8f554640b0afe2ff0c915"
+  },
+  {
+    "path": "assets/31_federated_governance_8k.svg",
+    "bytes": 4984,
+    "sha256": "2f94f82bf6d0ea975878c28fc01ce43876b9185eded674d3c60b49339ea8f300"
+  },
+  {
+    "path": "assets/32_failure_recovery_8k.png",
+    "bytes": 1085057,
+    "sha256": "38a2fd8eb2fde8862ab066c9295651221510d70570de0bec6f6dd619004b73f6"
+  },
+  {
+    "path": "assets/32_failure_recovery_8k.svg",
+    "bytes": 5327,
+    "sha256": "b8deb7a26d2483adb82d22d409b72577f27513f7811fe3d70b3a6978319cc328"
+  },
+  {
+    "path": "assets/V1.4_Environment_Runtime_全景主视觉.png",
+    "bytes": 18492259,
+    "sha256": "5faa9b29ad65d8a26a62629713589f9ed68c3f8b3fc60a15282414d6fe0cafb8"
+  },
+  {
+    "path": "contracts/V1.4_API契约目录.csv",
+    "bytes": 1595,
+    "sha256": "242d4f9c5fc218956603d588e09caac02eb76c69b90196d7355ad715fa5d4272"
+  },
+  {
+    "path": "contracts/V1.4_事件目录与交付语义.csv",
+    "bytes": 1330,
+    "sha256": "b55a0c4f6e0f70903821d3e932d373429c5a1f6450de336cd0b19b76389e8d92"
+  },
+  {
+    "path": "contracts/V1.4_数据对象与状态机.csv",
+    "bytes": 1698,
+    "sha256": "f334e28f3eeecdd3aab1d78600b3e40b12029f682a343856925b55799c91d2fb"
+  },
+  {
+    "path": "reference_architecture/V1.4_部署拓扑与责任边界.md",
+    "bytes": 1743,
+    "sha256": "072815b1e0e37e67d8d7f114b9c3eb5f50acfc92c1c6ab9a2d19fce908bd0a17"
+  },
+  {
+    "path": "validation/V1.4_威胁模型与控制矩阵.csv",
+    "bytes": 1503,
+    "sha256": "ef2b7a524e1fe59bf9587d6f955d90890918ab13fa19c8a1eba7e7c833900783"
+  },
+  {
+    "path": "validation/V1.4_故障模式与恢复矩阵.csv",
+    "bytes": 1526,
+    "sha256": "c8fd7939136d8036abc4973a3da63f974a63e55dbdef7cae7d53e0e8cacafd4c"
+  },
+  {
+    "path": "validation/V1.4_运行时验收清单.csv",
+    "bytes": 1172,
+    "sha256": "de64aa681f410034b9b0bce9ace38ec66d42eadc3b21e1d2e5ec7df84592b398"
+  }
+]

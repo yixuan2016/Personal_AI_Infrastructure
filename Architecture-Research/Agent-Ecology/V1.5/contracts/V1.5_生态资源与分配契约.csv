@@ -1,0 +1,7 @@
+对象,字段,说明,权威来源,关键约束
+ResourcePool,"pool_id,domain_id,resource_type,capacity,quota,epoch",资源池与配额,ADS/领域 Resource Registry,配额版本单调；不能由Agent自行扩容
+TaskContract,"task_id,goal,acceptance,capabilities,risk,budget,data_scope,dependencies",任务市场契约,Environment Task Registry,未完整的契约不得开放分配
+Proposal,"proposal_id,task_id,agent,capability_evidence,quality_estimate,eta,resource_vector,required_scope,valid_until",Agent参与意向,Proposal Registry,预测值不等于事实；签名和幂等键必需
+AllocationPlan,"allocation_id,task_id,selected_agents,roles,budget_reservation,policy_ref,algorithm_version",候选分配计划,Domain Allocator/ADS,硬约束先于评分；需授权与预算
+Coalition,"coalition_id,task_id,members,role_contracts,dependency_graph,status",多Agent协作联盟,Environment State,角色、责任和交接边界明确
+Settlement,"settlement_id,allocation_id,reserved,actual,refund,overrun,measurement_ref",资源预留和实际结算,Resource Ledger,只做内部资源核算，不发行可兑换货币

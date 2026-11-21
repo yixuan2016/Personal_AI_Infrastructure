@@ -1,0 +1,142 @@
+[
+  {
+    "path": "Agent_Ecology_V1.5_群体智能经济与生态自治架构.docx",
+    "bytes": 23887719,
+    "sha256": "c7934c5c403c9996246dad16b5e0804739b1cb71f459acbd61873bb44045c22b"
+  },
+  {
+    "path": "Agent_Ecology_V1.5_群体智能经济与生态自治架构.pdf",
+    "bytes": 63046671,
+    "sha256": "a3a6fecc9e1f6683c401502722ba29a5e9bb7b9447f47f886b5fda7401c4cbc9"
+  },
+  {
+    "path": "README_资料包说明.md",
+    "bytes": 451,
+    "sha256": "a57b185c9f8ce6670c8c68ce5b306e5ab1882b297a8dc8fb994d603db388fa49"
+  },
+  {
+    "path": "V1.5_群体智能经济与生态自治架构.md",
+    "bytes": 38979,
+    "sha256": "00d44ea8375005004037a5e523dbd6be0311ebb322ddcd97fb59a271d1db532b"
+  },
+  {
+    "path": "assets/00_V1.5_生态自治全景图_8k.png",
+    "bytes": 17126605,
+    "sha256": "fdb31cfc79ee44e813bd3be3197b368fff251afedbaaeea47460f05a774fcd31"
+  },
+  {
+    "path": "assets/26_V1.5_三个生态闭环_8k.png",
+    "bytes": 974878,
+    "sha256": "e6d0d20d63c53da76c06e4ea2474a90ee208f27163def0199b271b60e4df5eb2"
+  },
+  {
+    "path": "assets/26_V1.5_三个生态闭环_8k.svg",
+    "bytes": 4534,
+    "sha256": "9c6ed70563c8a462cfb1090565393f67f456408af50fc63b234734b8fbc26eb9"
+  },
+  {
+    "path": "assets/27_V1.5_资源分配市场_8k.png",
+    "bytes": 1098242,
+    "sha256": "61a4286db58e9987a5891d930592b50ee2ce28127da1f471281163080d8808c1"
+  },
+  {
+    "path": "assets/27_V1.5_资源分配市场_8k.svg",
+    "bytes": 5991,
+    "sha256": "4bbf06367f60073ce00f851d8951ac72bd3ef747e536bc73aadc830eac1a2d04"
+  },
+  {
+    "path": "assets/28_V1.5_能力信誉证据链_8k.png",
+    "bytes": 996766,
+    "sha256": "a24ef1cf37b32600cbd18317335ddc02c46b9f9acbc6074b880f1a5a4ce34720"
+  },
+  {
+    "path": "assets/28_V1.5_能力信誉证据链_8k.svg",
+    "bytes": 5309,
+    "sha256": "f0644051dc7748c35bf22fcb3c89d7873ea4dd968cbd2d006084c2a906d4abfb"
+  },
+  {
+    "path": "assets/29_V1.5_动态自治授权_8k.png",
+    "bytes": 1023955,
+    "sha256": "1fe8c0cebe6122a42b14f8f0dde19f688e44566022c3e54dd51db5482b2b9727"
+  },
+  {
+    "path": "assets/29_V1.5_动态自治授权_8k.svg",
+    "bytes": 5292,
+    "sha256": "8fb7452dd7e1f33469176e4bc6e106839698445902ef1174ec09d78a9061dba5"
+  },
+  {
+    "path": "assets/30_V1.5_群体知识进化_8k.png",
+    "bytes": 980447,
+    "sha256": "bb3c198c5fd72b4724b4684a11638ca23ce0641e65d972fb8b4a136be1cb1b83"
+  },
+  {
+    "path": "assets/30_V1.5_群体知识进化_8k.svg",
+    "bytes": 4768,
+    "sha256": "a539f6f00cdb860b26396771af9cc73688e1c094343888f0357f8d4b5870f322"
+  },
+  {
+    "path": "assets/31_V1.5_生态自组织自修复_8k.png",
+    "bytes": 1352972,
+    "sha256": "cd4e3aaa26ecca9406ae7413479abaed76c49d6c10bf1bc9ee9a639b9d7f9eaf"
+  },
+  {
+    "path": "assets/31_V1.5_生态自组织自修复_8k.svg",
+    "bytes": 5877,
+    "sha256": "3544b51b89abf31106bda843049efcb3278c84d8487aa864f35e150c392f22ec"
+  },
+  {
+    "path": "assets/32_V1.5_ADS跨域协作示例_8k.png",
+    "bytes": 1981164,
+    "sha256": "c0ce4bfbb88d07427a0385e1c441515094a2e0a553b64242f3ce7d5c0503aa69"
+  },
+  {
+    "path": "assets/32_V1.5_ADS跨域协作示例_8k.svg",
+    "bytes": 5313,
+    "sha256": "8b1f88cc255372c6aa99d8c2e68ad813645f1ca76ee9c3ad6b4642a65a12096d"
+  },
+  {
+    "path": "contracts/V1.5_事件目录.csv",
+    "bytes": 1506,
+    "sha256": "2bf274052b3491cf7f685ed126ed74e620dc3a1771fe555949d7eaa329fd62de"
+  },
+  {
+    "path": "contracts/V1.5_动态自治与委托契约.csv",
+    "bytes": 743,
+    "sha256": "26e060daa5c460811fa5d81672639e2f6fa3e53411790fb94645b58fddf2811d"
+  },
+  {
+    "path": "contracts/V1.5_生态资源与分配契约.csv",
+    "bytes": 1132,
+    "sha256": "d9a6269b5e974167628e8c6d92765fc5acf8bcd3f93025e0fd0d1f03ff3d15c1"
+  },
+  {
+    "path": "contracts/V1.5_知识进化与自修复契约.csv",
+    "bytes": 719,
+    "sha256": "2e0602e0a159c648d5137ad6f8160fbd193db39d029d4b6d040b7c8f21525dac"
+  },
+  {
+    "path": "contracts/V1.5_能力信誉与证据契约.csv",
+    "bytes": 885,
+    "sha256": "d3bcf34eb6dccda06169d441355dd3b08ae63a67b2f2f69bccfdb993d788cec1"
+  },
+  {
+    "path": "reference_architecture/V1.5_生态市场与联邦治理参考部署.md",
+    "bytes": 1610,
+    "sha256": "d698799e44dd1cc78d20aadb17bf12471bc98aa381eb7280a8fb8076ce4b0a8b"
+  },
+  {
+    "path": "research/V1.5_一手研究与官方设计资料.csv",
+    "bytes": 1519,
+    "sha256": "42982f450e792ba331546b20509ac48d29852b6abc344df034657dab07fce4ee"
+  },
+  {
+    "path": "validation/V1.5_威胁与反操纵矩阵.csv",
+    "bytes": 1085,
+    "sha256": "9fad4944f0cf649989954a67f5f33b007b90012bc6b3bef63527e67b64f06d0d"
+  },
+  {
+    "path": "validation/V1.5_试点验收矩阵.csv",
+    "bytes": 1296,
+    "sha256": "ef4dab7bb59f51d15819c84e4f71b86a164ccde31734b5a26efcd00849c1655d"
+  }
+]

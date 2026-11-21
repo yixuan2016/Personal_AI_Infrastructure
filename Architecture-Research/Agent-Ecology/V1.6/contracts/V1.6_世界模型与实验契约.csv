@@ -1,0 +1,9 @@
+对象,字段,说明,权威来源,约束
+ModelSpec,"model_id,version,purpose,scope,assumptions,limitations,owner",模型规格,Model Registry,必须明确用途和适用边界
+ModelArtifact,"artifact_id,model_id,version,hash,signature,training_data_ref",模型工件,Model Registry,签名、哈希、数据血缘必需
+Scenario,"scenario_id,baseline_snapshot,horizon,seed_policy,interventions,assumptions",情景定义,Scenario Registry,基线与干预必须可复现
+Intervention,"intervention_id,target,operator,value,scope,assumptions",干预定义,Scenario Registry,区分模型内反事实与真实因果
+SimulationRun,"run_id,scenario_id,model_versions,status,seed_refs,started_at,completed_at",仿真运行,Simulation Engine,不可接触生产写入凭证
+PredictedTrajectory,"trajectory_id,run_id,time_steps,state_type,distribution_ref",预测轨迹,Simulation Store,显式区分预测/仿真状态
+CounterfactualResult,"result_id,baseline_ref,treatment_ref,effect_estimate,uncertainty,assumptions",反事实结果,Causal Engine,必须记录识别假设与局限
+ModelEvaluation,"evaluation_id,model_version,dataset_ref,metrics,limitations,reviewer",模型评估,Evaluation Registry,必须包含留出数据与基线

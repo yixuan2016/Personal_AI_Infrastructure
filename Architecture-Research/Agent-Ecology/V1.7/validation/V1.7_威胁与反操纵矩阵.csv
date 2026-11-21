@@ -1,0 +1,11 @@
+﻿威胁,表现,控制,证据
+Evaluator Hacking,生成器操纵评估器,独立身份/隐藏集/元评估,评估器权限审计
+Reward Hacking,代理指标取代真实目标,多目标硬约束/领域验收,反例与真实任务
+Self-confirming Loop,生成器与评估器互相证明,独立角色/外部证据,交叉评估记录
+Diversity Collapse,候选和策略趋同,多样性约束/保留Pareto候选,候选多样性指标
+Catastrophic Forgetting,新版本破坏旧能力,长期回归/回滚,遗忘测试
+Permission Escalation,自我改进扩大权限,根策略不可变/PEP,权限穿透测试
+Recursive Cost Explosion,预算失控,预算上限/停止条件,成本账本
+Knowledge Poisoning,错误经验被放大,来源证明/证据等级,数据血缘审计
+Cross-domain Leakage,私有数据随模式传播,最小投影/Owner授权,数据出域审计
+Rollback Failure,无法恢复或重复副作用,回滚演练/补偿计划,回滚演练记录

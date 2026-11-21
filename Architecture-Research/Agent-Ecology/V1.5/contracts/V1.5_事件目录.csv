@@ -1,0 +1,16 @@
+事件,触发,聚合键,投递语义,消费者要求
+proposal.submitted.v1,Agent提交参与意向,task_id,至少一次,签名、版本、幂等处理
+allocation.plan.created.v1,生成候选分配计划,allocation_id,至少一次,验证预算、授权、算法版本
+allocation.committed.v1,分配计划原子提交,task_id,至少一次,回源检查权威状态
+coalition.formed.v1,联盟形成,coalition_id,至少一次,核验成员角色和Mandate
+capability.evidence.recorded.v1,能力证据登记,evidence_id,至少一次,来源和验证者独立性检查
+reputation.profile.updated.v1,信誉画像更新,principal+capability,至少一次,保留证据链和置信度
+autonomy.mode.changed.v1,自治监督模式变化,principal+task,至少一次,本地PEP重新评估
+mandate.issued.v1,任务委托签发,mandate_id,至少一次,签名和期限校验
+mandate.attenuated.v1,子委托收窄,mandate_id,至少一次,子权限不得超父权限
+mandate.revoked.v1,委托撤销,mandate_id,高优先级,PEP确认撤权生效
+knowledge.candidate.created.v1,知识候选形成,candidate_id,至少一次,进入审核而非直接发布
+knowledge.release.approved.v1,知识发布获批,release_id,至少一次,灰度、版本、回滚引用
+knowledge.release.rolled_back.v1,知识回滚,release_id,高优先级,停止扩散并保留审计
+repair.triggered.v1,触发自修复,repair_id,至少一次,先隔离再恢复
+repair.completed.v1,修复完成,repair_id,至少一次,独立验证后关闭

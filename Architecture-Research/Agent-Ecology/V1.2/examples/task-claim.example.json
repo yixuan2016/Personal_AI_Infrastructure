@@ -1,0 +1,11 @@
+{
+  "task_id": "task_arch_2026_041",
+  "command": "claim",
+  "expected_version": 3,
+  "actor_id": "architecture-agent",
+  "purpose": "architecture-research",
+  "idempotency_key": "architecture-agent:task_arch_2026_041:claim:v1",
+  "lease_id": "lease_01JEXAMPLE",
+  "fencing_token": 7,
+  "lease_ttl_seconds": 300
+}

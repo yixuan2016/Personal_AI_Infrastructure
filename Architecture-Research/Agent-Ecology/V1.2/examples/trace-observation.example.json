@@ -1,0 +1,32 @@
+{
+  "specversion": "1.0",
+  "id": "trc_obs_20261109_0001",
+  "source": "agent://research/runtime-local-01",
+  "type": "observation.research-source-discovered",
+  "subject": "topic://distributed-storage/replication",
+  "time": "2026-11-09T10:00:00Z",
+  "datacontenttype": "application/json",
+  "dataschema": "schema://agent-ecology/observation/1.2",
+  "trace": {
+    "trace_type": "Observation",
+    "schema_version": "1.2",
+    "actor_id": "research-agent",
+    "domain_id": "architecture-research",
+    "ontology_ref": "ontology://agent-ecology/core",
+    "ontology_version": "1.2",
+    "correlation_id": "task_arch_2026_041",
+    "classification": "internal",
+    "visibility": "domain",
+    "purpose": "architecture-research",
+    "evidence_refs": [
+      "source://paper/doi-placeholder"
+    ],
+    "verification_status": "pending"
+  },
+  "data": {
+    "claim": "发现一项与跨站点复制相关的研究材料",
+    "source_url": "https://example.invalid/paper",
+    "published_at": "2026-11-09",
+    "claim_status": "unverified"
+  }
+}

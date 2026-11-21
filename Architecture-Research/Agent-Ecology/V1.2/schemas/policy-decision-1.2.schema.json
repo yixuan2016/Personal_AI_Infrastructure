@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-ecology.example/schemas/policy-decision-1.2.schema.json",
+  "title": "Policy Decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id",
+    "effect",
+    "subject",
+    "action",
+    "resource",
+    "purpose",
+    "policy_version",
+    "evaluated_at",
+    "expires_at"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "effect": {
+      "enum": [
+        "ALLOW",
+        "DENY",
+        "STEP_UP",
+        "REQUIRE_APPROVAL",
+        "REDACT",
+        "DEFER"
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "human",
+            "agent",
+            "service",
+            "device"
+          ]
+        },
+        "domain_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "action": {
+      "type": "string"
+    },
+    "resource": {
+      "type": "object",
+      "required": [
+        "ref",
+        "classification"
+      ],
+      "properties": {
+        "ref": {
+          "type": "string"
+        },
+        "classification": {
+          "enum": [
+            "public",
+            "internal",
+            "confidential",
+            "restricted",
+            "personal-private"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "obligations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policy_version": {
+      "type": "string"
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reason_code": {
+      "type": "string"
+    },
+    "approval_ref": {
+      "type": "string"
+    }
+  }
+}

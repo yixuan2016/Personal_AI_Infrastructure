@@ -1,0 +1,482 @@
+[
+  {
+    "path": "CHANGELOG.md",
+    "bytes": 403,
+    "sha256": "2dabdb49c866604657265ea4340579f5339f977e5af437291da727e99a56b2c3"
+  },
+  {
+    "path": "README.md",
+    "bytes": 971,
+    "sha256": "5b6de14dc5e38ff29ac05a36976bbd3f9552b52a7c74436f14603bc0197ceeb5"
+  },
+  {
+    "path": "V1.2/conformance/conformance-test-vectors-v1.2.json",
+    "bytes": 3165,
+    "sha256": "e8b9909baae706b0883af460e959692e9f84652f5941b4fd604cf9294c4a7a75"
+  },
+  {
+    "path": "V1.2/examples/policy-decision.example.json",
+    "bytes": 662,
+    "sha256": "393f721f3a5f0d1db927234dd5ce6cba069cec46a03eab6e66efc1563d109e13"
+  },
+  {
+    "path": "V1.2/examples/task-claim.example.json",
+    "bytes": 313,
+    "sha256": "213c46d7923f1c18ccc3dc21194bd09ee04c1f31df1af0f15746c47f074931dc"
+  },
+  {
+    "path": "V1.2/examples/trace-observation.example.json",
+    "bytes": 1044,
+    "sha256": "a38aab56309a4d8314ee9be1aab6e8409c5cea787e238e27bb06dba149931ff0"
+  },
+  {
+    "path": "V1.2/ontology/agent-ecology-core-ontology-v1.2.csv",
+    "bytes": 2760,
+    "sha256": "fefca13acad5008c59c04fa89c08a3d75b124e2fe78e32a9d3d2d5c7ea3478e2"
+  },
+  {
+    "path": "V1.2/openapi/agent-ecology-environment-api-v1.2-draft.yaml",
+    "bytes": 3596,
+    "sha256": "826a487832555b98138d419b15c717a88df072ba491ddf256773b81566d50556"
+  },
+  {
+    "path": "V1.2/schemas/artifact-manifest-1.2.schema.json",
+    "bytes": 1471,
+    "sha256": "9b6b9b13935eb558331f238293d156cd3e9bff6e935ed44d29c3c1bc7a466575"
+  },
+  {
+    "path": "V1.2/schemas/capability-manifest-1.2.schema.json",
+    "bytes": 2294,
+    "sha256": "1420c7ad5884bb7b690a43a7502c1005830f229c657919af7fa5e3f70b92e1bd"
+  },
+  {
+    "path": "V1.2/schemas/decision-record-1.2.schema.json",
+    "bytes": 1467,
+    "sha256": "6803b5e545f97f7911adca559b5874001f0b91c9a143877aa80b7e68fb4a8a56"
+  },
+  {
+    "path": "V1.2/schemas/policy-decision-1.2.schema.json",
+    "bytes": 2120,
+    "sha256": "7991a246673776eacacb573145a2833c9e5bfca60baa550061c4dba4c39c62ae"
+  },
+  {
+    "path": "V1.2/schemas/task-command-1.2.schema.json",
+    "bytes": 1581,
+    "sha256": "c32d9db49b9c14fd01ebd7860c68e0048b290102aaeb7b4bbbd5bc94e098dced"
+  },
+  {
+    "path": "V1.2/schemas/trace-envelope-1.2.schema.json",
+    "bytes": 4501,
+    "sha256": "68e325c6b7196f861b4ef1afa268748dc94e1f142e133856c2c1c4e1533c69bf"
+  },
+  {
+    "path": "V1.3/V1.2_协议契约与协作机制冻结设计.md",
+    "bytes": 24784,
+    "sha256": "91a4d4c5d81486178b3d7f3e0abaad9441a459556d6367d50cc51ea0b8c8256a"
+  },
+  {
+    "path": "V1.3/V1.3_最小参考架构与责任边界.md",
+    "bytes": 1888,
+    "sha256": "568d7bd25151b81efaeb7005f398dc7015ef782daf58ccfedb72f1a02c1154cb"
+  },
+  {
+    "path": "V1.3/V1.3_群体智能、自组织协作与ADS生态融合研究.md",
+    "bytes": 33180,
+    "sha256": "07370c42c491364e553fec019bae57ce272806ca205e09502873978a49702f70"
+  },
+  {
+    "path": "V1.3/assets/00_agent_ecology_v1_3_panorama_8k.svg",
+    "bytes": 6435,
+    "sha256": "e65199325173f5560f1c54c55748b12ef3df98f8edb5fc19805398b78766a00a"
+  },
+  {
+    "path": "V1.3/assets/18_coordination_paradigms_8k.svg",
+    "bytes": 4324,
+    "sha256": "0f3f7dce1c3dcbc9399c501c2a81dd09ccc636ffcee635bae3e19758b0fa18fb"
+  },
+  {
+    "path": "V1.3/assets/19_environment_five_planes_8k.svg",
+    "bytes": 4069,
+    "sha256": "dcbb8231f6b6fb4c6ed4c72226a849c4aea713e127936f26221c7ffda76d9e20"
+  },
+  {
+    "path": "V1.3/assets/20_stigmergy_feedback_8k.svg",
+    "bytes": 5320,
+    "sha256": "029dce34b96b316176265a6c260f9f4fb044e2cd65378049dc4c826de5c7c8eb"
+  },
+  {
+    "path": "V1.3/assets/21_task_lifecycle_8k.svg",
+    "bytes": 6349,
+    "sha256": "5de04f3e4319bd812985235752a89c32a29cbbf0146734cab640f2ac3fae2975"
+  },
+  {
+    "path": "V1.3/assets/22_protocol_stack_8k.svg",
+    "bytes": 4532,
+    "sha256": "72373138997ef68121bd8b938751bd7ad21ef454ebe8c392ffb83bba6badf63f"
+  },
+  {
+    "path": "V1.3/assets/23_ads_dual_loop_8k.svg",
+    "bytes": 4699,
+    "sha256": "311542bb85be0cd4ffcce825b6e640955bdaf461a68d101f390792849948b62f"
+  },
+  {
+    "path": "V1.3/assets/24_experiment_matrix_8k.svg",
+    "bytes": 5431,
+    "sha256": "6628703f22ff90faafb8694c28fa535ab601981b0636d0681f059135796ccac6"
+  },
+  {
+    "path": "V1.4/V1.4_Environment_Runtime运行时架构设计.md",
+    "bytes": 44358,
+    "sha256": "dd67384f75e15b3338fe7fe4975cbacc174cd411a1867c0eb4ec5742d49e2996"
+  },
+  {
+    "path": "V1.4/V1.4_初始文件清单与SHA256.json",
+    "bytes": 4135,
+    "sha256": "df0c723e4c0e15249eb24fc3873899bfa5ec0b4c86c65329fe66824e3a52b166"
+  },
+  {
+    "path": "V1.4/assets/00_V1.4_Environment_Runtime_全景图_8k.svg",
+    "bytes": 1501,
+    "sha256": "c400f9d8b064950cd0d713d0335450af217c33efa0b132c82f6b02f4cc0b2720"
+  },
+  {
+    "path": "V1.4/assets/26_runtime_layers_8k.svg",
+    "bytes": 4549,
+    "sha256": "bf1d15c4741b07b5ada5c75a3ff3e142234b88453ee3d4f109636371203acf55"
+  },
+  {
+    "path": "V1.4/assets/27_data_authority_8k.svg",
+    "bytes": 4917,
+    "sha256": "5d7c85e980509c58db51cba7ad81c5fde6b62855b7370276cddf7567b2437a06"
+  },
+  {
+    "path": "V1.4/assets/28_task_state_machine_8k.svg",
+    "bytes": 7513,
+    "sha256": "31095d287edd437ad22e3f28f39cc986f36108b1e64c3fb56f83e3c1082cf960"
+  },
+  {
+    "path": "V1.4/assets/29_discovery_claim_8k.svg",
+    "bytes": 5308,
+    "sha256": "b17e9537a31f6b0f3f29e2ff9353853e95f39d9eaefa2b5a27a98c3c4889ed22"
+  },
+  {
+    "path": "V1.4/assets/30_pheromone_engine_8k.svg",
+    "bytes": 5990,
+    "sha256": "0cd4fda838830793f18d4cbb2e45afb967cdc88b2fe304da14f718b34f4c7f5a"
+  },
+  {
+    "path": "V1.4/assets/31_federated_governance_8k.svg",
+    "bytes": 4984,
+    "sha256": "2f94f82bf6d0ea975878c28fc01ce43876b9185eded674d3c60b49339ea8f300"
+  },
+  {
+    "path": "V1.4/assets/32_failure_recovery_8k.svg",
+    "bytes": 5327,
+    "sha256": "b8deb7a26d2483adb82d22d409b72577f27513f7811fe3d70b3a6978319cc328"
+  },
+  {
+    "path": "V1.4/contracts/V1.4_API契约目录.csv",
+    "bytes": 1592,
+    "sha256": "c713db4272f667b97e7b8b489c51983d702baf85a810d9a252dba4fa49d5e32e"
+  },
+  {
+    "path": "V1.4/contracts/V1.4_事件目录与交付语义.csv",
+    "bytes": 1327,
+    "sha256": "900d754a637547db1979029a9cf44777f9b8cf5be7ea4e3991c4923600c480ab"
+  },
+  {
+    "path": "V1.4/contracts/V1.4_数据对象与状态机.csv",
+    "bytes": 1695,
+    "sha256": "e877dd4c5f637c3f213017f6293ffc7a34c76a0e454f1d9f7b2271c903ed3395"
+  },
+  {
+    "path": "V1.4/reference_architecture/V1.4_部署拓扑与责任边界.md",
+    "bytes": 1743,
+    "sha256": "072815b1e0e37e67d8d7f114b9c3eb5f50acfc92c1c6ab9a2d19fce908bd0a17"
+  },
+  {
+    "path": "V1.4/validation/V1.4_威胁模型与控制矩阵.csv",
+    "bytes": 1500,
+    "sha256": "3809216ba166b12b3e4d1afa9f3a789fbe1c40d9f4afe65c4e4b7cfb6f2c557e"
+  },
+  {
+    "path": "V1.4/validation/V1.4_故障模式与恢复矩阵.csv",
+    "bytes": 1523,
+    "sha256": "ffcdb1e6315256dfa6de0e0f09f49463d84eb961cba8ad12695e287d4cd73c2f"
+  },
+  {
+    "path": "V1.4/validation/V1.4_运行时验收清单.csv",
+    "bytes": 1169,
+    "sha256": "c72714949a13d5a354a1337117238a96add14929f77240d254db9731af48a175"
+  },
+  {
+    "path": "V1.5/MANIFEST_SHA256.json",
+    "bytes": 4774,
+    "sha256": "bb20fa6319fdc330fe762bfe2735d3affb172d3672c177c8fc4461a5c20341ba"
+  },
+  {
+    "path": "V1.5/README_资料包说明.md",
+    "bytes": 451,
+    "sha256": "a57b185c9f8ce6670c8c68ce5b306e5ab1882b297a8dc8fb994d603db388fa49"
+  },
+  {
+    "path": "V1.5/V1.5_群体智能经济与生态自治架构.md",
+    "bytes": 38979,
+    "sha256": "00d44ea8375005004037a5e523dbd6be0311ebb322ddcd97fb59a271d1db532b"
+  },
+  {
+    "path": "V1.5/assets/26_V1.5_三个生态闭环_8k.svg",
+    "bytes": 4534,
+    "sha256": "9c6ed70563c8a462cfb1090565393f67f456408af50fc63b234734b8fbc26eb9"
+  },
+  {
+    "path": "V1.5/assets/27_V1.5_资源分配市场_8k.svg",
+    "bytes": 5991,
+    "sha256": "4bbf06367f60073ce00f851d8951ac72bd3ef747e536bc73aadc830eac1a2d04"
+  },
+  {
+    "path": "V1.5/assets/28_V1.5_能力信誉证据链_8k.svg",
+    "bytes": 5309,
+    "sha256": "f0644051dc7748c35bf22fcb3c89d7873ea4dd968cbd2d006084c2a906d4abfb"
+  },
+  {
+    "path": "V1.5/assets/29_V1.5_动态自治授权_8k.svg",
+    "bytes": 5292,
+    "sha256": "8fb7452dd7e1f33469176e4bc6e106839698445902ef1174ec09d78a9061dba5"
+  },
+  {
+    "path": "V1.5/assets/30_V1.5_群体知识进化_8k.svg",
+    "bytes": 4768,
+    "sha256": "a539f6f00cdb860b26396771af9cc73688e1c094343888f0357f8d4b5870f322"
+  },
+  {
+    "path": "V1.5/assets/31_V1.5_生态自组织自修复_8k.svg",
+    "bytes": 5877,
+    "sha256": "3544b51b89abf31106bda843049efcb3278c84d8487aa864f35e150c392f22ec"
+  },
+  {
+    "path": "V1.5/assets/32_V1.5_ADS跨域协作示例_8k.svg",
+    "bytes": 5313,
+    "sha256": "8b1f88cc255372c6aa99d8c2e68ad813645f1ca76ee9c3ad6b4642a65a12096d"
+  },
+  {
+    "path": "V1.5/contracts/V1.5_事件目录.csv",
+    "bytes": 1503,
+    "sha256": "128411ea53f2af6f81ef596d27ca6a8ab397238b53df72eebec4779cacb31471"
+  },
+  {
+    "path": "V1.5/contracts/V1.5_动态自治与委托契约.csv",
+    "bytes": 740,
+    "sha256": "641e2b4d56e247e1e08bb68e6270639a84e71faa1aa81f7166912cfbb15ccff1"
+  },
+  {
+    "path": "V1.5/contracts/V1.5_生态资源与分配契约.csv",
+    "bytes": 1129,
+    "sha256": "a28069329e83dac842f1f26115e6ee1170599be81a9c2b87804ba8c1c41b7cb5"
+  },
+  {
+    "path": "V1.5/contracts/V1.5_知识进化与自修复契约.csv",
+    "bytes": 716,
+    "sha256": "889f078f8e9f9b18e39ab71bd6fdad75356e31f1162a1c94869d6666c677f305"
+  },
+  {
+    "path": "V1.5/contracts/V1.5_能力信誉与证据契约.csv",
+    "bytes": 882,
+    "sha256": "098580eca32bea20524bf435c79025eb8b7a13374f41c8fe145cb3e964bddc2b"
+  },
+  {
+    "path": "V1.5/reference_architecture/V1.5_生态市场与联邦治理参考部署.md",
+    "bytes": 1610,
+    "sha256": "d698799e44dd1cc78d20aadb17bf12471bc98aa381eb7280a8fb8076ce4b0a8b"
+  },
+  {
+    "path": "V1.5/research/V1.5_一手研究与官方设计资料.csv",
+    "bytes": 1516,
+    "sha256": "ac9b9545bce77500f8a6b1ead2577ff00490931dc59ad55bec2f6afebd390b2f"
+  },
+  {
+    "path": "V1.5/validation/V1.5_威胁与反操纵矩阵.csv",
+    "bytes": 1082,
+    "sha256": "86ca41edb1d59a63d392c5d3302797605243bc952b9e96eaf99a46945383b1a8"
+  },
+  {
+    "path": "V1.5/validation/V1.5_试点验收矩阵.csv",
+    "bytes": 1293,
+    "sha256": "ec28bc9e06388c49c59d2ee510c83cb51a367df0ea90ca41fef56e37cd56473d"
+  },
+  {
+    "path": "V1.6/Agent_Ecology_V1.6_生态世界模型与群体智能数字孪生架构.md",
+    "bytes": 40580,
+    "sha256": "45c4db9d74632c1404a69c6898ced650ef4eb9e86f86f5733dfb1393d4d74b21"
+  },
+  {
+    "path": "V1.6/MANIFEST_SHA256.json",
+    "bytes": 4481,
+    "sha256": "2170226aa8f7e0f493eac369716b78ee11dfc0fb9b620ace8b06e9f2abfc65e8"
+  },
+  {
+    "path": "V1.6/README_资料包说明.md",
+    "bytes": 255,
+    "sha256": "ae1cf716f483897448747c6e21b91fe1e9e64e4256d4c1afb2331725ee98c1e5"
+  },
+  {
+    "path": "V1.6/assets/26_V1.6_生态世界模型分层架构_8k.svg",
+    "bytes": 6055,
+    "sha256": "4831c51fa063992af6f733664bb9ae5578adcfe8e548ac9f0ece9a3de5d68c0f"
+  },
+  {
+    "path": "V1.6/assets/27_V1.6_数字孪生同步与仿真闭环_8k.svg",
+    "bytes": 6170,
+    "sha256": "08afb7795701b6ebeec7adaa9311be9eb02ec147dc867bf4d2055a72927ac9b6"
+  },
+  {
+    "path": "V1.6/assets/28_V1.6_反事实推演与方案比较_8k.svg",
+    "bytes": 6193,
+    "sha256": "f8bed75cc6ddf5a7ea6cb3eb3d21e63580fd7b6eac979f0b44459966cdd3f594"
+  },
+  {
+    "path": "V1.6/assets/29_V1.6_ADS预测驱动决策与治理_8k.svg",
+    "bytes": 6065,
+    "sha256": "a24da65c2fd9bd1f9bdb3b135ea2e6db685684b11bdad747b8b917883cb8583a"
+  },
+  {
+    "path": "V1.6/assets/30_V1.6_模型可信度与验证生命周期_8k.svg",
+    "bytes": 7002,
+    "sha256": "1d233298b70413a2021461ca915f4e4297df4a8ac1f99a69107ce49da218a845"
+  },
+  {
+    "path": "V1.6/assets/31_V1.6_资源短缺反事实决策示例_8k.svg",
+    "bytes": 6189,
+    "sha256": "3a83dbf5c283127549d77270bd193b096fcda2b780d93beecf67d4fac26d96c6"
+  },
+  {
+    "path": "V1.6/contracts/V1.6_世界模型与实验契约.csv",
+    "bytes": 1234,
+    "sha256": "3539cdd33a0ccc55f1e61b3eb37c4768afe4547bf5fa944805982702f800eed5"
+  },
+  {
+    "path": "V1.6/contracts/V1.6_事件目录.csv",
+    "bytes": 1520,
+    "sha256": "ac2df874d25dcfb9ec24915bde04f28c5c3e72677a1c3c05141de0d88d4b3241"
+  },
+  {
+    "path": "V1.6/contracts/V1.6_决策治理与模型发布契约.csv",
+    "bytes": 851,
+    "sha256": "eb2d94a1bfc97bbdea80a8bf99d441a1e5551b7cbf827ee45fef780bce9a30b3"
+  },
+  {
+    "path": "V1.6/contracts/V1.6_生态状态快照契约.csv",
+    "bytes": 1026,
+    "sha256": "396b6d2ce2afd6b1b8564b66acd55020e06f8936e6693415883bf4134707b2d1"
+  },
+  {
+    "path": "V1.6/reference_architecture/V1.6_参考部署与模型治理边界.md",
+    "bytes": 2127,
+    "sha256": "6368a31f30085f3abfb2461d0294dee54da0af877e3a1479d327f88213475d70"
+  },
+  {
+    "path": "V1.6/research/V1.6_研究证据与原始资料.csv",
+    "bytes": 2814,
+    "sha256": "03b8ab6a078797663f237b9c4919e8437374a609316eb899b162838a88611612"
+  },
+  {
+    "path": "V1.6/validation/V1.6_威胁与模型风险矩阵.csv",
+    "bytes": 1188,
+    "sha256": "97b4fca95539124b7f4738e38517585eae5a9075716d7eb3a560f6e96c812169"
+  },
+  {
+    "path": "V1.6/validation/V1.6_模型验证与孪生验收矩阵.csv",
+    "bytes": 1437,
+    "sha256": "3b2968aca315c4f7377220033002b27a5d80444fdffc4d16c4831ba129091c38"
+  },
+  {
+    "path": "V1.7/Agent_Ecology_V1.7_生态级RSI与递归进化治理架构.md",
+    "bytes": 35191,
+    "sha256": "a31e3681990711caf7214c8e18418714faaedab47228e8b47ca7f8b0071948e9"
+  },
+  {
+    "path": "V1.7/CHANGELOG.md",
+    "bytes": 503,
+    "sha256": "938b23d7b44a00e80f8cb438ec579bc492f099c105e48dc8ec49eef50d36d290"
+  },
+  {
+    "path": "V1.7/MANIFEST_SHA256.json",
+    "bytes": 4361,
+    "sha256": "343370c5627e66ae2f712dcb46c50d52f78c4694bdd3ee276f2b8ae10003a4a9"
+  },
+  {
+    "path": "V1.7/README.md",
+    "bytes": 702,
+    "sha256": "3c966651dd4ad3c19f7f3520240bd676be715fd69b258108bbb31198566c2be8"
+  },
+  {
+    "path": "V1.7/V1.7_生态级RSI与递归进化治理架构.md",
+    "bytes": 35191,
+    "sha256": "a31e3681990711caf7214c8e18418714faaedab47228e8b47ca7f8b0071948e9"
+  },
+  {
+    "path": "V1.7/assets/00_V1.7_生态级RSI全景架构_8k.svg",
+    "bytes": 6698,
+    "sha256": "a5948ab96c0bfe49c6bc0bbe713824cdb3cf11ad4bf608dc8272cb49e229cb62"
+  },
+  {
+    "path": "V1.7/assets/26_V1.7_RSI进化层级与修改对象_8k.svg",
+    "bytes": 4895,
+    "sha256": "62762439bde04ecf2e6d6b5364d4b5360edb92ee4af91f895f9d60a8170ae643"
+  },
+  {
+    "path": "V1.7/assets/27_V1.7_递归进化双闭环架构_8k.svg",
+    "bytes": 5526,
+    "sha256": "47c148149b08ca79b7b86b67657377dd4f6aec68aec5dcf9f92ccf80fc7ff7a7"
+  },
+  {
+    "path": "V1.7/assets/28_V1.7_独立评估与反自我欺骗机制_8k.svg",
+    "bytes": 5472,
+    "sha256": "bc1a98e268883058a3a3ae6eb8af0f903ec3e2c93e98ad1c25b66df5cda1b64f"
+  },
+  {
+    "path": "V1.7/assets/29_V1.7_进化发布治理与回滚流程_8k.svg",
+    "bytes": 5688,
+    "sha256": "4478389a4e32e5dee7340d72dab9d9a4ebd8b72381665af20003412ea46d8c76"
+  },
+  {
+    "path": "V1.7/assets/30_V1.7_ADS递归进化实例_8k.svg",
+    "bytes": 5297,
+    "sha256": "70e93d290f7f225b3cdf4af034f4330216a7528321d5e04fa9e769560267d5e1"
+  },
+  {
+    "path": "V1.7/contracts/V1.7_进化状态机与事件目录.csv",
+    "bytes": 1028,
+    "sha256": "0384976089fdba2148dc6b10180e387f52485380ca5cd833b5d1bf0574a9f1d7"
+  },
+  {
+    "path": "V1.7/contracts/V1.7_递归进化核心数据契约.csv",
+    "bytes": 1526,
+    "sha256": "96600c30f1690559fafb2a4723a217d80bbd78b8d05076d11d345d84244e4cd3"
+  },
+  {
+    "path": "V1.7/governance/V1.7_人类治理与不可自改边界.md",
+    "bytes": 952,
+    "sha256": "88a63bfc03ce05b5044bd86d06e98e3e6897512acc23c1f64330bdebc3df52eb"
+  },
+  {
+    "path": "V1.7/reference_architecture/V1.7_参考部署与演进边界.md",
+    "bytes": 1026,
+    "sha256": "dd616850398cfa8c1de9cbdbd7d3f9bdfbd29064dc6c6bd6bbd1d1ca07c37733"
+  },
+  {
+    "path": "V1.7/research/V1.7_RSI研究证据与原始链接.csv",
+    "bytes": 2437,
+    "sha256": "e8ec5be9fc515df0d537ada00000770c63fddb506c863e7b6944224d79776d00"
+  },
+  {
+    "path": "V1.7/validation/V1.7_RSI验证与治理验收矩阵.csv",
+    "bytes": 1581,
+    "sha256": "9cb90fdf8d72c6e26e2a22bd090098be891286f3f663e5228c821b6adb67c63a"
+  },
+  {
+    "path": "V1.7/validation/V1.7_威胁与反操纵矩阵.csv",
+    "bytes": 948,
+    "sha256": "727baa83ddee85d7dd547112428d83cc816dac5469e0429cd790109930a1ae6b"
+  }
+]

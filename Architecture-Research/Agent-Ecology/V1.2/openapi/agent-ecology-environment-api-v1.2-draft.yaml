@@ -1,0 +1,104 @@
+openapi: 3.1.0
+info:
+  title: Agent Ecology Environment API
+  version: 1.2.0-draft
+  description: |
+    Draft contract for environment, trace, task, artifact and policy interactions.
+    This is a reference contract, not a deployed service guarantee.
+servers:
+  - url: https://environment.example.invalid
+paths:
+  /v1/traces:
+    post:
+      operationId: publishTrace
+      summary: Publish an immutable trace
+      parameters:
+        - in: header
+          name: Idempotency-Key
+          required: true
+          schema: { type: string, minLength: 8, maxLength: 256 }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: './schemas/trace-envelope-1.2.schema.json' }
+      responses:
+        '201': { description: Trace accepted }
+        '200': { description: Idempotent replay; prior result returned }
+        '403': { description: Policy denied }
+        '409': { description: ID or version conflict }
+        '422': { description: Schema or semantic validation failed }
+  /v1/traces/{trace_id}:
+    get:
+      operationId: getTrace
+      summary: Read a trace subject to current policy
+      parameters:
+        - in: path
+          name: trace_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Trace returned }
+        '403': { description: Access denied }
+        '404': { description: Not found or intentionally concealed }
+  /v1/tasks/{task_id}:command:
+    post:
+      operationId: commandTask
+      summary: Execute a versioned task state transition
+      parameters:
+        - in: path
+          name: task_id
+          required: true
+          schema: { type: string }
+        - in: header
+          name: Idempotency-Key
+          required: true
+          schema: { type: string }
+        - in: header
+          name: If-Match
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: './schemas/task-command-1.2.schema.json' }
+      responses:
+        '200': { description: State transition applied }
+        '409': { description: Version, lease or fencing conflict }
+        '410': { description: Lease expired }
+        '422': { description: Invalid transition or command }
+  /v1/tasks/{task_id}/claim:
+    post:
+      operationId: claimTask
+      summary: Atomically claim a ready task and issue a lease
+      responses:
+        '201': { description: Lease granted }
+        '409': { description: Already claimed or not ready }
+        '403': { description: Claim not authorized }
+  /v1/tasks/{task_id}/heartbeat:
+    post:
+      operationId: heartbeatTask
+      summary: Renew a lease within its maximum TTL
+      responses:
+        '200': { description: Lease renewed }
+        '410': { description: Lease expired }
+        '409': { description: Stale fencing token }
+  /v1/artifacts:
+    post:
+      operationId: registerArtifact
+      summary: Register versioned artifact metadata
+      responses:
+        '201': { description: Artifact registered }
+        '422': { description: Hash or metadata invalid }
+  /v1/policies:evaluate:
+    post:
+      operationId: evaluatePolicy
+      summary: Evaluate subject/action/resource/purpose/context
+      responses:
+        '200':
+          description: Policy decision returned
+          content:
+            application/json:
+              schema: { $ref: './schemas/policy-decision-1.2.schema.json' }
+        '503': { description: Policy engine unavailable; high-risk action fails closed }

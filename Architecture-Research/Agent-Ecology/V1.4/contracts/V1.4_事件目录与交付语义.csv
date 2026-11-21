@@ -1,0 +1,15 @@
+事件类型,触发条件,聚合键,投递语义,消费约束,是否可触发Agent
+task.created.v1,任务创建提交,task_id,至少一次,按source+id去重,可
+task.ready.v1,前置条件满足,task_id,至少一次,回源检查state_version,可
+task.claimed.v1,原子认领成功,task_id,至少一次,旧版本忽略,可
+task.lease.renewed.v1,续租成功,claim_id,至少一次,按lease_version处理,通常否
+task.lease.expired.v1,租约确认过期,task_id,至少一次,重新检查权威状态,可
+task.progress.updated.v1,进度提交,task_id,至少一次,聚合版本顺序,按订阅策略
+task.submitted.v1,成果提交,task_id,至少一次,核验Artifact引用,可
+task.verification.started.v1,验证任务启动,task_id,至少一次,生产者/验证者分离,可
+task.accepted.v1,验收通过,task_id,至少一次,不可静默回滚,可
+trace.recorded.v1,Trace追加成功,trace_id,至少一次,来源与Schema校验,按规则
+trace.disputed.v1,反证或争议追加,trace_id,至少一次,不得删除原Trace,可
+artifact.published.v1,Artifact版本发布,artifact_id,至少一次,内容哈希验证,可
+policy.revoked.v1,撤权策略提交,policy_id,至少一次+高优先级,PEP确认生效,强制唤醒PEP
+runtime.health.changed.v1,健康状态变化,runtime_id,至少一次,状态版本校验,可

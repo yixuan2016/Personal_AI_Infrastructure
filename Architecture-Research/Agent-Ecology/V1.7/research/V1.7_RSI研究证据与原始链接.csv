@@ -1,0 +1,10 @@
+﻿编号,资料,来源,日期,支持内容,原始链接,适用边界
+R1,Recursive self-improvement of AI research agents,arXiv:2609.26457,2026-09-22,AIDE²在8天运行中发现七次连续改进并在留出基准验证泛化,https://arxiv.org/abs/2609.26457,研究代理/AI R&D场景，不能证明生态级安全
+R2,Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops,arXiv:2607.07663,2026-07-08,综述1250篇论文，区分改进对象、闭环程度和自我评估瓶颈,https://arxiv.org/abs/2607.07663,综述分类不等于技术成熟
+R3,Self-Improvements in Modern Agentic Systems: A Survey,arXiv:2607.13104,2026-07-14,Agent scaffold由模型、提示、记忆、工具与控制逻辑构成；按更新目标分类,https://arxiv.org/abs/2607.13104,综述工作
+R4,PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents,arXiv:2608.04003,2026-08-04,26场景、204 episode，检查经验保存/检索/更新是否带来跨会话收益,https://arxiv.org/abs/2608.04003,个人Agent基准，非企业跨域治理
+R5,AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement,arXiv:2608.20318,2026-08-20,10个冻结研究仓库、29种配置；平均得分0.166，最佳0.250,https://arxiv.org/abs/2608.20318,算法设计任务，不等同生态架构进化
+R6,RSIBench-Data: Benchmarking Data-Centric Research for Recursive Self-Improvement,arXiv:2607.25886,2026-07-28,58.33%设置有初步提升；继续超过最佳点后78.26%运行最终下降或未超峰,https://arxiv.org/abs/2607.25886,数据策略任务，提醒需checkpoint和停止条件
+R7,Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents,arXiv:2505.22954,2025-05-29,通过候选档案与经验验证迭代改进代码Agent，实验采用沙箱和人类监督,https://arxiv.org/abs/2505.22954,代码基准提升不能证明生态治理安全
+R8,Gödel Agent: A Self-Referential Agent Framework for Recursively Self-Improvement,ACL 2025,2025,研究高层目标驱动的Agent逻辑和行为自修改,https://aclanthology.org/2025.acl-long.1354/,自修改不构成独立安全证明
+R9,Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile,NIST AI 600-1,2024-07-26,生成式AI风险管理生命周期与治理资源,https://doi.org/10.6028/NIST.AI.600-1,自愿风险管理资源，不是RSI专项强制标准

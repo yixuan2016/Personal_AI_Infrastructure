@@ -1,0 +1,6 @@
+对象,字段,说明,权威来源,关键约束
+CapabilityClaim,"agent,capability_id,version,scope,declared_inputs,declared_outputs",能力声明,Capability Registry,E0只用于发现
+CapabilityEvidence,"evidence_id,agent,capability,version,test_ref,verifier,result,valid_until,independence",能力证据,Evidence Registry,生产者不得作为唯一验证者
+ReputationProfile,"principal,capability,domain,task_class,version,quality,reliability,calibration,safety,confidence",分层信誉画像,Reputation Ledger,禁止全局单一信誉分
+EvidenceCluster,"cluster_id,source_refs,producer_refs,verifier_refs,independence_score",证据来源簇,Trace/Evidence Ledger,同源材料不能重复计为独立证据
+ReputationEvent,"event_id,principal,capability,task_ref,outcome,evidence_ref,review_status",信誉变化事件,Reputation Ledger,保留失败、争议和更正历史
