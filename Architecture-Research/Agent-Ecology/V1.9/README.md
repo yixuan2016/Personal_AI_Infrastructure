@@ -175,3 +175,6 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - [34_V1.9_P0协议门禁与确定性PolicyValidator设计.md](./34_V1.9_P0协议门禁与确定性PolicyValidator设计.md)：把四项 P0 缺口转化为 Trust Root、Witness Lifecycle、Key Lifecycle、Quorum 的候选验证规则和 36 条验收向量。
 - 仅完成架构/验证设计；未实现、未执行，不改变 Candidate、NOT_RUN、F0 和生产授权状态。
 
+### P0 Policy Validator 验收向量
+- [P0_POLICY_VALIDATOR_VECTORS_DRAFT.csv](./validation/P0_POLICY_VALIDATOR_VECTORS_DRAFT.csv)：36 条候选正/负向量，覆盖 Root Update、Witness Lifecycle、Key Lifecycle、Quorum；全部 DESIGNED_NOT_RUN，不计入原 321 项验收总数。
+
