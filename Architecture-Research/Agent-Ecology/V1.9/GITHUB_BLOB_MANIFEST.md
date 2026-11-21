@@ -38,8 +38,9 @@
 | `32_相关工作比较矩阵与新颖性审查.md` | `606f3f90ac4f45ea31fcbb7b46baf1012e052a3d` |
 | `33_V1.9_21份候选JSON_Schema元模型与互操作静态审查.md` | `19f86e849d8f468670e8f658a8203ba28b7dbc95` |
 | `34_V1.9_P0协议门禁与确定性PolicyValidator设计.md` | `51c4529cbfdfe6c0ede959f3b020eb85476dae26` |
-| `README.md` | `355e1664953af294151ff90c04d3030f4d81457d` |
-| `STATUS.md` | `ecb4e123708c177aec8666348f0604370a368e73` |
+| `validation/P0_POLICY_VALIDATOR_VECTORS_DRAFT.csv` | `b87b481973c0a958cc559021207a240d552b5cb8` |
+| `README.md` | `bb8f003f32764f4216c0f29c63cda434b813deab` |
+| `STATUS.md` | `03e92220f8998f29351a64bb41831b7fbeccb512` |
 | `assets/00_V1.9_跨生态能力发现与观察Runtime.svg` | `a6818ac80ed726f0bfaeb224cb9eaafab391915e` |
 | `assets/01_WP-020_跨生态信任协议与授权链.svg` | `6524998de00d51fa02118ee6d2ab3e5c8aae154d` |
 | `assets/02_WP-021_目录一致性与撤销传播架构.svg` | `80a6390756d8439ede42722e82474e0081697e56` |
