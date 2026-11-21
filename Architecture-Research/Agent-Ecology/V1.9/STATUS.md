@@ -217,9 +217,9 @@
 
 - 当前清洁集成 PR：[#18](https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/18)。
 - 仓库：yixuan2016/Personal_AI_Infrastructure；Base：main；Head：integration/agent-ecology-v1.9-mainline-clean-20261121。
-- 当前 HEAD：0310c6b5c3f5c80fbdf109530a8de7b072018d7c；相对 Base：5 ahead / 0 behind；82 个变更文件、12,675 additions、0 deletions。
+- 本节记录快照（本次 STATUS.md 更新前）：HEAD 29fc8e1f559ffd733c97273b5073ca4ada7e0e33；相对 Base：6 ahead / 0 behind；82 个变更文件、12,699 additions、0 deletions。后续提交会推进 HEAD，以 GitHub PR 元数据为准。
 - PR #18 仍为 OPEN / DRAFT；正式 Review 0 条、Inline Review Thread 0 条。
-- GitHub 工具元数据出现不一致：get_pr_info 返回 mergeable=false，而 fetch_pr 返回 mergeable=true；compare 显示 5 ahead / 0 behind。此状态不构成合并批准；保持 Draft，合并前须复核 GitHub 实际冲突、保护规则、Owner Review 和验证证据。
+- GitHub 工具元数据出现不一致：本轮 get_pr_info 返回 mergeable=false，而 fetch_pr 返回 mergeable=true；compare 显示 6 ahead / 0 behind。该字段差异不构成合并批准，也不能单独证明有/无文件冲突；保持 Draft，合并前须复核 GitHub 实际冲突、保护规则、Owner Review 和验证证据。
 - 历史 PR #14 仍是独立 Draft，Base 为 docs/agent-ecology-v1.8-20261110，Head 为历史研究分支 research/agent-ecology-v1.9-stigmergy-20261114；不得与当前 PR #18 混为同一个集成入口。
 
 ### 本轮静态复核与计数纠错
