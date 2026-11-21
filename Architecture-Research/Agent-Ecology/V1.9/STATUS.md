@@ -253,3 +253,11 @@
 - 新增 33_V1.9_21份候选JSON_Schema元模型与互操作静态审查.md；GITHUB_BLOB_MANIFEST 已同步新文件、README 和 STATUS 的 Git Blob SHA。
 - 四项 P0、十项 P1 缺口进入显式跟踪；21 份 Schema 保持 Candidate；完整 Validator、密码学、Policy Validator 和互操作仍 NOT_RUN。
 
+## P0 协议门禁与确定性 Policy Validator 设计（2026-11-21）
+
+- 新增 34_V1.9_P0协议门禁与确定性PolicyValidator设计.md，覆盖 Trust Root 更新、Witness Lifecycle、Witness Key Lifecycle、Witness Quorum 四项 P0。
+- 明确统一 PASS / FAIL / HOLD / QUARANTINE 结果模型、双阈值/带外恢复规则、生命周期状态迁移、Key Epoch/状态单调性、Quorum 公式和成员唯一性。
+- 形成 36 条候选正向/负向验收向量（TR-01—08、WL-01—08、WK-01—08、QP-01—12）。
+- 本文仅为规则与验收设计；未修改四项原始 Schema，未编写实现代码，36 条向量均未执行。
+- P0 仍 OPEN；完整 Validator、密码学、Policy Validator、跨语言互操作均 NOT_RUN；F0 未通过；Runner OFF；productionAllowed=false。
+
