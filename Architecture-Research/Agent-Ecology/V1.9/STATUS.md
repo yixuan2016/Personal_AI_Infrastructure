@@ -261,3 +261,9 @@
 - 本文仅为规则与验收设计；未修改四项原始 Schema，未编写实现代码，36 条向量均未执行。
 - P0 仍 OPEN；完整 Validator、密码学、Policy Validator、跨语言互操作均 NOT_RUN；F0 未通过；Runner OFF；productionAllowed=false。
 
+## P0 Policy Validator 验收向量（2026-11-21）
+
+- 新增 validation/P0_POLICY_VALIDATOR_VECTORS_DRAFT.csv，36 条结构化候选向量：TR-01—08、WL-01—08、WK-01—08、QP-01—12。
+- 每条包含前置条件、输入变化、预期结果、reasonCode、验证层和所需证据。
+- 全部状态为 DESIGNED_NOT_RUN；该补充向量集不计入原有 321 项 V1.9 验收总数，除非经 Owner 批准并正式纳入版本化验收基线。
+
