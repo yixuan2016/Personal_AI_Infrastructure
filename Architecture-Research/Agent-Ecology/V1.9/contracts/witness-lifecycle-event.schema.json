@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:witness-lifecycle-event-candidate",
+  "title": "AgentEcologyWitnessLifecycleEventCandidate",
+  "description": "Append-only candidate lifecycle event. Identity verification and operational independence require external evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "eventId",
+    "witnessId",
+    "membershipEpoch",
+    "eventSequence",
+    "eventType",
+    "previousEventDigest",
+    "operatorDomainId",
+    "administrativeDomainId",
+    "keyCustodyDomainId",
+    "backupFailureDomainId",
+    "deploymentDomainId",
+    "effectiveAt",
+    "issuedAt",
+    "policyRef",
+    "evidenceRefs",
+    "eventDigest",
+    "notAuthorization"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "eventId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "witnessId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "membershipEpoch": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "eventSequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "eventType": {
+      "enum": [
+        "PROPOSED",
+        "IDENTITY_VERIFIED",
+        "OBSERVE_ONLY",
+        "ACTIVATED",
+        "SUSPENDED",
+        "QUARANTINED",
+        "REINSTATED",
+        "RETIRING",
+        "RETIRED",
+        "REJOINED"
+      ]
+    },
+    "previousEventDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "operatorDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "administrativeDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "keyCustodyDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "backupFailureDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "deploymentDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "effectiveAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "issuedBy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issuerKeyId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issuerKeyEpoch": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "signature": {
+      "type": "string",
+      "minLength": 20
+    },
+    "policyRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policyId",
+        "policyVersion",
+        "policyDigest"
+      ],
+      "properties": {
+        "policyId": {
+          "type": "string"
+        },
+        "policyVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "policyDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      }
+    },
+    "replacesWitnessId": {
+      "type": "string"
+    },
+    "reasonCode": {
+      "type": "string"
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference"
+      }
+    },
+    "eventDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "notAuthorization": {
+      "const": true
+    }
+  }
+}

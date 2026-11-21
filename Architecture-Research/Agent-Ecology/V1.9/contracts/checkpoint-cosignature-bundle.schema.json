@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:checkpoint-cosignature-bundle-candidate",
+  "title": "AgentEcologyCheckpointCosignatureBundleCandidate",
+  "description": "Candidate bundle. Signature verification, policy quorum, checkpoint monotonicity and independent operator checks require semantic and cryptographic validators.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "bundleId",
+    "logOrigin",
+    "peerBindingId",
+    "checkpoint",
+    "policy",
+    "cosignatures",
+    "quorumAssessment",
+    "notAuthorization"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "bundleId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "logOrigin": {
+      "type": "string",
+      "minLength": 3
+    },
+    "peerBindingId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checkpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "treeSize",
+        "rootHash",
+        "issuedAt",
+        "logKeyId",
+        "logKeyEpoch",
+        "logSignature",
+        "checkpointDigest"
+      ],
+      "properties": {
+        "treeSize": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rootHash": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "logKeyId": {
+          "type": "string"
+        },
+        "logKeyEpoch": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "logSignature": {
+          "type": "string",
+          "minLength": 20
+        },
+        "checkpointDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "consistencyProofRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "inclusionProofRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policyId",
+        "policyVersion",
+        "policyDigest"
+      ],
+      "properties": {
+        "policyId": {
+          "type": "string"
+        },
+        "policyVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "policyDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      }
+    },
+    "cosignatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "witnessId",
+          "operatorDomainId",
+          "failureDomainId",
+          "keyId",
+          "keyEpoch",
+          "algorithm",
+          "signedAt",
+          "checkpointDigest",
+          "signature"
+        ],
+        "properties": {
+          "witnessId": {
+            "type": "string"
+          },
+          "operatorDomainId": {
+            "type": "string"
+          },
+          "failureDomainId": {
+            "type": "string"
+          },
+          "keyId": {
+            "type": "string"
+          },
+          "keyEpoch": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "algorithm": {
+            "enum": [
+              "ML-DSA-44",
+              "Ed25519"
+            ]
+          },
+          "signedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "checkpointDigest": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "signature": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    },
+    "quorumAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "validWitnessIds",
+        "validSignatureCount",
+        "distinctOperatorCount",
+        "distinctFailureDomainCount",
+        "verifierVersion",
+        "assessedAt"
+      ],
+      "properties": {
+        "result": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "INDETERMINATE"
+          ]
+        },
+        "validWitnessIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "validSignatureCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "distinctOperatorCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "distinctFailureDomainCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "verifierVersion": {
+          "type": "string"
+        },
+        "assessedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "reasonCodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notAuthorization": {
+      "const": true
+    }
+  }
+}

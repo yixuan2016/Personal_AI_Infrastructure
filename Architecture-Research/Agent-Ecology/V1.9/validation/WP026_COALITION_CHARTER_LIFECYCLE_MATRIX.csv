@@ -1,0 +1,39 @@
+test_id,workstream,scenario,expected_result,evidence_required,severity,status
+WP026-01,CharterCore,Charter 缺少必需的 Task Owner 或任务验收标准,拒绝进入 PROPOSED,Schema 与语义验证日志,Critical,NOT_RUN
+WP026-02,CharterDigest,同一 Charter 主体在不同语言环境计算 Digest,JCS 测试向量得到一致摘要；否则拒绝接受,跨语言摘要测试向量,Critical,NOT_RUN
+WP026-03,OwnerAcceptance,必需 Owner 接受收据绑定不同 Charter Digest,不得拼接为 READY，保持 ADMISSION_PENDING,接受收据与 Digest 对照,Critical,NOT_RUN
+WP026-04,OwnerAcceptance,签署人身份有效但无对应资产/角色 Owner 权限,拒绝该接受收据,Owner Registry 与签名校验,Critical,NOT_RUN
+WP026-05,AuthorizationSeparation,Charter READY/ACTIVE 但目标域 PDP 未签发 Permit,PEP 拒绝受保护副作用,本地 PDP/PEP 判定记录,Critical,NOT_RUN
+WP026-06,CoordinatorBoundary,Coordinator 请求签发成员域 Permit 或修改 Owner Policy,拒绝并记录越权尝试,Coordinator 权限声明与拒绝审计,Critical,NOT_RUN
+WP026-07,ScopeChange,修改 Purpose、Audience 或数据资产但未生成新 Charter Version,拒绝原地更新并要求新版本,新旧 Digest 与版本链,Critical,NOT_RUN
+WP026-08,ScopeChange,新版本扩大资源范围但资源 Owner 未重新接受,不得进入 READY,资源范围影响分析和接受收据,Critical,NOT_RUN
+WP026-09,Replay,重放旧 Charter 的有效接受签名,旧 Version/Epoch 不得对新 Charter 生效,签名与版本/Epoch 对照,Critical,NOT_RUN
+WP026-10,MembershipEpoch,成员 Membership Epoch 与当前 Registry 不一致,成员不得激活或执行,Registry Epoch 与成员声明,Critical,NOT_RUN
+WP026-11,RiskGate,R4 Charter 声明 AUTO_LOW_RISK 或无人类审批,Schema/语义门禁拒绝,RiskClass 与 Governance 字段,Critical,NOT_RUN
+WP026-12,RiskGate,R4 任务缺少独立验证方,不得进入 READY,独立验证角色和 Owner 接受,Critical,NOT_RUN
+WP026-13,StateMachine,PROPOSED 直接跳转 ACTIVE,拒绝非法状态转换,事件序列与状态机轨迹,Critical,NOT_RUN
+WP026-14,StateMachine,ADMISSION_PENDING 缺少一个必需 Owner 接受,不得进入 READY,必需角色清单和收据集合,Critical,NOT_RUN
+WP026-15,StateMachine,QUARANTINED 自动恢复 ACTIVE,拒绝自动恢复，要求独立审查与治理决策,隔离事件与审批记录,Critical,NOT_RUN
+WP026-16,EventIntegrity,同一 source+id 重复投递同一生命周期事件,幂等处理，不重复改变状态,持久去重记录,High,NOT_RUN
+WP026-17,EventIntegrity,同一 source+id 对应不同 eventDigest,隔离事件源并触发冲突审查,原始事件和摘要冲突报告,Critical,NOT_RUN
+WP026-18,EventOrdering,联盟生命周期事件 sequence 出现 Gap,水位不前进，高风险状态保持 HOLD,连续水位和缺口记录,Critical,NOT_RUN
+WP026-19,Lease,两个联盟竞争同一 Task Effect Namespace,只允许一个有效 Owner-scoped Task Lease,Lease Authority 与任务账本记录,Critical,NOT_RUN
+WP026-20,Fencing,旧租约持有者在新 token 签发后提交副作用,资源 Owner 拒绝低于最高 token 的写入,资源端 token 比较记录,Critical,NOT_RUN
+WP026-21,Fencing,Agent 自行声称租约有效但资源端未验证 token,不得将其视为有效 fencing；拒绝受保护写入,资源端策略与请求头记录,Critical,NOT_RUN
+WP026-22,Idempotency,同一 operationId 因网络超时被重试,返回原结果，不重复产生副作用,幂等记录和外部副作用计数,Critical,NOT_RUN
+WP026-23,Idempotency,不支持幂等的外部工具执行不可逆动作,转人工确认或禁止自动重试,工具能力声明与人工审批记录,Critical,NOT_RUN
+WP026-24,LeaseRecovery,Lease Authority 重启并从旧快照恢复 token 计数器,外部高水位对账；不能证明单调性则隔离/停止发租约,恢复前后 token 高水位,Critical,NOT_RUN
+WP026-25,MemberExit,关键成员退出但旧 Agent 仍尝试写入,Membership Epoch/Lease/Fencing 使旧请求被拒绝,成员退出事件与 PEP 拒绝记录,Critical,NOT_RUN
+WP026-26,Handoff,接续 Agent 请求继承前任令牌、私钥或 Permit,拒绝凭证继承，只移交获批工件和状态,凭证指纹与交接清单,Critical,NOT_RUN
+WP026-27,IndependentReview,执行联盟与独立验证方为同一主体,关键成果不得通过独立验收,主体关系图与验收拒绝记录,Critical,NOT_RUN
+WP026-28,IndependentReview,验证方与执行方共享同一管理员/KMS/部署控制域,按策略标记独立性不足并要求替代验证,故障域依赖图与审查记录,High,NOT_RUN
+WP026-29,DataPurpose,成员尝试将数据用于 Charter 未声明的 Purpose,Data Owner/本地 PDP 拒绝,Purpose、Audience 和 Permit 对照,Critical,NOT_RUN
+WP026-30,ProfileCompatibility,接收方不支持必需领域 Profile 或 Ontology 版本,相关成员加入/操作 HOLD，不静默降级,Profile Digest 与兼容性结果,High,NOT_RUN
+WP026-31,ResourceBudget,资源承诺超出 Owner 配额或 Charter Budget Cap,拒绝准入或进入 DEGRADED 并重规划,资源 Owner 配额与预算记录,High,NOT_RUN
+WP026-32,Fairness,单一成员持续占用资源导致其他成员饥饿,公平队列/反饥饿策略产生可观测纠偏,等待时间、份额和调度轨迹,High,NOT_RUN
+WP026-33,Dissolution,联盟进入 CLOSED 但仍存在有效 Lease 或临时 Permit,拒绝 CLOSED，保持 WINDING_DOWN,清算清单与活跃凭证查询,Critical,NOT_RUN
+WP026-34,Dissolution,数据副本未按 Data Owner 策略处置,不得完成清算，要求补充处置证据,数据副本清单和处置证明,Critical,NOT_RUN
+WP026-35,Dispute,贡献或价值归因存在未决争议,冻结相关结算建议，不冻结安全撤销,争议状态和结算状态记录,High,NOT_RUN
+WP026-36,Baseline,多 Agent 联盟在匹配预算下不优于单 Agent 基线,不自动组盟或终止扩张，保留单 Agent 方案,基线评估与协调成本对照,High,NOT_RUN
+WP026-37,CloudEventsEnvelope,生命周期事件顶层扩展属性使用大写或驼峰命名,Schema/契约审查拒绝不符合 CloudEvents 扩展属性命名的事件,事件字段清单与规范一致性报告,Critical,NOT_RUN
+WP026-38,CloudEventsEnvelope,生命周期事件把 actor 或 signature 对象直接放在顶层扩展属性,actor/signature 必须位于 data 负载；事件外层只保留合规的标量属性,Schema 结构与事件互操作向量,Critical,NOT_RUN

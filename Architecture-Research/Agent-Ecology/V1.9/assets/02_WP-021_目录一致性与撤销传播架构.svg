@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="7680" height="4320" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+<title id="title">Agent Ecology WP-021 跨生态能力目录一致性与撤销传播架构</title>
+<desc id="desc">展示来源生态签名事件流、FCP中继与反熵、接收生态持久去重、撤销墓碑、连续水位、快照恢复和本地PDP/PEP执行门禁。目录最终一致，撤销单调，本地安全授权独立。</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset=".55" stop-color="#111e35"/><stop offset="1" stop-color="#182640"/></linearGradient>
+ <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#203b5a"/><stop offset="1" stop-color="#142840"/></linearGradient>
+ <linearGradient id="mid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b5265"/><stop offset="1" stop-color="#26365f"/></linearGradient>
+ <linearGradient id="gov" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#39456b"/><stop offset=".5" stop-color="#285a66"/><stop offset="1" stop-color="#39456b"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur in="SourceAlpha" stdDeviation="8"/><feOffset dy="6"/><feComponentTransfer><feFuncA type="linear" slope=".28"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <marker id="blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#77c7ff"/></marker>
+ <marker id="mint" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#7ce2c1"/></marker>
+ <marker id="gold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#f0c878"/></marker>
+ <style>
+ text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;fill:#edf5ff}
+ .title{font-size:40px;font-weight:700}.sub{font-size:21px;fill:#a9c1dc}
+ .section{font-size:27px;font-weight:700}.head{font-size:22px;font-weight:700}
+ .body{font-size:18px;fill:#c8d8eb}.small{font-size:15px;fill:#a8bfd7}
+ .box{fill:url(#panel);stroke:#6196be;stroke-width:2}
+ .line{fill:none;stroke:#77c7ff;stroke-width:3.5;marker-end:url(#blue)}
+ .mintline{fill:none;stroke:#7ce2c1;stroke-width:3.5;marker-end:url(#mint)}
+ .goldline{fill:none;stroke:#f0c878;stroke-width:3.5;marker-end:url(#gold)}
+ .dash{stroke-dasharray:10 8}
+ </style>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<circle cx="160" cy="160" r="270" fill="#1e7390" opacity=".07"/><circle cx="1760" cy="930" r="320" fill="#4ab89b" opacity=".06"/>
+<text x="64" y="66" class="title">Agent Ecology｜WP-021 跨生态目录一致性与撤销传播</text>
+<text x="66" y="102" class="sub">目录最终一致 · 撤销单调 · 事件可验证 · 本地授权独立 · FCP 不拥有安全决策权</text>
+<rect x="64" y="130" width="1792" height="90" rx="20" fill="url(#gov)" stroke="#8ab2d1" stroke-opacity=".55" stroke-width="2" filter="url(#shadow)"/>
+<text x="96" y="168" class="section">人类治理外环</text>
+<text x="390" y="166" class="body">来源域 Owner 签发撤销 · 接收域 Owner 配置 Freshness Budget · 人类可暂停/否决/接管</text>
+<text x="390" y="197" class="small">R4 不进入 Agent 自动执行；本地 Kill Switch 独立于 FCP 和网络状态</text>
+<rect x="64" y="258" width="500" height="448" rx="22" class="box" filter="url(#shadow)"/>
+<text x="92" y="298" class="section">来源生态｜权威事件源</text>
+<rect x="92" y="320" width="444" height="68" rx="13" fill="#29496a" stroke="#78bce9"/>
+<text x="112" y="350" class="head">Owner / Revocation Authority</text><text x="112" y="374" class="small">签发能力、Grant、Key、Member 撤销</text>
+<rect x="92" y="406" width="444" height="86" rx="13" fill="#1b3b5a" stroke="#7ce2c1"/>
+<text x="112" y="439" class="head">签名安全控制 Feed</text><text x="112" y="466" class="small">CloudEvents · source+id · feedSequence</text><text x="112" y="485" class="small">revocationEpoch · previousDigest · JWS</text>
+<rect x="92" y="510" width="444" height="72" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="112" y="543" class="body">完整撤销快照 / Checkpoint</text><text x="112" y="568" class="small">完整墓碑集合 + Merkle Root + 签名</text>
+<rect x="92" y="600" width="444" height="76" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="112" y="633" class="body">本地权威目录</text><text x="112" y="659" class="small">Owner Version · 不可变对象引用</text>
+
+<rect x="710" y="258" width="500" height="448" rx="22" fill="url(#mid)" stroke="#72c5d9" stroke-width="2" filter="url(#shadow)"/>
+<text x="738" y="298" class="section">联邦协调平面｜FCP</text>
+<rect x="738" y="320" width="444" height="70" rx="13" fill="#28546a" stroke="#77c7ff"/>
+<text x="758" y="352" class="head">目录索引 / 事件中继</text><text x="758" y="376" class="small">缓存 · 路由 · 游标转发，不签发撤销</text>
+<rect x="738" y="408" width="207" height="100" rx="12" fill="#1a405b" stroke="#7ce2c1"/>
+<text x="756" y="443" class="body">反熵同步</text><text x="756" y="472" class="small">Merkle 差异定位</text><text x="756" y="494" class="small">快照/事件补洞</text>
+<rect x="975" y="408" width="207" height="100" rx="12" fill="#1a405b" stroke="#f0c878"/>
+<text x="993" y="443" class="body">水位观测</text><text x="993" y="472" class="small">Gap / Stale / Lag</text><text x="993" y="494" class="small">Checkpoint Gossip</text>
+<rect x="738" y="526" width="444" height="62" rx="12" fill="#203b59" stroke="#f0c878"/>
+<text x="758" y="563" class="body">不可信中继：不能改写来源签名事件</text>
+<rect x="738" y="606" width="444" height="70" rx="12" fill="#203b59" stroke="#f0c878"/>
+<text x="758" y="638" class="body">分区 / 延迟 / 重复 / 乱序 / 历史压缩</text><text x="758" y="663" class="small">中继失败不得绕过本地撤销门禁</text>
+
+<rect x="1356" y="258" width="500" height="448" rx="22" class="box" filter="url(#shadow)"/>
+<text x="1384" y="298" class="section">接收生态｜本地安全状态</text>
+<rect x="1384" y="320" width="444" height="68" rx="13" fill="#29496a" stroke="#78bce9"/>
+<text x="1404" y="350" class="head">持久去重与事件验证</text><text x="1404" y="374" class="small">(source,id) · 签名 · 序列 · 摘要链</text>
+<rect x="1384" y="406" width="207" height="86" rx="12" fill="#1b3b5a" stroke="#7ce2c1"/>
+<text x="1402" y="439" class="body">撤销墓碑集</text><text x="1402" y="467" class="small">只增不减 / 并集合并</text>
+<rect x="1621" y="406" width="207" height="86" rx="12" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="1639" y="439" class="body">连续水位</text><text x="1639" y="467" class="small">每 Domain / Feed 独立</text>
+<rect x="1384" y="510" width="444" height="68" rx="12" fill="#214761" stroke="#7ce2c1"/>
+<text x="1404" y="541" class="body">Snapshot 验证与缺口恢复</text><text x="1404" y="566" class="small">完整快照 + Root / Proof + 事件续读</text>
+<rect x="1384" y="596" width="444" height="80" rx="12" fill="#245849" stroke="#7ce2c1"/>
+<text x="1404" y="630" class="head">本地 PDP / PEP</text><text x="1404" y="657" class="small">Freshness Budget · DENY / HOLD / ALLOW</text>
+<path d="M564 365 H700" class="line"/><text x="575" y="346" class="small">来源签名事件 / 快照</text>
+<path d="M1210 365 H1346" class="line"/><text x="1217" y="346" class="small">中继 / 反熵 / Checkpoint</text>
+<path d="M1356 465 H1215" class="mintline"/><text x="1220" y="489" class="small">缺口请求 / 对账</text>
+<path d="M564 635 C650 760 1270 760 1356 635" class="goldline dash"/>
+<text x="760" y="758" class="small">已知撤销立即写入墓碑；序列缺口仍保持 HOLD，直到补齐或验证完整快照</text>
+
+<rect x="64" y="802" width="1792" height="208" rx="20" fill="#10243b" stroke="#52799b" stroke-width="2"/>
+<text x="94" y="842" class="section">六个不可破坏的安全不变量</text>
+<g>
+ <rect x="94" y="864" width="270" height="88" rx="12" fill="#1b3b5a" stroke="#5d94bf"/><text x="112" y="895" class="head">① 来源权威</text><text x="112" y="925" class="small">FCP 只中继不签发</text>
+ <rect x="382" y="864" width="270" height="88" rx="12" fill="#1b3b5a" stroke="#7ce2c1"/><text x="400" y="895" class="head">② 撤销单调</text><text x="400" y="925" class="small">墓碑只增不减</text>
+ <rect x="670" y="864" width="270" height="88" rx="12" fill="#1b3b5a" stroke="#5d94bf"/><text x="688" y="895" class="head">③ 序列隔离</text><text x="688" y="925" class="small">只在同一 Feed 内排序</text>
+ <rect x="958" y="864" width="270" height="88" rx="12" fill="#1b3b5a" stroke="#f0c878"/><text x="976" y="895" class="head">④ 缺口 HOLD</text><text x="976" y="925" class="small">不跳过未知历史</text>
+ <rect x="1246" y="864" width="270" height="88" rx="12" fill="#1b3b5a" stroke="#5d94bf"/><text x="1264" y="895" class="head">⑤ 快照可验证</text><text x="1264" y="925" class="small">Root 不等于完整数据</text>
+ <rect x="1534" y="864" width="294" height="88" rx="12" fill="#245849" stroke="#7ce2c1"/><text x="1552" y="895" class="head">⑥ 本地授权</text><text x="1552" y="925" class="small">PEP 不依赖 FCP</text>
+</g>
+<text x="94" y="984" class="small">安全目标：撤销墓碑不丢失 · 旧广告不复活 · 高风险无新鲜状态不执行 · FCP 离线本地仍可 DENY</text>
+</svg>

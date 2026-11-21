@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:witness-key-lifecycle-record-candidate",
+  "title": "AgentEcologyWitnessKeyLifecycleRecordCandidate",
+  "description": "Public key lifecycle metadata only. Never store private key material, recovery secrets, or raw KMS/HSM credentials.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "witnessId",
+    "keyId",
+    "keyFingerprint",
+    "algorithm",
+    "keyEpoch",
+    "keyPurpose",
+    "keyStatus",
+    "custodyDomainId",
+    "publicKeyRef",
+    "validFrom",
+    "lifecycleSequence",
+    "previousEventDigest",
+    "notAuthorization"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "witnessId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "keyId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "keyFingerprint": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "algorithm": {
+      "enum": [
+        "Ed25519",
+        "ML-DSA-44",
+        "ECDSA-P256",
+        "RSA-3072",
+        "OTHER_APPROVED"
+      ]
+    },
+    "keyEpoch": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "keyPurpose": {
+      "enum": [
+        "TRUST_ROOT",
+        "WITNESS_CHECKPOINT",
+        "LOG_CHECKPOINT",
+        "BACKUP_ENCRYPTION",
+        "TRANSPORT_IDENTITY",
+        "RECOVERY_ANCHOR"
+      ]
+    },
+    "keyStatus": {
+      "enum": [
+        "GENERATED",
+        "REGISTERED",
+        "PREPARED",
+        "ACTIVE",
+        "DEPRECATED",
+        "SUSPECTED_COMPROMISE",
+        "QUARANTINED",
+        "REVOKED",
+        "RETIRED",
+        "DESTROYED"
+      ]
+    },
+    "custodyDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "publicKeyRef": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "kmsHsmKeyRef": {
+      "type": "string",
+      "description": "Non-secret locator only; must not contain credentials or private key bytes."
+    },
+    "validFrom": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "validUntil": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "detectedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "suspectedCompromiseSince": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "confirmedCompromiseAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revokedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "retiredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lifecycleSequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "previousEventDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "transitionStatementRef": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "signature": {
+      "type": "string",
+      "minLength": 20
+    },
+    "eventDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "notAuthorization": {
+      "const": true
+    }
+  }
+}
