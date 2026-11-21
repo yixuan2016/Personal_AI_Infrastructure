@@ -163,3 +163,10 @@ V1.9 不重写 V1.3 已建立的痕迹协作概念，也不替代 V1.4 Environme
 - 当前仅为研究计划和实验设计；首篇论文实验尚未完成，不代表已投稿或发表。
 
 - 32_相关工作比较矩阵与新颖性审查.md：首篇论文的直接相关研究比较、机制差异、新颖性主张边界、潜在审稿质疑和最小实证证据要求。
+
+## V1.9｜21 份候选 JSON Schema 静态审查
+
+- [33_V1.9_21份候选JSON_Schema元模型与互操作静态审查.md](./33_V1.9_21份候选JSON_Schema元模型与互操作静态审查.md)：逐一核对 21 份 Schema，列出 4 项 P0、10 项 P1 协议与互操作缺口。
+- JSON 语法 21/21 解析成功；完整 Draft 2020-12 Validator、密码学、Policy Validator 和跨语言互操作仍 NOT_RUN。
+- 21 份 Schema 继续保持 Candidate；321 项验收仍 NOT_RUN；F0 未通过；productionAllowed=false。
+
