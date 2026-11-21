@@ -234,3 +234,14 @@
 
 **当前裁决：** PR #18 是 Agent Ecology V1.9 的清洁集成审查入口，但不是已合并主线、已完成验证或生产就绪版本。所有 Candidate、NOT_RUN、OPEN 状态必须保留，直至真实 Owner 和独立验证证据到位。
 
+## 21 份候选 JSON Schema 元模型与互操作静态审查（2026-11-21）
+
+- 新增 33_V1.9_21份候选JSON_Schema元模型与互操作静态审查.md。
+- 本轮逐一回读并解析 21 份候选 Schema：21/21 JSON 语法解析成功；21 个 $id 唯一；均声明 Draft 2020-12；CapabilityResolution 的 3 个内部 $ref 指向同文件 $defs。
+- 静态审查发现 4 项 P0 协议门禁：Trust Root 更新模式缺少条件证据门禁；WitnessLifecycleEvent 签名未列入必填；WitnessKeyLifecycleRecord 签名和事件摘要未列入必填；WitnessQuorumPolicy 未验证 2q-n>f、成员集合数量和唯一性。
+- 另发现 10 项 P1：CloudEvents 扩展属性约束、CoalitionLifecycleEvent 条件字段大小写错误、Charter Digest/JCS 与 Owner Acceptance 签名 Profile、传递信任门禁、Witness 独立性证据、统一签名封装、Grant 衰减、Lifecycle 状态转换、Checkpoint 有效期/快照连续性等。
+- 本轮是 JSON 语法和人工静态结构审查；未运行完整 Draft 2020-12 Validator、密码学验证、Policy Validator、跨语言互操作或 Runtime 测试。
+- 21 份 Schema 全部保持 Candidate；V1.9 321 项验收仍全部 NOT_RUN；F0 未通过；Runner OFF；productionAllowed=false。
+
+**当前裁决：** 四项 P0 必须在 F0/F1 协议准入前关闭；不能以 JSON 语法解析成功替代 Schema 合规、密码学或跨生态安全验证。
+
