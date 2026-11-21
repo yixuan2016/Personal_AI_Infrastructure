@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:federation-revocation-event-candidate",
+  "title": "FederationRevocationCloudEventCandidate",
+  "description": "Candidate CloudEvents 1.0 envelope for source-domain-signed revocation events. Signature, sequence, hash-chain and authority semantics require runtime validation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "specversion",
+    "id",
+    "source",
+    "type",
+    "subject",
+    "time",
+    "datacontenttype",
+    "dataschema",
+    "domainid",
+    "streamid",
+    "peerbindingid",
+    "sourcesequence",
+    "revocationepoch",
+    "previouseventdigest",
+    "eventdigest",
+    "data"
+  ],
+  "properties": {
+    "specversion": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "format": "uri"
+    },
+    "type": {
+      "const": "org.agentecology.federation.revocation.v1"
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "datacontenttype": {
+      "const": "application/json"
+    },
+    "dataschema": {
+      "const": "urn:agent-ecology:v1.9:federation-revocation-event-candidate"
+    },
+    "domainid": {
+      "type": "string",
+      "minLength": 3
+    },
+    "streamid": {
+      "type": "string",
+      "minLength": 3
+    },
+    "sourcesequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "revocationepoch": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "previouseventdigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "eventdigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target",
+        "effectiveAt",
+        "reasonCode",
+        "impactScope",
+        "cascadeMode",
+        "notAuthorization",
+        "signature"
+      ],
+      "properties": {
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "objectType",
+            "objectId",
+            "objectVersion",
+            "ownerDomainId",
+            "immutableObjectRef"
+          ],
+          "properties": {
+            "objectType": {
+              "enum": [
+                "CAPABILITY_VERSION",
+                "PUBLISHER_GRANT",
+                "TASK_GRANT",
+                "SIGNING_KEY",
+                "MEMBERSHIP_GRANT",
+                "PEER_BINDING_VERSION"
+              ]
+            },
+            "objectId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "objectVersion": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ownerDomainId": {
+              "type": "string",
+              "minLength": 3
+            },
+            "immutableObjectRef": {
+              "type": "string",
+              "format": "uri-reference"
+            },
+            "parentGrantId": {
+              "type": "string"
+            }
+          }
+        },
+        "effectiveAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "reasonCode": {
+          "enum": [
+            "OWNER_REQUEST",
+            "KEY_COMPROMISE",
+            "SECURITY_INCIDENT",
+            "POLICY_VIOLATION",
+            "MEMBER_REMOVAL",
+            "GRANT_REVOKED",
+            "PEER_TRUST_TERMINATED",
+            "SUPERSEDED",
+            "OTHER"
+          ]
+        },
+        "impactScope": {
+          "enum": [
+            "OBJECT_ONLY",
+            "DESCENDANT_AUTHORIZATIONS",
+            "PEER_BINDING_SCOPE",
+            "ALL_ACTIVE_PEERS"
+          ]
+        },
+        "cascadeMode": {
+          "enum": [
+            "NONE",
+            "DESCENDANT_GRANTS"
+          ]
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        },
+        "notAuthorization": {
+          "const": true
+        },
+        "signature": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "format",
+            "algorithm",
+            "keyId",
+            "keyEpoch",
+            "signedPayloadDigest",
+            "compactJws"
+          ],
+          "properties": {
+            "format": {
+              "const": "JWS"
+            },
+            "algorithm": {
+              "enum": [
+                "ES256",
+                "EdDSA",
+                "PS256"
+              ]
+            },
+            "keyId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "keyEpoch": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "signedPayloadDigest": {
+              "type": "string",
+              "pattern": "^[A-Fa-f0-9]{64}$"
+            },
+            "compactJws": {
+              "type": "string",
+              "minLength": 20
+            }
+          }
+        }
+      }
+    },
+    "peerbindingid": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
