@@ -53,4 +53,5 @@
 - 验证矩阵 15 项、威胁矩阵 12 项、F0 Gate 12 项全部 NotRun；无真实双生态部署、Owner 签署、密钥演练或生产授权。
 - 本地 MANIFEST_SHA256.json 记录 33 项完整资料包资产，其中 3 张 8K PNG 未进入 PR；BINARY_ASSET_STATUS 明确披露缺失。
 - Word/PDF/ZIP 原始二进制未上传；3 张 SVG 架构源图已纳入 Git。
-- 原 PR #12 曾以 V1.2—V1.7 工作分支为 base；因 PR #11 已 squash 合并，现采用以 main 为基线的独立整合分支，避免重复合并历史文件。
+- 原 PR #12 曾以 V1.2—V1.7 工作分支为 base；因 PR #11 已 squash 合并，现已关闭为 Superseded。
+- 新 PR #17 以 main 为 base，包含 33 个 V1.8 版本目录文件和 3 个导航/状态文件；当前 Draft/Open，等待审阅。
