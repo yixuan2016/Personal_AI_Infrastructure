@@ -24,7 +24,8 @@
 ## 2026-11-21 重基复核
 
 - V1.2—V1.7 已通过 PR #11 合入 main；V1.8 不再以旧 PR #11 工作分支作为 base。
-- V1.8 源文件已复制到独立 mainline 分支 integration/agent-ecology-v1.8-mainline-20261121，基于 main。
+- V1.8 源文件已复制到独立 mainline 分支 integration/agent-ecology-v1.8-mainline-20261121，基于 main；当前 PR #17 Draft/Open。
+- 原 stacked PR #12 因重复历史文件已关闭，V1.8 由 PR #17 继续审查。
 - 3 张 SVG 源图已纳入 Git；3 张 8K PNG 原始渲染文件仍未上传，仍按本表登记。
 - Word/PDF/ZIP 原件仍未上传；不以 SVG、提取文本或本地 SHA 清单冒充原始二进制。
 - 7 份 JSON Schema 仅完成 JSON 语法解析；Draft 2020-12 完整验证、语义验证、密码学验证仍 NOT_RUN。
