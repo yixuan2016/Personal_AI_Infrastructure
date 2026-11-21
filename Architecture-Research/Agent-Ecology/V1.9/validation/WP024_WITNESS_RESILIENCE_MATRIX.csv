@@ -1,0 +1,61 @@
+test_id,domain,scenario,fault_model,expected_safety,expected_liveness,evidence_required,severity,status
+WP024-01,Quorum,"验证 n=4,f=1,q=3 的最小交集",固定成员、最多 1 Byzantine,两份 q 证书最小交集为 2；不重复身份,3 个可达节点时可形成候选证据,枚举全部 q 子集及交集表,Critical,NOT_RUN
+WP024-02,Quorum,"验证 n=7,f=2,q=5 的最小交集",固定成员、最多 2 Byzantine,两份 q 证书最小交集为 3,5 个可达节点时可形成候选证据,枚举全部 q 子集及交集表,Critical,NOT_RUN
+WP024-03,Quorum,"验证 n=10,f=3,q=7 的最小交集",固定成员、最多 3 Byzantine,两份 q 证书最小交集为 4,7 个可达节点时可形成候选证据,枚举全部 q 子集及交集表,Critical,NOT_RUN
+WP024-04,Quorum,"验证 n=13,f=4,q=9 的最小交集",固定成员、最多 4 Byzantine,两份 q 证书最小交集为 5,9 个可达节点时可形成候选证据,枚举全部 q 子集及交集表,Critical,NOT_RUN
+WP024-05,Quorum,仅有 q-1 个有效签名,少 1 个可用 Witness,拒绝 Quorum PASS,进入 HOLD，等待恢复,Bundle 验证日志与状态,Critical,NOT_RUN
+WP024-06,Quorum,恰有 q 个唯一有效身份签名,签名有效、版本一致、故障域满足,按策略允许形成证据，不推断业务授权,按可达性形成候选证明,签名者、策略和域计数报告,High,NOT_RUN
+WP024-07,Quorum,同一身份使用多把密钥重复签名,多个 keyId 绑定同一 witnessId,同一身份最多计一次,不因重复密钥提升可用计数,身份归一化与计票报告,Critical,NOT_RUN
+WP024-08,Quorum,同一身份通过多个端点重复签名,多个 URL/实例共用同一身份,同一身份最多计一次,不因多端点提升可用计数,端点到身份映射报告,Critical,NOT_RUN
+WP024-09,Quorum,有效签名数达标但独立运营域不足,多个 Witness 属于同一控制域,拒绝独立域门槛 PASS,保持 HOLD 或降级为观察结果,operatorDomain 与控制关系证据,Critical,NOT_RUN
+WP024-10,Quorum,故障数超过配置上界 f,f+1 个身份恶意或不可置信,不得声称原安全保证继续成立；隔离/INDETERMINATE,不自动放宽阈值,超预算状态与告警记录,Critical,NOT_RUN
+WP024-11,Recovery,签名释放前先持久化安全状态,正常签名流程,所有已释放签名均有对应持久化记录,正常路径可继续,状态提交与签名释放顺序日志,Critical,NOT_RUN
+WP024-12,Recovery,持久化提交前进程崩溃,Crash 发生在 durable write 前,不得释放 Cosignature,恢复后重试或 HOLD,崩溃点、签名输出和 WAL,Critical,NOT_RUN
+WP024-13,Recovery,持久化成功后、响应返回前崩溃,Crash 发生在 commit 后 response 前,恢复状态保留；不得对冲突 Checkpoint 再签,同一请求可幂等恢复,WAL、请求 ID 和恢复状态,Critical,NOT_RUN
+WP024-14,Recovery,已签名后恢复旧快照,签名密钥保留、状态序列回退,隔离旧身份，不签名,服务保持 HOLD,快照序列与外部高水位对账,Critical,NOT_RUN
+WP024-15,Recovery,同尺寸不同 Root Hash 的旧状态恢复,恢复点落后于已观察 Checkpoint,拒绝恢复 ACTIVE，固定冲突证据,不提供签名服务,Checkpoint 对照和拒绝日志,Critical,NOT_RUN
+WP024-16,Recovery,状态擦除但保留原身份与私钥,丢失防双签记录,原身份不得直接恢复签名资格,进入 QUARANTINED,恢复事件、Key Epoch 和状态证明,Critical,NOT_RUN
+WP024-17,Recovery,完整状态恢复但无外部新鲜度证明,本地快照签名有效，外部锚不可达,不能把快照签名当成新鲜度证明,保持 OBSERVE_ONLY/HOLD,外部高水位缺失记录,Critical,NOT_RUN
+WP024-18,Recovery,外部高水位高于本地快照,本地恢复序列落后,拒绝签名并隔离,等待状态重建或身份替换,高水位、快照和隔离记录,Critical,NOT_RUN
+WP024-19,Recovery,同一 Witness 身份双实例并发启动,身份克隆、网络分区,不允许两个实例分别对冲突历史签名,至少一个实例被阻止或两者隔离,实例租约、状态锚和签名审计,Critical,NOT_RUN
+WP024-20,Recovery,两个并发请求读取同一旧 Checkpoint,N 与 N+K 并发提交,检查/持久化/签名必须串行化或原子化,冲突请求返回重试/冲突,并发轨迹、状态序列和响应,Critical,NOT_RUN
+WP024-21,Recovery,恢复时 WAL 截断或校验失败,缺失已提交状态,拒绝 ACTIVE，禁止静默重置,保持 HOLD,WAL 水位和校验错误,Critical,NOT_RUN
+WP024-22,Recovery,可信单调锚不可用,无法验证 anti-rollback 约束,不得以猜测状态签名,恢复流程暂停,锚服务状态和决策日志,Critical,NOT_RUN
+WP024-23,Recovery,恢复后仍使用已撤销 Key Epoch,快照包含旧密钥状态,旧 Key Epoch 不得重新激活,要求新 Key Epoch 和审批,撤销事件与密钥验证报告,Critical,NOT_RUN
+WP024-24,Recovery,完整恢复后进入观察期,快照/WAL/外部 Checkpoint 均连续,观察期间不计入 Quorum,观察通过后才可人工批准 ACTIVE,恢复评估、观察报告和审批记录,High,NOT_RUN
+WP024-25,Partition,严格分区后一侧可达 q 个 Witness,固定成员，q>n/2,只允许满足完整策略的一侧形成证据,另一侧因不足 q 而 HOLD,网络拓扑与两侧可达集合,Critical,NOT_RUN
+WP024-26,Partition,任一分区均不足 q,网络分区隔离成员,不形成 Quorum，不降低 q,保持 HOLD，网络恢复后重试,可达性与阈值拒绝报告,Critical,NOT_RUN
+WP024-27,Partition,检查两个互不相交分区能否各自形成 q,"固定 n=3f+1,q=2f+1",组合检查证明两个互不相交集合不能同时达到 q,不承诺任一侧可用,集合枚举证明,Critical,NOT_RUN
+WP024-28,Partition,非对称网络视图向同一 Witness 提交冲突 Checkpoint,同一身份可从不同客户端收到不同请求,诚实 Witness 按持久化状态拒绝冲突历史,一方可能失败但不得双签,双向网络轨迹和签名结果,Critical,NOT_RUN
+WP024-29,Partition,FCP 隔离但 Monitor 可直连 Witness,FCP 中继不可用,FCP 不得成为唯一证据观察路径,Monitor 旁路查询继续工作,直连和中继路径日志,High,NOT_RUN
+WP024-30,Partition,Monitor 仅看到过期 Checkpoint,监视路径被延迟或缓存,标记 stale/indeterminate，不宣称最新,保持观察或 HOLD,Checkpoint 时间、Tree Size 与刷新记录,Critical,NOT_RUN
+WP024-31,Partition,节点时钟大幅偏移,时钟前跳/后退/时钟不同步,墙上时钟不得覆盖 Tree Size 和一致性证明,可能增加 HOLD，但不错误签名,时钟偏移、时间戳和状态比较,Critical,NOT_RUN
+WP024-32,Partition,消息乱序、重复和延迟,旧请求在新请求之后到达,旧状态请求不得回滚最新 Checkpoint,返回冲突/重试,消息序列与状态转换日志,Critical,NOT_RUN
+WP024-33,Partition,网络反复分区与愈合,短时间内多次断连,每次签名仍满足单调性与策略版本,愈合后恢复但不跳过观察,分区时序和恢复轨迹,Critical,NOT_RUN
+WP024-34,Partition,Log 与 Monitor 看到不同视图,可能出现 split-view,Monitor 直接对比多个 Witness 的最新证据并固定冲突,发现冲突后高风险操作 HOLD,多源 Checkpoint 和 Fork Evidence,Critical,NOT_RUN
+WP024-35,Byzantine,f 个 Byzantine Witness 对不同历史双签,恶意身份达到配置上界,剩余诚实交集应阻止两个冲突证据集合同时通过，前提是恢复状态安全,超时可导致 HOLD,冲突集合、身份交集与策略验证,Critical,NOT_RUN
+WP024-36,Byzantine,f+1 个 Byzantine 身份串谋,超出配置故障预算,不得声称 Quorum 安全仍成立，触发 INDETERMINATE/隔离,不承诺可用,故障预算超限和状态机,Critical,NOT_RUN
+WP024-37,Byzantine,Witness 签名密钥泄露但发现较晚,疑似泄露起始时间早于发现时间,历史签名按风险时间窗口分类，不盲信发现前签名,停止该密钥新签名,detectedAt、suspectedSince 与验证结果,Critical,NOT_RUN
+WP024-38,Byzantine,撤销密钥的历史签名被重放,签名时间晚于撤销边界,拒绝新接受并保留历史证据,不允许旧 Key Epoch 恢复,撤销事件与重放验证结果,Critical,NOT_RUN
+WP024-39,Byzantine,同一 Bundle 混合不同 Key Epoch,不同成员对不同密钥版本签名,拒绝混合版本证据,保持 HOLD,Bundle 版本绑定与验证错误,Critical,NOT_RUN
+WP024-40,Byzantine,同一签名在 Bundle 中重复出现,重复提交相同 signerId,只计一次；重复项不增加 Quorum,不影响有效计数,去重前后签名者集合,Critical,NOT_RUN
+WP024-41,Byzantine,恶意 Witness 提交有效签名但不一致的旧 Checkpoint,签名正确但历史不连续,独立验证器检查 consistency proof 和最新高水位,拒绝冲突 Checkpoint,签名、Merkle Proof 和历史对账,Critical,NOT_RUN
+WP024-42,Byzantine,错误时间戳试图掩盖签名发生顺序,时间源受控或偏移,时间戳不得替代状态序列和外部证据,不确定时 HOLD,可信时间证据和单调序列,High,NOT_RUN
+WP024-43,FaultDomain,多个 Witness 共用同一云管理员,名义组织不同、控制域相同,不能计为多个独立控制域,独立域门槛不满足时 HOLD,云账号和管理员依赖图,Critical,NOT_RUN
+WP024-44,FaultDomain,多个 Witness 共用同一 KMS 管理域,密钥托管共因失陷,按共同密钥托管故障域去重,不满足独立性时 HOLD,KMS 管理域和密钥权限审查,Critical,NOT_RUN
+WP024-45,FaultDomain,备份副本共用同一账号/恢复密钥,名义上多副本但同一控制平面,不能宣称跨故障域恢复能力,恢复风险标记为未验证,备份账号、密钥和权限依赖图,Critical,NOT_RUN
+WP024-46,FaultDomain,多个 Witness 位于同一电力/区域/网络域,区域共因故障,按真实基础设施故障域去重,区域故障可导致 HOLD,站点和供应商依赖清单,Critical,NOT_RUN
+WP024-47,FaultDomain,多个 Witness 共用同一 CI/CD 与镜像供应链,构建/发布链路共同失陷,不能仅按运营组织数判断独立性,触发供应链风险复核,构建、镜像签名和部署控制图,Critical,NOT_RUN
+WP024-48,FaultDomain,运营域声明缺少独立证据,只有自我声明或组织名称,不得计入已证明的独立域,维持 OBSERVE_ONLY,独立审查记录和证据引用,Critical,NOT_RUN
+WP024-49,FaultDomain,所有节点依赖同一时间源,NTP/时间服务共同异常,识别共同时间故障，不以时间戳作为唯一顺序依据,必要时 HOLD,时间源依赖和偏移测试,Critical,NOT_RUN
+WP024-50,FaultDomain,不同运营域证据通过独立复核,管理、密钥、备份和部署控制关系已审查,按策略计算有效独立域,可继续下一验证阶段,复核报告和域映射,High,NOT_RUN
+WP024-51,Migration,旧 Quorum 与新 Quorum 对同一过渡 Checkpoint 通过,成员替换、策略迁移,双方证据绑定同一 Checkpoint Digest 和 Policy Digest,过渡成功后按计划切换,Joint Quorum Bundle,Critical,NOT_RUN
+WP024-52,Migration,旧 Quorum 与新 Quorum 接受不同 Root Hash,策略迁移期间出现分叉,拒绝迁移并固定 Fork Evidence,保持 HOLD,冲突 Bundle 和独立 Monitor 报告,Critical,NOT_RUN
+WP024-53,Migration,旧 Quorum 不足时尝试自动降低 q,故障或成员退出,拒绝自动降级,等待人工治理决策,策略变更审计,Critical,NOT_RUN
+WP024-54,Migration,新 Registry 未被 Peer Binding 双方接受,一方版本滞后,新策略不得 ACTIVE,保持旧策略或 HOLD,双方接受回执与 Digest,Critical,NOT_RUN
+WP024-55,Migration,Policy Version 回退,收到旧版本策略,拒绝回滚,保持当前版本或 HOLD,版本比较和错误码,Critical,NOT_RUN
+WP024-56,Migration,Root/Registry/Policy Digest 混合,各自版本看似有效但组合不一致,拒绝跨版本拼接,保持 HOLD,完整元数据绑定报告,Critical,NOT_RUN
+WP024-57,Migration,灾难恢复后成员替换,旧 Witness 恢复但连续性无法证明,旧身份不自动重新获得 Quorum 票权,新成员先 OBSERVE_ONLY,Membership Epoch 和审查记录,Critical,NOT_RUN
+WP024-58,Migration,灾难恢复缺少独立 Monitor 证据,本地恢复报告完整但无旁路对账,不得进入 ACTIVE,保持 QUARANTINED/HOLD,Monitor Checkpoint 和审批记录,Critical,NOT_RUN
+WP024-59,Migration,恢复后独立 Monitor 发现新旧 Checkpoint 冲突,服务刚恢复即出现不一致,立即重新隔离并启动 Fork Evidence,停止相关高风险操作,Monitor 报告、冲突证明和冻结事件,Critical,NOT_RUN
+WP024-60,Migration,完整恢复端到端流程,身份、密钥、状态、策略、独立域和 Monitor 全部核验,仅在所有门禁通过且人工批准后恢复 ACTIVE,记录恢复实测 RPO/RTO,完整证据包、审批、复现轨迹,High,NOT_RUN

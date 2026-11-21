@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:capability-lifecycle-event-candidate",
+  "title": "CapabilityLifecycleCloudEventCandidate",
+  "description": "Candidate CloudEvents 1.0 envelope for capability lifecycle changes. Event authenticity and monotonic ordering require runtime verification.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "specversion",
+    "id",
+    "source",
+    "type",
+    "subject",
+    "time",
+    "datacontenttype",
+    "dataschema",
+    "data"
+  ],
+  "properties": {
+    "specversion": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "type": {
+      "enum": [
+        "org.agentecology.capability.advertised.v1",
+        "org.agentecology.capability.updated.v1",
+        "org.agentecology.capability.suspended.v1",
+        "org.agentecology.capability.revoked.v1",
+        "org.agentecology.capability.expired.v1"
+      ]
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "datacontenttype": {
+      "const": "application/json"
+    },
+    "dataschema": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domainId",
+        "advertisementId",
+        "capabilityId",
+        "version",
+        "lifecycleState",
+        "sourceWatermark",
+        "revocationEpoch",
+        "notAuthorization",
+        "signerPrincipal",
+        "payloadDigest",
+        "signatureRef"
+      ],
+      "properties": {
+        "domainId": {
+          "type": "string"
+        },
+        "advertisementId": {
+          "type": "string"
+        },
+        "capabilityId": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "previousVersion": {
+          "type": "string"
+        },
+        "lifecycleState": {
+          "enum": [
+            "PUBLISHED",
+            "VERIFIED",
+            "ACTIVE",
+            "DEGRADED",
+            "SUSPENDED",
+            "REVOKED",
+            "EXPIRED"
+          ]
+        },
+        "sourceWatermark": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "revocationEpoch": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "effectiveAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "reasonCode": {
+          "type": "string"
+        },
+        "notAuthorization": {
+          "const": true
+        },
+        "signerPrincipal": {
+          "type": "string"
+        },
+        "payloadDigest": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        },
+        "signatureRef": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "causationRef": {
+          "type": "string",
+          "format": "uri-reference"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "org.agentecology.capability.updated.v1"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "required": [
+              "previousVersion"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "org.agentecology.capability.suspended.v1"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "required": [
+              "reasonCode",
+              "effectiveAt"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "org.agentecology.capability.revoked.v1"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "required": [
+              "reasonCode",
+              "effectiveAt"
+            ],
+            "properties": {
+              "lifecycleState": {
+                "const": "REVOKED"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "org.agentecology.capability.expired.v1"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "required": [
+              "expiresAt"
+            ],
+            "properties": {
+              "lifecycleState": {
+                "const": "EXPIRED"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

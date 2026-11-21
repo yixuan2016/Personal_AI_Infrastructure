@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:witness-quorum-policy-candidate",
+  "title": "AgentEcologyWitnessQuorumPolicyCandidate",
+  "description": "Candidate bilateral policy for checkpoint witness quorum. Semantic validation must verify key uniqueness, operator diversity, group constraints and 2q-n>f.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "policyId",
+    "policyVersion",
+    "logOrigin",
+    "peerBindingId",
+    "effectiveAt",
+    "witnesses",
+    "quorum",
+    "policyApprovals",
+    "notAuthorization"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "policyId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "policyVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "logOrigin": {
+      "type": "string",
+      "minLength": 3
+    },
+    "peerBindingId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "effectiveAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "supersedesPolicyDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "witnesses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "witnessId",
+          "keyId",
+          "publicKeyFingerprint",
+          "operatorDomainId",
+          "failureDomainId",
+          "keyEpoch",
+          "algorithm"
+        ],
+        "properties": {
+          "witnessId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "keyId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "publicKeyFingerprint": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "operatorDomainId": {
+            "type": "string",
+            "minLength": 3
+          },
+          "failureDomainId": {
+            "type": "string",
+            "minLength": 3
+          },
+          "keyEpoch": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "algorithm": {
+            "enum": [
+              "ML-DSA-44",
+              "Ed25519"
+            ]
+          }
+        }
+      }
+    },
+    "quorum": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "totalWitnesses",
+        "maxByzantineWitnesses",
+        "requiredCosignatures",
+        "minDistinctOperators",
+        "minDistinctFailureDomains",
+        "minIntersection",
+        "intersectionRule"
+      ],
+      "properties": {
+        "totalWitnesses": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maxByzantineWitnesses": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "requiredCosignatures": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "minDistinctOperators": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "minDistinctFailureDomains": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "minIntersection": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "intersectionRule": {
+          "const": "2q-n>f"
+        },
+        "maxWitnessesPerOperator": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "witnessGroups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "groupId",
+          "memberWitnessIds",
+          "minimumSignatures"
+        ],
+        "properties": {
+          "groupId": {
+            "type": "string"
+          },
+          "memberWitnessIds": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "minimumSignatures": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "policyApprovals": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "approvingDomainId",
+          "agreementDigest",
+          "keyId",
+          "signature",
+          "approvedAt"
+        ],
+        "properties": {
+          "approvingDomainId": {
+            "type": "string",
+            "minLength": 3
+          },
+          "agreementDigest": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "keyId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "signature": {
+            "type": "string",
+            "minLength": 20
+          },
+          "approvedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "policyStatus": {
+      "enum": [
+        "CANDIDATE",
+        "ACTIVE",
+        "SUSPENDED",
+        "RETIRED"
+      ]
+    },
+    "notAuthorization": {
+      "const": true
+    }
+  }
+}

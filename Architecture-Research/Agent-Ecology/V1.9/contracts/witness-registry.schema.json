@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:witness-registry-candidate",
+  "title": "AgentEcologyWitnessRegistryCandidate",
+  "description": "Candidate registry record. Operator independence and key custody require external evidence; schema validation alone cannot prove independence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "witnessId",
+    "witnessName",
+    "operatorDomainId",
+    "failureDomainId",
+    "publicKeys",
+    "supportedLogOrigins",
+    "endpoints",
+    "operationalStatus",
+    "independenceClaim",
+    "notAuthorization"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "witnessId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "witnessName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operatorDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "failureDomainId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "publicKeys": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "keyId",
+          "algorithm",
+          "publicKeyFingerprint",
+          "keyEpoch",
+          "status",
+          "validFrom"
+        ],
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "algorithm": {
+            "enum": [
+              "ML-DSA-44",
+              "Ed25519"
+            ]
+          },
+          "publicKeyFingerprint": {
+            "type": "string",
+            "pattern": "^[A-Fa-f0-9]{64}$"
+          },
+          "keyEpoch": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "status": {
+            "enum": [
+              "ACTIVE",
+              "SUSPENDED",
+              "REVOKED",
+              "RETIRED"
+            ]
+          },
+          "validFrom": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "validUntil": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "supportedLogOrigins": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "endpoints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "submission",
+        "monitoring"
+      ],
+      "properties": {
+        "submission": {
+          "type": "string",
+          "format": "uri"
+        },
+        "monitoring": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "operationalStatus": {
+      "enum": [
+        "ACTIVE",
+        "SUSPENDED",
+        "RETIRED",
+        "QUARANTINED"
+      ]
+    },
+    "independenceClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "separateOperator",
+        "separateAdministrativeControl",
+        "separateKeyCustody",
+        "separateFailureDomain",
+        "evidenceRefs"
+      ],
+      "properties": {
+        "separateOperator": {
+          "type": "boolean"
+        },
+        "separateAdministrativeControl": {
+          "type": "boolean"
+        },
+        "separateKeyCustody": {
+          "type": "boolean"
+        },
+        "separateFailureDomain": {
+          "type": "boolean"
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        }
+      }
+    },
+    "lastReviewedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notAuthorization": {
+      "const": true
+    }
+  }
+}
