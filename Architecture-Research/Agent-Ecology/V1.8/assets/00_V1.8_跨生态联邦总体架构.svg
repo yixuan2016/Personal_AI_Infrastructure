@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset="1" stop-color="#102b46"/></linearGradient>
+ <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0e7490"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="8"/></filter>
+ <style>
+ .t{font-family:'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#e8f4ff}
+ .h{font-size:34px;font-weight:700}.s{font-size:22px}.m{font-size:18px}
+ .box{fill:#0c2238;stroke:#38bdf8;stroke-width:2;rx:20}
+ .local{fill:#102c45;stroke:#60a5fa;stroke-width:2;rx:18}
+ .muted{fill:#a9c3d8}
+ .arrow{stroke:#67e8f9;stroke-width:4;fill:none;marker-end:url(#arr)}
+ </style>
+ <marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#67e8f9"/></marker>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<text x="960" y="74" text-anchor="middle" class="t h">Agent Ecology V1.8｜跨生态联邦进化与多生态协同治理</text>
+<text x="960" y="115" text-anchor="middle" class="t s muted">多中心自治 · 证据驱动 · 环境协同 · 本地主权执行</text>
+<!-- federation -->
+<rect x="270" y="175" width="1380" height="220" class="box"/>
+<text x="960" y="220" text-anchor="middle" class="t h">联邦协调平面 FCP（不持有成员域生产权）</text>
+<rect x="335" y="255" width="270" height="90" rx="14" fill="#123b59" stroke="#22d3ee"/>
+<text x="470" y="292" text-anchor="middle" class="t s">成员 / 能力发现</text><text x="470" y="322" text-anchor="middle" class="t m muted">目录是发现，不是信任根</text>
+<rect x="650" y="255" width="270" height="90" rx="14" fill="#123b59" stroke="#22d3ee"/>
+<text x="785" y="292" text-anchor="middle" class="t s">任务契约协商</text><text x="785" y="322" text-anchor="middle" class="t m muted">状态映射 / 幂等 / 对账</text>
+<rect x="965" y="255" width="270" height="90" rx="14" fill="#123b59" stroke="#22d3ee"/>
+<text x="1100" y="292" text-anchor="middle" class="t s">证据与信誉索引</text><text x="1100" y="322" text-anchor="middle" class="t m muted">签名 / 撤销 / 时效</text>
+<rect x="1280" y="255" width="300" height="90" rx="14" fill="#123b59" stroke="#22d3ee"/>
+<text x="1430" y="292" text-anchor="middle" class="t s">策略兼容协商</text><text x="1430" y="322" text-anchor="middle" class="t m muted">ALLOW / DENY / ABSTAIN</text>
+<!-- domains -->
+<rect x="75" y="500" width="530" height="390" class="local"/>
+<text x="340" y="550" text-anchor="middle" class="t h">自治生态 A</text>
+<rect x="125" y="590" width="430" height="72" rx="12" fill="#164e63" stroke="#67e8f9"/>
+<text x="340" y="635" text-anchor="middle" class="t s">本地 ADS + RSI</text>
+<rect x="125" y="685" width="200" height="70" rx="12" fill="#143a5a" stroke="#60a5fa"/>
+<text x="225" y="727" text-anchor="middle" class="t s">Environment</text>
+<rect x="355" y="685" width="200" height="70" rx="12" fill="#143a5a" stroke="#60a5fa"/>
+<text x="455" y="727" text-anchor="middle" class="t s">Ontology / Twin</text>
+<rect x="125" y="780" width="430" height="70" rx="12" fill="#123b59" stroke="#fbbf24"/>
+<text x="340" y="823" text-anchor="middle" class="t s">本地 PDP / PEP / Owner 审批</text>
+<rect x="695" y="500" width="530" height="390" class="local"/>
+<text x="960" y="550" text-anchor="middle" class="t h">自治生态 B</text>
+<rect x="745" y="590" width="430" height="72" rx="12" fill="#164e63" stroke="#67e8f9"/>
+<text x="960" y="635" text-anchor="middle" class="t s">本地 ADS + RSI</text>
+<rect x="745" y="685" width="200" height="70" rx="12" fill="#143a5a" stroke="#60a5fa"/>
+<text x="845" y="727" text-anchor="middle" class="t s">Environment</text>
+<rect x="975" y="685" width="200" height="70" rx="12" fill="#143a5a" stroke="#60a5fa"/>
+<text x="1075" y="727" text-anchor="middle" class="t s">Ontology / Twin</text>
+<rect x="745" y="780" width="430" height="70" rx="12" fill="#123b59" stroke="#fbbf24"/>
+<text x="960" y="823" text-anchor="middle" class="t s">本地 PDP / PEP / Owner 审批</text>
+<rect x="1315" y="500" width="530" height="390" class="local"/>
+<text x="1580" y="550" text-anchor="middle" class="t h">自治生态 C（可选扩展）</text>
+<rect x="1365" y="590" width="430" height="72" rx="12" fill="#164e63" stroke="#67e8f9"/>
+<text x="1580" y="635" text-anchor="middle" class="t s">本地 ADS + RSI</text>
+<rect x="1365" y="685" width="200" height="70" rx="12" fill="#143a5a" stroke="#60a5fa"/>
+<text x="1465" y="727" text-anchor="middle" class="t s">Environment</text>
+<rect x="1595" y="685" width="200" height="70" rx="12" fill="#143a5a" stroke="#60a5fa"/>
+<text x="1695" y="727" text-anchor="middle" class="t s">Ontology / Twin</text>
+<rect x="1365" y="780" width="430" height="70" rx="12" fill="#123b59" stroke="#fbbf24"/>
+<text x="1580" y="823" text-anchor="middle" class="t s">本地 PDP / PEP / Owner 审批</text>
+<!-- arrows -->
+<path d="M340 500 V410 H470 V395" class="arrow"/>
+<path d="M960 500 V395" class="arrow"/>
+<path d="M1580 500 V410 H1430 V395" class="arrow"/>
+<path d="M605 700 H690" class="arrow"/>
+<path d="M1225 700 H1310" class="arrow"/>
+<text x="960" y="970" text-anchor="middle" class="t s">共享：能力声明 / 任务契约 / 签名证据 / 状态投影　　不共享：根策略控制权 / 私有记忆 / 未授权原始数据</text>
+<text x="960" y="1015" text-anchor="middle" class="t m muted">联邦层协调与发现；每个生态独立授权、独立验证、独立采用、独立回滚</text>
+</svg>
