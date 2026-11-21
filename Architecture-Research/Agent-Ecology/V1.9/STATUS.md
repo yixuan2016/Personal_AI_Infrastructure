@@ -210,3 +210,27 @@
 - 明确不把 Stigmergy、共享黑板或共享记忆本身作为首创；首篇论文候选增量聚焦类型化五平面环境、Owner 权威、来源谱系、有界发现、本地授权和匹配预算的实证评估。
 - 相关工作审查仍为 Candidate；全文逐篇阅读、最终检索覆盖和正式实验尚未完成。
 - 首篇论文实验仍未运行；V1.9 原有 321 项验收仍全部 NOT_RUN。
+
+## 当前集成状态（2026-11-21｜优先于上述历史快照）
+
+### GitHub 集成入口
+
+- 当前清洁集成 PR：[#18](https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/18)。
+- 仓库：yixuan2016/Personal_AI_Infrastructure；Base：main；Head：integration/agent-ecology-v1.9-mainline-clean-20261121。
+- 当前 HEAD：0310c6b5c3f5c80fbdf109530a8de7b072018d7c；相对 Base：5 ahead / 0 behind；82 个变更文件、12,675 additions、0 deletions。
+- PR #18 仍为 OPEN / DRAFT；正式 Review 0 条、Inline Review Thread 0 条。
+- GitHub 工具元数据出现不一致：get_pr_info 返回 mergeable=false，而 fetch_pr 返回 mergeable=true；compare 显示 5 ahead / 0 behind。此状态不构成合并批准；保持 Draft，合并前须复核 GitHub 实际冲突、保护规则、Owner Review 和验证证据。
+- 历史 PR #14 仍是独立 Draft，Base 为 docs/agent-ecology-v1.8-20261110，Head 为历史研究分支 research/agent-ecology-v1.9-stigmergy-20261114；不得与当前 PR #18 混为同一个集成入口。
+
+### 本轮静态复核与计数纠错
+
+- 逐项核对 9 份验收 CSV：总体验收主矩阵 39 项；F1 能力发现 31 项；WP-020 27 项；WP-021 36 项；WP-022 40 项；WP-023 50 项；WP-024 60 项；WP-025 专项 17 项；WP-026 38 项。
+- 计数规则：WP-025 的 ECO-01—ECO-17 已包含在总体验收主矩阵 39 项中，专项矩阵是重复视图，不重复计数；因此 V1.9 总数为 321 项，而不是 338 项。
+- 九份 CSV 的数据行数和唯一 ID 数均与上述专项计数一致；主矩阵、WP-020—WP-026 各矩阵的状态均为 NOT_RUN。F1 CSV 的列顺序为 status 在 severity 前，已按表头字段解释，31 项均 NOT_RUN。
+- 发现 30_WP-026_静态审查与未决事项.md 曾把 WP-026 验收矩阵写为 36 项；实际 CSV 有 WP026-01—WP026-38 共 38 项，README 也记录 38 项。已在本分支修正文档为 38 项，明确全部 NOT_RUN。
+- WP-024 L0/L1：Python BFS 参考检查器和 Quorum 组合穷举已有有限模型执行结果；TLA+ TLC 仍 NOT_RUN。60 项正式 WP-024 验收矩阵仍全部 NOT_RUN。
+- WP-020—WP-026 静态未决事项合计 85 项，全部 OPEN；68 项 ADR 仍为 Candidate；94 项威胁仍为 Candidate。
+- 当前没有新增真实 Owner 批准、跨生态真实密钥、生产身份信任关系、Runtime 部署、生产数据授权或独立审查签署；Runner OFF；productionAllowed=false。
+
+**当前裁决：** PR #18 是 Agent Ecology V1.9 的清洁集成审查入口，但不是已合并主线、已完成验证或生产就绪版本。所有 Candidate、NOT_RUN、OPEN 状态必须保留，直至真实 Owner 和独立验证证据到位。
+
