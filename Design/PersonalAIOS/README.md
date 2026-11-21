@@ -30,3 +30,11 @@
 - 本阶段新增编号文档 504—523，共 20 份；S1 仍以六个既有 OT 为范围，不自动新增 OT/OF。
 - Owner Feedback、批准、ACR 与负向测试的状态以 V2.23 Manifest 的可核验证据为准；无真实来源的意见不得伪装成 Owner 决策。
 - V2.23 为候选研究包，不代表 S1 Freeze、Design Freeze 或工程授权。
+
+
+## V2.24｜Stage36 首批高风险决策审议包
+- [V2.24 研究入口](./V2.24/README.md)：D-01—D-07 高风险决策、Owner 审议规程、证据来源链、DecisionRecord、消费者测试追踪、专业审查和 ProfileDelta。
+- 本阶段新增编号文档 524—543，共 20 份；不新增 OT/OF。
+- 142 个字段进入首批高风险审议范围；真实 Owner Feedback、Owner Approvals、ACR Approvals 均为 0。
+- 56 项负向测试仍为 Designed / 0 Executed；Security/Privacy/Legal 专业审查 Pending。
+- S1 Freeze Not Ready；Design Freeze Not Ready；Engineering Not Authorized；Implementation Not Started。
