@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="7680" height="4320" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+<title id="title">Agent Ecology WP-020 跨生态信任协议与授权链架构</title>
+<desc id="desc">展示两个独立自治生态通过双边信任关系进行身份互认、Owner签名、权限衰减委托、目标域本地授权、短期受众绑定令牌和撤销同步。联邦协调平面不持有全局信任根或生产凭证。</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset=".55" stop-color="#111e35"/><stop offset="1" stop-color="#182640"/></linearGradient>
+ <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#203b5a"/><stop offset="1" stop-color="#142840"/></linearGradient>
+ <linearGradient id="mid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b5265"/><stop offset="1" stop-color="#26365f"/></linearGradient>
+ <linearGradient id="gov" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#39456b"/><stop offset=".5" stop-color="#285a66"/><stop offset="1" stop-color="#39456b"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur in="SourceAlpha" stdDeviation="8"/><feOffset dy="6"/><feComponentTransfer><feFuncA type="linear" slope=".28"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <marker id="blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#77c7ff"/></marker>
+ <marker id="mint" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#7ce2c1"/></marker>
+ <marker id="gold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#f0c878"/></marker>
+ <style>
+ text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;fill:#edf5ff}
+ .title{font-size:40px;font-weight:700}.sub{font-size:21px;fill:#a9c1dc}
+ .section{font-size:27px;font-weight:700}.head{font-size:22px;font-weight:700}
+ .body{font-size:18px;fill:#c8d8eb}.small{font-size:15px;fill:#a8bfd7}
+ .box{fill:url(#panel);stroke:#6196be;stroke-width:2}
+ .line{fill:none;stroke:#77c7ff;stroke-width:3.5;marker-end:url(#blue)}
+ .mintline{fill:none;stroke:#7ce2c1;stroke-width:3.5;marker-end:url(#mint)}
+ .goldline{fill:none;stroke:#f0c878;stroke-width:3.5;marker-end:url(#gold)}
+ .dash{stroke-dasharray:10 8}
+ </style>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<circle cx="160" cy="160" r="270" fill="#1e7390" opacity=".07"/><circle cx="1760" cy="930" r="320" fill="#4ab89b" opacity=".06"/>
+<text x="64" y="66" class="title">Agent Ecology｜WP-020 跨生态信任协议与能力授权链</text>
+<text x="66" y="102" class="sub">独立信任根 · 双边互认 · Owner 负责签名 · 委托权限单调衰减 · 目标域本地最终授权</text>
+
+<rect x="64" y="130" width="1792" height="100" rx="20" fill="url(#gov)" stroke="#8ab2d1" stroke-opacity=".55" stroke-width="2" filter="url(#shadow)"/>
+<text x="96" y="170" class="section">人类治理外环</text>
+<text x="390" y="169" class="body">各生态 Root Governance 独立持有根身份与根策略</text>
+<text x="390" y="202" class="small">关键审批 · 根密钥保护 · 风险门槛 · 否决 / 接管 / Kill Switch · 最终问责</text>
+<text x="1475" y="184" class="head" fill="#f0c878">Agent 不可委托根权限</text>
+
+<rect x="64" y="268" width="490" height="430" rx="22" class="box" filter="url(#shadow)"/>
+<text x="92" y="308" class="section">自治生态 A｜发起侧</text>
+<rect x="92" y="330" width="434" height="72" rx="13" fill="#29496a" stroke="#78bce9"/>
+<text x="112" y="361" class="head">本地 Root / Domain Identity</text><text x="112" y="386" class="small">独立根锚 · Owner Registry · 本地策略</text>
+<rect x="92" y="420" width="207" height="94" rx="12" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="110" y="454" class="body">Capability Owner</text><text x="110" y="481" class="small">能力事实权威</text><text x="110" y="501" class="small">Owner Signing Key</text>
+<rect x="319" y="420" width="207" height="94" rx="12" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="337" y="454" class="body">Workload Identity</text><text x="337" y="481" class="small">Agent / 服务实例</text><text x="337" y="501" class="small">短期 SVID / PKI</text>
+<rect x="92" y="532" width="434" height="64" rx="12" fill="#214761" stroke="#7ce2c1"/>
+<text x="112" y="570" class="body">签名能力声明 + Owner 委托链</text>
+<rect x="92" y="612" width="434" height="58" rx="12" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="112" y="648" class="body">Task Contract：Purpose / Audience / Scope</text>
+
+<rect x="715" y="268" width="490" height="430" rx="22" fill="url(#mid)" stroke="#72c5d9" stroke-width="2" filter="url(#shadow)"/>
+<text x="743" y="308" class="section">双边信任与联邦协调平面</text>
+<rect x="743" y="330" width="434" height="76" rx="13" fill="#28546a" stroke="#7ce2c1"/>
+<text x="763" y="361" class="head">Peer Trust Binding｜双边接受</text>
+<text x="763" y="387" class="small">双方本地 Trust Anchor · Purpose · Risk · 有效期</text>
+<rect x="743" y="422" width="207" height="94" rx="12" fill="#1a405b" stroke="#77c7ff"/>
+<text x="761" y="456" class="body">SPIFFE Federation</text><text x="761" y="483" class="small">Trust Domain ↔ Bundle</text><text x="761" y="503" class="small">Sequence / Rotation</text>
+<rect x="969" y="422" width="208" height="94" rx="12" fill="#1a405b" stroke="#77c7ff"/>
+<text x="987" y="456" class="body">OIDF Federation</text><text x="987" y="483" class="small">可选 Trust Chain</text><text x="987" y="503" class="small">Trust Mark / 本地锚</text>
+<rect x="743" y="534" width="434" height="62" rx="12" fill="#203b59" stroke="#f0c878"/>
+<text x="763" y="572" class="body">FCP：发现 / 路由 / 摘要同步，不签发授权</text>
+<rect x="743" y="612" width="434" height="58" rx="12" fill="#203b59" stroke="#f0c878"/>
+<text x="763" y="648" class="body">无全局超级信任根 · 无成员域生产凭证</text>
+
+<rect x="1366" y="268" width="490" height="430" rx="22" class="box" filter="url(#shadow)"/>
+<text x="1394" y="308" class="section">自治生态 B｜执行侧</text>
+<rect x="1394" y="330" width="434" height="72" rx="13" fill="#29496a" stroke="#78bce9"/>
+<text x="1414" y="361" class="head">本地 Root / Domain Identity</text><text x="1414" y="386" class="small">独立根锚 · 本地 Authorization Server</text>
+<rect x="1394" y="420" width="207" height="94" rx="12" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="1412" y="454" class="body">本地 PDP</text><text x="1412" y="481" class="small">Purpose / Scope / Risk</text><text x="1412" y="501" class="small">DENY / HOLD / ALLOW</text>
+<rect x="1621" y="420" width="207" height="94" rx="12" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="1639" y="454" class="body">本地 PEP</text><text x="1639" y="481" class="small">副作用前强制执行</text><text x="1639" y="501" class="small">审计 / Kill Switch</text>
+<rect x="1394" y="532" width="434" height="64" rx="12" fill="#214761" stroke="#7ce2c1"/>
+<text x="1414" y="570" class="body">短期令牌：Audience / Scope / TTL / Actor</text>
+<rect x="1394" y="612" width="434" height="58" rx="12" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="1414" y="648" class="body">本地资源 / 数据 Owner / 执行回执</text>
+
+<path d="M554 365 H705" class="line"/><text x="574" y="346" class="small">签名声明 / 身份证明</text>
+<path d="M715 470 H564" class="mintline"/><text x="576" y="493" class="small">Peer 身份校验</text>
+<path d="M1205 365 H1356" class="line"/><text x="1214" y="346" class="small">受限能力摘要 / 任务请求</text>
+<path d="M1366 470 H1215" class="mintline"/><text x="1222" y="493" class="small">目标域本地复核</text>
+<path d="M554 641 C660 730 1260 730 1366 641" class="goldline dash"/>
+<text x="760" y="744" class="small">Token Exchange（可选）｜Subject + Actor + Delegation Chain → 目标域本地签发</text>
+
+<rect x="64" y="786" width="1792" height="226" rx="20" fill="#10243b" stroke="#52799b" stroke-width="2"/>
+<text x="94" y="827" class="section">信任与授权链的五道独立校验</text>
+<g>
+ <rect x="94" y="850" width="316" height="100" rx="13" fill="#1b3b5a" stroke="#5d94bf"/><text x="114" y="883" class="head">① 身份验证</text><text x="114" y="914" class="small">谁在行动？来自哪个域？</text><text x="114" y="937" class="small">Trust Domain / SVID</text>
+ <rect x="432" y="850" width="316" height="100" rx="13" fill="#1b3b5a" stroke="#5d94bf"/><text x="452" y="883" class="head">② Owner 签名</text><text x="452" y="914" class="small">谁有权发布能力声明？</text><text x="452" y="937" class="small">JWS / JCS / Key Epoch</text>
+ <rect x="770" y="850" width="316" height="100" rx="13" fill="#1b3b5a" stroke="#5d94bf"/><text x="790" y="883" class="head">③ 委托衰减</text><text x="790" y="914" class="small">子权限不得超过父权限</text><text x="790" y="937" class="small">Purpose / Scope / TTL / Budget</text>
+ <rect x="1108" y="850" width="316" height="100" rx="13" fill="#1b3b5a" stroke="#7ce2c1"/><text x="1128" y="883" class="head">④ 本地授权</text><text x="1128" y="914" class="small">目标域 PDP / PEP 最终判定</text><text x="1128" y="937" class="small">DENY 优先 · HOLD Fail Closed</text>
+ <rect x="1446" y="850" width="382" height="100" rx="13" fill="#1b3b5a" stroke="#f0c878"/><text x="1466" y="883" class="head">⑤ 撤销与审计</text><text x="1466" y="914" class="small">Epoch / Replay / Key Rotation</text><text x="1466" y="937" class="small">本地 Kill Switch 独立于 FCP</text>
+</g>
+<text x="94" y="985" class="small">安全不变量：信任关系 ≠ 任务授权｜Owner 签名 ≠ 执行许可｜上游 ALLOW ≠ 目标域 ALLOW｜撤销未知/陈旧时高风险 HOLD</text>
+</svg>
