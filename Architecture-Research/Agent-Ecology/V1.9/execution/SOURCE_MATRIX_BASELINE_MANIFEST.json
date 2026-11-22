@@ -1,0 +1,75 @@
+{
+  "manifest_version": "1.0",
+  "source_repository": "yixuan2016/Personal_AI_Infrastructure",
+  "source_ref": "integration/agent-ecology-v1.9-mainline-clean-20261121",
+  "source_commit": "8d2f10969a33e92bf701b20589cfc3f4ba5548c1",
+  "raw_matrix_rows": 338,
+  "unique_acceptance_ids": 321,
+  "duplicate_ids": [
+    "ECO-01",
+    "ECO-02",
+    "ECO-03",
+    "ECO-04",
+    "ECO-05",
+    "ECO-06",
+    "ECO-07",
+    "ECO-08",
+    "ECO-09",
+    "ECO-10",
+    "ECO-11",
+    "ECO-12",
+    "ECO-13",
+    "ECO-14",
+    "ECO-15",
+    "ECO-16",
+    "ECO-17"
+  ],
+  "deduplication_rule": "ECO-01..ECO-17 appear in both the base matrix and WP-025; count once while preserving both source rows in the register.",
+  "files": [
+    {
+      "path": "Architecture-Research/Agent-Ecology/V1.9/02_合成实验与验收矩阵.csv",
+      "blob_sha": "b6f71198661d204c713c45d0e65718a9b20bb0ef",
+      "row_count": 39
+    },
+    {
+      "path": "Architecture-Research/Agent-Ecology/V1.9/validation/F1_CAPABILITY_DISCOVERY_MATRIX.csv",
+      "blob_sha": "55db2c68a02a7aca4df568ecb1b1f56aee50eb00",
+      "row_count": 31
+    },
+    {
+      "path": "Architecture-Research/Agent-Ecology/V1.9/validation/WP020_TRUST_PROTOCOL_VALIDATION_MATRIX.csv",
+      "blob_sha": "cde3970da7beeaf479214ec2e5cc58d3086f08f5",
+      "row_count": 27
+    },
+    {
+      "path": "Architecture-Research/Agent-Ecology/V1.9/validation/WP021_CATALOG_CONSISTENCY_REVOCATION_MATRIX.csv",
+      "blob_sha": "ecac1e757a855f31fa29ae9e11290d8f7a5e4f16",
+      "row_count": 36
+    },
+    {
+      "path": "Architecture-Research/Agent-Ecology/V1.9/validation/WP022_MULTI_WITNESS_QUORUM_MATRIX.csv",
+      "blob_sha": "19148627d1823f581e53bb18dc2cf4f9fd9e66fd",
+      "row_count": 40
+    },
+    {
+      "path": "Architecture-Research/Agent-Ecology/V1.9/validation/WP023_WITNESS_GOVERNANCE_RECOVERY_MATRIX.csv",
+      "blob_sha": "8ee8d1089159d1d886ee0f40054e5d8be7623bcf",
+      "row_count": 50
+    },
+    {
+      "path": "Architecture-Research/Agent-Ecology/V1.9/validation/WP024_WITNESS_RESILIENCE_MATRIX.csv",
+      "blob_sha": "2f1e05163ae39f5210e3dd86465b50387fe600cc",
+      "row_count": 60
+    },
+    {
+      "path": "Architecture-Research/Agent-Ecology/V1.9/validation/WP025_DYNAMIC_COALITION_MATRIX.csv",
+      "blob_sha": "d15fe8b344f756a998828edfbff4dfcaeee8a2a9",
+      "row_count": 17
+    },
+    {
+      "path": "Architecture-Research/Agent-Ecology/V1.9/validation/WP026_COALITION_CHARTER_LIFECYCLE_MATRIX.csv",
+      "blob_sha": "b66d0c6252d10efc6cbcc0eaffa2562fc96efcd7",
+      "row_count": 38
+    }
+  ]
+}
