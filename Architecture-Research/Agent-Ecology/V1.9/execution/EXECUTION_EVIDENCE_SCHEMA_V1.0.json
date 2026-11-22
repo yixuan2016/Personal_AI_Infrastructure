@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:execution-evidence:1.0.0",
+  "title": "Agent Ecology / Stigmergy Acceptance Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "test_id",
+    "status",
+    "executed_at",
+    "command",
+    "environment",
+    "source_commit",
+    "exit_code",
+    "expected_result",
+    "observed_result",
+    "artifacts",
+    "scope"
+  ],
+  "properties": {
+    "test_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "BLOCKED",
+        "NOT_RUN"
+      ]
+    },
+    "executed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "command": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "environment": {
+      "type": "object",
+      "required": [
+        "os",
+        "architecture",
+        "python",
+        "isolation_mode"
+      ],
+      "properties": {
+        "os": {
+          "type": "string"
+        },
+        "os_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "architecture": {
+          "type": "string"
+        },
+        "python": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "java": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rust": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "isolation_mode": {
+          "const": "LOCAL_MACOS_SYNTHETIC_ONLY"
+        },
+        "network_egress": {
+          "const": false
+        },
+        "production_credentials_used": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "source_commit": {
+      "type": "string",
+      "minLength": 7
+    },
+    "execution_commit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "exit_code": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "expected_result": {
+      "type": "string"
+    },
+    "observed_result": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "reviewer": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "decision": {
+          "enum": [
+            "CONFIRMED",
+            "REJECTED",
+            "PENDING"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "blocker": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "scope": {
+      "type": "string",
+      "const": "SYNTHETIC_LOCAL_RESEARCH_ONLY"
+    },
+    "external_side_effects": {
+      "const": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "PASS"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "executed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exit_code": {
+            "const": 0
+          },
+          "artifacts": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "FAIL"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "executed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exit_code": {
+            "type": "integer",
+            "not": {
+              "const": 0
+            }
+          },
+          "artifacts": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "BLOCKED"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "blocker": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "NOT_RUN"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "executed_at": {
+            "type": "null"
+          },
+          "command": {
+            "type": "null"
+          },
+          "exit_code": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}
