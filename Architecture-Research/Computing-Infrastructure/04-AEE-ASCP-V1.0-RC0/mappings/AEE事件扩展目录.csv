@@ -1,0 +1,24 @@
+﻿事件类型,中文语义,目录状态,权威Issuer,核心字段,规则
+EnvironmentSpaceCreated,环境空间创建,AEE新增,空间Owner,"EnvironmentRef, SpaceType, OwnerID, PolicyRef",版本化；创建不授予成员自动访问权
+EnvironmentSpacePolicyChanged,环境空间策略变化,AEE新增,空间Owner/授权治理主体,"EnvironmentRef, PreviousPolicyRef, NewPolicyRef, EffectiveAt",保留旧策略引用；影响面评估和审计
+TracePublished,协作痕迹发布,AEE新增,痕迹发布者,"TraceID, TraceType, EnvironmentRef, SchemaVersion, Digest",追加写；Schema/权限/幂等校验
+TraceSuperseded,痕迹被替代,AEE新增,原发布者或事实Owner,"OriginalTraceRef, ReplacementTraceRef, Reason",追加事件；不得覆盖原记录
+TraceQuarantined,痕迹隔离,AEE新增,环境安全治理主体,"TraceRef, Reason, Scope, ReviewRef",隔离后禁止触发任务
+SubscriptionCreated,订阅创建,AEE新增,订阅者/环境服务,"SubscriptionRef, SubscriberRef, FilterDigest, Purpose",订阅不等于授权
+SubscriptionPaused,订阅暂停,AEE新增,订阅者/环境服务,"SubscriptionRef, Reason, EffectiveAt",保留游标和审计
+SubscriptionRevoked,订阅撤销,AEE新增,订阅者/环境服务/授权Owner,"SubscriptionRef, Reason, EffectiveAt",撤销后停止后续投递
+TaskClaimAcquired,任务认领成功,AEE新增,SCO,"TaskRef, StageRef, HolderAgentRef, ClaimEpoch, FencingToken, Expiry",单任务/阶段原子认领
+TaskClaimRenewed,任务认领续租,AEE新增,SCO,"ClaimLeaseRef, FencingToken, NewExpiry",续租不得超过最大期限和预算
+TaskClaimExpired,任务认领过期,AEE新增,SCO,"ClaimLeaseRef, ClaimEpoch, FencingToken, ExpiredAt",先核查副作用；不得直接判定失败
+TaskClaimReleased,任务认领释放,AEE新增,SCO/当前持有者,"ClaimLeaseRef, FencingToken, ReleasedAt",旧 token 失效
+ArtifactBound,成果绑定环境,AEE新增,成果Owner/环境服务,"BindingRef, ArtifactRef, Version, Digest, TaskRef",只登记引用，不复制成果正文
+ArtifactVerificationRecorded,成果验证记录,AEE新增,独立验证者,"ArtifactRef, VerificationRef, Result, CriteriaVersion",执行者不得自验收
+GovernanceContextEvaluated,治理上下文评估,AEE新增,PDP/授权Owner,"ContextRef, SubjectRef, Purpose, Decision, PolicyVersion, ValidUntil",上下文不替代实时 PEP 检查
+RevocationIssued,授权/对象撤销,既有事件复用,授权权威方/对应Owner,"ObjectRef, Version, Reason, EffectiveAt, Signature",按对象Owner范围撤销
+ReconciliationCompleted,跨域状态对账完成,既有事件复用,Federation Coordinator,"Epoch, Watermark, MissingEvents, ReconciliationDigest",缺口不得静默抹平
+HumanOverride,人工接管/否决,既有事件复用,授权人/审批人,"ProposalID, Decision, Scope, Reason, Expiry",独立治理证据
+DataUseGrantRevoked,数据使用授权撤销,既有事件复用,数据Owner,"GrantID, Version, EffectiveAt, Reason",本地PEP收敛
+ExecutionReceiptPublished,执行回执发布,既有事件复用,站点执行器,"ReceiptID, TaskID, LeaseRef, Outcome, EvidenceDigest",执行回执不是业务验收
+AcceptanceRecorded,业务验收记录,既有事件复用,独立验收方,"AcceptanceID, TaskID, Decision, CriteriaVersion, SignatureRef",执行方不自验收
+LeaseReleased,物理资源租约释放,既有事件复用,本地Lease Authority,"LeaseID, LeaseEpoch, FencingToken, ReleasedAt",仅表示物理资源租约；不等于任务认领释放
+TaskCancellationConfirmed,任务取消确认,既有事件复用,各本地Owner,"TaskID, OwnerID, LocalState, ReleasedRefs",逐Owner确认本地状态

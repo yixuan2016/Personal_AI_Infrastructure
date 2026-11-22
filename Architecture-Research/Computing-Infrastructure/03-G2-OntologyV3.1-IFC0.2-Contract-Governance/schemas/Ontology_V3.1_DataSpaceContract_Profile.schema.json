@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:compute-base:ontology:v3.1:data-space-profile:rc0",
+  "title": "Ontology V3.1 DataSpaceContract Profile RC0",
+  "type": "object",
+  "required": [
+    "contract_ref",
+    "contract_version",
+    "provider_ref",
+    "consumer_ref",
+    "data_product_refs",
+    "dataset_version_refs",
+    "purpose_refs",
+    "permitted_actions",
+    "recipient_scope",
+    "geographic_constraints",
+    "retention_terms",
+    "onward_sharing",
+    "audit_obligations",
+    "deletion_obligations",
+    "valid_from",
+    "valid_until",
+    "signature_refs",
+    "status"
+  ],
+  "properties": {
+    "contract_ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "contract_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "provider_ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "consumer_ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "data_product_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true
+    },
+    "dataset_version_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true
+    },
+    "purpose_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true
+    },
+    "permitted_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "recipient_scope": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "geographic_constraints": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "retention_terms": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "onward_sharing": {
+      "type": "object",
+      "required": [
+        "allowed"
+      ],
+      "properties": {
+        "allowed": {
+          "type": "boolean"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "audit_obligations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object"
+      }
+    },
+    "deletion_obligations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object"
+      }
+    },
+    "valid_from": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "terms_digest": {
+      "type": "string",
+      "pattern": "^sha256:[A-Fa-f0-9]{64}$"
+    },
+    "signature_refs": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true
+    },
+    "status": {
+      "enum": [
+        "Draft",
+        "Negotiating",
+        "Signed",
+        "Active",
+        "Suspended",
+        "Terminated",
+        "Expired"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

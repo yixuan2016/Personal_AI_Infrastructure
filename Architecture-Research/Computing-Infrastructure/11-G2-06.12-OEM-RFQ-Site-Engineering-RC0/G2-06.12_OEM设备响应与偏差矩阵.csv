@@ -1,0 +1,29 @@
+编号,领域,设备/项目,候选/参考,供应商必须提交,核验方式,偏差级别,Owner,状态,备注
+OEM-001,GPU,HPE GB300 NVL72,HPE S7K95A/S6C60A,完整可订购BOM与每个SKU的数量/替代料,订单配置器与签署BOM,关键,GPU Owner,待回填,禁止仅提供产品家族宣传页
+OEM-002,GPU,Dell PowerEdge XE9712,IR9048/ XE9712,完整Rack/Sled/PS33/DLC/网卡/管理BOM,OEM配置单与机械电气图,关键,GPU Owner,待回填,与HPE机柜不视为机械可互换
+OEM-003,GPU,Lenovo GB300 NVL72,Type 7DJV,完整机柜/托盘/Power Shelf/Manifold/端口/固件BOM,OEM配置单与QVL,关键,GPU Owner,待回填,独立报价独立验收
+OEM-004,GPU,功率口径,HPE/NVIDIA,解释132kW TDP/155kW EDPp/192kW母线规划与NVIDIA RA 142kW的边界,OEM签署功率声明与测量边界,关键,设施Owner,待回填,不得把额定容量当实测功耗
+OEM-005,GPU,机柜尺寸重量,HPE GB300,尺寸/满载重量/重心/四点载荷/满液质量,OEM图纸+现场称重/结构核验,关键,结构Owner,待回填,公开值2495×600×1068mm/约3300lb仅为参考
+OEM-006,GPU,电源Whip,HPE NVL72,S6X18A至S6X23A适用条件与地区SKU矩阵,OEM SKU说明+站点电源审查,关键,电气Owner,待回填,400V NA/INTL及480V NA均有选项
+OEM-007,GPU,ConnectX-8端口,HPE/Dell/Lenovo,每tray NIC/IO board/OSFP物理端口/port mode/速率/rail map,逐端口图+NIC配置报告,关键,网络Owner,待回填,端口数不等于有效吞吐
+OEM-008,GPU,BlueField-3,DPU SKU,端口速率/模式/管理口/固件/主机连接关系,OEM端口表与QVL,高,网络Owner,待回填,区分DPU数据面和BMC管理面
+OEM-009,GPU Fabric,RoCE路线,Spectrum-6 SN6600,交换机SKU/NOS/缓冲/PFC/ECN/QoS/许可/功耗,端到端配置基线和QVL,关键,网络Owner,待回填,每区域两台形成独立双平面
+OEM-010,GPU Fabric,InfiniBand替代,Quantum-X800 Q3400-RA,交换机SKU/UFM/SM/线缆/NIC模式/许可,端到端IB QVL与性能报告,高,网络Owner,待回填,与RoCE路线不混成同一Fabric
+OEM-011,存储,Dell R7725xd,R7725xd候选,机箱/背板/NVMe盘位/PCIe lane/HBA/NIC/PSU/固件,完整BOM和存储性能测试,关键,存储Owner,待回填,具体盘型和数量需QVL
+OEM-012,存储,KIOXIA LC9 E3.L,LC9 245.76TB候选,准确型号/固件/耐久度/功耗/热插拔/兼容列表,厂商兼容性声明和样机测试,关键,存储Owner,待回填,不预设已通过Dell认证
+OEM-013,CPU/HPC,Lenovo N1380,7DDH候选,PCS数量/机箱/Manifold/SMM3/水路/供电图,Lenovo Product Guide与配置单,关键,CPU Owner,待回填,公开DS0187列出SC750 V4/SC777 V4
+OEM-014,CPU/HPC,SC tray与N1380兼容,SC750 V4/SC777 V4/其他,逐个Machine Type/Model与N1380兼容声明,Lenovo书面兼容矩阵,关键,CPU Owner,待回填,SC755 V5不得默认兼容
+OEM-015,控制,Dell R9815,R9815候选,CPU/内存/网卡/PSU/BMC/TPM/固件/支持周期,配置单和Redfish/BMC安全验证,高,控制Owner,待回填,控制节点数量待HA容量复核
+OEM-016,网络,光模块/线缆,OSFP/QSFP候选,料号/波长/距离/纤芯/连接器/FEC/功耗/DOM/温度/QVL,两端OEM兼容清单与链路测试,关键,网络Owner,待回填,不按800G标签直接采购
+OEM-017,网络,CPU/Storage交换机,待选型,端口密度/带宽/缓冲/路由/冗余/许可/功耗,设计计算和QVL,高,网络Owner,待回填,与GPU Fabric分域
+OEM-018,WAN,双运营商,Carrier A/B,物理路由/管道/ASN/楼内入口/Meet-Me Room/SLA,运营商路径证明与现场勘验,关键,网络Owner,待回填,两个合同不等于物理多样性
+OEM-019,液冷,Vertiv XDU1350,HPE SKU S5R40A/S5R41A/S5S27A/S5S28A,额定曲线/泵模式/热交换/介质/水质/一次二次侧接口,OEM签署P&ID/曲线/数据表,关键,设施Owner,待回填,1.3MW和最多8 rack为公开参考
+OEM-020,液冷,CDU整机冗余,1台/2台1+1/模块N+1,故障域/切换/旁路/维护/供电/阀门策略,FMEA与故障演练,关键,设施Owner,待决策,泵N+1不等于CDU整机N+1
+OEM-021,液冷,二次侧介质,GB300与N1380,介质/水质/材料/温压流量/压降/过滤/补液,OEM水质与液路兼容声明,关键,设施Owner,待回填,不同OEM二次侧不默认共液
+OEM-022,电气,UPS/PDU/母线,站点设计,额定/降额/效率/旁路/保护/短路/接地/计量,持证电气工程师签署图纸,关键,电气Owner,待回填,当地法规与AHJ适用
+OEM-023,结构,地板/承重,机柜和液冷管路,总重/点载荷/重心/抗震固定/满液重量/运输路径,结构工程师签署计算书,关键,结构Owner,待回填,平均面荷载不能替代点载荷
+OEM-024,软件,系统软件栈,GB300/N1380/存储/交换机,OS/驱动/CUDA/NCCL/OFED/NOS/固件版本矩阵,厂商兼容矩阵与互操作测试,关键,平台Owner,待回填,版本需可复现可回滚
+OEM-025,安全,供应链/固件,全设备,SBOM/签名启动/TPM/漏洞响应/EOL/EOS/原产地/出口分类,厂商合规声明与审计,关键,安全Owner,待回填,地区法律由法务复核
+OEM-026,服务,保修与支持,全设备,服务覆盖/响应修复时间/备件库/RMA/驻场/升级路径,SLA与服务合同草案,高,运维Owner,待回填,需覆盖两个区域当地服务
+OEM-027,商务,TCO,全设备与设施,设备价/税费/运输/安装/许可/维保/能耗/水耗/备件/残值,正式报价和财务模型,关键,采购财务Owner,待回填,币种税费折扣和有效期明确
+OEM-028,交付,FAT与SAT,全系统,测试用例/环境/工具/阈值/见证人/失败处理/重测,签署验收方案,关键,项目Owner,待回填,未通过不得转生产

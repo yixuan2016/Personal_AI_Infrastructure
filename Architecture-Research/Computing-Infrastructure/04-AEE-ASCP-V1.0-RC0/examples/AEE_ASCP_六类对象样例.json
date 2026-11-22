@@ -1,0 +1,194 @@
+[
+  {
+    "schema_version": "1.0.0-rc0",
+    "ontology_profile_version": "compute-base/3.0",
+    "issuer_id": "issuer-ads-01",
+    "owner_id": "owner-domain-01",
+    "created_at": "2026-11-10T00:00:00Z",
+    "updated_at": "2026-11-10T00:00:00Z",
+    "source_ref": "urn:source:architecture-review",
+    "content_digest": {
+      "algorithm": "sha-256",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "id": "env-001",
+    "object_type": "EnvironmentSpace",
+    "status": "active",
+    "environment_ref": "urn:ads:environment:compute-domain:001",
+    "space_type": "domain_collaboration",
+    "scope": {
+      "domain_ref": "urn:ads:domain:compute",
+      "site_refs": [
+        "urn:site:01"
+      ]
+    },
+    "trust_domain_ref": "urn:trust-domain:compute",
+    "ontology_profile_ref": "urn:ontology:compute-base:3.0",
+    "access_policy_ref": "urn:policy:environment:compute",
+    "data_plane_allowlist": [
+      "state",
+      "event",
+      "artifact",
+      "semantic",
+      "governance"
+    ]
+  },
+  {
+    "schema_version": "1.0.0-rc0",
+    "ontology_profile_version": "compute-base/3.0",
+    "issuer_id": "issuer-ads-01",
+    "owner_id": "owner-domain-01",
+    "created_at": "2026-11-10T00:00:00Z",
+    "updated_at": "2026-11-10T00:00:00Z",
+    "source_ref": "urn:source:architecture-review",
+    "content_digest": {
+      "algorithm": "sha-256",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "id": "trace-001",
+    "object_type": "TraceRecord",
+    "status": "published",
+    "trace_id": "trace-001",
+    "trace_type": "Observation",
+    "trace_state": "published",
+    "source": "agent://network-agent/runtime-01",
+    "actor_id": "agent-network-01",
+    "domain_id": "network",
+    "environment_ref": "urn:ads:environment:compute-domain:001",
+    "occurred_at": "2026-11-10T00:00:00Z",
+    "recorded_at": "2026-11-10T00:00:01Z",
+    "subject_ref": "urn:resource:network-path:01",
+    "payload_schema_ref": "urn:ads:schema:observation:1.0",
+    "payload": {
+      "observation": "path-latency-updated",
+      "value_ms": 12
+    },
+    "classification": "Internal",
+    "visibility": "domain",
+    "policy_ref": "urn:policy:trace:publish",
+    "purpose": "compute-topology-analysis",
+    "evidence_refs": [
+      "urn:evidence:network-probe:001"
+    ],
+    "verification_status": "pending"
+  },
+  {
+    "schema_version": "1.0.0-rc0",
+    "ontology_profile_version": "compute-base/3.0",
+    "issuer_id": "issuer-ads-01",
+    "owner_id": "owner-domain-01",
+    "created_at": "2026-11-10T00:00:00Z",
+    "updated_at": "2026-11-10T00:00:00Z",
+    "source_ref": "urn:source:architecture-review",
+    "content_digest": {
+      "algorithm": "sha-256",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "id": "sub-001",
+    "object_type": "EnvironmentSubscription",
+    "status": "active",
+    "subscription_ref": "urn:ads:subscription:001",
+    "subscriber_ref": "urn:agent:compute-planner",
+    "environment_ref": "urn:ads:environment:compute-domain:001",
+    "purpose": "compute-topology-analysis",
+    "filters": {
+      "trace_types": [
+        "Observation",
+        "Dependency"
+      ],
+      "domain_refs": [
+        "urn:ads:domain:network"
+      ]
+    },
+    "delivery_mode": "pull",
+    "policy_ref": "urn:policy:subscription:read",
+    "expires_at": "2026-11-11T00:00:00Z"
+  },
+  {
+    "schema_version": "1.0.0-rc0",
+    "ontology_profile_version": "compute-base/3.0",
+    "issuer_id": "issuer-ads-01",
+    "owner_id": "owner-domain-01",
+    "created_at": "2026-11-10T00:00:00Z",
+    "updated_at": "2026-11-10T00:00:00Z",
+    "source_ref": "urn:source:architecture-review",
+    "content_digest": {
+      "algorithm": "sha-256",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "id": "claim-001",
+    "object_type": "TaskClaimLease",
+    "status": "active",
+    "claim_lease_ref": "urn:sco:task-claim-lease:001",
+    "task_ref": "urn:sco:task:001",
+    "holder_agent_ref": "urn:agent:compute-planner",
+    "issued_by_ref": "urn:sco:coordinator:01",
+    "claim_epoch": 1,
+    "fencing_token": 1,
+    "issued_at": "2026-11-10T00:00:00Z",
+    "expires_at": "2026-11-10T00:05:00Z",
+    "max_expires_at": "2026-11-10T01:00:00Z",
+    "state": "active",
+    "policy_decision_ref": "urn:policy-decision:claim-001",
+    "idempotency_key": "compute-planner:task-001:claim-1"
+  },
+  {
+    "schema_version": "1.0.0-rc0",
+    "ontology_profile_version": "compute-base/3.0",
+    "issuer_id": "issuer-ads-01",
+    "owner_id": "owner-domain-01",
+    "created_at": "2026-11-10T00:00:00Z",
+    "updated_at": "2026-11-10T00:00:00Z",
+    "source_ref": "urn:source:architecture-review",
+    "content_digest": {
+      "algorithm": "sha-256",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "id": "binding-001",
+    "object_type": "ArtifactBinding",
+    "status": "published",
+    "binding_ref": "urn:ads:artifact-binding:001",
+    "environment_ref": "urn:ads:environment:compute-domain:001",
+    "artifact_ref": "urn:artifact-registry:compute-topology:version-1",
+    "artifact_version": "1",
+    "producer_ref": "urn:agent:compute-planner",
+    "task_ref": "urn:sco:task:001",
+    "access_policy_ref": "urn:policy:artifact:read",
+    "binding_state": "pending_verification"
+  },
+  {
+    "schema_version": "1.0.0-rc0",
+    "ontology_profile_version": "compute-base/3.0",
+    "issuer_id": "issuer-ads-01",
+    "owner_id": "owner-domain-01",
+    "created_at": "2026-11-10T00:00:00Z",
+    "updated_at": "2026-11-10T00:00:00Z",
+    "source_ref": "urn:source:architecture-review",
+    "content_digest": {
+      "algorithm": "sha-256",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "id": "govctx-001",
+    "object_type": "GovernanceContext",
+    "status": "evaluated",
+    "context_ref": "urn:ads:governance-context:001",
+    "subject_ref": "urn:agent:compute-planner",
+    "environment_ref": "urn:ads:environment:compute-domain:001",
+    "purpose": "compute-topology-analysis",
+    "requested_actions": [
+      "trace.read",
+      "task.claim",
+      "artifact.publish"
+    ],
+    "policy_refs": [
+      "urn:policy:compute-domain"
+    ],
+    "policy_decision_refs": [
+      "urn:policy-decision:001"
+    ],
+    "evaluated_at": "2026-11-10T00:00:00Z",
+    "valid_until": "2026-11-10T00:05:00Z",
+    "decision": "Permit",
+    "revalidation_required": true
+  }
+]

@@ -1,0 +1,63 @@
+flowchart TB
+    G["全局 ADS/GCP 与 SCO<br/>共同语义、跨区域治理、任务交易"]
+    WAN["跨区域 WAN<br/>独立运营商路径 / 路由 / 安全边界"]
+    G --> WAN
+
+    subgraph RA["Region A｜五颗异构算力星"]
+      A1["A1 GPU 星<br/>HPE GB300 NVL72<br/>72×B300 / 36×Grace"]
+      A2["A2 CPU/HPC 星<br/>Lenovo SC755 V5 + N1380<br/>8 trays / 16×2S nodes"]
+      A3["A3 存储星<br/>2× Dell R7725xd<br/>80× KIOXIA LC9 E3.L"]
+      A4["A4 控制/通用星<br/>3× Dell R9815"]
+      A5["A5 网络/边缘星<br/>2× Dell R9815<br/>2× 800G Fabric switches"]
+      RC1["Region A RCP"]
+      RC1 --> A1
+      RC1 --> A2
+      RC1 --> A3
+      RC1 --> A4
+      RC1 --> A5
+      A1 --> FAB1["GPU Fabric A/B<br/>Quantum-X800 IB 或 Spectrum-6 Ethernet"]
+      A3 --> ST1["Storage Fabric<br/>独立 NVMe/对象存储网络"]
+      A4 --> CT1["Control / OOB<br/>BMC / Redfish / Audit"]
+      A5 --> EDGE1["WAN Edge / Firewall / NOC"]
+    end
+
+    subgraph RB["Region B｜五颗异构算力星"]
+      B1["B1 GPU 星<br/>HPE GB300 NVL72<br/>72×B300 / 36×Grace"]
+      B2["B2 CPU/HPC 星<br/>Lenovo SC755 V5 + N1380<br/>8 trays / 16×2S nodes"]
+      B3["B3 存储星<br/>2× Dell R7725xd<br/>80× KIOXIA LC9 E3.L"]
+      B4["B4 控制/通用星<br/>3× Dell R9815"]
+      B5["B5 网络/边缘星<br/>2× Dell R9815<br/>2× 800G Fabric switches"]
+      RC2["Region B RCP"]
+      RC2 --> B1
+      RC2 --> B2
+      RC2 --> B3
+      RC2 --> B4
+      RC2 --> B5
+      B1 --> FAB2["GPU Fabric A/B<br/>Quantum-X800 IB 或 Spectrum-6 Ethernet"]
+      B3 --> ST2["Storage Fabric<br/>独立 NVMe/对象存储网络"]
+      B4 --> CT2["Control / OOB<br/>BMC / Redfish / Audit"]
+      B5 --> EDGE2["WAN Edge / Firewall / NOC"]
+    end
+
+    WAN <--> EDGE1
+    WAN <--> EDGE2
+    G --> RC1
+    G --> RC2
+
+    subgraph FAC["区域设施层｜与租户网络隔离"]
+      PWR["双路供电 / UPS / PDU / 母线"]
+      COOL["CDU / 一次二次水路 / Manifold / 冷板"]
+      SAFE["消防 / 漏液 / 过温 / 设施联锁"]
+      OOB["设施管理与带外网络"]
+    end
+    PWR -.-> A1
+    PWR -.-> A2
+    PWR -.-> B1
+    PWR -.-> B2
+    COOL -.-> A1
+    COOL -.-> A2
+    COOL -.-> B1
+    COOL -.-> B2
+    SAFE -.-> FAC
+    OOB -.-> CT1
+    OOB -.-> CT2

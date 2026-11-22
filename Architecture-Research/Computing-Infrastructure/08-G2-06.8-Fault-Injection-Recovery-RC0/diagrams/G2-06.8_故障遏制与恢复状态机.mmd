@@ -1,0 +1,20 @@
+stateDiagram-v2
+    [*] --> NORMAL
+    NORMAL --> DEGRADED: 发现非关键故障或指标越界
+    NORMAL --> ISOLATED: 权威状态未知或安全风险
+    DEGRADED --> ISOLATED: 故障扩大/撤销缺口/联锁
+    DEGRADED --> RECOVERING: 故障源已修复
+    ISOLATED --> RECOVERING: 隔离条件解除
+    RECOVERING --> RECONCILING: 连接恢复并拉取状态
+    RECONCILING --> VALIDATING: Owner事实与事件游标对齐
+    RECONCILING --> MANUAL_HOLD: 交易争议/不可逆补偿需审批
+    RECONCILING --> QUARANTINED: 签名或完整性无法证明
+    VALIDATING --> RESUMED: 策略/租约/数据/资源/设施检查通过
+    VALIDATING --> MANUAL_HOLD: 风险接受或人工决策
+    VALIDATING --> QUARANTINED: 关键事实不可信
+    RESUMED --> NORMAL: 观察窗口稳定
+    MANUAL_HOLD --> RECONCILING: 审批后继续对账
+    QUARANTINED --> RECOVERING: 完成隔离修复并重新取证
+    RECONCILING --> ABORTED: Owner确认终止且补偿闭环
+    MANUAL_HOLD --> ABORTED: 授权终止
+    ABORTED --> [*]

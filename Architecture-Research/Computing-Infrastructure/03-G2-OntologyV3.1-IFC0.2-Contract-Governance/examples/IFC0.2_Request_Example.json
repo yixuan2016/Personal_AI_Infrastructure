@@ -1,0 +1,25 @@
+{
+  "request_id": "urn:request:site-a:2026-11-10:000001",
+  "correlation_id": "urn:correlation:job-2048",
+  "issued_at": "2026-11-10T09:00:00Z",
+  "api_version": "1.0.0-rc0",
+  "schema_version": "dm04-command/0.1",
+  "payload": {
+    "task_contract_ref": "urn:task-contract:2048",
+    "purpose_ref": "urn:purpose:distributed-training"
+  },
+  "expires_at": "2026-11-10T09:05:00Z",
+  "idempotency_key": "site-a-sco-submit-2048-v1",
+  "profile_extensions": {
+    "https://{controlled-domain}/aee-ascp/profiles/1.1": {
+      "profile_version": "1.1.0-rc0",
+      "schema_ref": "https://{controlled-domain}/aee-ascp/schemas/context/1.1",
+      "criticality": "required",
+      "payload_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "data": {
+        "environment_ref": "urn:environment:federation:site-a-site-b",
+        "ontology_profile_ref": "urn:ontology:compute-base:3.1.0-rc0"
+      }
+    }
+  }
+}

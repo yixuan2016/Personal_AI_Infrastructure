@@ -1,0 +1,31 @@
+验收ID,设备域,候选平台/型号,核验项,所需证据,责任Owner,放行条件,当前状态
+G2610-001,GPU机柜,HPE GB300 NVL72 S7K95A,完整系统SKU与机柜部件清单,OEM正式报价/配置器/QuickSpecs/部件清单,OEM与采购,机柜/托盘/NVLink/Power Shelf/CDU/Manifold一致,待确认
+G2610-002,GPU机柜,Dell XE9712 IR9048,整机柜供货与电气冷却选件,完整SKU/电源Whip/液冷配置/服务范围,Dell OEM与设施,区域电压/供电/冷却/维护方案签署,待确认
+G2610-003,GPU机柜,Lenovo GB300 NVL72 Type 7DJV,6或8 Power Shelf配置与机柜完整BOM,Lenovo配置器/产品指南/供货确认,Lenovo OEM与设施,电气/冷却/网络/服务配置一致,待确认
+G2610-004,GPU节点,Dell XE9780L/ XE9785L,8-GPU B300节点QVL,主机CPU/GPU/NIC/SSD/驱动/冷板QVL,Dell OEM与GPU Owner,所有部件在同一受支持配置内,待确认
+G2610-005,GPU节点,Dell XE9785/ XE9785L,8×MI355X OAM兼容性,CPU/主板/OAM/Infinity Fabric/ROCm QVL,Dell与AMD Owner,驱动/固件/散热/电源组合受支持,待确认
+G2610-006,CPU/HPC,Lenovo SC755 V5 7DN6,CPU具体SKU,官方处理器支持列表与地区可售性,Lenovo OEM与采购,EPYC料号列入当前QVL且地区可供,待确认
+G2610-007,CPU/HPC,Lenovo SC755 V5,2N2S/4N1S节点形态,CTO配置与动态分区说明,Lenovo OEM与计算Owner,节点数量/内存/PCIe/网卡形态一致,待确认
+G2610-008,CPU/HPC,Lenovo N1380,4 PCS N+1供电,PCS料号/功率策略/输入电流/线缆,Lenovo OEM与设施,54kW N+1容量覆盖实际节点配置,待确认
+G2610-009,CPU/HPC,Lenovo Neptune,液冷水路,水温/流量/压降/水质/快速接头/漏液监控,Lenovo OEM与设施,现场CDU/泵/管路满足设计曲线,待确认
+G2610-010,通用计算,Dell R9815,CPU/DIMM/NIC/SSD完整SKU,Dell配置器/QVL/BIOS/BMC版本,Dell OEM与平台Owner,整机配置和保修范围确认,待确认
+G2610-011,存储,Dell R7725xd,40×E3.L Gen5盘位支持,背板/控制器/线缆/固件/drive QVL,Dell OEM与存储Owner,目标E3.L容量与接口受支持,待确认
+G2610-012,存储,KIOXIA LC9 245.76TB E3.L,SED/FIPS SKU支持,型号/固件/加密/密钥管理/QVL,KIOXIA与Dell与安全Owner,数据静态加密和密钥生命周期通过,待确认
+G2610-013,存储,KIOXIA LC9,写入耐久与应用适配,0.3 DWPD/QLC/读写比例/保留期,存储与数据Owner,仅分配给适合的容量/读密集工作负载,待确认
+G2610-014,热存储,Micron 9650/9550,容量/耐久/PLP/主机兼容,准确SKU数据表和OEM QVL,存储Owner与OEM,热层/事务层负载匹配且兼容,待确认
+G2610-015,IB网络,Quantum-X800 Q3400-RA,端口/线缆/拓扑/固件,144×800G规格/线缆QVL/UFM/NIC互操作,网络Owner与NVIDIA OEM,双Fabric Plane端到端通过,待确认
+G2610-016,Ethernet网络,Spectrum-6 SN6600,RoCE与光模块兼容,交换机NOS/ECN/PFC/拥塞/光模块/线缆QVL,网络Owner与NVIDIA OEM,端到端RDMA/故障切换测试通过,待确认
+G2610-017,网络,双平面布线,72个rack端口分配,每tray NIC端口映射/每switch端口表/上联预留,网络Owner,端口、rail、路径和故障域清晰,待确认
+G2610-018,WAN,跨区域边界,运营商与物理路径独立性,ASN/路由/物理管道/运营商/带宽/RTT/丢包,网络Owner与Carrier,至少两条真实独立路径并完成故障切换,待确认
+G2610-019,OOB,管理网络,BMC/Redfish/设施网络隔离,网络ACL/身份/审计/带外访问路径,安全与运维Owner,租户网络无法横向访问管理平面,待确认
+G2610-020,供电,GB300 NVL72,132kW/155kW/192kW口径区分,OEM电气设计/PDU实测/母线额定值,设施Owner,额定/峰值/规划值分开签署,待确认
+G2610-021,供电,N1380,54kW N+1容量与真实负载,PCS配置/节点功率/输入电流/PDU实测,设施Owner与Lenovo OEM,最不利故障工况仍满足供电边界,待确认
+G2610-022,液冷,GB300机柜,XDU1350冷量与冗余,CDU曲线/流量/压降/水温/泵冗余,设施Owner与HPE/Vertiv,单点故障与维护窗口通过,待确认
+G2610-023,液冷,SC755/N1380,水质/流量/压降/漏液,Lenovo Neptune水质与流量规范,设施Owner与Lenovo OEM,水路验收与联锁测试通过,待确认
+G2610-024,设施,机房,承重/运输/吊装/维护空间,结构工程报告/门洞/通道/机柜重量,设施Owner,设备运输安装和维护安全可行,待确认
+G2610-025,设施,消防与安全,过温/漏液/断水/断电联锁,设施测试记录/急停/回路图,Facility Owner,本地安全动作不依赖远端控制面,待确认
+G2610-026,软件,GPU平台,NVIDIA CUDA或AMD ROCm版本基线,驱动/固件/容器/通信库/OEM支持矩阵,平台Owner,可复现部署/升级/回滚,待确认
+G2610-027,软件,网络,IB UFM或Ethernet NOS版本,版本/配置模板/升级与回滚记录,网络Owner,配置受控且双实现/互操作验证,待确认
+G2610-028,运维,全设备,Redfish/BMC/遥测接入,资产ID/固件/电源/温度/告警/审计映射,运维与安全Owner,统一资产与事件证据可回溯,待确认
+G2610-029,采购,全部OEM,报价与TCO,设备/许可/部署/维保/备件/能耗/水耗/机房费用,采购与财务Owner,同口径全生命周期成本可比,待确认
+G2610-030,验收,十星系统,双区域互操作与故障注入,单星/区域/双区域测试报告与独立见证,架构Owner与独立见证,所有关键Gate通过后方可生产放行,待确认

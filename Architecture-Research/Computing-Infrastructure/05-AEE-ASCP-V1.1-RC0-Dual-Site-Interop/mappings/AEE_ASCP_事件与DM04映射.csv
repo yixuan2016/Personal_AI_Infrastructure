@@ -1,0 +1,13 @@
+﻿既有基线字段/机制,AEE/ASCP语义,映射说明,权威主体,规则
+CloudEvents id,trace_id,同一事件唯一ID；不双写不同ID,事件源Owner,复用DM04事件信封
+CloudEvents source,source/issuer,事件发布来源,业务事实Owner,FWSX不得改写
+CloudEvents type,trace_type,映射Observation/Intent/Task/Artifact/Dependency/Risk/Decision等语义,事件Schema Owner,未知类型安全存档，不触发副作用
+CloudEvents subject,subject_ref,被描述的对象引用,对象Owner,引用解析时重新鉴权
+CloudEvents time,occurred_at,事实发生时间,事件发布者,不用于跨站点全局排序
+CloudEvents dataschema,payload_schema_ref,载荷Schema引用,Schema Owner,不支持版本拒绝业务效果
+CloudEvents data,payload,领域载荷,事件源Owner,不得把推断伪装为事实
+DM04 siteid/aggregateid/aggregateversion,site_id/aggregate_id/aggregate_version,来源站点与聚合版本,站点/聚合Owner,单聚合版本单调
+DM04 sequence/correlationid/causationid,sequence_no/correlation_id/causation_id,因果与顺序,事件源Owner,无全局总序承诺
+DM04 signature_ref,signature_ref,签名与完整性证据引用,签发/验证方,验签失败隔离
+FWSX subscription cursor,subscription.cursor,投递位置,事件交付服务,不改变事件事实；按cursor补拉
+A2A Message/Artifact metadata,AEE extension metadata,Agent交互上下文,A2A发送方/接收方,必须协商激活扩展
