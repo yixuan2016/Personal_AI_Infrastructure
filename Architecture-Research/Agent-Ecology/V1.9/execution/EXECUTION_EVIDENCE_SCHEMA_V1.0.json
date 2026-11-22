@@ -15,7 +15,8 @@
     "expected_result",
     "observed_result",
     "artifacts",
-    "scope"
+    "scope",
+    "external_side_effects"
   ],
   "properties": {
     "test_id": {
@@ -49,7 +50,9 @@
         "os",
         "architecture",
         "python",
-        "isolation_mode"
+        "isolation_mode",
+        "network_egress",
+        "production_credentials_used"
       ],
       "properties": {
         "os": {
