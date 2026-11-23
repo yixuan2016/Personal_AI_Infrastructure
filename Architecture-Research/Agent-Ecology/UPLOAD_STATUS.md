@@ -55,3 +55,13 @@
 - Word/PDF/ZIP 原始二进制未上传；3 张 SVG 架构源图已纳入 Git。
 - 原 PR #12 曾以 V1.2—V1.7 工作分支为 base；因 PR #11 已 squash 合并，现已关闭为 Superseded。
 - 新 PR #17 以 main 为 base，包含 33 个 V1.8 版本目录文件和 3 个导航/状态文件；当前 Draft/Open，等待审阅。
+ 
+
+## V1.9 干净主线候选同步（2026-11-21）
+- 来源：旧 stacked 分支 `research/agent-ecology-v1.9-stigmergy-20261114`。
+- 目标工作分支：`integration/agent-ecology-v1.9-mainline-clean-20261121`；基线：V1.8 PR #17 合入后的当前 `main`。
+- 仅迁移 `Architecture-Research/Agent-Ecology/V1.9/` 下 79 个 V1.9 专属文件；未迁移旧 V1.2—V1.8 历史目录，避免将旧分支的 314 个领先提交/212 个差异文件带入新 PR。
+- 文件组成：V1.9 研究文档/证据登记/状态/Manifest、7 张 SVG、21 份候选 JSON Schema、TLA+ 模型与配置、Python 有界参考检查器、验证矩阵与反例证据。
+- Git Blob SHA 按文件内容生成；V1.9/GITHUB_BLOB_MANIFEST.md 原样保留。该 Manifest 记录的是 Git Blob 对象，不等于文件 SHA-256 清单。
+- 迁移尚需远端逐文件回读、79/79 Blob SHA 核对、链接/引用检查及新 PR review；当前不标记为已合并。
+- 验收边界：321 项正式验收设计全部 NOT_RUN；TLC 未运行；完整 Draft 2020-12 Validator、语义/密码学验证、故障注入和独立 QA 未完成；productionAllowed=false。

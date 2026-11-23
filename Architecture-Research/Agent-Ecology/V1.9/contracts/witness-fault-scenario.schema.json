@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-ecology:v1.9:witness-fault-scenario-candidate",
+  "title": "AgentEcologyWitnessFaultScenarioCandidate",
+  "description": "A bounded, synthetic fault scenario for Witness quorum and recovery verification. Not a production attack instruction.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "scenarioId",
+    "modelVersion",
+    "n",
+    "f",
+    "q",
+    "faultyWitnessIds",
+    "stateErasureRecoveryIds",
+    "faultEvents",
+    "partitionPlan",
+    "seed",
+    "expectedProperties",
+    "notProduction"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "scenarioId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "modelVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "n": {
+      "enum": [
+        4,
+        7,
+        10,
+        13
+      ]
+    },
+    "f": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "q": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "faultyWitnessIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "stateErasureRecoveryIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "faultEvents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "eventId",
+          "eventType",
+          "targetIds",
+          "relativeStep"
+        ],
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "eventType": {
+            "enum": [
+              "CRASH",
+              "PAUSE",
+              "RESTART",
+              "STATE_ERASURE",
+              "SNAPSHOT_ROLLBACK",
+              "KEY_REVOKE",
+              "KEY_ROTATE",
+              "NETWORK_PARTITION",
+              "NETWORK_HEAL",
+              "CLOCK_SKEW",
+              "MESSAGE_DELAY",
+              "MESSAGE_REORDER",
+              "IDENTITY_CLONE",
+              "MEMBERSHIP_CHANGE"
+            ]
+          },
+          "targetIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "relativeStep": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "parameters": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "partitionPlan": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "expectedProperties": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "recoveryCap": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "policyDigest": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "notProduction": {
+      "const": true
+    }
+  }
+}

@@ -1,0 +1,37 @@
+test_id,workstream,scenario,expected_result,evidence_required,severity,status
+WP021-01,Delivery,同一 source+id 且摘要相同的事件重复投递,幂等忽略重复事件且不重复触发副作用,持久去重记录与事件处理回执,Critical,NOT_RUN
+WP021-02,Delivery,同一 source+id 对应不同 eventDigest,隔离来源并标记事件身份冲突,冲突事件原文与隔离审计,Critical,NOT_RUN
+WP021-03,Ordering,先收到序列 n+1 的有效撤销事件且 n 缺失,立即写入已知撤销墓碑但连续水位不越过缺口,墓碑写入时间与连续水位对照,Critical,NOT_RUN
+WP021-04,Ordering,Feed 存在序列缺口时申请 R2/R3 跨域副作用,PDP 返回 HOLD 且 PEP 不产生副作用,Gap 状态与 PEP 拒绝记录,Critical,NOT_RUN
+WP021-05,Ordering,已确认水位之后收到旧序列但事件摘要不同,拒绝覆盖并进入 QUARANTINED,水位快照与摘要冲突报告,Critical,NOT_RUN
+WP021-06,Ordering,同一 Feed 序列号出现两个不同有效摘要,判定来源分叉或等价性冲突并隔离,双事件签名与序列对照,Critical,NOT_RUN
+WP021-07,Ordering,两个 Domain 使用相同数值的 sequence,水位按 Domain/Stream 分别维护不相互覆盖,来源水位索引,Critical,NOT_RUN
+WP021-08,Ordering,不同 Peer Binding 的 Feed 独立推进,各 Feed 保持自己的连续序列且不产生伪缺口,Feed 游标与订阅配置,Critical,NOT_RUN
+WP021-09,MonotonicRevocation,旧 ACTIVE 广告在撤销墓碑之后到达,撤销状态优先且旧广告不能复活对象,对象版本与墓碑合并记录,Critical,NOT_RUN
+WP021-10,MonotonicRevocation,同一已撤销 immutableObjectRef 再次提交 ACTIVE,拒绝重激活原对象版本,Owner 声明与撤销墓碑对照,Critical,NOT_RUN
+WP021-11,MonotonicRevocation,Owner 希望恢复已撤销能力,必须新建版本和 advertisementId 并重新签名验证,新旧对象版本与 Owner 签名,Critical,NOT_RUN
+WP021-12,CascadeRevocation,父 Publisher/Task Grant 撤销且子 Grant 引用父授权链,所有依赖该父 Grant 的子授权在验证时判失效,父子 Grant 依赖图与 PDP 结果,Critical,NOT_RUN
+WP021-13,CascadeRevocation,签名密钥撤销后收到该密钥签署的旧能力声明,根据 Key Epoch 与撤销生效规则拒绝旧声明,密钥墓碑与声明签名时间线,Critical,NOT_RUN
+WP021-14,Authenticity,撤销事件签名无效或签名密钥用途不匹配,拒绝事件且不得写入可信墓碑索引,签名负向向量和审计日志,Critical,NOT_RUN
+WP021-15,Authenticity,事件 source/domainid 与 Peer Binding 来源不一致,拒绝并隔离来源事件,事件字段与 Peer Binding 对照,Critical,NOT_RUN
+WP021-16,Idempotency,消费者重启后再次收到已处理事件,持久去重状态防止重复应用,重启前后去重库与处理回执,Critical,NOT_RUN
+WP021-17,Checkpoint,Checkpoint 签名或 signedPayloadDigest 不匹配,拒绝 Checkpoint 并保持原水位,签名验证失败记录,Critical,NOT_RUN
+WP021-18,Checkpoint,Checkpoint contiguousSequence 小于本地已确认水位,拒绝水位回退并隔离旧 Checkpoint,新旧水位与签名 Checkpoint,Critical,NOT_RUN
+WP021-19,Snapshot,Snapshot 未声明包含完整撤销墓碑集合,拒绝作为恢复基线,Snapshot Manifest 与完整性声明,Critical,NOT_RUN
+WP021-20,Snapshot,Snapshot 内容摘要或 Merkle Root 不匹配,拒绝恢复并进入 QUARANTINED,快照内容与摘要验证结果,Critical,NOT_RUN
+WP021-21,Snapshot,来源快照未包含本地已知撤销墓碑,合并采用墓碑并集且不得删除本地墓碑,合并前后墓碑集合差异,Critical,NOT_RUN
+WP021-22,MerkleProof,来源提供的追加历史一致性证明无效,拒绝连续性恢复并保持 HOLD,Proof 验证向量和状态记录,Critical,NOT_RUN
+WP021-23,Compaction,本地游标已超出来源历史保留窗口,获取完整签名快照并从 snapshotSequence+1 补读事件,压缩响应、快照与补读记录,Critical,NOT_RUN
+WP021-24,Freshness,来源 Checkpoint 超过目标域 Freshness Budget,高风险授权 HOLD；不得使用过期状态放行,Checkpoint 年龄与本地策略版本,Critical,NOT_RUN
+WP021-25,Partition,FCP 离线且跨域来源撤销水位未知,高风险跨域副作用 HOLD,FCP 分区演练与 PEP 结果,Critical,NOT_RUN
+WP021-26,Partition,FCP 离线时本地 Kill Switch 被触发,本地 PEP 独立 DENY 不依赖 FCP,本地停止演练记录,Critical,NOT_RUN
+WP021-27,Partition,低风险只读任务尝试使用本地缓存,仅在目标域策略明确允许且缓存满足 Freshness Budget 时读取,缓存年龄、风险等级与 PDP 结果,Critical,NOT_RUN
+WP021-28,Backpressure,大量能力广告更新与撤销事件同时到达,安全撤销事件优先处理且队列背压可观测,队列延迟、优先级与撤销生效延迟,High,NOT_RUN
+WP021-29,SplitView,来源域向不同接收方展示不同签名 Checkpoint,跨接收方对账发现冲突并隔离来源,多接收方 Checkpoint Gossip 记录,Critical,NOT_RUN
+WP021-30,DropDetection,中继丢弃事件但来源持续推进序列,Checkpoint/连续水位暴露缺口并触发补洞或 HOLD,来源签名 Checkpoint 与本地水位,Critical,NOT_RUN
+WP021-31,Clock,事件 time 与序列顺序不一致或本地时钟偏差,顺序由 Feed Sequence 决定；时钟偏差单独告警,序列、事件时间和时钟误差记录,Critical,NOT_RUN
+WP021-32,Conflict,同一 Owner 对同一对象版本签发不同 payloadDigest,不采用 Last-Write-Wins；隔离并请求 Owner 处理,双签名声明与对象版本对照,Critical,NOT_RUN
+WP021-33,Retention,历史压缩或墓碑归档后有新 Peer 加入,可从完整可查询快照恢复全部适用撤销状态,归档清单、快照查询与墓碑核验,Critical,NOT_RUN
+WP021-34,FeedScope,字段过滤导致接收方 Feed 出现未解释的序列跳号,使用独立 Peer Feed 或可验证占位记录；不得静默跳过,Feed 订阅范围与序列连续性报告,Critical,NOT_RUN
+WP021-35,FeedScope,撤销事件缺少peerbindingid扩展字段,Schema拒绝该事件且不得进入撤销索引,Schema负向向量与拒绝日志,Critical,NOT_RUN
+WP021-36,FeedScope,事件peerbindingid与当前订阅Peer Binding不匹配,拒绝跨Feed注入并隔离来源,Peer Binding配置与事件字段对照,Critical,NOT_RUN

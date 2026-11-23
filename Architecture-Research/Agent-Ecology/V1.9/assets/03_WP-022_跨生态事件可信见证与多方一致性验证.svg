@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="7680" height="4320" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+<title id="title">Agent Ecology WP-022 跨生态事件可信见证与多方一致性验证架构</title>
+<desc id="desc">展示来源生态透明证据日志、独立 Witness 网络、K-of-N Quorum Policy、Monitor Gossip、Fork Evidence Registry 与接收生态本地 PDP/PEP 的分层架构。</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071426"/><stop offset=".55" stop-color="#111e35"/><stop offset="1" stop-color="#182640"/></linearGradient>
+ <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#203b5a"/><stop offset="1" stop-color="#142840"/></linearGradient>
+ <linearGradient id="mid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b5265"/><stop offset="1" stop-color="#26365f"/></linearGradient>
+ <linearGradient id="gov" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#39456b"/><stop offset=".5" stop-color="#285a66"/><stop offset="1" stop-color="#39456b"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feGaussianBlur in="SourceAlpha" stdDeviation="8"/><feOffset dy="6"/><feComponentTransfer><feFuncA type="linear" slope=".28"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <marker id="blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#77c7ff"/></marker>
+ <marker id="mint" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#7ce2c1"/></marker>
+ <marker id="gold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12Z" fill="#f0c878"/></marker>
+ <style>
+ text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif;fill:#edf5ff}
+ .title{font-size:40px;font-weight:700}.sub{font-size:21px;fill:#a9c1dc}
+ .section{font-size:27px;font-weight:700}.head{font-size:22px;font-weight:700}
+ .body{font-size:18px;fill:#c8d8eb}.small{font-size:15px;fill:#a8bfd7}
+ .box{fill:url(#panel);stroke:#6196be;stroke-width:2}
+ .line{fill:none;stroke:#77c7ff;stroke-width:3.5;marker-end:url(#blue)}
+ .mintline{fill:none;stroke:#7ce2c1;stroke-width:3.5;marker-end:url(#mint)}
+ .goldline{fill:none;stroke:#f0c878;stroke-width:3.5;marker-end:url(#gold)}
+ .dash{stroke-dasharray:10 8}
+ </style>
+</defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<circle cx="170" cy="150" r="280" fill="#1e7390" opacity=".07"/><circle cx="1750" cy="930" r="330" fill="#4ab89b" opacity=".06"/>
+<text x="64" y="66" class="title">Agent Ecology｜WP-022 跨生态可信见证与多方一致性验证</text>
+<text x="66" y="102" class="sub">独立 Witness · K-of-N Quorum · Monitor Gossip · Fork Evidence · 本地治理</text>
+<rect x="64" y="130" width="1792" height="82" rx="20" fill="url(#gov)" stroke="#8ab2d1" stroke-opacity=".55" stroke-width="2" filter="url(#shadow)"/>
+<text x="96" y="166" class="section">人类治理外环</text>
+<text x="390" y="164" class="body">双方接受 Quorum Policy · 独立验证争议证据 · 暂停 / 否决 / 重新绑定</text>
+<text x="390" y="192" class="small">Quorum PASS 不等于事实正确或业务授权；本地 DENY / HOLD 不可被见证结果覆盖</text>
+
+<rect x="64" y="248" width="420" height="460" rx="22" class="box" filter="url(#shadow)"/>
+<text x="90" y="288" class="section">来源生态</text>
+<rect x="90" y="310" width="368" height="82" rx="13" fill="#29496a" stroke="#78bce9"/>
+<text x="110" y="343" class="head">Owner / 事件记录器</text><text x="110" y="371" class="small">签名声明 · 授权变更 · 撤销摘要</text>
+<rect x="90" y="410" width="368" height="96" rx="13" fill="#1b3b5a" stroke="#7ce2c1"/>
+<text x="110" y="444" class="head">透明证据日志</text><text x="110" y="472" class="small">Merkle Tree · Append-only</text><text x="110" y="493" class="small">仅登记摘要和最小元数据</text>
+<rect x="90" y="524" width="368" height="74" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="110" y="556" class="body">Signed Checkpoint</text><text x="110" y="581" class="small">Log Signature · Tree Size · Root Hash</text>
+<rect x="90" y="616" width="368" height="64" rx="13" fill="#1b3b5a" stroke="#5d94bf"/>
+<text x="110" y="655" class="body">Receipt / Inclusion / Consistency Proof</text>
+
+<rect x="586" y="248" width="744" height="460" rx="22" fill="url(#mid)" stroke="#72c5d9" stroke-width="2" filter="url(#shadow)"/>
+<text x="614" y="288" class="section">独立 Witness 网络｜不同运营与故障域</text>
+<rect x="614" y="310" width="210" height="116" rx="13" fill="#1b405b" stroke="#7ce2c1"/>
+<text x="632" y="343" class="head">Witness A</text><text x="632" y="371" class="small">运营域 A</text><text x="632" y="397" class="small">持久最新 Checkpoint</text>
+<rect x="846" y="310" width="210" height="116" rx="13" fill="#1b405b" stroke="#7ce2c1"/>
+<text x="864" y="343" class="head">Witness B</text><text x="864" y="371" class="small">运营域 B</text><text x="864" y="397" class="small">单调状态 / 原子更新</text>
+<rect x="1078" y="310" width="224" height="116" rx="13" fill="#1b405b" stroke="#7ce2c1"/>
+<text x="1096" y="343" class="head">Witness C / D</text><text x="1096" y="371" class="small">独立运营 / 故障域</text><text x="1096" y="397" class="small">密钥用途与 Epoch</text>
+<rect x="614" y="446" width="688" height="92" rx="13" fill="#203b59" stroke="#f0c878"/>
+<text x="638" y="481" class="head">K-of-N Quorum Policy</text><text x="638" y="510" class="small">公钥去重 · 运营域独立 · 故障域独立 · 2q-n&gt;f · 双边接受版本</text>
+<rect x="614" y="558" width="688" height="116" rx="13" fill="#203b59" stroke="#77c7ff"/>
+<text x="638" y="592" class="head">Checkpoint Cosignature Bundle</text><text x="638" y="620" class="small">Log Origin · Tree Size · Root Hash · Witness Signatures</text><text x="638" y="649" class="small">离线验证 Quorum · 不授予业务权限</text>
+
+<rect x="1432" y="248" width="424" height="460" rx="22" class="box" filter="url(#shadow)"/>
+<text x="1458" y="288" class="section">接收生态</text>
+<rect x="1458" y="310" width="372" height="84" rx="13" fill="#29496a" stroke="#78bce9"/>
+<text x="1478" y="344" class="head">Independent Monitor</text><text x="1478" y="373" class="small">旁路读取 Witness，不只信任 FCP</text>
+<rect x="1458" y="412" width="372" height="86" rx="13" fill="#1b3b5a" stroke="#f0c878"/>
+<text x="1478" y="447" class="head">Gossip / Split-view 检测</text><text x="1478" y="476" class="small">比较 Checkpoint · 证明 · 策略版本</text>
+<rect x="1458" y="516" width="372" height="76" rx="13" fill="#1b3b5a" stroke="#f0c878"/>
+<text x="1478" y="549" class="body">Fork Evidence Registry</text><text x="1478" y="576" class="small">原始签名 · Proof · 独立复核</text>
+<rect x="1458" y="610" width="372" height="70" rx="13" fill="#245849" stroke="#7ce2c1"/>
+<text x="1478" y="642" class="head">本地 PDP / PEP</text><text x="1478" y="667" class="small">DENY / HOLD / ALLOW</text>
+
+<path d="M484 358 H576" class="line"/><text x="492" y="337" class="small">Checkpoint + Proof</text>
+<path d="M1330 358 H1422" class="line"/><text x="1336" y="337" class="small">Quorum Bundle</text>
+<path d="M1428 452 H1338" class="mintline"/><text x="1337" y="477" class="small">Monitor 旁路查询</text>
+<path d="M1328 622 C1390 770 550 770 484 622" class="goldline dash"/>
+<text x="710" y="766" class="small">Gossip 交换最小化 Checkpoint 与冲突证据；FCP 仅中继，不是见证者或全局信任根</text>
+
+<rect x="64" y="812" width="1792" height="194" rx="20" fill="#10243b" stroke="#52799b" stroke-width="2"/>
+<text x="94" y="850" class="section">六项安全不变量</text>
+<g>
+ <rect x="94" y="870" width="270" height="84" rx="12" fill="#1b3b5a" stroke="#5d94bf"/><text x="112" y="901" class="head">① 生态自治</text><text x="112" y="930" class="small">不建全局超级日志</text>
+ <rect x="382" y="870" width="270" height="84" rx="12" fill="#1b3b5a" stroke="#7ce2c1"/><text x="400" y="901" class="head">② 单调见证</text><text x="400" y="930" class="small">状态持久且原子更新</text>
+ <rect x="670" y="870" width="270" height="84" rx="12" fill="#1b3b5a" stroke="#f0c878"/><text x="688" y="901" class="head">③ Quorum 交集</text><text x="688" y="930" class="small">2q-n&gt;f，假设明确</text>
+ <rect x="958" y="870" width="270" height="84" rx="12" fill="#1b3b5a" stroke="#5d94bf"/><text x="976" y="901" class="head">④ 独立观察</text><text x="976" y="930" class="small">Monitor 旁路读取</text>
+ <rect x="1246" y="870" width="270" height="84" rx="12" fill="#1b3b5a" stroke="#f0c878"/><text x="1264" y="901" class="head">⑤ 证据固定</text><text x="1264" y="930" class="small">分叉可复核不覆盖</text>
+ <rect x="1534" y="870" width="294" height="84" rx="12" fill="#245849" stroke="#7ce2c1"/><text x="1552" y="901" class="head">⑥ 本地授权</text><text x="1552" y="930" class="small">Quorum 不等于 Permit</text>
+</g>
+<text x="94" y="982" class="small">目标：任何跨生态信任都可被独立验证、冲突都能留下证据、最终执行权始终留在目标生态本地</text>
+</svg>

@@ -44,3 +44,11 @@ Markdown、CSV、JSON、YAML 和 SVG 源文件纳入 Git。8K PNG、Word、PDF �
 - V1.8 已重新基于 main 建立独立整合分支，避免 PR #11 squash 合并后旧 stacked branch 重复显示历史文件。
 - 当前干净整合 PR 为 [#17](https://github.com/yixuan2016/Personal_AI_Infrastructure/pull/17)；旧 stacked PR #12 已关闭，V1.8 内容由 PR #17 继续审查。
 - V1.8 仍为候选架构与契约；F0 12 项 Gate 全部 NotRun，未授予生产授权。
+ 
+
+## V1.9｜Stigmergy、联邦信任、韧性与动态联盟（2026-11-21）
+- [V1.9 研究入口](./V1.9/README.md)：覆盖痕迹协作实证进展、跨生态能力发现、信任协议、目录一致性与撤销传播、可信见证网络、形式化验证、动态联盟与 Coalition Charter。
+- [V1.9 状态与验收边界](./V1.9/STATUS.md)：登记 321 项正式验收设计（全部 NOT_RUN）、候选 ADR/威胁、21 份 JSON Schema 与静态未决事项。
+- [V1.9 CCF B 类论文计划](./V1.9/31_Agent_Ecology_CCF-B论文研究计划与首篇论文设计.md)及[相关工作与新颖性审查](./V1.9/32_相关工作比较矩阵与新颖性审查.md)。
+- V1.9 是研究候选资产；L0 组合穷举与 L1 Python 有界参考模型结果不得冒充 TLC 模型检查或完整 321 项验收。TLC、完整 Schema Validator、语义/密码学互操作、故障注入和独立 QA 仍待执行。
+- V1.9 采用干净 mainline 分支迁移 79 个 V1.9 专属文件；未携带 V1.2—V1.8 历史目录，避免旧 stacked branch 重复。
