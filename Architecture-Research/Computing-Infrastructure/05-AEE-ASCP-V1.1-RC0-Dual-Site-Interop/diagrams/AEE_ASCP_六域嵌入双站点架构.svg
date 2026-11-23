@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1350" viewBox="0 0 2400 1350">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#18283a"/></linearGradient>
+  <linearGradient id="profile" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#214d68"/><stop offset="1" stop-color="#315b75"/></linearGradient>
+  <linearGradient id="siteA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b3546"/><stop offset="1" stop-color="#203d4b"/></linearGradient>
+  <linearGradient id="siteB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#29334b"/><stop offset="1" stop-color="#333d58"/></linearGradient>
+  <style>
+    text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#eef4f8}
+    .title{font-size:48px;font-weight:700;letter-spacing:2px}
+    .sub{font-size:23px;fill:#b8c9d6}
+    .band{font-size:30px;font-weight:700}
+    .domainTitle{font-size:25px;font-weight:700}
+    .body{font-size:19px;fill:#d2dee7}
+    .small{font-size:17px;fill:#b8c9d6}
+    .siteTitle{font-size:30px;font-weight:700}
+    .nodeTitle{font-size:21px;font-weight:700}
+    .nodeBody{font-size:17px;fill:#c6d5df}
+    .domain{fill:#1b3345;stroke:#62869c;stroke-width:2}
+    .node{fill:#243f52;stroke:#62869c;stroke-width:1.8}
+    .nodeB{fill:#303d59;stroke:#7886a8;stroke-width:1.8}
+    .line{stroke:#7ba9c0;stroke-width:3;fill:none}
+    .dash{stroke:#91a9b8;stroke-width:2.5;stroke-dasharray:9 8;fill:none}
+  </style>
+  <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#7ba9c0"/></marker>
+</defs>
+<rect width="2400" height="1350" fill="url(#bg)"/>
+<text x="1200" y="75" text-anchor="middle" class="title">AEE / ASCP 六域嵌入式双站点联邦架构</text>
+<text x="1200" y="118" text-anchor="middle" class="sub">横切扩展 Profile · 六域分权 · 站点自治 · 事件最终一致 · 人类治理外环</text>
+
+<rect x="90" y="155" width="2220" height="100" rx="22" fill="url(#profile)" stroke="#78a9c2" stroke-width="2.5"/>
+<text x="1200" y="197" text-anchor="middle" class="band">AEE / ASCP 横切 Profile（不新增第七接口域）</text>
+<text x="1200" y="231" text-anchor="middle" class="body">环境描述符 · CloudEvents 痕迹语义 · 事件订阅上下文 · 本地 TaskClaim · Evidence / Result 关联 · GovernanceContextRef</text>
+
+<!-- six domains -->
+<g>
+  <rect class="domain" x="90" y="295" width="345" height="205" rx="18"/>
+  <text x="262" y="340" text-anchor="middle" class="domainTitle">01 联邦治理</text>
+  <text x="262" y="382" text-anchor="middle" class="body">成员 / 信任协议</text><text x="262" y="414" text-anchor="middle" class="body">Profile / 参与方绑定</text><text x="262" y="457" text-anchor="middle" class="small">双方治理方拥有权威</text>
+
+  <rect class="domain" x="460" y="295" width="345" height="205" rx="18"/>
+  <text x="632" y="340" text-anchor="middle" class="domainTitle">02 身份与授权</text>
+  <text x="632" y="382" text-anchor="middle" class="body">工作负载身份 / 委托</text><text x="632" y="414" text-anchor="middle" class="body">本地 PDP / PEP / Grant</text><text x="632" y="457" text-anchor="middle" class="small">各站点 IAM 权威</text>
+
+  <rect class="domain" x="830" y="295" width="345" height="205" rx="18"/>
+  <text x="1002" y="340" text-anchor="middle" class="domainTitle">03 数据空间</text>
+  <text x="1002" y="382" text-anchor="middle" class="body">目录 / 数据合同</text><text x="1002" y="414" text-anchor="middle" class="body">传输 / 用途审计</text><text x="1002" y="457" text-anchor="middle" class="small">Data Owner 权威</text>
+
+  <rect class="domain" x="1200" y="295" width="345" height="205" rx="18"/>
+  <text x="1372" y="340" text-anchor="middle" class="domainTitle">04 算力星</text>
+  <text x="1372" y="382" text-anchor="middle" class="body">能力 / 报价 / 预留</text><text x="1372" y="414" text-anchor="middle" class="body">本地 Lease / 证明</text><text x="1372" y="457" text-anchor="middle" class="small">资源 Owner 权威</text>
+
+  <rect class="domain" x="1570" y="295" width="345" height="205" rx="18"/>
+  <text x="1742" y="340" text-anchor="middle" class="domainTitle">05 联邦任务</text>
+  <text x="1742" y="382" text-anchor="middle" class="body">TaskContract / Plan</text><text x="1742" y="414" text-anchor="middle" class="body">Prepare / Commit / Saga</text><text x="1742" y="457" text-anchor="middle" class="small">SCO 协调 + 本地执行</text>
+
+  <rect class="domain" x="1940" y="295" width="370" height="205" rx="18"/>
+  <text x="2125" y="340" text-anchor="middle" class="domainTitle">06 证据与验收</text>
+  <text x="2125" y="382" text-anchor="middle" class="body">ExecutionReceipt / Evidence</text><text x="2125" y="414" text-anchor="middle" class="body">Result / Acceptance / Metering</text><text x="2125" y="457" text-anchor="middle" class="small">独立验收与结算权威</text>
+</g>
+
+<!-- coordination components -->
+<rect x="90" y="545" width="700" height="105" rx="18" fill="#27495b" stroke="#83b3c8" stroke-width="2"/>
+<text x="440" y="585" text-anchor="middle" class="nodeTitle">ADS / SCO 跨域协调</text>
+<text x="440" y="620" text-anchor="middle" class="body">共同语义 · ContractGraph · Saga 视图 · 对账（不代签 Owner 权威）</text>
+
+<rect x="850" y="545" width="700" height="105" rx="18" fill="#34465a" stroke="#91a6b9" stroke-width="2"/>
+<text x="1200" y="585" text-anchor="middle" class="nodeTitle">FWSX 事件交付适配层</text>
+<text x="1200" y="620" text-anchor="middle" class="body">Outbox / Inbox · 订阅游标 · 重试 / 重放（不拥有事实和授权）</text>
+
+<rect x="1610" y="545" width="700" height="105" rx="18" fill="#3c405d" stroke="#9aa3c1" stroke-width="2"/>
+<text x="1960" y="585" text-anchor="middle" class="nodeTitle">A2A 1.0 Agent 通信协议</text>
+<text x="1960" y="620" text-anchor="middle" class="body">Agent Card · A2A-Extensions · Message / Task / Artifact Metadata</text>
+
+<!-- site containers -->
+<rect x="90" y="700" width="1080" height="500" rx="24" fill="url(#siteA)" stroke="#6d9bb0" stroke-width="3"/>
+<text x="630" y="750" text-anchor="middle" class="siteTitle">站点 A｜本地自治权威</text>
+<rect class="node" x="125" y="790" width="320" height="145" rx="14"/>
+<text x="285" y="830" text-anchor="middle" class="nodeTitle">IAM / PDP / PEP</text><text x="285" y="866" text-anchor="middle" class="nodeBody">身份 · Grant · 本地策略</text><text x="285" y="897" text-anchor="middle" class="nodeBody">撤销与访问门禁</text>
+<rect class="node" x="470" y="790" width="320" height="145" rx="14"/>
+<text x="630" y="830" text-anchor="middle" class="nodeTitle">Data Owner / Connector</text><text x="630" y="866" text-anchor="middle" class="nodeBody">数据合同 · 用途 · 传输</text><text x="630" y="897" text-anchor="middle" class="nodeBody">字段投影与驻留控制</text>
+<rect class="node" x="815" y="790" width="320" height="145" rx="14"/>
+<text x="975" y="830" text-anchor="middle" class="nodeTitle">Lease Authority / Scheduler</text><text x="975" y="866" text-anchor="middle" class="nodeBody">CPU / GPU · 本地资源租约</text><text x="975" y="897" text-anchor="middle" class="nodeBody">FencingToken · 设施联锁</text>
+<rect class="node" x="125" y="965" width="320" height="145" rx="14"/>
+<text x="285" y="1005" text-anchor="middle" class="nodeTitle">Task Coordinator</text><text x="285" y="1041" text-anchor="middle" class="nodeBody">本地 TaskStage / TaskClaim</text><text x="285" y="1072" text-anchor="middle" class="nodeBody">claim_epoch 独立于资源令牌</text>
+<rect class="node" x="470" y="965" width="320" height="145" rx="14"/>
+<text x="630" y="1005" text-anchor="middle" class="nodeTitle">Evidence / Acceptance</text><text x="630" y="1041" text-anchor="middle" class="nodeBody">回执 · 结果披露 · 独立验收</text><text x="630" y="1072" text-anchor="middle" class="nodeBody">计量与证据保全</text>
+<rect class="node" x="815" y="965" width="320" height="145" rx="14"/>
+<text x="975" y="1005" text-anchor="middle" class="nodeTitle">Outbox / Inbox / Audit</text><text x="975" y="1041" text-anchor="middle" class="nodeBody">本地事件缓冲 · 去重 · 游标</text><text x="975" y="1072" text-anchor="middle" class="nodeBody">断网恢复与审计证据</text>
+
+<rect x="1230" y="700" width="1080" height="500" rx="24" fill="url(#siteB)" stroke="#8795b7" stroke-width="3"/>
+<text x="1770" y="750" text-anchor="middle" class="siteTitle">站点 B｜本地自治权威</text>
+<rect class="nodeB" x="1265" y="790" width="320" height="145" rx="14"/>
+<text x="1425" y="830" text-anchor="middle" class="nodeTitle">IAM / PDP / PEP</text><text x="1425" y="866" text-anchor="middle" class="nodeBody">身份 · Grant · 本地策略</text><text x="1425" y="897" text-anchor="middle" class="nodeBody">撤销与访问门禁</text>
+<rect class="nodeB" x="1610" y="790" width="320" height="145" rx="14"/>
+<text x="1770" y="830" text-anchor="middle" class="nodeTitle">Data Owner / Connector</text><text x="1770" y="866" text-anchor="middle" class="nodeBody">数据合同 · 用途 · 传输</text><text x="1770" y="897" text-anchor="middle" class="nodeBody">字段投影与驻留控制</text>
+<rect class="nodeB" x="1955" y="790" width="320" height="145" rx="14"/>
+<text x="2115" y="830" text-anchor="middle" class="nodeTitle">Lease Authority / Scheduler</text><text x="2115" y="866" text-anchor="middle" class="nodeBody">CPU / GPU · 本地资源租约</text><text x="2115" y="897" text-anchor="middle" class="nodeBody">FencingToken · 设施联锁</text>
+<rect class="nodeB" x="1265" y="965" width="320" height="145" rx="14"/>
+<text x="1425" y="1005" text-anchor="middle" class="nodeTitle">Task Coordinator</text><text x="1425" y="1041" text-anchor="middle" class="nodeBody">本地 TaskStage / TaskClaim</text><text x="1425" y="1072" text-anchor="middle" class="nodeBody">claim_epoch 独立于资源令牌</text>
+<rect class="nodeB" x="1610" y="965" width="320" height="145" rx="14"/>
+<text x="1770" y="1005" text-anchor="middle" class="nodeTitle">Evidence / Acceptance</text><text x="1770" y="1041" text-anchor="middle" class="nodeBody">回执 · 结果披露 · 独立验收</text><text x="1770" y="1072" text-anchor="middle" class="nodeBody">计量与证据保全</text>
+<rect class="nodeB" x="1955" y="965" width="320" height="145" rx="14"/>
+<text x="2115" y="1005" text-anchor="middle" class="nodeTitle">Outbox / Inbox / Audit</text><text x="2115" y="1041" text-anchor="middle" class="nodeBody">本地事件缓冲 · 去重 · 游标</text><text x="2115" y="1072" text-anchor="middle" class="nodeBody">断网恢复与审计证据</text>
+
+
+
+<path class="dash" marker-end="url(#arrow)" d="M440 650 C440 680 630 675 630 700"/>
+<path class="dash" marker-end="url(#arrow)" d="M440 650 C440 682 1770 675 1770 700"/>
+<path class="line" marker-end="url(#arrow)" d="M1200 650 L1200 675 L975 675 L975 700"/>
+<path class="line" marker-end="url(#arrow)" d="M1200 650 L1200 675 L2115 675 L2115 700"/>
+<path class="dash" marker-end="url(#arrow)" d="M1170 900 L1230 900"/>
+<text x="1200" y="885" text-anchor="middle" class="small">A2A Agent 消息</text>
+<path class="dash" marker-end="url(#arrow)" d="M1170 1035 L1230 1035"/>
+<text x="1200" y="1020" text-anchor="middle" class="small">FWSX 事件流</text>
+
+<text x="1200" y="1260" text-anchor="middle" class="body">本地权威不可被 ADS 接管 · FWSX 只投递 · A2A 只通信 · 跨站点无全局事件总序 · 高风险动作本地 Fail-closed</text>
+<text x="1200" y="1300" text-anchor="middle" class="small">架构候选图｜AEE/ASCP V1.1.0-RC0｜不代表真实部署或互操作测试已通过</text>
+</svg>
