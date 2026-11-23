@@ -64,3 +64,6 @@ G2-06.10 的 HPE NVL72 端口说明曾将“每 tray 4×800G OSFP”作为推导
 - Vertiv XDU1350 Application and Planning Guide：https://www.vertiv.com/4908a3/globalassets/products/thermal-management/high-density-solutions/liebert-xdu-coolant-distribution-units/vertiv-liebert-xdu1350-coolant-distribution-unit-application-and-planning-guide-xdu1350b-sl-71309.pdf
 - Vertiv XDU1350 Installation and Commissioning Guide：https://www.vertiv.com/4a15c9/globalassets/shared/liebert-xdu1350-coolant-distribution-unit-installation-and-commissioning-guide-sl-70625.pdf
 - Lenovo N1380 Neptune Datasheet：https://lenovopress.lenovo.com/datasheet/en-us/ds0187-lenovo-thinksystem-n1380-neptune
+
+
+P2 AMD Helios MI455X 的 Schneider SC26 参考设计最高约246kW/rack；该值仅是设施供电/冷却设计边界，不是AMD/OEM实际AC输入或实测功耗，整柜AC/热工/流量压降仍待OEM/ODM签署。

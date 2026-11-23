@@ -1,0 +1,6 @@
+区域,资源域,候选拓扑,Tray数,节点数,节点类型,每节点物理核数,每节点内存GB,可调度系数,可调度核数公式,可调度内存公式,并发任务估算,边界/验证,状态
+A,A2,2N2S候选,8 trays,16,双路,TBD,TBD,TBD,16×每节点物理核×可调度系数,16×每节点内存×可用系数,"min(可调度vCPU/单任务vCPU,可用RAM/单任务RAM,临时盘/网络约束)",与4N1S互斥；OEM准确SKU待定,Candidate
+A,A2,4N1S候选,8 trays,32,单路,TBD,TBD,TBD,32×每节点物理核×可调度系数,32×每节点内存×可用系数,同上，按任务画像测算,与2N2S互斥；OEM准确SKU待定,Candidate
+B,B2,2N2S候选,8 trays,16,双路,TBD,TBD,TBD,16×每节点物理核×可调度系数,16×每节点内存×可用系数,按区域B画像计算,与4N1S互斥,Candidate
+B,B2,4N1S候选,8 trays,32,单路,TBD,TBD,TBD,32×每节点物理核×可调度系数,32×每节点内存×可用系数,按区域B画像计算,与2N2S互斥,Candidate
+A/B,A2+B2,供电边界提示,每区1套,—,—,TBD,TBD,TBD,—,—,—,54kW DC chassis capacity不是AC输入功率；详见功率/液冷/水务模型表,Candidate

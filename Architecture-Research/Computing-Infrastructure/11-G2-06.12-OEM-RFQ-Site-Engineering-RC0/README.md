@@ -32,7 +32,7 @@
 
 | 逻辑星位 | 能力域 | 当前参考配置 |
 |---|---|---|
-| A1/B1 | GPU 计算 | 每区域 1 套 GB300 NVL72 rack，HPE 主候选；Dell/Lenovo 替代候选 |
+| A1/B1 | GPU 计算 | P1 Vera Rubin NVL72 7DJVCTO4WW；P2 AMD Helios MI455X（Schneider SC26参考设计最高246kW/rack，实际OEM AC/热工待定）；P3 GB300 NVL72过渡对照 |
 | A2/B2 | CPU/HPC | 每区域 1 套 N1380 enclosure + 配套 SC-Series compute trays；确切 tray SKU/兼容性待 Lenovo 书面确认 |
 | A3/B3 | 容量存储 | 每区域 2 台 R7725xd + 高密度 NVMe 候选配置 |
 | A4/B4 | Control / Support | 每区域 3 台控制类 + 2 台边缘/安全类 R9815 候选；最终角色与数量由 HA 容量模型复核 |
@@ -41,7 +41,7 @@
 ## 重要规格纠偏与未决事项
 
 1. **HPE GB300 电力 Whip SKU 不能简单按地区二分。** QuickSpecs 同时列出 400V/60A NA（S6X18A/S6X19A）、400V/60A INTL（S6X20A/S6X21A）和 480V/60A NA（S6X22A/S6X23A），还区分 Top Feed/Bottom Feed。必须按站点电源制式、OEM 订货配置和机柜进线方向选型。
-2. HPE QuickSpecs 给出 132kW nominal TDP、约 155kW EDPp、母线建议支持 192kW；NVIDIA Enterprise RA 的组件页另写 full rack requiring up to 142kW。两者口径需 HPE/NVIDIA 在正式报价与供电输入表中解释。192kW 仅作初步母线规划输入，不是平均耗电或已批准总负荷。
+2. GPU功率按平台分开：P1 Vera Rubin约227/187kW MaxP/MaxQ TDP、440kW DC Power Shelf输出；P2 Helios有Schneider 246kW/rack参考设计但实际OEM AC/热工待定；P3 GB300为HPE 132/155/192kW；NVIDIA Enterprise RA 的组件页另写 full rack requiring up to 142kW。两者口径需 HPE/NVIDIA 在正式报价与供电输入表中解释。192kW 仅作初步母线规划输入，不是平均耗电或已批准总负荷。
 3. HPE GB300 NVL72 48U rack 尺寸 2495×600×1068mm，Fully Loaded (with PGW) 约 3300lb；Dell IR9048 rack 尺寸与重量不同，不能共用同一基础/通道设计。
 4. Lenovo Press LP2495（2026-11-13更新）已明确列出 N1380 enclosure 支持 SC755 V5，产品家族兼容关系已有官方依据；但项目准确 Machine Type/Model、CTO、tray、CPU SKU、PCS、固件、水路与地区 QVL 仍须 Lenovo 书面确认，不能把产品家族支持等同于本项目 BOM 已认证。DS0187 仍用于核对 N1380 enclosure 的 PCS/供电/水路参数。
 5. XDU1350 的 1.3MW 额定冷量及最多支持 8 个 NVL72 rack 的产品声明，不等于整机 N+1 或本项目冷却可用性已验收。
