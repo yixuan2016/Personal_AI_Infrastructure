@@ -1,0 +1,17 @@
+区域,网络域,设备名称,机柜U位,源节点,源NIC/DPU,源端口,源接口类型,源速率/模式,目标交换机,目标端口,目标接口类型,目标速率/模式,Plane/Rail,模块源端SKU,模块目标端SKU,线缆SKU/介质,波长/纤芯/连接器,长度,距离预算,FEC,MTU/QoS,固件/NOS/QVL,链路测试证据,状态
+A,GPU Plane-A,NVL72 Tray 00,,,,,,,,,,,,,,,,,,,,,,待回填
+A,GPU Plane-B,NVL72 Tray 00,,,,,,,,,,,,,,,,,,,,,,待回填
+A,CPU North-South,NVL72 BlueField-3,,,,,,,,,,,,,,,,,,,,,,待回填
+A,Storage,R7725xd-01,,,,,,,,,,,,,,,,,,,,,,待回填
+A,Storage,R7725xd-02,,,,,,,,,,,,,,,,,,,,,,待回填
+A,Control/Support,R9815-01,,,,,,,,,,,,,,,,,,,,,,待回填
+A,OOB/BMC,NVL72 BMC/SMM/PDU/CDU,,,,,,,,,,,,,,,,,,,,,,待回填
+A,WAN,Border Router/Firewall,,,,,,,,,,,,,,,,,,,,,,待回填
+B,GPU Plane-A,NVL72 Tray 00,,,,,,,,,,,,,,,,,,,,,,待回填
+B,GPU Plane-B,NVL72 Tray 00,,,,,,,,,,,,,,,,,,,,,,待回填
+B,CPU North-South,NVL72 BlueField-3,,,,,,,,,,,,,,,,,,,,,,待回填
+B,Storage,R7725xd-01,,,,,,,,,,,,,,,,,,,,,,待回填
+B,Storage,R7725xd-02,,,,,,,,,,,,,,,,,,,,,,待回填
+B,Control/Support,R9815-01,,,,,,,,,,,,,,,,,,,,,,待回填
+B,OOB/BMC,NVL72 BMC/SMM/PDU/CDU,,,,,,,,,,,,,,,,,,,,,,待回填
+B,WAN,Border Router/Firewall,,,,,,,,,,,,,,,,,,,,,,待回填
