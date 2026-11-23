@@ -1,0 +1,24 @@
+﻿编号,活动/决策,A_最终负责,R_执行负责,C_协商,I_知会,权威边界/控制
+G0-01,双边成员准入 / Join,双方联邦治理Owner（各自对本方成员负责）,各站点治理管理员,双方IAM/Security；ADS,双方治理委员会,双边批准；任一方未批准不得建立成员关系
+G0-02,TrustAgreement / 信任关系建立与变更,双方联邦治理Owner（共同A*）,双方安全/IAM Owner,PKI/密钥管理；法务/合规,ADS Profile Registry；Agent Owner,任何一方不得单方修改对方信任根；变更需双边签署
+G0-03,AEE/ASCP Profile版本发布,双方Profile治理委员会（共同A*）,Profile维护者；ADS Registry管理员,六域Owner；安全Owner；Ontology Owner,SCO/FWSX/Agent Owner,ADS可发布目录投影，不得单方批准语义或授权变更
+G0-04,扩展URI命名空间注册,持有受控域名的项目/组织Owner,命名空间Registry管理员,双方治理Owner；安全Owner,所有Profile消费者,域名控制权、稳定解析、URI唯一性与签名责任未确认前不得跨站点激活
+G0-05,工作负载身份签发 / 轮换 / 撤销,目标站点IAM/Security Owner,本地IAM/PKI运维,联邦治理Owner；Agent Owner,ADS/SCO,身份权威按站点分立；远端不得签发本地身份
+G0-06,委托关系签发与范围约束,委托签发方 / 委托主体Owner,签发方IAM/安全服务,目标站点IAM/Security Owner；Agent Owner,ADS/SCO,委托不得扩大委托方自身权限；接收方仍须执行本地身份与策略校验
+G0-07,目标站点本地策略评估与执行门禁,目标站点IAM/Security Owner,目标站点PDP/PEP,Data Owner；Compute Resource Owner；Agent Owner,ADS/SCO,本地Deny优先；ADS只能查询/解释，不得覆盖本地决策
+G0-08,数据目录、数据合同、DataUseGrant,数据Owner（逐数据产品/合同）,数据Owner授权服务/Connector,本地IAM/PEP；法务/合规,ADS/SCO/FWSX,事件订阅不等于数据访问；每次数据/Artifact读取本地再鉴权
+G0-09,资源Offer / Quote / Reservation / LocalResourceLease,资源所在地Compute Resource Owner,本地Scheduler / Lease Authority,本地Security；SCO/Task Owner,ADS/Agent Owner,ADS/SCO只请求、比较、协调；不得代签Lease或承诺容量
+G0-10,全局TaskContract / ContractGraph节点义务,相应合同签署方（按各ContractNode分别A）,各ContractNode Owner；SCO负责图关联和Saga协调,Site Task Owner；Data/Compute Owner；Acceptance Owner,ADS/Agent Owner,SCO签署图版本/协调记录，不替各Owner签署节点义务
+G0-11,TaskContract / ContractNode义务签署,各ContractNode对应Owner / 合同签署方,各ContractNode Owner,Site Task Owner；Data/Compute/Acceptance Owner,ADS/SCO/Agent Owner,每个合同节点由相应Owner独立签署；SCO不得代签节点义务
+G0-12,ContractGraph关联、版本与摘要,SCO/Task Owner（仅图关联与完整性）,SCO协调服务,各ContractNode Owner；Site Task Owner,ADS/Agent Owner,SCO签Graph版本/摘要，不代表其承诺或签署各节点内容
+G0-13,本地TaskStage执行与TaskClaim,目标站点Site Task Owner,Local Task Coordinator,SCO/Task Owner；本地IAM/Compute Owner,ADS/Agent Owner,TaskClaim唯一性在本地Stage作用域；SCO不得替站点签发本地Claim
+G0-14,物理资源Lease与FencingToken,资源所在地Compute Resource Owner,Local Lease Authority,Site Task Owner；本地Security Owner,SCO/ADS,claim_epoch不得替代资源fencing_token；资源令牌仅由本地Lease Authority签发
+G0-15,事实事件 / TraceRecord发布,原始业务事实Owner,事实源服务/Agent（受控发布）,本地Security；Ontology/Event Schema Owner,FWSX/ADS/SCO/订阅者,模型推断须标注为推断；不得伪装为Owner事实
+G0-16,事件订阅与字段投影批准,事件源Owner（披露责任）,本地PDP/PEP；FWSX负责投递执行,订阅者Owner；数据Owner；Security Owner,ADS/SCO,FWSX只负责投递/游标/重放，不批准数据用途或扩大字段
+G0-17,事件跨站点投递 / Cursor / Replay,FWSX Service Owner（仅传输服务SLO）,FWSX运维,事件源Owner；站点Security；站点Inbox Owner,ADS/SCO/订阅者,事件内容事实权威仍归源Owner；FWSX签收据不等于内容背书
+G0-18,Artifact / Evidence生成与摘要签名,成果/证据Producer Owner,本地Evidence服务,Site Task Owner；Security Owner,SCO/Acceptance Owner,ArtifactBinding仅关联引用、版本、摘要；不复制正文或取代Registry
+G0-19,Result披露与跨站点读取,Result Owner / 数据Owner（按内容权利分权）,目标站点PEP/Release Gate,独立Acceptance Owner；Security；法务/合规,SCO/Agent Owner,引用可见不等于内容可读；披露前检查用途、接收方、地域、撤销与摘要
+G0-20,独立业务Acceptance,独立Acceptance Authority,独立验收服务/验收人员,Task Owner；Evidence Owner；合同签署方,SCO/ADS/执行Agent,执行方/Agent不得对自身成果作最终独立验收
+G0-21,原始MeteringRecord与更正,资源Owner,资源侧Metering服务,Settlement Owner；Task Owner,SCO/ADS,更正追加不覆盖原始计量；估算/预测不得伪装成实测
+G0-22,Settlement / Dispute,合同指定Settlement Authority / Dispute Authority,结算与争议处理服务,合同各方；Metering Owner；Acceptance Owner,SCO/ADS,SCO提供对账视图，不自行改写原始计量或裁决合同争议
+G0-23,RSI候选变更晋级 / 回滚,人类治理委员会 / 授权审批人,RSI/平台工程团队,Security；各受影响Site Owner；独立评估者,ADS/SCO/Agent Owner,候选生成、Shadow、审批、Canary、回滚分离；不得自我授权晋级

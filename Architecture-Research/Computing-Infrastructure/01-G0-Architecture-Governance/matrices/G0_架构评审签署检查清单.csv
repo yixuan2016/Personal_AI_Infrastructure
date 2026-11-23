@@ -1,0 +1,13 @@
+﻿编号,检查项,签署/确认角色,当前状态,放行规则
+G0-C01,Site A/B正式主体名称与法律/组织边界已确认,双边治理Owner,待确认,未满足不得签TrustAgreement
+G0-C02,六域每个Owner已指定组织、责任人、替补与联系通道,双方项目治理Owner,待确认,不得只填团队名称；需明确可签署角色
+G0-C03,SCO全局Task Owner与Site A/B Task Owner职责分离,SCO Owner + 两站点Task Owner,待签署,需签ADR-11
+G0-C04,Local TaskClaim与Resource Lease双权威分离,Site Task Owner + Compute Owner,待签署,需确认claim_epoch与fencing_token独立
+G0-C05,数据Owner、Compute Owner、Acceptance Owner相互独立性已检查,双方治理Owner,待确认,执行方不得自验收；无权者不得签Grant/Lease
+G0-C06,AEE/ASCP命名空间域名控制权已验证,Namespace Owner + Security Owner,待确认,未验证不得跨站点发布正式URI
+G0-C07,Profile URI、Schema URI、事件URI、Ontology URI已注册,Profile Governance Owner,待注册,URI唯一、稳定、可解析、版本不可复用
+G0-C08,DM04 IFC0.2 profile_extensions提案完成双方评审,DM04 API Owner + 两站点Security Owner,待评审,批准前不得在IFC0.1请求中发送该字段
+G0-C09,签名算法/密钥生命周期/撤销/轮换沿用双方信任协议,Security Owner,待确认,本包不擅自指定算法
+G0-C10,证据、日志、事件保留期与争议窗口已对齐,Evidence Owner + Legal/Compliance,待确认,保留期不得短于合同/审计要求
+G0-C11,Owner签署矩阵与RACI不存在未指定A角色,双方治理Owner,待确认,除双边共同批准事项外，每项决策应有唯一A
+G0-C12,G0所有ADR均完成签署或明确拒绝/延期,架构委员会,待签署,未签署ADR保持Proposed，不得标为Frozen
