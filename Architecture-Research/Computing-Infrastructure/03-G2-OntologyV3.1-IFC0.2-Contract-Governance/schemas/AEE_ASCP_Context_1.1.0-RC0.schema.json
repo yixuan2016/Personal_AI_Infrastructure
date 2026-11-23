@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:compute-base:aee-ascp:context:1.1.0-rc0",
+  "title": "AEE/ASCP Context Data 1.1 RC0",
+  "description": "Profile data only. criticality is held by the outer profile_extensions wrapper, never duplicated here.",
+  "type": "object",
+  "properties": {
+    "environment_ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "ontology_profile_ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "trace_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true
+    },
+    "subscription_ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "task_claim_ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "artifact_binding_ref": {
+      "type": "string",
+      "format": "uri"
+    },
+    "governance_context_ref": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "required": [
+    "environment_ref",
+    "ontology_profile_ref"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1420" viewBox="0 0 2400 1420">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#20344a"/></linearGradient>
+<linearGradient id="top" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#24546c"/><stop offset="1" stop-color="#39748a"/></linearGradient>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#eef5f9}
+.title{font-size:48px;font-weight:700}.subtitle{font-size:23px;fill:#bfd0da}.head{font-size:29px;font-weight:700}.body{font-size:21px}.small{font-size:17px;fill:#c2d2dc}.box{fill:#19384b;stroke:#83aec1;stroke-width:2}.box2{fill:#263b55;stroke:#9aaec1;stroke-width:2}.accent{fill:#28566b;stroke:#a0c2d1;stroke-width:2}.line{stroke:#88b3c7;stroke-width:3;fill:none}
+</style>
+<marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12z" fill="#88b3c7"/></marker>
+</defs>
+<rect width="2400" height="1420" fill="url(#bg)"/>
+<text x="1200" y="72" text-anchor="middle" class="title">G2｜Ontology V3.1 × DM04 IFC0.2 × ADS/SCO</text>
+<text x="1200" y="115" text-anchor="middle" class="subtitle">共同语义 · 逻辑契约 · REST绑定 · Profile扩展 · 本地权威</text>
+
+<rect x="90" y="155" width="2220" height="190" rx="24" fill="url(#top)" stroke="#a0c3d2" stroke-width="2"/>
+<text x="1200" y="205" text-anchor="middle" class="head">Ontology V3.1｜共同语义层（Minor 增量候选）</text>
+<text x="1200" y="250" text-anchor="middle" class="body">V3.0 既有 Core：Participant / Site / Resource / Capability / TaskContract / TaskRun / Policy / Grant / Lease / Evidence</text>
+<text x="1200" y="292" text-anchor="middle" class="body">V3.1 新增 Core：OutputArtifact · Result · DelegationGrant · HumanApproval</text>
+<text x="1200" y="325" text-anchor="middle" class="small">Federation Governance Profile：ParticipantBinding / TrustAgreement ｜ Data Space Profile：DataSpaceContract</text>
+
+<rect x="90" y="395" width="1080" height="250" rx="22" class="box"/>
+<text x="630" y="445" text-anchor="middle" class="head">DM04｜逻辑交易契约</text>
+<text x="630" y="490" text-anchor="middle" class="body">RequestEnvelope / ResponseEnvelope</text>
+<text x="630" y="530" text-anchor="middle" class="body">TaskContract · ContractGraph · Amendment · Barrier</text>
+<text x="630" y="570" text-anchor="middle" class="body">Offer / Quote / LocalResourceLease / Metering / Acceptance / Settlement</text>
+<text x="630" y="615" text-anchor="middle" class="small">IFC0.1 保持基线；IFC0.2 仅可选 profile_extensions</text>
+
+<rect x="1230" y="395" width="1080" height="250" rx="22" class="box2"/>
+<text x="1770" y="445" text-anchor="middle" class="head">ADS / SCO REST Binding RC1｜待对齐</text>
+<text x="1770" y="490" text-anchor="middle" class="body">ADS：治理 / Profile / 能力 / 跨域视图</text>
+<text x="1770" y="530" text-anchor="middle" class="body">SCO：ContractGraph / Plan / Saga / Barrier / 对账</text>
+<text x="1770" y="570" text-anchor="middle" class="body">GenericCommand 与 RequestEnvelope 映射</text>
+<text x="1770" y="615" text-anchor="middle" class="small">ResponseContext 补齐；OpenAPI 版本共同工具链待验证</text>
+
+<path d="M1200 345 L1200 385" class="line" marker-end="url(#a)"/>
+<path d="M1170 520 L1220 520" class="line" marker-end="url(#a)"/>
+
+<rect x="90" y="700" width="2220" height="220" rx="22" class="accent"/>
+<text x="1200" y="748" text-anchor="middle" class="head">AEE / ASCP｜横切 Profile（不是第七接口域）</text>
+<g text-anchor="middle">
+<rect x="130" y="785" width="330" height="90" rx="14" class="box2"/><text x="295" y="822" class="body">Environment</text><text x="295" y="852" class="small">Descriptor Ref</text>
+<rect x="500" y="785" width="330" height="90" rx="14" class="box2"/><text x="665" y="822" class="body">Trace</text><text x="665" y="852" class="small">CloudEvents ASCP</text>
+<rect x="870" y="785" width="330" height="90" rx="14" class="box2"/><text x="1035" y="822" class="body">Subscription</text><text x="1035" y="852" class="small">FWSX Runtime</text>
+<rect x="1240" y="785" width="260" height="90" rx="14" class="box2"/><text x="1370" y="822" class="body">TaskClaim</text><text x="1370" y="852" class="small">Site Local</text>
+<rect x="1540" y="785" width="330" height="90" rx="14" class="box2"/><text x="1705" y="822" class="body">ArtifactBinding</text><text x="1705" y="852" class="small">Association</text>
+<rect x="1910" y="785" width="350" height="90" rx="14" class="box2"/><text x="2085" y="822" class="body">GovernanceContext</text><text x="2085" y="852" class="small">Request Ref</text>
+</g>
+<text x="1200" y="900" text-anchor="middle" class="small">profile_extensions 包装层含 criticality；AEE data 只放引用；每次引用解析由目标站点重新授权</text>
+
+<rect x="90" y="980" width="1080" height="270" rx="22" class="box"/>
+<text x="630" y="1030" text-anchor="middle" class="head">Site A｜本地权威</text>
+<text x="630" y="1075" text-anchor="middle" class="body">IAM / PDP / PEP · Data Owner / DataUseGrant</text>
+<text x="630" y="1115" text-anchor="middle" class="body">Local Task Coordinator / TaskClaim</text>
+<text x="630" y="1155" text-anchor="middle" class="body">Resource Lease Authority / FencingToken</text>
+<text x="630" y="1200" text-anchor="middle" class="small">Evidence / Independent Acceptance / Metering</text>
+
+<rect x="1230" y="980" width="1080" height="270" rx="22" class="box2"/>
+<text x="1770" y="1030" text-anchor="middle" class="head">Site B｜本地权威</text>
+<text x="1770" y="1075" text-anchor="middle" class="body">IAM / PDP / PEP · Data Owner / DataUseGrant</text>
+<text x="1770" y="1115" text-anchor="middle" class="body">Local Task Coordinator / TaskClaim</text>
+<text x="1770" y="1155" text-anchor="middle" class="body">Resource Lease Authority / FencingToken</text>
+<text x="1770" y="1200" text-anchor="middle" class="small">Evidence / Independent Acceptance / Metering</text>
+<path d="M1170 1115 L1220 1115" class="line" marker-end="url(#a)"/>
+
+<text x="1200" y="1310" text-anchor="middle" class="body">ADS/SCO 协调全局，不代签本地授权、TaskClaim、资源 Lease 或验收</text>
+<text x="1200" y="1355" text-anchor="middle" class="small">G2 候选架构图｜非生产部署图｜Owner 签署与双实现验证待完成</text>
+</svg>
