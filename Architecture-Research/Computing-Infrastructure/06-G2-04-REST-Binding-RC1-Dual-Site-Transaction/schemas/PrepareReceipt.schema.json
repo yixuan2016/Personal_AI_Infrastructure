@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.invalid/aee-ascp/g2-04/preparereceipt.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "PrepareReceipt",
+  "required": [
+    "transaction_id",
+    "site_id",
+    "reservation_id",
+    "contract_digest",
+    "prepared_until",
+    "state_version",
+    "issued_at",
+    "signature_ref"
+  ],
+  "properties": {
+    "transaction_id": {
+      "type": "string"
+    },
+    "site_id": {
+      "type": "string"
+    },
+    "reservation_id": {
+      "type": "string"
+    },
+    "contract_digest": {
+      "type": "string"
+    },
+    "prepared_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "state_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "signature_ref": {
+      "type": "string",
+      "format": "uri-reference"
+    }
+  }
+}

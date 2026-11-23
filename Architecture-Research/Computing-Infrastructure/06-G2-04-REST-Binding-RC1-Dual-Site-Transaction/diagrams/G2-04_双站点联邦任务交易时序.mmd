@@ -1,0 +1,34 @@
+sequenceDiagram
+    autonumber
+    participant TO as Task Owner
+    participant SCO as SCO Saga Coordinator
+    participant ADS as ADS Governance
+    participant A as Site A LCP / Lease Authority
+    participant B as Site B LCP / Lease Authority
+    participant PEP as Local PDP / PEP
+    participant IA as Independent Acceptance Owner
+    TO->>SCO: Submit signed TaskContract + digest
+    SCO->>ADS: Resolve trust, identity, ontology, policy references
+    ADS-->>SCO: Signed Decision refs / compatibility report
+    SCO->>A: Prepare(transaction, contract_digest, idempotency_key)
+    SCO->>B: Prepare(transaction, contract_digest, idempotency_key)
+    A-->>SCO: PrepareReceipt A (prepared_until)
+    B-->>SCO: PrepareReceipt B (prepared_until)
+    SCO->>A: Commit(reservation_ref, expected_version)
+    SCO->>B: Commit(reservation_ref, expected_version)
+    A-->>SCO: CommitReceipt A + LeaseRef + FencingEpoch
+    B-->>SCO: CommitReceipt B + LeaseRef + FencingEpoch
+    SCO->>SCO: Validate Activation Barrier (all sites, digests, TTL, revocation checkpoints)
+    SCO-->>A: ActivationNotice(barrier_epoch, token)
+    SCO-->>B: ActivationNotice(barrier_epoch, token)
+    A->>PEP: Re-evaluate Policy / Grant / Attestation / Lease
+    B->>PEP: Re-evaluate Policy / Grant / Attestation / Lease
+    PEP-->>A: Local Permit + obligations
+    PEP-->>B: Local Permit + obligations
+    A-->>SCO: ActivationAck + TaskRunRef
+    B-->>SCO: ActivationAck + TaskRunRef
+    A-->>SCO: TaskStage events + evidence refs
+    B-->>SCO: TaskStage events + evidence refs
+    SCO->>IA: Request independent acceptance
+    IA-->>SCO: Signed AcceptanceRecord
+    SCO->>SCO: Settlement draft / dispute / settle workflow
