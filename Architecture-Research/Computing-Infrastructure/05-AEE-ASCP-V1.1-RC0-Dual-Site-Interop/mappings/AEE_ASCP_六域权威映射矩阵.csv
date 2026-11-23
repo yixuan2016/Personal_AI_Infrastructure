@@ -1,0 +1,7 @@
+﻿接口域,复用操作,AEE/ASCP增量,权威主体,禁止事项
+联邦治理,Federation.Join; TrustAgreement; Profile.Publish/Resolve; Participant.Bind/Review/Revoke; Exit,AEE/ASCP Profile版本、EnvironmentSpaceDescriptor引用、参与方与站点范围,双方治理方,不得建立第二套成员名册、信任根或全局环境权威
+身份与授权,AuthenticateWorkload; ResolveParticipantBinding; Delegation.Request/Exchange/Inspect/Revoke; Policy.Evaluate/DecisionStatus,GovernanceContextRef、请求目的、扩展激活状态,各站点IAM/PDP/PEP；授权Owner,ADS不得授予远端本地权限；上下文引用不是凭证
+数据空间,Data.Catalog.Query; Data.Contract.*; Data.Transfer.*; Data.Usage.Report,事件投影订阅、字段最小化投影、数据用途引用,Data Owner/连接器,事件订阅不能绕过数据合同和本地访问控制
+算力星,Compute.Capability.Discover; Capacity.Quote; Reservation.*; Lease.*; Attestation.Verify,Agent/任务环境引用、资源证据引用,资源所在地Owner/Lease Authority,ADS不得代签资源Lease；TaskClaim不是资源Lease
+联邦任务,Task.Create/Validate/Plan/Prepare/Commit/Suspend/Cancel/GetStatus/WatchEvents/Reconcile/Compensate,站点本地TaskClaim、Trace因果关联、A2A Task映射,SCO协调+站点本地任务协调器,不建立全局TaskClaim Lease Authority；不覆盖本地状态
+证据与验收,Evidence.PublishReference/RetrieveAuthorized; Result.Stage/Review/DecideRelease/Release; Acceptance.*; Metering.*; Settlement.*,ArtifactBinding关联、Trace引用,Evidence Owner/独立验收方/计量Owner/结算方,不新建第二套Artifact Registry；执行方不得自验收

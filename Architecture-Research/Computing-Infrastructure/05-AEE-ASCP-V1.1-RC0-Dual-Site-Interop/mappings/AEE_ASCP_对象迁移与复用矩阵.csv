@@ -1,0 +1,7 @@
+﻿V1.0对象,V1.1规范对象,语义定位,权威映射,迁移规则,边界
+EnvironmentSpace,EnvironmentSpaceDescriptor,非权威组合描述符,Federation Profile + Participant Binding + Trust Agreement + DataSpace Contract + Site refs,旧别名可读；新写使用新名称,不创建第二套成员/信任/数据空间权威
+TraceRecord,CloudEvents ASCP Projection,事件语义投影,CloudEvents id/source/type/subject/time/dataschema/data + DM04 extensions,trace_id映射id；不双写ID,不创建平行事件库
+EnvironmentSubscription,EventSubscription,订阅资源,事件源Owner授权 + FWSX delivery cursor,保留订阅引用，升级投影配置,订阅不等于数据访问Grant
+TaskClaimLease,TaskClaim,站点本地任务阶段认领,Local Task Coordinator + claim_epoch,旧对象仅兼容读取；旧fencing_token不可映射资源token,不建立全局Lease Authority
+ArtifactBinding,Evidence/Result/Artifact Relation,关联引用,EvidenceRef + ResultRef + ArtifactRef + digest + acceptance_ref,旧binding_ref映射关系引用,不新建全局Artifact Registry
+GovernanceContext,GovernanceContextRef,请求上下文引用,RequestEnvelope + PolicyDecision + DataUseGrant + Delegation refs,不得转成bearer token,不建立全局PDP

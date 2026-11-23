@@ -1,0 +1,7 @@
+﻿AEE对象,既有Ontology实体/契约,映射处理,权威主体,关键约束
+EnvironmentSpace,Participant; Tenant; TrustDomain; Site; Policy,新增 AEE 扩展实体；空间范围引用既有主体和信任域,空间 Owner；ADS 维护跨域目录,空间定义不转移底层数据所有权
+TraceRecord,ST-02 Trace Envelope; EvidenceRecord; Lineage; 统一事件 Schema,复用 ST-02；不另建事实权威,痕迹发布者；原始事实 Owner 保留事实权威,推断/预测/提案不得伪装成 ObservedFact
+EnvironmentSubscription,AgentCapability; Participant; Policy,新增 AEE 扩展实体,订阅者与环境服务,订阅不授予数据读取或执行权限
+TaskClaimLease,TaskRun; TaskStage; ResourceLease,新增任务认领扩展实体；ResourceLease 独立,SCO 对任务认领负责；本地 Owner/LCP 对资源租约负责,认领权不等于数据授权或物理资源使用权
+ArtifactBinding,EvidenceRecord; Checkpoint; DatasetVersion; Artifact Registry,只新增关联和版本/摘要引用，不复制成果内容,成果 Owner；独立验证者；授权验收主体,生产者不得单方面标记 accepted
+GovernanceContext,Policy; PolicyDecision; DataUseGrant; Credential; Attestation,组合引用，不新增授权权威,ADS 协调；本地 PDP/PEP 执行；Owner 签发数据授权,上下文快照不是 bearer token；每次敏感操作重新鉴权
