@@ -1,0 +1,19 @@
+{
+  "profile_extensions": {
+    "https://{controlled-domain}/aee-ascp/profiles/1.1": {
+      "profile_version": "1.1.0-rc0",
+      "schema_ref": "https://{controlled-domain}/aee-ascp/schemas/context/1.1",
+      "criticality": "required",
+      "payload_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "data": {
+        "environment_ref": "urn:environment:site-federation:example",
+        "ontology_profile_ref": "urn:ontology:compute-base:3.0",
+        "trace_refs": [
+          "urn:trace:site-a:example-001"
+        ],
+        "governance_context_ref": "urn:governance-context:example"
+      }
+    }
+  },
+  "notice": "URI中的{controlled-domain}为占位符；示例不得直接用于生产或跨站点互操作。payload_digest为占位摘要，正式请求必须计算真实摘要。"
+}
