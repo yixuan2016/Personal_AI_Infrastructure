@@ -1,0 +1,19 @@
+区域,负载域,设备/设施,数量,额定容量/公开口径,口径类别,平均负载kW,峰值负载kW,启动/瞬态kW,功率因数,运行小时,负载率,增长预留,计量点,是否IT负载,是否已纳入PUE,冗余工况,供应商/数据来源,证据等级,状态,备注
+A,GPU,A1 GB300 NVL72,1套,132kW nominal TDP / 约155kW EDPp / 192kW busway planning,多口径待OEM澄清,,,,,,,,IT rack input,是,是,正常/单路/维护,HPE/NVIDIA, E2,待回填,192kW不是平均功耗
+B,GPU,B1 GB300 NVL72,1套,132kW nominal TDP / 约155kW EDPp / 192kW busway planning,多口径待OEM澄清,,,,,,,,IT rack input,是,是,正常/单路/维护,HPE/NVIDIA,E2,待回填,同A区但独立测量
+A,CPU/HPC,A2 N1380 Neptune,1套,约58kVA / 54kW DC capacity,视在功率/DC容量,,,,,,,,AC input,是,是,N+1 PCS/单PCS故障,Lenovo,E2,待回填,58kVA不能当58kW
+B,CPU/HPC,B2 N1380 Neptune,1套,约58kVA / 54kW DC capacity,视在功率/DC容量,,,,,,,,AC input,是,是,N+1 PCS/单PCS故障,Lenovo,E2,待回填,58kVA不能当58kW
+A,Storage,A3 R7725xd ×2,2台,待准确BOM和实测,待输入,,,,,,,,服务器输入,是,是,单机/单PSU/峰值,Dell/KIOXIA,E2/E4,待回填,SSD配置影响功率
+B,Storage,B3 R7725xd ×2,2台,待准确BOM和实测,待输入,,,,,,,,服务器输入,是,是,单机/单PSU/峰值,Dell/KIOXIA,E2/E4,待回填,SSD配置影响功率
+A,Control,A4 R9815 ×3,3台,待准确BOM和实测,待输入,,,,,,,,服务器输入,是,是,单节点故障,Dell,E2/E4,待回填,HA容量待验证
+B,Control,B4 R9815 ×3,3台,待准确BOM和实测,待输入,,,,,,,,服务器输入,是,是,单节点故障,Dell,E2/E4,待回填,HA容量待验证
+A,Edge/Security,A5 R9815 ×2,2台,待准确BOM和实测,待输入,,,,,,,,服务器输入,是,是,单节点故障,Dell,E2/E4,待回填,安全加速卡待确认
+B,Edge/Security,B5 R9815 ×2,2台,待准确BOM和实测,待输入,,,,,,,,服务器输入,是,是,单节点故障,Dell,E2/E4,待回填,安全加速卡待确认
+A,Network,GPU/CPU/Storage/OOB/WAN交换机,按端口表,待配置器和模块BOM,待输入,,,,,,,,设备输入,是,是,双平面/单交换机故障,网络OEM,E2/E4,待回填,光模块功耗不可遗漏
+B,Network,GPU/CPU/Storage/OOB/WAN交换机,按端口表,待配置器和模块BOM,待输入,,,,,,,,设备输入,是,是,双平面/单交换机故障,网络OEM,E2/E4,待回填,光模块功耗不可遗漏
+A,Cooling,XDU1350/CDU,按N/N+1/1+1方案,1.3MW额定冷量,热容量不是电功率,,,,,,,,设施电表,否,否,泵/CDU单故障,Vertiv/HPE,E2,待回填,须回填泵/控制器/风机实际kW
+B,Cooling,XDU1350/CDU,按N/N+1/1+1方案,1.3MW额定冷量,热容量不是电功率,,,,,,,,设施电表,否,否,泵/CDU单故障,Vertiv/HPE,E2,待回填,须回填泵/控制器/风机实际kW
+A,Facility,冷机/冷却塔/干冷器/泵/风机,按站点热工设计,待热工仿真,设施电功率,,,,,,,,设施总表,否,否,最不利气候/维护,设施OEM,E2/E3,待回填,避免PUE重复计量
+B,Facility,冷机/冷却塔/干冷器/泵/风机,按站点热工设计,待热工仿真,设施电功率,,,,,,,,设施总表,否,否,最不利气候/维护,设施OEM,E2/E3,待回填,避免PUE重复计量
+A,Power,UPS/变压器/PDU/母线/发电机,按单线图,效率/损耗/冗余待确认,设施电功率,,,,,,,,输入输出分表,否,否,旁路/单模块/发电机,电气OEM,E2/E3,待回填,设备额定输出不是输入负载
+B,Power,UPS/变压器/PDU/母线/发电机,按单线图,效率/损耗/冗余待确认,设施电功率,,,,,,,,输入输出分表,否,否,旁路/单模块/发电机,电气OEM,E2/E3,待回填,设备额定输出不是输入负载
