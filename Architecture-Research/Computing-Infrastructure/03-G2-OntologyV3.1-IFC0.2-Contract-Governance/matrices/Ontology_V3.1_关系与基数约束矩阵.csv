@@ -1,0 +1,12 @@
+﻿主体,关系,客体,基数,语义,约束
+TaskRun,PRODUCES,OutputArtifact,0..N,站点执行事实,OutputArtifact Owner签发引用
+TaskRun,PRODUCES,Result,0..N,任务结果,Result Owner维护结果生命周期
+Result,REFERENCES,OutputArtifact,0..N,结果关联成果,引用解析时重新授权
+Result,SUPPORTED_BY,EvidenceRecord,1..N（按结果类型）,结果证据,证据正文仍由Evidence Owner管理
+AcceptanceRecord,EVALUATES,TaskRun / Result / OutputArtifact,1..N,独立验收,执行方不得自签最终验收
+Result,RELEASED_BY,PolicyDecision,0..1,结果披露许可,目标站点PEP仍需本地授权
+DelegationGrant,DELEGATES_FROM_TO,Principal -> Principal,1..N ActorChain,主体委托,不得推断再委托权
+HumanApproval,DECIDES_ON,SubjectRef,1,人工审批绑定对象,subject_digest、scope、expiry强绑定
+ParticipantBinding,BINDS,Participant -> TrustDomain/Federation,1,参与方绑定,撤销由治理Owner权威发布
+TrustAgreement,AGREES_BETWEEN,Participant,2..N,信任协议关系,每一方独立签署
+DataSpaceContract,COVERS,DataProduct / DatasetVersion,1..N,数据使用合同,Grant是具体访问授权，不能由合同替代

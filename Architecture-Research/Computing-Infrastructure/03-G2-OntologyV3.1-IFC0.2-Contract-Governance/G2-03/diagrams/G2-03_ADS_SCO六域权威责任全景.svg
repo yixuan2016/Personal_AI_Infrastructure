@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 2400 1600">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101a28"/><stop offset="1" stop-color="#1d3548"/></linearGradient>
+<linearGradient id="ads" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#285f75"/><stop offset="1" stop-color="#367d8a"/></linearGradient>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#eef5f8}
+.t{font-size:48px;font-weight:700}.sub{font-size:23px;fill:#c3d4de}.h{font-size:27px;font-weight:700}.b{font-size:20px}.s{font-size:17px;fill:#c4d2dc}
+.panel{fill:#19394d;stroke:#8eb5c7;stroke-width:2}.panel2{fill:#243b53;stroke:#9fb3c4;stroke-width:2}.domain{fill:#21485d;stroke:#83afc3;stroke-width:2}
+.arrow{stroke:#8bb7ca;stroke-width:3;fill:none}
+</style>
+<marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12z" fill="#8bb7ca"/></marker>
+</defs>
+<rect width="2400" height="1600" fill="url(#bg)"/>
+<text x="1200" y="75" text-anchor="middle" class="t">G2-03｜ADS / SCO × 六域权威责任全景</text>
+<text x="1200" y="118" text-anchor="middle" class="sub">75 个 API 操作逐项映射 · 协调权不等于领域权威 · 本地执行权不可转移</text>
+
+<rect x="100" y="165" width="1050" height="205" rx="24" fill="url(#ads)" stroke="#a3c7d6" stroke-width="2"/>
+<text x="625" y="215" text-anchor="middle" class="h">ADS｜治理协调与共同语义</text>
+<text x="625" y="258" text-anchor="middle" class="b">40 Operations · 参与者/信任 · 身份/策略</text>
+<text x="625" y="298" text-anchor="middle" class="b">Ontology/能力 · 数据空间/用途治理</text>
+<text x="625" y="340" text-anchor="middle" class="s">不代替 Data Owner / Resource Owner / Site PEP 的最终授权</text>
+
+<rect x="1250" y="165" width="1050" height="205" rx="24" class="panel2"/>
+<text x="1775" y="215" text-anchor="middle" class="h">SCO｜任务与交易协调</text>
+<text x="1775" y="258" text-anchor="middle" class="b">35 Operations · 合同/计划/运行</text>
+<text x="1775" y="298" text-anchor="middle" class="b">资源预留/租约协调 · 结果/验收/结算/证据</text>
+<text x="1775" y="340" text-anchor="middle" class="s">不签发本地 ResourceLease / FencingToken，不代替独立验收</text>
+
+<text x="1200" y="430" text-anchor="middle" class="h">六域统一责任模型</text>
+<g>
+<rect x="100" y="470" width="700" height="205" rx="18" class="domain"/>
+<text x="450" y="515" text-anchor="middle" class="h">D1 联邦治理与参与方</text>
+<text x="450" y="560" text-anchor="middle" class="b">ADS Participants / Trust</text>
+<text x="450" y="598" text-anchor="middle" class="b">SCO Candidate Discovery</text>
+<text x="450" y="642" text-anchor="middle" class="s">Participant Owner · 双方 Federation Governance Owner</text>
+
+<rect x="850" y="470" width="700" height="205" rx="18" class="domain"/>
+<text x="1200" y="515" text-anchor="middle" class="h">D2 身份、信任与策略授权</text>
+<text x="1200" y="560" text-anchor="middle" class="b">Credential / Workload / Attestation</text>
+<text x="1200" y="598" text-anchor="middle" class="b">PolicyDecision / Revocation</text>
+<text x="1200" y="642" text-anchor="middle" class="s">Issuer · Target Owner PDP · Site PEP</text>
+
+<rect x="1600" y="470" width="700" height="205" rx="18" class="domain"/>
+<text x="1950" y="515" text-anchor="middle" class="h">D3 Ontology 与能力生态</text>
+<text x="1950" y="560" text-anchor="middle" class="b">Core/Domain Profile · Compatibility</text>
+<text x="1950" y="598" text-anchor="middle" class="b">Capability / Validation / Adoption</text>
+<text x="1950" y="642" text-anchor="middle" class="s">Ontology Committee · Domain Owner · Independent Validator</text>
+
+<rect x="100" y="725" width="700" height="205" rx="18" class="domain"/>
+<text x="450" y="770" text-anchor="middle" class="h">D4 数据空间与用途治理</text>
+<text x="450" y="815" text-anchor="middle" class="b">DataProduct / DatasetVersion</text>
+<text x="450" y="853" text-anchor="middle" class="b">DataSpaceContract / DataUseGrant / Lineage</text>
+<text x="450" y="897" text-anchor="middle" class="s">Data Owner / Grant Issuer / Site PEP</text>
+
+<rect x="850" y="725" width="700" height="205" rx="18" class="domain"/>
+<text x="1200" y="770" text-anchor="middle" class="h">D5 任务合同与算力资源</text>
+<text x="1200" y="815" text-anchor="middle" class="b">TaskContract / Plan / TaskRun</text>
+<text x="1200" y="853" text-anchor="middle" class="b">Prepare / Commit / Lease / Fencing</text>
+<text x="1200" y="897" text-anchor="middle" class="s">Task Owner / Site LCP / Lease Authority</text>
+
+<rect x="1600" y="725" width="700" height="205" rx="18" class="domain"/>
+<text x="1950" y="770" text-anchor="middle" class="h">D6 结果、证据、验收与结算</text>
+<text x="1950" y="815" text-anchor="middle" class="b">Result / OutputArtifact / Evidence</text>
+<text x="1950" y="853" text-anchor="middle" class="b">Acceptance / Metering / Settlement</text>
+<text x="1950" y="897" text-anchor="middle" class="s">Artifact Owner / Independent Acceptance / Settlement Owner</text>
+</g>
+
+<path d="M625 370 L450 460" class="arrow" marker-end="url(#arr)"/>
+<path d="M625 370 L1200 460" class="arrow" marker-end="url(#arr)"/>
+<path d="M625 370 L1950 460" class="arrow" marker-end="url(#arr)"/>
+<path d="M1775 370 L1200 715" class="arrow" marker-end="url(#arr)"/>
+<path d="M1775 370 L1950 715" class="arrow" marker-end="url(#arr)"/>
+<path d="M625 370 L450 715" class="arrow" marker-end="url(#arr)"/>
+
+<rect x="100" y="990" width="2200" height="340" rx="24" class="panel2"/>
+<text x="1200" y="1040" text-anchor="middle" class="h">站点本地权威层｜Site A / Site B 对称部署</text>
+<g>
+<rect x="160" y="1080" width="440" height="150" rx="16" class="panel"/>
+<text x="380" y="1125" text-anchor="middle" class="h">IAM / PDP / PEP</text>
+<text x="380" y="1170" text-anchor="middle" class="b">身份、授权、撤销执行</text>
+<text x="380" y="1208" text-anchor="middle" class="s">目标Owner本地复核</text>
+<rect x="660" y="1080" width="440" height="150" rx="16" class="panel"/>
+<text x="880" y="1125" text-anchor="middle" class="h">Task Coordinator</text>
+<text x="880" y="1170" text-anchor="middle" class="b">TaskClaim / TaskStage</text>
+<text x="880" y="1208" text-anchor="middle" class="s">本地任务执行权威</text>
+<rect x="1160" y="1080" width="440" height="150" rx="16" class="panel"/>
+<text x="1380" y="1125" text-anchor="middle" class="h">Lease Authority</text>
+<text x="1380" y="1170" text-anchor="middle" class="b">ResourceLease / FencingToken</text>
+<text x="1380" y="1208" text-anchor="middle" class="s">本地资源承诺权威</text>
+<rect x="1660" y="1080" width="440" height="150" rx="16" class="panel"/>
+<text x="1880" y="1125" text-anchor="middle" class="h">Data / Artifact Owner</text>
+<text x="1880" y="1170" text-anchor="middle" class="b">数据披露 / 成果正文</text>
+<text x="1880" y="1208" text-anchor="middle" class="s">本地用途与访问控制</text>
+</g>
+<text x="1200" y="1280" text-anchor="middle" class="s">Evidence Owner · Independent Acceptance · Metering / Settlement 各自独立签发事实与结论</text>
+
+<text x="1200" y="1395" text-anchor="middle" class="b">命令受理 ≠ 业务成功 ｜ 目录发布 ≠ 已采用 ｜ 资源计划 ≠ 资源租约 ｜ 结果提交 ≠ 独立验收</text>
+<text x="1200" y="1450" text-anchor="middle" class="s">G2-03 候选架构｜Owner签署、OpenAPI工具链验证与双站点互操作待完成</text>
+</svg>

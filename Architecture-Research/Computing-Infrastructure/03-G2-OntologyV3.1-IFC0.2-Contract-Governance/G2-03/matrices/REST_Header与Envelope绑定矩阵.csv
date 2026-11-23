@@ -1,0 +1,20 @@
+﻿逻辑字段,当前承载/来源,承载层,当前状态,RC1建议,安全约束
+request_id,GenericCommand.request_id,Body,当前必需,保留并与X-Request-ID对齐,Header/body同时存在必须相等；用于唯一请求追踪
+correlation_id,GenericCommand.correlation_id,Body,当前必需,保留并与X-Correlation-ID对齐,端到端因果链，不作为身份
+issued_at,GenericCommand.issued_at,Body,当前必需,保留,UTC RFC3339，时钟偏差校验
+api_version,GenericCommand.api_version,Body,当前必需,保留,API版本，不是Ontology/Protocol Profile
+schema_version,GenericCommand.schema_version,Body,当前必需,保留,操作载荷Schema版本，不是Ontology版本
+payload,GenericCommand.payload,Body,当前可选,副作用操作必须有typed payload,按operationId绑定具体Schema；避免additionalProperties任意放行
+caller_principal,已验证OAuth2 subject/身份映射,Auth Context,逻辑必需,不加入IFC0.2 body,请求体自报主体不能成为身份权威
+workload_identity,已验证SPIFFE/SVID、OAuth2 client、按需mTLS,Auth Context,逻辑必需,绑定到可信认证上下文,caller_workload_id仅提示，必须与已验证身份一致
+audience,OAuth2 token aud + API resource registration,Auth Context,逻辑必需,目标服务强校验,禁止仅从URL推断
+purpose,操作目的+TaskContract/DataSpaceContract/DataUseGrant,Operation Context,敏感动作逻辑必需,解析权威引用,reason不等于purpose；无法解析拒绝
+protocol_profile,双方已协商/登记Profile,Federation Session,跨站点逻辑必需,单独登记,不从api_version/schema_version推断
+expires_at,GenericCommand.expires_at,Body,当前可选,跨站点请求必需,缺失不得默默延长
+Idempotency-Key,当前未声明Header参数；body有可选idempotency_key,HTTP Header,SCO文档要求写操作携带,OpenAPI RC1定义共享Header,Body/Header同时出现必须相等；相同key不同摘要返回409
+X-Request-ID,当前未声明Header参数；body有request_id,HTTP Header,SCO文档要求,OpenAPI RC1定义共享Header,Header与Body一致，否则400
+X-Correlation-ID,当前未声明Header参数；body有correlation_id,HTTP Header,SCO文档要求,OpenAPI RC1定义共享Header,Header与Body一致，否则400
+If-Match / ETag,当前OpenAPI没有Header参数,HTTP Header,SCO文档要求条件更新,所有修改现有对象版本的操作声明If-Match,缺失428；版本不符412；禁止last-write-wins
+expected_state_version,尚未显式映射,HTTP Conditional / body payload,状态变更逻辑必需,与If-Match / ETag统一,创建与更新按操作语义区分
+payload_digest,GenericCommand.payload_digest,Body / Signature Context,可选,高风险写操作必需,规范化请求与profile_extensions均纳入签名覆盖
+profile_extensions,IFC0.2可选扩展,Body,仅双端协商后使用,只允许URI-keyed扩展包装,未知required拒绝；optional忽略并审计；引用重新授权

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dm04:ifc0.2:profile-extensions:rc0",
+  "title": "DM04 IFC0.2 Optional profile_extensions additive overlay RC0",
+  "description": "Adds only an optional profile_extensions property. Does not replace or alter IFC0.1 required fields.",
+  "type": "object",
+  "properties": {
+    "profile_extensions": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 16,
+      "propertyNames": {
+        "pattern": "^https://[^/]+/.+$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "profile_version",
+          "schema_ref",
+          "criticality",
+          "payload_digest",
+          "data"
+        ],
+        "properties": {
+          "profile_version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "schema_ref": {
+            "type": "string",
+            "format": "uri"
+          },
+          "criticality": {
+            "enum": [
+              "required",
+              "optional"
+            ],
+            "description": "Extension control metadata; not part of AEE Context data."
+          },
+          "payload_digest": {
+            "type": "string",
+            "pattern": "^sha256:[A-Fa-f0-9]{64}$",
+            "description": "Digest of this extension's canonicalized data only."
+          },
+          "data": {
+            "type": "object",
+            "description": "Must validate against schema_ref. For AEE/ASCP use AEE_ASCP_Context_1.1.0-RC0.schema.json."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": true
+}

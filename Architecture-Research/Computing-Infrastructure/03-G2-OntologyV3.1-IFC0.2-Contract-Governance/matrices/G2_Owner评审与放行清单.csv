@@ -1,0 +1,13 @@
+﻿工作包,责任Owner,评审事项,状态,验收证据
+G2-01,Ontology Owner,V3.1 Core新增实体、Profile归属、关系基数,待评审,Ontology语义审查记录、差异报告
+G2-01,Evidence/Acceptance Owner,OutputArtifact、Result、Acceptance边界,待评审,Owner签署与独立验收规则
+G2-01,IAM/Security Owner,DelegationGrant、HumanApproval约束,待评审,委托链、审批范围、撤销规则
+G2-02,DM04 API Owner,IFC0.2仅profile_extensions增量,待评审,IFC0.1回归与增量Schema
+G2-02,ADS API Owner,GenericCommand与RequestEnvelope绑定,待评审,OpenAPI路径引用与请求样例
+G2-02,SCO API Owner,GenericCommand与RequestEnvelope绑定,待评审,OpenAPI路径引用与请求样例
+G2-02,Security Owner,主体/工作负载/Audience/Purpose映射,待评审,OAuth2/mTLS安全Profile与负向测试
+G2-02,AEE/ASCP Profile Owner,Profile URI、Schema、criticality、digest,待评审,受控域名、URI台账、双边签署
+G2-03,Federation Governance Owner,TrustAgreement/ParticipantBinding,待评审,双边准入与撤销证据
+G2-03,Site A/B Task Owner,TaskClaim与本地TaskStage权威,待评审,本地CAS/并发验收证据
+G2-03,Compute Resource Owner,ResourceLease/FencingToken,待评审,本地Lease Authority签署
+G2-03,Independent Acceptance Owner,Result与Acceptance独立性,待评审,验收主体独立性与证据链

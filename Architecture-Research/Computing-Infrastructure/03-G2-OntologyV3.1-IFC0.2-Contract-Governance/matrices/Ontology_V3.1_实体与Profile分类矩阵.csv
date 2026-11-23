@@ -1,0 +1,27 @@
+﻿概念,归属层,V3.1处理,语义,权威Owner,边界约束,状态
+Organization,Core V3.0,既有,主体/法人组织,Organization Owner,不变,已有
+Participant,Core V3.0,既有,联邦参与主体,Participant Owner,不变,已有
+TrustDomain,Core V3.0,既有,信任域,Federation Governance Owner,不变,已有
+TaskContract,Core V3.0,既有,全局任务义务,合同签署方,不变,已有
+TaskRun,Core V3.0,既有,任务运行事实,SCO/站点Task Owner按字段分权,不变,已有
+TaskStage,Core V3.0,既有,站点本地阶段,Site Task Owner,不变,已有
+PolicyDecision,Core V3.0,既有,本地策略决策,目标站点PDP,不变,已有
+DataUseGrant,Core V3.0,既有,数据用途授权,Data Owner / 本地PDP,不变,已有
+ResourceLease,Core V3.0,既有,本地资源承诺,资源所在地Lease Authority,不变,已有
+EvidenceRecord,Core V3.0,既有,证据记录,Evidence Owner,不变,已有
+AcceptanceRecord,Core V3.0,既有,独立业务验收,Independent Acceptance Owner,不变,已有
+MeteringRecord,Core V3.0,既有,原始计量,资源Owner,不变,已有
+SettlementRecord,Core V3.0,既有,结算结果,Settlement Owner,不变,已有
+OutputArtifact,Core V3.1,新增,任务成果不可变引用,Artifact Owner,新增实体，不新建全局Registry,需评审
+Result,Core V3.1,新增,业务结果与披露生命周期,Result Owner,不替代AcceptanceRecord,需评审
+DelegationGrant,Core V3.1,新增,主体委托关系和范围,Grant Issuer / IAM Owner,不替代DataUseGrant/ResourceLease,需评审
+HumanApproval,Core V3.1,新增,人类审批决定与证据,Human Governance Owner,不替代PDP/PEP或Owner签署,需评审
+ParticipantBinding,Federation Governance Profile,新增Profile概念,参与方与信任域绑定,双方Governance Owner,不新增Participant Registry,需评审
+TrustAgreement,Federation Governance Profile,新增Profile概念,双边信任协议,双方Governance Owner,不等同TrustDomain,需评审
+DataSpaceContract,Data Space Profile,新增Profile概念,数据产品使用合同,Data Owner双方,不等同DataUseGrant,需评审
+EventSubscription,FWSX Runtime,既有运行时对象,事件投递订阅,FWSX + Source Owner,不作为Ontology Core,保留Runtime
+TaskClaim,Site Runtime Profile,既有运行时对象,本地TaskStage认领,Local Task Coordinator,不等同ResourceLease,保留Runtime
+EnvironmentSpaceDescriptor,AEE/ASCP DTO,投影,组合环境视图,ADS发布投影,不作为权威实体,保留DTO
+TraceRecord,CloudEvents ASCP Projection,投影,事件语义投影,原始事件Source Owner,不建平行事件库,保留投影
+ArtifactBinding,Evidence/Result Association,关联,成果/证据关联,Artifact/Result Owner,不建第二Registry,保留关联
+GovernanceContextRef,Request Profile,引用,请求级治理上下文,目标站点PDP/PEP,不是Bearer Token,保留引用
