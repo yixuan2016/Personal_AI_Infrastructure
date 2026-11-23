@@ -1,0 +1,57 @@
+flowchart TB
+    G["全局 ADS / SCO"]
+    R1["区域 R1 RCP"]
+    R2["区域 R2 RCP"]
+    subgraph CP["控制面网络"]
+      C1["目录 / 路由 / Prepare / Commit"]
+      C2["策略 / 撤销 / 回执 / 对账"]
+    end
+    subgraph DP["数据面网络"]
+      D1["数据集 / 模型制品 / Checkpoint"]
+      D2["结果与业务流量"]
+    end
+    subgraph FAB["站点内部专用网络"]
+      F1["GPU Scale-up Fabric"]
+      F2["存储 Fabric"]
+      F3["管理与带外网络"]
+    end
+    subgraph A["区域 R1：五颗异构算力星"]
+      A1["A1 LCP"]
+      A2["A2 LCP"]
+      A3["A3 LCP"]
+      A4["A4 LCP"]
+      A5["A5 LCP"]
+    end
+    subgraph B["区域 R2：五颗异构算力星"]
+      B1["B1 LCP"]
+      B2["B2 LCP"]
+      B3["B3 LCP"]
+      B4["B4 LCP"]
+      B5["B5 LCP"]
+    end
+    G --> R1
+    G --> R2
+    R1 --> C1
+    R1 --> C2
+    R2 --> C1
+    R2 --> C2
+    C1 --> A1
+    C1 --> A2
+    C1 --> A3
+    C1 --> A4
+    C1 --> A5
+    C1 --> B1
+    C1 --> B2
+    C1 --> B3
+    C1 --> B4
+    C1 --> B5
+    D1 -.-> A1
+    D1 -.-> B1
+    D2 -.-> A2
+    D2 -.-> B2
+    A1 --> F1
+    A2 --> F2
+    B1 --> F1
+    B2 --> F2
+    F3 -.-> A1
+    F3 -.-> B1

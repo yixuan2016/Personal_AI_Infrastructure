@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.invalid/pal-base/g2-06.6/federated-subtask-proposal.schema.json",
+  "title": "FederatedSubtaskProposal",
+  "description": "G2-06.6 RC0 candidate. A proposal is not a reservation, lease, or authorization.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "proposal_id",
+    "task_contract_ref",
+    "contract_digest",
+    "source_region",
+    "target_regions",
+    "task_graph_ref",
+    "ontology_version",
+    "constraint_profile",
+    "data_use_requirements",
+    "created_at",
+    "expires_at",
+    "issuer_ref",
+    "idempotency_key",
+    "payload_digest"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0-RC0"
+    },
+    "proposal_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_contract_ref": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    },
+    "contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "source_region": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_regions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required_site_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "task_graph_ref": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    },
+    "ontology_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "constraint_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "security_level",
+        "data_residency"
+      ],
+      "properties": {
+        "security_level": {
+          "type": "string",
+          "minLength": 1
+        },
+        "data_residency": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "gpu_profile": {
+          "type": "string"
+        },
+        "cpu_isa_profile": {
+          "type": "string"
+        },
+        "network_profile": {
+          "type": "string"
+        },
+        "storage_profile": {
+          "type": "string"
+        },
+        "deadline_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "max_cost": {
+          "type": "number",
+          "minimum": 0
+        },
+        "energy_profile": {
+          "type": "string"
+        }
+      }
+    },
+    "data_use_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "data_ref",
+          "purpose",
+          "processing_mode",
+          "allowed_regions"
+        ],
+        "properties": {
+          "data_ref": {
+            "type": "string",
+            "format": "uri-reference",
+            "minLength": 1
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "processing_mode": {
+            "type": "string",
+            "enum": [
+              "data_stays_at_source",
+              "compute_near_data",
+              "approved_derived_data_transfer",
+              "approved_result_disclosure"
+            ]
+          },
+          "allowed_regions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "output_disclosure_profile": {
+            "type": "string"
+          },
+          "retention_until": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "grant_ref": {
+            "type": "string",
+            "format": "uri-reference",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "policy_context_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference",
+        "minLength": 1
+      }
+    },
+    "trust_agreement_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference",
+        "minLength": 1
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "issuer_ref": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "correlation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "signature_ref": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,42 @@
+sequenceDiagram
+    autonumber
+    participant ADS as 全局ADS治理
+    participant SCO as 全局SCO
+    participant R1 as 源区域RCP
+    participant R2 as 目标区域RCP
+    participant LCP as 目标站点LCP
+    participant OWN as 资源Owner
+    participant DATA as 数据Owner
+
+    ADS->>R1: 发布信任与策略版本
+    R1->>R2: 请求区域能力摘要
+    R2-->>R1: 签名能力摘要与新鲜度
+    SCO->>R1: 提交跨区域子任务提案
+    R1->>R2: 委派Proposal与契约摘要
+    R2->>R2: 本体/Profile与硬约束校验
+    R2->>LCP: 本地Prepare请求
+    LCP->>OWN: Owner校验并预留
+    OWN-->>LCP: Site PrepareReceipt
+    LCP-->>R2: 本地Prepare回执
+    R2-->>R1: RegionPrepareReceipt投影
+    R1-->>SCO: 汇总准备状态与证据引用
+    SCO->>R2: 请求Commit
+    R2->>LCP: 本地Commit委派
+    LCP->>OWN: Lease Authority决策
+    OWN-->>LCP: Lease与Site CommitReceipt
+    LCP-->>R2: 原始回执引用
+    R2-->>SCO: RegionOperationReceipt
+    DATA-->>SCO: DataUseGrant引用与限制
+    ADS-->>SCO: Policy与撤销水位
+    SCO->>SCO: Activation Barrier独立核验
+    alt 所有必需条件满足
+        SCO->>R2: ActivationNotice
+        R2->>LCP: 本地Barrier复核
+        LCP-->>R2: ActivationReceipt
+        R2-->>SCO: 区域执行状态投影
+    else 缺少回执或撤销水位异常
+        SCO->>R2: 禁止激活并启动Saga补偿
+        R2->>LCP: Stop/Release/Reconcile委派
+        LCP-->>R2: Owner权威补偿回执
+        R2-->>SCO: RecoveryReport
+    end
