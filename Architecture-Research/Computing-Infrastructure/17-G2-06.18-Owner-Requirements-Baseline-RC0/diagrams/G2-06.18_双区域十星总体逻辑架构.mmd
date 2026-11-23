@@ -1,0 +1,43 @@
+flowchart TB
+  subgraph A["区域 A｜本地自治域"]
+    A1["A1 GPU计算星<br/>GB300 NVL72 候选"]
+    A2["A2 CPU/HPC计算星<br/>N1380 候选"]
+    A3["A3 存储数据星<br/>R7725xd / QLC容量层"]
+    A4["A4 控制服务星<br/>R9815 候选"]
+    A5["A5 网络与安全星<br/>R9815 / GPU Fabric"]
+    AF["本地设施域<br/>供电｜CDU｜消防｜硬联锁"]
+    A1 --- A5
+    A2 --- A5
+    A3 --- A5
+    A4 --- A5
+    AF -.-> A1
+    AF -.-> A2
+    AF -.-> A3
+    AF -.-> A4
+  end
+  subgraph B["区域 B｜本地自治域"]
+    B1["B1 GPU计算星<br/>GB300 NVL72 候选"]
+    B2["B2 CPU/HPC计算星<br/>N1380 候选"]
+    B3["B3 存储数据星<br/>R7725xd / QLC容量层"]
+    B4["B4 控制服务星<br/>R9815 候选"]
+    B5["B5 网络与安全星<br/>R9815 / GPU Fabric"]
+    BF["本地设施域<br/>供电｜CDU｜消防｜硬联锁"]
+    B1 --- B5
+    B2 --- B5
+    B3 --- B5
+    B4 --- B5
+    BF -.-> B1
+    BF -.-> B2
+    BF -.-> B3
+    BF -.-> B4
+  end
+  ADS["跨区域协同与治理<br/>ADS / SCO / RCP<br/>目录｜计划｜交易｜审计"]
+  WAN["跨区域 WAN<br/>物理路径多样性待验证"]
+  ADS <--> WAN
+  WAN <--> A5
+  WAN <--> B5
+  A3 <-->|"按数据等级授权的异步复制"| B3
+  A4 <-->|"状态投影/对账，不转移Owner权威"| B4
+  SAFE["安全边界<br/>L0硬联锁本地优先<br/>WAN中断不扩大离线权限"]
+  SAFE -.-> AF
+  SAFE -.-> BF

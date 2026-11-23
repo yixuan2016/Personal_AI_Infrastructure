@@ -1,8 +1,8 @@
 编号,领域,设备/项目,候选/参考,供应商必须提交,核验方式,偏差级别,Owner,状态,备注
-OEM-001,GPU,HPE GB300 NVL72,HPE S7K95A/S6C60A,完整可订购BOM与每个SKU的数量/替代料,订单配置器与签署BOM,关键,GPU Owner,待回填,禁止仅提供产品家族宣传页
+OEM-001,GPU-P3过渡,HPE GB300 NVL72,HPE S7K95A/S6C60A,完整可订购BOM与每个SKU的数量/替代料,订单配置器与签署BOM,关键,GPU Owner,待回填,仅为P3过渡对照；禁止仅提供产品家族宣传页
 OEM-002,GPU,Dell PowerEdge XE9712,IR9048/ XE9712,完整Rack/Sled/PS33/DLC/网卡/管理BOM,OEM配置单与机械电气图,关键,GPU Owner,待回填,与HPE机柜不视为机械可互换
-OEM-003,GPU,Lenovo GB300 NVL72,Type 7DJV,完整机柜/托盘/Power Shelf/Manifold/端口/固件BOM,OEM配置单与QVL,关键,GPU Owner,待回填,独立报价独立验收
-OEM-004,GPU,功率口径,HPE/NVIDIA,解释132kW TDP/155kW EDPp/192kW母线规划与NVIDIA RA 142kW的边界,OEM签署功率声明与测量边界,关键,设施Owner,待回填,不得把额定容量当实测功耗
+OEM-003,GPU-P3过渡,Lenovo GB300 NVL72,Type 7DJV,完整机柜/托盘/Power Shelf/Manifold/端口/固件BOM,OEM配置单与QVL,关键,GPU Owner,待回填,仅为P3过渡对照；独立报价独立验收
+OEM-004,GPU-P3过渡,GB300功率口径,HPE/NVIDIA,解释132kW TDP/155kW EDPp/192kW母线规划与NVIDIA RA 142kW的边界,OEM签署功率声明与测量边界,关键,设施Owner,待回填,仅适用于P3 GB300；不得把额定容量当实测功耗
 OEM-005,GPU,机柜尺寸重量,HPE GB300,尺寸/满载重量/重心/四点载荷/满液质量,OEM图纸+现场称重/结构核验,关键,结构Owner,待回填,公开值2495×600×1068mm/约3300lb仅为参考
 OEM-006,GPU,电源Whip,HPE NVL72,S6X18A至S6X23A适用条件与地区SKU矩阵,OEM SKU说明+站点电源审查,关键,电气Owner,待回填,400V NA/INTL及480V NA均有选项
 OEM-007,GPU,ConnectX-8端口,HPE/Dell/Lenovo,每tray NIC/IO board/OSFP物理端口/port mode/速率/rail map,逐端口图+NIC配置报告,关键,网络Owner,待回填,端口数不等于有效吞吐
@@ -27,3 +27,7 @@ OEM-025,安全,供应链/固件,全设备,SBOM/签名启动/TPM/漏洞响应/EOL
 OEM-026,服务,保修与支持,全设备,服务覆盖/响应修复时间/备件库/RMA/驻场/升级路径,SLA与服务合同草案,高,运维Owner,待回填,需覆盖两个区域当地服务
 OEM-027,商务,TCO,全设备与设施,设备价/税费/运输/安装/许可/维保/能耗/水耗/备件/残值,正式报价和财务模型,关键,采购财务Owner,待回填,币种税费折扣和有效期明确
 OEM-028,交付,FAT与SAT,全系统,测试用例/环境/工具/阈值/见证人/失败处理/重测,签署验收方案,关键,项目Owner,待回填,未通过不得转生产
+
+OEM-029,GPU-P1主参考,Lenovo Vera Rubin NVL72,7DJVCTO4WW/7DQQCTO1WW/7DJYCTO4WW,完整地区CTO/MTM/18 Compute Tray/9 NVLink Tray/4 Power Shelf/ConnectX-9/BlueField-4/QVL,Lenovo DCSC与签署BOM,关键,GPU Owner,待回填,MaxP约227kW/MaxQ约187kW TDP；440kW为DC输出能力不是AC输入
+OEM-030,GPU-P2异构替代,AMD Helios MI455X,OEM/ODM SKU待定,72 GPU rack完整SKU/EPYC/Vulcano NIC/DS6010/电源/液冷/ROCm/QVL/AC曲线,AMD与OEM/ODM签署Blueprint/BOM,关键,GPU Owner,待回填,Schneider SC26参考设计最高246kW/rack但非OEM AC输入；实际热工和流量压降待回填；AMD页面23.3/19.6TB/s口径冲突待澄清
+OEM-031,GPU平台统一基准,三条GPU路线,固定模型/精度/上下文/并发/SLO/质量门槛,端到端吞吐/延迟/能耗/恢复/质量基准,统一基准报告与独立验收,关键,GPU/Business Owner,待回填,不得按厂商峰值PFLOPS直接排名

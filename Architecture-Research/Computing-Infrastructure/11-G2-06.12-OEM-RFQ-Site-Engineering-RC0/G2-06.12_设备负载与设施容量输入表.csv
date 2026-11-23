@@ -1,6 +1,6 @@
 区域,星位,设备/系统,数量,公开/候选功率或容量口径,口径类型,初步设计用途,是否纳入IT Load,是否纳入设施Load,需供应商回填,禁止推断,状态
-A, A1,GPU HPE GB300 NVL72,1套,132kW nominal TDP / 约155kW EDPp / 192kW busway planning；NVIDIA RA另列up to 142kW,多口径需澄清,暂以192kW作母线规划敏感性输入,是,设施总负荷另计,输入/输出功率曲线/功率因数/峰值持续时间/Whip映射,192kW不是平均耗电或全年IT能耗,待OEM澄清
-B, B1,GPU HPE GB300 NVL72,1套,132kW nominal TDP / 约155kW EDPp / 192kW busway planning；NVIDIA RA另列up to 142kW,多口径需澄清,暂以192kW作母线规划敏感性输入,是,设施总负荷另计,输入/输出功率曲线/功率因数/峰值持续时间/Whip映射,192kW不是平均耗电或全年IT能耗,待OEM澄清
+A, A1,GPU P1 Vera Rubin/P2 Helios/P3 GB300,1套,P1 Vera Rubin MaxP约227kW/MaxQ约187kW TDP及440kW DC Power Shelf输出；P2 Helios Schneider参考最高246kW/rack但实际AC/热工TBD；P3 GB300 132/155/192kW,各口径分别管理不可互换,按路线单独做AC/冷却敏感性分析,是,设施总负荷另计,OEM/ODM签署AC曲线/流量/压降/Whip映射/QVL,440kW DC输出不等于AC输入；246kW为Schneider参考设计不是实测,待OEM/ODM澄清
+B, B1,GPU P1 Vera Rubin/P2 Helios/P3 GB300,1套,P1 Vera Rubin MaxP约227kW/MaxQ约187kW TDP及440kW DC Power Shelf输出；P2 Helios Schneider参考最高246kW/rack但实际AC/热工TBD；P3 GB300 132/155/192kW,各口径分别管理不可互换,按路线单独做AC/冷却敏感性分析,是,设施总负荷另计,OEM/ODM签署AC曲线/流量/压降/Whip映射/QVL,440kW DC输出不等于AC输入；246kW为Schneider参考设计不是实测,待OEM/ODM澄清
 A,A2,Lenovo N1380 Neptune,1套,54kW DC capacity / 约58kVA AC apparent power,厂商公开额定/容量,作为单enclosure支路与空间评估输入,是,UPS损耗和设施辅机另计,PCS数量/输入电流/功率因数/负载曲线/N+1降额,54kW DC不等于AC输入有功功率,待OEM确认
 B,B2,Lenovo N1380 Neptune,1套,54kW DC capacity / 约58kVA AC apparent power,厂商公开额定/容量,作为单enclosure支路与空间评估输入,是,UPS损耗和设施辅机另计,PCS数量/输入电流/功率因数/负载曲线/N+1降额,58kVA不等于58kW,待OEM确认
 A,A3,Dell R7725xd存储服务器,2台,待铭牌/配置器/实测,待输入,容量与存储网络负载模型,是,设施冷却另计,CPU/盘/NIC/PSU配置与读写负载功耗,不得用服务器家族最大值替代准确配置,待报价
