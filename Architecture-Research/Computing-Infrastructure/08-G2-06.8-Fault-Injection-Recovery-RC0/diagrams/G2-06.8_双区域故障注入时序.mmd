@@ -1,0 +1,39 @@
+sequenceDiagram
+    autonumber
+    participant W as 独立见证
+    participant O as 演练Owner
+    participant SCO as 全局SCO
+    participant R1 as 源区域RCP
+    participant R2 as 目标区域RCP
+    participant LCP as 目标站点LCP
+    participant OWN as 站点资源Owner
+    participant PDP as 本地PDP/PEP
+    participant AUD as 审计证据库
+
+    W->>O: 核验范围、风险、停止条件与批准
+    O->>AUD: 记录基线、版本、epoch、游标和撤销水位
+    O->>R1: 在隔离环境注入跨区域链路故障
+    R1--xR2: 控制面链路不可达
+    SCO->>SCO: 将未决交易标记Unknown/RecoveryRequired
+    R2->>LCP: 本地自治与授权状态检查
+    LCP->>OWN: 查询Lease、TaskRun与资源事实
+    OWN-->>LCP: 原始Owner回执
+    PDP-->>LCP: 本地策略与撤销判定
+    LCP-->>R2: 本地允许范围内继续/暂停状态
+    O->>AUD: 保存故障影响与停止条件观察
+    O->>R1: 恢复链路，进入Reconciliation
+    R1->>R2: 交换epoch、撤销水位和事件游标
+    R2->>OWN: 查询原Operation并请求快照/补传
+    OWN-->>R2: 签名快照与连续事件
+    R2->>PDP: 重新核验策略、Grant与撤销状态
+    PDP-->>R2: Permit/Denied/Indeterminate
+    R2-->>SCO: 恢复报告与权威回执引用
+    W->>AUD: 独立复核事件、回执、状态与证据摘要
+    AUD-->>O: 证据完整性与差异报告
+    alt 全部恢复条件通过
+        O->>SCO: 批准限定范围恢复
+        SCO-->>O: 恢复状态与限制条件
+    else 证据不足或状态冲突
+        O->>SCO: 保持ManualHold/Quarantined
+        SCO-->>O: 不开放新跨区域交易
+    end

@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.example.invalid/pal-base/g2-06.6/region-capability-summary.schema.json",
+  "title": "RegionCapabilitySummary",
+  "description": "G2-06.6 RC0 candidate. Aggregated discovery view; never a resource commitment.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "region_id",
+    "region_epoch",
+    "snapshot_id",
+    "issuer_ref",
+    "observed_at",
+    "valid_until",
+    "ontology_version",
+    "contract_profiles",
+    "trust_domain_refs",
+    "sites",
+    "completeness",
+    "freshness",
+    "revocation_watermark",
+    "signature_ref"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0-RC0"
+    },
+    "region_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "region_epoch": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "snapshot_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "issuer_ref": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ontology_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract_profiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "trust_domain_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "sites": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "site_id",
+          "owner_ref",
+          "owner_epoch",
+          "sequence_no",
+          "health_state",
+          "observed_at",
+          "valid_until",
+          "capability_refs"
+        ],
+        "properties": {
+          "site_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner_ref": {
+            "type": "string",
+            "format": "uri-reference",
+            "minLength": 1
+          },
+          "owner_epoch": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sequence_no": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "health_state": {
+            "type": "string",
+            "enum": [
+              "healthy",
+              "degraded",
+              "maintenance",
+              "unavailable",
+              "unknown"
+            ]
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "valid_until": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "capability_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri-reference",
+              "minLength": 1
+            }
+          },
+          "resource_summary": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "cpu_profiles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "gpu_profiles": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "model",
+                    "available_units",
+                    "observed_at",
+                    "valid_until"
+                  ],
+                  "properties": {
+                    "model": {
+                      "type": "string"
+                    },
+                    "memory_gib": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "interconnect_profile": {
+                      "type": "string"
+                    },
+                    "available_units": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "observed_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "valid_until": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              },
+              "storage_profiles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "network_profiles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "capacity_confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "source_signature_ref": {
+            "type": "string",
+            "format": "uri-reference",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "completeness": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "filtered"
+      ]
+    },
+    "freshness": {
+      "type": "string",
+      "enum": [
+        "fresh",
+        "stale",
+        "unknown"
+      ]
+    },
+    "revocation_watermark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issuer_ref",
+        "epoch",
+        "sequence_no",
+        "observed_at"
+      ],
+      "properties": {
+        "issuer_ref": {
+          "type": "string",
+          "format": "uri-reference",
+          "minLength": 1
+        },
+        "epoch": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sequence_no": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "signature_ref": {
+      "type": "string",
+      "format": "uri-reference",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri-reference",
+        "minLength": 1
+      }
+    }
+  }
+}
